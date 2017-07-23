@@ -60,7 +60,8 @@ body {
   font-size: 0.9em;
   font-weight: 300;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden; }
 
 html {
   height: 100%;
