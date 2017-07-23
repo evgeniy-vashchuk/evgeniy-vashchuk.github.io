@@ -6804,7 +6804,7 @@ section.bl-expand .vertical__text--works {
     .bl-content__items-skills li:before {
       font-size: 10px; }
   .connect__location, .connect__phone, .connect__email, .connect__location:before, .connect__phone:before, .connect__email:before {
-    font-size: 28px; } }
+    font-size: 25px; } }
 
 /* Small Devices, Tablets */
 @media only screen and (max-width: 768px) {
@@ -6901,7 +6901,7 @@ section.bl-expand .vertical__text--works {
     margin-bottom: 0;
     width: 100%; }
   .connect__location, .connect__phone, .connect__email, .connect__location:before, .connect__phone:before, .connect__email:before {
-    font-size: 23px; }
+    font-size: 20px; }
   .social-title {
     font-size: 25px; }
     .social-title:after {
@@ -6949,7 +6949,7 @@ section.bl-expand .vertical__text--works {
       font-size: 5px;
       top: -3px; }
   .connect__location, .connect__phone, .connect__email, .connect__location:before, .connect__phone:before, .connect__email:before {
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: 1px; }
   .connect__location:before, .connect__phone:before, .connect__email:before {
     padding-right: 7px; }
@@ -7094,7 +7094,7 @@ section.bl-expand .vertical__text--works {
   .tippy-tooltip.social-theme {
     display: none; }
   .connect__location, .connect__phone, .connect__email, .connect__location:before, .connect__phone:before, .connect__email:before {
-    font-size: 15px;
+    font-size: 13px;
     letter-spacing: 0px; }
   .social {
     width: 220px;
