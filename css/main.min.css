@@ -6815,8 +6815,6 @@ section.bl-expand .vertical__text--works {
     font-size: 50px; }
   section.bl-expand .vertical__text {
     left: 15px; }
-  section.bl-expand .vertical__text--works {
-    left: 10px; }
   .bl-main > section .bl-icon-close {
     width: 50px;
     height: 50px; }
@@ -7003,8 +7001,6 @@ section.bl-expand .vertical__text--works {
     font-size: 40px; }
   section.bl-expand .vertical__text {
     left: 10px; }
-  section.bl-expand .vertical__text--works {
-    left: 3px; }
   .bl-main > section .bl-icon-close {
     width: 45px;
     height: 45px; }
@@ -7137,8 +7133,6 @@ section.bl-expand .vertical__text--works {
   section.bl-expand .vertical__text {
     left: auto;
     right: 7px; }
-  section.bl-expand .vertical__text--works {
-    right: 1px; }
   section.bl-expand .bl-icon-close {
     top: 15px; }
   .bl-content {
