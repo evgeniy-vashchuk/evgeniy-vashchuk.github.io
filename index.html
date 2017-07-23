@@ -1,13 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<title>Evgeniy Vashchuk - personal web page</title>
+
 	<meta charset="UTF-8">
-	<title>Portfolio</title>
+	<meta name="description" content="The personal web page of junior Front End Developer - Evgeniy Vashchuk">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, maximum-scale=1">
+	<meta property="og:image" content="img/for_social.jpg">
+	<!-- Favicons -->
+	<link rel="shortcut icon" href="img/favicon/favicon.ico" type="image/x-icon">
+	<link rel="apple-touch-icon" href="img/favicons/apple-touch-icon.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="img/favicons/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="img/favicons/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="img/favicons/apple-touch-icon-144x144.png">
+
+	<!-- Фон верхней панели браузера -->
+	<!-- Chrome, Firefox OS and Opera -->
+	<meta name="theme-color" content="#3B2414">
+	<!-- Windows Phone -->
+	<meta name="msapplication-navbutton-color" content="#3B2414">
+	<!-- iOS Safari -->
+	<meta name="apple-mobile-web-app-status-bar-style" content="#3B2414">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/main.min.css">
 </head>
+
 <body>
-	<h1>Hello!</h1>
-	<a href="golden_studio/index.html">Golden studio</a>
-	<a href="fitness_time/index.html">Fitness time</a>
-	<a href="ink_tattoo/index.html">Ink tattoo</a>
+
+	<!-- PRELOADER -->
+	<div id="loader-wrapper">
+		<div id="loader"></div>
+		<div class="loader-section section-left"></div>
+		<div class="loader-section section-right"></div>
+	</div>
+	<!-- PRELOADER END -->
+
+	<!-- CONTAINER -->
+	<div class="container">
+
+		<!-- MAIN MAN-ANIMATION -->
+		<section id="logo">
+			<div id="logocontainer">
+				<img class="topics" id="css3" src="img/css3.svg" alt="css3">
+				<img class="topics" id="html5" src="img/html5.svg" alt="html5">
+				<img class="topics" id="sass" src="img/sass.svg" alt="sass">
+				<img class="topics" id="js" src="img/js.svg" alt="js">
+				<div class="bgw"></div>
+				<div id="eyes">
+					<i id="eyes__one" class="fa fa-circle" aria-hidden="true"></i>
+					<i id="eyes__two" class="fa fa-circle" aria-hidden="true"></i>
+				</div>
+				<img id="sanky" src="img/sanky.svg" alt="logo-man">
+			</div>
+		</section>
+		<!-- MAIN MAN-ANIMATION END -->
+
+		<div id="bl-main" class="bl-main">
+
+			<!-- ABOUT -->
+			<section class="type" id="about-animation">
+				<!-- outside -->
+					<div class="bl-box bl-box-a">
+						<h2 class="bl-icon bl-icon-about">About</h2>
+					</div>
+				<!-- inside -->
+				<div class="bl-content">
+					<span id="type-about" class="bl-content__title"></span>
+					<div class="bl-content__border"></div>
+					<h3 id="type-about-descr" class="bl-content__descr"></h3>
+					<p class="bl-content__text">Hi, my name is <strong>Evgeniy Vashchuk</strong> and I’m a junior front-end developer from Kharkiv, Ukraine. At this stage of my life, my main objective and goal is to reach the top in Web development. To do this, I learn new technologies all the time and thereby improve my skills and knowledge. And of course, a little about personal qualities:</p>
+					<div class="bl-content__qualities">
+						<ul class="bl-content__items bl-content__items-l">
+							<li>Perseverance</li>
+							<li>Attention to details</li>
+							<li>Responsibility</li>
+						</ul>
+						<ul class="bl-content__items bl-content__items-r">
+							<li>Analytical mind</li>
+							<li>Skill to work in team</li>
+							<li>Sociability</li>
+						</ul>
+					</div>
+					<a href="resume.pdf" target="_blank" id="resume" class="btn btn-sm animated-button thar-two thar-two--resume tooltip">Resume</a>
+					<!-- prompt -->
+					<div id="promt" class="promt">
+						<p class="promt__text">Click here to <i class="fa fa-eye" aria-hidden="true"><!-- empty --></i> or <i class="fa fa-download" aria-hidden="true"><!-- empty --></i> my resume</p>
+					</div>
+				</div>
+				<p class="vertical__text">a<br/>b<br/>o<br/>u<br/>t<br/></p>
+				<span class="bl-icon bl-icon-close close close-a"><!-- empty --></span>
+			</section>
+			<!-- ABOUT END -->
+
+			<!-- WORKS -->
+			<section id="bl-work-section" class="type">
+				<!-- outside -->
+				<div class="bl-box bl-box-w">
+					<h2 class="bl-icon bl-icon-works">Works</h2>
+				</div>
+				<!-- inside -->
+				<div class="bl-content">
+					<span id="type-works" class="bl-content__title"></span>
+					<div class="bl-content__border"></div>
+					<h3 id="type-works-descr" class="bl-content__descr"></h3>
+					<div class="project bl-work-items">
+						<img src="img/logo_1.jpg" alt="golden-logo" class="project__logo">
+						<div class="project__technologies">
+							<p class="project__title">Technologies:</p>
+							<ul class="project__technologies-list">
+								<li>HTML5</li>
+								<li>CSS3 (SASS)</li>
+								<li>jQuery</li>
+								<li>Compass</li>
+								<li>Full Responsive</li>
+							</ul>
+						</div>
+						<a data-panel="panel-1" href="#" target="_blank" class="btn btn-sm animated-button thar-two thar-two--works">View project</a>
+					</div>
+					<div class="project bl-work-items">
+						<img src="img/logo_2.jpg" alt="fitness-time" class="project__logo">
+						<div class="project__technologies">
+							<p class="project__title">Technologies:</p>
+							<ul class="project__technologies-list">
+								<li>HTML5</li>
+								<li>CSS3 (SASS)</li>
+								<li>jQuery</li>
+								<li>Gulp</li>
+								<li>Full Responsive</li>
+							</ul>
+						</div>
+						<a data-panel="panel-2" href="#" target="_blank" class="btn btn-sm animated-button thar-two thar-two--works">View project</a>
+					</div>
+					<div class="project bl-work-items">
+						<img src="img/logo_3.jpg" alt="inktattoo" class="project__logo">
+						<div class="project__technologies">
+							<p class="project__title">Technologies:</p>
+							<ul class="project__technologies-list">
+								<li>HTML5</li>
+								<li>CSS3 (SASS)</li>
+								<li>jQuery</li>
+								<li>Full Responsive</li>
+								<li>Parallax</li>
+							</ul>
+						</div>
+						<a data-panel="panel-3" href="#" target="_blank" class="btn btn-sm animated-button thar-two thar-two--works">View project</a>
+					</div>
+				</div>
+				<p class="vertical__text vertical__text--works">w<br/>o<br/>r<br/>k<br/>s<br/></p>
+				<span class="bl-icon bl-icon-close close close-w"><!-- empty --></span>
+			</section>
+			<!-- WORKS END -->
+
+			<!-- SKILLS -->
+			<section class="type" id="skills-animation">
+				<!-- outside -->
+				<div class="bl-box bl-box-s">
+					<h2 class="bl-icon bl-icon-skills">Skills</h2>
+				</div>
+				<!-- inside -->
+				<div class="bl-content">
+					<span id="type-skills" class="bl-content__title"></span>
+					<div class="bl-content__border"></div>
+					<h3 id="type-skills-descr" class="bl-content__descr"></h3>
+					<p class="bl-content__text bl-content__text--regular bl-content__text--center">Favourite tools and technologies:</p>
+					<div class="tools-logo">
+						<div class="tools-logo__main-container">
+							<img src="img/skills/html5.svg" alt="html" class="tools-logo__html5 skills-logo-a">
+							<img src="img/skills/css3.svg" alt="css3" class="tools-logo__css3 skills-logo-a">
+							<img src="img/skills/sass.svg" alt="sass" class="tools-logo__sass skills-logo-a">
+							<img src="img/skills/js.svg" alt="js" class="tools-logo__js skills-logo-a">
+							<img src="img/skills/gulp.svg" alt="gulp" class="tools-logo__gulp skills-logo-a">
+							<img src="img/skills/github.svg" alt="github" class="tools-logo__github skills-logo-a">
+							<img src="img/skills/bem.svg" alt="bem" class="tools-logo__bem skills-logo-a">
+							<img src="img/skills/sublime-text.svg" alt="sublime-text" class="tools-logo__sublime-text skills-logo-a">
+						</div>
+					</div>
+					<ul class="bl-content__items-skills">
+						<li>HTML5, CSS3;</li>
+						<li>Basics of JavaScript and its syntax;</li>
+						<li>Work with different jQuery plugins;</li>
+						<li>CSS Preprocessor: SASS;</li>
+						<li>Version control: Git / GitHub;</li>
+						<li>The streaming build system: Gulp;</li>
+						<li>Methodology BEM (naming);</li>
+					</ul>
+					<ul class="bl-content__items-skills">
+						<li>Responsive, adaptive development;</li>
+						<li>PerfectPixel layout;</li>
+						<li>Cross-browser compatibility;</li>
+						<li>Validity / purity code;</li>
+						<li>Chrome DevTools, Mozilla Firebug;</li>
+						<li>Photoshop (for web development);</li>
+						<li>Software: Sublime Text 3.</li>
+					</ul>
+				</div>
+				<p class="vertical__text vertical__text--tal">s<br/>k<br/>i<br/>l<br/>l<br/>s</p>
+				<span class="bl-icon bl-icon-close close close-s"><!-- empty --></span>
+			</section>
+			<!-- SKILLS END -->
+
+			<!-- CONTACT -->
+			<section class="type" id="contact-animation">
+				<!-- outside -->
+				<div class="bl-box bl-box-c">
+					<h2 class="bl-icon bl-icon-contact">Contact</h2>
+				</div>
+				<!-- inside -->
+				<div class="bl-content for-promt-mail">
+					<span id="type-contact" class="bl-content__title"></span>
+					<div class="bl-content__border"></div>
+					<h3 id="type-contact-descr" class="bl-content__descr"></h3>
+					<p class="bl-content__text bl-content__text--center">Please feel free to reach out to me if you have any questions or comments about my work or about this site. Also, you could always just send me a friendly hello.</p>
+					<div class="connect">
+						<p class="connect__location">Kharkiv, Ukraine</p></br>
+						<a href="tel:+380505705910" class="connect__phone">+38 (050) 57-05-910</a></br>
+						<a href="mailto:inkogn1to.inform@gmail.com" target="_blank" class="connect__email">inkogn1to.inform@gmail.com</a></br>
+					</div>
+					<h5 class="social-title">Follow me</h5>
+					<div class="social">
+						<a class="social-links" href="https://vk.com/ink0gn1to" target="_blank">
+							<div class="bt_wrap vk" title="Vkontakte">
+								<div class="box">
+									<i class="icon fa fa-vk"><!-- empty --></i>
+									<i class="icon2 fa fa-vk"><!-- empty --></i>
+								</div>
+							</div>
+						</a>
+						<a class="social-links" href="skype:inkogn1to93?chat" target="_blank">
+							<div class="bt_wrap skype" title="Skype">
+								<div class="box">
+									<i class="icon fa fa-skype"><!-- empty --></i>
+									<i class="icon2 fa fa-skype"><!-- empty --></i>
+								</div>
+							</div>
+						</a>
+						<a class="social-links" href="https://github.com/inkogn1to" target="_blank">
+							<div class="bt_wrap github" title="GitHub">
+								<div class="box">
+									<i class="icon fa fa-github"><!-- empty --></i>
+									<i class="icon2 fa fa-github"><!-- empty --></i>
+								</div>
+							</div>
+						</a>
+						<a class="social-links" href="https://www.linkedin.com/in/inkogn1to" target="_blank">
+							<div class="bt_wrap linkedin" title="Linkedin">
+								<div class="box">
+									<i class="icon fa fa-linkedin-square"><!-- empty --></i>
+									<i class="icon2 fa fa-linkedin-square"><!-- empty --></i>
+								</div>
+							</div>
+						</a>
+					</div>
+					<a id="mail" href="mailto:inkogn1to.inform@gmail.com" target="_blank" class="btn btn-sm animated-button thar-two thar-two--email">Send email</a>
+					<!-- prompt -->
+					<div id="promt-mail" class="promt">
+						<p class="promt__text">Click here to <i class="fa fa-envelope" aria-hidden="true"><!-- empty --></i> a message</p>
+					</div>
+				</div>
+				<p class="vertical__text">c<br/>o<br/>n<br/>t<br/>a<br/>c<br/>t</p>
+				<span class="bl-icon bl-icon-close close close-c"><!-- empty --></span>
+			</section>
+			<!-- CONTACT END-->
+
+			<!-- PANEL ITEMS FOR THE WORKS -->
+			<div class="bl-panel-items" id="bl-panel-work-items">
+				<div data-panel="panel-1">
+					<div class="panel">
+						<h3 class="panel__title">Golden Studio</h3>
+						<img class="panel__img" src="img/responsive_golden_studio.png" alt="golden_studio" />
+						<div class="panel__buttons">
+							<a href="examples/golden_studio/index.html" target="_blank" class="btn btn-sm animated-button thar-two thar-two--site">Open site</a>
+							<a href="https://github.com/inkogn1to/golden_studio_dev" target="_blank" class="btn btn-sm animated-button thar-two thar-two--site">View code</a>
+						</div>
+					</div>
+				</div>
+				<div data-panel="panel-2">
+					<div class="panel">
+						<h3 class="panel__title">Fitness Time</h3>
+						<img class="panel__img" src="img/responsive_fitness_time.png" alt="fitness_time" />
+						<div class="panel__buttons">
+							<a href="examples/fitness_time/index.html" target="_blank" class="btn btn-sm animated-button thar-two thar-two--site">Open site</a>
+							<a href="https://github.com/inkogn1to/fitness_time_dev" target="_blank" class="btn btn-sm animated-button thar-two thar-two--site">View code</a>
+						</div>
+					</div>
+				</div>
+				<div data-panel="panel-3">
+					<div class="panel">
+						<h3 class="panel__title">Inktattoo</h3>
+						<img class="panel__img" src="img/responsive_inktattoo.png" alt="inktattoo" />
+						<div class="panel__buttons">
+							<a href="examples/ink_tattoo/index.html" target="_blank" class="btn btn-sm animated-button thar-two thar-two--site">Open site</a>
+							<a href="https://github.com/inkogn1to/inktattoo_dev" target="_blank" class="btn btn-sm animated-button thar-two thar-two--site">View code</a>
+						</div>
+					</div>
+				</div>
+				<nav>
+					<span class="bl-next-work button">Next Project<i class="fa fa-caret-right" aria-hidden="true"><!-- empty --></i></span>
+					<span class="bl-icon bl-icon-close"><!-- empty --></span>
+				</nav>
+			</div>
+			<!-- PANEL ITEMS FOR THE WORKS END -->
+		</div>
+	</div>
+	<!-- CONTAINER END -->
+
+	<script src="js/scripts.min.js"></script>
+
 </body>
 </html>
