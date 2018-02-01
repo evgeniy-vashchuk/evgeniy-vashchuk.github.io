@@ -1,0 +1,93 @@
+body {
+	margin: 0;
+	height: 100vh;
+	overflow: hidden;
+	font-family: 'Barrio', cursive;
+}
+
+.square-block {
+	background-color: red;
+	position: absolute;
+	z-index: 100;
+}
+
+.start-block {
+	position: absolute;
+	z-index: 105;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #0250ce;
+	color: #fff;
+	font-size: 140px;
+	line-height: 1;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	-ms-align-items: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.start-block p {
+	margin: 0;
+	text-align: center;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.start-block p:hover {
+	color: #69e241;
+}
+
+.start-block span {
+	font-size: 180px;
+	display: block;
+}
+
+.indication-block {
+	position: absolute;
+	z-index: 103;
+	right: 0;
+	bottom: 0;
+	background-color: #616975;
+	padding: 5px 15px;
+	border-top: 3px solid #0250ce;
+	border-left: 3px solid #0250ce;
+}
+
+.indication-block span {
+	color: #fff;
+}
+
+.level-block {
+	border-bottom: 2px solid #fff;
+	margin-bottom: 0px;
+}
+
+.level-block #level, .click-block #click {
+	font-size: 30px;
+}
+
+#final {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 10;
+	font-size: 100px;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: 0.5s;
+	cursor: default;
+}
