@@ -13,7 +13,15 @@ document.addEventListener('DOMContentLoaded', function() {
 		topBlocksQuantity = topBlocks.length - 1,
 		randomSpeed,
 		randomNumberLeft,
-		numberOfCaught = 0;
+		numberOfCaught = 0,
+		myStorage = localStorage;
+
+	// set initial value of best result
+	var bestResult = myStorage.getItem('bestResult');
+
+	if (bestResult === null) {
+		myStorage.setItem('bestResult', numberOfCaught);
+	}
 
 	// GET RANDOM
 	function getTrueRandom(min, max, trueRandom) {
@@ -75,6 +83,18 @@ document.addEventListener('DOMContentLoaded', function() {
 				document.getElementById('points').innerHTML = 'Points: ' + numberOfCaught;
 				topBlockItem.style.top = '-50px';
 
+				topBlockItem.style.left = randomNumberLeft + 'px';
+				// right space compensation
+				if (parseInt(topBlockItem.style.left.slice(0, -2)) >= width - topBlockItem.offsetWidth) {
+					topBlockItem.style.left = (width - topBlockItem.offsetWidth) + 'px';
+				}
+
+				// best result
+				if (bestResult < numberOfCaught) {
+					myStorage.setItem('bestResult', numberOfCaught);
+					document.getElementById('best-result').innerHTML = 'Best result: ' + myStorage.getItem('bestResult');
+				}
+
 			}
 
 			// FILLING THE BASKET
@@ -125,5 +145,16 @@ document.addEventListener('DOMContentLoaded', function() {
 		onhover();
 		move();
 	});
+
+	// best result save
+	document.getElementById('best-result').innerHTML = 'Best result: ' + myStorage.getItem('bestResult');
+
+	// best result clear
+	document.getElementById('best-result-clear').onclick = function() {
+		myStorage.clear();
+		numberOfCaught = 0;
+		document.getElementById('best-result').innerHTML = 'Best result: ' + numberOfCaught;
+		document.getElementById('points').innerHTML = 'Points: ' + numberOfCaught;
+	};
 
 });
