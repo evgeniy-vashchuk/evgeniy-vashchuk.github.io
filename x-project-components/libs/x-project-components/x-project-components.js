@@ -266,7 +266,7 @@
 			var $this = $(this);
 			var vimeoVideoID = $this.children('iframe').attr('src');
 			vimeoVideoID = vimeoVideoID.split('/').pop();
-			$.getJSON('http://www.vimeo.com/api/v2/video/' + vimeoVideoID + '.json?callback=?', { format: "json" }, function (data) {
+			$.getJSON('https://www.vimeo.com/api/v2/video/' + vimeoVideoID + '.json?callback=?', { format: "json" }, function (data) {
 				var thumbnailImg = data[0].thumbnail_large;
 				$this.css("background-image", "url(" + thumbnailImg + ")");
 			});
