@@ -1,0 +1,26 @@
+.btn {
+	&-md {
+		font-size: 1rem;
+		min-width: 150px;
+		text-transform: uppercase;
+		font-weight: 600;
+	}
+
+	&-icon {
+		i {
+			margin-left: 5px;
+			transition: 0.3s;
+		}
+
+		&.-open {
+			i {
+				transform: rotate(180deg);
+			}
+		}
+	}
+
+	&-primary {
+		color: $light-apricot;
+	}
+
+}

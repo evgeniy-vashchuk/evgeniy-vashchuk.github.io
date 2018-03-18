@@ -1,0 +1,69 @@
+.component-block-title {
+	display: inline-block;
+	padding-right: 20px;
+	.anchor-link {
+		color: $dark-purple;
+
+		&:hover {
+			i {
+				opacity: 1;
+			}
+		}
+
+		i {
+			padding-left: 3px;
+			color: $apricot;
+			opacity: 0;
+			transition: 0.3s;
+		}
+	}
+}
+
+.component-block-sub-title {
+	margin-bottom: 1rem;
+	padding-bottom: 5px;
+	padding-left: 8px;
+	border-bottom: 2px solid rgba($apricot, 0.7);
+	border-left: 5px solid $apricot;
+}
+
+.attention-text-block {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+
+	&-icon {
+		font-size: 2.7rem;
+		margin-right: 15px;
+		color: $light-apricot;
+	}
+}
+
+.attention-text {
+	line-height: 1.5;
+	color: $light-apricot;
+	letter-spacing: 0.5px;
+
+	strong {
+		padding: 0 5px;
+	}
+
+	a {
+		color: $light-apricot;
+
+		&:hover {
+			color: lighten($light-apricot, 15%);
+		}
+	}
+}
+
+strong {
+	&.red-text {
+		color: $red;
+		font-weight: 500;
+		white-space: nowrap;
+	}
+}

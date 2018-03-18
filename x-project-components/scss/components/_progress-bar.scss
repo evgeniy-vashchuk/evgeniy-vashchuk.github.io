@@ -1,0 +1,14 @@
+.progress-container {
+	height: 5px;
+	background: transparent;
+	position: absolute;
+	top: 100%;
+	left: -10px;
+	right: -10px;
+}
+
+.progress-bar {
+	height: 5px;
+	background: $dark-purple;
+	width: 0%;
+}

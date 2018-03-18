@@ -1,0 +1,22 @@
+.side-navigation {
+	position: sticky;
+	top: 85px;
+
+	.list-group {
+		border-left: 4px solid $primary;
+	}
+
+	.list-group-item {
+		line-height: 1.3;
+
+		&.active.no-results {
+			background-color: transparent;
+			color: $primary;
+		}
+
+		&:not(.active) .highlight {
+			background-color: $primary;
+			color: $light-apricot;
+		}
+	}
+}

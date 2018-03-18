@@ -1,0 +1,48 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 100;
+	background-color: $primary;
+	border: 10px solid $dark-purple;
+	padding: 5px 0;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+	transition: 0.3s;
+
+	&.-small-header {
+		border-width: 0;
+
+		.main-logo-wrap {
+			max-width: 150px;
+		}
+
+		.github-corner-wrap {
+			top: 0;
+			right: 0;
+			max-width: 61px;
+		}
+	}
+
+	&-content {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&-button {
+		padding-left: 15px;
+	}
+}
+
+.main-logo-wrap {
+	flex-grow: 1;
+	max-width: 300px;
+	padding-right: 15px;
+	transition: 0.5s;
+}

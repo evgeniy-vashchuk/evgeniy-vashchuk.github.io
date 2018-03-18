@@ -1,0 +1,70 @@
+.badge {
+	border-width: 2px;
+	border-style: solid;
+	min-width: 65px;
+	min-height: 25px;
+	vertical-align: top;
+
+	span {
+		position: relative;
+		bottom: 1px;
+		display: inline-block;
+		padding-top: 3px;
+	}
+
+	i {
+		font-size: 1rem;
+		margin-left: 3px;
+	}
+
+	&.-mg-left {
+		margin-left: 3px;
+	}
+
+	&-html {
+		border-color: #DB4B1B;
+
+		i {
+			color: #DB4B1B;
+		}
+	}
+
+	&-sass {
+		border-color: #C8639B;
+
+		i {
+			color: #C8639B;
+		}
+	}
+
+	&-js {
+		border-color: #F9B900;
+
+		i {
+			color: #F9B900;
+		}
+	}
+
+	&-light {
+		border-color: $light-apricot;
+		color: $light-apricot;
+		transition: 0.3s;
+		background-color: transparent;
+
+		&[href]:hover, &[href]:focus {
+			color: $dark-purple;
+			background-color: $light-apricot;
+			border-color: $light-apricot;
+		}
+	}
+}
+
+.badge-block {
+	.badge {
+		margin-right: 5px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

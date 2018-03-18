@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>X-project Framework</title>
+	<meta name="description" content="All additional components are here">
+
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes, maximum-scale=1">
+
+	<!-- connection FAVICONS -->
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+
+	<!-- connection GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+
+	<!-- connection CSS -->
+	<link rel="stylesheet" href="css/all.css">
+
+</head>
+
+<body data-spy="scroll" data-target="#side-navigation" data-offset="150">
+
+	<div class="wrap-for-sticky js-wrap-for-sticky">
+
+		<!-- BACK TO TOP BUTTON -->
+		<div class="scroll-top-button js-scroll-top">
+			<i class="fas fa-angle-double-up"></i>
+			back to top
+		</div>
+		<!-- BACK TO TOP BUTTON END -->
+
+		<!-- HEADER -->
+		<header class="header js-header">
+			<div class="container">
+				<div class="header-content">
+					<!-- main logo -->
+					<div class="main-logo-wrap">
+							<img src="img/logo.svg" alt="logo">
+					</div>
+
+					<!-- download button -->
+					<div class="header-button">
+						<a href="javascript:void(0);" class="btn btn-md btn-light btn-icon">
+							Download
+							<i class="fas fa-download"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- GITHUB CORNER -->
+			<div class="github-corner-wrap">
+				<a href="javascript:void(0);" target="blank" class="github-corner" aria-label="View source on Github">
+						<svg viewBox="0 0 250 250" aria-hidden="true">
+							<path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+							<path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+							<path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+						</svg>
+				</a>
+			</div>
+			<!-- GITHUB CORNER END -->
+
+			<!-- PROGRESS BAR -->
+			<div class="progress-container">
+				<div class="progress-bar" id="myBar"></div>
+			</div>
+			<!-- PROGRESS BAR END -->
+		</header>
+		<!-- HEADER END -->
+
+		<!-- MAIN -->
+		<main class="main">
+
+			<div class="container">
+				<div class="row">
+					<!-- MAIN CONTENT -->
+					<div class="col-9">
+						<!-- Small header after scroll -->
+						<section class="component-block" id="small-header">
+							<div class="component-block-content">
+								<!-- title -->
+								<div class="component-block-title-block">
+									<h2 class="component-block-title">
+										<a class="anchor-link" href="#small-header">
+											Small header after scroll
+
+											<i class="fas fa-hashtag"></i>
+										</a>
+									</h2>
+
+									<div class="badge-block">
+										<span class="badge badge-js">
+											<span>JS</span>
+											<i class="fab fa-js"></i>
+										</span>
+									</div>
+								</div>
+
+								<!-- description -->
+								<div class="component-block-description-block">
+									<p>Adding <strong class="red-text">class="-small-header"</strong> after the start of scrolling and removing it, when you are at the top of the page. With this class you can styling the small header.</p>
+								</div>
+
+								<!-- usage -->
+								<div class="component-block-usage">
+									<!-- button -->
+									<div class="component-block-usage-btn">
+										<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#small-header-collapse" role="button" aria-expanded="false" aria-controls="small-header-collapse">
+											example
+											<i class="fas fa-angle-down"></i>
+										</a>
+									</div>
+
+									<!-- code example -->
+									<div class="collapse" id="small-header-collapse">
+
+										<!-- NAVS FOR TABS -->
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="small-header-html-tab" data-toggle="tab" href="#small-header-html" role="tab" aria-controls="small-header-html" aria-selected="true">HTML</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="small-header-sass-tab" data-toggle="tab" href="#small-header-sass" role="tab" aria-controls="small-header-sass" aria-selected="false">SASS</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="small-header-js-tab" data-toggle="tab" href="#small-header-js" role="tab" aria-controls="small-header-js" aria-selected="false">JS</a>
+											</li>
+										</ul>
+										<!-- NAVS FOR TABS END -->
+
+										<!-- TABS CONTENT -->
+										<div class="tab-content">
+											<div class="tab-pane show active" id="small-header-html" role="tabpanel" aria-labelledby="small-header-html-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<header class="header js-header">
+																<!-- header content -->
+															</header>
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="small-header-sass" role="tabpanel" aria-labelledby="small-header-sass-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-scss">
+															.header {
+																&.-small-header {
+																	// small header styles
+																}
+															}
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="small-header-js" role="tabpanel" aria-labelledby="small-header-js-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-js">
+															// SMALL HEADER AFTER SCROLL
+															$(window).on('scroll', function() {
+																// distance after which header becoming small
+																var distanceY = 100;
+
+																if ($(this).scrollTop() > distanceY) {
+																	$('.js-header').addClass('-small-header');
+																} else {
+																	$('.js-header').removeClass('-small-header');
+																}
+															})
+														</code>
+													</pre>
+												</div>
+											</div>
+										</div>
+										<!-- TABS CONTENT END -->
+
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- Sticky footer -->
+						<section class="component-block" id="sticky-footer">
+							<div class="component-block-content">
+								<!-- title -->
+								<div class="component-block-title-block">
+									<h2 class="component-block-title">
+										<a class="anchor-link" href="#sticky-footer">
+											Sticky footer
+
+											<i class="fas fa-hashtag"></i>
+										</a>
+									</h2>
+
+									<div class="badge-block">
+										<span class="badge badge-html">
+											<span>HTML</span>
+											<i class="fab fa-html5"></i>
+										</span>
+										<span class="badge badge-sass">
+											<span>SASS</span>
+											<i class="fab fa-sass"></i>
+										</span>
+										<span class="badge badge-js">
+											<span>JS</span>
+											<i class="fab fa-js"></i>
+										</span>
+									</div>
+								</div>
+
+								<!-- description -->
+								<div class="component-block-description-block">
+									<p>Cross-browser sticky footer. Footer is "sticks" to the bottom of the browser window. Height of the footer can be not fixed and change at different screen resolutions.</p>
+								</div>
+
+								<!-- usage -->
+								<div class="component-block-usage">
+									<!-- button -->
+									<div class="component-block-usage-btn">
+										<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#sticky-footer-collapse" role="button" aria-expanded="false" aria-controls="sticky-footer-collapse">
+											example
+											<i class="fas fa-angle-down"></i>
+										</a>
+									</div>
+
+									<!-- code example -->
+									<div class="collapse" id="sticky-footer-collapse">
+
+										<!-- NAVS FOR TABS -->
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="sticky-footer-html-tab" data-toggle="tab" href="#sticky-footer-html" role="tab" aria-controls="sticky-footer-html" aria-selected="true">HTML</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="sticky-footer-sass-tab" data-toggle="tab" href="#sticky-footer-sass" role="tab" aria-controls="sticky-footer-sass" aria-selected="false">SASS</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="sticky-footer-js-tab" data-toggle="tab" href="#sticky-footer-js" role="tab" aria-controls="sticky-footer-js" aria-selected="false">JS</a>
+											</li>
+										</ul>
+										<!-- NAVS FOR TABS END -->
+
+										<!-- TABS CONTENT -->
+										<div class="tab-content">
+											<div class="tab-pane show active" id="sticky-footer-html" role="tabpanel" aria-labelledby="sticky-footer-html-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<div class="wrap-for-sticky js-wrap-for-sticky">
+																<!-- all page content -->
+															</div>
+														</code>
+													</pre>
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<!-- FOOTER -->
+															<footer class="footer -sticky js-sticky-footer">
+																<!-- footer content -->
+															</footer>
+															<!-- FOOTER END -->
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="sticky-footer-sass" role="tabpanel" aria-labelledby="sticky-footer-sass-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-scss">
+															html, body {
+																height: 100%;
+															}
+
+															.wrap-for-sticky {
+																position: relative;
+																min-height: 100%;
+															}
+
+															.footer {
+																&.-sticky {
+																	position: absolute;
+																	bottom: 0;
+																	left: 0;
+																	right: 0;
+																	width: 100%;
+																}
+															}
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="sticky-footer-js" role="tabpanel" aria-labelledby="sticky-footer-js-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-js">
+															// STICKY FOOTER
+															function stickyFooter() {
+																// 1) height of footer
+																var footerHeight = $('.js-sticky-footer').outerHeight();
+
+																// 2) compensation
+																$('.js-wrap-for-sticky').css({
+																	'padding-bottom': footerHeight
+																});
+															}
+
+															stickyFooter();
+
+															$(window).resize(function() {
+																stickyFooter();
+															});
+														</code>
+													</pre>
+												</div>
+											</div>
+										</div>
+										<!-- TABS CONTENT END -->
+
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- Scroll top button -->
+						<section class="component-block" id="scroll-top-button">
+							<div class="component-block-content">
+								<!-- title -->
+								<div class="component-block-title-block">
+									<h2 class="component-block-title">
+										<a class="anchor-link" href="#scroll-top-button">
+											Scroll top button
+
+											<i class="fas fa-hashtag"></i>
+										</a>
+									</h2>
+
+									<div class="badge-block">
+										<span class="badge badge-html">
+											<span>HTML</span>
+											<i class="fab fa-html5"></i>
+										</span>
+										<span class="badge badge-sass">
+											<span>SASS</span>
+											<i class="fab fa-sass"></i>
+										</span>
+										<span class="badge badge-js">
+											<span>JS</span>
+											<i class="fab fa-js"></i>
+										</span>
+									</div>
+								</div>
+
+								<!-- description -->
+								<div class="component-block-description-block">
+									<p>
+										Simple button for scrolling to top of the page. Button is hide, when you are in the top of page, and visible when you start scrolling.
+										</br>
+										If you have an element, when you click on which the page should be scrolled to the top, just add <strong class="red-text">class="js-scroll-top"</strong>.
+									</p>
+								</div>
+
+								<!-- usage -->
+								<div class="component-block-usage">
+									<!-- button -->
+									<div class="component-block-usage-btn">
+										<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#scroll-top-button-collapse" role="button" aria-expanded="false" aria-controls="scroll-top-button-collapse">
+											example
+											<i class="fas fa-angle-down"></i>
+										</a>
+									</div>
+
+									<!-- code example -->
+									<div class="collapse" id="scroll-top-button-collapse">
+
+										<!-- NAVS FOR TABS -->
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="scroll-top-button-html-tab" data-toggle="tab" href="#scroll-top-button-html" role="tab" aria-controls="scroll-top-button-html" aria-selected="true">HTML</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="scroll-top-button-sass-tab" data-toggle="tab" href="#scroll-top-button-sass" role="tab" aria-controls="scroll-top-button-sass" aria-selected="false">SASS</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="scroll-top-button-js-tab" data-toggle="tab" href="#scroll-top-button-js" role="tab" aria-controls="scroll-top-button-js" aria-selected="false">JS</a>
+											</li>
+										</ul>
+										<!-- NAVS FOR TABS END -->
+
+										<!-- TABS CONTENT -->
+										<div class="tab-content">
+											<div class="tab-pane show active" id="scroll-top-button-html" role="tabpanel" aria-labelledby="scroll-top-button-html-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<!-- SCROLL TOP BUTTON -->
+															<button type="button" class="scroll-top-btn js-scroll-top-btn js-scroll-top">
+																<i class="fa fa-angle-up scroll-top-btn-icon" aria-hidden="true"></i>
+															</button>
+															<!-- SCROLL TOP BUTTON END -->
+														</code>
+													</pre>
+
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<!-- SCROLL TOP ELEMENT EXAMPLE -->
+															<a href="javascript:void(0);" class="js-scroll-top">Scroll top</a>
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="scroll-top-button-sass" role="tabpanel" aria-labelledby="scroll-top-button-sass-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-scss">
+															$scroll-top-btn-size: 50px;
+															$scroll-top-btn-bg: #26263F;
+
+															.scroll-top-btn {
+																position: fixed;
+																bottom: 0;
+																right: 50px;
+																z-index: 100;
+																width: $scroll-top-btn-size;
+																height: $scroll-top-btn-size;
+																background-color: #26263F;
+																transition: 0.3s;
+																transform: translate(0, 100%);
+
+																&-icon {
+																	font-size: 35px;
+																	color: #fff;
+																	position: absolute;
+																	top: 50%;
+																	left: 50%;
+																	transform: translate(-50%, -50%);
+																}
+
+																&:hover {
+																	background-color: lighten($scroll-top-btn-bg, 5%);
+																}
+
+																&.-show {
+																	transform: translate(0, 0);
+																}
+															}
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="scroll-top-button-js" role="tabpanel" aria-labelledby="scroll-top-button-js-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-js">
+															// SCROLL TOP BUTTON
+															// 1) checking the distance from the top of the page
+															$(window).on('scroll', function() {
+																if ($(this).scrollTop() > 100) {
+																	$('.js-scroll-top-btn').addClass('-show');
+																} else {
+																	$('.js-scroll-top-btn').removeClass('-show');
+																}
+															});
+
+															// 2) сlick event to scroll to top
+															$('.js-scroll-top').on('click', function() {
+																$('body,html').animate({
+																	scrollTop: 0
+																}, 1000);
+
+																return false;
+															});
+														</code>
+													</pre>
+												</div>
+											</div>
+										</div>
+										<!-- TABS CONTENT END -->
+
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- Scroll to element -->
+						<section class="component-block" id="scroll-to-element">
+							<div class="component-block-content">
+								<!-- title -->
+								<div class="component-block-title-block">
+									<h2 class="component-block-title">
+										<a class="anchor-link" href="#scroll-to-element">
+											Scroll to element
+
+											<i class="fas fa-hashtag"></i>
+										</a>
+									</h2>
+
+									<div class="badge-block">
+										<span class="badge badge-js">
+											<span>JS</span>
+											<i class="fab fa-js"></i>
+										</span>
+									</div>
+								</div>
+
+								<!-- description -->
+								<div class="component-block-description-block">
+									<p>Simple scrolling to element. Give to target element <strong class="red-text">id="target"</strong>, and to link <strong class="red-text">href="go-to:target"</strong>.</p>
+								</div>
+
+								<!-- usage -->
+								<div class="component-block-usage">
+									<!-- button -->
+									<div class="component-block-usage-btn">
+										<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#scroll-to-element-collapse" role="button" aria-expanded="false" aria-controls="scroll-to-element-collapse">
+											example
+											<i class="fas fa-angle-down"></i>
+										</a>
+									</div>
+									<!-- code example -->
+									<div class="collapse" id="scroll-to-element-collapse">
+
+										<!-- NAVS FOR TABS -->
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="scroll-to-element-html-tab" data-toggle="tab" href="#scroll-to-element-html" role="tab" aria-controls="scroll-to-element-html" aria-selected="true">HTML</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="scroll-to-element-js-tab" data-toggle="tab" href="#scroll-to-element-js" role="tab" aria-controls="scroll-to-element-js" aria-selected="false">JS</a>
+											</li>
+										</ul>
+										<!-- NAVS FOR TABS END -->
+
+										<!-- TABS CONTENT -->
+										<div class="tab-content">
+											<div class="tab-pane show active" id="scroll-to-element-html" role="tabpanel" aria-labelledby="scroll-to-element-html-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<!-- TARGET -->
+															<div id="target"></div>
+
+															<!-- LINK -->
+															<a href="go-to:target">Scroll to target</a>
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="scroll-to-element-js" role="tabpanel" aria-labelledby="scroll-to-element-js-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-js">
+															// SCROLL TO ELEMENT
+															$('a[href^="go-to:"]').on('click', function() {
+																// height of header (for offset)
+																var headerOffset = $('.js-header').outerHeight(),
+																		idOfElement = $(this).attr('href');
+
+																if (idOfElement.substring(0, 6) === 'go-to:') {
+
+																	idOfElement = '#' + idOfElement.slice(6);
+
+																	if (headerOffset === undefined) {
+																		headerOffset = 0;
+																	}
+
+																	var top = $(idOfElement).offset().top - headerOffset;
+																	$('body,html').animate({scrollTop: top}, 1000);
+																}
+															});
+														</code>
+													</pre>
+												</div>
+											</div>
+										</div>
+										<!-- TABS CONTENT END -->
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- Custom checkbox and radio button -->
+						<section class="component-block" id="custom-checkbox-radio">
+							<div class="component-block-content">
+								<!-- title -->
+								<div class="component-block-title-block">
+									<h2 class="component-block-title">
+										<a class="anchor-link" href="#custom-checkbox-radio">
+											Custom checkbox and radio button
+
+											<i class="fas fa-hashtag"></i>
+										</a>
+									</h2>
+
+									<div class="badge-block">
+										<span class="badge badge-html">
+											<span>HTML</span>
+											<i class="fab fa-html5"></i>
+										</span>
+										<span class="badge badge-sass">
+											<span>SASS</span>
+											<i class="fab fa-sass"></i>
+										</span>
+									</div>
+								</div>
+
+								<!-- description -->
+								<div class="component-block-description-block">
+									<p>Creation and customize custom сheckboxs and radio buttons only using HTML and CSS.</p>
+								</div>
+
+								<!-- example -->
+								<div class="component-block-example-block">
+									<div class="row">
+										<div class="col-6">
+											<h5 class="component-block-sub-title">Custom checkbox:</h5>
+
+											<!-- CUSTOM CHECKBOX -->
+											<div>
+												<label class="custom-checkbox">One
+													<input class="custom-checkbox-input" type="checkbox" checked="checked">
+													<span class="custom-checkbox-checkmark">
+														<i class="fa fa-check custom-checkbox-checkmark-icon" aria-hidden="true"></i>
+													</span>
+												</label>
+											</div>
+											<div>
+												<label class="custom-checkbox">Two
+													<input class="custom-checkbox-input" type="checkbox">
+													<span class="custom-checkbox-checkmark">
+														<i class="fa fa-check custom-checkbox-checkmark-icon" aria-hidden="true"></i>
+													</span>
+												</label>
+											</div>
+											<div>
+												<label class="custom-checkbox">Three
+													<input class="custom-checkbox-input" type="checkbox">
+													<span class="custom-checkbox-checkmark">
+														<i class="fa fa-check custom-checkbox-checkmark-icon" aria-hidden="true"></i>
+													</span>
+												</label>
+											</div>
+											<div>
+												<label class="custom-checkbox">Four
+													<input class="custom-checkbox-input" type="checkbox">
+													<span class="custom-checkbox-checkmark">
+														<i class="fa fa-check custom-checkbox-checkmark-icon" aria-hidden="true"></i>
+													</span>
+												</label>
+											</div>
+											<!-- CUSTOM CHECKBOX END -->
+										</div>
+
+										<div class="col-6">
+											<h5 class="component-block-sub-title">Custom radio button:</h5>
+
+											<!-- CUSTOM RADIO -->
+											<div>
+												<label class="custom-radio">One
+													<input class="custom-radio-input" type="radio" name="example" value="one" checked="checked">
+													<span class="custom-radio-checkmark"></span>
+												</label>
+											</div>
+											<div>
+												<label class="custom-radio">Two
+													<input class="custom-radio-input" type="radio" name="example" value="two">
+													<span class="custom-radio-checkmark"></span>
+												</label>
+											</div>
+											<div>
+												<label class="custom-radio">Three
+													<input class="custom-radio-input" type="radio" name="example" value="three">
+													<span class="custom-radio-checkmark"></span>
+												</label>
+											</div>
+											<div>
+												<label class="custom-radio">Four
+													<input class="custom-radio-input" type="radio" name="example" value="four">
+													<span class="custom-radio-checkmark"></span>
+												</label>
+											</div>
+											<!-- CUSTOM RADIO END -->
+										</div>
+									</div>
+								</div>
+
+								<!-- usage example -->
+								<div class="component-block-usage">
+									<!-- button -->
+									<div class="component-block-usage-btn">
+										<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#custom-checkbox-radio-collapse" role="button" aria-expanded="false" aria-controls="custom-checkbox-radio-collapse">
+											example
+											<i class="fas fa-angle-down"></i>
+										</a>
+									</div>
+									<!-- code -->
+									<div class="collapse" id="custom-checkbox-radio-collapse">
+
+										<!-- NAVS FOR TABS -->
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="custom-checkbox-radio-html-tab" data-toggle="tab" href="#custom-checkbox-radio-html" role="tab" aria-controls="custom-checkbox-radio-html" aria-selected="true">HTML</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="custom-checkbox-radio-sass-tab" data-toggle="tab" href="#custom-checkbox-radio-sass" role="tab" aria-controls="custom-checkbox-radio-sass" aria-selected="false">SASS</a>
+											</li>
+										</ul>
+										<!-- NAVS FOR TABS END -->
+
+										<!-- TABS CONTENT -->
+										<div class="tab-content">
+											<div class="tab-pane show active" id="custom-checkbox-radio-html" role="tabpanel" aria-labelledby="custom-checkbox-radio-html-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<!-- CUSTOM CHECKBOX -->
+															<div>
+																<label class="custom-checkbox">One
+																	<input class="custom-checkbox-input" type="checkbox" checked="checked">
+																	<span class="custom-checkbox-checkmark">
+																		<i class="fa fa-check custom-checkbox-checkmark-icon" aria-hidden="true"></i>
+																	</span>
+																</label>
+															</div>
+															<div>
+																<label class="custom-checkbox">Two
+																	<input class="custom-checkbox-input" type="checkbox">
+																	<span class="custom-checkbox-checkmark">
+																		<i class="fa fa-check custom-checkbox-checkmark-icon" aria-hidden="true"></i>
+																	</span>
+																</label>
+															</div>
+															<!-- CUSTOM CHECKBOX END -->
+														</code>
+													</pre>
+
+													<pre class="line-numbers">
+																<code class="language-html js-replase-brackets">
+																	<!-- CUSTOM RADIO -->
+																	<div>
+																		<label class="custom-radio">One
+																			<input class="custom-radio-input" type="radio" name="radio-group" value="one" checked="checked">
+																			<span class="custom-radio-checkmark"></span>
+																		</label>
+																	</div>
+																	<div>
+																		<label class="custom-radio">Two
+																			<input class="custom-radio-input" type="radio" name="radio-group" value="two">
+																			<span class="custom-radio-checkmark"></span>
+																		</label>
+																	</div>
+																	<!-- CUSTOM RADIO END-->
+																</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="custom-checkbox-radio-sass" role="tabpanel" aria-labelledby="custom-checkbox-radio-sass-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-scss">
+															// CUSTOM CHECKBOX
+
+															$checkbox-bg-color: #4C4E6C;
+															$checkbox-active-bg-color: #26263F;
+
+															.custom-checkbox {
+																position: relative;
+																display: inline-block;
+																padding-left: 35px;
+																margin-right: 10px;
+																margin-bottom: 1rem;
+																line-height: 25px;
+																cursor: pointer;
+																user-select: none;
+
+																&:hover {
+																	.custom-checkbox-checkmark {
+																		background-color: lighten($checkbox-bg-color, 10%);
+																	}
+
+																	.custom-checkbox-input {
+																		&:checked + .custom-checkbox-checkmark {
+																			background-color: lighten($checkbox-active-bg-color, 10%);
+																		}
+																	}
+																}
+
+																&-input {
+																	position: absolute;
+																	top: 0;
+																	left: 0;
+																	z-index: -1;
+																	visibility: hidden;
+
+																	&:checked + .custom-checkbox-checkmark {
+																		background-color: $checkbox-active-bg-color;
+
+																		.custom-checkbox-checkmark-icon {
+																			opacity: 1;
+																		}
+																	}
+																}
+
+																&-checkmark {
+																	position: absolute;
+																	top: 50%;
+																	left: 0;
+																	transform: translate(0, -50%);
+																	width: 25px;
+																	height: 25px;
+																	background-color: $checkbox-bg-color;
+																	transition: 0.3s;
+																}
+
+																&-checkmark-icon {
+																	transition: 0.3s;
+																	font-size: 15px;
+																	color: #fff;
+																	@include absolute-center;
+																	opacity: 0;
+																}
+															}
+														</code>
+													</pre>
+
+													<pre class="line-numbers">
+														<code class="language-scss">
+															// CUSTOM RADIO
+
+															$radio-bg-color: #4C4E6C;
+															$radio-active-bg-color: #26263F;
+
+															.custom-radio {
+																position: relative;
+																display: inline-block;
+																padding-left: 35px;
+																margin-right: 10px;
+																margin-bottom: 1rem;
+																line-height: 25px;
+																cursor: pointer;
+																user-select: none;
+
+																&:hover {
+																	.custom-radio-checkmark {
+																		background-color: lighten($radio-bg-color, 10%);
+																	}
+
+																	.custom-radio-input {
+																		&:checked + .custom-radio-checkmark {
+																			background-color: lighten($radio-active-bg-color, 10%);
+																		}
+																	}
+																}
+
+																&-input {
+																	position: absolute;
+																	top: -9999px;
+																	left: -9999px;
+																	visibility: hidden;
+
+																	&:checked + .custom-radio-checkmark {
+																		background-color: $radio-active-bg-color;
+
+																		&:before {
+																			transform: scale(1);
+																		}
+																	}
+																}
+
+																&-checkmark {
+																	position: absolute;
+																	top: 50%;
+																	left: 0;
+																	transform: translate(0, -50%);
+																	width: 25px;
+																	height: 25px;
+																	border-radius: 50%;
+																	background-color: $radio-bg-color;
+																	transition: 0.3s;
+
+																	&:before {
+																		content: '';
+																		display: inline-block;
+																		width: 11px;
+																		height: 11px;
+																		border-radius: 50%;
+																		background-color: #fff;
+																		position: absolute;
+																		top: 7px;
+																		left: 7px;
+																		transition: 0.3s;
+																		transform: scale(0);
+																	}
+																}
+															}
+														</code>
+													</pre>
+												</div>
+											</div>
+										</div>
+										<!-- TABS CONTENT END -->
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- Google map -->
+						<section class="component-block" id="google-map">
+							<div class="component-block-content">
+								<!-- title -->
+								<div class="component-block-title-block">
+									<h2 class="component-block-title">
+										<a class="anchor-link" href="#google-map">
+											Google map
+
+											<i class="fas fa-hashtag"></i>
+										</a>
+									</h2>
+
+									<div class="badge-block">
+										<span class="badge badge-html">
+											<span>HTML</span>
+											<i class="fab fa-html5"></i>
+										</span>
+										<span class="badge badge-sass">
+											<span>SASS</span>
+											<i class="fab fa-sass"></i>
+										</span>
+										<span class="badge badge-js">
+											<span>JS</span>
+											<i class="fab fa-js"></i>
+										</span>
+									</div>
+								</div>
+
+								<!-- attention -->
+								<div class="component-block-attention">
+									<div class="attention-text-block">
+										<i class="fas fa-exclamation-triangle attention-text-block-icon"></i>
+
+										<div class="attention-text">
+											<p>First of all insert a script that loads the API from the specified URL.</p>
+											<p>After <strong>key=</strong> insert your API key, which you can get 
+												<a class="badge badge-light -mg-left" href="https://developers.google.com/maps/documentation/javascript/get-api-key" target="blank">
+														<span>HERE</span>
+												</a>
+											</p>
+										</div>
+									</div>
+
+									<pre>
+										<code class="language-html">
+											&#60;script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"&#62;&#60;/script&#62;
+										</code>
+									</pre>
+								</div>
+
+								<!-- description -->
+								<div class="component-block-description-block">
+									<p>Embed a Google Map on site. Add <strong class="red-text">class="-map-absolute"</strong> to make the map stretched across his parent's area. The following settings for google map are also prepared in advance: <strong>styles for theme,</strong> <strong>custom icon (png or svg),</strong> <strong>info window</strong> and others. For map with multiple markers zoom are calculated automatically based on the distance of the markers from each other.</p>
+								</div>
+
+								<!-- example -->
+								<div class="component-block-example-block">
+									<div class="row">
+										<div class="col-6">
+											<h5 class="component-block-sub-title">Standart map:</h5>
+
+											<!-- GOOGLE MAP -->
+											<div id="js-map" class="google-map"></div>
+											<!-- GOOGLE MAP END -->
+
+										</div>
+
+										<div class="col-6">
+											<h5 class="component-block-sub-title">Map with multiple markers:</h5>
+
+											<!-- GOOGLE MAP WITH MULTIPLE MARKERS -->
+											<div id="js-map-multiple-markers" class="google-map"></div>
+											<!-- GOOGLE MAP WITH MULTIPLE MARKERS END -->
+
+										</div>
+									</div>
+								</div>
+
+								<!-- usage -->
+								<div class="component-block-usage">
+									<!-- button -->
+									<div class="component-block-usage-btn">
+										<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#google-map-collapse" role="button" aria-expanded="false" aria-controls="google-map-collapse">
+											example
+											<i class="fas fa-angle-down"></i>
+										</a>
+									</div>
+									<!-- code example -->
+									<div class="collapse" id="google-map-collapse">
+
+										<!-- NAVS FOR TABS -->
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="google-map-html-tab" data-toggle="tab" href="#google-map-html" role="tab" aria-controls="google-map-html" aria-selected="true">HTML</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="google-map-sass-tab" data-toggle="tab" href="#google-map-sass" role="tab" aria-controls="google-map-sass" aria-selected="false">SASS</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="google-map-js-tab" data-toggle="tab" href="#google-map-js" role="tab" aria-controls="google-map-js" aria-selected="false">JS</a>
+											</li>
+										</ul>
+										<!-- NAVS FOR TABS END -->
+
+										<!-- TABS CONTENT -->
+										<div class="tab-content">
+											<div class="tab-pane show active" id="google-map-html" role="tabpanel" aria-labelledby="google-map-html-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<!-- GOOGLE MAP -->
+															<div id="js-map" class="google-map"></div>
+															<!-- GOOGLE MAP END -->
+														</code>
+													</pre>
+
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<!-- GOOGLE MAP WITH MULTIPLE MARKERS -->
+															<div id="js-map-multiple-markers" class="google-map -map-absolute"></div>
+															<!-- GOOGLE MAP WITH MULTIPLE MARKERS END -->
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="google-map-sass" role="tabpanel" aria-labelledby="google-map-sass-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-scss">
+															.google-map {
+																width: 100%;
+																height: 300px;
+																background-color: #26263F;
+
+																&.-map-absolute {
+																	position: absolute;
+																	top: 0;
+																	right: 0;
+																	bottom: 0;
+																	left: 0;
+																	width: 100%;
+																	height: 100%;
+																}
+
+																// hide bottom labels
+																.gm-style-cc {
+																	display: none;
+																}
+															}
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="google-map-js" role="tabpanel" aria-labelledby="google-map-js-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-js">
+															// STANDARD GOOGLE MAP
+															function initMap() {
+																var coordinates = new google.maps.LatLng(40.712348, -74.006720),
+																zoom = 12;
+
+																var map = new google.maps.Map(document.getElementById('js-map'), {
+																	center: coordinates,
+																	zoom: zoom,
+																	disableDefaultUI: true,
+																	zoomControl: true,
+																	fullscreenControl: true,
+																	zoomControlOptions: {
+																		position: google.maps.ControlPosition.RIGHT_CENTER
+																	},
+
+																	// OPTIONAL - styles for theme (https://snazzymaps.com)
+																	// minify code (https://www.minifier.org)
+
+																	// styles: [{"featureType":"administrative","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"administrative.province","elementType":"all","stylers":[{"visibility":"off"}]},{"featureType":"landscape","elementType":"all","stylers":[{"saturation":-100},{"lightness":65},{"visibility":"on"}]},{"featureType":"poi","elementType":"all","stylers":[{"saturation":-100},{"lightness":"50"},{"visibility":"simplified"}]},{"featureType":"road","elementType":"all","stylers":[{"saturation":"-100"}]},{"featureType":"road.highway","elementType":"all","stylers":[{"visibility":"simplified"}]},{"featureType":"road.arterial","elementType":"all","stylers":[{"lightness":"30"}]},{"featureType":"road.local","elementType":"all","stylers":[{"lightness":"40"}]},{"featureType":"transit","elementType":"all","stylers":[{"saturation":-100},{"visibility":"simplified"}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":-25},{"saturation":-97}]},{"featureType":"water","elementType":"labels","stylers":[{"lightness":-25},{"saturation":-100}]}]
+																});
+
+																// OPTIONAL - custom icon
+																var icon = {
+																	url: '../img/svg/icon_map_marker.svg',
+																	scaledSize: new google.maps.Size(50, 50)
+																};
+
+																var marker = new google.maps.Marker({
+																	position: coordinates,
+																	map: map,
+
+																	// OPTIONAL - animation of marker
+																	// animation: google.maps.Animation.BOUNCE,
+
+																	// OPTIONAL - text on marker hover
+																	// title:"text on hover",
+
+																	// OPTIONAL - custom icon from png or svg
+																	// icon: icon
+																});
+
+																// OPTIONAL - add info window
+																var infoWindow = new google.maps.InfoWindow({
+																	content: '<p>Info window</p>'
+																});
+
+																// show info window after click
+																/*marker.addListener('click', function() {
+																	infoWindow.open(map, marker);
+																});*/
+
+																// show info window all time
+																/*google.maps.event.addListenerOnce(map, 'tilesloaded', function() {
+																	infoWindow.open(map,marker);
+																});*/
+
+																// close info window after click anywhere on the map
+																google.maps.event.addListener(map, "click", function() {
+																	infoWindow.close();
+																});
+
+															}
+
+															if ($('#js-map').length) {
+																initMap();
+															}
+														</code>
+													</pre>
+
+													<pre class="line-numbers">
+														<code class="language-js">
+															// GOOGLE MAP WITH MULTIPLE MARKER
+															function initMapMultipleMarkers() {
+																var map = new google.maps.Map(document.getElementById("js-map-multiple-markers"), {
+																	disableDefaultUI: true,
+																	zoomControl: true,
+																	fullscreenControl: true,
+																	zoomControlOptions: {
+																		position: google.maps.ControlPosition.RIGHT_CENTER
+																	},
+																});
+
+																// array of markers (with coordinates, name, address)
+																var multipleMarkers = [
+																	{
+																		lat: 40.679680,
+																		lng: -73.942175,
+																		name: "Name 1",
+																		address:"Address 1"
+																	},
+																	{
+																		lat: 40.729391,
+																		lng: -74.076758,
+																		name: "Name 2",
+																		address:"Address 2"
+																	},
+																	{
+																		lat: 40.745260,
+																		lng: -73.997794,
+																		name: "Name 3",
+																		address:"Address 3"
+																	}
+																];
+
+																var infoWindow = new google.maps.InfoWindow();
+
+																google.maps.event.addListener(map, "click", function() {
+																	infoWindow.close();
+																});
+
+																// Determine the boundaries of the visible area of the map in accordance with the position of the markers
+																var bounds = new google.maps.LatLngBounds();
+
+																// create the markers
+																for (var i = 0; i < multipleMarkers.length; i++){
+
+																	var latLng = new google.maps.LatLng(multipleMarkers[i].lat, multipleMarkers[i].lng);
+																	var name = multipleMarkers[i].name;
+																	var address = multipleMarkers[i].address;
+
+																	addMarker(latLng, name, address);
+
+																	// Expand the boundaries of our visible area by adding the coordinates of our current marker
+																	bounds.extend(latLng);
+																}
+
+																// Automatically scale the map so that all markers are in the visible area of the map
+																map.fitBounds(bounds);
+
+																function addMarker(latLng, name, address) {
+																	var marker = new google.maps.Marker({
+																		position: latLng,
+																		map: map,
+																		title: name
+																	});
+
+																	google.maps.event.addListener(marker, "click", function() {
+																		var contentString = '&#60;div class="infowindow"&#62;' +
+																													'&#60;h5&#62;' + name + '&#60;/h5&#62;' +
+																													'&#60;p&#62;' + address + '&#60;/p&#62;' +
+																												'&#60;/div&#62;';
+
+																		infoWindow.setContent(contentString);
+																		infoWindow.open(map, marker);
+																	});
+																}
+															}
+
+															if ($('#js-map').length) {
+																initMapMultipleMarkers();
+															}
+														</code>
+													</pre>
+												</div>
+											</div>
+										</div>
+										<!-- TABS CONTENT END -->
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- Embed responsive video -->
+						<section class="component-block" id="responsive-video">
+							<div class="component-block-content">
+								<!-- title -->
+								<div class="component-block-title-block">
+									<h2 class="component-block-title">
+										<a class="anchor-link" href="#responsive-video">
+											Embed responsive video
+
+											<i class="fas fa-hashtag"></i>
+										</a>
+									</h2>
+
+									<div class="badge-block">
+										<span class="badge badge-html">
+											<span>HTML</span>
+											<i class="fab fa-html5"></i>
+										</span>
+										<span class="badge badge-sass">
+											<span>SASS</span>
+											<i class="fab fa-sass"></i>
+										</span>
+									</div>
+								</div>
+
+								<!-- description -->
+								<div class="component-block-description-block">
+									<p>Embed a YouTube or Vimeo video on web-site and make it responsive. You can set aspect ratios by modifier classes: <strong class="red-text">class="-ratio-16-9"</strong> or <strong class="red-text">class="-ratio-4-3"</strong> or <strong class="red-text">class="-ratio-1-1"</strong>.</p>
+								</div>
+
+								<!-- example -->
+								<div class="component-block-example-block">
+									<div class="row">
+										<div class="col-4">
+											<h5 class="component-block-sub-title">Aspect ratio 16 x 9:</h5>
+
+											<!-- RESPONSIVE VIDEO -->
+											<div class="responsive-video -ratio-16-9">
+												<iframe class="responsive-video-item" src='https://www.youtube.com/embed/0_OxI2JZex4' allowfullscreen></iframe>
+											</div>
+											<!-- RESPONSIVE VIDEO END -->
+										</div>
+
+										<div class="col-4">
+											<h5 class="component-block-sub-title">Aspect ratio 4 x 3:</h5>
+
+											<!-- RESPONSIVE VIDEO -->
+											<div class="responsive-video -ratio-4-3">
+												<iframe class="responsive-video-item" src='https://www.youtube.com/embed/rM6txLtoaoc' allowfullscreen></iframe>
+											</div>
+											<!-- RESPONSIVE VIDEO END -->
+										</div>
+
+										<div class="col-4">
+											<h5 class="component-block-sub-title">Aspect ratio 1 x 1:</h5>
+
+											<!-- RESPONSIVE VIDEO -->
+											<div class="responsive-video -ratio-1-1">
+												<iframe class="responsive-video-item" src='https://www.youtube.com/embed/qBBOue_AdcU' allowfullscreen></iframe>
+											</div>
+											<!-- RESPONSIVE VIDEO END -->
+										</div>
+
+									</div>
+								</div>
+
+								<!-- usage -->
+								<div class="component-block-usage">
+									<!-- button -->
+									<div class="component-block-usage-btn">
+										<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#responsive-video-collapse" role="button" aria-expanded="false" aria-controls="responsive-video-collapse">
+											example
+											<i class="fas fa-angle-down"></i>
+										</a>
+									</div>
+									<!-- code example -->
+									<div class="collapse" id="responsive-video-collapse">
+										<!-- attention -->
+										<div class="component-block-attention -small-indents">
+											<div class="attention-text-block">
+												<i class="fas fa-exclamation-triangle attention-text-block-icon"></i>
+
+												<div class="attention-text">
+													<p>Do not forget to insert your <strong>VIDEO_ID</strong> to iframe.</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- NAVS FOR TABS -->
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="responsive-video-html-tab" data-toggle="tab" href="#responsive-video-html" role="tab" aria-controls="responsive-video-html" aria-selected="true">HTML</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="responsive-video-sass-tab" data-toggle="tab" href="#responsive-video-sass" role="tab" aria-controls="responsive-video-sass" aria-selected="false">SASS</a>
+											</li>
+										</ul>
+										<!-- NAVS FOR TABS END -->
+
+										<!-- TABS CONTENT -->
+										<div class="tab-content">
+											<div class="tab-pane show active" id="responsive-video-html" role="tabpanel" aria-labelledby="responsive-video-html-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<!-- YOUTUBE VIDEO -->
+															<div class="responsive-video -ratio-16-9">
+																<iframe class="responsive-video-item" src='https://www.youtube.com/embed/VIDEO_ID' allowfullscreen="allowfullscreen"></iframe>
+															</div>
+															<!-- YOUTUBE VIDEO END -->
+														</code>
+													</pre>
+
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<!-- VIMEO VIDEO -->
+															<div class="responsive-video -ratio-16-9">
+																<iframe class="responsive-video-item" src='https://player.vimeo.com/video/VIDEO_ID' allowfullscreen="allowfullscreen"></iframe>
+															</div>
+															<!-- VIMEO VIDEO END -->
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="responsive-video-sass" role="tabpanel" aria-labelledby="responsive-video-sass-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-scss">
+															.responsive-video {
+																position: relative;
+																display: block;
+																width: 100%;
+																padding: 0;
+																overflow: hidden;
+																background-color: #000;
+
+																&-item {
+																	position: absolute;
+																	top: 0;
+																	bottom: 0;
+																	left: 0;
+																	z-index: 1;
+																	width: 100%;
+																	height: 100%;
+																	border: 0;
+																}
+
+																&:before {
+																	display: block;
+																	content: "";
+																}
+
+																&.-ratio-16-9 {
+																	&:before {
+																		padding-top: 56.25%;
+																	}
+																}
+
+																&.-ratio-4-3 {
+																	&:before {
+																		padding-top: 75%;
+																	}
+																}
+
+																&.-ratio-1-1 {
+																	&:before {
+																		padding-top: 100%;
+																	}
+																}
+															}
+														</code>
+													</pre>
+												</div>
+											</div>
+										</div>
+										<!-- TABS CONTENT END -->
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- Youtube thumbnail -->
+						<section class="component-block" id="youtube-thumbnail">
+							<div class="component-block-content">
+								<!-- title -->
+								<div class="component-block-title-block">
+									<h2 class="component-block-title">
+										<a class="anchor-link" href="#youtube-thumbnail">
+											Youtube thumbnail
+
+											<i class="fas fa-hashtag"></i>
+										</a>
+									</h2>
+
+									<div class="badge-block">
+										<span class="badge badge-html">
+											<span>HTML</span>
+											<i class="fab fa-html5"></i>
+										</span>
+										<span class="badge badge-sass">
+											<span>SASS</span>
+											<i class="fab fa-sass"></i>
+										</span>
+										<span class="badge badge-js">
+											<span>JS</span>
+											<i class="fab fa-js"></i>
+										</span>
+									</div>
+								</div>
+
+								<!-- description -->
+								<div class="component-block-description-block">
+									<p>Making YouTube thumbnails based on iframe. At the beginning - we show thumbnail, and hide iframe. After click - hide thumbnail and show iframe (with autoplay attribute). By this method the page is loaded without iframes which speeds up the loading of the site.</p>
+								</div>
+
+								<!-- example -->
+								<div class="component-block-example-block">
+									<div class="row">
+										<div class="col-6">
+											<!-- YOUTUBE THUMBNAIL -->
+											<div class="responsive-video -ratio-16-9 video-thumbnail js-youtube-video-thumbnail">
+												<svg class="video-thumbnail-icon -youtube-icon" height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+													<path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>
+													<path d="M 45,24 27,14 27,34" fill="#fff"></path>
+												</svg>
+												<iframe class="responsive-video-item -hide" src='https://www.youtube.com/embed/E8d_JvMpoY4' allowfullscreen></iframe>
+											</div>
+											<!-- YOUTUBE THUMBNAIL END -->
+										</div>
+
+										<div class="col-6">
+											<!-- YOUTUBE THUMBNAIL -->
+											<div class="responsive-video -ratio-16-9 video-thumbnail js-youtube-video-thumbnail">
+												<svg class="video-thumbnail-icon -youtube-icon" height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+													<path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>
+													<path d="M 45,24 27,14 27,34" fill="#fff"></path>
+												</svg>
+												<iframe class="responsive-video-item -hide" src='https://www.youtube.com/embed/lVMV3StvLCs' allowfullscreen></iframe>
+											</div>
+											<!-- YOUTUBE THUMBNAIL END -->
+										</div>
+
+									</div>
+								</div>
+
+								<!-- usage -->
+								<div class="component-block-usage">
+									<!-- button -->
+									<div class="component-block-usage-btn">
+										<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#youtube-thumbnail-collapse" role="button" aria-expanded="false" aria-controls="youtube-thumbnail-collapse">
+											example
+											<i class="fas fa-angle-down"></i>
+										</a>
+									</div>
+
+									<!-- code example -->
+									<div class="collapse" id="youtube-thumbnail-collapse">
+
+										<!-- attention -->
+										<div class="component-block-attention -small-indents">
+											<div class="attention-text-block">
+												<i class="fas fa-exclamation-triangle attention-text-block-icon"></i>
+
+												<div class="attention-text">
+													<p>Do not forget to insert your <strong>VIDEO_ID</strong> to iframe.</p>
+													<p>This component is dependent on <a href="#responsive-video"><strong>Embed responsive video</strong></a>.</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- NAVS FOR TABS -->
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="youtube-thumbnail-html-tab" data-toggle="tab" href="#youtube-thumbnail-html" role="tab" aria-controls="youtube-thumbnail-html" aria-selected="true">HTML</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="youtube-thumbnail-sass-tab" data-toggle="tab" href="#youtube-thumbnail-sass" role="tab" aria-controls="youtube-thumbnail-sass" aria-selected="false">SASS</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="youtube-thumbnail-js-tab" data-toggle="tab" href="#youtube-thumbnail-js" role="tab" aria-controls="youtube-thumbnail-js" aria-selected="false">JS</a>
+											</li>
+										</ul>
+										<!-- NAVS FOR TABS END -->
+
+										<!-- TABS CONTENT -->
+										<div class="tab-content">
+											<div class="tab-pane show active" id="youtube-thumbnail-html" role="tabpanel" aria-labelledby="youtube-thumbnail-html-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<!-- YOUTUBE THUMBNAIL -->
+															<div class="responsive-video -ratio-16-9 video-thumbnail js-youtube-video-thumbnail">
+																<svg class="video-thumbnail-icon -youtube-icon" height="100%" version="1.1" viewBox="0 0 68 48" width="100%">
+																	<path class="ytp-large-play-button-bg" d="M66.52,7.74c-0.78-2.93-2.49-5.41-5.42-6.19C55.79,.13,34,0,34,0S12.21,.13,6.9,1.55 C3.97,2.33,2.27,4.81,1.48,7.74C0.06,13.05,0,24,0,24s0.06,10.95,1.48,16.26c0.78,2.93,2.49,5.41,5.42,6.19 C12.21,47.87,34,48,34,48s21.79-0.13,27.1-1.55c2.93-0.78,4.64-3.26,5.42-6.19C67.94,34.95,68,24,68,24S67.94,13.05,66.52,7.74z" fill="#212121" fill-opacity="0.8"></path>
+																	<path d="M 45,24 27,14 27,34" fill="#fff"></path>
+																</svg>
+																<iframe class="responsive-video-item -hide" src='https://www.youtube.com/embed/VIDEO_ID' allowfullscreen></iframe>
+															</div>
+															<!-- YOUTUBE THUMBNAIL END -->
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="youtube-thumbnail-sass" role="tabpanel" aria-labelledby="youtube-thumbnail-sass-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-scss">
+															.video-thumbnail {
+																cursor: pointer;
+																background-size: cover;
+																background-position: center;
+																background-repeat: no-repeat;
+																background-color: #000;
+
+																.-hide {
+																	display: none;
+																}
+
+																&-icon {
+																	position: absolute;
+																	top: 50%;
+																	left: 50%;
+																	transform: translate(-50%, -50%);
+																	z-index: 10;
+
+																	&.-youtube-icon {
+																		width: 68px;
+																		height: 48px;
+
+																		.ytp-large-play-button-bg {
+																			transition: fill .1s cubic-bezier(0.4,0.0,1,1),fill-opacity .1s cubic-bezier(0.4,0.0,1,1);
+																		}
+																	}
+																}
+
+																&:hover {
+																	.video-thumbnail-icon {
+																		&.-youtube-icon {
+																			.ytp-large-play-button-bg {
+																				transition: fill .1s cubic-bezier(0.0,0.0,0.2,1),fill-opacity .1s cubic-bezier(0.0,0.0,0.2,1);
+																				fill: #f00;
+																				fill-opacity: 1;
+																			}
+																		}
+																	}
+																}
+															}
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="youtube-thumbnail-js" role="tabpanel" aria-labelledby="youtube-thumbnail-js-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-js">
+															// YOUTUBE THUMBNAIL
+															// 1) add thumbnail
+															$(".js-youtube-video-thumbnail").each(function() {
+																var youtubeVideoID = $(this).children('iframe').attr('src');
+																youtubeVideoID = youtubeVideoID.split('/').pop();
+																$(this).css("background-image", "url(https://img.youtube.com/vi/" + youtubeVideoID + "/sddefault.jpg)")
+															});
+															// 2) on click play iframe
+															$('.js-youtube-video-thumbnail').on('click' , function() {
+																var $this = $(this);
+																$this.children("iframe")[0].src += "?autoplay=1";
+																setTimeout(function() {
+																	$this.children(".video-thumbnail-icon").addClass('-hide');
+																	$this.children("iframe").removeClass('-hide');
+																}, 500);
+															});
+														</code>
+													</pre>
+												</div>
+											</div>
+										</div>
+										<!-- TABS CONTENT END -->
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- Vimeo thumbnail -->
+						<section class="component-block" id="vimeo-thumbnail">
+							<div class="component-block-content">
+								<!-- title -->
+								<div class="component-block-title-block">
+									<h2 class="component-block-title">
+										<a class="anchor-link" href="#vimeo-thumbnail">
+											Vimeo thumbnail
+
+											<i class="fas fa-hashtag"></i>
+										</a>
+									</h2>
+
+									<div class="badge-block">
+										<span class="badge badge-html">
+											<span>HTML</span>
+											<i class="fab fa-html5"></i>
+										</span>
+										<span class="badge badge-sass">
+											<span>SASS</span>
+											<i class="fab fa-sass"></i>
+										</span>
+										<span class="badge badge-js">
+											<span>JS</span>
+											<i class="fab fa-js"></i>
+										</span>
+									</div>
+								</div>
+
+								<!-- description -->
+								<div class="component-block-description-block">
+									<p>Making Vimeo thumbnails based on iframe. At the beginning - we show thumbnail, and hide iframe. After click - hide thumbnail and show iframe (with autoplay attribute). By this method the page is loaded without iframes which speeds up the loading of the site.</p>
+								</div>
+
+								<!-- example -->
+								<div class="component-block-example-block">
+									<div class="row">
+										<div class="col-6">
+											<!-- VIMEO THUMBNAIL -->
+											<div class="responsive-video -ratio-16-9 video-thumbnail js-vimeo-video-thumbnail">
+												<div class="video-thumbnail-icon -vimeo-icon">
+													<svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid" tabindex="-1">
+														<polygon class="fill" fill="#fff" points="1,0 20,10 1,20"></polygon>
+													</svg>
+												</div>
+												<iframe class="responsive-video-item -hide" src='https://player.vimeo.com/video/43338103' allowFullScreen></iframe>
+											</div>
+											<!-- VIMEO THUMBNAIL END -->
+										</div>
+
+										<div class="col-6">
+											<!-- VIMEO THUMBNAIL -->
+											<div class="responsive-video -ratio-16-9 video-thumbnail js-vimeo-video-thumbnail">
+												<div class="video-thumbnail-icon -vimeo-icon">
+													<svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid" tabindex="-1">
+														<polygon class="fill" fill="#fff" points="1,0 20,10 1,20"></polygon>
+													</svg>
+												</div>
+												<iframe class="responsive-video-item -hide" src='https://player.vimeo.com/video/43120185' allowFullScreen></iframe>
+											</div>
+											<!-- VIMEO THUMBNAIL END -->
+										</div>
+
+									</div>
+								</div>
+
+								<!-- usage -->
+								<div class="component-block-usage">
+									<!-- button -->
+									<div class="component-block-usage-btn">
+										<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#vimeo-thumbnail-collapse" role="button" aria-expanded="false" aria-controls="vimeo-thumbnail-collapse">
+											example
+											<i class="fas fa-angle-down"></i>
+										</a>
+									</div>
+									<!-- code example -->
+									<div class="collapse" id="vimeo-thumbnail-collapse">
+
+										<!-- attention -->
+										<div class="component-block-attention -small-indents">
+											<div class="attention-text-block">
+												<i class="fas fa-exclamation-triangle attention-text-block-icon"></i>
+
+												<div class="attention-text">
+													<p>Do not forget to insert your <strong>VIDEO_ID</strong> to iframe.</p>
+													<p>This component is dependent on <a href="#responsive-video"><strong>Embed responsive video</strong></a>.</p>
+												</div>
+											</div>
+										</div>
+
+										<!-- NAVS FOR TABS -->
+										<ul class="nav nav-tabs" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="vimeo-thumbnail-html-tab" data-toggle="tab" href="#vimeo-thumbnail-html" role="tab" aria-controls="vimeo-thumbnail-html" aria-selected="true">HTML</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="vimeo-thumbnail-sass-tab" data-toggle="tab" href="#vimeo-thumbnail-sass" role="tab" aria-controls="vimeo-thumbnail-sass" aria-selected="false">SASS</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="vimeo-thumbnail-js-tab" data-toggle="tab" href="#vimeo-thumbnail-js" role="tab" aria-controls="vimeo-thumbnail-js" aria-selected="false">JS</a>
+											</li>
+										</ul>
+										<!-- NAVS FOR TABS END -->
+
+										<!-- TABS CONTENT -->
+										<div class="tab-content">
+											<div class="tab-pane show active" id="vimeo-thumbnail-html" role="tabpanel" aria-labelledby="vimeo-thumbnail-html-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-html js-replase-brackets">
+															<!-- VIMEO THUMBNAIL -->
+															<div class="responsive-video -ratio-16-9 video-thumbnail js-vimeo-video-thumbnail">
+																<div class="video-thumbnail-icon -vimeo-icon">
+																	<svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid" tabindex="-1">
+																		<polygon class="fill" fill="#fff" points="1,0 20,10 1,20"></polygon>
+																	</svg>
+																</div>
+																<iframe class="responsive-video-item -hide" src='https://player.vimeo.com/video/VIDEO_ID' allowFullScreen></iframe>
+															</div>
+															<!-- VIMEO THUMBNAIL END -->
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="vimeo-thumbnail-sass" role="tabpanel" aria-labelledby="vimeo-thumbnail-sass-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-scss">
+															.video-thumbnail {
+																cursor: pointer;
+																background-size: cover;
+																background-position: center;
+																background-repeat: no-repeat;
+																background-color: #000;
+
+																.-hide {
+																	display: none;
+																}
+
+																&-icon {
+																	position: absolute;
+																	top: 50%;
+																	left: 50%;
+																	transform: translate(-50%, -50%);
+																	z-index: 10;
+
+																	&.-vimeo-icon {
+																		width: 65px;
+																		height: 40px;
+																		transition: opacity 250ms ease-out,background-color 40ms,color 40ms;
+																		background: rgba(23,35,34,.75);
+																		border-radius: .5em;
+
+																		svg {
+																			position: absolute;
+																			top: 50%;
+																			left: 50%;
+																			transform: translate(-50%, -50%);
+																			width: 20px;
+																			height: 20px;
+																		}
+																	}
+																}
+
+																&:hover {
+																	.video-thumbnail-icon {
+
+																		&.-vimeo-icon {
+																			background-color: #3CAEF2;
+																		}
+																	}
+																}
+															}
+														</code>
+													</pre>
+												</div>
+											</div>
+											<div class="tab-pane" id="vimeo-thumbnail-js" role="tabpanel" aria-labelledby="vimeo-thumbnail-js-tab">
+												<div class="code-example">
+													<pre class="line-numbers">
+														<code class="language-js">
+															// VIMEO THUMBNAIL
+															// 1) add thumbnail
+															$(".js-vimeo-video-thumbnail").each(function() {
+																var $this = $(this);
+																var vimeoVideoID = $this.children('iframe').attr('src');
+																vimeoVideoID = vimeoVideoID.split('/').pop();
+																$.getJSON('http://www.vimeo.com/api/v2/video/' + vimeoVideoID + '.json?callback=?', { format: "json" }, function (data) {
+																	var thumbnailImg = data[0].thumbnail_large;
+																	$this.css("background-image", "url(" + thumbnailImg + ")");
+																});
+															});
+															// 2) on click play iframe
+															$('.js-vimeo-video-thumbnail').on('click' , function() {
+																var $this = $(this);
+																$this.children("iframe")[0].src += "?autoplay=1";
+																setTimeout(function() {
+																	$this.children(".video-thumbnail-icon").addClass('-hide');
+																	$this.children("iframe").removeClass('-hide');
+																}, 500);
+															});
+														</code>
+													</pre>
+												</div>
+											</div>
+										</div>
+										<!-- TABS CONTENT END -->
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+					<!-- MAIN CONTENT END -->
+
+					<!-- NAVIGATION SIDE MENU -->
+					<div class="col-3">
+						<aside class="side-navigation">
+
+							<input class="search-input js-search-input" name="search" placeholder="Search..." type="text" autocomplete="off" data-list=".list-group">
+
+							<div class="list-group js-list-group" id="side-navigation">
+								<a href="#small-header" class="list-group-item list-group-item-action active">Small header after scroll</a>
+								<a href="#sticky-footer" class="list-group-item list-group-item-action">Sticky footer</a>
+								<a href="#scroll-top-button" class="list-group-item list-group-item-action">Scroll top button</a>
+								<a href="#scroll-to-element" class="list-group-item list-group-item-action">Scroll to element</a>
+								<a href="#custom-checkbox-radio" class="list-group-item list-group-item-action">Custom checkbox and radio</a>
+								<a href="#google-map" class="list-group-item list-group-item-action">Google map</a>
+								<a href="#responsive-video" class="list-group-item list-group-item-action">Embed responsive video</a>
+								<a href="#youtube-thumbnail" class="list-group-item list-group-item-action">Youtube thumbnail</a>
+								<a href="#vimeo-thumbnail" class="list-group-item list-group-item-action">Vimeo thumbnail</a>
+							</div>
+						</aside>
+					</div>
+					<!-- NAVIGATION SIDE MENU END -->
+				</div>
+			</div>
+
+		</main>
+		<!-- MAIN END -->
+
+		<!-- FOOTER -->
+		<footer class="footer -sticky js-sticky-footer">
+			<div class="container">
+				<p class="text-center copyright-text">© X-project Components, 2018</p>
+			</div>
+		</footer>
+		<!-- FOOTER END -->
+
+	</div>
+
+	<!-- connection JavaScript -->
+	<script src="libs/jquery/jquery.min.js"></script>
+	<script src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="libs/x-project-components/x-project-components.js"></script>
+	<script src="libs/clipboard/clipboard.min.js"></script>
+	<script src="libs/prism.js/prism.js"></script>
+	<script src="libs/hideseek/jquery.hideseek.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoik2Sle8UV-ysloqMOF2dK0mnXpb5z3I"></script>
+
+	<script src="js/common.js"></script>
+
+</body>
+</html>
