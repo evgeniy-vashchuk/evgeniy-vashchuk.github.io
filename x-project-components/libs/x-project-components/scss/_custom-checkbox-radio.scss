@@ -54,9 +54,13 @@ $checkbox-active-bg-color: #26263F;
 
 	&-checkmark-icon {
 		transition: 0.3s;
-		font-size: 15px;
+		font-size: 18px;
+		padding-right: 4px;
 		color: #fff;
-		@include absolute-center;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
 		opacity: 0;
 	}
 }

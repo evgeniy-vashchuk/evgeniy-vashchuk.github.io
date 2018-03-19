@@ -25,7 +25,7 @@
 
 		function stickyFooter() {
 			// 1) height of footer
-			var footerHeight = $('.js-sticky-footer').outerHeight();
+			var footerHeight = $('.js-footer').outerHeight();
 
 			// 2) compensation
 			$('.js-wrap-for-sticky').css({
@@ -65,7 +65,10 @@
 		// SCROLL TO ELEMENT =================================
 		// =========================
 
-		$('a[href^="go-to:"]').on('click', function() {
+		// SCROLL TO ELEMENT
+		$('a[href^="go-to:"]').on('click', function(e) {
+			e.preventDefault();
+
 			// height of header (for offset)
 			var headerOffset = $('.js-header').outerHeight(),
 					idOfElement = $(this).attr('href');

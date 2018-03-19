@@ -8786,6 +8786,8 @@ html, body {
   height: 100%; }
 
 .wrap-for-sticky {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
   min-height: 100%; }
 
@@ -8803,6 +8805,8 @@ html, body {
   z-index: 100;
   width: 50px;
   height: 50px;
+  border: none;
+  cursor: pointer;
   background-color: #26263F;
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -8869,7 +8873,8 @@ html, body {
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
-    font-size: 15px;
+    font-size: 18px;
+    padding-right: 4px;
     color: #fff;
     position: absolute;
     top: 50%;
@@ -9476,6 +9481,10 @@ button {
   padding-top: 185px;
   padding-bottom: 30px; }
 
+@media only screen and (max-width: 1500px) {
+  .main {
+    padding-top: 160px; } }
+
 a {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
@@ -9932,6 +9941,14 @@ body {
     .scroll-top-button:hover i {
       color: rgba(37, 37, 62, 0.5);
       bottom: 8px; }
+
+@media only screen and (max-width: 1500px) {
+  .scroll-top-button {
+    width: 90px; }
+    .scroll-top-button p {
+      font-size: 14px; }
+    .scroll-top-button i {
+      font-size: 20px; } }
 
 .search-input {
   display: block;

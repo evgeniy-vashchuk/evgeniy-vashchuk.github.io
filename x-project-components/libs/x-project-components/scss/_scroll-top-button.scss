@@ -8,6 +8,8 @@ $scroll-top-btn-bg: #26263F;
 	z-index: 100;
 	width: $scroll-top-btn-size;
 	height: $scroll-top-btn-size;
+	border: none;
+	cursor: pointer;
 	background-color: #26263F;
 	transition: 0.3s;
 	transform: translate(0, 100%);

@@ -1,4 +1,4 @@
-$( document ).ready(function() {
+$(document).ready(function() {
 	// show code button arrow
 	$('.collapse').on('show.bs.collapse', function () {
 		$(this).parent('.component-block-usage').find('.btn').addClass('-open');

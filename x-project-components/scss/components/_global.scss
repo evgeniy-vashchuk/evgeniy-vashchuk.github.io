@@ -3,6 +3,12 @@
 	padding-bottom: 30px;
 }
 
+@media only screen and (max-width: 1500px) {
+	.main {
+		padding-top: 160px;
+	}
+}
+
 a {
 	transition: 0.3s;
 }
