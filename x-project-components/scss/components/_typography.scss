@@ -1,3 +1,8 @@
+p {
+	line-height: 1.5;
+	letter-spacing: 0.5px;
+}
+
 .component-block-title {
 	display: inline-block;
 	padding-right: 20px;
@@ -43,9 +48,7 @@
 }
 
 .attention-text {
-	line-height: 1.5;
 	color: $light-apricot;
-	letter-spacing: 0.5px;
 
 	strong {
 		padding: 0 5px;
@@ -66,4 +69,8 @@ strong {
 		font-weight: 500;
 		white-space: nowrap;
 	}
+}
+
+.description-text {
+	margin-bottom: 1rem;
 }

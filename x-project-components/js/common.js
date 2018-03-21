@@ -40,6 +40,10 @@ $(document).ready(function() {
 		});
 	});
 
+	$('body').on('activate.bs.scrollspy', function () {
+		console.log('test');
+	})
+
 });
 
 // replase '<' and '>' in html code examples

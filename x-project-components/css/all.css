@@ -9477,9 +9477,15 @@ button {
 .btn-primary {
   color: #F1E9E4; }
 
+.simple-link {
+  color: #25253E;
+  border-bottom: 2px solid transparent; }
+  .simple-link:hover {
+    border-bottom: 2px solid #C7ADA6; }
+
 .main {
-  padding-top: 185px;
-  padding-bottom: 30px; }
+  padding-top: 175px;
+  padding-bottom: 50px; }
 
 @media only screen and (max-width: 1500px) {
   .main {
@@ -9489,6 +9495,10 @@ a {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s; }
+
+p {
+  line-height: 1.5;
+  letter-spacing: 0.5px; }
 
 .component-block-title {
   display: inline-block;
@@ -9529,9 +9539,7 @@ a {
     color: #F1E9E4; }
 
 .attention-text {
-  line-height: 1.5;
-  color: #F1E9E4;
-  letter-spacing: 0.5px; }
+  color: #F1E9E4; }
   .attention-text strong {
     padding: 0 5px; }
   .attention-text a {
@@ -9544,14 +9552,21 @@ strong.red-text {
   font-weight: 500;
   white-space: nowrap; }
 
+.description-text {
+  margin-bottom: 1rem; }
+
 .component-block {
   margin-bottom: 30px; }
+  .component-block:last-child {
+    margin-bottom: 0; }
   .component-block:before {
     display: block;
     height: 85px;
     margin-top: -85px;
     content: "";
-    visibility: hidden; }
+    visibility: hidden;
+    position: relative;
+    z-index: -1; }
   .component-block-content {
     border: 5px solid rgba(199, 173, 166, 0.7);
     padding: 15px;
@@ -9580,11 +9595,10 @@ strong.red-text {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between; }
+    .component-block-title-block.-primary-border {
+      border-color: #4C4E6B; }
   .component-block-description-block {
     margin-bottom: 1.5rem; }
-    .component-block-description-block p {
-      line-height: 1.5;
-      letter-spacing: 0.5px; }
   .component-block-attention {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -9999,10 +10013,15 @@ body {
     -o-transition: opacity 0.5s ease;
     transition: opacity 0.5s ease; }
 
+.section {
+  padding-bottom: 20px;
+  position: relative;
+  z-index: 1; }
+
 .footer {
   background-color: #4C4E6B;
   border-top: 5px solid #25253E;
-  padding: 22px 0;
+  padding: 18px 0;
   position: relative;
   z-index: 100; }
   .footer .copyright-text {

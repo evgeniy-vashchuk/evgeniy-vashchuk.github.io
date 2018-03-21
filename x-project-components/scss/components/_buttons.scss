@@ -22,5 +22,13 @@
 	&-primary {
 		color: $light-apricot;
 	}
+}
 
+.simple-link {
+	color: $dark-purple;
+	border-bottom: 2px solid transparent;
+
+	&:hover {
+		border-bottom: 2px solid $apricot;
+	}
 }

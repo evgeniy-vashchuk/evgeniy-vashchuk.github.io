@@ -1,6 +1,10 @@
 .component-block {
 	margin-bottom: 30px;
 
+	&:last-child {
+		margin-bottom: 0;
+	}
+
 	// for anchor
 	&:before {
 		display: block;
@@ -8,6 +12,8 @@
 		margin-top: -85px;
 		content: "";
 		visibility: hidden;
+		position: relative;
+		z-index: -1;
 	}
 
 	&-content {
@@ -35,15 +41,14 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+
+		&.-primary-border {
+			border-color: $primary;
+		}
 	}
 
 	&-description-block {
 		margin-bottom: 1.5rem;
-
-		p {
-			line-height: 1.5;
-			letter-spacing: 0.5px;
-		}
 	}
 
 	&-attention {
