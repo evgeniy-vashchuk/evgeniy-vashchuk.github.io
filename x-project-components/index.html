@@ -133,7 +133,7 @@
 									<!-- title -->
 									<div class="component-block-title-block">
 										<h4 class="component-block-title">
-											<a class="anchor-link" href="#small-header">
+											<a class="anchor-link js-no-scroll" href="#small-header">
 												Small header after scroll
 
 												<i class="fas fa-hashtag"></i>
@@ -157,7 +157,7 @@
 									<div class="component-block-usage">
 										<!-- button -->
 										<div class="component-block-usage-btn">
-											<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#small-header-collapse" role="button" aria-expanded="false" aria-controls="small-header-collapse">
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#small-header-collapse" role="button" aria-expanded="false" aria-controls="small-header-collapse">
 												example
 												<i class="fas fa-angle-down"></i>
 											</a>
@@ -169,13 +169,13 @@
 											<!-- NAVS FOR TABS -->
 											<ul class="nav nav-tabs" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="small-header-html-tab" data-toggle="tab" href="#small-header-html" role="tab" aria-controls="small-header-html" aria-selected="true">HTML</a>
+													<a class="nav-link js-no-scroll active" id="small-header-html-tab" data-toggle="tab" href="#small-header-html" role="tab" aria-controls="small-header-html" aria-selected="true">HTML</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="small-header-sass-tab" data-toggle="tab" href="#small-header-sass" role="tab" aria-controls="small-header-sass" aria-selected="false">SASS</a>
+													<a class="nav-link js-no-scroll" id="small-header-sass-tab" data-toggle="tab" href="#small-header-sass" role="tab" aria-controls="small-header-sass" aria-selected="false">SASS</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="small-header-js-tab" data-toggle="tab" href="#small-header-js" role="tab" aria-controls="small-header-js" aria-selected="false">JS</a>
+													<a class="nav-link js-no-scroll" id="small-header-js-tab" data-toggle="tab" href="#small-header-js" role="tab" aria-controls="small-header-js" aria-selected="false">JS</a>
 												</li>
 											</ul>
 											<!-- NAVS FOR TABS END -->
@@ -211,16 +211,21 @@
 														<pre class="line-numbers">
 															<code class="language-js">
 																// SMALL HEADER AFTER SCROLL
-																$(window).on('scroll', function() {
-																	// distance after which header becoming small
-																	var distanceY = 100;
 
+																// distance after which header becoming small
+																var distanceY = 1;
+
+																$(window).on('scroll', function() {
 																	if ($(this).scrollTop() > distanceY) {
 																		$('.js-header').addClass('-small-header');
 																	} else {
 																		$('.js-header').removeClass('-small-header');
 																	}
 																})
+
+																if ($(document).scrollTop() > distanceY) {
+																	$('.js-header').addClass('-small-header');
+																}
 															</code>
 														</pre>
 													</div>
@@ -239,7 +244,7 @@
 									<!-- title -->
 									<div class="component-block-title-block">
 										<h4 class="component-block-title">
-											<a class="anchor-link" href="#sticky-footer">
+											<a class="anchor-link js-no-scroll" href="#sticky-footer">
 												Sticky footer
 
 												<i class="fas fa-hashtag"></i>
@@ -271,7 +276,7 @@
 									<div class="component-block-usage">
 										<!-- button -->
 										<div class="component-block-usage-btn">
-											<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#sticky-footer-collapse" role="button" aria-expanded="false" aria-controls="sticky-footer-collapse">
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#sticky-footer-collapse" role="button" aria-expanded="false" aria-controls="sticky-footer-collapse">
 												example
 												<i class="fas fa-angle-down"></i>
 											</a>
@@ -283,13 +288,13 @@
 											<!-- NAVS FOR TABS -->
 											<ul class="nav nav-tabs" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="sticky-footer-html-tab" data-toggle="tab" href="#sticky-footer-html" role="tab" aria-controls="sticky-footer-html" aria-selected="true">HTML</a>
+													<a class="nav-link js-no-scroll active" id="sticky-footer-html-tab" data-toggle="tab" href="#sticky-footer-html" role="tab" aria-controls="sticky-footer-html" aria-selected="true">HTML</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="sticky-footer-sass-tab" data-toggle="tab" href="#sticky-footer-sass" role="tab" aria-controls="sticky-footer-sass" aria-selected="false">SASS</a>
+													<a class="nav-link js-no-scroll" id="sticky-footer-sass-tab" data-toggle="tab" href="#sticky-footer-sass" role="tab" aria-controls="sticky-footer-sass" aria-selected="false">SASS</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="sticky-footer-js-tab" data-toggle="tab" href="#sticky-footer-js" role="tab" aria-controls="sticky-footer-js" aria-selected="false">JS</a>
+													<a class="nav-link js-no-scroll" id="sticky-footer-js-tab" data-toggle="tab" href="#sticky-footer-js" role="tab" aria-controls="sticky-footer-js" aria-selected="false">JS</a>
 												</li>
 											</ul>
 											<!-- NAVS FOR TABS END -->
@@ -378,7 +383,7 @@
 									<!-- title -->
 									<div class="component-block-title-block">
 										<h4 class="component-block-title">
-											<a class="anchor-link" href="#scroll-top-button">
+											<a class="anchor-link js-no-scroll" href="#scroll-top-button">
 												Scroll top button
 
 												<i class="fas fa-hashtag"></i>
@@ -414,7 +419,7 @@
 									<div class="component-block-usage">
 										<!-- button -->
 										<div class="component-block-usage-btn">
-											<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#scroll-top-button-collapse" role="button" aria-expanded="false" aria-controls="scroll-top-button-collapse">
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#scroll-top-button-collapse" role="button" aria-expanded="false" aria-controls="scroll-top-button-collapse">
 												example
 												<i class="fas fa-angle-down"></i>
 											</a>
@@ -426,13 +431,13 @@
 											<!-- NAVS FOR TABS -->
 											<ul class="nav nav-tabs" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="scroll-top-button-html-tab" data-toggle="tab" href="#scroll-top-button-html" role="tab" aria-controls="scroll-top-button-html" aria-selected="true">HTML</a>
+													<a class="nav-link js-no-scroll active" id="scroll-top-button-html-tab" data-toggle="tab" href="#scroll-top-button-html" role="tab" aria-controls="scroll-top-button-html" aria-selected="true">HTML</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="scroll-top-button-sass-tab" data-toggle="tab" href="#scroll-top-button-sass" role="tab" aria-controls="scroll-top-button-sass" aria-selected="false">SASS</a>
+													<a class="nav-link js-no-scroll" id="scroll-top-button-sass-tab" data-toggle="tab" href="#scroll-top-button-sass" role="tab" aria-controls="scroll-top-button-sass" aria-selected="false">SASS</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="scroll-top-button-js-tab" data-toggle="tab" href="#scroll-top-button-js" role="tab" aria-controls="scroll-top-button-js" aria-selected="false">JS</a>
+													<a class="nav-link js-no-scroll" id="scroll-top-button-js-tab" data-toggle="tab" href="#scroll-top-button-js" role="tab" aria-controls="scroll-top-button-js" aria-selected="false">JS</a>
 												</li>
 											</ul>
 											<!-- NAVS FOR TABS END -->
@@ -540,7 +545,7 @@
 									<!-- title -->
 									<div class="component-block-title-block">
 										<h4 class="component-block-title">
-											<a class="anchor-link" href="#scroll-to-element">
+											<a class="anchor-link js-no-scroll" href="#scroll-to-element">
 												Scroll to element
 
 												<i class="fas fa-hashtag"></i>
@@ -557,14 +562,14 @@
 
 									<!-- description -->
 									<div class="component-block-description-block">
-										<p>Simple scrolling to element. Give to target element <strong class="red-text">id="target"</strong>, and to link <strong class="red-text">href="go-to:target"</strong>.</p>
+										<p>Simple scrolling to element. Give to target element <strong class="red-text">id="target"</strong>, and to link <strong class="red-text">href="#target"</strong>. If you have a link with an attribute <strong>href</strong> that begins with a character <strong>#</strong>, and you do not want to repeat the behavior of the smooth scroll to the element, just add <strong class="red-text">class="js-no-scroll"</strong>.</p>
 									</div>
 
 									<!-- usage -->
 									<div class="component-block-usage">
 										<!-- button -->
 										<div class="component-block-usage-btn">
-											<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#scroll-to-element-collapse" role="button" aria-expanded="false" aria-controls="scroll-to-element-collapse">
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#scroll-to-element-collapse" role="button" aria-expanded="false" aria-controls="scroll-to-element-collapse">
 												example
 												<i class="fas fa-angle-down"></i>
 											</a>
@@ -575,10 +580,10 @@
 											<!-- NAVS FOR TABS -->
 											<ul class="nav nav-tabs" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="scroll-to-element-html-tab" data-toggle="tab" href="#scroll-to-element-html" role="tab" aria-controls="scroll-to-element-html" aria-selected="true">HTML</a>
+													<a class="nav-link js-no-scroll active" id="scroll-to-element-html-tab" data-toggle="tab" href="#scroll-to-element-html" role="tab" aria-controls="scroll-to-element-html" aria-selected="true">HTML</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="scroll-to-element-js-tab" data-toggle="tab" href="#scroll-to-element-js" role="tab" aria-controls="scroll-to-element-js" aria-selected="false">JS</a>
+													<a class="nav-link js-no-scroll" id="scroll-to-element-js-tab" data-toggle="tab" href="#scroll-to-element-js" role="tab" aria-controls="scroll-to-element-js" aria-selected="false">JS</a>
 												</li>
 											</ul>
 											<!-- NAVS FOR TABS END -->
@@ -593,7 +598,7 @@
 																<div id="target"></div>
 
 																<!-- LINK -->
-																<a href="go-to:target">Scroll to target</a>
+																<a href="#target">Scroll to target</a>
 															</code>
 														</pre>
 													</div>
@@ -603,24 +608,31 @@
 														<pre class="line-numbers">
 															<code class="language-js">
 																// SCROLL TO ELEMENT
-																$('a[href^="go-to:"]').on('click', function(e) {
+																var animationComplete = true;
+
+																$('a[href^="#"]:not(.js-no-scroll)').on('click', function(e) {
 																	e.preventDefault();
 
 																	// height of header (for offset)
 																	var headerOffset = $('.js-header').outerHeight(),
 																			idOfElement = $(this).attr('href');
 
-																	if (idOfElement.substring(0, 6) === 'go-to:') {
-
-																		idOfElement = '#' + idOfElement.slice(6);
-
-																		if (headerOffset === undefined) {
-																			headerOffset = 0;
-																		}
-
-																		var top = $(idOfElement).offset().top - headerOffset;
-																		$('body,html').animate({scrollTop: top}, 1000);
+																	if (headerOffset === undefined) {
+																		headerOffset = 0;
 																	}
+
+																	var top = $(idOfElement).offset().top - headerOffset;
+
+																	if (animationComplete) {
+																		animationComplete = false;
+
+																		$('body,html').animate({
+																			scrollTop: top
+																		}, 1000 ).promise().done(function(){
+																			animationComplete = true;
+																		});
+																	}
+
 																});
 															</code>
 														</pre>
@@ -639,7 +651,7 @@
 									<!-- title -->
 									<div class="component-block-title-block">
 										<h4 class="component-block-title">
-											<a class="anchor-link" href="#width-of-scrollbar">
+											<a class="anchor-link js-no-scroll" href="#width-of-scrollbar">
 												Width of scrollbar
 
 												<i class="fas fa-hashtag"></i>
@@ -663,7 +675,7 @@
 									<div class="component-block-usage">
 										<!-- button -->
 										<div class="component-block-usage-btn">
-											<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#width-of-scrollbar-collapse" role="button" aria-expanded="false" aria-controls="width-of-scrollbar-collapse">
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#width-of-scrollbar-collapse" role="button" aria-expanded="false" aria-controls="width-of-scrollbar-collapse">
 												example
 												<i class="fas fa-angle-down"></i>
 											</a>
@@ -699,7 +711,7 @@
 									<!-- title -->
 									<div class="component-block-title-block">
 										<h4 class="component-block-title">
-											<a class="anchor-link" href="#custom-checkbox-radio">
+											<a class="anchor-link js-no-scroll" href="#custom-checkbox-radio">
 												Custom checkbox and radio button
 
 												<i class="fas fa-hashtag"></i>
@@ -802,7 +814,7 @@
 									<div class="component-block-usage">
 										<!-- button -->
 										<div class="component-block-usage-btn">
-											<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#custom-checkbox-radio-collapse" role="button" aria-expanded="false" aria-controls="custom-checkbox-radio-collapse">
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#custom-checkbox-radio-collapse" role="button" aria-expanded="false" aria-controls="custom-checkbox-radio-collapse">
 												example
 												<i class="fas fa-angle-down"></i>
 											</a>
@@ -813,10 +825,10 @@
 											<!-- NAVS FOR TABS -->
 											<ul class="nav nav-tabs" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="custom-checkbox-radio-html-tab" data-toggle="tab" href="#custom-checkbox-radio-html" role="tab" aria-controls="custom-checkbox-radio-html" aria-selected="true">HTML</a>
+													<a class="nav-link js-no-scroll active" id="custom-checkbox-radio-html-tab" data-toggle="tab" href="#custom-checkbox-radio-html" role="tab" aria-controls="custom-checkbox-radio-html" aria-selected="true">HTML</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="custom-checkbox-radio-sass-tab" data-toggle="tab" href="#custom-checkbox-radio-sass" role="tab" aria-controls="custom-checkbox-radio-sass" aria-selected="false">SASS</a>
+													<a class="nav-link js-no-scroll" id="custom-checkbox-radio-sass-tab" data-toggle="tab" href="#custom-checkbox-radio-sass" role="tab" aria-controls="custom-checkbox-radio-sass" aria-selected="false">SASS</a>
 												</li>
 											</ul>
 											<!-- NAVS FOR TABS END -->
@@ -1028,7 +1040,7 @@
 									<!-- title -->
 									<div class="component-block-title-block">
 										<h4 class="component-block-title">
-											<a class="anchor-link" href="#google-map">
+											<a class="anchor-link js-no-scroll" href="#google-map">
 												Google map
 
 												<i class="fas fa-hashtag"></i>
@@ -1105,7 +1117,7 @@
 									<div class="component-block-usage">
 										<!-- button -->
 										<div class="component-block-usage-btn">
-											<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#google-map-collapse" role="button" aria-expanded="false" aria-controls="google-map-collapse">
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#google-map-collapse" role="button" aria-expanded="false" aria-controls="google-map-collapse">
 												example
 												<i class="fas fa-angle-down"></i>
 											</a>
@@ -1116,13 +1128,13 @@
 											<!-- NAVS FOR TABS -->
 											<ul class="nav nav-tabs" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="google-map-html-tab" data-toggle="tab" href="#google-map-html" role="tab" aria-controls="google-map-html" aria-selected="true">HTML</a>
+													<a class="nav-link js-no-scroll active" id="google-map-html-tab" data-toggle="tab" href="#google-map-html" role="tab" aria-controls="google-map-html" aria-selected="true">HTML</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="google-map-sass-tab" data-toggle="tab" href="#google-map-sass" role="tab" aria-controls="google-map-sass" aria-selected="false">SASS</a>
+													<a class="nav-link js-no-scroll" id="google-map-sass-tab" data-toggle="tab" href="#google-map-sass" role="tab" aria-controls="google-map-sass" aria-selected="false">SASS</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="google-map-js-tab" data-toggle="tab" href="#google-map-js" role="tab" aria-controls="google-map-js" aria-selected="false">JS</a>
+													<a class="nav-link js-no-scroll" id="google-map-js-tab" data-toggle="tab" href="#google-map-js" role="tab" aria-controls="google-map-js" aria-selected="false">JS</a>
 												</li>
 											</ul>
 											<!-- NAVS FOR TABS END -->
@@ -1348,7 +1360,7 @@
 									<!-- title -->
 									<div class="component-block-title-block">
 										<h4 class="component-block-title">
-											<a class="anchor-link" href="#responsive-video">
+											<a class="anchor-link js-no-scroll" href="#responsive-video">
 												Embed responsive video
 
 												<i class="fas fa-hashtag"></i>
@@ -1412,7 +1424,7 @@
 									<div class="component-block-usage">
 										<!-- button -->
 										<div class="component-block-usage-btn">
-											<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#responsive-video-collapse" role="button" aria-expanded="false" aria-controls="responsive-video-collapse">
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#responsive-video-collapse" role="button" aria-expanded="false" aria-controls="responsive-video-collapse">
 												example
 												<i class="fas fa-angle-down"></i>
 											</a>
@@ -1433,10 +1445,10 @@
 											<!-- NAVS FOR TABS -->
 											<ul class="nav nav-tabs" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="responsive-video-html-tab" data-toggle="tab" href="#responsive-video-html" role="tab" aria-controls="responsive-video-html" aria-selected="true">HTML</a>
+													<a class="nav-link js-no-scroll active" id="responsive-video-html-tab" data-toggle="tab" href="#responsive-video-html" role="tab" aria-controls="responsive-video-html" aria-selected="true">HTML</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="responsive-video-sass-tab" data-toggle="tab" href="#responsive-video-sass" role="tab" aria-controls="responsive-video-sass" aria-selected="false">SASS</a>
+													<a class="nav-link js-no-scroll" id="responsive-video-sass-tab" data-toggle="tab" href="#responsive-video-sass" role="tab" aria-controls="responsive-video-sass" aria-selected="false">SASS</a>
 												</li>
 											</ul>
 											<!-- NAVS FOR TABS END -->
@@ -1529,7 +1541,7 @@
 									<!-- title -->
 									<div class="component-block-title-block">
 										<h4 class="component-block-title">
-											<a class="anchor-link" href="#youtube-thumbnail">
+											<a class="anchor-link js-no-scroll" href="#youtube-thumbnail">
 												Youtube thumbnail
 
 												<i class="fas fa-hashtag"></i>
@@ -1591,7 +1603,7 @@
 									<div class="component-block-usage">
 										<!-- button -->
 										<div class="component-block-usage-btn">
-											<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#youtube-thumbnail-collapse" role="button" aria-expanded="false" aria-controls="youtube-thumbnail-collapse">
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#youtube-thumbnail-collapse" role="button" aria-expanded="false" aria-controls="youtube-thumbnail-collapse">
 												example
 												<i class="fas fa-angle-down"></i>
 											</a>
@@ -1607,7 +1619,7 @@
 
 													<div class="attention-text">
 														<p>Do not forget to insert your <strong>VIDEO_ID</strong> to iframe.</p>
-														<p>This component is dependent on <a href="#responsive-video"><strong>Embed responsive video</strong></a>.</p>
+														<p>This component is dependent on <a class="js-no-scroll" href="#responsive-video"><strong>Embed responsive video</strong></a>.</p>
 													</div>
 												</div>
 											</div>
@@ -1615,13 +1627,13 @@
 											<!-- NAVS FOR TABS -->
 											<ul class="nav nav-tabs" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="youtube-thumbnail-html-tab" data-toggle="tab" href="#youtube-thumbnail-html" role="tab" aria-controls="youtube-thumbnail-html" aria-selected="true">HTML</a>
+													<a class="nav-link js-no-scroll active" id="youtube-thumbnail-html-tab" data-toggle="tab" href="#youtube-thumbnail-html" role="tab" aria-controls="youtube-thumbnail-html" aria-selected="true">HTML</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="youtube-thumbnail-sass-tab" data-toggle="tab" href="#youtube-thumbnail-sass" role="tab" aria-controls="youtube-thumbnail-sass" aria-selected="false">SASS</a>
+													<a class="nav-link js-no-scroll" id="youtube-thumbnail-sass-tab" data-toggle="tab" href="#youtube-thumbnail-sass" role="tab" aria-controls="youtube-thumbnail-sass" aria-selected="false">SASS</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="youtube-thumbnail-js-tab" data-toggle="tab" href="#youtube-thumbnail-js" role="tab" aria-controls="youtube-thumbnail-js" aria-selected="false">JS</a>
+													<a class="nav-link js-no-scroll" id="youtube-thumbnail-js-tab" data-toggle="tab" href="#youtube-thumbnail-js" role="tab" aria-controls="youtube-thumbnail-js" aria-selected="false">JS</a>
 												</li>
 											</ul>
 											<!-- NAVS FOR TABS END -->
@@ -1730,7 +1742,7 @@
 									<!-- title -->
 									<div class="component-block-title-block">
 										<h4 class="component-block-title">
-											<a class="anchor-link" href="#vimeo-thumbnail">
+											<a class="anchor-link js-no-scroll" href="#vimeo-thumbnail">
 												Vimeo thumbnail
 
 												<i class="fas fa-hashtag"></i>
@@ -1794,7 +1806,7 @@
 									<div class="component-block-usage">
 										<!-- button -->
 										<div class="component-block-usage-btn">
-											<a class="btn btn-md btn-primary btn-icon" data-toggle="collapse" href="#vimeo-thumbnail-collapse" role="button" aria-expanded="false" aria-controls="vimeo-thumbnail-collapse">
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#vimeo-thumbnail-collapse" role="button" aria-expanded="false" aria-controls="vimeo-thumbnail-collapse">
 												example
 												<i class="fas fa-angle-down"></i>
 											</a>
@@ -1809,7 +1821,7 @@
 
 													<div class="attention-text">
 														<p>Do not forget to insert your <strong>VIDEO_ID</strong> to iframe.</p>
-														<p>This component is dependent on <a href="#responsive-video"><strong>Embed responsive video</strong></a>.</p>
+														<p>This component is dependent on <a class="js-no-scroll" href="#responsive-video"><strong>Embed responsive video</strong></a>.</p>
 													</div>
 												</div>
 											</div>
@@ -1817,13 +1829,13 @@
 											<!-- NAVS FOR TABS -->
 											<ul class="nav nav-tabs" role="tablist">
 												<li class="nav-item">
-													<a class="nav-link active" id="vimeo-thumbnail-html-tab" data-toggle="tab" href="#vimeo-thumbnail-html" role="tab" aria-controls="vimeo-thumbnail-html" aria-selected="true">HTML</a>
+													<a class="nav-link js-no-scroll active" id="vimeo-thumbnail-html-tab" data-toggle="tab" href="#vimeo-thumbnail-html" role="tab" aria-controls="vimeo-thumbnail-html" aria-selected="true">HTML</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="vimeo-thumbnail-sass-tab" data-toggle="tab" href="#vimeo-thumbnail-sass" role="tab" aria-controls="vimeo-thumbnail-sass" aria-selected="false">SASS</a>
+													<a class="nav-link js-no-scroll" id="vimeo-thumbnail-sass-tab" data-toggle="tab" href="#vimeo-thumbnail-sass" role="tab" aria-controls="vimeo-thumbnail-sass" aria-selected="false">SASS</a>
 												</li>
 												<li class="nav-item">
-													<a class="nav-link" id="vimeo-thumbnail-js-tab" data-toggle="tab" href="#vimeo-thumbnail-js" role="tab" aria-controls="vimeo-thumbnail-js" aria-selected="false">JS</a>
+													<a class="nav-link js-no-scroll" id="vimeo-thumbnail-js-tab" data-toggle="tab" href="#vimeo-thumbnail-js" role="tab" aria-controls="vimeo-thumbnail-js" aria-selected="false">JS</a>
 												</li>
 											</ul>
 											<!-- NAVS FOR TABS END -->
@@ -1945,16 +1957,16 @@
 								<input class="search-input js-search-input" name="search" placeholder="Search..." type="text" autocomplete="off" data-list=".list-group">
 
 								<div class="list-group js-list-group" id="side-navigation">
-									<a href="#small-header" class="list-group-item list-group-item-action">Small header after scroll</a>
-									<a href="#sticky-footer" class="list-group-item list-group-item-action">Sticky footer</a>
-									<a href="#scroll-top-button" class="list-group-item list-group-item-action">Scroll top button</a>
-									<a href="#scroll-to-element" class="list-group-item list-group-item-action">Scroll to element</a>
-									<a href="#width-of-scrollbar" class="list-group-item list-group-item-action">Width of scrollbar</a>
-									<a href="#custom-checkbox-radio" class="list-group-item list-group-item-action">Custom checkbox and radio</a>
-									<a href="#google-map" class="list-group-item list-group-item-action">Google map</a>
-									<a href="#responsive-video" class="list-group-item list-group-item-action">Embed responsive video</a>
-									<a href="#youtube-thumbnail" class="list-group-item list-group-item-action">Youtube thumbnail</a>
-									<a href="#vimeo-thumbnail" class="list-group-item list-group-item-action">Vimeo thumbnail</a>
+									<a href="#small-header" class="list-group-item list-group-item-action js-no-scroll">Small header after scroll</a>
+									<a href="#sticky-footer" class="list-group-item list-group-item-action js-no-scroll">Sticky footer</a>
+									<a href="#scroll-top-button" class="list-group-item list-group-item-action js-no-scroll">Scroll top button</a>
+									<a href="#scroll-to-element" class="list-group-item list-group-item-action js-no-scroll">Scroll to element</a>
+									<a href="#width-of-scrollbar" class="list-group-item list-group-item-action js-no-scroll">Width of scrollbar</a>
+									<a href="#custom-checkbox-radio" class="list-group-item list-group-item-action js-no-scroll">Custom checkbox and radio</a>
+									<a href="#google-map" class="list-group-item list-group-item-action js-no-scroll">Google map</a>
+									<a href="#responsive-video" class="list-group-item list-group-item-action js-no-scroll">Embed responsive video</a>
+									<a href="#youtube-thumbnail" class="list-group-item list-group-item-action js-no-scroll">Youtube thumbnail</a>
+									<a href="#vimeo-thumbnail" class="list-group-item list-group-item-action js-no-scroll">Vimeo thumbnail</a>
 								</div>
 							</aside>
 						</div>

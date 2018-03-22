@@ -21,7 +21,8 @@
 		.github-corner-wrap {
 			top: 0;
 			right: 0;
-			max-width: 61px;
+			width: 61px;
+			height: 61px;
 		}
 	}
 
@@ -33,10 +34,6 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-	}
-
-	&-button {
-		padding-left: 15px;
 	}
 }
 
