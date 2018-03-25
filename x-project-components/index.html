@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>X-project Framework</title>
-	<meta name="description" content="All additional components are here">
+	<title>X-Project Components</title>
+	<meta name="description" content="Collection of most useful components for page layout">
 
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
@@ -26,7 +26,7 @@
 	<div class="wrap-for-sticky js-wrap-for-sticky">
 
 		<!-- BACK TO TOP BUTTON -->
-		<div class="scroll-top-button js-scroll-top">
+		<div class="scroll-top-button js-scroll-top js-scroll-top-button">
 			<i class="fas fa-angle-double-up"></i>
 			<p>back to top</p>
 		</div>
@@ -83,7 +83,7 @@
 					</div>
 
 					<div class="description-text">
-						<p><strong>X-Project Components</strong> - is a collection of most useful components for page layout. For each component are presented description and code examples with the help of which you can easily understand and apply the right component on your website. Every component is tested for cross-browser compatibility and works in the latest versions of all popular browsers. In X-projece all css code was written by <strong>SASS</strong> (with SCSS syntax) and all javascript code with the use of a library <strong>jQuery</strong>.</p>
+						<p><strong>X-Project Components</strong> - is a collection of most useful components for page layout. For each component are presented description and code examples with the help of which you can easily understand and apply the right component on your website. Every component is tested for cross-browser compatibility and works in the latest versions of all popular browsers. In X-Project Components all css code was written by <strong>SASS</strong> (with SCSS syntax) and all javascript code with the use of a library <strong>jQuery</strong>.</p>
 					</div>
 				</section>
 				<!-- SECTION ABOUT END -->
@@ -408,11 +408,8 @@
 
 									<!-- description -->
 									<div class="component-block-description-block">
-										<p>
-											Simple button for scrolling to top of the page. Button is hide, when you are in the top of page, and visible when you start scrolling.
-											</br>
-											If you have an element, when you click on which the page should be scrolled to the top, just add <strong class="red-text">class="js-scroll-top"</strong>.
-										</p>
+										<p>Simple button for scrolling to top of the page. Button is hide, when you are in the top of page, and visible when you start scrolling.</p>
+										<p>If you have an element, when you click on which the page should be scrolled to the top, just add <strong class="red-text">class="js-scroll-top"</strong>.</p>
 									</div>
 
 									<!-- usage -->
@@ -427,6 +424,17 @@
 
 										<!-- code example -->
 										<div class="collapse" id="scroll-top-button-collapse">
+
+											<!-- attention -->
+											<div class="component-block-attention -small-indents">
+												<div class="attention-text-block">
+													<i class="fas fa-exclamation-triangle attention-text-block-icon"></i>
+
+													<div class="attention-text">
+														<p>For icon were used <a href="https://fontawesome.com/" target="blank">Font Awesome 5</a></p>
+													</div>
+												</div>
+											</div>
 
 											<!-- NAVS FOR TABS -->
 											<ul class="nav nav-tabs" role="tablist">
@@ -450,7 +458,7 @@
 															<code class="language-html js-replase-brackets">
 																<!-- SCROLL TOP BUTTON -->
 																<button type="button" class="scroll-top-btn js-scroll-top-btn js-scroll-top">
-																	<i class="scroll-top-btn-icon">↑</i>
+																	<i class="scroll-top-btn-icon fas fa-angle-up"></i>
 																</button>
 																<!-- SCROLL TOP BUTTON END -->
 															</code>
@@ -475,7 +483,7 @@
 																	position: fixed;
 																	bottom: 0;
 																	right: 50px;
-																	z-index: 100;
+																	z-index: 101;
 																	width: $scroll-top-btn-size;
 																	height: $scroll-top-btn-size;
 																	border: none;
@@ -510,7 +518,6 @@
 														<pre class="line-numbers">
 															<code class="language-js">
 																// SCROLL TOP BUTTON
-																// 1) checking the distance from the top of the page
 																$(window).on('scroll', function() {
 																	if ($(this).scrollTop() > 100) {
 																		$('.js-scroll-top-btn').addClass('-show');
@@ -519,13 +526,26 @@
 																	}
 																});
 
-																// 2) сlick event to scroll to top
-																$('.js-scroll-top').on('click', function() {
-																	$('body,html').animate({
-																		scrollTop: 0
-																	}, 1000);
+																if ($(document).scrollTop() > 100) {
+																	$('.js-scroll-top-btn').addClass('-show');
+																}
 
-																	return false;
+																// 2) сlick event to scroll to top
+																var scrollingComplete = true;
+
+																$('.js-scroll-top').on('click', function() {
+
+																	if (scrollingComplete) {
+																		scrollingComplete = false;
+
+																		$('body,html').animate({
+																			scrollTop: 0
+																		}, 1000 ).promise().done(function() {
+																			scrollingComplete = true;
+																		});
+
+																		return false;
+																	}
 																});
 															</code>
 														</pre>
@@ -562,7 +582,9 @@
 
 									<!-- description -->
 									<div class="component-block-description-block">
-										<p>Simple scrolling to element. Give to target element <strong class="red-text">id="target"</strong>, and to link <strong class="red-text">href="#target"</strong>. If you have a link with an attribute <strong>href</strong> that begins with a character <strong>#</strong>, and you do not want to repeat the behavior of the smooth scroll to the element, just add <strong class="red-text">class="js-no-scroll"</strong>.</p>
+										<p>Simple scrolling to element. Give to target element <strong class="red-text">id="target"</strong>, and to link <strong class="red-text">href="#target"</strong>.</p>
+										<p>If you have a link with an attribute <strong>href</strong> that begins with a character <strong>#</strong>, and you do not want to repeat the behavior of the smooth scroll to the element, just add <strong class="red-text">class="js-no-scroll"</strong> to this element.</p>
+										<p>In order to compensate for the height of a fixed header, just add <strong class="red-text">class="js-header"</strong> to header.</p>
 									</div>
 
 									<!-- usage -->
@@ -628,7 +650,7 @@
 
 																		$('body,html').animate({
 																			scrollTop: top
-																		}, 1000 ).promise().done(function(){
+																		}, 1000 ).promise().done(function() {
 																			animationComplete = true;
 																		});
 																	}
@@ -688,7 +710,7 @@
 														// WIDTH OF SCROLLBAR
 														var widthOfScrollbar;
 
-														function getScrollBarWidth () {
+														function getScrollBarWidth() {
 															var $outer = $('&#60;div&#62;').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
 																widthWithScroll = $('&#60;div&#62;').css({width: '100%'}).appendTo($outer).outerWidth();
 															$outer.remove();
@@ -743,34 +765,34 @@
 
 												<!-- CUSTOM CHECKBOX -->
 												<div>
-													<label class="custom-checkbox">One
-														<input class="custom-checkbox-input" type="checkbox" checked="checked">
+													<label class="custom-checkbox">One (checked)
+														<input class="custom-checkbox-input" type="checkbox" value="one" checked>
 														<span class="custom-checkbox-checkmark">
-															<i class="custom-checkbox-checkmark-icon">✔</i>
+															<i class="custom-checkbox-checkmark-icon fas fa-check"></i>
 														</span>
 													</label>
 												</div>
 												<div>
 													<label class="custom-checkbox">Two
-														<input class="custom-checkbox-input" type="checkbox">
+														<input class="custom-checkbox-input" type="checkbox" value="two">
 														<span class="custom-checkbox-checkmark">
-															<i class="custom-checkbox-checkmark-icon">✔</i>
+															<i class="custom-checkbox-checkmark-icon fas fa-check"></i>
 														</span>
 													</label>
 												</div>
 												<div>
 													<label class="custom-checkbox">Three
-														<input class="custom-checkbox-input" type="checkbox">
+														<input class="custom-checkbox-input" type="checkbox" value="three">
 														<span class="custom-checkbox-checkmark">
-															<i class="custom-checkbox-checkmark-icon">✔</i>
+															<i class="custom-checkbox-checkmark-icon fas fa-check"></i>
 														</span>
 													</label>
 												</div>
 												<div>
-													<label class="custom-checkbox">Four
-														<input class="custom-checkbox-input" type="checkbox">
+													<label class="custom-checkbox">Four (disabled)
+														<input class="custom-checkbox-input" type="checkbox" value="four" disabled>
 														<span class="custom-checkbox-checkmark">
-															<i class="custom-checkbox-checkmark-icon">✔</i>
+															<i class="custom-checkbox-checkmark-icon fas fa-check"></i>
 														</span>
 													</label>
 												</div>
@@ -782,27 +804,35 @@
 
 												<!-- CUSTOM RADIO -->
 												<div>
-													<label class="custom-radio">One
-														<input class="custom-radio-input" type="radio" name="example" value="one" checked="checked">
-														<span class="custom-radio-checkmark"></span>
+													<label class="custom-radio">One (checked)
+														<input class="custom-radio-input" type="radio" name="example" value="one" checked>
+														<span class="custom-radio-checkmark">
+															<i class="custom-radio-checkmark-icon fas fa-circle"></i>
+														</span>
 													</label>
 												</div>
 												<div>
 													<label class="custom-radio">Two
 														<input class="custom-radio-input" type="radio" name="example" value="two">
-														<span class="custom-radio-checkmark"></span>
+														<span class="custom-radio-checkmark">
+															<i class="custom-radio-checkmark-icon fas fa-circle"></i>
+														</span>
 													</label>
 												</div>
 												<div>
 													<label class="custom-radio">Three
 														<input class="custom-radio-input" type="radio" name="example" value="three">
-														<span class="custom-radio-checkmark"></span>
+														<span class="custom-radio-checkmark">
+															<i class="custom-radio-checkmark-icon fas fa-circle"></i>
+														</span>
 													</label>
 												</div>
 												<div>
-													<label class="custom-radio">Four
-														<input class="custom-radio-input" type="radio" name="example" value="four">
-														<span class="custom-radio-checkmark"></span>
+													<label class="custom-radio">Four (disabled)
+														<input class="custom-radio-input" type="radio" name="example" value="four" disabled>
+														<span class="custom-radio-checkmark">
+															<i class="custom-radio-checkmark-icon fas fa-circle"></i>
+														</span>
 													</label>
 												</div>
 												<!-- CUSTOM RADIO END -->
@@ -821,6 +851,17 @@
 										</div>
 										<!-- code -->
 										<div class="collapse" id="custom-checkbox-radio-collapse">
+
+											<!-- attention -->
+											<div class="component-block-attention -small-indents">
+												<div class="attention-text-block">
+													<i class="fas fa-exclamation-triangle attention-text-block-icon"></i>
+
+													<div class="attention-text">
+														<p>For icons were used <a href="https://fontawesome.com/" target="blank">Font Awesome 5</a></p>
+													</div>
+												</div>
+											</div>
 
 											<!-- NAVS FOR TABS -->
 											<ul class="nav nav-tabs" role="tablist">
@@ -841,18 +882,34 @@
 															<code class="language-html js-replase-brackets">
 																<!-- CUSTOM CHECKBOX -->
 																<div>
-																	<label class="custom-checkbox">One
-																		<input class="custom-checkbox-input" type="checkbox" checked="checked">
+																	<label class="custom-checkbox">One (checked)
+																		<input class="custom-checkbox-input" type="checkbox" value="one" checked>
 																		<span class="custom-checkbox-checkmark">
-																			<i class="custom-checkbox-checkmark-icon">✔</i>
+																			<i class="custom-checkbox-checkmark-icon fas fa-check"></i>
 																		</span>
 																	</label>
 																</div>
 																<div>
 																	<label class="custom-checkbox">Two
-																		<input class="custom-checkbox-input" type="checkbox">
+																		<input class="custom-checkbox-input" type="checkbox" value="two">
 																		<span class="custom-checkbox-checkmark">
-																			<i class="custom-checkbox-checkmark-icon">✔</i>
+																			<i class="custom-checkbox-checkmark-icon fas fa-check"></i>
+																		</span>
+																	</label>
+																</div>
+																<div>
+																	<label class="custom-checkbox">Three
+																		<input class="custom-checkbox-input" type="checkbox" value="three">
+																		<span class="custom-checkbox-checkmark">
+																			<i class="custom-checkbox-checkmark-icon fas fa-check"></i>
+																		</span>
+																	</label>
+																</div>
+																<div>
+																	<label class="custom-checkbox">Four (disabled)
+																		<input class="custom-checkbox-input" type="checkbox" value="four" disabled>
+																		<span class="custom-checkbox-checkmark">
+																			<i class="custom-checkbox-checkmark-icon fas fa-check"></i>
 																		</span>
 																	</label>
 																</div>
@@ -864,18 +921,38 @@
 															<code class="language-html js-replase-brackets">
 																<!-- CUSTOM RADIO -->
 																<div>
-																	<label class="custom-radio">One
-																		<input class="custom-radio-input" type="radio" name="radio-group" value="one" checked="checked">
-																		<span class="custom-radio-checkmark"></span>
+																	<label class="custom-radio">One (checked)
+																		<input class="custom-radio-input" type="radio" name="radio-group" value="one" checked>
+																		<span class="custom-radio-checkmark">
+																			<i class="custom-radio-checkmark-icon fas fa-circle"></i>
+																		</span>
 																	</label>
 																</div>
 																<div>
 																	<label class="custom-radio">Two
 																		<input class="custom-radio-input" type="radio" name="radio-group" value="two">
-																		<span class="custom-radio-checkmark"></span>
+																		<span class="custom-radio-checkmark">
+																			<i class="custom-radio-checkmark-icon fas fa-circle"></i>
+																		</span>
 																	</label>
 																</div>
-																<!-- CUSTOM RADIO END-->
+																<div>
+																	<label class="custom-radio">Three
+																		<input class="custom-radio-input" type="radio" name="radio-group" value="three">
+																		<span class="custom-radio-checkmark">
+																			<i class="custom-radio-checkmark-icon fas fa-circle"></i>
+																		</span>
+																	</label>
+																</div>
+																<div>
+																	<label class="custom-radio">Four (disabled)
+																		<input class="custom-radio-input" type="radio" name="radio-group" value="four" disabled>
+																		<span class="custom-radio-checkmark">
+																			<i class="custom-radio-checkmark-icon fas fa-circle"></i>
+																		</span>
+																	</label>
+																</div>
+																<!-- CUSTOM RADIO END -->
 															</code>
 														</pre>
 													</div>
@@ -893,39 +970,11 @@
 																	position: relative;
 																	display: inline-block;
 																	padding-left: 35px;
-																	margin-right: 10px;
+																	margin-right: 15px;
 																	margin-bottom: 1rem;
 																	line-height: 25px;
 																	cursor: pointer;
 																	user-select: none;
-
-																	&:hover {
-																		.custom-checkbox-checkmark {
-																			background-color: lighten($checkbox-bg-color, 10%);
-																		}
-
-																		.custom-checkbox-input {
-																			&:checked + .custom-checkbox-checkmark {
-																				background-color: lighten($checkbox-active-bg-color, 10%);
-																			}
-																		}
-																	}
-
-																	&-input {
-																		position: absolute;
-																		top: 0;
-																		left: 0;
-																		z-index: -1;
-																		visibility: hidden;
-
-																		&:checked + .custom-checkbox-checkmark {
-																			background-color: $checkbox-active-bg-color;
-
-																			.custom-checkbox-checkmark-icon {
-																				opacity: 1;
-																			}
-																		}
-																	}
 
 																	&-checkmark {
 																		position: absolute;
@@ -939,16 +988,51 @@
 																	}
 
 																	&-checkmark-icon {
-																		transition: 0.3s;
-																		font-size: 18px;
-																		padding-right: 4px;
-																		color: #fff;
 																		position: absolute;
 																		top: 50%;
 																		left: 50%;
 																		transform: translate(-50%, -50%);
+																		display: inline-block;
+																		font-size: 0.9rem;
+																		color: #fff;
 																		opacity: 0;
+																		transition: 0.2s;
 																	}
+
+																	&-input {
+																		position: absolute;
+																		top: 0;
+																		left: 0;
+																		z-index: -1;
+																		visibility: hidden;
+
+																		// checked styles
+																		&:checked + {
+																			.custom-checkbox-checkmark {
+																				background-color: $checkbox-active-bg-color;
+
+																				.custom-checkbox-checkmark-icon {
+																					opacity: 1;
+																				}
+																			}
+																		}
+
+																		// disabled styles
+																		&:disabled + {
+																			.custom-checkbox-checkmark {
+																				background-color: rgba($checkbox-bg-color, 0.5);
+																			}
+																		}
+																	}
+
+																	&:hover {
+																		.custom-checkbox-input:not(:disabled):not(:checked) + {
+																			.custom-checkbox-checkmark {
+																				background-color: lighten($checkbox-bg-color, 10%);
+																			}
+																		}
+																	}
+
 																}
 															</code>
 														</pre>
@@ -964,38 +1048,11 @@
 																	position: relative;
 																	display: inline-block;
 																	padding-left: 35px;
-																	margin-right: 10px;
+																	margin-right: 15px;
 																	margin-bottom: 1rem;
 																	line-height: 25px;
 																	cursor: pointer;
 																	user-select: none;
-
-																	&:hover {
-																		.custom-radio-checkmark {
-																			background-color: lighten($radio-bg-color, 10%);
-																		}
-
-																		.custom-radio-input {
-																			&:checked + .custom-radio-checkmark {
-																				background-color: lighten($radio-active-bg-color, 10%);
-																			}
-																		}
-																	}
-
-																	&-input {
-																		position: absolute;
-																		top: -9999px;
-																		left: -9999px;
-																		visibility: hidden;
-
-																		&:checked + .custom-radio-checkmark {
-																			background-color: $radio-active-bg-color;
-
-																			&:before {
-																				transform: scale(1);
-																			}
-																		}
-																	}
 
 																	&-checkmark {
 																		position: absolute;
@@ -1007,21 +1064,54 @@
 																		border-radius: 50%;
 																		background-color: $radio-bg-color;
 																		transition: 0.3s;
+																	}
 
-																		&:before {
-																			content: '';
-																			display: inline-block;
-																			width: 11px;
-																			height: 11px;
-																			border-radius: 50%;
-																			background-color: #fff;
-																			position: absolute;
-																			top: 7px;
-																			left: 7px;
-																			transition: 0.3s;
-																			transform: scale(0);
+																	&-checkmark-icon {
+																		position: absolute;
+																		top: 50%;
+																		left: 50%;
+																		transform: translate(-50%, -50%);
+																		display: inline-block;
+																		font-size: 0.65rem;
+																		color: #fff;
+																		transition: 0.2s;
+																		opacity: 0;
+																	}
+
+																	&-input {
+																		position: absolute;
+																		top: 0;
+																		left: 0;
+																		z-index: -1;
+																		visibility: hidden;
+
+																		// checked styles
+																		&:checked + {
+																			.custom-radio-checkmark {
+																				background-color: $radio-active-bg-color;
+
+																				.custom-radio-checkmark-icon {
+																					opacity: 1;
+																				}
+																			}
+																		}
+
+																		// disabled styles
+																		&:disabled + {
+																			.custom-radio-checkmark {
+																				background-color: rgba($radio-bg-color, 0.5);
+																			}
 																		}
 																	}
+
+																	&:hover {
+																		.custom-radio-input:not(:disabled):not(:checked) + {
+																			.custom-radio-checkmark {
+																				background-color: lighten($radio-bg-color, 10%);
+																			}
+																		}
+																	}
+
 																}
 															</code>
 														</pre>
@@ -1087,7 +1177,9 @@
 
 									<!-- description -->
 									<div class="component-block-description-block">
-										<p>Embed a Google Map on site. The following settings for google map are also prepared in advance: <strong>styles for theme,</strong> <strong>custom icon (png or svg),</strong> <strong>info window</strong> and others. For map with multiple markers zoom are calculated automatically based on the distance of the markers from each other. Add <strong class="red-text">class="-map-absolute"</strong> to make the map stretched across his parent's area.</p>
+										<p>Embed a Google Map on site. The following settings for google map are also prepared in advance: <strong>styles for theme,</strong> <strong>custom icon (png or svg),</strong> <strong>info window</strong> and others.</p>
+										<p>For map with multiple markers zoom are calculated automatically based on the distance of the markers from each other.</p>
+											<p>Add <strong class="red-text">class="-map-absolute"</strong> to make the map stretched across his parent's area.</p>
 									</div>
 
 									<!-- example -->

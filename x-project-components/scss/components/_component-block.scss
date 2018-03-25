@@ -49,6 +49,14 @@
 
 	&-description-block {
 		margin-bottom: 1.5rem;
+
+		p {
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
 	}
 
 	&-attention {
@@ -68,7 +76,7 @@
 	}
 
 	&-example-block {
-		margin-bottom: 1rem;
+		margin-bottom: 1.5rem;
 	}
 
 	&-usage {

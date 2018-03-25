@@ -40,6 +40,44 @@ $(document).ready(function() {
 		});
 	});
 
+	// scroll top button hide on < 1200
+	function scrollTopButtonHide() {
+		if ($(window).width() < 1200) {
+
+			$(window).on('scroll', function() {
+				if ($(this).scrollTop() > 100) {
+					$('.js-scroll-top-button').addClass('-show');
+				} else {
+					$('.js-scroll-top-button').removeClass('-show');
+				}
+			});
+
+			if ($(document).scrollTop() > 100) {
+				$('.js-scroll-top-button').addClass('-show');
+			}
+
+		}
+	}
+
+	scrollTopButtonHide();
+
+	$(window).resize(function() {
+		scrollTopButtonHide();
+	});
+
+	// scroll top button with footer
+	$(window).on('scroll', function() {
+		var pageHeight = $(document).height(),
+				bottomOfPage = $(document).scrollTop() + $(window).height(),
+				footerHeight = $('.js-footer').outerHeight();
+
+		if (pageHeight === bottomOfPage) {
+			$('.js-scroll-top-button').css('bottom', footerHeight);
+		} else {
+			$('.js-scroll-top-button').css('bottom', 0);
+		}
+	});
+
 });
 
 // replase '<' and '>' in html code examples
