@@ -127,6 +127,158 @@
 					<div class="row">
 						<!-- MAIN CONTENT -->
 						<div class="col-9">
+							<!-- Preloader -->
+							<div class="component-block" id="preloader">
+								<div class="component-block-content">
+									<!-- title -->
+									<div class="component-block-title-block">
+										<h4 class="component-block-title">
+											<a class="anchor-link js-no-scroll" href="#preloader">
+												Preloader
+
+												<i class="fas fa-hashtag"></i>
+											</a>
+										</h4>
+
+										<div class="badge-block">
+											<span class="badge badge-html">
+												<span>HTML</span>
+												<i class="fab fa-html5"></i>
+											</span>
+											<span class="badge badge-sass">
+												<span>SASS</span>
+												<i class="fab fa-sass"></i>
+											</span>
+											<span class="badge badge-js">
+												<span>JS</span>
+												<i class="fab fa-js"></i>
+											</span>
+										</div>
+									</div>
+
+									<!-- description -->
+									<div class="component-block-description-block">
+										<p>Adding a preloader to the site with few lines of jQuery code. It displays a loading animation until the browser fetched the whole webcontent and will fade out the moment the page has been completely loaded. It is recommended to insert this code first, before all other user scripts.</p>
+									</div>
+
+									<!-- usage -->
+									<div class="component-block-usage">
+										<!-- button -->
+										<div class="component-block-usage-btn">
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#preloader-collapse" role="button" aria-expanded="false" aria-controls="preloader-collapse">
+												example
+												<i class="fas fa-angle-down"></i>
+											</a>
+										</div>
+
+										<!-- code example -->
+										<div class="collapse" id="preloader-collapse">
+
+											<!-- NAVS FOR TABS -->
+											<ul class="nav nav-tabs" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link js-no-scroll active" id="preloader-html-tab" data-toggle="tab" href="#preloader-html" role="tab" aria-controls="preloader-html" aria-selected="true">HTML</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link js-no-scroll" id="preloader-sass-tab" data-toggle="tab" href="#preloader-sass" role="tab" aria-controls="preloader-sass" aria-selected="false">SASS</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link js-no-scroll" id="preloader-js-tab" data-toggle="tab" href="#preloader-js" role="tab" aria-controls="preloader-js" aria-selected="false">JS</a>
+												</li>
+											</ul>
+											<!-- NAVS FOR TABS END -->
+
+											<!-- TABS CONTENT -->
+											<div class="tab-content">
+												<div class="tab-pane show active" id="preloader-html" role="tabpanel" aria-labelledby="preloader-html-tab">
+													<div class="code-example">
+														<pre class="line-numbers">
+															<code class="language-html js-replase-brackets">
+																<!-- PRELOADER -->
+																<div class="preloader-overlay js-preloader">
+																	<div class="preloader-overlay__preloader-item preloader-item"></div>
+																</div>
+																<!-- PRELOADER END -->
+															</code>
+														</pre>
+													</div>
+												</div>
+												<div class="tab-pane" id="preloader-sass" role="tabpanel" aria-labelledby="preloader-sass-tab">
+													<div class="code-example">
+														<pre class="line-numbers">
+															<code class="language-scss">
+																$preloader-overlay-bg-color: #fff;
+
+																.preloader-overlay {
+																	position: fixed;
+																	top: 0;
+																	left: 0;
+																	right: 0;
+																	bottom: 0;
+																	width: 100%;
+																	height: 100%;
+																	background: $preloader-overlay-bg-color;
+																	z-index: 9999;
+
+																	&__preloader-item {
+																		position: absolute;
+																		top: 50%;
+																		left: 50%;
+																		transform: translate(-50%, -50%);
+																	}
+																}
+
+																// styles for preloader item
+																.preloader-item {
+																	height: 50px;
+																	width: 50px;
+																	border: 5px solid rgba(#26263F, 0.3);
+																	border-top: 5px solid #26263F;
+																	border-radius: 50%;
+																	animation: rotate 1s infinite linear;
+																}
+
+																@keyframes rotate {
+																	0% {
+																		transform: translate(-50%, -50%) rotate(0deg);
+																	}
+																	100% {
+																		transform: translate(-50%, -50%) rotate(360deg);
+																	}
+																}
+															</code>
+														</pre>
+													</div>
+												</div>
+												<div class="tab-pane" id="preloader-js" role="tabpanel" aria-labelledby="preloader-js-tab">
+													<div class="code-example">
+														<pre class="line-numbers">
+															<code class="language-js">
+																// hide preloader by click
+																$('.js-preloader').on('click', function() {
+																	$(".js-preloader").fadeOut('slow');
+																});
+
+																$(window).on("load", function() {
+																	// PRELOADER
+
+																	// hide preloader
+																	setTimeout(function() {
+																		$(".js-preloader").fadeOut('slow');
+																	}, 1000);
+																});
+															</code>
+														</pre>
+													</div>
+												</div>
+											</div>
+											<!-- TABS CONTENT END -->
+
+										</div>
+									</div>
+								</div>
+							</div>
+
 							<!-- Small header after scroll -->
 							<div class="component-block" id="small-header">
 								<div class="component-block-content">
@@ -711,14 +863,22 @@
 														var widthOfScrollbar;
 
 														function getScrollBarWidth() {
-															var $outer = $('&#60;div&#62;').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
-																widthWithScroll = $('&#60;div&#62;').css({width: '100%'}).appendTo($outer).outerWidth();
-															$outer.remove();
-															widthOfScrollbar = 100 - widthWithScroll;
-															return 100 - widthWithScroll;
+															if (window.innerWidth > $(window).width()) {
+																var $outer = $('&#60;div&#62;').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
+																		widthWithScroll = $('&#60;div&#62;').css({width: '100%'}).appendTo($outer).outerWidth();
+																$outer.remove();
+																widthOfScrollbar = 100 - widthWithScroll;
+																return 100 - widthWithScroll;
+															} else {
+																return widthOfScrollbar = 0;
+															}
 														};
 
 														getScrollBarWidth();
+
+														$(window).resize(function() {
+															getScrollBarWidth();
+														});
 													</code>
 												</pre>
 											</div>
@@ -883,7 +1043,7 @@
 																<!-- CUSTOM CHECKBOX -->
 																<div>
 																	<label class="custom-checkbox">One (checked)
-																		<input class="custom-checkbox-input" type="checkbox" value="one" checked>
+																		<input class="custom-checkbox-input" type="checkbox" value="one" checked="checked">
 																		<span class="custom-checkbox-checkmark">
 																			<i class="custom-checkbox-checkmark-icon fas fa-check"></i>
 																		</span>
@@ -907,7 +1067,7 @@
 																</div>
 																<div>
 																	<label class="custom-checkbox">Four (disabled)
-																		<input class="custom-checkbox-input" type="checkbox" value="four" disabled>
+																		<input class="custom-checkbox-input" type="checkbox" value="four" disabled="disabled">
 																		<span class="custom-checkbox-checkmark">
 																			<i class="custom-checkbox-checkmark-icon fas fa-check"></i>
 																		</span>
@@ -922,7 +1082,7 @@
 																<!-- CUSTOM RADIO -->
 																<div>
 																	<label class="custom-radio">One (checked)
-																		<input class="custom-radio-input" type="radio" name="radio-group" value="one" checked>
+																		<input class="custom-radio-input" type="radio" name="radio-group" value="one" checked="checked">
 																		<span class="custom-radio-checkmark">
 																			<i class="custom-radio-checkmark-icon fas fa-circle"></i>
 																		</span>
@@ -946,7 +1106,7 @@
 																</div>
 																<div>
 																	<label class="custom-radio">Four (disabled)
-																		<input class="custom-radio-input" type="radio" name="radio-group" value="four" disabled>
+																		<input class="custom-radio-input" type="radio" name="radio-group" value="four" disabled="disabled">
 																		<span class="custom-radio-checkmark">
 																			<i class="custom-radio-checkmark-icon fas fa-circle"></i>
 																		</span>
@@ -1257,7 +1417,6 @@
 														<pre class="line-numbers">
 															<code class="language-scss">
 																.google-map {
-																	width: 100%;
 																	height: 300px;
 																	background-color: #26263F;
 
@@ -2049,6 +2208,7 @@
 								<input class="search-input js-search-input" name="search" placeholder="Search..." type="text" autocomplete="off" data-list=".list-group">
 
 								<div class="list-group js-list-group" id="side-navigation">
+									<a href="#preloader" class="list-group-item list-group-item-action js-no-scroll">Preloader</a>
 									<a href="#small-header" class="list-group-item list-group-item-action js-no-scroll">Small header after scroll</a>
 									<a href="#sticky-footer" class="list-group-item list-group-item-action js-no-scroll">Sticky footer</a>
 									<a href="#scroll-top-button" class="list-group-item list-group-item-action js-no-scroll">Scroll top button</a>
@@ -2085,6 +2245,8 @@
 	<!-- connection JavaScript -->
 	<script src="libs/jquery/jquery.min.js"></script>
 	<script src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="libs/shuffle/shuffle.min.js"></script>
+	<script src="libs/masonry/masonry.pkgd.min.js"></script>
 	<script src="libs/x-project-components/x-project-components.js"></script>
 	<script src="libs/clipboard/clipboard.min.js"></script>
 	<script src="libs/prism.js/prism.js"></script>
