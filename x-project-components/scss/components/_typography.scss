@@ -1,27 +1,53 @@
 p {
 	line-height: 1.5;
 	letter-spacing: 0.5px;
+	margin-bottom: 1rem;
 }
 
-.component-block-title {
-	display: inline-block;
-	padding-right: 20px;
-	.anchor-link {
-		color: $dark-purple;
+// SECTION TITLE
+.section-title {
+	margin-bottom: 1rem;
+	padding: 5px 0 5px 10px;
+	position: relative;
+	z-index: 1;
 
-		&:hover {
+	&.-primary-border {
+		border-bottom: 2px solid rgba($primary, 0.7);
+		border-left: 10px solid $primary;
+	}
+
+	&.-apricot-border {
+		border-bottom: 2px solid rgba($apricot, 0.7);
+		border-left: 10px solid $apricot;
+	}
+
+	&.-component-title {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.section-title__anchor {
+			color: $dark-purple;
+
+			&:hover {
+				i {
+					opacity: 1;
+				}
+			}
+
 			i {
-				opacity: 1;
+				padding-left: 3px;
+				color: $apricot;
+				opacity: 0;
+				transition: 0.3s;
 			}
 		}
-
-		i {
-			padding-left: 3px;
-			color: $apricot;
-			opacity: 0;
-			transition: 0.3s;
-		}
 	}
+
 }
 
 .component-block-sub-title {
@@ -50,10 +76,6 @@ p {
 .attention-text {
 	color: $light-apricot;
 
-	strong {
-		padding: 0 5px;
-	}
-
 	a {
 		color: $light-apricot;
 
@@ -73,4 +95,10 @@ strong {
 
 .description-text {
 	margin-bottom: 1rem;
+
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
 }

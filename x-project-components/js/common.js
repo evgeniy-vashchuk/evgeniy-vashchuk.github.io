@@ -79,8 +79,3 @@ $(document).ready(function() {
 	});
 
 });
-
-// replase '<' and '>' in html code examples
-document.querySelectorAll(".js-replase-brackets").forEach(function(element) {
-	element.innerHTML = element.innerHTML.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-});
