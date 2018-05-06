@@ -2,9 +2,18 @@
 	position: sticky;
 	top: 85px;
 
-	.list-group {
-		border-left: 4px solid $dark-purple;
+	&__search-input {
+		margin-bottom: 1rem;
 	}
+
+	&__list-group {
+		overflow-y: auto;
+		max-height: calc(100vh - 9rem);
+	}
+}
+
+.list-group {
+	border-left: 4px solid $dark-purple;
 
 	.list-group-item {
 		line-height: 1.3;

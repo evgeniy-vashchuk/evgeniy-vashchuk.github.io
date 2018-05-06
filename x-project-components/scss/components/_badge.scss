@@ -22,7 +22,7 @@
 		margin-right: 3px;
 	}
 
-	&-html {
+	&.-html {
 		border-color: #DB4B1B;
 
 		i {
@@ -30,7 +30,7 @@
 		}
 	}
 
-	&-sass {
+	&.-sass {
 		border-color: #C8639B;
 
 		i {
@@ -38,7 +38,7 @@
 		}
 	}
 
-	&-js {
+	&.-js {
 		border-color: #F9B900;
 
 		i {
@@ -46,7 +46,7 @@
 		}
 	}
 
-	&-light {
+	&.-light {
 		border-color: $light-apricot;
 		color: $light-apricot;
 		transition: 0.3s;
@@ -63,7 +63,7 @@
 .badge-block {
 	font-size: 0;
 
-	.badge {
+	&__badge {
 		margin-right: 5px;
 
 		&:last-child {

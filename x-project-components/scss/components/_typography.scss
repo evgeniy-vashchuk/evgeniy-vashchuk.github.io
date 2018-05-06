@@ -1,7 +1,7 @@
 p {
 	line-height: 1.5;
 	letter-spacing: 0.5px;
-	margin-bottom: 1rem;
+	margin-bottom: 0.625rem;
 }
 
 // SECTION TITLE
@@ -12,12 +12,12 @@ p {
 	z-index: 1;
 
 	&.-primary-border {
-		border-bottom: 2px solid rgba($primary, 0.7);
+		border-bottom: 2px solid $primary;
 		border-left: 10px solid $primary;
 	}
 
 	&.-apricot-border {
-		border-bottom: 2px solid rgba($apricot, 0.7);
+		border-bottom: 2px solid $apricot;
 		border-left: 10px solid $apricot;
 	}
 
@@ -56,21 +56,6 @@ p {
 	padding-left: 8px;
 	border-bottom: 2px solid rgba($apricot, 0.7);
 	border-left: 5px solid $apricot;
-}
-
-.attention-text-block {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	align-items: center;
-
-	&-icon {
-		font-size: 2.7rem;
-		margin-right: 15px;
-		color: $light-apricot;
-	}
 }
 
 .attention-text {
