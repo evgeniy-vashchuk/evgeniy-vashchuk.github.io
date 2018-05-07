@@ -1,0 +1,24 @@
+.table {
+	&-sm {
+		th, td {
+			padding: 1rem;
+		}
+	}
+}
+
+.changelog-table {
+
+	max-height: 294px;
+	overflow-y: auto;
+
+	thead {
+		th {
+			border-top: none;
+			border-bottom: none;
+		}
+	}
+
+	.bg-primary {
+		color: $white;
+	}
+}

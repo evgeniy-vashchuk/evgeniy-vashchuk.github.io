@@ -9988,6 +9988,7 @@ strong.red-text {
       border-color: #F1E9E4; }
 
 .badge-block {
+  display: inline-block;
   font-size: 0; }
   .badge-block__badge {
     margin-right: 5px; }
@@ -10326,6 +10327,18 @@ body {
       color: rgba(37, 37, 62, 0.5);
       bottom: 8px; }
 
+.table-sm th, .table-sm td {
+  padding: 1rem; }
+
+.changelog-table {
+  max-height: 294px;
+  overflow-y: auto; }
+  .changelog-table thead th {
+    border-top: none;
+    border-bottom: none; }
+  .changelog-table .bg-primary {
+    color: #fff; }
+
 .attention-text-block {
   display: -webkit-flex;
   display: -moz-flex;
@@ -10402,6 +10415,8 @@ body {
   z-index: 1; }
   .section-components > .section-title {
     margin-bottom: 1.5rem; }
+  .section-changelog__table {
+    margin-bottom: 0; }
 
 .footer {
   background-color: #4C4E6B;
