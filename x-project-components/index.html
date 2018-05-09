@@ -61,11 +61,11 @@
 			</div>
 			<!-- GITHUB CORNER END -->
 
-			<!-- PROGRESS BAR -->
+			<!-- Progress bar -->
 			<div class="progress-container">
 				<div class="progress-bar" id="progress-bar"></div>
 			</div>
-			<!-- PROGRESS BAR END -->
+			<!-- Progress bar END -->
 		</header>
 		<!-- HEADER END -->
 
@@ -79,9 +79,9 @@
 					<h2 class="section-title -primary-border">About</h2>
 
 					<div class="description-text">
-						<p><strong>X-Project Components</strong> - is a collection of most useful components for page layout. For each component are presented description and code examples with the help of which you can easily understand and apply the right component on your website. In X-Project Components all css code was written by <strong><a href="https://sass-lang.com/" target="_blank">SASS</a></strong> (with SCSS syntax) and all javascript code with the use of a library <strong><a href="https://jquery.com/" target="_blank">jQuery</a></strong>.</p>
-						<p>All css code for components was written using <strong><a href="https://en.bem.info/" target="_blank">BEM</a></strong> naming, meaning <strong>.block-name</strong> for independent block, <strong>.block-name__element-name</strong> for elements inside that block. And <strong>.-modifier-name</strong> for modifiers of the block. For javascript hooks was used prefix <strong>.js-*</strong>.</p>
-						<p>Every component are checked for validity through <strong><a href="https://validator.w3.org/" target="_blank">validator.w3.org</a></strong>, tested for сross-browser compatibility through <a href="https://www.browserstack.com" target="_blank"><strong>browserstack.com</strong></a>, and works in the latest versions of all popular browsers (including IE11).</p>
+						<p><strong>X-Project Components</strong> - is a collection of most useful components for page layout. For each component are presented description and code examples with the help of which you can easily understand and apply the right component on your website. In X-Project Components all css code was written by <a class="link-slideup -dark-purple" href="https://sass-lang.com/" target="_blank">SASS</a> (with SCSS syntax) and all javascript code with the use of a library <a class="link-slideup -dark-purple" href="https://jquery.com/" target="_blank">jQuery</a>.</p>
+						<p>All css code for components was written using <a class="link-slideup -dark-purple" href="https://en.bem.info/" target="_blank">BEM</a> naming, meaning <strong>.block-name</strong> for independent block, <strong>.block-name__element-name</strong> for elements inside that block. And <strong>.-modifier-name</strong> for modifiers of the block. For javascript hooks was used prefix <strong>.js-*</strong>.</p>
+						<p>Every component are checked for validity through <a class="link-slideup -dark-purple" href="https://validator.w3.org/" target="_blank">validator.w3.org</a>, tested for сross-browser compatibility through <a class="link-slideup -dark-purple" href="https://www.browserstack.com" target="_blank">browserstack.com</a>, and works in the latest versions of all popular browsers (including IE11).</p>
 					</div>
 				</section>
 				<!-- SECTION ABOUT END -->
@@ -107,7 +107,7 @@
 					</div>
 
 					<div class="description-text">
-						<p>2) Also you should have SASS compiler (for example <a class="simple-link" href="https://prepros.io/" target="blank"><strong>Prepros</strong></a> or <a class="simple-link" href="https://gulpjs.com/" target="blank"><strong>Gulp</strong></a>) for compiling your CSS.</p>
+						<p>2) Also you should have SASS compiler (for example <a class="link-slideup -dark-purple" href="https://prepros.io/" target="blank">Prepros</a> or <a class="link-slideup -dark-purple" href="https://gulpjs.com/" target="blank">Gulp</a>) for compiling your CSS.</p>
 					</div>
 
 					<div class="description-text">
@@ -129,6 +129,10 @@
 								</tr>
 							</thead>
 							<tbody>
+								<tr>
+									<td>Added progress bars component</td>
+									<td>09.05.2018</td>
+								</tr>
 								<tr>
 									<td>Added shuffle filter component</td>
 									<td>01.05.2018</td>
@@ -304,6 +308,337 @@
 									</div>
 								</div>
 
+								<!-- Progress bars -->
+								<div class="component-block-wrap" id="progress-bars">
+									<div class="component-block">
+										<!-- title -->
+										<h3 class="section-title -apricot-border -component-title">
+											<a class="section-title__anchor js-no-scroll" href="#progress-bars">
+												Progress bars
+
+												<i class="fas fa-hashtag"></i>
+											</a>
+
+											<span class="badge-block">
+												<span class="badge-block__badge badge -html">
+													<span>HTML</span>
+													<i class="fab fa-html5"></i>
+												</span>
+												<span class="badge-block__badge badge -sass">
+													<span>SASS</span>
+													<i class="fab fa-sass"></i>
+												</span>
+												<span class="badge-block__badge badge -js">
+													<span>JS</span>
+													<i class="fab fa-js"></i>
+												</span>
+											</span>
+										</h3>
+										<!-- title END -->
+
+										<!-- description -->
+										<div class="description-text">
+											<p>Сreating animated progress bars, which triggered as soon as you scrolling to an element. The main function <strong>progressBars</strong> takes 3 parameters: <strong class="red-text">progressBarsBlock</strong> - wrapper for progress bars items (required), <strong class="red-text">duration</strong> - animation speed (required), <strong class="red-text">decimalFunction</strong> - function that defines quantity of simbols after comma during animation, by default - 0 (not required).</p>
+										</div>
+
+										<!-- example -->
+										<div class="component-block-example-block -mb-16">
+
+											<div class="progress-bars-wrap js-progress-bars">
+												<!-- item 1 -->
+												<div class="progress-bar-item progress-bars-wrap__item">
+													<h5 class="progress-bar-item__title">Sketch</h5>
+													<div class="progress-bar-item__strip-wrap">
+														<div class="progress-bar-strip">
+															<div class="progress-bar-strip__fill-block" data-percentage="90">
+																<span class="progress-bar-strip__percent-text">0</span>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<!-- item 2 -->
+												<div class="progress-bar-item progress-bars-wrap__item">
+													<h5 class="progress-bar-item__title">Photoshop</h5>
+													<div class="progress-bar-item__strip-wrap">
+														<div class="progress-bar-strip">
+															<div class="progress-bar-strip__fill-block" data-percentage="65">
+																<span class="progress-bar-strip__percent-text">0</span>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<!-- item 3 -->
+												<div class="progress-bar-item progress-bars-wrap__item">
+													<h5 class="progress-bar-item__title">Illustrator</h5>
+													<div class="progress-bar-item__strip-wrap">
+														<div class="progress-bar-strip">
+															<div class="progress-bar-strip__fill-block" data-percentage="83">
+																<span class="progress-bar-strip__percent-text">0</span>
+															</div>
+														</div>
+													</div>
+												</div>
+
+												<!-- item 4 -->
+												<div class="progress-bar-item progress-bars-wrap__item">
+													<h5 class="progress-bar-item__title">Principle</h5>
+													<div class="progress-bar-item__strip-wrap">
+														<div class="progress-bar-strip">
+															<div class="progress-bar-strip__fill-block" data-percentage="79">
+																<span class="progress-bar-strip__percent-text">0</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+
+										<!-- usage -->
+										<div class="component-block-usage">
+											<!-- button -->
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#progress-bars-collapse" role="button" aria-expanded="false" aria-controls="progress-bars-collapse">
+												example
+												<i class="fas fa-angle-down"></i>
+											</a>
+
+											<!-- code example -->
+											<div class="collapse" id="progress-bars-collapse">
+
+												<!-- attention -->
+												<div class="component-block-attention">
+													<div class="attention-text-block">
+														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
+
+														<div class="attention-text attention-text-block__text">
+															<p>This component is dependent on <strong>waypoints.js</strong> which you can get
+																<a class="badge -light -mg-l-r" href="http://imakewebthings.com/waypoints/" target="blank">
+																	<span>HERE</span>
+																</a>.
+															</p>
+														</div>
+													</div>
+
+													<pre class="line-numbers">
+														<code class="language-html">
+															&#60;script src="/path/to/waypoints.js"&#62;&#60;/script&#62;
+															&#60;script src="/path/to/common.js"&#62;&#60;/script&#62;
+														</code>
+													</pre>
+												</div>
+
+												<!-- NAVS FOR TABS -->
+												<ul class="nav nav-tabs component-block-usage__nav-tabs" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll active" id="progress-bars-html-tab" data-toggle="tab" href="#progress-bars-html" role="tab" aria-controls="progress-bars-html" aria-selected="true">HTML</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll" id="progress-bars-sass-tab" data-toggle="tab" href="#progress-bars-sass" role="tab" aria-controls="progress-bars-sass" aria-selected="false">SASS</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll" id="progress-bars-js-tab" data-toggle="tab" href="#progress-bars-js" role="tab" aria-controls="progress-bars-js" aria-selected="false">JS</a>
+													</li>
+												</ul>
+												<!-- NAVS FOR TABS END -->
+
+												<!-- TABS CONTENT -->
+												<div class="tab-content">
+													<!-- html -->
+													<div class="tab-pane show active" id="progress-bars-html" role="tabpanel" aria-labelledby="progress-bars-html-tab">
+														<div class="code-example">
+															<script type="text/plain" class="language-markup line-numbers">
+																<div class="progress-bars-wrap js-progress-bars">
+																	<!-- item 1 -->
+																	<div class="progress-bar-item progress-bars-wrap__item">
+																		<h5 class="progress-bar-item__title">Sketch</h5>
+																		<div class="progress-bar-item__strip-wrap">
+																			<div class="progress-bar-strip">
+																				<div class="progress-bar-strip__fill-block" data-percentage="90">
+																					<span class="progress-bar-strip__percent-text">0</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																	<!-- item 2 -->
+																	<div class="progress-bar-item progress-bars-wrap__item">
+																		<h5 class="progress-bar-item__title">Photoshop</h5>
+																		<div class="progress-bar-item__strip-wrap">
+																			<div class="progress-bar-strip">
+																				<div class="progress-bar-strip__fill-block" data-percentage="65">
+																					<span class="progress-bar-strip__percent-text">0</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																	<!-- item 3 -->
+																	<div class="progress-bar-item progress-bars-wrap__item">
+																		<h5 class="progress-bar-item__title">Illustrator</h5>
+																		<div class="progress-bar-item__strip-wrap">
+																			<div class="progress-bar-strip">
+																				<div class="progress-bar-strip__fill-block" data-percentage="83">
+																					<span class="progress-bar-strip__percent-text">0</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+
+																	<!-- item 4 -->
+																	<div class="progress-bar-item progress-bars-wrap__item">
+																		<h5 class="progress-bar-item__title">Principle</h5>
+																		<div class="progress-bar-item__strip-wrap">
+																			<div class="progress-bar-strip">
+																				<div class="progress-bar-strip__fill-block" data-percentage="79">
+																					<span class="progress-bar-strip__percent-text">0</span>
+																				</div>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</script>
+														</div>
+													</div>
+													<!-- html END -->
+
+													<!-- sass -->
+													<div class="tab-pane" id="progress-bars-sass" role="tabpanel" aria-labelledby="progress-bars-sass-tab">
+														<div class="code-example">
+															<pre class="line-numbers">
+																<code class="language-scss">
+																	.progress-bar-item {
+																		display: flex;
+																		align-items: center;
+
+																		&__title {
+																			flex-basis: 120px;
+																			padding-right: 15px;
+																			margin-bottom: 0;
+																			line-height: 1;
+																		}
+
+																		&__strip-wrap {
+																			width: 100%;
+																			overflow: hidden;
+																			flex-basis: 0;
+																			flex-grow: 1;
+																		}
+																	}
+
+																	.progress-bar-strip {
+																		position: relative;
+																		width: 100%;
+																		height: 20px;
+																		border: 2px solid #26263F;
+
+																		&__fill-block {
+																			position: absolute;
+																			top: -2px;
+																			bottom: -2px;
+																			left: -2px;
+																			background-color: #4C4E6C;
+																			z-index: 1;
+																		}
+
+																		&__percent-text {
+																			color: #fff;
+																			position: absolute;
+																			top: 50%;
+																			right: 5px;
+																			transform: translate(0, -50%);
+																			white-space: nowrap;
+
+																			&:after {
+																				content: "%";
+																				display: inline-block;
+																			}
+																		}
+																	}
+
+																	.progress-bars-wrap {
+																		&__item {
+																			margin-bottom: 10px;
+
+																			&:last-child {
+																				margin-bottom: 0;
+																			}
+																		}
+																	}
+																</code>
+															</pre>
+														</div>
+													</div>
+													<!-- sass END -->
+
+													<!-- javascript -->
+													<div class="tab-pane" id="progress-bars-js" role="tabpanel" aria-labelledby="progress-bars-js-tab">
+														<div class="code-example">
+															<pre class="line-numbers">
+																<code class="language-js">
+																	// PROGRESS BARS
+																	function progressBars(progressBarsBlock, duration, decimalFunction) {
+																		if (!progressBarsBlock[0].animationInit && $('.js-progress-bars').length) {
+																			progressBarsBlock[0].animationInit = true;
+
+																			var barsDuration = duration;
+
+																			progressBarsBlock.find('.progress-bar-item').each(function() {
+																				var $percent = $(this).find('.progress-bar-strip__fill-block').attr('data-percentage');
+
+																				// bar fill animation
+																				$(this).find('.progress-bar-strip__fill-block').animate({
+																					width: $percent + '%'
+																				}, barsDuration);
+
+																				// count up animation
+																				var $numberItem = $(this).find('.progress-bar-strip__percent-text');
+
+																				$({ numberValue: 0 }).animate({ numberValue: $percent }, {
+																					duration: barsDuration,
+																					easing: 'linear',
+																					step: function() {
+																						if (decimalFunction) {
+																							decimalFunction($numberItem, this.numberValue);
+																						} else {
+																							$numberItem.text(Math.floor(this.numberValue));
+																						}
+																					},
+																					complete: function() {
+																						$numberItem.text(this.numberValue);
+																					}
+																				});
+																			})
+																		}
+																	}
+
+																	function oneNumberAfterComma($numberItem, numberValue){
+																		$numberItem.text(Math.ceil(numberValue*10)/10);
+																	}
+
+																	function twoNumbersAfterComma($numberItem, numberValue){
+																		$numberItem.text(Math.ceil(numberValue*100)/100);
+																	}
+
+																	var waypoints = $('.js-progress-bars').waypoint({
+																		handler: function() {
+																			progressBars($(this.element), 4000);
+																		},
+																		offset: '80%'
+																	})
+																</code>
+															</pre>
+														</div>
+													</div>
+													<!-- javascript END -->
+												</div>
+												<!-- TABS CONTENT END -->
+											</div>
+										</div>
+									</div>
+								</div>
+
 								<!-- Shuffle filter -->
 								<div class="component-block-wrap" id="shuffle-filter">
 									<div class="component-block">
@@ -334,7 +669,7 @@
 
 										<!-- description -->
 										<div class="description-text">
-											<p>Simple and beautiful filtration of items based on <a href="https://vestride.github.io/Shuffle/" target="_blank"><strong>Shuffle.js</strong></a>. In example for a grid is used <a href="https://getbootstrap.com/" target="_blank"><strong>Bootstrap</strong></a>.</p>
+											<p>Simple and beautiful filtration of items based on <a class="link-slideup -dark-purple" href="https://vestride.github.io/Shuffle/" target="_blank">shuffle.js</a>. In example for a grid is used <a class="link-slideup -dark-purple" href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
 										</div>
 
 										<!-- example -->
@@ -415,7 +750,7 @@
 														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
 
 														<div class="attention-text attention-text-block__text">
-															<p>This component is dependent on <strong>Shuffle.js</strong> which you can get
+															<p>This component is dependent on <strong>shuffle.js</strong> which you can get
 																<a class="badge -light -mg-l-r" href="https://vestride.github.io/Shuffle/" target="blank">
 																	<span>HERE</span>
 																</a>.
@@ -432,6 +767,7 @@
 														<code class="language-html">
 															&#60;script src="/path/to/polyfill.min.js"&#62;&#60;/script&#62;
 															&#60;script src="/path/to/shuffle.min.js"&#62;&#60;/script&#62;
+															&#60;script src="/path/to/common.js"&#62;&#60;/script&#62;
 														</code>
 													</pre>
 												</div>
@@ -586,7 +922,6 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// SHUFFLE FILTER
-
 																	function filterInit(filterContainer) {
 
 																		if (filterContainer.length) {
@@ -945,7 +1280,11 @@
 														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
 
 														<div class="attention-text attention-text-block__text">
-															<p>For icon were used <a href="https://fontawesome.com/" target="blank"><strong>Font Awesome 5</strong></a></p>
+															<p>For icon were used <strong>Font Awesome 5</strong> which you can get
+																<a class="badge -light -mg-l-r" href="https://fontawesome.com/" target="blank">
+																	<span>HERE</span>
+																</a>.
+															</p>
 														</div>
 													</div>
 												</div>
@@ -1386,7 +1725,11 @@
 														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
 
 														<div class="attention-text attention-text-block__text">
-															<p>For icons were used <a href="https://fontawesome.com/" target="blank"><strong>Font Awesome 5</strong></a></p>
+															<p>For icon were used <strong>Font Awesome 5</strong> which you can get
+																<a class="badge -light -mg-l-r" href="https://fontawesome.com/" target="blank">
+																	<span>HERE</span>
+																</a>.
+															</p>
 														</div>
 													</div>
 												</div>
@@ -2247,7 +2590,7 @@
 
 														<div class="attention-text attention-text-block__text">
 															<p>Do not forget to insert your <strong>VIDEO_ID</strong> to iframe.</p>
-															<p>This component is dependent on <a class="js-no-scroll" href="#responsive-video"><strong>Embed responsive video</strong></a>.</p>
+															<p>This component is dependent on <a class="js-no-scroll link-slideup -white" href="#responsive-video">Embed responsive video</a>.</p>
 														</div>
 													</div>
 												</div>
@@ -2479,7 +2822,7 @@
 
 														<div class="attention-text attention-text-block__text">
 															<p>Do not forget to insert your <strong>VIDEO_ID</strong> to iframe.</p>
-															<p>This component is dependent on <a class="js-no-scroll" href="#responsive-video"><strong>Embed responsive video</strong></a>.</p>
+															<p>This component is dependent on <a class="js-no-scroll link-slideup -white" href="#responsive-video">Embed responsive video</a>.</p>
 														</div>
 													</div>
 												</div>
@@ -2638,6 +2981,7 @@
 
 								<div class="side-navigation__list-group list-group js-list-group" id="side-navigation">
 									<a href="#preloader" class="list-group-item list-group-item-action js-no-scroll">Preloader</a>
+									<a href="#progress-bars" class="list-group-item list-group-item-action js-no-scroll">Progress bars</a>
 									<a href="#shuffle-filter" class="list-group-item list-group-item-action js-no-scroll">Shuffle filter</a>
 									<a href="#small-header" class="list-group-item list-group-item-action js-no-scroll">Small header after scroll</a>
 									<a href="#sticky-footer" class="list-group-item list-group-item-action js-no-scroll">Sticky footer</a>
@@ -2680,6 +3024,7 @@
 	<script src="libs/clipboard/clipboard.min.js"></script>
 	<script src="libs/prism.js/prism.js"></script>
 	<script src="libs/hideseek/jquery.hideseek.min.js"></script>
+	<script src="libs/waypoints.js/jquery.waypoints.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoik2Sle8UV-ysloqMOF2dK0mnXpb5z3I"></script>
 	<script src="libs/x-project-components/x-project-components.js"></script>
 

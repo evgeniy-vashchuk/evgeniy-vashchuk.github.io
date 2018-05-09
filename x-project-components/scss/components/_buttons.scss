@@ -24,11 +24,53 @@
 	}
 }
 
-.simple-link {
-	color: $dark-purple;
-	border-bottom: 2px solid transparent;
+.link-slideup {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	font-weight: 700;
+	vertical-align: bottom;
+	z-index: 1;
 
-	&:hover {
-		border-bottom: 2px solid $apricot;
+	&.-dark-purple {
+		color: $dark-purple;
+
+		&:before {
+			background-color: rgba($dark-purple, 0.2);
+		}
+
+		&:hover {
+			color: $dark-purple;
+		}
+	}
+
+	&.-white {
+		color: $white;
+
+		&:before {
+			background-color: rgba($white, 0.2);
+		}
+
+		&:hover {
+			color: $white;
+		}
+	}
+
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: -1;
+		height: 100%;
+		content: '';
+		transition: transform 0.2s;
+		transform: translateY(95%);
+	}
+
+	&:hover::before,
+	&:focus::before {
+		transform: translateY(0);
 	}
 }
