@@ -10152,8 +10152,8 @@ strong.red-text {
 
 .component-block-wrap:before {
   display: block;
-  height: 85px;
-  margin-top: -85px;
+  height: 75px;
+  margin-top: -75px;
   content: "";
   visibility: hidden;
   position: relative;
