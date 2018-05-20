@@ -10062,7 +10062,7 @@ p {
   margin-bottom: 0.625rem; }
 
 .section-title {
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   padding: 5px 0 5px 10px;
   position: relative;
   z-index: 1;
@@ -10152,8 +10152,8 @@ strong.red-text {
 
 .component-block-wrap:before {
   display: block;
-  height: 75px;
-  margin-top: -75px;
+  height: 80px;
+  margin-top: -80px;
   content: "";
   visibility: hidden;
   position: relative;
