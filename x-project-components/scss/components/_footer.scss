@@ -5,6 +5,10 @@
 	position: relative;
 	z-index: 100;
 
+	@include max-w(575) {
+		padding: 7px 0;
+	}
+
 	.copyright-text {
 		color: $light-apricot;
 		margin-bottom: 0;

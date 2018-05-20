@@ -10,15 +10,30 @@ p {
 	padding: 5px 0 5px 10px;
 	position: relative;
 	z-index: 1;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-left-width: 10px;
+	border-left-style: solid;
+
+	@include max-w(767) {
+		font-size: 1.5rem;
+		border-left-width: 6px;
+	}
+
+	@include max-w(575) {
+		font-size: 1.2rem;
+		padding: 3px;
+		padding-left: 8px;
+	}
 
 	&.-primary-border {
-		border-bottom: 2px solid $primary;
-		border-left: 10px solid $primary;
+		border-bottom-color: $primary;
+		border-left-color: $primary;
 	}
 
 	&.-apricot-border {
-		border-bottom: 2px solid $apricot;
-		border-left: 10px solid $apricot;
+		border-bottom-color: $apricot;
+		border-left-color: $apricot;
 	}
 
 	&.-component-title {
@@ -52,6 +67,7 @@ p {
 
 .component-block-sub-title {
 	margin-bottom: 1rem;
+	padding-top: 5px;
 	padding-bottom: 5px;
 	padding-left: 8px;
 	border-bottom: 2px solid rgba($apricot, 0.7);

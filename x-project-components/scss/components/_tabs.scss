@@ -3,6 +3,10 @@
 
 	.nav-item {
 		margin-bottom: 0;
+
+		@include max-w(575) {
+			flex: 1 1 auto;
+		}
 	}
 
 	.nav-link {
@@ -13,6 +17,17 @@
 		transition: 0s;
 		border: none;
 		line-height: 1.5;
+
+		@include max-w(767) {
+			min-width: 120px;
+			font-size: 0.8rem;
+		}
+
+		@include max-w(575) {
+			min-width: auto;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
 
 		&:not(.active) {
 			transition: color 0.3s, background-color 0.3s;

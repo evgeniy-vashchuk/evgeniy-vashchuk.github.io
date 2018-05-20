@@ -9,6 +9,18 @@
 	overflow: hidden;
 	transition: 0.3s;
 
+	@include max-w(767) {
+		top: 0;
+		right: 0;
+		width: 61px;
+		height: 61px;
+	}
+
+	@include max-w(575) {
+		width: 42px;
+		height: 42px;
+	}
+
 	&:before {
 		content: '';
 		display: inline-block;

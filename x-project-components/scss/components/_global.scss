@@ -1,8 +1,22 @@
 .main {
 	padding-top: 175px;
 	padding-bottom: 50px;
+
+	@include max-w(767) {
+		padding-top: 90px;
+	}
+
+	@include max-w(575) {
+		padding-top: 60px;
+	}
 }
 
 a {
 	transition: 0.3s;
+}
+
+body {
+	@include max-w(575) {
+		font-size: 0.875rem;
+	}
 }

@@ -23,6 +23,10 @@ pre[class*="language-"] {
 	word-wrap: normal;
 	line-height: 1.4;
 
+	@include max-w(575) {
+		font-size: 14px;
+	}
+
 	-moz-tab-size: $base-code-tab-size;
 	-o-tab-size: $base-code-tab-size;
 	tab-size: $base-code-tab-size;

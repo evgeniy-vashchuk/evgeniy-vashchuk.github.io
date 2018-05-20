@@ -4,6 +4,12 @@
 		min-width: 150px;
 		text-transform: uppercase;
 		font-weight: 600;
+
+		@include max-w(767) {
+			font-size: 0.8rem;
+			min-width: 120px;
+			padding: 0.4rem 1rem;
+		}
 	}
 
 	&-icon {
