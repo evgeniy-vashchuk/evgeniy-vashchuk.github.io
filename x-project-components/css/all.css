@@ -8854,24 +8854,17 @@ readers do not read off random characters that represent icons */
 
 .progress-bar-strip {
   position: relative;
-  width: 100%;
+  width: 0;
   height: 20px;
-  border: 2px solid #26263F; }
-  .progress-bar-strip__fill-block {
-    position: absolute;
-    top: -2px;
-    bottom: -2px;
-    left: -2px;
-    background-color: #4C4E6C;
-    z-index: 1; }
-  .progress-bar-strip__percent-text {
-    color: #fff;
+  background-color: #4C4E6C; }
+  .progress-bar-strip__percent {
     position: absolute;
     top: 50%;
     right: 5px;
     -webkit-transform: translate(0, -50%);
     -ms-transform: translate(0, -50%);
     transform: translate(0, -50%);
+    color: #fff;
     white-space: nowrap; }
 
 .progress-bars-wrap__item {
@@ -9091,6 +9084,64 @@ html, body {
     height: 100%; }
   .google-map .gm-style-cc {
     display: none; }
+  .google-map a[href^="http://maps.google.com/maps"],
+  .google-map a[href^="https://maps.google.com/maps"],
+  .google-map a[href^="https://www.google.com/maps"] {
+    display: none !important; }
+
+.html-map-marker {
+  position: absolute;
+  z-index: 100;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  border-radius: 50%; }
+  .html-map-marker:before, .html-map-marker:after {
+    content: '';
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    -webkit-transform-origin: center center;
+    -ms-transform-origin: center center;
+    transform-origin: center center;
+    -webkit-animation: pulse 2.5s linear infinite;
+    animation: pulse 2.5s linear infinite; }
+  .html-map-marker:after {
+    -webkit-animation-delay: 1.25s;
+    animation-delay: 1.25s; }
+
+@-webkit-keyframes pulse {
+  0% {
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0); }
+  50% {
+    background-color: rgba(255, 255, 255, 0.2); }
+  70% {
+    background-color: rgba(255, 255, 255, 0.4); }
+  100% {
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0); } }
+
+@keyframes pulse {
+  0% {
+    width: 0;
+    height: 0;
+    background-color: rgba(255, 255, 255, 0); }
+  50% {
+    background-color: rgba(255, 255, 255, 0.2); }
+  70% {
+    background-color: rgba(255, 255, 255, 0.4); }
+  100% {
+    width: 120px;
+    height: 120px;
+    background-color: rgba(255, 255, 255, 0); } }
 
 .responsive-video {
   position: relative;
@@ -10656,8 +10707,8 @@ body {
   padding: 1rem; }
 
 .changelog-table {
-  max-height: 294px;
-  overflow-y: auto; }
+  overflow-y: auto;
+  max-height: 300px; }
   .changelog-table thead th {
     border-top: none;
     border-bottom: none; }

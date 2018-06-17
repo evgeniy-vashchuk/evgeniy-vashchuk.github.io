@@ -166,7 +166,6 @@ $(document).ready(function() {
 	// SCROLLSPY
 	$('body').scrollspy({target: '.js-scroll-spy'});
 
-
 	// TAB-SIZE POLYFILL
 	var tabSize = 2;
 	var codeElements = document.getElementsByTagName('code'),
@@ -198,5 +197,28 @@ $(document).ready(function() {
 	// POSITION STICKY POLIFILL
 	var elements = $('.js-side-navigation');
 	Stickyfill.add(elements);
+
+	// CHANGELOG TABLE MAX HEIGHT
+	var changelogTableItems = $('.js-changelog-table tbody > tr').length,
+			rowsToShow = 4,
+			changelogTableMaxHeight = 0;
+
+	if (changelogTableItems > rowsToShow) {
+		$('.js-changelog-table tbody > tr').each(function(index) {
+			if (index + 1 > rowsToShow) {
+				return false;
+			}
+
+			var changelogTableRows = $('.js-changelog-table tbody > tr').get(index);
+					changelogTableMaxHeight = changelogTableMaxHeight + $(changelogTableRows).height();
+		});
+
+		var changelogTableHeadHeight = $('.js-changelog-table thead').height();
+
+		$('.js-changelog-table').css('max-height', changelogTableMaxHeight + changelogTableHeadHeight);
+
+	} else {
+		$('.js-changelog-table').css('max-height', 'auto');
+	}
 
 });

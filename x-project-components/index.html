@@ -128,7 +128,7 @@
 				<section class="section-changelog section">
 					<h2 class="section-title -primary-border">Changelog</h2>
 
-					<div class="table-responsive changelog-table">
+					<div class="table-responsive changelog-table js-changelog-table">
 						<table class="table table-sm section-changelog__table">
 							<thead class="bg-primary">
 								<tr>
@@ -137,6 +137,16 @@
 								</tr>
 							</thead>
 							<tbody>
+								<tr>
+									<td>
+										<div class="description-text">
+											<p>Fixed Count Up and Progress bars components (for the count up numbers used countUp.js), added HTML map marker component.</p>
+										</div>
+									</td>
+									<td>
+										17.06.2018
+									</td>
+								</tr>
 								<tr>
 									<td>
 										<div class="description-text">
@@ -364,27 +374,25 @@
 
 										<!-- description -->
 										<div class="description-text">
-											<p>Simple jQuery plugin that counts up to a targeted number. With the help of options you can change <strong>startValue</strong>, <strong>dataAttribute</strong>, <strong>separator</strong>, <strong>suffix</strong> and <strong>duration</strong>. You can also write callback function, which will start after the animation ends. In example for a grid is used <a class="link-slideup -dark-purple" href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
+											<p>Animates a number from zero to end value, which is triggered when you scroll to an target element. In example for a grid is used <a class="link-slideup -dark-purple" href="https://getbootstrap.com/" target="_blank">Bootstrap</a>.</p>
 										</div>
 
 										<!-- example -->
 										<div class="component-block-example-block -mb-16">
-											<div class="js-count-up-block">
-												<div class="row">
-													<!-- item 1 -->
-													<div class="col-sm-4">
-														<p class="count-up-item js-count-up-item" data-count-number="4.521">0%</p>
-													</div>
+											<div class="row">
+												<!-- item 1 -->
+												<div class="col-sm-4">
+													<p class="count-up-item js-count-up-item" data-count-number="75">0%</p>
+												</div>
 
-													<!-- item 2 -->
-													<div class="col-sm-4">
-														<p class="count-up-item js-count-up-item" data-count-number="4.26">0%</p>
-													</div>
+												<!-- item 2 -->
+												<div class="col-sm-4">
+													<p class="count-up-item js-count-up-item" data-count-number="54">0%</p>
+												</div>
 
-													<!-- item 3 -->
-													<div class="col-sm-4">
-														<p class="count-up-item js-count-up-item" data-count-number="4.8">0%</p>
-													</div>
+												<!-- item 3 -->
+												<div class="col-sm-4">
+													<p class="count-up-item js-count-up-item" data-count-number="71">0%</p>
 												</div>
 											</div>
 										</div>
@@ -406,12 +414,13 @@
 														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
 
 														<div class="attention-text attention-text-block__text">
-															<p>This component is dependent on <strong>waypoints.js</strong> which you can get <a href="http://imakewebthings.com/waypoints/" class="link-slideup -white">here</a>.</p>
+															<p>This component is dependent on <a href="https://inorganik.github.io/countUp.js/" class="link-slideup -white" target="_blank">countUp.js</a>, and <a href="http://imakewebthings.com/waypoints/" class="link-slideup -white" target="_blank">waypoints.js</a>.</p>
 														</div>
 													</div>
 
 													<pre class="line-numbers">
 														<code class="language-html">
+															&#60;script src="/path/to/countUp.js"&#62;&#60;/script&#62;
 															&#60;script src="/path/to/waypoints.js"&#62;&#60;/script&#62;
 															&#60;script src="/path/to/common.js"&#62;&#60;/script&#62;
 														</code>
@@ -438,22 +447,20 @@
 													<div class="tab-pane show active" id="count-up-html" role="tabpanel" aria-labelledby="count-up-html-tab">
 														<div class="code-example">
 															<script type="text/plain" class="language-markup line-numbers">
-																<div class="js-count-up-block">
-																	<div class="row">
-																		<!-- item 1 -->
-																		<div class="col-4">
-																			<p class="count-up-item js-count-up-item" data-count-number="4.521">0%</p>
-																		</div>
+																<div class="row">
+																	<!-- item 1 -->
+																	<div class="col-sm-4">
+																		<p class="count-up-item js-count-up-item" data-count-number="75">0%</p>
+																	</div>
 
-																		<!-- item 2 -->
-																		<div class="col-4">
-																			<p class="count-up-item js-count-up-item" data-count-number="4.26">0%</p>
-																		</div>
+																	<!-- item 2 -->
+																	<div class="col-sm-4">
+																		<p class="count-up-item js-count-up-item" data-count-number="54">0%</p>
+																	</div>
 
-																		<!-- item 3 -->
-																		<div class="col-4">
-																			<p class="count-up-item js-count-up-item" data-count-number="4.8">0%</p>
-																		</div>
+																	<!-- item 3 -->
+																	<div class="col-sm-4">
+																		<p class="count-up-item js-count-up-item" data-count-number="71">0%</p>
 																	</div>
 																</div>
 															</script>
@@ -485,114 +492,39 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// COUNT UP
-																	(function () {
-																		// default settings
-																		var settings = {
-																			startValue			:	0,
-																			dataAttribute		: 'data-count-number',
-																			separator				: '.',
-																			suffix					: '',
-																			duration				:	3000,
-																			callback				: null
-																		};
+																	function countUpNumbers(target, duration) {
+																		target.each(function() {
+																			if (!target[0].countUpInit) {
+																				target[0].countUpInit = true;
 
-																		var methods = {
-																			start : function(options) {
+																				var options = {
+																					useEasing: true,
+																					decimal: '.',
+																					suffix: '%'
+																				};
 
-																				var options = $.extend({}, settings, options);
+																				var countNumber = $(this).attr('data-count-number'),
+																						numbersAfterComma;
 
-																				// insert options in data
-																				$('body').data('options', options);
-
-																				return this.each(function() {
-																					// main variables
-																					var $this = $(this),
-																							finalValue = $(this).attr(options.dataAttribute),
-																							numbersAfterComma,
-																							decimalConverting = '1';
-
-																					// find amount of numbers after the decimal point
-																					if (finalValue.indexOf('.') > 0) {
-																						numbersAfterComma = finalValue.length - (finalValue.indexOf('.') + 1);
-																					} else {
-																						numbersAfterComma = 0;
-																					}
-
-																					// decimal сonverting
-																					for (var i = 0; i &lt; numbersAfterComma; i++) {
-																						decimalConverting = decimalConverting + '0';
-																					}
-
-																					// animation
-																					$({ countNumberValue: options.startValue }).animate({ countNumberValue: finalValue }, {
-																						duration: options.duration,
-																						easing: 'swing',
-																						progress: function() {
-
-																							$this.text(Math.floor(this.countNumberValue*decimalConverting)/decimalConverting);
-
-																							// replace dot
-																							$this.text(function(index, text){
-																								text = text.replace('.', options.separator) + options.suffix;
-																								return text;
-																							});
-
-																						},
-																						complete: function() {
-																							$this.text(this.countNumberValue);
-
-																							// replace dot
-																							$this.text(function(index, text){
-																								text = text.replace('.', options.separator) + options.suffix;
-																								return text;
-																							});
-
-																							if (typeof options.callback === "function") {
-																								options.callback.call(this, this.countNumberValue);
-																							}
-																						}
-																					});
-																				})
-																			},
-
-																			reset : function() {
-																				var $this = $(this),
-																						options = $('body').data('options');
-
-																				return this.each(function() {
-																					$this.text(options.startValue + options.suffix);
-																				})
-																			}
-																		};
-
-																		$.fn.countUp = function(method) {
-																			if (methods[method]) {
-																				return methods[method].apply( this, Array.prototype.slice.call( arguments, 1 ));
-																			} else if ( typeof method === 'object' || ! method ) {
-																				return methods.start.apply( this, arguments );
-																			} else {
-																				$.error( 'Method with name ' +  method + ' does not exist for jQuery.countUp' );
-																			}
-																		};
-																	}());
-
-																	if ($('.js-count-up-block').length) {
-																		$('.js-count-up-block').waypoint({
-																			handler: function() {
-																				if (!$(this.element)[0].animationInit) {
-																					$(this.element)[0].animationInit = true;
-
-																					$(this.element).find('.js-count-up-item').countUp({
-																						startValue: 0,
-																						dataAttribute: 'data-count-number',
-																						separator: '.',
-																						suffix: '%',
-																						duration: 3000,
-																						callback: function() {
-																							// animation complete
-																						}
-																					});
+																				// find amount of numbers after the decimal point
+																				if (countNumber.indexOf('.') > 0) {
+																					numbersAfterComma = countNumber.length - (countNumber.indexOf('.') + 1);
+																				} else {
+																					numbersAfterComma = 0;
 																				}
+
+																				var countUpElement = $(this).get(0),
+																						numAnim = new CountUp(countUpElement, 0, countNumber, numbersAfterComma, duration/1000, options);
+
+																				numAnim.start();
+																			}
+																		});
+																	}
+
+																	if ($('.js-count-up-item').length) {
+																		$('.js-count-up-item').waypoint({
+																			handler: function() {
+																				countUpNumbers($(this.element), 4000);
 																			},
 																			offset: '80%'
 																		})
@@ -639,62 +571,67 @@
 
 										<!-- description -->
 										<div class="description-text">
-											<p>Сreating animated progress bars, which triggered as soon as you scrolling to an element. The main function <strong>progressBars</strong> takes 4 parameters: <strong class="red-text">progressBarsBlock</strong> - wrapper for progress bars items (required), <strong class="red-text">duration</strong> - animation speed (default = 3000), <strong class="red-text">suffix</strong> - inserting a suffix (symbol) after percent number (default = ' '), <strong class="red-text">separator</strong> - character of division of an integer.</p>
+											<p>Сreating animated progress bars, which triggered as soon as you scrolling to an element.</p>
 										</div>
 
 										<!-- example -->
 										<div class="component-block-example-block -mb-16">
 
+											<!-- PROGRESS BARS -->
 											<div class="progress-bars-wrap js-progress-bars">
 												<!-- item 1 -->
-												<div class="progress-bar-item progress-bars-wrap__item">
+												<div class="progress-bar-item progress-bars-wrap__item js-progress-bar-item">
+													<!-- title -->
 													<h5 class="progress-bar-item__title">Sketch</h5>
+
+													<!-- strip -->
 													<div class="progress-bar-item__strip-wrap">
-														<div class="progress-bar-strip">
-															<div class="progress-bar-strip__fill-block" data-percentage="90.1">
-																<span class="progress-bar-strip__percent-text">0</span>
-															</div>
+														<div class="progress-bar-strip js-progress-bar-strip">
+															<span class="progress-bar-strip__percent js-progress-bar-percent" data-progress-percent="90.1">0%</span>
 														</div>
 													</div>
 												</div>
 
 												<!-- item 2 -->
-												<div class="progress-bar-item progress-bars-wrap__item">
+												<div class="progress-bar-item progress-bars-wrap__item js-progress-bar-item">
+													<!-- title -->
 													<h5 class="progress-bar-item__title">Photoshop</h5>
+
+													<!-- strip -->
 													<div class="progress-bar-item__strip-wrap">
-														<div class="progress-bar-strip">
-															<div class="progress-bar-strip__fill-block" data-percentage="65.23">
-																<span class="progress-bar-strip__percent-text">0</span>
-															</div>
+														<div class="progress-bar-strip js-progress-bar-strip">
+															<span class="progress-bar-strip__percent js-progress-bar-percent" data-progress-percent="65.23">0%</span>
 														</div>
 													</div>
 												</div>
 
 												<!-- item 3 -->
-												<div class="progress-bar-item progress-bars-wrap__item">
+												<div class="progress-bar-item progress-bars-wrap__item js-progress-bar-item">
+													<!-- title -->
 													<h5 class="progress-bar-item__title">Illustrator</h5>
+
+													<!-- strip -->
 													<div class="progress-bar-item__strip-wrap">
-														<div class="progress-bar-strip">
-															<div class="progress-bar-strip__fill-block" data-percentage="83">
-																<span class="progress-bar-strip__percent-text">0</span>
-															</div>
+														<div class="progress-bar-strip js-progress-bar-strip">
+															<span class="progress-bar-strip__percent js-progress-bar-percent" data-progress-percent="83">0%</span>
 														</div>
 													</div>
 												</div>
 
 												<!-- item 4 -->
-												<div class="progress-bar-item progress-bars-wrap__item">
+												<div class="progress-bar-item progress-bars-wrap__item js-progress-bar-item">
+													<!-- title -->
 													<h5 class="progress-bar-item__title">Principle</h5>
+
+													<!-- strip -->
 													<div class="progress-bar-item__strip-wrap">
-														<div class="progress-bar-strip">
-															<div class="progress-bar-strip__fill-block" data-percentage="79.91">
-																<span class="progress-bar-strip__percent-text">0</span>
-															</div>
+														<div class="progress-bar-strip js-progress-bar-strip">
+															<span class="progress-bar-strip__percent js-progress-bar-percent" data-progress-percent="79.91">0%</span>
 														</div>
 													</div>
 												</div>
 											</div>
-
+											<!-- PROGRESS BARS END -->
 										</div>
 
 										<!-- usage -->
@@ -714,12 +651,13 @@
 														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
 
 														<div class="attention-text attention-text-block__text">
-															<p>This component is dependent on <strong>waypoints.js</strong> which you can get <a class="link-slideup -white" href="http://imakewebthings.com/waypoints/" target="blank">here</a>.</p>
+															<p>This component is dependent on <a href="https://inorganik.github.io/countUp.js/" class="link-slideup -white" target="_blank">countUp.js</a>, and <a href="http://imakewebthings.com/waypoints/" class="link-slideup -white" target="_blank">waypoints.js</a>.</p>
 														</div>
 													</div>
 
 													<pre class="line-numbers">
 														<code class="language-html">
+															&#60;script src="/path/to/countUp.js"&#62;&#60;/script&#62;
 															&#60;script src="/path/to/waypoints.js"&#62;&#60;/script&#62;
 															&#60;script src="/path/to/common.js"&#62;&#60;/script&#62;
 														</code>
@@ -746,55 +684,61 @@
 													<div class="tab-pane show active" id="progress-bars-html" role="tabpanel" aria-labelledby="progress-bars-html-tab">
 														<div class="code-example">
 															<script type="text/plain" class="language-markup line-numbers">
+																<!-- PROGRESS BARS -->
 																<div class="progress-bars-wrap js-progress-bars">
 																	<!-- item 1 -->
-																	<div class="progress-bar-item progress-bars-wrap__item">
+																	<div class="progress-bar-item progress-bars-wrap__item js-progress-bar-item">
+																		<!-- title -->
 																		<h5 class="progress-bar-item__title">Sketch</h5>
+
+																		<!-- strip -->
 																		<div class="progress-bar-item__strip-wrap">
-																			<div class="progress-bar-strip">
-																				<div class="progress-bar-strip__fill-block" data-percentage="90">
-																					<span class="progress-bar-strip__percent-text">0</span>
-																				</div>
+																			<div class="progress-bar-strip js-progress-bar-strip">
+																				<span class="progress-bar-strip__percent js-progress-bar-percent" data-progress-percent="90.1">0%</span>
 																			</div>
 																		</div>
 																	</div>
 
 																	<!-- item 2 -->
-																	<div class="progress-bar-item progress-bars-wrap__item">
+																	<div class="progress-bar-item progress-bars-wrap__item js-progress-bar-item">
+																		<!-- title -->
 																		<h5 class="progress-bar-item__title">Photoshop</h5>
+
+																		<!-- strip -->
 																		<div class="progress-bar-item__strip-wrap">
-																			<div class="progress-bar-strip">
-																				<div class="progress-bar-strip__fill-block" data-percentage="65">
-																					<span class="progress-bar-strip__percent-text">0</span>
-																				</div>
+																			<div class="progress-bar-strip js-progress-bar-strip">
+																				<span class="progress-bar-strip__percent js-progress-bar-percent" data-progress-percent="65.23">0%</span>
 																			</div>
 																		</div>
 																	</div>
 
 																	<!-- item 3 -->
-																	<div class="progress-bar-item progress-bars-wrap__item">
+																	<div class="progress-bar-item progress-bars-wrap__item js-progress-bar-item">
+																		<!-- title -->
 																		<h5 class="progress-bar-item__title">Illustrator</h5>
+
+																		<!-- strip -->
 																		<div class="progress-bar-item__strip-wrap">
-																			<div class="progress-bar-strip">
-																				<div class="progress-bar-strip__fill-block" data-percentage="83">
-																					<span class="progress-bar-strip__percent-text">0</span>
-																				</div>
+																			<div class="progress-bar-strip js-progress-bar-strip">
+																				<span class="progress-bar-strip__percent js-progress-bar-percent" data-progress-percent="83">0%</span>
 																			</div>
 																		</div>
 																	</div>
 
 																	<!-- item 4 -->
-																	<div class="progress-bar-item progress-bars-wrap__item">
+																	<div class="progress-bar-item progress-bars-wrap__item js-progress-bar-item">
+																		<!-- title -->
 																		<h5 class="progress-bar-item__title">Principle</h5>
+
+																		<!-- strip -->
 																		<div class="progress-bar-item__strip-wrap">
-																			<div class="progress-bar-strip">
-																				<div class="progress-bar-strip__fill-block" data-percentage="79">
-																					<span class="progress-bar-strip__percent-text">0</span>
-																				</div>
+																			<div class="progress-bar-strip js-progress-bar-strip">
+																				<span class="progress-bar-strip__percent js-progress-bar-percent" data-progress-percent="79.91">0%</span>
 																			</div>
 																		</div>
 																	</div>
 																</div>
+																<!-- PROGRESS BARS END -->
 															</script>
 														</div>
 													</div>
@@ -826,25 +770,16 @@
 
 																	.progress-bar-strip {
 																		position: relative;
-																		width: 100%;
+																		width: 0;
 																		height: 20px;
-																		border: 2px solid #26263F;
+																		background-color: #4C4E6C;
 
-																		&__fill-block {
-																			position: absolute;
-																			top: -2px;
-																			bottom: -2px;
-																			left: -2px;
-																			background-color: #4C4E6C;
-																			z-index: 1;
-																		}
-
-																		&__percent-text {
-																			color: #fff;
+																		&__percent {
 																			position: absolute;
 																			top: 50%;
 																			right: 5px;
 																			transform: translate(0, -50%);
+																			color: #fff;
 																			white-space: nowrap;
 																		}
 																	}
@@ -870,80 +805,47 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// PROGRESS BARS
-																	function progressBars(progressBarsBlock, duration, suffix, separator) {
-																		if (!progressBarsBlock[0].animationInit) {
-																			progressBarsBlock[0].animationInit = true;
+																	function progressBars(target, duration) {
+																		if (!target[0].progressBarsInit) {
+																			target[0].progressBarsInit = true;
 
-																			if (suffix === undefined) {
-																				suffix = '';
-																			}
+																			target.find('.js-progress-bar-item').each(function(index) {
 
-																			if (duration === undefined) {
-																				duration = 3000;
-																			}
+																				var progressBarPercent = $(this).find('.js-progress-bar-percent').attr('data-progress-percent');
 
-																			if (separator === undefined) {
-																				separator = '.';
-																			}
+																				// progress bar fill animation
+																				$(this).find('.js-progress-bar-strip').animate({
+																					width: progressBarPercent + '%'
+																				}, duration, 'swing');
 
-																			var barsDuration = duration;
+																				// count up animation
+																				var options = {
+																					useEasing: false,
+																					decimal: '.',
+																					suffix: '%'
+																				};
 
-																			progressBarsBlock.find('.progress-bar-item').each(function() {
-																				var percent = $(this).find('.progress-bar-strip__fill-block').attr('data-percentage'),
-																						numbersAfterComma,
-																						decimalConverting = '1';
+																				var numbersAfterComma;
 
 																				// find amount of numbers after the decimal point
-																				if (percent.indexOf('.') > 0) {
-																					numbersAfterComma = percent.length - (percent.indexOf('.') + 1);
+																				if (progressBarPercent.indexOf('.') > 0) {
+																					numbersAfterComma = progressBarPercent.length - (progressBarPercent.indexOf('.') + 1);
 																				} else {
 																					numbersAfterComma = 0;
 																				}
 
-																				// decimal сonverting
-																				for (var i = 0; i &lt; numbersAfterComma; i++) {
-																					decimalConverting = decimalConverting + '0';
-																				}
+																				var countUpElement = $(this).find('.js-progress-bar-percent').get(0),
+																						numAnim = new CountUp(countUpElement, 0, progressBarPercent, numbersAfterComma, duration/1000, options);
 
-																				// bar fill animation
-																				$(this).find('.progress-bar-strip__fill-block').animate({
-																					width: percent + '%'
-																				}, barsDuration);
-
-																				// count up animation
-																				var numberItem = $(this).find('.progress-bar-strip__percent-text');
-
-																				$({ numberValue: 0 }).animate({ numberValue: percent }, {
-																					duration: barsDuration,
-																					easing: 'linear',
-																					progress: function() {
-																						numberItem.text(Math.floor(this.numberValue*decimalConverting)/decimalConverting);
-
-																						// replace dot
-																						numberItem.text(function(index, text){
-																							text = text.replace('.', separator) + suffix;
-																							return text;
-																						});
-
-																					},
-																					complete: function() {
-																						numberItem.text(this.numberValue);
-
-																						// replace dot
-																						numberItem.text(function(index, text){
-																							text = text.replace('.', separator) + suffix;
-																							return text;
-																						});
-																					}
-																				});
-																			})
+																				numAnim.start();
+																			});
 																		}
 																	}
 
 																	if ($('.js-progress-bars').length) {
 																		$('.js-progress-bars').waypoint({
 																			handler: function() {
-																				progressBars($(this.element), 4000, '%', ',');
+																				progressBars($(this.element), 4000);
 																			},
 																			offset: '80%'
 																		})
@@ -1071,7 +973,7 @@
 														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
 
 														<div class="attention-text attention-text-block__text">
-															<p>This component is dependent on <strong>shuffle.js</strong> which you can get <a class="link-slideup -white" href="https://vestride.github.io/Shuffle/" target="blank">here</a>.</p>
+															<p>This component is dependent on <a class="link-slideup -white" href="https://vestride.github.io/Shuffle/" target="blank">shuffle.js</a>.</p>
 															<p>In order to support browsers like IE11 and Safari 8, you must include a <strong>babel-polyfil</strong> before all your compiled Babel code. Polyfill you can get <a class="link-slideup -white" href="https://babeljs.io/docs/usage/polyfill/" target="blank">here</a>.</p>
 														</div>
 													</div>
@@ -1107,7 +1009,7 @@
 															<script type="text/plain" class="language-markup line-numbers">
 																<!-- SHUFFLE FILTER -->
 																<div class="js-filter-container">
-																	<!-- shuffle navigation END -->
+																	<!-- shuffle navigation -->
 																	<ul class="filter-nav">
 																		<li class="filter-nav__item">
 																			<a class="filter-nav__link -active" href="javascript:void(0);" data-group="all">All</a>
@@ -1593,7 +1495,7 @@
 														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
 
 														<div class="attention-text attention-text-block__text">
-															<p>For icon were used <strong>Font Awesome 5</strong> which you can get <a class="link-slideup -white" href="https://fontawesome.com/" target="blank">here</a>.</p>
+															<p>For icon were used <a class="link-slideup -white" href="https://fontawesome.com/" target="blank">Font Awesome 5</a>.</p>
 														</div>
 													</div>
 												</div>
@@ -2047,7 +1949,7 @@
 														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
 
 														<div class="attention-text attention-text-block__text">
-															<p>For icon were used <strong>Font Awesome 5</strong> which you can get <a class="link-slideup -white" href="https://fontawesome.com/" target="blank">here</a>.
+															<p>For icon were used <a class="link-slideup -white" href="https://fontawesome.com/" target="blank">Font Awesome 5</a>.
 															</p>
 														</div>
 													</div>
@@ -2347,7 +2249,7 @@
 										<div class="description-text">
 											<p>Embed a Google Map on site. The following settings for google map are also prepared in advance: <strong>styles for theme,</strong> <strong>custom icon (png or svg),</strong> <strong>info window</strong> and others.</p>
 											<p>For map with multiple markers zoom are calculated automatically based on the distance of the markers from each other.</p>
-												<p>Add <strong class="red-text">class="-map-absolute"</strong> to make the map stretched across his parent's area.</p>
+											<p>Add <strong class="red-text">class="-map-absolute"</strong> to make the map stretched across his parent's area.</p>
 										</div>
 
 										<!-- example -->
@@ -2537,6 +2439,318 @@
 
 																	if ($('#js-map').length) {
 																		initMap();
+																	}
+																</code>
+															</pre>
+
+															<pre class="line-numbers">
+																<code class="language-js">
+																	// GOOGLE MAP WITH MULTIPLE MARKER
+																	function initMapMultipleMarkers() {
+																		var map = new google.maps.Map(document.getElementById('js-map-multiple-markers'), {
+																			disableDefaultUI: true,
+																			zoomControl: true,
+																			fullscreenControl: true,
+																			zoomControlOptions: {
+																				position: google.maps.ControlPosition.RIGHT_CENTER
+																			},
+																		});
+
+																		// array of markers (with coordinates, name, address)
+																		var multipleMarkers = [
+																			{
+																				lat: 40.679680,
+																				lng: -73.942175,
+																				name: 'Name 1',
+																				address: 'Address 1'
+																			},
+																			{
+																				lat: 40.729391,
+																				lng: -74.076758,
+																				name: 'Name 2',
+																				address: 'Address 2'
+																			},
+																			{
+																				lat: 40.745260,
+																				lng: -73.997794,
+																				name: 'Name 3',
+																				address: 'Address 3'
+																			}
+																		];
+
+																		var infoWindow = new google.maps.InfoWindow();
+
+																		google.maps.event.addListener(map, 'click', function() {
+																			infoWindow.close();
+																		});
+
+																		// Determine the boundaries of the visible area of the map in accordance with the position of the markers
+																		var bounds = new google.maps.LatLngBounds();
+
+																		// create the markers
+																		for (var i = 0; i &lt; multipleMarkers.length; i++){
+
+																			var latLng = new google.maps.LatLng(multipleMarkers[i].lat, multipleMarkers[i].lng);
+																			var name = multipleMarkers[i].name;
+																			var address = multipleMarkers[i].address;
+
+																			addMarker(latLng, name, address);
+
+																			// Expand the boundaries of our visible area by adding the coordinates of our current marker
+																			bounds.extend(latLng);
+																		}
+
+																		// Automatically scale the map so that all markers are in the visible area of the map
+																		map.fitBounds(bounds);
+
+																		function addMarker(latLng, name, address) {
+																			var marker = new google.maps.Marker({
+																				position: latLng,
+																				map: map,
+																				title: name
+																			});
+
+																			google.maps.event.addListener(marker, 'click', function() {
+																				var contentString = '&#60;div class="infowindow"&#62;' +
+																															'&#60;h5&#62;' + name + '&#60;/h5&#62;' +
+																															'&#60;p&#62;' + address + '&#60;/p&#62;' +
+																														'&#60;/div&#62;';
+
+																				infoWindow.setContent(contentString);
+																				infoWindow.open(map, marker);
+																			});
+																		}
+																	}
+
+																	if ($('#js-map-multiple-markers').length) {
+																		initMapMultipleMarkers();
+																	}
+																</code>
+															</pre>
+														</div>
+													</div>
+													<!-- javascript END -->
+												</div>
+												<!-- TABS CONTENT END -->
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- HTML-map-marker -->
+								<div class="component-block-wrap" id="html-map-marker">
+									<div class="component-block">
+										<!-- title -->
+										<h3 class="section-title -apricot-border -component-title">
+											<a class="section-title__anchor js-no-scroll" href="#html-map-marker">
+												HTML map marker
+
+												<i class="fas fa-hashtag"></i>
+											</a>
+
+											<span class="badge-block">
+												<span class="badge-block__badge badge -sass">
+													<span>SASS</span>
+													<i class="fab fa-sass"></i>
+												</span>
+												<span class="badge-block__badge badge -js">
+													<span>JS</span>
+													<i class="fab fa-js"></i>
+												</span>
+											</span>
+										</h3>
+										<!-- title END -->
+
+										<!-- description -->
+										<div class="description-text">
+											Adding to Google Map custom HTML-marker which can be stylized how do you want.
+										</div>
+
+										<!-- example -->
+										<div class="component-block-example-block -mb-16">
+											<!-- GOOGLE MAP -->
+											<div id="js-map-with-marker" class="google-map"></div>
+											<!-- GOOGLE MAP END -->
+										</div>
+
+										<!-- usage -->
+										<div class="component-block-usage">
+											<!-- button -->
+											<div class="component-block-usage-btn">
+												<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#html-map-marker-collapse" role="button" aria-expanded="false" aria-controls="html-map-marker-collapse">
+													example
+													<i class="fas fa-angle-down"></i>
+												</a>
+											</div>
+											<!-- code example -->
+											<div class="collapse" id="html-map-marker-collapse">
+
+												<!-- NAVS FOR TABS -->
+												<ul class="nav nav-tabs component-block-usage__nav-tabs" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll active" id="html-map-marker-sass-tab" data-toggle="tab" href="#html-map-marker-sass" role="tab" aria-controls="html-map-marker-sass" aria-selected="true">SASS</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll" id="html-map-marker-js-tab" data-toggle="tab" href="#html-map-marker-js" role="tab" aria-controls="html-map-marker-js" aria-selected="false">JS</a>
+													</li>
+												</ul>
+												<!-- NAVS FOR TABS END -->
+
+												<!-- TABS CONTENT -->
+												<div class="tab-content">
+
+													<!-- sass -->
+													<div class="tab-pane show active" id="html-map-marker-sass" role="tabpanel" aria-labelledby="html-map-marker-sass-tab">
+														<div class="code-example">
+															<pre class="line-numbers">
+																<code class="language-scss">
+																	// PULSE ANIMATION
+
+																	$marker-color: #fff;
+																	$marker-dot-width: 8px;
+																	$marker-dot-height: $marker-dot-width;
+																	$marker-end-size: 120px;
+																	$animation-duration: 2.5s;
+
+																	@mixin markerEndSize($circleEndSize){
+																		width: $circleEndSize;
+																		height: $circleEndSize;
+																	}
+
+																	.html-map-marker {
+																		position: absolute;
+																		z-index: 100;
+																		width: $marker-dot-width;
+																		height: $marker-dot-height;
+																		background-color: $marker-color;
+																		border-radius: 50%;
+
+																		&:before,
+																		&:after {
+																			content: '';
+																			background-color: rgba($marker-color, 1);
+																			position: absolute;
+																			top: 50%;
+																			left: 50%;
+																			transform: translate(-50%, -50%);
+																			border-radius: 50%;
+																			transform-origin: center center;
+																			animation: pulse $animation-duration linear infinite;
+																		}
+
+																		&:after {
+																			animation-delay: $animation-duration/2;
+																		}
+																	}
+
+																	@keyframes pulse {
+																		0% {
+																			@include markerEndSize(0);
+																			background-color: rgba($marker-color, 0);
+																		}
+																		50% {
+																			background-color: rgba($marker-color, 0.2);
+																		}
+																		70% {
+																			background-color: rgba($marker-color, 0.4);
+																		}
+																		100% {
+																			@include markerEndSize($marker-end-size);
+																			background-color: rgba($marker-color, 0);
+																		}
+																	}
+																</code>
+															</pre>
+														</div>
+													</div>
+													<!-- sass END -->
+
+													<!-- javascript -->
+													<div class="tab-pane" id="html-map-marker-js" role="tabpanel" aria-labelledby="html-map-marker-js-tab">
+														<div class="code-example">
+															<pre class="line-numbers">
+																<code class="language-js">
+																	// MAP WITH HTML MARKER
+																	function initMapWithHtmlMarker() {
+																		var coordinates = new google.maps.LatLng(40.709541, -74.007984),
+																		zoom = 16;
+
+																		var map = new google.maps.Map(document.getElementById('js-map-with-marker'), {
+																			center: coordinates,
+																			zoom: zoom,
+																			disableDefaultUI: true,
+																			zoomControl: false,
+																			fullscreenControl: false,
+																			styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+																		});
+
+																		// HTML MAP MARKER
+																		function CustomMarker(latlng, map, args) {
+																			this.latlng = latlng;
+																			this.args = args;
+																			this.setMap(map);
+																		}
+
+																		CustomMarker.prototype = new google.maps.OverlayView();
+
+																		CustomMarker.prototype.draw = function() {
+
+																			var self = this;
+
+																			var div = this.div;
+
+																			if (!div) {
+
+																				div = this.div = document.createElement('div');
+
+																				div.className = 'html-map-marker';
+
+																				if (typeof(self.args.marker_id) !== 'undefined') {
+																					div.dataset.marker_id = self.args.marker_id;
+																				}
+
+																				google.maps.event.addDomListener(div, "click", function(event) {
+																					// marker click
+																					google.maps.event.trigger(self, "click");
+																				});
+
+																				var panes = this.getPanes();
+																				panes.overlayImage.appendChild(div);
+																			}
+
+																			var point = this.getProjection().fromLatLngToDivPixel(this.latlng);
+
+																			var mapMarkerWidth = $('.html-map-marker').width() / 2;
+
+																			if (point) {
+																				div.style.left = (point.x - mapMarkerWidth) + 'px';
+																				div.style.top = (point.y - mapMarkerWidth) + 'px';
+																			}
+																		};
+
+																		CustomMarker.prototype.remove = function() {
+																			if (this.div) {
+																				this.div.parentNode.removeChild(this.div);
+																				this.div = null;
+																			}
+																		};
+
+																		CustomMarker.prototype.getPosition = function() {
+																			return this.latlng;
+																		};
+
+																		var overlay = new CustomMarker(
+																			coordinates,
+																			map,
+																			{
+																				marker_id: 'html-map-murker'
+																			}
+																		);
+																		// HTML MAP MARKER END
+																	}
+
+																	if ($('#js-map-with-marker').length) {
+																		initMapWithHtmlMarker();
 																	}
 																</code>
 															</pre>
@@ -3306,6 +3520,7 @@
 									<a href="#width-of-scrollbar" class="list-group-item list-group-item-action js-no-scroll">Width of scrollbar</a>
 									<a href="#custom-checkbox-radio" class="list-group-item list-group-item-action js-no-scroll">Custom checkbox and radio</a>
 									<a href="#google-map" class="list-group-item list-group-item-action js-no-scroll">Google map</a>
+									<a href="#html-map-marker" class="list-group-item list-group-item-action js-no-scroll">HTML map marker</a>
 									<a href="#responsive-video" class="list-group-item list-group-item-action js-no-scroll">Embed responsive video</a>
 									<a href="#youtube-thumbnail" class="list-group-item list-group-item-action js-no-scroll">Youtube thumbnail</a>
 									<a href="#vimeo-thumbnail" class="list-group-item list-group-item-action js-no-scroll">Vimeo thumbnail</a>
@@ -3372,6 +3587,7 @@
 	<script src="libs/waypoints.js/jquery.waypoints.min.js"></script>
 	<script src="libs/slideout.js/slideout.min.js"></script>
 	<script src="libs/stickyfill/stickyfill.min.js"></script>
+	<script src="libs/countUp/countUp.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoik2Sle8UV-ysloqMOF2dK0mnXpb5z3I"></script>
 	<script src="libs/x-project-components/x-project-components.js"></script>
 
