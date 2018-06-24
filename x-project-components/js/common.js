@@ -28,16 +28,45 @@ $(document).ready(function() {
 
 	// scroll to element after search
 	$('.js-search-input').on('_after', function() {
+		var inputVal = $(this).val();
+
 		$('.js-list-group > .list-group-item').each(function() {
 			if ($(this).is(':visible')) {
 
+				// scroll
 				$('html, body').animate({
 					scrollTop: $($(this).attr("href")).offset().top
 				}, 0);
 
+				// highlighting
+				if ($(this).text() !== 'No results found' && inputVal !== '') {
+					var target = $(this).attr('href').substring(1);
+
+					$('.component-block-wrap > .list-group-item').removeClass('-highlighting');
+
+					$('#'+target+'').find('.section-title').addClass('-highlighting');
+
+					setTimeout(function(){
+						$('#'+target+'').find('.section-title').removeClass('-highlighting');
+					}, 1000);
+				}
+
 				return false;
 			}
 		});
+	});
+
+	// ADD HIGHLIGHTING AFTER ANCHOR
+	$('.js-list-group > .list-group-item').on('click', function() {
+		var target = $(this).attr('href').substring(1);
+
+		$('.component-block-wrap > .list-group-item').removeClass('-highlighting');
+
+		$('#'+target+'').find('.section-title').addClass('-highlighting');
+
+		setTimeout(function(){
+			$('#'+target+'').find('.section-title').removeClass('-highlighting');
+		}, 1000);
 	});
 
 	// SCROLL TOP BUTTON HIDE ON < 1500

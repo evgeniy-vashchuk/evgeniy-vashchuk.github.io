@@ -10135,7 +10135,12 @@ p {
     border-left-color: #4C4E6B; }
   .section-title.-apricot-border {
     border-bottom-color: #C7ADA6;
-    border-left-color: #C7ADA6; }
+    border-left-color: #C7ADA6;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
+    .section-title.-apricot-border.-highlighting {
+      background-color: rgba(199, 173, 166, 0.4); }
   .section-title.-component-title {
     display: -webkit-flex;
     display: -moz-flex;
@@ -10252,7 +10257,8 @@ strong.red-text {
   border-style: solid;
   min-width: 65px;
   min-height: 25px;
-  vertical-align: top; }
+  vertical-align: top;
+  background-color: #f8f9fa; }
   .badge span {
     position: relative;
     bottom: 1px;
@@ -10499,7 +10505,7 @@ div.code-toolbar > .toolbar a {
 .side-navigation {
   position: -webkit-sticky;
   position: sticky;
-  top: 85px; }
+  top: 80px; }
   @media only screen and (max-width: 991px) {
     .side-navigation {
       padding: 10px;

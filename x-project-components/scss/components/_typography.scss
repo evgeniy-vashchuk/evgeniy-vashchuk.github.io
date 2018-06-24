@@ -34,6 +34,11 @@ p {
 	&.-apricot-border {
 		border-bottom-color: $apricot;
 		border-left-color: $apricot;
+		transition: 0.5s;
+
+		&.-highlighting {
+			background-color: rgba($apricot, 0.4);
+		}
 	}
 
 	&.-component-title {
