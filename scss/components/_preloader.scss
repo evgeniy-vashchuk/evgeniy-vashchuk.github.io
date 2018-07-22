@@ -1,0 +1,218 @@
+.preloader-for-pages {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	z-index: $zindex-preloader;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&__text {
+		letter-spacing: 10px;
+		user-select: none;
+		display: none;
+	}
+}
+
+.preloader-for-home {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: $zindex-preloader;
+
+	&__percentage-strip {
+		width: 4px;
+		height: 0%;
+		background-color: rgba($white, 0.2);
+		position: absolute;
+		top: 0;
+		left: 50%;
+		margin-left: -2px;
+
+		@include max-w(767) {
+			left: 80%;
+		}
+
+		@include max-w(575) {
+			left: 90%;
+		}
+	}
+
+	&__percentage-text {
+		position: absolute;
+		bottom: -2px;
+		right: 15px;
+		z-index: 1;
+
+		@include max-w(400) {
+			right: 10px;
+		}
+	}
+
+	&__loading-text {
+		position: absolute;
+		bottom: 40px;
+		left: 45px;
+		z-index: 1;
+		color: $white;
+		overflow: hidden;
+
+		@include max-w(575) {
+			left: 15px;
+			bottom: 15px;
+		}
+	}
+
+	&__loading-text-list {
+		color: $white;
+		transform: translate(0, 100%);
+		transition: 1s;
+
+		@include max-w(400) {
+			font-size: 0.875rem;
+		}
+
+		li {
+			opacity: 0.6;
+			transition: 1s;
+			padding: 5px 0;
+
+			&:after {
+				content: "…";
+				display: inline-block;
+			}
+		}
+	}
+
+	&__swipe-component {
+		position: absolute;
+		bottom: 45px;
+		left: 45px;
+		z-index: 2;
+		width: 100%;
+		max-width: 190px;
+		display: none;
+
+		@include max-w(575) {
+			bottom: 15px;
+			left: 15px;
+		}
+	}
+}
+
+.preloader-for-home-init {
+	.slides {
+		width: 0;
+	}
+}
+
+.preloader-switch-lang {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: $zindex-preloader;
+	display: none;
+	opacity: 0;
+}
+
+$count: 10;
+$time: 2; // in seconds
+$size: 100;
+$color: $white;
+
+.rotating-circles-preloader {
+	// size
+	width: $size + px;
+	height: $size + px;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	animation: rotatePreloader $time + s infinite ease-in;
+
+	@include max-w(1149) {
+		$size: 80;
+
+		width: $size + px;
+		height: $size + px;
+	}
+
+	@include max-w(575) {
+		$size: 60;
+
+		width: $size + px;
+		height: $size + px;
+	}
+
+	div {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+
+		&:before {
+			content: "";
+			position: absolute;
+			left: 50%;
+			top: 0%;
+			width: 10%;
+			height: 10%;
+			background-color: $color;
+			transform: translateX(-50%);
+			border-radius: 50%;
+		}
+	}
+}
+
+@keyframes rotatePreloader {
+	0% {
+		transform: translateX(-50%) translateY(-50%) rotateZ(0deg);
+	}
+	100% {
+		transform: translateX(-50%) translateY(-50%) rotateZ(-360deg);
+	}
+}
+
+@for $i from 1 through $count {
+	.rotating-circles-preloader div:nth-child(#{$i}) {
+		transform: rotateZ(((360 / $count) * ($i - 1)) + deg);
+		animation: rotateCircle + $i $time + s infinite linear;
+		z-index: $count - $i;
+	}
+
+	@keyframes rotateCircle#{$i} {
+		#{percentage(((50 / $count) * ($i - 1)) / 100)} {
+			opacity: 0;
+		}
+		#{percentage((((50 / $count) + 0.0001) * ($i - 1)) / 100)} {
+			opacity: 1;
+			transform: rotateZ((0 - ((360 / $count) * ($i - 2))) + deg);
+		}
+		#{percentage((((50 / $count) * ($i - 0)) + 2) / 100)} {
+			transform: rotateZ((0 - ((360 / $count) * ($i - 1))) + deg);
+		}
+		#{percentage(((50 + ((50 / $count) * ($i - 0))) + 2) / 100)} {
+			transform: rotateZ((0 - ((360 / $count) * ($i - 1))) + deg);
+		}
+		100% {
+			transform: rotateZ((0 - ((360 / $count) * ($count - 1))) + deg);
+			opacity: 1;
+		}
+	}
+}

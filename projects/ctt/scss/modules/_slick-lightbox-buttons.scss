@@ -1,0 +1,93 @@
+/* SLICK LIGHTBOX BUTTONS ============================ */
+
+.slick-lightbox-inner {
+	.slick-prev, .slick-next, .slick-lightbox-close {
+		font-size: 0;
+		border: none;
+		background-color: $white;
+		width: 50px;
+		height: 50px;
+		cursor: pointer;
+		text-align: center;
+		transition: background 0.3s ease;
+		border: 2px solid $secondary;
+		&:focus {
+			outline: none;
+		}
+
+		&:hover {
+			&:before {
+				color: $primary;
+			}
+		}
+
+		&:before {
+			font-family: 'icomoon' !important;
+			speak: none;
+			font-style: normal;
+			font-weight: normal;
+			font-variant: normal;
+			text-transform: none;
+			line-height: 1;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+			font-size: 1.25rem;
+			color: $secondary;
+			transition: 0.3s;
+		}
+	}
+
+	.slick-prev {
+		position: absolute;
+		top: 50%;
+		left: 25px;
+		margin-top: -25px;
+		z-index: 99;
+		&:before {
+			content: "\e903";
+			position: relative;
+		}
+	}
+	.slick-next {
+		position: absolute;
+		top: 50%;
+		right: 25px;
+		margin-top: -25px;
+		&:before {
+			content: '\e900';
+			position: relative;
+		}
+	}
+
+	.slick-lightbox-close {
+		position: absolute;
+		top: 25px;
+		right: 25px;
+		&:before {
+			font-size: 1.5rem;
+			content: "\e905";
+		}
+	}
+}
+
+// Small devices (landscape phones, less than 768px)
+@media only screen and (max-width: 767px) {
+
+	.slick-lightbox-inner {
+		.slick-prev, .slick-next {
+			width: 45px;
+			height: 45px;
+			&:before {
+				font-size: 20px;
+			}
+		}
+		.slick-lightbox-close {
+			width: 45px;
+			height: 45px;
+			&:before {
+				font-size: 20px;
+			}
+		}
+	}
+
+}

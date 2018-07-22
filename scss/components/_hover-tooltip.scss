@@ -1,0 +1,52 @@
+#tooltip {
+	position: absolute;
+	z-index: $zindex-custom-cursor;
+	pointer-events: none;
+	color: $secondary;
+	font-weight: 700;
+	letter-spacing: 0.32px;
+	display: none;
+
+	@include max-w(1149) {
+		display: none !important;
+	}
+
+	&.-text-white {
+		color: $white;
+	}
+}
+
+.-reveal-animation {
+	position: relative;
+	display: inline-block;
+	animation-name: appear;
+	animation-duration: 600ms;
+	animation-fill-mode: both;
+	animation-timing-function: cubic-bezier(0.4,0,0.2,1);
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: 0; bottom: 0; left: 0; right: 0;
+		width: 100%; height: 100%;
+		background-color: $primary;
+		animation-name: reveal;
+		animation-duration: inherit;
+		animation-fill-mode: inherit;
+		animation-timing-function: inherit;
+	}
+}
+
+@keyframes reveal {
+	from { transform: scaleX(0); transform-origin: left; }
+	40% { transform: scaleX(1); transform-origin: left; }
+	60% { transform: scaleX(1); transform-origin: right; }
+	to { transform: scaleX(0); transform-origin: right; }
+}
+
+@keyframes appear {
+	from { color: transparent; }
+	40% { color: transparent; }
+	60% { color: $white; }
+	to { color: $white; }
+}

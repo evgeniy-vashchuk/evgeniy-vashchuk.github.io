@@ -1,0 +1,67 @@
+body {
+	position: relative;
+}
+
+a {
+	transition: $transition-base;
+}
+
+.main-wrap {
+	position: relative;
+	z-index: 10;
+}
+
+.main {
+	padding-top: 70px;
+}
+
+.img-decoration {
+	position: relative;
+	padding-right: 7px;
+
+	&-wrap {
+		padding-right: 20px;
+	}
+
+	img {
+		@include img-res;
+	}
+
+	&:after {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		height: 80px;
+		width: 2px;
+		background-color: $primary;
+	}
+
+	&-sm {
+		max-width: calc(200px + 7px);
+	}
+
+	&-md {
+		max-width: calc(300px + 7px);
+	}
+
+	&-lg {
+		max-width: calc(415px + 7px);
+	}
+
+	&-bottom {
+		padding-right: 0;
+		padding-bottom: 7px;
+		&:after {
+			content: "";
+			display: inline-block;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			height: 2px;
+			width: 80px;
+			background-color: $primary;
+		}
+	}
+}

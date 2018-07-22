@@ -1,0 +1,23 @@
+.mCS-custom-scrollbar {
+	&.mCSB_scrollTools {
+		opacity: 0 !important;
+		visibility: hidden !important;
+	}
+
+	.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+		background-color: $secondary;
+		border-radius: 0;
+	}
+
+	.mCSB_scrollTools .mCSB_draggerRail {
+		background-color: rgba($secondary, 0.5);
+	}
+
+	.mCSB_scrollTools .mCSB_dragger {
+		cursor: none;
+	}
+
+	.mCSB_container {
+		margin-right: 0;
+	}
+}

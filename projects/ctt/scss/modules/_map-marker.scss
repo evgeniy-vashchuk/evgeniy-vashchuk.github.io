@@ -1,0 +1,43 @@
+@mixin circle($circleSize){
+	width: $circleSize;
+	height: $circleSize;
+	border-radius: $circleSize/2;
+}
+
+.html-marker {
+	@include circle(24px);
+	position: relative;
+	border-radius: 50%;
+	&:before,
+	&:after{
+		content: '';
+		@include circle(24px);
+		background-color: $primary;
+		position: absolute;
+		top: -6px;
+		left: -6px;
+		transform: scale(0.5);
+		transform-origin: center center;
+		animation: pulse-me 3s linear infinite;
+	}
+	&:after{
+		animation-delay: 1.5s;
+	}
+}
+
+@keyframes pulse-me{
+	0%{
+		transform: scale(0.5);
+		opacity: 0;
+	}
+	50%{
+		opacity: 0.25;
+	}
+	70%{
+		opacity: 0.09;
+	}
+	100%{
+		transform: scale(3.5);
+		opacity: 0;
+	}
+}

@@ -1,0 +1,97 @@
+$grid-icon-color: rgba($white, 0.5);
+
+.grid-icon {
+	height: 40px;
+	width: 40px;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	@include max-w(1149) {
+		width: 20px;
+		height: 20px;
+	}
+
+	&__particles {
+		position: relative;
+		display: block;
+		width: 4px;
+		height: 4px;
+		background: $grid-icon-color;
+		box-shadow:
+			-8px -8px 0 $grid-icon-color,
+			-8px 0 0 $grid-icon-color,
+			-8px 8px 0 $grid-icon-color,
+			0 -8px 0 $grid-icon-color,
+			0 8px 0 $grid-icon-color,
+			8px -8px 0 $grid-icon-color,
+			8px 0 0 $grid-icon-color,
+			8px 8px 0 $grid-icon-color;
+		transition: .25s ease-in-out;
+
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: '';
+			display: block;
+			height: 100%;
+			width: 100%;
+			background: $grid-icon-color;
+			transition: .25s ease-in-out;
+			opacity: 0;
+		}
+	}
+
+	&:hover {
+		.grid-icon__particles {
+			box-shadow:
+				-11px -11px 0 $grid-icon-color,
+				-11px 0 0 $grid-icon-color,
+				-11px 11px 0 $grid-icon-color,
+				0 -11px 0 $grid-icon-color,
+				0 11px 0 $grid-icon-color,
+				11px -11px 0 $grid-icon-color,
+				11px 0 0 $grid-icon-color,
+				11px 11px 0 $grid-icon-color;
+
+			@include max-w(1149) {
+				box-shadow:
+					-8px -8px 0 $grid-icon-color,
+					-8px 0 0 $grid-icon-color,
+					-8px 8px 0 $grid-icon-color,
+					0 -8px 0 $grid-icon-color,
+					0 8px 0 $grid-icon-color,
+					8px -8px 0 $grid-icon-color,
+					8px 0 0 $grid-icon-color,
+					8px 8px 0 $grid-icon-color;
+			}
+		}
+	}
+
+	&.-open {
+		.grid-icon__particles {
+			box-shadow: 0 0 0 $grid-icon-color;
+			width: 28px;
+			height: 2px;
+			transform: rotate(45deg);
+
+			&:before {
+				transform: rotate(90deg);
+				background: $grid-icon-color;
+				opacity: 1;
+			}
+		}
+
+		&:hover {
+			.grid-icon__particles {
+				width: 38px;
+
+				@include max-w(1149) {
+					width: 28px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,25 @@
+// SIDE ANIMATION
+
+.animation-item-wrap {
+	overflow: hidden;
+
+	.left-animation {
+		transform: translate(-100%, 0);
+	}
+}
+
+[class*="col-"] {
+	overflow: hidden;
+}
+
+.animation-item, .animation-item-bottom {
+	transition: 0.8s ease-out;
+}
+
+.left-animation {
+	transform: translate(-100%, 0);
+}
+
+.right-animation {
+	transform: translate(100%, 0);
+}

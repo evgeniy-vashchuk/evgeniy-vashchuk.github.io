@@ -1,0 +1,47 @@
+.bg-grid {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+	min-height: 100vh;
+	div {
+		height: 100%;
+	}
+	.row > div {
+		border-right: 1px solid rgba($black, 0.1);
+
+		&:first-child {
+			position: relative;
+			&:after {
+				content: "";
+				display: inline-block;
+				width: 1px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				background-color: rgba($black, 0.1);
+			}
+		}
+
+		&:last-child {
+			border-right: none;
+			border-right: none;
+			position: relative;
+			&:after {
+				content: "";
+				display: inline-block;
+				width: 1px;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				right: 0;
+				background-color: rgba($black, 0.1);
+			}
+		}
+	}
+}

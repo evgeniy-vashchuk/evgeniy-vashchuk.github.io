@@ -1,0 +1,15 @@
+.awards-logo {
+	max-width: 130px;
+	margin-bottom: 60px;
+	padding-right: 30px;
+	width: 100%;
+
+	img {
+		@include img-res;
+		filter: gray; /* IE */
+		-webkit-filter: grayscale(1); /* Old WebKit */
+		-webkit-filter: grayscale(100%); /* New WebKit */
+		filter: url(resources.svg#desaturate); /* older Firefox */
+		filter: grayscale(100%); /* Current draft standard */
+	}
+}

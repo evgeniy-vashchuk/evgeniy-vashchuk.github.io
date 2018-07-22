@@ -1,0 +1,62 @@
+/* SOCIAL ICONS ============================ */
+
+.social-icons {
+	font-size: 0;
+	a {
+		display: inline-block;
+		transition: color 0.5s ease;
+		color: $secondary;
+		&:hover {
+			color: $primary;
+			transition: color 0.3s ease;
+		}
+	}
+
+	li {
+		display: inline-block;
+		margin-right: 13px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	&-md {
+		li {
+			span {
+				font-size: 1rem;
+			}
+		}
+	}
+
+	&-lg {
+		li {
+			span {
+				font-size: 1.3rem;
+			}
+		}
+	}
+
+	&.-vertical {
+		margin-bottom: 0;
+		li {
+			display: block;
+			margin-right: 0;
+			margin-bottom: 10px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.social-icons {
+		&-lg {
+			li {
+				span {
+					font-size: 1rem;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,105 @@
+.preloader-wrapper {
+	background-color: $white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 101;
+}
+
+$primary-color: $primary;
+$scale: 3;
+$squareSize: 50px;
+$cornerSize: ceil($squareSize / $scale);
+$cornerPosition: ceil($cornerSize / $scale);
+
+@keyframes dyinglight {
+	15% {
+		transform: scale(1.6);
+	}
+	50% {
+		transform: rotate(-89deg);
+	}
+	100% {
+		transform: rotate(-90deg);
+	}
+}
+
+.preloader {
+	position: relative;
+}
+
+.preloader-square {
+	display: block;
+	width: $squareSize;
+	height: $squareSize;
+	background: $primary-color;
+}
+
+.preloader-decoration-wrap {
+	position: absolute;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	transform-origin: 50% 50% 0;
+	animation: dyinglight 1s ease infinite;
+	backface-visibility: hidden;
+}
+
+.preloader-decoration-top:before,
+.preloader-decoration-top:after,
+.preloader-decoration-bottom:before,
+.preloader-decoration-bottom:after {
+	position: absolute;
+	width: $cornerSize;
+	height: $cornerSize;
+	color: $primary-color;
+	content: '';
+}
+
+.preloader-decoration-top {
+	&:before {
+		border-left: 1px solid;
+		border-top: 1px solid;
+		top: -$cornerPosition;
+		left: -$cornerPosition;
+	}
+	&:after {
+		border-right: 1px solid;
+		border-top: 1px solid;
+		top: -$cornerPosition;
+		right: -$cornerPosition;
+	}
+}
+
+.preloader-decoration-bottom {
+	&:before {
+		border-left: 1px solid;
+		border-bottom: 1px solid;
+		bottom: -$cornerPosition;
+		left: -$cornerPosition;
+	}
+	&:after {
+		border-right: 1px solid;
+		border-bottom: 1px solid;
+		bottom: -$cornerPosition;
+		right: -$cornerPosition;
+	}
+}
+
+// preloader wrap for pages
+
+.preloader-wrap-for-page {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background-color: $white;
+	z-index: 101;
+}

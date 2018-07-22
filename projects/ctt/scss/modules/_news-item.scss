@@ -1,0 +1,25 @@
+.news-item {
+	.news-item-photo {
+		display: inline-block;
+		transition: 0.3s;
+		position: relative;
+		margin-bottom: 1rem;
+
+		&:hover {
+			opacity: 0.9;
+		}
+
+		.news-item-date {
+			position: absolute;
+			bottom: 10px;
+			right: 0;
+		}
+	}
+}
+
+.news-item-date {
+	background-color: $white;
+	padding: 0.325rem 0.625rem;
+	font-size: 0.625rem;
+	color: rgba($body-color, 0.5);
+}
