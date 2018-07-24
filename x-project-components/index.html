@@ -140,6 +140,16 @@
 								<tr>
 									<td>
 										<div class="description-text">
+											<p>Added SVG animation component.</p>
+										</div>
+									</td>
+									<td>
+										25.07.2018
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="description-text">
 											<p>Fixed Count Up and Progress bars components (for the count up numbers used countUp.js), added HTML map marker component.</p>
 										</div>
 									</td>
@@ -336,6 +346,192 @@
 																			$('.js-preloader').fadeOut('slow');
 																		}, 1000);
 																	});
+																</code>
+															</pre>
+														</div>
+													</div>
+													<!-- javascript END -->
+												</div>
+												<!-- TABS CONTENT END -->
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- SVG animation -->
+								<div class="component-block-wrap" id="svg-animation">
+									<div class="component-block">
+										<!-- title -->
+										<h3 class="section-title -apricot-border -component-title">
+											<a class="section-title__anchor js-no-scroll" href="#svg-animation">
+												SVG animation
+
+												<i class="fas fa-hashtag"></i>
+											</a>
+
+											<span class="badge-block">
+												<span class="badge-block__badge badge -html">
+													<span>HTML</span>
+													<i class="fab fa-html5"></i>
+												</span>
+												<span class="badge-block__badge badge -sass">
+													<span>SASS</span>
+													<i class="fab fa-sass"></i>
+												</span>
+												<span class="badge-block__badge badge -js">
+													<span>JS</span>
+													<i class="fab fa-js"></i>
+												</span>
+											</span>
+										</h3>
+										<!-- title END -->
+
+										<!-- description -->
+										<div class="description-text">
+											<p>Animating SVG paths to animate the drawing sequence. The animation triggered as soon as you have scrolled to the element.</p>
+										</div>
+
+										<!-- example -->
+										<div class="component-block-example-block -mb-16">
+
+											<div class="row">
+												<div class="col-6 col-sm-4 offset-3 offset-sm-4">
+													<svg class="svg-animation-item -purple js-svg-animation-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.1 100.1">
+														<style>.st0{stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}</style>
+														<path class="st0" d="M47.9,83.2H2c0,0,4.8,5.7,7.8,7.1c3.1,1.4,6.3,1.3,6.3,1.3l31.3,0l30.8,0c0,0,5.3,0.2,7.6-1.2c2.4-1.4,7.9-7.2,7.9-7.2H47.9z"/>
+														<path class="st0" d="M35.4,83.2c0,0-8.9-3.2-15.2-13.5c-7.3-11.9-5.7-24-5.7-24s-0.2-1.6,1.2-3s3.8-1.2,3.8-1.2l55.6,0c0,0,3.5-0.2,4.9,1.2c1.3,1.4,1.1,3.8,1.1,3.8s0.2,14.7-5.2,22.5c-8,11.6-15.6,14.1-15.6,14.1"/>
+														<path class="st0" d="M81.3,52c0,0,5.5-2.2,9-2.2s7.7,2.6,7.7,6.7c0,15.3-27.2,19-27.2,19"/>
+														<path class="st0" d="M37.5,33.3c0,0,2.1-2.5,2.1-6.5c0-5.5-4.2-6.7-4.2-11.6s2.1-7,2.1-7"/>
+														<path class="st0" d="M50,33.3c0,0,2.1-2.5,2.1-6.5c0-5.5-4.2-6.7-4.2-11.6s2.1-7,2.1-7"/>
+														<path class="st0" d="M62.5,33.3c0,0,2.1-2.5,2.1-6.5c0-5.5-4.2-6.7-4.2-11.6s2.1-7,2.1-7"/>
+													</svg>
+												</div>
+											</div>
+
+										</div>
+
+										<!-- usage -->
+										<div class="component-block-usage">
+											<!-- button -->
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#svg-animation-collapse" role="button" aria-expanded="false" aria-controls="svg-animation-collapse">
+												example
+												<i class="fas fa-angle-down"></i>
+											</a>
+
+											<!-- code example -->
+											<div class="collapse" id="svg-animation-collapse">
+
+												<!-- attention -->
+												<div class="component-block-attention">
+													<div class="attention-text-block">
+														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
+
+														<div class="attention-text attention-text-block__text">
+															<p>This component is dependent on <a href="https://maxwellito.github.io/vivus/" class="link-slideup -white" target="_blank">vivus.js</a>, and <a href="http://imakewebthings.com/waypoints/" class="link-slideup -white" target="_blank">waypoints.js</a>.</p>
+															<p>Icons should be specially prepared (ensure there are no fills).</p>
+														</div>
+													</div>
+
+													<pre class="line-numbers">
+														<code class="language-html">
+															&#60;script src="/path/to/vivus.js"&#62;&#60;/script&#62;
+															&#60;script src="/path/to/waypoints.js"&#62;&#60;/script&#62;
+															&#60;script src="/path/to/common.js"&#62;&#60;/script&#62;
+														</code>
+													</pre>
+												</div>
+
+												<!-- NAVS FOR TABS -->
+												<ul class="nav nav-tabs component-block-usage__nav-tabs" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll active" id="svg-animation-html-tab" data-toggle="tab" href="#svg-animation-html" role="tab" aria-controls="svg-animation-html" aria-selected="true">HTML</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll" id="svg-animation-sass-tab" data-toggle="tab" href="#svg-animation-sass" role="tab" aria-controls="svg-animation-sass" aria-selected="false">SASS</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll" id="svg-animation-js-tab" data-toggle="tab" href="#svg-animation-js" role="tab" aria-controls="svg-animation-js" aria-selected="false">JS</a>
+													</li>
+												</ul>
+												<!-- NAVS FOR TABS END -->
+
+												<!-- TABS CONTENT -->
+												<div class="tab-content">
+													<!-- html -->
+													<div class="tab-pane show active" id="svg-animation-html" role="tabpanel" aria-labelledby="svg-animation-html-tab">
+														<div class="code-example">
+															<script type="text/plain" class="language-markup line-numbers">
+																<!-- SVG ANIMATION ITEM -->
+																<svg class="svg-animation-item -purple js-svg-animation-item" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.1 100.1">
+																	<style>.st0{stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10}</style>
+																	<path class="st0" d="M47.9,83.2H2c0,0,4.8,5.7,7.8,7.1c3.1,1.4,6.3,1.3,6.3,1.3l31.3,0l30.8,0c0,0,5.3,0.2,7.6-1.2c2.4-1.4,7.9-7.2,7.9-7.2H47.9z"/>
+																	<path class="st0" d="M35.4,83.2c0,0-8.9-3.2-15.2-13.5c-7.3-11.9-5.7-24-5.7-24s-0.2-1.6,1.2-3s3.8-1.2,3.8-1.2l55.6,0c0,0,3.5-0.2,4.9,1.2c1.3,1.4,1.1,3.8,1.1,3.8s0.2,14.7-5.2,22.5c-8,11.6-15.6,14.1-15.6,14.1"/>
+																	<path class="st0" d="M81.3,52c0,0,5.5-2.2,9-2.2s7.7,2.6,7.7,6.7c0,15.3-27.2,19-27.2,19"/>
+																	<path class="st0" d="M37.5,33.3c0,0,2.1-2.5,2.1-6.5c0-5.5-4.2-6.7-4.2-11.6s2.1-7,2.1-7"/>
+																	<path class="st0" d="M50,33.3c0,0,2.1-2.5,2.1-6.5c0-5.5-4.2-6.7-4.2-11.6s2.1-7,2.1-7"/>
+																	<path class="st0" d="M62.5,33.3c0,0,2.1-2.5,2.1-6.5c0-5.5-4.2-6.7-4.2-11.6s2.1-7,2.1-7"/>
+																</svg>
+																<!-- SVG ANIMATION ITEM END -->
+															</script>
+														</div>
+													</div>
+													<!-- html END -->
+
+													<!-- sass -->
+													<div class="tab-pane" id="svg-animation-sass" role="tabpanel" aria-labelledby="svg-animation-sass-tab">
+														<div class="code-example">
+															<pre class="line-numbers">
+																<code class="language-scss">
+																	.svg-animation-item {
+																		fill: none;
+
+																		path {
+																			stroke-width: 4;
+																			stroke: transparent;
+																		}
+
+																		&.-animation-init {
+																			path {
+																				stroke: inherit;
+																			}
+																		}
+
+																		// COLORS
+																		&.-purple {
+																			stroke: #4C4E6D;
+																		}
+																	}
+																</code>
+															</pre>
+														</div>
+													</div>
+													<!-- sass END -->
+
+													<!-- javascript -->
+													<div class="tab-pane" id="svg-animation-js" role="tabpanel" aria-labelledby="svg-animation-js-tab">
+														<div class="code-example">
+															<pre class="line-numbers">
+																<code class="language-js">
+																	// SVG ANIMATION
+																	if ($('.js-svg-animation-item').length) {
+																		$('.js-svg-animation-item').waypoint({
+																			handler: function() {
+																				var thisItem = $(this.element);
+
+																				if (!thisItem.hasClass('-animation-init')) {
+																					// remove hide class
+																					thisItem.addClass('-animation-init');
+
+																					// svg animation init
+																					new Vivus(this.element, {
+																						duration: 200,
+																						type: 'oneByOne'
+																					});
+																				}
+																			},
+																			offset: '80%'
+																		})
+																	}
 																</code>
 															</pre>
 														</div>
@@ -3425,6 +3621,7 @@
 
 								<div class="side-navigation__list-group list-group js-list-group js-scroll-spy">
 									<a href="#preloader" class="list-group-item list-group-item-action js-no-scroll">Preloader</a>
+									<a href="#svg-animation" class="list-group-item list-group-item-action js-no-scroll">SVG animation</a>
 									<a href="#count-up" class="list-group-item list-group-item-action js-no-scroll">Count up</a>
 									<a href="#progress-bars" class="list-group-item list-group-item-action js-no-scroll">Progress bars</a>
 									<a href="#shuffle-filter" class="list-group-item list-group-item-action js-no-scroll">Shuffle filter</a>
@@ -3503,6 +3700,7 @@
 	<script src="libs/slideout.js/slideout.min.js"></script>
 	<script src="libs/stickyfill/stickyfill.min.js"></script>
 	<script src="libs/countUp/countUp.min.js"></script>
+	<script src="libs/vivus/vivus.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoik2Sle8UV-ysloqMOF2dK0mnXpb5z3I"></script>
 	<script src="libs/x-project-components/x-project-components.js"></script>
 
