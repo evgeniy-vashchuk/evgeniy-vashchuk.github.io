@@ -1,0 +1,23 @@
+.slider-navigation {
+	font-size: 0;
+
+	.nav-arrow:not(:last-child) {
+		margin-right: 15px;
+	}
+}
+
+.nav-arrow {
+	display: inline-block;
+	padding: 5px;
+
+	svg {
+		fill: rgba($white, 0.5);
+		transition: 0.3s;
+	}
+
+	&:hover {
+		svg {
+			fill: $white;
+		}
+	}
+}

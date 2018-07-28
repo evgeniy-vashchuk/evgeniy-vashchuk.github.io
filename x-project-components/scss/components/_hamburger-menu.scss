@@ -1,0 +1,61 @@
+.hamburger-menu {
+	width: 42px;
+	height: 42px;
+	display: block;
+	overflow: hidden;
+	cursor: pointer;
+	position: relative;
+
+	@include max-w(767) {
+		width: 34px;
+		height: 34px;
+	}
+
+	&__icon {
+		display: block;
+		position: relative;
+		height: 4px;
+		margin: 7px 0;
+		background-color: $light-apricot;
+
+		@include max-w(767) {
+			height: 3px;
+			margin: 6px 0;
+		}
+
+		&.-one {
+			transition: all .3s .5s;
+		}
+
+		&.-two {
+			transition: all .3s .3s;
+		}
+
+		&.-three {
+			transition: all .3s .1s;
+		}
+	}
+
+	&.-open-menu {
+		.hamburger-menu__icon {
+			&.-one {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				transition: all .3s .1s;
+			}
+
+			&.-two {
+				background-color: $dark-purple;
+				transform: translateY(-24px) rotateZ(45deg);
+				transition: all .3s .3s;
+			}
+
+			&.-three {
+				background-color: $dark-purple;
+				transform: translateY(-33px) rotateZ(-45deg);
+				transition: all .3s .5s;
+			}
+		}
+	}
+}

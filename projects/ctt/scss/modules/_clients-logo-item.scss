@@ -1,0 +1,32 @@
+.clients-logo-item {
+	text-align: center;
+	background-color: #e5e5e5;
+	display: block;
+	padding: 0.625rem;
+	max-width: 200px;
+	min-height: 70px;
+	padding-right: 15px;
+	margin-bottom: 1.25rem;
+	transition: 0.5s;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&:hover {
+		background-color: #303030;
+	}
+
+	img {
+		max-height: 50px;
+		max-width: 100%;
+		filter: gray; /* IE */
+		-webkit-filter: grayscale(1); /* Old WebKit */
+		-webkit-filter: grayscale(100%); /* New WebKit */
+		filter: url(resources.svg#desaturate); /* older Firefox */
+		filter: grayscale(100%); /* Current draft standard */
+	}
+}

@@ -1,0 +1,46 @@
+.footer {
+	padding: 15px 0;
+	.copyright {
+		margin-bottom: 0;
+	}
+
+	.small-title {
+		margin-bottom: 0;
+	}
+
+	.follow-text {
+		display: inline-block;
+		margin-right: 10px;
+		margin-bottom: 0;
+	}
+
+	.social-icons {
+		margin-bottom: 0;
+
+		li {
+			span {
+				font-size: 0.9rem;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.footer {
+		.copyright {
+			font-size: 0.75rem;
+		}
+
+		.small-title {
+			font-size: 0.75rem;
+		}
+
+		.follow-block {
+			margin-bottom: 15px;
+		}
+
+		&-page {
+			padding-bottom: 50px;
+		}
+	}
+}

@@ -1,0 +1,108 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	z-index: 100;
+	background-color: $primary;
+	border: 10px solid $dark-purple;
+	padding: 5px 0;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+	transition: 0.3s;
+
+	@include max-w(767) {
+		border-width: 0;
+	}
+
+	@include max-w(575) {
+		padding: 4px 0;
+	}
+
+	&.-small-header {
+		border-width: 0;
+
+		.main-logo-wrap {
+			max-width: 150px;
+			min-width: 150px;
+
+			@include max-w(575) {
+				max-width: 100px;
+				min-width: 100px;
+			}
+		}
+
+		.github-corner-wrap {
+			top: 0;
+			right: 0;
+			width: 61px;
+			height: 61px;
+
+			@include max-w(575) {
+				width: 42px;
+				height: 42px;
+			}
+		}
+
+		.header__progress-container {
+			left: 0;
+			right: 0;
+		}
+	}
+
+	&__progress-container {
+		position: absolute;
+		top: 100%;
+		left: -10px;
+		right: -10px;
+	}
+
+	&__content {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		@include max-w(575) {
+			padding-right: 30px;
+		}
+	}
+
+	&__right-block {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		width: 100%;
+	}
+}
+
+.main-logo-wrap {
+	flex-grow: 1;
+	max-width: 300px;
+	min-width: 300px;
+	padding-right: 15px;
+	transition: 0.5s;
+
+	@include max-w(767) {
+		max-width: 150px;
+		min-width: 150px;
+	}
+
+	@include max-w(575) {
+		max-width: 100px;
+		min-width: 100px;
+	}
+}
+
+.header-right-block {
+	&__hamburger-menu {
+		margin-left: 15px;
+	}
+}

@@ -1,0 +1,58 @@
+.burger {
+  width: 90px;
+  height: 90px;
+  display: block;
+  margin: auto;
+  overflow: hidden;
+  cursor: pointer;
+  position: relative; }
+
+.burger > span {
+  display: block;
+  position: relative;
+  width: 90%;
+  height: 10px;
+  margin: 15px auto;
+  background-color: white;
+  border-radius: 10px; }
+
+.burger > span#sp1 {
+  -webkit-transition: all .3s .5s;
+  -o-transition: all .3s .5s;
+  transition: all .3s .5s; }
+
+.burger > span#sp2 {
+  -webkit-transition: all .3s .3s;
+  -o-transition: all .3s .3s;
+  transition: all .3s .3s; }
+
+.burger > span#sp3 {
+  -webkit-transition: all .3s .1s;
+  -o-transition: all .3s .1s;
+  transition: all .3s .1s; }
+
+.burger.active > span#sp1 {
+  width: 90%;
+  height: 90%;
+  margin: 5px auto;
+  -webkit-transition: all .3s .1s;
+  -o-transition: all .3s .1s;
+  transition: all .3s .1s; }
+
+.burger.active > span#sp2 {
+  background-color: #9fd8ef;
+  -webkit-transform: translateY(-60px) rotateZ(45deg);
+  -ms-transform: translateY(-60px) rotate(45deg);
+  transform: translateY(-60px) rotateZ(45deg);
+  -webkit-transition: all .3s .3s;
+  -o-transition: all .3s .3s;
+  transition: all .3s .3s; }
+
+.burger.active > span#sp3 {
+  background-color: #9fd8ef;
+  -webkit-transform: translateY(-85px) rotateZ(-45deg);
+  -ms-transform: translateY(-85px) rotate(-45deg);
+  transform: translateY(-85px) rotateZ(-45deg);
+  -webkit-transition: all .3s .5s;
+  -o-transition: all .3s .5s;
+  transition: all .3s .5s; }

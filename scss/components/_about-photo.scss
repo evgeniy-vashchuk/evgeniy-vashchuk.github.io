@@ -1,0 +1,11 @@
+.about-photo {
+	position: relative;
+	width: 130px;
+	padding-bottom: 170px;
+	font-size: 0;
+
+	@include max-w(1649) {
+		width: 110px;
+		padding-bottom: 145px;
+	}
+}

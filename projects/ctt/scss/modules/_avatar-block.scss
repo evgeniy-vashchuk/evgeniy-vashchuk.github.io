@@ -1,0 +1,38 @@
+.avatar-block {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	padding-right: 30px;
+	margin-bottom: 10px;
+
+	@include max-w(991) {
+		padding-right: 15px;
+	}
+
+	.comment-name-wrap {
+		flex-basis: 0;
+		flex-grow: 1;
+	}
+
+	.comment-name {
+		font-size: 1rem;
+		font-weight: 700;
+		transition: 0.3s;
+	}
+}
+
+.avatar-photo-wrap {
+	max-width: 60px;
+	flex-basis: 60px;
+	margin-right: 20px;
+
+	@include max-w(991) {
+		margin-right: 15px;
+	}
+
+	img {
+		@include img-res;
+	}
+}

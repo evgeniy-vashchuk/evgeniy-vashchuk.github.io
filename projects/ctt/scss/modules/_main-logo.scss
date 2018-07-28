@@ -1,0 +1,33 @@
+.navbar-brand {
+	display: flex;
+	align-items: center;
+	color: $body-color;
+
+	.icon-logo-wrap {
+		max-width: 50px;
+		margin-right: 15px;
+		img {
+			@include img-res;
+		}
+	}
+
+	.logo-text {
+		font-family: 'Roboto Slab', serif;
+		font-size: 1.875rem;
+		font-weight: 700;
+		transition: 0.3s;
+		color: $primary;
+	}
+}
+
+@media only screen and (max-width: 991px) {
+	.navbar-brand {
+		.icon-logo-wrap {
+			max-width: 35px;
+		}
+
+		.logo-text {
+			font-size: 1.4rem;
+		}
+	}
+}

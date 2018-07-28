@@ -1,0 +1,10 @@
+.progress-container {
+	height: 5px;
+	background: transparent;
+
+	&__bar {
+		height: 5px;
+		background: $dark-purple;
+		width: 0%;
+	}
+}

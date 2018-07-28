@@ -1,0 +1,110 @@
+p {
+	line-height: 1.5;
+	letter-spacing: 0.5px;
+	margin-bottom: 0.625rem;
+}
+
+// SECTION TITLE
+.section-title {
+	margin-bottom: 1.25rem;
+	padding: 5px 0 5px 10px;
+	position: relative;
+	z-index: 1;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+	border-left-width: 10px;
+	border-left-style: solid;
+
+	@include max-w(767) {
+		font-size: 1.5rem;
+		border-left-width: 6px;
+	}
+
+	@include max-w(575) {
+		font-size: 1.2rem;
+		padding: 3px;
+		padding-left: 8px;
+	}
+
+	&.-primary-border {
+		border-bottom-color: $primary;
+		border-left-color: $primary;
+	}
+
+	&.-apricot-border {
+		border-bottom-color: $apricot;
+		border-left-color: $apricot;
+		transition: 0.5s;
+
+		&.-highlighting {
+			background-color: rgba($apricot, 0.4);
+		}
+	}
+
+	&.-component-title {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.section-title__anchor {
+			color: $dark-purple;
+
+			&:hover {
+				i {
+					opacity: 1;
+				}
+			}
+
+			i {
+				padding-left: 3px;
+				color: $apricot;
+				opacity: 0;
+				transition: 0.3s;
+			}
+		}
+	}
+
+}
+
+.component-block-sub-title {
+	margin-bottom: 1rem;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 8px;
+	border-bottom: 2px solid rgba($apricot, 0.7);
+	border-left: 5px solid $apricot;
+}
+
+.attention-text {
+	color: $light-apricot;
+
+	a {
+		color: $light-apricot;
+
+		&:hover {
+			color: lighten($light-apricot, 15%);
+		}
+	}
+}
+
+strong {
+	&.red-text {
+		color: $red;
+		font-weight: 500;
+		white-space: nowrap;
+	}
+}
+
+.description-text {
+	margin-bottom: 1rem;
+
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

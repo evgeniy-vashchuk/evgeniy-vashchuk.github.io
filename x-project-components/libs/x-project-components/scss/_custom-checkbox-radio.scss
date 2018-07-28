@@ -1,0 +1,148 @@
+// CUSTOM CHECKBOX
+
+$checkbox-checkmark-size: 25px;
+$checkbox-bg-color: #4C4E6C;
+$checkbox-active-bg-color: #26263F;
+
+.custom-checkbox {
+	position: relative;
+	display: inline-block;
+	padding-left: 35px;
+	margin-right: 15px;
+	margin-bottom: 1rem;
+	line-height: 25px;
+	cursor: pointer;
+	user-select: none;
+
+	&__checkmark {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0, -50%);
+		width: $checkbox-checkmark-size;
+		height: $checkbox-checkmark-size;
+		background-color: $checkbox-bg-color;
+		transition: 0.3s;
+	}
+
+	&__icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: inline-block;
+		font-size: 0.9rem;
+		color: #fff;
+		opacity: 0;
+		transition: 0.2s;
+	}
+
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		visibility: hidden;
+
+		// checked styles
+		&:checked + {
+			.custom-checkbox__checkmark {
+				background-color: $checkbox-active-bg-color;
+
+				.custom-checkbox__icon {
+					opacity: 1;
+				}
+			}
+		}
+
+		// disabled styles
+		&:disabled + {
+			.custom-checkbox__checkmark {
+				background-color: rgba($checkbox-bg-color, 0.5);
+			}
+		}
+	}
+
+	&:hover {
+		.custom-checkbox__input:not(:disabled):not(:checked) + {
+			.custom-checkbox__checkmark {
+				background-color: lighten($checkbox-bg-color, 10%);
+			}
+		}
+	}
+}
+
+// CUSTOM RADIO
+
+$radio-checkmark-size: 25px;
+$radio-bg-color: #4C4E6C;
+$radio-active-bg-color: #26263F;
+
+.custom-radio {
+	position: relative;
+	display: inline-block;
+	padding-left: 35px;
+	margin-right: 15px;
+	margin-bottom: 1rem;
+	line-height: 25px;
+	cursor: pointer;
+	user-select: none;
+
+	&__checkmark {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0, -50%);
+		width: $radio-checkmark-size;
+		height: $radio-checkmark-size;
+		border-radius: 50%;
+		background-color: $radio-bg-color;
+		transition: 0.3s;
+	}
+
+	&__icon {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: inline-block;
+		font-size: 0.65rem;
+		color: #fff;
+		transition: 0.2s;
+		opacity: 0;
+	}
+
+	&__input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		visibility: hidden;
+
+		// checked styles
+		&:checked + {
+			.custom-radio__checkmark {
+				background-color: $radio-active-bg-color;
+
+				.custom-radio__icon {
+					opacity: 1;
+				}
+			}
+		}
+
+		// disabled styles
+		&:disabled + {
+			.custom-radio__checkmark {
+				background-color: rgba($radio-bg-color, 0.5);
+			}
+		}
+	}
+
+	&:hover {
+		.custom-radio__input:not(:disabled):not(:checked) + {
+			.custom-radio__checkmark {
+				background-color: lighten($radio-bg-color, 10%);
+			}
+		}
+	}
+}

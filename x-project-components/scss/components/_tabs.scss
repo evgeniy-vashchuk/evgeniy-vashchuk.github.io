@@ -1,0 +1,50 @@
+.nav-tabs {
+	border-bottom: none;
+
+	.nav-item {
+		margin-bottom: 0;
+
+		@include max-w(575) {
+			flex: 1 1 auto;
+		}
+	}
+
+	.nav-link {
+		color: rgba($dark-purple, 0.3);
+		font-weight: 700;
+		min-width: 150px;
+		text-align: center;
+		transition: 0s;
+		border: none;
+		line-height: 1.5;
+
+		@include max-w(767) {
+			min-width: 120px;
+			font-size: 0.8rem;
+		}
+
+		@include max-w(575) {
+			min-width: auto;
+			padding-left: 5px;
+			padding-right: 5px;
+		}
+
+		&:not(.active) {
+			transition: color 0.3s, background-color 0.3s;
+		}
+
+		&:not(.active):hover {
+			color: rgba($dark-purple, 0.5);
+			background-color: rgba($bg-code, 0.1);
+			transition: color 0.3s, background-color 0.3s;
+		}
+
+		&.active {
+			font-weight: 700;
+
+			&:hover {
+				cursor: default;
+			}
+		}
+	}
+}

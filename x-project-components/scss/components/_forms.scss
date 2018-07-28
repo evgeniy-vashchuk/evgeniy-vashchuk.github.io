@@ -1,0 +1,14 @@
+.search-input {
+	display: block;
+	width: 100%;
+	border: 1px solid $primary;
+	background-color: $white;
+	padding: 0.7rem 0.7rem;
+	line-height: 1.3;
+	@include placeholder-opacity(0.5s);
+	border-radius: 0;
+
+	// remove X in IE
+	&::-ms-clear {  display: none; width : 0; height: 0; }
+	&::-ms-reveal {  display: none; width : 0; height: 0; }
+}

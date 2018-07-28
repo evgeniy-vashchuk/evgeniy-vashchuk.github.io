@@ -1,0 +1,15 @@
+.clients-photo {
+	position: relative;
+	padding-bottom: 25px;
+
+	@include max-w(575) {
+		margin-bottom: 0.625rem;
+	}
+
+	.social-icons {
+		margin-bottom: 0;
+		position: absolute;
+		bottom: -20px;
+		right: 7px;
+	}
+}

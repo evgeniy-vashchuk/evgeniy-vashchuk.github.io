@@ -1,0 +1,141 @@
+/* FORMS ============================ */
+
+.form-control {
+	height: 45px;
+}
+
+textarea.form-control {
+	height: 130px;
+	resize: none;
+	padding-top: 15px;
+	display: block;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="tel"],
+input[type="email"],
+textarea.form-control {
+	width: 100%;
+	border-left: none;
+	border-top: none;
+	border-right: none;
+}
+
+input:focus+label,
+textarea:focus+label,
+input.active+label,
+textarea.active+label {
+	top: -8px;
+	font-size: 0.7rem;
+}
+
+.form-group {
+	position: relative;
+	label {
+		position: absolute;
+		left: 0;
+		top: 10px;
+		cursor: text;
+		transition: 0.5s;
+	}
+}
+
+// BOTTOM BAR LOADING
+
+.bar {
+	position: relative;
+	top: 1px;
+	display: block;
+	max-width: 100%;
+	width: 100%;
+	&:before {
+		content: '';
+		height: 2px;
+		width: 0;
+		bottom: 1px;
+		position: absolute;
+		background-color: $primary;
+		transition: width 1s ease;
+	}
+	&:before {
+		left: 0%;
+	}
+}
+
+input:focus~.bar:before,
+textarea:focus~.bar:before {
+	width: 100%;
+}
+
+// BOTTOM BAR LOADING END
+
+// BOTTOM TRIANGLE ANIMATION
+
+.textarea-triangle {
+	position: relative;
+	&:after {
+		content: '';
+		@include arr(10, 10, $secondary, br);
+		display: inline-block;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		@include tr(0.3s);
+	}
+}
+
+.triangle-fill {
+	&:after {
+		@include tr(0.3s);
+		@include arr(10, 10, $primary, br);
+	}
+}
+
+// BOTTOM TRIANGLE ANIMATION
+
+.form-label-help {
+	padding-top: 5px;
+}
+
+
+// SUBSCRIBE BLOCK
+
+.subscribe-form {
+	position: relative;
+	input[type="email"] {
+		padding-right: 25px;
+	}
+	.submit-icon {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		right: 0px;
+		width: 25px;
+		height: 100%;
+		padding: 0;
+		background-color: transparent;
+		border: none;
+		margin-bottom: 0;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		z-index: 5;
+		cursor: pointer;
+		&:hover {
+			span {
+				color: $primary;
+				transition: color 0.3s ease;
+			}
+		}
+		span {
+			font-size: 1.25rem;
+			color: $body-color;
+			transition: color 0.3s ease;
+		}
+	}
+}
