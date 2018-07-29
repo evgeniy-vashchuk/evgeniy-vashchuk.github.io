@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#" itemscope>
 <head>
 	<title>Evgeniy Vashchuk Portfolio - Contacts</title>
-	<meta name="description" content="Description of the site">
+	<meta name="description" content="My name is Evgeniy Vashchuk and I am a creative front‑end developer located in Kharkiv, Ukraine.">
 
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
@@ -12,6 +12,17 @@
 	<!-- connection FAVICONS -->
 	<link rel="icon" href="img/favicon/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+
+	<!-- image for sharing -->
+	<meta property="og:title" content="Evgeniy Vashchuk Portfolio" />
+	<meta property="og:description" content="My name is Evgeniy Vashchuk and I am a creative front‑end developer located in Kharkiv, Ukraine." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://evgeniy-vashchuk.github.io/" />
+	<meta property="og:image" content="img/image-for-sharing.jpg" />
+
+	<meta itemprop="name" content="Evgeniy Vashchuk Portfolio" />
+	<meta itemprop="description" content="My name is Evgeniy Vashchuk and I am a creative front‑end developer located in Kharkiv, Ukraine." />
+	<meta itemprop="image" content="https://evgeniy-vashchuk.github.io/" />
 
 	<!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
 	<meta name="theme-color" content="#231453">
@@ -78,35 +89,34 @@
 								<li>
 									<a href="about.html" class="-hover-crossed-link -vertical -secondary js-hover-item" data-i18n="portfolio-global-page-navigation-about">about</a>
 								</li>
-								<li>
+								<li class="-mb-lg-0">
 									<a href="single-project-cube.html" class="-hover-crossed-link -vertical -secondary js-hover-item d-none d-lg-inline-block" data-i18n="portfolio-global-page-navigation-projects">projects</a>
-									<a data-toggle="collapse" href="#allProjectsCollapse" class="text-with-arrow -gray link-collapse-trigger collapsed d-block d-lg-none" data-i18n="portfolio-global-page-navigation-projects">projects</a>
-								</li>
+									<a data-toggle="collapse" href="#allProjectsCollapse" class="text-with-arrow -gray link-collapse-trigger collapsed d-block d-lg-none -mb-10" data-i18n="portfolio-global-page-navigation-projects">projects</a>
 
-								<!-- all projects list -->
-								<div class="d-block d-lg-none">
-									<div class="collapse" id="allProjectsCollapse" style="font-size: 1rem;">
-										<ul class="simple-list -secondary-text -collapse">
-											<li>
-												<a href="single-project-cube.html">cube</a>
-											</li>
-											<li>
-												<a href="single-project-bradkit.html">bradkit</a>
-											</li>
-											<li>
-												<a href="single-project-advice.html">advice</a>
-											</li>
-											<li>
-												<a href="single-project-creative.html">creative</a>
-											</li>
-											<li>
-												<a href="single-project-ctt.html">ctt</a>
-											</li>
-										</ul>
+									<!-- all projects list -->
+									<div class="d-block d-lg-none">
+										<div class="collapse" id="allProjectsCollapse">
+											<ul class="simple-list -secondary-text -collapse">
+												<li>
+													<a href="single-project-cube.html">cube</a>
+												</li>
+												<li>
+													<a href="single-project-bradkit.html">bradkit</a>
+												</li>
+												<li>
+													<a href="single-project-advice.html">advice</a>
+												</li>
+												<li>
+													<a href="single-project-creative.html">creative</a>
+												</li>
+												<li>
+													<a href="single-project-ctt.html">ctt</a>
+												</li>
+											</ul>
+										</div>
 									</div>
-								</div>
-								<!-- all projects list END -->
-
+									<!-- all projects list END -->
+								</li>
 								<li class="d-block d-lg-none">
 									<a href="contacts.html" class="-hover-crossed-link -vertical -secondary js-hover-item" data-i18n="portfolio-global-page-navigation-contacts">contacts</a>
 								</li>
@@ -124,13 +134,13 @@
 							<div class="mobile-menu__social -vertical-text-top-bottom">
 								<ul class="simple-list -sm-indent-vertical -secondary-text d-flex">
 									<li>
-										<a href="javascropt:void(0);" class="-hover-crossed-link -vertical -secondary js-hover-item no-barba">in</a>
+										<a href="https://www.linkedin.com/in/evgeniy-vashchuk-profile/" target="_blank" class="-hover-crossed-link -vertical -secondary js-hover-item no-barba">in</a>
 									</li>
 									<li>
-										<a href="javascropt:void(0);" class="-hover-crossed-link -vertical -secondary js-hover-item no-barba">vk</a>
+										<a href="https://vk.com/evgeniy.vashchuk" target="_blank" class="-hover-crossed-link -vertical -secondary js-hover-item no-barba">vk</a>
 									</li>
 									<li>
-										<a href="javascropt:void(0);" class="-hover-crossed-link -vertical -secondary js-hover-item no-barba">git</a>
+										<a href="https://github.com/evgeniy-vashchuk" target="_blank" class="-hover-crossed-link -vertical -secondary js-hover-item no-barba">git</a>
 									</li>
 								</ul>
 							</div>
@@ -220,7 +230,7 @@
 											</div>
 
 											<div class="col-xs-8">
-												<p class="mb-0">inkogn1to93</p>
+												<p class="mb-0">Evgeniy Vashchuk</p>
 											</div>
 										</div>
 									</div>
@@ -273,7 +283,7 @@
 														<div class="ajax-loading submit-wrap__ajax-loading js-ajax-loading"></div>
 
 														<div class="d-inline-block -hover-crossed-link -horizontal -secondary js-hover-item -lh-1">
-															<input class="submit-button bold-text js-submit-button" type="submit" value="send message" readonly="readonly">
+															<input class="submit-button bold-text js-submit-button" type="submit" value="send message">
 														</div>
 													</div>
 
@@ -294,7 +304,7 @@
 									<div class="-mb-15">
 										<div class="row">
 											<div class="col-xs-8 offset-0 offset-xs-4">
-												<p class="small-text -faded-black-text"><span data-i18n="portfolio-contacts-thanks-text-left">Thanks, to the designer</span> <a href="javascript:voit(0);" target="_blank" class="link-slideup -faded-black-text js-hover-item js-tooltip-cursor no-barba js-thanks-text-name" data-tooltipe-text="want a cool design?" data-tooltipe-position="top-right" data-i18n="portfolio-contacts-thanks-text-name">Artem Kolomiitsev</a> <span data-i18n="portfolio-contacts-thanks-text-right">for cooperation in the project.</span></p>
+												<p class="small-text -faded-black-text"><span data-i18n="portfolio-contacts-thanks-text-left">Thanks, to the designer</span> <a href="https://www.behance.net/atomqb4b14" target="_blank" class="link-slideup -faded-black-text js-hover-item js-tooltip-cursor no-barba js-thanks-text-name" data-tooltipe-text="want a cool design?" data-tooltipe-position="top-right" data-i18n="portfolio-contacts-thanks-text-name">Artem Kolomiitsev</a> <span data-i18n="portfolio-contacts-thanks-text-right">for cooperation in the project.</span></p>
 												<p class="small-text -faded-black-text">© <span class="js-set-current-year"></span>. <span data-i18n="portfolio-contacts-copyright-text">All Right Reserved.</span></p>
 											</div>
 										</div>
@@ -308,51 +318,14 @@
 					</div>
 				</main>
 				<!-- CONTENT END -->
-
-				<!-- FOOTER -->
-				<footer class="footer">
-					<div class="container">
-						
-					</div>
-				</footer>
-				<!-- FOOTER END -->
 			</div>
 		</div>
 	</div>
 
 	<!-- connection JAVASCRIPT -->
-	<script src="libs/jquery/jquery.min.js"></script>
-	<script src="libs/bootstrap/bootstrap.bundle.min.js"></script>
-	<script src="libs/waypoints/jquery.waypoints.min.js"></script>
-	<script src="libs/countUp/countUp.min.js"></script>
-	<script src="libs/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
-	<script src="libs/baffle.js/baffle.min.js"></script>
-	<script src="libs/circle-progress/circle-progress.min.js"></script>
-	<script src="libs/lettering.js/jquery.lettering.min.js"></script>
-	<script src="libs/barba.js/barba.min.js"></script>
-	<script src="libs/TweenMax/TweenMax.min.js"></script>
-	<script src="libs/jquery.mousewheel/jquery.mousewheel.min.js"></script>
-	<script src="libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
-	<script src="libs/anime.js/anime.min.js"></script>
-	<script src="libs/uncover.js/uncover.js"></script>
-	<script src="libs/slice-revealer/slice-revealer.js"></script>
-	<script src="libs/parallax.js/parallax.min.js"></script>
-	<script src="libs/dragdealer/dragdealer.js"></script>
-	<script src="libs/scrollDetection/jquery.scrollDetection.min.js"></script>
-	<script src="libs/jquery.validate/jquery.validate.min.js"></script>
-
-	<script src="libs/i18n/lib/CLDRPluralRuleParser/CLDRPluralRuleParser.js"></script>
-	<script src="libs/i18n/lib/jquery.i18n/jquery.i18n.js"></script>
-	<script src="libs/i18n/lib/jquery.i18n/jquery.i18n.messagestore.js"></script>
-	<script src="libs/i18n/lib/jquery.i18n/jquery.i18n.fallbacks.js"></script>
-	<script src="libs/i18n/lib/jquery.i18n/jquery.i18n.language.js"></script>
-	<script src="libs/i18n/lib/jquery.i18n/jquery.i18n.parser.js"></script>
-	<script src="libs/i18n/lib/jquery.i18n/jquery.i18n.emitter.js"></script>
-	<script src="libs/i18n/lib/jquery.i18n/jquery.i18n.emitter.bidi.js"></script>
-
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAEvB2s_pbuIm1yEEe3mCIhmIUeRr89U44"></script>
-
-	<script src="js/common.js"></script>
+	<script src="js/libs.min.js"></script>
+	<script src="js/common.min.js"></script>
 
 </body>
 </html>
