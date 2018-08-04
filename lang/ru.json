@@ -33,7 +33,7 @@
 
 	"__comment": "================ HOME PAGE ================",
 
-	"portfolio-home-additional-text": "цифровое портфолио",
+	"portfolio-home-additional-text": "портфолио",
 
 	"portfolio-home-explore-button": "открыть",
 
@@ -103,7 +103,8 @@
 
 	"portfolio-contacts-copyright-text": "Все права защищены.",
 
-	"portfolio-contacts-form-success-message": "Спасибо за ваше сообщение! Я отвечу в ближайшее время...",
+	"portfolio-contacts-form-success-message-1": "Спасибо за Ваше сообщение!",
+	"portfolio-contacts-form-success-message-2": "Я отвечу в ближайшее время.",
 	"portfolio-contacts-form-error-message": "К сожалению, произошла ошибка",
 
 	"portfolio-contacts-form-validation-required-text": "Поле обязательно к заполнению.",

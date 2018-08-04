@@ -103,7 +103,8 @@
 
 	"portfolio-contacts-copyright-text": "All Right Reserved.",
 
-	"portfolio-contacts-form-success-message": "Thank you for your message! I will reply soon...",
+	"portfolio-contacts-form-success-message-1": "Thank you for your message!",
+	"portfolio-contacts-form-success-message-2": "I will reply soon.",
 	"portfolio-contacts-form-error-message": "Oops, there was an error...",
 
 	"portfolio-contacts-form-validation-required-text": "This field is required.",
