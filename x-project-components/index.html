@@ -1,8 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123495415-2"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-123495415-2');
+	</script>
+
 	<title>X-Project Components</title>
-	<meta name="description" content="Collection of most useful components for page layout">
+	<meta name="description" content="Collection of the most useful components for page layout.">
 
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
@@ -12,6 +22,17 @@
 	<!-- connection FAVICONS -->
 	<link rel="icon" href="img/favicon/favicon.ico">
 	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+
+	<!-- meta for sharing -->
+	<meta property="og:title" content="X-Project Components" />
+	<meta property="og:description" content="Collection of the most useful components for page layout." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://evgeniy-vashchuk.github.io/x-project-components/index.html" />
+	<meta property="og:site_name" content="evgeniy-vashchuk.github.io/x-project-components" />
+	<meta property="og:image" content="img/image-for-sharing.jpg" />
+	<link rel="image_src" href="img/image-for-sharing.jpg">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
 
 	<!-- connection GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
@@ -87,7 +108,7 @@
 					<h2 class="section-title -primary-border">About</h2>
 
 					<div class="description-text">
-						<p><strong>X-Project Components</strong> - is a collection of most useful components for page layout. For each component are presented description and code examples with the help of which you can easily understand and apply the right component on your website. In X-Project Components all css code was written by <a class="link-slideup -dark-purple" href="https://sass-lang.com/" target="_blank">SASS</a> (with SCSS syntax) and all javascript code with the use of a library <a class="link-slideup -dark-purple" href="https://jquery.com/" target="_blank">jQuery</a>.</p>
+						<p><strong>X-Project Components</strong> - is a collection of the most useful components for page layout. For each component are presented description and code examples with the help of which you can easily understand and apply the right component on your website. In X-Project Components all css code was written by <a class="link-slideup -dark-purple" href="https://sass-lang.com/" target="_blank">SASS</a> (with SCSS syntax) and all javascript code with the use of a library <a class="link-slideup -dark-purple" href="https://jquery.com/" target="_blank">jQuery</a>.</p>
 						<p>All css code for components was written using <a class="link-slideup -dark-purple" href="https://en.bem.info/" target="_blank">BEM</a> naming, meaning <strong>.block-name</strong> for independent block, <strong>.block-name__element-name</strong> for elements inside that block. And <strong>.-modifier-name</strong> for modifiers of the block. For javascript hooks was used prefix <strong>.js-*</strong>.</p>
 						<p>Every component are checked for validity through <a class="link-slideup -dark-purple" href="https://validator.w3.org/" target="_blank">validator.w3.org</a>, tested for сross-browser compatibility through <a class="link-slideup -dark-purple" href="https://www.browserstack.com" target="_blank">browserstack.com</a>, and works in the latest versions of all popular browsers (including IE11).</p>
 					</div>
@@ -3659,7 +3680,7 @@
 		<!-- FOOTER -->
 		<footer class="footer js-footer -sticky">
 			<div class="container">
-				<p class="text-center copyright-text">© X-project Components, 2018</p>
+				<p class="text-center copyright-text">© X-project Components, <span class="js-set-current-year"></span></p>
 			</div>
 		</footer>
 		<!-- FOOTER END -->

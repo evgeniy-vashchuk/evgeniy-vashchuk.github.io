@@ -250,4 +250,8 @@ $(document).ready(function() {
 		$('.js-changelog-table').css('max-height', 'auto');
 	}
 
+	// SET CURRENT YEAR IN COPYRIGHT
+	var currentYear = (new Date()).getFullYear();
+	$('.js-set-current-year').text(currentYear);
+
 });
