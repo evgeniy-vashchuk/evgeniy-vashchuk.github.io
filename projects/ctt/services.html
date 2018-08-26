@@ -19,11 +19,11 @@
 	<!-- The background of the top bar of the browser -->
 
 	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#FFFFFF">
+	<meta name="theme-color" content="#E80000">
 	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#FFFFFF">
+	<meta name="msapplication-navbutton-color" content="#E80000">
 	<!-- IOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#E80000">
 
 	<!-- google FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Heebo:300,400,700" rel="stylesheet">
@@ -139,20 +139,20 @@
 					<div class="row no-gutters">
 						<div class="col-9 col-sm-6 col-md-3">
 							<!-- TAB NAVIGATION -->
-							<div class="nav flex-column nav-pills services-tabs -mb-20" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-								<a class="h4 nav-link active animation-item left-animation" id="construction-tab" data-toggle="pill" href="#construction" role="tab" aria-controls="construction" aria-selected="true">
+							<div class="nav flex-column nav-pills services-tabs -mb-20 animation-item left-animation" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+								<a class="h4 nav-link active" id="construction-tab" data-toggle="pill" href="#construction" role="tab" aria-controls="construction" aria-selected="true">
 									<span class="section-title">Construction</span>
 									<span class="arrow"></span>
 								</a>
-								<a class="h4 nav-link animation-item left-animation" id="engineering-tab" data-toggle="pill" href="#engineering" role="tab" aria-controls="engineering" aria-selected="false">
+								<a class="h4 nav-link" id="engineering-tab" data-toggle="pill" href="#engineering" role="tab" aria-controls="engineering" aria-selected="false">
 									<span class="section-title">Engineering</span>
 									<span class="arrow"></span>
 								</a>
-								<a class="h4 nav-link animation-item left-animation" id="building-tab" data-toggle="pill" href="#building" role="tab" aria-controls="building" aria-selected="false">
+								<a class="h4 nav-link" id="building-tab" data-toggle="pill" href="#building" role="tab" aria-controls="building" aria-selected="false">
 									<span class="section-title">Building</span>
 									<span class="arrow"></span>
 								</a>
-								<a class="h4 nav-link animation-item left-animation" id="software-development-tab" data-toggle="pill" href="#software-development" role="tab" aria-controls="software-development" aria-selected="false">
+								<a class="h4 nav-link" id="software-development-tab" data-toggle="pill" href="#software-development" role="tab" aria-controls="software-development" aria-selected="false">
 									<span class="section-title">Software development</span>
 									<span class="arrow"></span>
 								</a>
@@ -164,7 +164,7 @@
 							<!-- TAB CONTENT -->
 							<div class="tab-content" id="v-pills-tabContent">
 								<div class="tab-pane fade show active" id="construction" role="tabpanel" aria-labelledby="construction-tab">
-									<div class="tab-text-content">
+									<div class="tab-text-content -mb-40">
 										<p class="animation-item left-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
 										<p class="animation-item right-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
 										<p class="animation-item left-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -172,14 +172,16 @@
 										<p class="animation-item left-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.</p>
 									</div>
 
-									<div class="img-decoration-wrap">
-										<div class="img-decoration img-decoration-md animation-item left-animation">
-											<img src="img/services_img_1.jpg" alt="photo">
+									<div class="right-protection-wrap">
+										<div class="img-decoration-container -md -right">
+											<a href="services.html#construction" class="img-wrap -ratio-16-9 d-block -hover-image page-redirect js-scroll-img-wrap">
+												<span class="bg-image-block -resp-bg-img js-scroll-img -to-right" style="background-image: url(img/services_img_1.jpg);"></span>
+											</a>
 										</div>
 									</div>
 								</div>
 								<div class="tab-pane fade" id="engineering" role="tabpanel" aria-labelledby="engineering-tab">
-									<div class="tab-text-content">
+									<div class="tab-text-content -mb-40">
 										<p class="animation-item left-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua.</p>
 										<p class="animation-item right-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
 										<p class="animation-item left-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
@@ -187,14 +189,16 @@
 										<p class="animation-item left-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.</p>
 									</div>
 
-									<div class="img-decoration-wrap">
-										<div class="img-decoration img-decoration-md animation-item left-animation">
-											<img src="img/services_img_2.jpg" alt="photo">
+									<div class="right-protection-wrap">
+										<div class="img-decoration-container -md -right">
+											<a href="services.html#construction" class="img-wrap -ratio-16-9 d-block -hover-image page-redirect js-scroll-img-wrap">
+												<span class="bg-image-block -resp-bg-img js-scroll-img -to-right" style="background-image: url(img/services_img_2.jpg);"></span>
+											</a>
 										</div>
 									</div>
 								</div>
 								<div class="tab-pane fade" id="building" role="tabpanel" aria-labelledby="building-tab">
-									<div class="tab-text-content">
+									<div class="tab-text-content -mb-40">
 										<p class="animation-item left-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
 										<p class="animation-item right-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 										<p class="animation-item left-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -202,14 +206,16 @@
 										<p class="animation-item left-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.</p>
 									</div>
 
-									<div class="img-decoration-wrap">
-										<div class="img-decoration img-decoration-md animation-item left-animation">
-											<img src="img/services_img_3.jpg" alt="photo">
+									<div class="right-protection-wrap">
+										<div class="img-decoration-container -md -right">
+											<a href="services.html#construction" class="img-wrap -ratio-16-9 d-block -hover-image page-redirect js-scroll-img-wrap">
+												<span class="bg-image-block -resp-bg-img js-scroll-img -to-right" style="background-image: url(img/services_img_3.jpg);"></span>
+											</a>
 										</div>
 									</div>
 								</div>
 								<div class="tab-pane fade" id="software-development" role="tabpanel" aria-labelledby="software-development-tab">
-									<div class="tab-text-content">
+									<div class="tab-text-content -mb-40">
 										<p class="animation-item left-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.</p>
 										<p class="animation-item right-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
 										<p class="animation-item left-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
@@ -217,9 +223,11 @@
 										<p class="animation-item left-animation">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do eiusmod.Tempor incididunt ut labore et dolore magna aliqua.</p>
 									</div>
 
-									<div class="img-decoration-wrap">
-										<div class="img-decoration img-decoration-md animation-item left-animation">
-											<img src="img/services_img_4.jpg" alt="photo">
+									<div class="right-protection-wrap">
+										<div class="img-decoration-container -md -right">
+											<a href="services.html#construction" class="img-wrap -ratio-16-9 d-block -hover-image page-redirect js-scroll-img-wrap">
+												<span class="bg-image-block -resp-bg-img js-scroll-img -to-right" style="background-image: url(img/services_img_4.jpg);"></span>
+											</a>
 										</div>
 									</div>
 								</div>
@@ -286,6 +294,15 @@
 	<script src="libs/waypoints/jquery.waypoints.min.js"></script>
 	<script src="libs/countup.js/countUp.min.js"></script>
 	<script src="libs/masonry/masonry.min.js"></script>
+	<script src="libs/babel-polyfill/polyfill.min.js"></script>
+	<script src="libs/intersection-observer/intersection-observer.js"></script>
+	<script src="libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="libs/anime.js/anime.min.js"></script>
+	<script src="libs/uncover/uncover.js"></script>
+	<script src="libs/slice-revealer/sliceRevealerOnScroll.js"></script>
+	<script src="libs/TweenLite/TweenLite.min.js"></script>
+	<script src="libs/TweenLite/CSSPlugin.min.js"></script>
+	<script src="libs/vivus.js/vivus.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsVwK5UVKopB5hHeW9QzxYdKe52p88Ars"></script>
 
 	<script src="js/common.js"></script>

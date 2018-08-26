@@ -146,11 +146,11 @@
 					<div class="container">
 						<div class="row no-gutters">
 							<div class="col-md-4">
-								<div class="photo-with-date-wrap animation-item left-animation">
-									<div class="news-card__photo-wrap photo-with-date">
-										<span class="photo-with-date__photo">
-											<img src="img/news-items/news_item_img_1.jpg" alt="photo">
-										</span>
+								<div class="photo-with-date-wrap">
+									<div class="photo-with-date">
+										<div class="photo-with-date__photo img-wrap -ratio-1-1 js-scroll-img-wrap">
+											<span class="-resp-bg-img bg-image-block js-scroll-img -to-right" style="background-image: url(img/news-items/news_item_img_1.jpg);"></span>
+										</div>
 
 										<span class="photo-with-date__text">May 12, 2018</span>
 									</div>
@@ -260,45 +260,51 @@
 
 									<div class="col-sm-6 col-md-12">
 										<!-- item 1 -->
-										<div class="animation-item left-animation">
-											<div class="news-card">
-												<div class="news-card__photo-wrap photo-with-date">
-													<a href="news-single.html" class="photo-with-date__photo js-page-redirect">
-														<img src="img/news-items/news_item_img_2.jpg" alt="photo">
-													</a>
+										<div class="news-card">
+											<div class="news-card__photo-wrap photo-with-date">
+												<a href="news-single.html" class="photo-with-date__photo img-wrap -ratio-1-1 js-scroll-img-wrap js-page-redirect">
+													<span class="-resp-bg-img bg-image-block js-scroll-img -to-right" style="background-image: url(img/news-items/news_item_img_2.jpg);"></span>
+												</a>
 
-													<span class="photo-with-date__text">May 12, 2017</span>
-												</div>
-												<h4 class="-mb-5">
-													<a href="news-single.html" class="js-page-redirect">Nemo enim ipsam adipisicing elit voluptatem</a>
-												</h4>
-												<div class="news-card__text">
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-												</div>
-												<a href="news-single.html" class="link-underline link-underline-sm js-page-redirect">Read more</a>
+												<span class="photo-with-date__text">May 12, 2017</span>
 											</div>
+
+											<h4 class="-mb-5 animation-item left-animation">
+												<a href="news-single.html" class="js-page-redirect">Nemo enim ipsam adipisicing elit voluptatem</a>
+											</h4>
+
+											<div class="news-card__text animation-item left-animation">
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+											</div>
+
+											<span class="d-inline-block animation-item left-animation">
+												<a href="news-single.html" class="link-underline link-underline-sm js-page-redirect">Read more</a>
+											</span>
 										</div>
 									</div>
 
 									<div class="col-sm-6 col-md-12">
 										<!-- item 2 -->
-										<div class="animation-item left-animation">
-											<div class="news-card mb-0">
-												<div class="news-card__photo-wrap photo-with-date">
-													<a href="news-single.html" class="photo-with-date__photo js-page-redirect">
-														<img src="img/news-items/news_item_img_3.jpg" alt="photo">
-													</a>
+										<div class="news-card">
+											<div class="news-card__photo-wrap photo-with-date">
+												<a href="news-single.html" class="photo-with-date__photo img-wrap -ratio-1-1 js-scroll-img-wrap js-page-redirect">
+													<span class="-resp-bg-img bg-image-block js-scroll-img -to-right" style="background-image: url(img/news-items/news_item_img_3.jpg);"></span>
+												</a>
 
-													<span class="photo-with-date__text">May 12, 2017</span>
-												</div>
-												<h4 class="-mb-5">
-													<a href="news-single.html" class="js-page-redirect">Nemo enim ipsam adipisicing elit voluptatem</a>
-												</h4>
-												<div class="news-card__text">
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-												</div>
-												<a href="news-single.html" class="link-underline link-underline-sm js-page-redirect">Read more</a>
+												<span class="photo-with-date__text">May 12, 2017</span>
 											</div>
+
+											<h4 class="-mb-5 animation-item left-animation">
+												<a href="news-single.html" class="js-page-redirect">Nemo enim ipsam adipisicing elit voluptatem</a>
+											</h4>
+
+											<div class="news-card__text animation-item left-animation">
+												<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+											</div>
+
+											<span class="d-inline-block animation-item left-animation">
+												<a href="news-single.html" class="link-underline link-underline-sm js-page-redirect">Read more</a>
+											</span>
 										</div>
 									</div>
 								</div>
@@ -1255,8 +1261,17 @@
 	<script src="libs/jquery.validate/jquery.validate.min.js"></script>
 	<script src="libs/select2/select2.min.js"></script>
 	<script src="libs/validate/jquery.validate.min.js"></script>
+	<script src="libs/babel-polyfill/polyfill.min.js"></script>
+	<script src="libs/intersection-observer/intersection-observer.js"></script>
+	<script src="libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="libs/anime.js/anime.min.js"></script>
+	<script src="libs/uncover/uncover.js"></script>
+	<script src="libs/slice-revealer/sliceRevealerOnScroll.js"></script>
+	<script src="libs/slice-revealer/sliceRevealerSlider.js"></script>
+	<script src="libs/TweenMax/TweenMax.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVw-tmS405xer0w92dd9746LVak7QVJx8"></script>
 
 	<script src="js/common.js"></script>
+
 </body>
 </html>

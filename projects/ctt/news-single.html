@@ -19,11 +19,11 @@
 	<!-- The background of the top bar of the browser -->
 
 	<!-- Chrome, Firefox OS and Opera -->
-	<meta name="theme-color" content="#FFFFFF">
+	<meta name="theme-color" content="#E80000">
 	<!-- Windows Phone -->
-	<meta name="msapplication-navbutton-color" content="#FFFFFF">
+	<meta name="msapplication-navbutton-color" content="#E80000">
 	<!-- IOS Safari -->
-	<meta name="apple-mobile-web-app-status-bar-style" content="#FFFFFF">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#E80000">
 
 	<!-- google FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Heebo:300,400,700" rel="stylesheet">
@@ -126,8 +126,10 @@
 				<div class="container">
 					<div class="row no-gutters">
 						<div class="col-12">
-							<div class="-mb-30 img-decoration img-decoration-bottom img-decoration-left animation-item left-animation">
-								<img src="img/news_inside_img.jpg" alt="photo">
+							<div class="img-decoration-container -bottom -mb-30">
+								<div class="img-wrap -ratio-16-9 js-scroll-img-wrap">
+									<span class="bg-image-block -resp-bg-img js-scroll-img -to-right" style="background-image: url(img/news_inside_img.jpg);"></span>
+								</div>
 							</div>
 						</div>
 
@@ -177,18 +179,22 @@
 
 							<!-- BLOG NAVIGATION -->
 							<div class="navigation-block">
-								<a href="news-single.html" class="news-nav-prev animation-item left-animation page-redirect">
-									<span class="btn btn-arrow btn-transparent">
-										<span class="icon-arrow-left"></span>
-									</span>
-									<span class="small-title">Previous work</span>
-								</a>
-								<a href="news-single.html" class="news-nav-next animation-item right-animation page-redirect">
-									<span class="small-title">Next work</span>
-									<span class="btn btn-arrow btn-transparent">
-										<span class="icon-arrow-right"></span>
-									</span>
-								</a>
+								<div class="animation-item left-animation">
+									<a href="news-single.html" class="news-nav-prev page-redirect">
+										<span class="btn btn-arrow btn-transparent">
+											<span class="icon-arrow-left"></span>
+										</span>
+										<span class="small-title">Previous work</span>
+									</a>
+								</div>
+								<div class="animation-item right-animation">
+									<a href="news-single.html" class="news-nav-next page-redirect">
+										<span class="small-title">Next work</span>
+										<span class="btn btn-arrow btn-transparent">
+											<span class="icon-arrow-right"></span>
+										</span>
+									</a>
+								</div>
 							</div>
 							<!-- BLOG NAVIGATION END -->
 						</div>
@@ -232,7 +238,9 @@
 								<div class="col-12 col-md-3 offset-0 offset-md-9">
 									<div class="comment-info">
 										<p class="animation-item left-animation">11/12/2018</p>
-										<a href="javascript:void(0);" class="btn-underline btn-underline-lg animation-item right-animation">reply</a>
+										<span class="animation-item right-animation">
+											<a href="javascript:void(0);" class="btn-underline btn-underline-lg">reply</a>
+										</span>
 									</div>
 								</div>
 							</div>
@@ -261,7 +269,9 @@
 								<div class="col-12 col-md-3 offset-0 offset-md-9">
 									<div class="comment-info">
 										<p class="animation-item left-animation">12/12/2018</p>
-										<a href="javascript:void(0);" class="btn-underline btn-underline-lg animation-item right-animation">reply</a>
+										<span class="animation-item right-animation">
+											<a href="javascript:void(0);" class="btn-underline btn-underline-lg">reply</a>
+										</span>
 									</div>
 								</div>
 							</div>
@@ -290,7 +300,9 @@
 								<div class="col-12 col-md-3 offset-0 offset-md-9">
 									<div class="comment-info">
 										<p class="animation-item left-animation">10/12/2018</p>
-										<a href="javascript:void(0);" class="btn-underline btn-underline-lg animation-item right-animation">reply</a>
+										<span class="animation-item right-animation">
+											<a href="javascript:void(0);" class="btn-underline btn-underline-lg">reply</a>
+										</span>
 									</div>
 								</div>
 							</div>
@@ -319,7 +331,9 @@
 								<div class="col-12 col-md-3 offset-0 offset-md-9">
 									<div class="comment-info">
 										<p class="animation-item left-animation">03/12/2018</p>
-										<a href="javascript:void(0);" class="btn-underline btn-underline-lg animation-item right-animation">reply</a>
+										<span class="animation-item right-animation">
+											<a href="javascript:void(0);" class="btn-underline btn-underline-lg">reply</a>
+										</span>
 									</div>
 								</div>
 							</div>
@@ -440,6 +454,15 @@
 	<script src="libs/waypoints/jquery.waypoints.min.js"></script>
 	<script src="libs/countup.js/countUp.min.js"></script>
 	<script src="libs/masonry/masonry.min.js"></script>
+	<script src="libs/babel-polyfill/polyfill.min.js"></script>
+	<script src="libs/intersection-observer/intersection-observer.js"></script>
+	<script src="libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="libs/anime.js/anime.min.js"></script>
+	<script src="libs/uncover/uncover.js"></script>
+	<script src="libs/slice-revealer/sliceRevealerOnScroll.js"></script>
+	<script src="libs/TweenLite/TweenLite.min.js"></script>
+	<script src="libs/TweenLite/CSSPlugin.min.js"></script>
+	<script src="libs/vivus.js/vivus.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCsVwK5UVKopB5hHeW9QzxYdKe52p88Ars"></script>
 
 	<script src="js/common.js"></script>

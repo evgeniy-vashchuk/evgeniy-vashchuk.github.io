@@ -145,47 +145,58 @@
 				<div class="container">
 					<div class="row no-gutters">
 						<div class="col-12">
-							<div class="welcome-slider slider-dots-style animation-item left-animation">
-								<!-- item 1 -->
-								<div>
-									<div class="welcome-banner" style="background-image: url(img/welcome_banner_img.jpg);">
-										<p class="welcome-banner__sale-number">-50</p>
-										<div class="welcome-banner__text-block">
-											<p class="banner-title">
-												<strong>Sale</strong><br>
-												of denim<br> clothing
-											</p>
-											<a href="catalog.html" class="btn btn-secondary btn-md js-page-redirect">Shoping now</a>
-										</div>
-									</div>
-								</div>
+							<div class="row no-gutters">
+								<div class="col-sm-10 -disable-overflow">
 
-								<!-- item 2 -->
-								<div>
-									<div class="welcome-banner" style="background-image: url(img/welcome_banner_img.jpg);">
-										<p class="welcome-banner__sale-number">-50</p>
-										<div class="welcome-banner__text-block">
-											<p class="banner-title">
-												<strong>Sale</strong><br>
-												of denim<br> clothing
-											</p>
-											<a href="catalog.html" class="btn btn-secondary btn-md js-page-redirect">Shoping now</a>
-										</div>
-									</div>
-								</div>
+									<!-- slider -->
+									<div class="welcome-slider js-welcome-slider animation-item left-animation">
+										<div class="welcome-slider__overflow-wrap">
+											<!-- bg image -->
+											<div class="slides">
+												<div class="slide slide--current">
+													<div class="slide__img" style="background-image: url(img/welcome_banner_img.jpg);"></div>
+												</div>
+												<div class="slide">
+													<div class="slide__img" style="background-image: url(img/welcome_banner_img.jpg);"></div>
+												</div>
+												<div class="slide">
+													<div class="slide__img" style="background-image: url(img/welcome_banner_img.jpg);"></div>
+												</div>
+											</div>
 
-								<!-- item 3 -->
-								<div>
-									<div class="welcome-banner" style="background-image: url(img/welcome_banner_img.jpg);">
-										<p class="welcome-banner__sale-number">-50</p>
-										<div class="welcome-banner__text-block">
-											<p class="banner-title">
-												<strong>Sale</strong><br>
-												of denim<br> clothing
-											</p>
-											<a href="catalog.html" class="btn btn-secondary btn-md js-page-redirect">Shoping now</a>
+											<!-- top-left number -->
+											<ul class="welcome-slider__discount-number discount-number-list js-discount-number-list">
+												<li class="discount-number-list__item -current">
+													<p class="big-text -white mb-0">-50</p>
+												</li>
+												<li class="discount-number-list__item">
+													<p class="big-text -white mb-0">-30</p>
+												</li>
+												<li class="discount-number-list__item">
+													<p class="big-text -white mb-0">-40</p>
+												</li>
+											</ul>
 										</div>
+
+										<!-- main text -->
+										<ul class="main-text-list js-main-text-list">
+											<li class="main-text-list__item -current">
+												<p class="h1"><strong>Sale</strong>of denim<br> clothing</p>
+												<a href="catalog.html" class="btn btn-secondary btn-md js-page-redirect">Shoping now</a>
+											</li>
+											<li class="main-text-list__item">
+												<p class="h1"><strong>Sale</strong>of denim<br> clothing</p>
+												<a href="catalog.html" class="btn btn-secondary btn-md js-page-redirect">Shoping now</a>
+											</li>
+											<li class="main-text-list__item">
+												<p class="h1"><strong>Sale</strong>of denim<br> clothing</p>
+												<a href="catalog.html" class="btn btn-secondary btn-md js-page-redirect">Shoping now</a>
+											</li>
+										</ul>
+										<!-- main text END -->
+
 									</div>
+									<!-- slider END -->
 								</div>
 							</div>
 						</div>
@@ -204,14 +215,18 @@
 					</div>
 
 					<!-- NEW ARRIVALS SLIDER -->
-					<div class="slider-animation-wrap">
+					<div class="slider-animation-wrap js-slider-animation-wrap">
 
-						<div class="products-slider -slider-init">
+						<div class="js-products-slider -slider-init">
 							<!-- item 1 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/new-arrivals-slider/new_arrivals_item_1.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_1.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_1_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -257,9 +272,13 @@
 
 							<!-- item 2 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/new-arrivals-slider/new_arrivals_item_2.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_2.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_2_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -301,9 +320,13 @@
 
 							<!-- item 3 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/new-arrivals-slider/new_arrivals_item_3.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_3.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_3_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -346,9 +369,13 @@
 
 							<!-- item 4 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/new-arrivals-slider/new_arrivals_item_1.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_1.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_1_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -394,9 +421,13 @@
 
 							<!-- item 5 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/new-arrivals-slider/new_arrivals_item_2.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_2.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_2_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -439,9 +470,13 @@
 
 							<!-- item 6 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/new-arrivals-slider/new_arrivals_item_3.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_3.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_3_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -484,9 +519,13 @@
 
 							<!-- item 7 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/new-arrivals-slider/new_arrivals_item_1.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_1.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_1_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -532,9 +571,13 @@
 
 							<!-- item 8 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/new-arrivals-slider/new_arrivals_item_2.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_2.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_2_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -576,9 +619,13 @@
 
 							<!-- item 9 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/new-arrivals-slider/new_arrivals_item_3.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_3.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_3_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -621,9 +668,13 @@
 
 							<!-- item 10 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/new-arrivals-slider/new_arrivals_item_1.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_1.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_1_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -669,9 +720,13 @@
 
 							<!-- item 11 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/new-arrivals-slider/new_arrivals_item_2.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_2.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_2_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -714,9 +769,13 @@
 
 							<!-- item 12 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/new-arrivals-slider/new_arrivals_item_3.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_3.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/new-arrivals-slider/new_arrivals_item_3_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -764,11 +823,11 @@
 								<div class="slider-arrows-and-link-container">
 									<div class="slider-arrows-wrap square-buttons-vertical">
 										<!-- NEXT ARROW -->
-										<a href="javascript:void(0);" class="btn-square btn-square-md btn-square-gray next-arrow">
+										<a href="javascript:void(0);" class="btn-square btn-square-md btn-square-gray js-next-slide">
 											<span class="icon-right-arrow"></span>
 										</a>
 										<!-- PREV ARROW -->
-										<a href="javascript:void(0);" class="btn-square btn-square-md btn-square-gray prev-arrow">
+										<a href="javascript:void(0);" class="btn-square btn-square-md btn-square-gray js-prev-slide">
 											<span class="icon-left-arrow"></span>
 										</a>
 									</div>
@@ -796,14 +855,18 @@
 					</div>
 
 					<!-- SALE SLIDER -->
-					<div class="slider-animation-wrap">
+					<div class="slider-animation-wrap js-slider-animation-wrap">
 
-						<div class="products-slider -slider-init">
+						<div class="js-products-slider -slider-init">
 							<!-- item 1 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/sale-slider/sale_item_1.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/sale-slider/sale_item_1.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/sale-slider/sale_item_1_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -846,9 +909,13 @@
 
 							<!-- item 2 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/sale-slider/sale_item_2.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/sale-slider/sale_item_2.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/sale-slider/sale_item_2_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -891,9 +958,13 @@
 
 							<!-- item 3 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/sale-slider/sale_item_3.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/sale-slider/sale_item_3.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/sale-slider/sale_item_3_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -936,9 +1007,13 @@
 
 							<!-- item 4 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/sale-slider/sale_item_1.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/sale-slider/sale_item_1.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/sale-slider/sale_item_1_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -981,9 +1056,13 @@
 
 							<!-- item 5 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/sale-slider/sale_item_2.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/sale-slider/sale_item_2.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/sale-slider/sale_item_2_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1026,9 +1105,13 @@
 
 							<!-- item 6 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/sale-slider/sale_item_3.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/sale-slider/sale_item_3.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/sale-slider/sale_item_3_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1071,9 +1154,13 @@
 
 							<!-- item 7 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/sale-slider/sale_item_1.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/sale-slider/sale_item_1.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/sale-slider/sale_item_1_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1116,9 +1203,13 @@
 
 							<!-- item 8 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/sale-slider/sale_item_2.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/sale-slider/sale_item_2.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/sale-slider/sale_item_2_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1161,9 +1252,13 @@
 
 							<!-- item 9 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/sale-slider/sale_item_3.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/sale-slider/sale_item_3.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/sale-slider/sale_item_3_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1206,9 +1301,13 @@
 
 							<!-- item 10 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/sale-slider/sale_item_1.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/sale-slider/sale_item_1.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/sale-slider/sale_item_1_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1251,9 +1350,13 @@
 
 							<!-- item 11 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/sale-slider/sale_item_2.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/sale-slider/sale_item_2.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/sale-slider/sale_item_2_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1296,9 +1399,13 @@
 
 							<!-- item 12 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/sale-slider/sale_item_3.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/sale-slider/sale_item_3.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/sale-slider/sale_item_3_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1346,11 +1453,11 @@
 								<div class="slider-arrows-and-link-container">
 									<div class="slider-arrows-wrap square-buttons-vertical">
 										<!-- NEXT ARROW -->
-										<a href="javascript:void(0);" class="btn-square btn-square-md btn-square-gray next-arrow">
+										<a href="javascript:void(0);" class="btn-square btn-square-md btn-square-gray js-next-slide">
 											<span class="icon-right-arrow"></span>
 										</a>
 										<!-- PREV ARROW -->
-										<a href="javascript:void(0);" class="btn-square btn-square-md btn-square-gray prev-arrow">
+										<a href="javascript:void(0);" class="btn-square btn-square-md btn-square-gray js-prev-slide">
 											<span class="icon-left-arrow"></span>
 										</a>
 									</div>
@@ -1379,14 +1486,18 @@
 					</div>
 
 					<!-- POPULAR SLIDER -->
-					<div class="slider-animation-wrap">
+					<div class="slider-animation-wrap js-slider-animation-wrap">
 
-						<div class="products-slider -slider-init">
+						<div class="js-products-slider -slider-init">
 							<!-- item 1 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/popular-slider/popular_item_1.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/popular-slider/popular_item_1.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/popular-slider/popular_item_1_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1432,9 +1543,13 @@
 
 							<!-- item 2 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/popular-slider/popular_item_2.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/popular-slider/popular_item_2.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/popular-slider/popular_item_2_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1468,9 +1583,13 @@
 
 							<!-- item 3 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/popular-slider/popular_item_3.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/popular-slider/popular_item_3.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/popular-slider/popular_item_3_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1512,9 +1631,13 @@
 
 							<!-- item 4 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/popular-slider/popular_item_1.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/popular-slider/popular_item_1.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/popular-slider/popular_item_1_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1549,9 +1672,13 @@
 
 							<!-- item 5 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/popular-slider/popular_item_2.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/popular-slider/popular_item_2.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/popular-slider/popular_item_2_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1585,9 +1712,13 @@
 
 							<!-- item 6 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/popular-slider/popular_item_3.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/popular-slider/popular_item_3.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/popular-slider/popular_item_3_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1629,9 +1760,13 @@
 
 							<!-- item 7 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/popular-slider/popular_item_1.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/popular-slider/popular_item_1.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/popular-slider/popular_item_1_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1677,9 +1812,13 @@
 
 							<!-- item 8 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/popular-slider/popular_item_2.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/popular-slider/popular_item_2.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/popular-slider/popular_item_2_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1713,9 +1852,13 @@
 
 							<!-- item 9 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/popular-slider/popular_item_3.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/popular-slider/popular_item_3.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/popular-slider/popular_item_3_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1757,9 +1900,13 @@
 
 							<!-- item 10 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/popular-slider/popular_item_1.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/popular-slider/popular_item_1.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/popular-slider/popular_item_1_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1794,9 +1941,13 @@
 
 							<!-- item 11 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/popular-slider/popular_item_2.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/popular-slider/popular_item_2.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/popular-slider/popular_item_2_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1830,9 +1981,13 @@
 
 							<!-- item 12 -->
 							<div class="-overflow-hidden">
-								<div class="product-card js-animation-slider-item animation-item left-animation">
+								<div class="product-card js-movement-slider-item animation-item left-animation">
 									<div class="product-card__photo">
-										<img src="img/popular-slider/popular_item_3.jpg" alt="photo">
+										<div class="product-card__photo-item">
+											<div class="-resp-bg-img" style="background-image: url(img/popular-slider/popular_item_3.jpg);"></div>
+
+											<div class="product-card__hover-photo -resp-bg-img" style="background-image: url(img/popular-slider/popular_item_3_hover.jpg);"></div>
+										</div>
 
 										<!-- BUTTONS -->
 										<div class="product-card__hover-buttons square-buttons-vertical">
@@ -1880,11 +2035,11 @@
 								<div class="slider-arrows-and-link-container">
 									<div class="slider-arrows-wrap square-buttons-vertical">
 										<!-- NEXT ARROW -->
-										<a href="javascript:void(0);" class="btn-square btn-square-md btn-square-gray next-arrow">
+										<a href="javascript:void(0);" class="btn-square btn-square-md btn-square-gray js-next-slide">
 											<span class="icon-right-arrow"></span>
 										</a>
 										<!-- PREV ARROW -->
-										<a href="javascript:void(0);" class="btn-square btn-square-md btn-square-gray prev-arrow">
+										<a href="javascript:void(0);" class="btn-square btn-square-md btn-square-gray js-prev-slide">
 											<span class="icon-left-arrow"></span>
 										</a>
 									</div>
@@ -1913,67 +2068,76 @@
 
 						<!-- item 1 -->
 						<div class="col-sm-6 col-md-4">
-							<div class="animation-item left-animation">
-								<div class="news-card">
-									<div class="news-card__photo-wrap photo-with-date">
-										<a href="news-single.html" class="photo-with-date__photo js-page-redirect">
-											<img src="img/news-items/news_item_img_1.jpg" alt="photo">
-										</a>
+							<div class="news-card">
+								<div class="news-card__photo-wrap photo-with-date">
+									<a href="news-single.html" class="photo-with-date__photo img-wrap -ratio-1-1 js-scroll-img-wrap js-page-redirect">
+										<span class="-resp-bg-img bg-image-block js-scroll-img -to-right" style="background-image: url(img/news-items/news_item_img_1.jpg);"></span>
+									</a>
 
-										<span class="photo-with-date__text">May 12, 2018</span>
-									</div>
-									<h4 class="-mb-5">
-										<a href="news-single.html" class="js-page-redirect">Nemo enim ipsam adipisicing elit voluptatem</a>
-									</h4>
-									<div class="news-card__text">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-									</div>
-									<a href="news-single.html" class="link-underline link-underline-sm js-page-redirect">Read more</a>
+									<span class="photo-with-date__text">May 12, 2018</span>
 								</div>
+
+								<h4 class="-mb-5 animation-item left-animation">
+									<a href="news-single.html" class="js-page-redirect">Nemo enim ipsam adipisicing elit voluptatem</a>
+								</h4>
+
+								<div class="news-card__text animation-item left-animation">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+								</div>
+
+								<span class="d-inline-block animation-item left-animation">
+									<a href="news-single.html" class="link-underline link-underline-sm js-page-redirect">Read more</a>
+								</span>
 							</div>
 						</div>
 
 						<!-- item 2 -->
 						<div class="col-sm-6 col-md-4">
-							<div class="animation-item left-animation">
-								<div class="news-card">
-									<div class="news-card__photo-wrap photo-with-date">
-										<a href="news-single.html" class="photo-with-date__photo js-page-redirect">
-											<img src="img/news-items/news_item_img_2.jpg" alt="photo">
-										</a>
+							<div class="news-card">
+								<div class="news-card__photo-wrap photo-with-date">
+									<a href="news-single.html" class="photo-with-date__photo img-wrap -ratio-1-1 js-scroll-img-wrap js-page-redirect">
+										<span class="-resp-bg-img bg-image-block js-scroll-img -to-right" style="background-image: url(img/news-items/news_item_img_2.jpg);"></span>
+									</a>
 
-										<span class="photo-with-date__text">May 12, 2018</span>
-									</div>
-									<h4 class="-mb-5">
-										<a href="news-single.html" class="js-page-redirect">Nemo enim ipsam adipisicing elit voluptatem</a>
-									</h4>
-									<div class="news-card__text">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-									</div>
-									<a href="news-single.html" class="link-underline link-underline-sm js-page-redirect">Read more</a>
+									<span class="photo-with-date__text">May 12, 2018</span>
 								</div>
+
+								<h4 class="-mb-5 animation-item left-animation">
+									<a href="news-single.html" class="js-page-redirect">Nemo enim ipsam adipisicing elit voluptatem</a>
+								</h4>
+
+								<div class="news-card__text animation-item left-animation">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+								</div>
+
+								<span class="d-inline-block animation-item left-animation">
+									<a href="news-single.html" class="link-underline link-underline-sm js-page-redirect">Read more</a>
+								</span>
 							</div>
 						</div>
 
 						<!-- item 3 -->
 						<div class="col-sm-6 col-md-4">
-							<div class="animation-item left-animation">
-								<div class="news-card">
-									<div class="news-card__photo-wrap photo-with-date">
-										<a href="news-single.html" class="photo-with-date__photo js-page-redirect">
-											<img src="img/news-items/news_item_img_3.jpg" alt="photo">
-										</a>
+							<div class="news-card">
+								<div class="news-card__photo-wrap photo-with-date">
+									<a href="news-single.html" class="photo-with-date__photo img-wrap -ratio-1-1 js-scroll-img-wrap js-page-redirect">
+										<span class="-resp-bg-img bg-image-block js-scroll-img -to-right" style="background-image: url(img/news-items/news_item_img_3.jpg);"></span>
+									</a>
 
-										<span class="photo-with-date__text">May 12, 2018</span>
-									</div>
-									<h4 class="-mb-5">
-										<a href="news-single.html" class="js-page-redirect">Nemo enim ipsam adipisicing elit voluptatem</a>
-									</h4>
-									<div class="news-card__text">
-										<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
-									</div>
-									<a href="news-single.html" class="link-underline link-underline-sm js-page-redirect">Read more</a>
+									<span class="photo-with-date__text">May 12, 2018</span>
 								</div>
+
+								<h4 class="-mb-5 animation-item left-animation">
+									<a href="news-single.html" class="js-page-redirect">Nemo enim ipsam adipisicing elit voluptatem</a>
+								</h4>
+
+								<div class="news-card__text animation-item left-animation">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore.</p>
+								</div>
+
+								<span class="d-inline-block animation-item left-animation">
+									<a href="news-single.html" class="link-underline link-underline-sm js-page-redirect">Read more</a>
+								</span>
 							</div>
 						</div>
 
@@ -1998,64 +2162,88 @@
 
 					<div class="row no-gutters align-items-center">
 						<div class="col-6 col-sm-3 col-md-2">
-							<a href="javascript:void(0);" class="brand-logo animation-item left-animation">
-								<img src="img/brands-logos/brand_logo_1.svg" alt="logo">
-							</a>
+							<div class="brand-logo-wrap animation-item left-animation">
+								<a href="javascript:void(0);" class="brand-logo-wrap__link">
+									<img src="img/brands-logos/brand_logo_1.svg" alt="logo">
+								</a>
+							</div>
 						</div>
 						<div class="col-6 col-sm-3 col-md-2">
-							<a href="javascript:void(0);" class="brand-logo animation-item left-animation">
-								<img src="img/brands-logos/brand_logo_2.svg" alt="logo">
-							</a>
+							<div class="brand-logo-wrap animation-item left-animation">
+								<a href="javascript:void(0);" class="brand-logo-wrap__link">
+									<img src="img/brands-logos/brand_logo_2.svg" alt="logo">
+								</a>
+							</div>
 						</div>
 						<div class="col-6 col-sm-3 col-md-2">
-							<a href="javascript:void(0);" class="brand-logo animation-item left-animation">
-								<img src="img/brands-logos/brand_logo_3.svg" alt="logo">
-							</a>
+							<div class="brand-logo-wrap animation-item left-animation">
+								<a href="javascript:void(0);" class="brand-logo-wrap__link">
+									<img src="img/brands-logos/brand_logo_3.svg" alt="logo">
+								</a>
+							</div>
 						</div>
 						<div class="col-6 col-sm-3 col-md-2">
-							<a href="javascript:void(0);" class="brand-logo animation-item left-animation">
-								<img src="img/brands-logos/brand_logo_4.svg" alt="logo">
-							</a>
+							<div class="brand-logo-wrap animation-item left-animation">
+								<a href="javascript:void(0);" class="brand-logo-wrap__link">
+									<img src="img/brands-logos/brand_logo_4.svg" alt="logo">
+								</a>
+							</div>
 						</div>
 						<div class="col-6 col-sm-3 col-md-2">
-							<a href="javascript:void(0);" class="brand-logo animation-item left-animation">
-								<img src="img/brands-logos/brand_logo_5.svg" alt="logo">
-							</a>
+							<div class="brand-logo-wrap animation-item left-animation">
+								<a href="javascript:void(0);" class="brand-logo-wrap__link">
+									<img src="img/brands-logos/brand_logo_5.svg" alt="logo">
+								</a>
+							</div>
 						</div>
 						<div class="col-6 col-sm-3 col-md-2">
-							<a href="javascript:void(0);" class="brand-logo animation-item left-animation">
-								<img src="img/brands-logos/brand_logo_6.svg" alt="logo">
-							</a>
+							<div class="brand-logo-wrap animation-item left-animation">
+								<a href="javascript:void(0);" class="brand-logo-wrap__link">
+									<img src="img/brands-logos/brand_logo_6.svg" alt="logo">
+								</a>
+							</div>
 						</div>
 						<div class="col-6 col-sm-3 col-md-2">
-							<a href="javascript:void(0);" class="brand-logo animation-item left-animation">
-								<img src="img/brands-logos/brand_logo_6.svg" alt="logo">
-							</a>
+							<div class="brand-logo-wrap animation-item left-animation">
+								<a href="javascript:void(0);" class="brand-logo-wrap__link">
+									<img src="img/brands-logos/brand_logo_6.svg" alt="logo">
+								</a>
+							</div>
 						</div>
 						<div class="col-6 col-sm-3 col-md-2">
-							<a href="javascript:void(0);" class="brand-logo animation-item left-animation">
-								<img src="img/brands-logos/brand_logo_4.svg" alt="logo">
-							</a>
+							<div class="brand-logo-wrap animation-item left-animation">
+								<a href="javascript:void(0);" class="brand-logo-wrap__link">
+									<img src="img/brands-logos/brand_logo_4.svg" alt="logo">
+								</a>
+							</div>
 						</div>
 						<div class="col-6 col-sm-3 col-md-2">
-							<a href="javascript:void(0);" class="brand-logo animation-item left-animation">
-								<img src="img/brands-logos/brand_logo_5.svg" alt="logo">
-							</a>
+							<div class="brand-logo-wrap animation-item left-animation">
+								<a href="javascript:void(0);" class="brand-logo-wrap__link">
+									<img src="img/brands-logos/brand_logo_5.svg" alt="logo">
+								</a>
+							</div>
 						</div>
 						<div class="col-6 col-sm-3 col-md-2">
-							<a href="javascript:void(0);" class="brand-logo animation-item left-animation">
-								<img src="img/brands-logos/brand_logo_3.svg" alt="logo">
-							</a>
+							<div class="brand-logo-wrap animation-item left-animation">
+								<a href="javascript:void(0);" class="brand-logo-wrap__link">
+									<img src="img/brands-logos/brand_logo_3.svg" alt="logo">
+								</a>
+							</div>
 						</div>
 						<div class="col-6 col-sm-3 col-md-2">
-							<a href="javascript:void(0);" class="brand-logo animation-item left-animation">
-								<img src="img/brands-logos/brand_logo_2.svg" alt="logo">
-							</a>
+							<div class="brand-logo-wrap animation-item left-animation">
+								<a href="javascript:void(0);" class="brand-logo-wrap__link">
+									<img src="img/brands-logos/brand_logo_2.svg" alt="logo">
+								</a>
+							</div>
 						</div>
 						<div class="col-6 col-sm-3 col-md-2">
-							<a href="javascript:void(0);" class="brand-logo animation-item left-animation">
-								<img src="img/brands-logos/brand_logo_1.svg" alt="logo">
-							</a>
+							<div class="brand-logo-wrap animation-item left-animation">
+								<a href="javascript:void(0);" class="brand-logo-wrap__link">
+									<img src="img/brands-logos/brand_logo_1.svg" alt="logo">
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -2221,66 +2409,80 @@
 
 									<!-- MODAL PRODUCT MAIN PHOTO -->
 									<div class="js-product-overview-main-photo -slider-init">
+										<!-- item 1 -->
 										<div class="product-overview-main-photo-wrap">
-											<div class="product-overview-main-photo absolute-img">
-												<img src="img/new-arrivals-product-modal/main-photo/new_arrivals_item_1.jpg" alt="photo">
+											<div class="product-overview-main-photo img-wrap">
+												<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/main-photo/new_arrivals_item_1.jpg);"></div>
 											</div>
 										</div>
+										<!-- item 2 -->
 										<div class="product-overview-main-photo-wrap">
-											<div class="product-overview-main-photo absolute-img">
-												<img src="img/new-arrivals-product-modal/main-photo/new_arrivals_item_2.jpg" alt="photo">
+											<div class="product-overview-main-photo img-wrap">
+												<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/main-photo/new_arrivals_item_2.jpg);"></div>
 											</div>
 										</div>
+										<!-- item 3 -->
 										<div class="product-overview-main-photo-wrap">
-											<div class="product-overview-main-photo absolute-img">
-												<img src="img/new-arrivals-product-modal/main-photo/new_arrivals_item_3.jpg" alt="photo">
+											<div class="product-overview-main-photo img-wrap">
+												<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/main-photo/new_arrivals_item_1.jpg);"></div>
 											</div>
 										</div>
+										<!-- item 4 -->
 										<div class="product-overview-main-photo-wrap">
-											<div class="product-overview-main-photo absolute-img">
-												<img src="img/new-arrivals-product-modal/main-photo/new_arrivals_item_4.jpg" alt="photo">
+											<div class="product-overview-main-photo img-wrap">
+												<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/main-photo/new_arrivals_item_2.jpg);"></div>
 											</div>
 										</div>
+										<!-- item 5 -->
 										<div class="product-overview-main-photo-wrap">
-											<div class="product-overview-main-photo absolute-img">
-												<img src="img/new-arrivals-product-modal/main-photo/new_arrivals_item_5.jpg" alt="photo">
+											<div class="product-overview-main-photo img-wrap">
+												<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/main-photo/new_arrivals_item_1.jpg);"></div>
 											</div>
 										</div>
+										<!-- item 6 -->
 										<div class="product-overview-main-photo-wrap">
-											<div class="product-overview-main-photo absolute-img">
-												<img src="img/new-arrivals-product-modal/main-photo/new_arrivals_item_6.jpg" alt="photo">
+											<div class="product-overview-main-photo img-wrap">
+												<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/main-photo/new_arrivals_item_2.jpg);"></div>
 											</div>
 										</div>
+										<!-- item 7 -->
 										<div class="product-overview-main-photo-wrap">
-											<div class="product-overview-main-photo absolute-img">
-												<img src="img/new-arrivals-product-modal/main-photo/new_arrivals_item_7.jpg" alt="photo">
+											<div class="product-overview-main-photo img-wrap">
+												<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/main-photo/new_arrivals_item_1.jpg);"></div>
 											</div>
 										</div>
 									</div>
 									<!-- MODAL PRODUCT MAIN PHOTO END -->
 
 									<!-- MODAL PRODUCT NAV -->
-									<div class="js-product-overview-nav product-overview-nav-wrap">
-										<div class="product-overview-nav-photo">
-											<img src="img/new-arrivals-product-modal/nav/new_arrivals_item_nav_1.png" alt="photo">
+									<div class="product-overview-nav-wrap js-product-overview-nav">
+										<!-- item 1 -->
+										<div class="product-overview-nav-photo img-wrap -ratio-1-1">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/nav/new_arrivals_item_nav_1.png);"></div>
 										</div>
-										<div class="product-overview-nav-photo">
-											<img src="img/new-arrivals-product-modal/nav/new_arrivals_item_nav_2.png" alt="photo">
+										<!-- item 2 -->
+										<div class="product-overview-nav-photo img-wrap -ratio-1-1">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/nav/new_arrivals_item_nav_2.png);"></div>
 										</div>
-										<div class="product-overview-nav-photo">
-											<img src="img/new-arrivals-product-modal/nav/new_arrivals_item_nav_3.png" alt="photo">
+										<!-- item 3 -->
+										<div class="product-overview-nav-photo img-wrap -ratio-1-1">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/nav/new_arrivals_item_nav_3.png);"></div>
 										</div>
-										<div class="product-overview-nav-photo">
-											<img src="img/new-arrivals-product-modal/nav/new_arrivals_item_nav_4.png" alt="photo">
+										<!-- item 4 -->
+										<div class="product-overview-nav-photo img-wrap -ratio-1-1">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/nav/new_arrivals_item_nav_4.png);"></div>
 										</div>
-										<div class="product-overview-nav-photo">
-											<img src="img/new-arrivals-product-modal/nav/new_arrivals_item_nav_5.png" alt="photo">
+										<!-- item 5 -->
+										<div class="product-overview-nav-photo img-wrap -ratio-1-1">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/nav/new_arrivals_item_nav_5.png);"></div>
 										</div>
-										<div class="product-overview-nav-photo">
-											<img src="img/new-arrivals-product-modal/nav/new_arrivals_item_nav_6.png" alt="photo">
+										<!-- item 6 -->
+										<div class="product-overview-nav-photo img-wrap -ratio-1-1">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/nav/new_arrivals_item_nav_6.png);"></div>
 										</div>
-										<div class="product-overview-nav-photo">
-											<img src="img/new-arrivals-product-modal/nav/new_arrivals_item_nav_7.png" alt="photo">
+										<!-- item 7 -->
+										<div class="product-overview-nav-photo img-wrap -ratio-1-1">
+											<div class="-resp-bg-img" style="background-image: url(img/new-arrivals-product-modal/nav/new_arrivals_item_nav_7.png);"></div>
 										</div>
 									</div>
 									<!-- MODAL PRODUCT NAV END -->
@@ -3026,8 +3228,17 @@
 	<script src="libs/jquery.validate/jquery.validate.min.js"></script>
 	<script src="libs/select2/select2.min.js"></script>
 	<script src="libs/validate/jquery.validate.min.js"></script>
+	<script src="libs/babel-polyfill/polyfill.min.js"></script>
+	<script src="libs/intersection-observer/intersection-observer.js"></script>
+	<script src="libs/imagesloaded/imagesloaded.pkgd.min.js"></script>
+	<script src="libs/anime.js/anime.min.js"></script>
+	<script src="libs/uncover/uncover.js"></script>
+	<script src="libs/slice-revealer/sliceRevealerOnScroll.js"></script>
+	<script src="libs/slice-revealer/sliceRevealerSlider.js"></script>
+	<script src="libs/TweenMax/TweenMax.min.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDVw-tmS405xer0w92dd9746LVak7QVJx8"></script>
 
 	<script src="js/common.js"></script>
+
 </body>
 </html>
