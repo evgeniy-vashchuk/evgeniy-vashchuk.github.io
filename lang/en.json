@@ -58,11 +58,11 @@
 	"portfolio-about-title": "Hi, nice to meet you!",
 
 	"portfolio-about-section-about-title": "about me",
-	"portfolio-about-section-about-paragraph-1": "My name is Evgeniy Vashchuk and I am a creative front‑end developer located in Kharkiv, Ukraine. At the current stage of my life I'm interested in web technology and site building. During last two years I have been working on many various projects to polish my skills in web development.",
+	"portfolio-about-section-about-paragraph-1": "My name is Evgeniy Vashchuk and I am a creative front‑end developer located in Kharkiv, Ukraine. At the current stage of my life I'm interested in web technology and site building. During last three years I have been working on many various projects to polish my skills in web development.",
 	"portfolio-about-section-about-paragraph-2": "I create crossbrowser responsive HTML page layouts and make it live using JavaScript. I can help you with converting website design to HTML templates, with developing frontend for your project or with optimizing existing code. I am inspired by creating great work with people who want to building something awesome.",
 
 	"portfolio-about-section-skills-title": "my skills",
-	"portfolio-about-section-skills-paragraph-1": "Main area of my expertise is front end development and everything related with this side of web.",
+	"portfolio-about-section-skills-paragraph-1": "Main area of my expertise is front end development and everything related with this side of the web.",
 
 	"portfolio-about-section-technologies-title": "technologies",
 	"portfolio-about-section-technologies-paragraph-1": "Here is a selection of relevant technologies that I have experience with:",
@@ -74,10 +74,13 @@
 	"portfolio-about-section-services-list-4": "Advanced animation",
 	"portfolio-about-section-services-list-5": "Accessibility & semantics",
 	"portfolio-about-section-services-list-6": "Integration in Wordpress CMS",
+	"portfolio-about-section-services-list-7": "Work with front-end part in Magento projects",
 
 	"portfolio-about-section-experience-title": "experience",
-	"portfolio-about-section-experience-item-1": "Development fully functional responsive websites using HTML5, CSS3, JavaScript and JQuery. Development and support websites for different companies using Wordpress (CMS).",
-	"portfolio-about-section-experience-item-2": "Courses – Developing web applications with JavaScript.",
+	"portfolio-about-section-present": "Present",
+	"portfolio-about-section-experience-item-1": "Worked with e-commerce projects built on Magento. Communicated with back-end developers to solve tasks of the project.",
+	"portfolio-about-section-experience-item-2": "Developed fully functional responsive websites using HTML5, CSS3, JavaScript and JQuery. Developed and support websites for different companies using Wordpress (CMS).",
+	"portfolio-about-section-experience-item-3": "Courses – Developing web applications with JavaScript.",
 
 	"portfolio-about-resume": "resume",
 

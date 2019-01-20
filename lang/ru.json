@@ -58,7 +58,7 @@
 	"portfolio-about-title": "Привет, рад видеть Вас!",
 
 	"portfolio-about-section-about-title": "про меня",
-	"portfolio-about-section-about-paragraph-1": "Меня зовут Евгений Ващук и я веб-разработчик из Харькова, Украина. На данном этапе своей жизни я интересуюсь веб-технологиями и созданием сайтов. На протяжении последних двух лет я работал над различными проектами, чтобы совершенствовать мои навыки в веб-разработке.",
+	"portfolio-about-section-about-paragraph-1": "Меня зовут Евгений Ващук и я веб-разработчик из Харькова, Украина. На данном этапе своей жизни я интересуюсь веб-технологиями и созданием сайтов. На протяжении последних трех лет я работал над различными проектами, чтобы совершенствовать мои навыки в веб-разработке.",
 	"portfolio-about-section-about-paragraph-2": "Я создаю кроссбраузерные, отзывчивые HTML - страницы и оживляю их с помощью JavaScript. Я могу помочь Вам с преобразованием дизайна веб-сайта в готовые HTML-шаблоны, с разработкой frontend-части для Вашего проекта или с улучшением уже готового кода. Я вдохновляюсь работой с людьми, которые хотят создать нечто прекрасное.",
 
 	"portfolio-about-section-skills-title": "мои навыки",
@@ -74,10 +74,13 @@
 	"portfolio-about-section-services-list-4": "Продвинутые анимации",
 	"portfolio-about-section-services-list-5": "Доступность и семантичность",
 	"portfolio-about-section-services-list-6": "Интеграция в Wordpress CMS",
+	"portfolio-about-section-services-list-7": "Работа с front-end частью в проектах на Magento",
 
 	"portfolio-about-section-experience-title": "опыт",
-	"portfolio-about-section-experience-item-1": "Разработка полнофункциональных, отзывчивых сайтов с использованием HTML5, CSS3, JavaScript и JQuery. Разработка и поддержка сайтов для различных компаний используя Wordpress (CMS).",
-	"portfolio-about-section-experience-item-2": "Курсы – Разработка веб-приложений на JavaScript.",
+	"portfolio-about-section-present": "сейчас",
+	"portfolio-about-section-experience-item-1": "Работа с e-commerce проектами, построенными на Magento. Взаимодействие с back-end разработчиками для решения поставленных задач.",
+	"portfolio-about-section-experience-item-2": "Разработка полнофункциональных, отзывчивых сайтов с использованием HTML5, CSS3, JavaScript и JQuery. Разработка и поддержка сайтов для различных компаний используя Wordpress (CMS).",
+	"portfolio-about-section-experience-item-3": "Курсы – Разработка веб-приложений на JavaScript.",
 
 	"portfolio-about-resume": "резюме",
 
