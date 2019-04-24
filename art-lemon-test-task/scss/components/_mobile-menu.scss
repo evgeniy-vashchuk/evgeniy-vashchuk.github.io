@@ -1,0 +1,54 @@
+.mobile-menu {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: $zindex-modal;
+	width: 280px;
+	height: 100vh;
+	background-color: $white;
+	padding: 60px 15px 30px 15px;
+	overflow-y: auto;
+	transition: transform 0.5s;
+	transform: translate(100%, 0);
+
+	&.-open {
+		transform: translate(0, 0);
+	}
+
+	&__hamburger-menu {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+		z-index: 5;
+	}
+
+	&__search-item {
+		margin-bottom: 20px;
+	}
+
+	&__actions-list {
+		margin-bottom: 40px;
+	}
+
+	&__navigation-block {
+		margin-bottom: 40px;
+	}
+
+	&__social-list {
+		margin-bottom: 20px;
+	}
+}
+
+.mobile-menu-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	z-index: $zindex-modal-backdrop;
+	background-color: rgba($black, 0.5);
+}

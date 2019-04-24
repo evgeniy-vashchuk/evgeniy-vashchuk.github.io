@@ -1,0 +1,6 @@
+/* FONTS ================================================ */
+
+// EXAMPLES
+@include font-face("Qanelas", "../fonts/Qanelas/Qanelas-Regular", 400);
+@include font-face("Qanelas", "../fonts/Qanelas/Qanelas-Bold", 700);
+@include font-face("Qanelas", "../fonts/Qanelas/Qanelas-LightItalic", 300, italic);

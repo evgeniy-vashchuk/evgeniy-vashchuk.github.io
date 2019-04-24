@@ -1,0 +1,55 @@
+.text-block {
+	p:last-child {
+		margin-bottom: 0;
+	}
+}
+
+h1, .h1 {
+	color: $gray-800;
+	margin-bottom: 25px;
+
+	@include max-w(xl) {
+		font-size: 30px;
+	}
+
+	@include max-w(md) {
+		font-size: 28px;
+	}
+}
+
+h2, .h2 {
+	@include max-w(md) {
+		font-size: rem(26px);
+	}
+}
+
+h6, .h6 {
+	font-family: $font-family-base;
+}
+
+.extra-small-title {
+	font-size: rem(13px);
+	text-transform: uppercase;
+	line-height: 1.46;
+	margin-bottom: 10px;
+}
+
+.small-title-with-line {
+	position: relative;
+	font-size: rem(14px);
+	color: $gray-850;
+	margin-bottom: 1rem;
+	padding-left: 35px;
+
+	&:before {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(0, -50%);
+		content: '';
+		display: block;
+		width: 20px;
+		height: 1px;
+		background-color: $gray-850;
+	}
+}

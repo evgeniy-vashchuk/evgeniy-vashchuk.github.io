@@ -1,0 +1,14 @@
+.question-btn {
+	position: fixed;
+	top: 50%;
+	left: 0;
+	transform: translate(0, -50%);
+	z-index: $zindex-fixed;
+
+	@include max-w(sm) {
+		top: auto;
+		bottom: 0;
+		left: 50%;
+		transform: translate(-50%, 0);
+	}
+}

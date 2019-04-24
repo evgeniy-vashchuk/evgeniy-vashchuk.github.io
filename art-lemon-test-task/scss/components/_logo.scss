@@ -1,0 +1,13 @@
+.main-logo {
+	display: block;
+	max-width: 170px;
+
+	@include max-w(xl) {
+		max-width: 120px;
+	}
+
+	@include max-w(md) {
+		max-width: auto;
+		width: 100px;
+	}
+}

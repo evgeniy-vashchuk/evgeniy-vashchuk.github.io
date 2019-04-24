@@ -1,0 +1,262 @@
+.category-card {
+	display: block;
+	margin-bottom: 15px;
+
+	&__image-block {
+		position: relative;
+		padding-bottom: 165.5%;
+		margin-bottom: 15px;
+	}
+
+	&__image {
+		@include absolute-cover;
+		@include rbg;
+		transition: filter 0.3s;
+	}
+
+	&__hover-block {
+		@include absolute-cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background-color: rgba($white, 0.5);
+		transition: opacity 0.3s;
+		opacity: 0;
+	}
+
+	&__hover-block-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 60px;
+		height: 60px;
+		background-color: $white;
+		border-radius: 50%;
+		font-size: 20px;
+		color: $gray-400;
+	}
+
+	&__title {
+		text-transform: uppercase;
+		text-align: center;
+		transition: opacity 0.3s;
+		opacity: 0.9;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&:hover {
+		.category-card__image {
+			@include gray;
+		}
+
+		.category-card__hover-block {
+			opacity: 1;
+		}
+
+		.category-card__title {
+			opacity: 0.3;
+			color: $link-color;
+		}
+	}
+}
+
+.bestsellers-card {
+	display: block;
+	transition: transform 0.3s;
+
+	&:hover {
+		color: $black;
+
+		.bestsellers-card__bottom-block {
+			&:before {
+				bottom: 0;
+			}
+		}
+	}
+
+	&__image-block {
+		background-color: $gray-150;
+	}
+
+	&__top-line {
+		padding: 15px 20px 15px 0;
+		overflow: hidden;
+	}
+
+	&__badge {
+		float: left;
+	}
+
+	&__rating {
+		float: right;
+		font-size: 22px;
+		line-height: 1;
+	}
+
+	&__rating {
+		&.-empty {
+			color: rgba($black, 0.3);
+		}
+		
+		&.-full {
+			color: $pink;
+		}
+	}
+
+	&__image-wrap {
+		position: relative;
+		padding-bottom: 100%;
+	}
+	
+	&__image {
+		@include absolute-cover;
+		@include rbg;
+	}
+
+	&__link {
+		text-align: center;
+		font-size: rem(14px);
+		letter-spacing: letter-spacing(20, 14);
+		color: $gray-450;
+		margin-bottom: 0;
+		padding: 10px 15px 20px 15px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+
+	&__bottom-block {
+		position: relative;
+		padding: 15px;
+		background-color: $white;
+		text-align: center;
+		overflow: hidden;
+
+		&:before {
+			position: absolute;
+			bottom: 100%;
+			left: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $gray-150;
+			content: '';
+			display: block;
+			transition: bottom 0.5s;
+		}
+	}
+
+	&__bottom-block-content {
+		position: relative;
+		z-index: 1;
+	}
+
+	&__title {
+		padding: 0 20px;
+		height: 36px;
+		overflow: hidden;
+	}
+
+	&__price {
+		font-size: rem(17px);
+		letter-spacing: letter-spacing(20, 17);
+		color: $lime;
+		margin-bottom: 0;
+	}
+}
+
+.advantages-card {
+
+	@include max-w(xxl) {
+		margin-bottom: 15px;
+	}
+
+	&__top-block-wrap {
+		position: relative;
+		padding: 5px;
+		overflow: hidden;
+
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: '';
+			display: block;
+			width: 55px;
+			height: 55px;
+			background-color: $light-gray;
+		}
+
+		&:after {
+			position: absolute;
+			bottom: 0;
+			right: 0;
+			content: '';
+			display: block;
+			width: 55px;
+			height: 55px;
+			background-color: $light-gray;
+		}
+	}
+
+	&__top-block {
+		position: relative;
+		z-index: 1;
+		border: 1px solid $light-gray;
+		background-color: $white;
+		padding: 50px 30px;
+	}
+
+	&__decoration-text {
+		position: absolute;
+		z-index: 1;
+		width: 8px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+		background-color: $white;
+
+		&.-left-top {
+			top: 70px;
+			left: 0;
+			transform: translate(-50%, 0);
+		}
+
+		&.-right-bottom {
+			bottom: 70px;
+			right: 0;
+			transform: translate(50%, 0);
+		}
+	}
+
+	&__icon-block {
+		position: relative;
+		padding-bottom: 100%;
+	}
+
+	&__icon {
+		@include absolute-center;
+		padding: 40px;
+		max-height: 100%;
+
+		@include max-w(sm) {
+			padding: 60px;
+		}
+	}
+
+	&__bottom-block {
+		text-align: center;
+		padding: 25px 15px;
+
+		@include max-w(md) {
+			padding: 15px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 0;
+		overflow: hidden;
+		height: 36px;
+	}
+}

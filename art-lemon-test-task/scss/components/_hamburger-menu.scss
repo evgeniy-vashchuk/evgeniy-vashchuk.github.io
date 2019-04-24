@@ -1,0 +1,45 @@
+.hamburger-menu {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
+
+	&:hover {
+		cursor: pointer;
+	}
+
+	&__item {
+		transition: all 0.2s;
+		display: block;
+		width: 40px;
+		height: 3px;
+		background: $primary;
+
+		&:not(:last-child) {
+			margin-bottom: 5px;
+		}
+	}
+
+	&.-open {
+		.hamburger-menu__item {
+			&:nth-child(1) {
+				transform: rotate(45deg);
+				transform-origin: 10px 6px;
+			}
+
+			&:nth-child(2) {
+				transform: translateX(40px);
+				opacity: 0;
+			}
+
+			&:nth-child(3) {
+				transform: rotate(-45deg);
+				transform-origin: 10px -1px;
+			}
+		}
+	}
+}

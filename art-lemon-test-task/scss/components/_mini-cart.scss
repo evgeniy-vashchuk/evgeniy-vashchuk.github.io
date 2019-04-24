@@ -1,0 +1,32 @@
+.mini-cart {
+	position: relative;
+	line-height: 1;
+	transition: color 0.3s;
+
+	&__quantity {
+		position: absolute;
+		top: -10px;
+		right: -10px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 18px;
+		height: 18px;
+		background-color: $lime;
+		color: $white;
+		border-radius: 50%;
+		font-size: rem(11px);
+
+		@include max-w(md) {
+			width: 22px;
+			height: 22px;
+			right: -13px;
+		}
+	}
+
+	&__icon {
+		@include max-w(md) {
+			font-size: 22px;
+		}
+	}
+}

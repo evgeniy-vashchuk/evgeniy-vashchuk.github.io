@@ -1,0 +1,73 @@
+.header {
+	background-color: $white;
+	padding: 20px 0;
+
+	@include max-w(md) {
+		padding: 10px 0;
+	}
+
+	&__content {
+		display: flex;
+		align-items: center;
+
+		&.-left {
+			@include max-w(xl) {
+				justify-content: center;
+				margin-bottom: 10px;
+			}
+		}
+
+		&.-right {
+			justify-content: flex-end;
+		}
+	}
+
+	&__phone-and-social-block {
+		display: flex;
+		align-items: center;
+	}
+
+	&__phone-link {
+		margin-right: 25px;
+	}
+
+	&__social-list {
+		margin-right: 55px;
+
+		@include max-w(xxl) {
+			margin-right: 30px;
+		}
+	}
+
+	&__search-item {
+		margin: 0 30px 0 40px;
+		flex-basis: 100%;
+
+		@include max-w(xl) {
+			margin-left: 0;
+		}
+
+		@include max-w(md) {
+			display: none;
+		}
+	}
+
+	&__actions-list {
+		@include max-w(md) {
+			display: none;
+		}
+	}
+
+	&__mini-cart {
+		margin-left: 40px;
+	}
+
+	&__hamburger-menu {
+		display: none;
+
+		@include max-w(md) {
+			display: flex;
+			margin-left: 40px;
+		}
+	}
+}
