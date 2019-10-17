@@ -90,7 +90,7 @@
 	<!-- HEADER END -->
 
 	<!-- BACK TO TOP BUTTON -->
-	<div class="scroll-top-button js-scroll-top js-scroll-top-button">
+	<div class="scroll-top-button js-scroll-top-btn">
 		<i class="fas fa-angle-double-up scroll-top-button__icon"></i>
 		<p class="scroll-top-button__text">back to top</p>
 	</div>
@@ -158,6 +158,16 @@
 								</tr>
 							</thead>
 							<tbody>
+								<tr>
+									<td>
+										<div class="description-text">
+											<p>Refactoring of all components.</p>
+										</div>
+									</td>
+									<td>
+										17.10.2019
+									</td>
+								</tr>
 								<tr>
 									<td>
 										<div class="description-text">
@@ -354,19 +364,21 @@
 														<div class="code-example">
 															<pre class="line-numbers">
 																<code class="language-js">
-																	// hide preloader by click
-																	$('.js-preloader').on('click', function() {
-																		$('.js-preloader').fadeOut('slow');
-																	});
+																	function hidePreloader(preloaderItem, hideTimeout) {
+																		// hide preloader by click
+																		preloaderItem.on('click', function() {
+																			$(this).fadeOut('slow');
+																		});
 
-																	$(window).on('load', function() {
-																		// PRELOADER
+																		$(window).on('load', function() {
+																			// hide preloader
+																			setTimeout(function() {
+																				preloaderItem.fadeOut('slow');
+																			}, hideTimeout);
+																		});
+																	}
 
-																		// hide preloader
-																		setTimeout(function() {
-																			$('.js-preloader').fadeOut('slow');
-																		}, 1000);
-																	});
+																	hidePreloader($('.js-preloader'), 1000);
 																</code>
 															</pre>
 														</div>
@@ -534,25 +546,33 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// SVG ANIMATION
-																	if ($('.js-svg-animation-item').length) {
-																		$('.js-svg-animation-item').waypoint({
-																			handler: function() {
-																				var thisItem = $(this.element);
+																	function svgAnimation(svgItem, duration) {
+																		$(svgItem).addClass('-animation-init');
 
-																				if (!thisItem.hasClass('-animation-init')) {
-																					// remove hide class
-																					thisItem.addClass('-animation-init');
-
-																					// svg animation init
-																					new Vivus(this.element, {
-																						duration: 200,
-																						type: 'oneByOne'
-																					});
-																				}
-																			},
-																			offset: '80%'
-																		})
+																		new Vivus(svgItem, {
+																			duration: duration,
+																			type: 'oneByOne'
+																		});
 																	}
+
+																	function svgAnimationOnScroll() {
+																		var svgItem = $('.js-svg-animation-item');
+
+																		if (svgItem.length) {
+																			svgItem.waypoint({
+																				handler: function() {
+																					if (!this.element.svgAnimationInit) {
+																						this.element.svgAnimationInit = true;
+
+																						svgAnimation(this.element, 300)
+																					}
+																				},
+																				offset: '80%'
+																			})
+																		}
+																	}
+
+																	svgAnimationOnScroll();
 																</code>
 															</pre>
 														</div>
@@ -709,43 +729,41 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// COUNT UP
-																	function countUpNumbers(target, duration) {
-																		target.each(function() {
-																			if (!target[0].countUpInit) {
-																				target[0].countUpInit = true;
+																	function countUpNumbers(countUpItem, duration) {
+																		var countNumber = $(countUpItem).attr('data-count-number'),
+																				numbersAfterComma = 0;
 
-																				var options = {
-																					useEasing: true,
-																					decimal: '.',
-																					suffix: '%'
-																				};
+																		if (countNumber.indexOf('.') > 0) {
+																			numbersAfterComma = countNumber.length - (countNumber.indexOf('.') + 1);
+																		}
 
-																				var countNumber = $(this).attr('data-count-number'),
-																						numbersAfterComma;
+																		var options = {
+																			useEasing: true,
+																			decimal: '.',
+																			suffix: '%'
+																		};
 
-																				// find amount of numbers after the decimal point
-																				if (countNumber.indexOf('.') > 0) {
-																					numbersAfterComma = countNumber.length - (countNumber.indexOf('.') + 1);
-																				} else {
-																					numbersAfterComma = 0;
-																				}
-
-																				var countUpElement = $(this).get(0),
-																						numAnim = new CountUp(countUpElement, 0, countNumber, numbersAfterComma, duration/1000, options);
-
-																				numAnim.start();
-																			}
-																		});
+																		new CountUp(countUpItem, 0, countNumber, numbersAfterComma, duration/1000, options).start();
 																	}
 
-																	if ($('.js-count-up-item').length) {
-																		$('.js-count-up-item').waypoint({
-																			handler: function() {
-																				countUpNumbers($(this.element), 4000);
-																			},
-																			offset: '80%'
-																		})
+																	function countUpNumbersOnScroll() {
+																		var countUpItem = $('.js-count-up-item');
+
+																		if (countUpItem.length) {
+																			countUpItem.waypoint({
+																				handler: function() {
+																					if (!this.element.countUpInit) {
+																						this.element.countUpInit = true;
+
+																						countUpNumbers(this.element, 4000);
+																					}
+																				},
+																				offset: '80%'
+																			})
+																		}
 																	}
+
+																	countUpNumbersOnScroll();
 																</code>
 															</pre>
 														</div>
@@ -1022,51 +1040,58 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// PROGRESS BARS
-																	function progressBars(target, duration) {
-																		if (!target[0].progressBarsInit) {
-																			target[0].progressBarsInit = true;
+																	function progressBars(progressBarsBlock, duration) {
+																		var progressBarItem = $(progressBarsBlock).find('.js-progress-bar-item');
 
-																			target.find('.js-progress-bar-item').each(function(index) {
+																		progressBarItem.each(function() {
+																			var progressBarsFillItem = $(this).find('.js-progress-bar-strip'),
+																					progressBarsCountUpItem = $(this).find('.js-progress-bar-percent'),
+																					progressBarPercent = progressBarsCountUpItem.attr('data-progress-percent');
 
-																				var progressBarPercent = $(this).find('.js-progress-bar-percent').attr('data-progress-percent');
+																			// progress bar fill animation
+																			progressBarsFillItem.animate({
+																				width: progressBarPercent + '%'
+																			}, duration, 'swing');
 
-																				// progress bar fill animation
-																				$(this).find('.js-progress-bar-strip').animate({
-																					width: progressBarPercent + '%'
-																				}, duration, 'swing');
+																			// count up animation
+																			var options = {
+																				useEasing: false,
+																				decimal: '.',
+																				suffix: '%'
+																			};
 
-																				// count up animation
-																				var options = {
-																					useEasing: false,
-																					decimal: '.',
-																					suffix: '%'
-																				};
+																			// find amount of numbers after the decimal point
+																			var numbersAfterComma = 0;
 
-																				var numbersAfterComma;
+																			if (progressBarPercent.indexOf('.') > 0) {
+																				numbersAfterComma = progressBarPercent.length - (progressBarPercent.indexOf('.') + 1);
+																			}
 
-																				// find amount of numbers after the decimal point
-																				if (progressBarPercent.indexOf('.') > 0) {
-																					numbersAfterComma = progressBarPercent.length - (progressBarPercent.indexOf('.') + 1);
-																				} else {
-																					numbersAfterComma = 0;
-																				}
+																			var countUpElement = progressBarsCountUpItem.get(0),
+																					numAnim = new CountUp(countUpElement, 0, progressBarPercent, numbersAfterComma, duration/1000, options);
 
-																				var countUpElement = $(this).find('.js-progress-bar-percent').get(0),
-																						numAnim = new CountUp(countUpElement, 0, progressBarPercent, numbersAfterComma, duration/1000, options);
+																			numAnim.start();
+																		});
+																	}
 
-																				numAnim.start();
-																			});
+																	function progressBarsOnScroll() {
+																		var progressBarsBlock = $('.js-progress-bars');
+
+																		if (progressBarsBlock.length) {
+																			progressBarsBlock.waypoint({
+																				handler: function() {
+																					if (!this.element.progressBarsInit) {
+																						this.element.progressBarsInit = true;
+
+																						progressBars(this.element, 4000);
+																					}
+																				},
+																				offset: '80%'
+																			})
 																		}
 																	}
 
-																	if ($('.js-progress-bars').length) {
-																		$('.js-progress-bars').waypoint({
-																			handler: function() {
-																				progressBars($(this.element), 4000);
-																			},
-																			offset: '80%'
-																		})
-																	}
+																	progressBarsOnScroll();
 																</code>
 															</pre>
 														</div>
@@ -1354,12 +1379,12 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// SHUFFLE FILTER
-																	function filterInit(filterContainer) {
+																	function filterInit() {
+																		var filterContainer = $('.js-filter-container');
 
 																		if (filterContainer.length) {
-																			var filterMainContainer = filterContainer,
-																					filterContent = filterMainContainer.find('.filter-content'),
-																					filterNav = filterMainContainer.find('.filter-nav'),
+																			var filterContent = filterContainer.find('.filter-content'),
+																					filterNav = filterContainer.find('.filter-nav'),
 																					filterCategoryName = '',
 																					shuffle = window.shuffle;
 
@@ -1385,7 +1410,7 @@
 																		}
 																	}
 
-																	filterInit($('.js-filter-container'));
+																	filterInit();
 																</code>
 															</pre>
 														</div>
@@ -1487,21 +1512,23 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// SMALL HEADER AFTER SCROLL
+																	function smallHeaderAfterScroll(distanceY) {
+																		var header = $('.js-header');
 
-																	// distance after which header becoming small
-																	var distanceY = 1;
+																		$(window).on('scroll', function() {
+																			if ($(this).scrollTop() > distanceY) {
+																				header.addClass('-small-header');
+																			} else {
+																				header.removeClass('-small-header');
+																			}
+																		});
 
-																	$(window).on('scroll', function() {
-																		if ($(this).scrollTop() > distanceY) {
-																			$('.js-header').addClass('-small-header');
-																		} else {
-																			$('.js-header').removeClass('-small-header');
+																		if ($(document).scrollTop() > distanceY) {
+																			header.addClass('-small-header');
 																		}
-																	})
-
-																	if ($(document).scrollTop() > distanceY) {
-																		$('.js-header').addClass('-small-header');
 																	}
+
+																	smallHeaderAfterScroll(1);
 																</code>
 															</pre>
 														</div>
@@ -1690,7 +1717,6 @@
 										<!-- description -->
 										<div class="description-text">
 											<p>Simple button for scrolling to top of the page. Button is hide, when you are in the top of page, and visible when you start scrolling.</p>
-											<p>If you have an element, when you click on which the page should be scrolled to the top, just add <strong class="red-text">class="js-scroll-top"</strong>.</p>
 										</div>
 
 										<!-- usage -->
@@ -1738,15 +1764,10 @@
 														<div class="code-example">
 															<script type="text/plain" class="language-markup line-numbers">
 																<!-- SCROLL TOP BUTTON -->
-																<button type="button" class="scroll-top-btn js-scroll-top-btn js-scroll-top">
+																<button type="button" class="scroll-top-btn js-scroll-top-btn">
 																	<i class="scroll-top-btn__icon fas fa-angle-up"></i>
 																</button>
 																<!-- SCROLL TOP BUTTON END -->
-															</script>
-
-															<script type="text/plain" class="language-markup line-numbers">
-																<!-- SCROLL TOP ELEMENT EXAMPLE -->
-																<a href="javascript:void(0);" class="js-scroll-top">Scroll top</a>
 															</script>
 														</div>
 													</div>
@@ -1802,35 +1823,48 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// SCROLL TOP BUTTON
-																	$(window).on('scroll', function() {
-																		if ($(this).scrollTop() > 100) {
-																			$('.js-scroll-top-btn').addClass('-show');
-																		} else {
-																			$('.js-scroll-top-btn').removeClass('-show');
-																		}
-																	});
+																	function showHideScrollTopBtn(distance) {
+																		var scrollTopBtn = $('.js-scroll-top-btn');
 
-																	if ($(document).scrollTop() > 100) {
-																		$('.js-scroll-top-btn').addClass('-show');
+																		$(window).on('scroll', function() {
+																			if ($(this).scrollTop() > distance) {
+																				scrollTopBtn.addClass('-show');
+																			} else {
+																				scrollTopBtn.removeClass('-show');
+																			}
+																		});
+
+																		if ($(document).scrollTop() > distance) scrollTopBtn.addClass('-show');
 																	}
 
-																	// 2) сlick event to scroll to top
-																	var scrollingComplete = true;
-
-																	$('.js-scroll-top').on('click', function() {
-
-																		if (scrollingComplete) {
-																			scrollingComplete = false;
-
-																			$('body, html').animate({
-																				scrollTop: 0
-																			}, 1000 ).promise().done(function() {
+																	function scrollTopAnimation() {
+																		var scrollTopBtn = $('.js-scroll-top-btn'),
 																				scrollingComplete = true;
-																			});
 
-																			return false;
-																		}
-																	});
+																		scrollTopBtn.on('click', function() {
+
+																			if (scrollingComplete) {
+																				scrollingComplete = false;
+
+																				$('body, html').animate({
+																					scrollTop: 0
+																				}, 1000 ).promise().done(function() {
+																					scrollingComplete = true;
+																				});
+
+																				return false;
+																			}
+																		});
+																	}
+
+																	function scrollTopBtn() {
+																		// 1) checking the distance from the top of the page
+																		showHideScrollTopBtn(100);
+																		// 2) сlick event to scroll top
+																		scrollTopAnimation();
+																	}
+
+																	scrollTopBtn();
 																</code>
 															</pre>
 														</div>
@@ -1916,32 +1950,35 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// SCROLL TO ELEMENT
-																	var animationComplete = true;
+																	function scrollToElement() {
+																		var animationComplete = true;
 
-																	$('a[href^="#"]:not(.js-no-scroll)').on('click', function(e) {
-																		e.preventDefault();
+																		$('a[href^="#"]:not(.js-no-scroll)').on('click', function(e) {
+																			e.preventDefault();
 
-																		// height of header (for offset)
-																		var headerOffset = $('.js-header').outerHeight(),
-																				idOfElement = $(this).attr('href');
+																			// height of header (for offset)
+																			var headerOffset = $('.js-header').outerHeight(),
+																					idOfElement = $(this).attr('href');
 
-																		if (headerOffset === undefined) {
-																			headerOffset = 0;
-																		}
+																			if (headerOffset === undefined) {
+																				headerOffset = 0;
+																			}
 
-																		var top = $(idOfElement).offset().top - headerOffset;
+																			var top = $(idOfElement).offset().top - headerOffset;
 
-																		if (animationComplete) {
-																			animationComplete = false;
+																			if (animationComplete) {
+																				animationComplete = false;
 
-																			$('body, html').animate({
-																				scrollTop: top
-																			}, 1000 ).promise().done(function() {
-																				animationComplete = true;
-																			});
-																		}
+																				$('body, html').animate({
+																					scrollTop: top
+																				}, 1000 ).promise().done(function() {
+																					animationComplete = true;
+																				});
+																			}
+																		});
+																	}
 
-																	});
+																	scrollToElement();
 																</code>
 															</pre>
 														</div>
@@ -2007,7 +2044,7 @@
 																} else {
 																	return widthOfScrollbar = 0;
 																}
-															};
+															}
 
 															getScrollBarWidth();
 
@@ -2073,32 +2110,32 @@
 
 													<!-- CUSTOM CHECKBOX -->
 													<div>
-														<label class="custom-checkbox">One (checked)
-															<input class="custom-checkbox__input" type="checkbox" value="one" checked>
+														<label class="custom-checkbox">One (unchecked)
+															<input class="custom-checkbox__input" type="checkbox" value="one">
 															<span class="custom-checkbox__checkmark">
 																<i class="custom-checkbox__icon fas fa-check"></i>
 															</span>
 														</label>
 													</div>
 													<div>
-														<label class="custom-checkbox">Two
-															<input class="custom-checkbox__input" type="checkbox" value="two">
+														<label class="custom-checkbox">Two (checked)
+															<input class="custom-checkbox__input" type="checkbox" value="two" checked>
 															<span class="custom-checkbox__checkmark">
 																<i class="custom-checkbox__icon fas fa-check"></i>
 															</span>
 														</label>
 													</div>
 													<div>
-														<label class="custom-checkbox">Three
-															<input class="custom-checkbox__input" type="checkbox" value="three">
+														<label class="custom-checkbox">Three (disabled)
+															<input class="custom-checkbox__input" type="checkbox" value="three" disabled>
 															<span class="custom-checkbox__checkmark">
 																<i class="custom-checkbox__icon fas fa-check"></i>
 															</span>
 														</label>
 													</div>
 													<div>
-														<label class="custom-checkbox">Four (disabled)
-															<input class="custom-checkbox__input" type="checkbox" value="four" disabled>
+														<label class="custom-checkbox">Four (checked and disabled)
+															<input class="custom-checkbox__input" type="checkbox" value="four" checked disabled>
 															<span class="custom-checkbox__checkmark">
 																<i class="custom-checkbox__icon fas fa-check"></i>
 															</span>
@@ -2112,24 +2149,24 @@
 
 													<!-- CUSTOM RADIO -->
 													<div>
-														<label class="custom-radio">One (checked)
-															<input class="custom-radio__input" type="radio" name="example" value="one" checked>
+														<label class="custom-radio">One (unchecked)
+															<input class="custom-radio__input" type="radio" name="example" value="one">
 															<span class="custom-radio__checkmark">
 																<i class="custom-radio__icon fas fa-circle"></i>
 															</span>
 														</label>
 													</div>
 													<div>
-														<label class="custom-radio">Two
-															<input class="custom-radio__input" type="radio" name="example" value="two">
+														<label class="custom-radio">Two (checked)
+															<input class="custom-radio__input" type="radio" name="example" value="two" checked>
 															<span class="custom-radio__checkmark">
 																<i class="custom-radio__icon fas fa-circle"></i>
 															</span>
 														</label>
 													</div>
 													<div>
-														<label class="custom-radio">Three
-															<input class="custom-radio__input" type="radio" name="example" value="three">
+														<label class="custom-radio">Three (disabled)
+															<input class="custom-radio__input" type="radio" name="example" value="three" disabled>
 															<span class="custom-radio__checkmark">
 																<i class="custom-radio__icon fas fa-circle"></i>
 															</span>
@@ -2191,32 +2228,32 @@
 															<script type="text/plain" class="language-markup line-numbers">
 																<!-- CUSTOM CHECKBOX -->
 																<div>
-																	<label class="custom-checkbox">One (checked)
-																		<input class="custom-checkbox__input" type="checkbox" value="one" checked>
+																	<label class="custom-checkbox">One (unchecked)
+																		<input class="custom-checkbox__input" type="checkbox" value="one">
 																		<span class="custom-checkbox__checkmark">
 																			<i class="custom-checkbox__icon fas fa-check"></i>
 																		</span>
 																	</label>
 																</div>
 																<div>
-																	<label class="custom-checkbox">Two
-																		<input class="custom-checkbox__input" type="checkbox" value="two">
+																	<label class="custom-checkbox">Two (checked)
+																		<input class="custom-checkbox__input" type="checkbox" value="two" checked>
 																		<span class="custom-checkbox__checkmark">
 																			<i class="custom-checkbox__icon fas fa-check"></i>
 																		</span>
 																	</label>
 																</div>
 																<div>
-																	<label class="custom-checkbox">Three
-																		<input class="custom-checkbox__input" type="checkbox" value="three">
+																	<label class="custom-checkbox">Three (disabled)
+																		<input class="custom-checkbox__input" type="checkbox" value="three" disabled>
 																		<span class="custom-checkbox__checkmark">
 																			<i class="custom-checkbox__icon fas fa-check"></i>
 																		</span>
 																	</label>
 																</div>
 																<div>
-																	<label class="custom-checkbox">Four (disabled)
-																		<input class="custom-checkbox__input" type="checkbox" value="four" disabled>
+																	<label class="custom-checkbox">Four (checked and disabled)
+																		<input class="custom-checkbox__input" type="checkbox" value="four" checked disabled>
 																		<span class="custom-checkbox__checkmark">
 																			<i class="custom-checkbox__icon fas fa-check"></i>
 																		</span>
@@ -2228,24 +2265,24 @@
 															<script type="text/plain" class="language-markup line-numbers">
 																<!-- CUSTOM RADIO -->
 																<div>
-																	<label class="custom-radio">One (checked)
-																		<input class="custom-radio__input" type="radio" name="example" value="one" checked>
+																	<label class="custom-radio">One (unchecked)
+																		<input class="custom-radio__input" type="radio" name="example" value="one">
 																		<span class="custom-radio__checkmark">
 																			<i class="custom-radio__icon fas fa-circle"></i>
 																		</span>
 																	</label>
 																</div>
 																<div>
-																	<label class="custom-radio">Two
-																		<input class="custom-radio__input" type="radio" name="example" value="two">
+																	<label class="custom-radio">Two (checked)
+																		<input class="custom-radio__input" type="radio" name="example" value="two" checked>
 																		<span class="custom-radio__checkmark">
 																			<i class="custom-radio__icon fas fa-circle"></i>
 																		</span>
 																	</label>
 																</div>
 																<div>
-																	<label class="custom-radio">Three
-																		<input class="custom-radio__input" type="radio" name="example" value="three">
+																	<label class="custom-radio">Three (disabled)
+																		<input class="custom-radio__input" type="radio" name="example" value="three" disabled>
 																		<span class="custom-radio__checkmark">
 																			<i class="custom-radio__icon fas fa-circle"></i>
 																		</span>
@@ -2274,17 +2311,18 @@
 
 																	$checkbox-checkmark-size: 25px;
 																	$checkbox-bg-color: #4C4E6C;
-																	$checkbox-active-bg-color: #26263F;
+
+																	// states
+																	$checkbox-checked-bg-color: #26263F;
+																	$checkbox-disabled-bg-color: #a2a3b4;
+																	$checkbox-focus-box-shadow-color: #c0c774;
 
 																	.custom-checkbox {
 																		position: relative;
-																		display: inline-block;
 																		padding-left: 35px;
-																		margin-right: 15px;
-																		margin-bottom: 1rem;
-																		line-height: 25px;
+																		margin-bottom: 15px;
+																		line-height: $checkbox-checkmark-size;
 																		cursor: pointer;
-																		user-select: none;
 
 																		&__checkmark {
 																			position: absolute;
@@ -2294,7 +2332,8 @@
 																			width: $checkbox-checkmark-size;
 																			height: $checkbox-checkmark-size;
 																			background-color: $checkbox-bg-color;
-																			transition: 0.3s;
+																			box-shadow: 0 0 0 0 $checkbox-focus-box-shadow-color;
+																			transition: background-color 0.3s, box-shadow 0.3s;
 																		}
 
 																		&__icon {
@@ -2303,23 +2342,26 @@
 																			left: 50%;
 																			transform: translate(-50%, -50%);
 																			display: inline-block;
-																			font-size: 0.9rem;
+																			font-size: 15px;
 																			color: #fff;
 																			opacity: 0;
-																			transition: 0.2s;
+																			transition: opacity 0.2s;
 																		}
 
 																		&__input {
 																			position: absolute;
-																			top: 0;
-																			left: 0;
-																			z-index: -1;
-																			visibility: hidden;
+																			width: 1px;
+																			height: 1px;
+																			margin: -1px;
+																			padding: 0;
+																			border: 0;
+																			clip: rect(0 0 0 0);
+																			overflow: hidden;
 
 																			// checked styles
 																			&:checked + {
 																				.custom-checkbox__checkmark {
-																					background-color: $checkbox-active-bg-color;
+																					background-color: $checkbox-checked-bg-color;
 
 																					.custom-checkbox__icon {
 																						opacity: 1;
@@ -2330,7 +2372,14 @@
 																			// disabled styles
 																			&:disabled + {
 																				.custom-checkbox__checkmark {
-																					background-color: rgba($checkbox-bg-color, 0.5);
+																					background-color: $checkbox-disabled-bg-color;
+																				}
+																			}
+
+																			// focus styles
+																			&:focus + {
+																				.custom-checkbox__checkmark {
+																					box-shadow: 0 0 0 3px $checkbox-focus-box-shadow-color;
 																				}
 																			}
 																		}
@@ -2352,17 +2401,18 @@
 
 																	$radio-checkmark-size: 25px;
 																	$radio-bg-color: #4C4E6C;
-																	$radio-active-bg-color: #26263F;
+
+																	// states
+																	$radio-checked-bg-color: #26263F;
+																	$radio-disabled-bg-color: #a2a3b4;
+																	$radio-focus-box-shadow-color: #c0c774;
 
 																	.custom-radio {
 																		position: relative;
-																		display: inline-block;
 																		padding-left: 35px;
-																		margin-right: 15px;
-																		margin-bottom: 1rem;
-																		line-height: 25px;
+																		margin-bottom: 15px;
+																		line-height: $radio-checkmark-size;
 																		cursor: pointer;
-																		user-select: none;
 
 																		&__checkmark {
 																			position: absolute;
@@ -2373,7 +2423,8 @@
 																			height: $radio-checkmark-size;
 																			border-radius: 50%;
 																			background-color: $radio-bg-color;
-																			transition: 0.3s;
+																			box-shadow: 0 0 0 0 $checkbox-focus-box-shadow-color;
+																			transition: background-color 0.3s, box-shadow 0.3s;
 																		}
 
 																		&__icon {
@@ -2382,23 +2433,26 @@
 																			left: 50%;
 																			transform: translate(-50%, -50%);
 																			display: inline-block;
-																			font-size: 0.65rem;
-																			color: #fff;
-																			transition: 0.2s;
+																			font-size: 9px;
+																			color: #ffffff;
+																			transition: opacity 0.2s;
 																			opacity: 0;
 																		}
 
 																		&__input {
 																			position: absolute;
-																			top: 0;
-																			left: 0;
-																			z-index: -1;
-																			visibility: hidden;
+																			width: 1px;
+																			height: 1px;
+																			margin: -1px;
+																			padding: 0;
+																			border: 0;
+																			clip: rect(0 0 0 0);
+																			overflow: hidden;
 
 																			// checked styles
 																			&:checked + {
 																				.custom-radio__checkmark {
-																					background-color: $radio-active-bg-color;
+																					background-color: $radio-checked-bg-color;
 
 																					.custom-radio__icon {
 																						opacity: 1;
@@ -2409,7 +2463,14 @@
 																			// disabled styles
 																			&:disabled + {
 																				.custom-radio__checkmark {
-																					background-color: rgba($radio-bg-color, 0.5);
+																					background-color: $radio-disabled-bg-color;
+																				}
+																			}
+
+																			// focus styles
+																			&:focus + {
+																				.custom-radio__checkmark {
+																					box-shadow: 0 0 0 3px $checkbox-focus-box-shadow-color;
 																				}
 																			}
 																		}
@@ -2476,7 +2537,7 @@
 													<h5 class="component-block-sub-title">Standart map:</h5>
 
 													<!-- GOOGLE MAP -->
-													<div id="js-map" class="google-map"></div>
+													<div class="js-map google-map"></div>
 													<!-- GOOGLE MAP END -->
 
 												</div>
@@ -2485,7 +2546,7 @@
 													<h5 class="component-block-sub-title">Multiple markers:</h5>
 
 													<!-- GOOGLE MAP WITH MULTIPLE MARKERS -->
-													<div id="js-map-multiple-markers" class="google-map"></div>
+													<div class="js-map-multiple-markers google-map"></div>
 													<!-- GOOGLE MAP WITH MULTIPLE MARKERS END -->
 
 												</div>
@@ -2543,13 +2604,13 @@
 														<div class="code-example">
 															<script type="text/plain" class="language-markup line-numbers">
 																<!-- GOOGLE MAP -->
-																<div id="js-map" class="google-map"></div>
+																<div class="js-map google-map"></div>
 																<!-- GOOGLE MAP END -->
 															</script>
 
 															<script type="text/plain" class="language-markup line-numbers">
 																<!-- GOOGLE MAP WITH MULTIPLE MARKERS -->
-																<div id="js-map-multiple-markers" class="google-map -map-absolute"></div>
+																<div class="js-map-multiple-markers google-map"></div>
 																<!-- GOOGLE MAP WITH MULTIPLE MARKERS END -->
 															</script>
 														</div>
@@ -2600,10 +2661,14 @@
 																<code class="language-js">
 																	// STANDARD GOOGLE MAP
 																	function initMap() {
+																		var mapBlock = $('.js-map');
+
+																		if (!mapBlock.length) return;
+
 																		var coordinates = new google.maps.LatLng(40.712348, -74.006720),
 																		zoom = 12;
 
-																		var map = new google.maps.Map(document.getElementById('js-map'), {
+																		var map = new google.maps.Map(mapBlock.get(0), {
 																			center: coordinates,
 																			zoom: zoom,
 																			disableDefaultUI: true,
@@ -2658,12 +2723,9 @@
 																		google.maps.event.addListener(map, 'click', function() {
 																			infoWindow.close();
 																		});
-
 																	}
 
-																	if ($('#js-map').length) {
-																		initMap();
-																	}
+																	initMap();
 																</code>
 															</pre>
 
@@ -2671,13 +2733,17 @@
 																<code class="language-js">
 																	// GOOGLE MAP WITH MULTIPLE MARKER
 																	function initMapMultipleMarkers() {
-																		var map = new google.maps.Map(document.getElementById('js-map-multiple-markers'), {
+																		var mapBlock = $('.js-map-multiple-markers');
+
+																		if (!mapBlock.length) return;
+
+																		var map = new google.maps.Map(mapBlock.get(0), {
 																			disableDefaultUI: true,
 																			zoomControl: true,
 																			fullscreenControl: true,
 																			zoomControlOptions: {
 																				position: google.maps.ControlPosition.RIGHT_CENTER
-																			},
+																			}
 																		});
 
 																		// array of markers (with coordinates, name, address)
@@ -2712,7 +2778,7 @@
 																		var bounds = new google.maps.LatLngBounds();
 
 																		// create the markers
-																		for (var i = 0; i &lt; multipleMarkers.length; i++){
+																		for (var i = 0; i < multipleMarkers.length; i++){
 
 																			var latLng = new google.maps.LatLng(multipleMarkers[i].lat, multipleMarkers[i].lng);
 																			var name = multipleMarkers[i].name;
@@ -2746,9 +2812,7 @@
 																		}
 																	}
 
-																	if ($('#js-map-multiple-markers').length) {
-																		initMapMultipleMarkers();
-																	}
+																	initMapMultipleMarkers();
 																</code>
 															</pre>
 														</div>
@@ -2773,6 +2837,10 @@
 											</a>
 
 											<span class="badge-block">
+												<span class="badge-block__badge badge -html">
+													<span>HTML</span>
+													<i class="fab fa-html5"></i>
+												</span>
 												<span class="badge-block__badge badge -sass">
 													<span>SASS</span>
 													<i class="fab fa-sass"></i>
@@ -2793,7 +2861,7 @@
 										<!-- example -->
 										<div class="component-block-example-block -mb-16">
 											<!-- GOOGLE MAP -->
-											<div id="js-map-with-marker" class="google-map"></div>
+											<div class="js-map-with-marker google-map"></div>
 											<!-- GOOGLE MAP END -->
 										</div>
 
@@ -2812,7 +2880,10 @@
 												<!-- NAVS FOR TABS -->
 												<ul class="nav nav-tabs component-block-usage__nav-tabs" role="tablist">
 													<li class="nav-item">
-														<a class="nav-link js-no-scroll active" id="html-map-marker-sass-tab" data-toggle="tab" href="#html-map-marker-sass" role="tab" aria-controls="html-map-marker-sass" aria-selected="true">SASS</a>
+														<a class="nav-link js-no-scroll active" id="html-map-marker-html-tab" data-toggle="tab" href="#html-map-marker-html" role="tab" aria-controls="html-map-marker-html" aria-selected="true">HTML</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll" id="html-map-marker-sass-tab" data-toggle="tab" href="#html-map-marker-sass" role="tab" aria-controls="html-map-marker-sass" aria-selected="true">SASS</a>
 													</li>
 													<li class="nav-item">
 														<a class="nav-link js-no-scroll" id="html-map-marker-js-tab" data-toggle="tab" href="#html-map-marker-js" role="tab" aria-controls="html-map-marker-js" aria-selected="false">JS</a>
@@ -2822,9 +2893,20 @@
 
 												<!-- TABS CONTENT -->
 												<div class="tab-content">
+													<!-- html -->
+													<div class="tab-pane show active" id="html-map-marker-html" role="tabpanel" aria-labelledby="html-map-marker-html-tab">
+														<div class="code-example">
+															<script type="text/plain" class="language-markup line-numbers">
+																<!-- GOOGLE MAP -->
+																<div class="js-map-with-marker google-map"></div>
+																<!-- GOOGLE MAP END -->
+															</script>
+														</div>
+													</div>
+													<!-- html END -->
 
 													<!-- sass -->
-													<div class="tab-pane show active" id="html-map-marker-sass" role="tabpanel" aria-labelledby="html-map-marker-sass-tab">
+													<div class="tab-pane show" id="html-map-marker-sass" role="tabpanel" aria-labelledby="html-map-marker-sass-tab">
 														<div class="code-example">
 															<pre class="line-numbers">
 																<code class="language-scss">
@@ -2896,10 +2978,14 @@
 																<code class="language-js">
 																	// MAP WITH HTML MARKER
 																	function initMapWithHtmlMarker() {
+																		var mapBlock = $('.js-map-with-marker');
+
+																		if (!mapBlock.length) return;
+
 																		var coordinates = new google.maps.LatLng(40.709541, -74.007984),
 																		zoom = 16;
 
-																		var map = new google.maps.Map(document.getElementById('js-map-with-marker'), {
+																		var map = new google.maps.Map(mapBlock.get(0), {
 																			center: coordinates,
 																			zoom: zoom,
 																			disableDefaultUI: true,
@@ -2973,9 +3059,7 @@
 																		// HTML MAP MARKER END
 																	}
 
-																	if ($('#js-map-with-marker').length) {
-																		initMapWithHtmlMarker();
-																	}
+																	initMapWithHtmlMarker();
 																</code>
 															</pre>
 														</div>
@@ -3117,44 +3201,29 @@
 																<code class="language-scss">
 																	.responsive-video {
 																		position: relative;
-																		display: block;
-																		width: 100%;
-																		padding: 0;
-																		overflow: hidden;
-																		background-color: #000;
 
 																		&__item {
 																			position: absolute;
 																			top: 0;
 																			bottom: 0;
 																			left: 0;
+																			right: 0;
 																			z-index: 1;
 																			width: 100%;
 																			height: 100%;
 																			border: 0;
 																		}
 
-																		&:before {
-																			display: block;
-																			content: "";
-																		}
-
 																		&.-ratio-16-9 {
-																			&:before {
-																				padding-top: 56.25%;
-																			}
+																			padding-bottom: 56.25%;
 																		}
 
 																		&.-ratio-4-3 {
-																			&:before {
-																				padding-top: 75%;
-																			}
+																			padding-bottom: 75%;
 																		}
 
 																		&.-ratio-1-1 {
-																			&:before {
-																				padding-top: 100%;
-																			}
+																			padding-bottom: 100%;
 																		}
 																	}
 																</code>
@@ -3207,34 +3276,29 @@
 											<div class="row">
 												<div class="col-sm-6">
 													<!-- YOUTUBE THUMBNAIL -->
-													<div class="responsive-video -ratio-16-9 video-thumbnail js-youtube-video-thumbnail">
-														<div class="video-thumbnail__overlay">
-															<svg class="video-thumbnail__icon youtube-icon" viewBox="0 0 68 48">
-																<path class="ytp-large-play-button-bg" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#212121" fill-opacity=".8"/>
-																<path d="M45 24L27 14v20" fill="#fff"/>
+													<div class="youtube-thumbnail js-youtube-thumbnail">
+														<div class="youtube-thumbnail__media -bg-image js-youtube-thumbnail-media" style="background-image: url(https://img.youtube.com/vi/E8d_JvMpoY4/sddefault.jpg)">
+															<svg class="youtube-thumbnail__icon youtube-icon" viewBox="0 0 68 48">
+																<path class="youtube-icon__figure" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#212121" fill-opacity=".8"/>
+																<path d="M45 24L27 14v20" fill="#ffffff"/>
 															</svg>
 														</div>
-
-														<iframe class="responsive-video__item -hide" data-youtube-src="https://www.youtube.com/embed/E8d_JvMpoY4" allowfullscreen></iframe>
 													</div>
 													<!-- YOUTUBE THUMBNAIL END -->
 												</div>
 
 												<div class="col-sm-6">
 													<!-- YOUTUBE THUMBNAIL -->
-													<div class="responsive-video -ratio-16-9 video-thumbnail js-youtube-video-thumbnail">
-														<div class="video-thumbnail__overlay">
-															<svg class="video-thumbnail__icon youtube-icon" viewBox="0 0 68 48">
-																<path class="ytp-large-play-button-bg" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#212121" fill-opacity=".8"/>
-																<path d="M45 24L27 14v20" fill="#fff"/>
+													<div class="youtube-thumbnail js-youtube-thumbnail">
+														<div class="youtube-thumbnail__media -bg-image js-youtube-thumbnail-media" style="background-image: url(https://img.youtube.com/vi/lVMV3StvLCs/sddefault.jpg)">
+															<svg class="youtube-thumbnail__icon youtube-icon" viewBox="0 0 68 48">
+																<path class="youtube-icon__figure" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#212121" fill-opacity=".8"/>
+																<path d="M45 24L27 14v20" fill="#ffffff"/>
 															</svg>
 														</div>
-
-														<iframe class="responsive-video__item -hide" data-youtube-src="https://www.youtube.com/embed/lVMV3StvLCs" allowfullscreen></iframe>
 													</div>
 													<!-- YOUTUBE THUMBNAIL END -->
 												</div>
-
 											</div>
 										</div>
 
@@ -3258,7 +3322,6 @@
 
 														<div class="attention-text attention-text-block__text">
 															<p>Do not forget to insert your <strong>VIDEO_ID</strong> to iframe.</p>
-															<p>This component is dependent on <a class="js-no-scroll link-slideup -white" href="#responsive-video">Embed responsive video</a>.</p>
 														</div>
 													</div>
 												</div>
@@ -3284,15 +3347,13 @@
 														<div class="code-example">
 															<script type="text/plain" class="language-markup line-numbers">
 																<!-- YOUTUBE THUMBNAIL -->
-																<div class="responsive-video -ratio-16-9 video-thumbnail js-youtube-video-thumbnail">
-																	<div class="video-thumbnail__overlay">
-																		<svg class="video-thumbnail__icon youtube-icon" viewBox="0 0 68 48">
-																			<path class="ytp-large-play-button-bg" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#212121" fill-opacity=".8"/>
-																			<path d="M45 24L27 14v20" fill="#fff"/>
+																<div class="youtube-thumbnail js-youtube-thumbnail">
+																	<div class="youtube-thumbnail__media -bg-image js-youtube-thumbnail-media" style="background-image: url(https://img.youtube.com/vi/VIDEO_ID/sddefault.jpg)">
+																		<svg class="youtube-thumbnail__icon youtube-icon" viewBox="0 0 68 48">
+																			<path class="youtube-icon__figure" d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="#212121" fill-opacity=".8"/>
+																			<path d="M45 24L27 14v20" fill="#ffffff"/>
 																		</svg>
 																	</div>
-
-																	<iframe class="responsive-video__item -hide" data-youtube-src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
 																</div>
 																<!-- YOUTUBE THUMBNAIL END -->
 															</script>
@@ -3305,36 +3366,31 @@
 														<div class="code-example">
 															<pre class="line-numbers">
 																<code class="language-scss">
-																	.video-thumbnail {
+																	.youtube-thumbnail {
+																		position: relative;
 																		cursor: pointer;
-																		background-color: #000;
+																		padding-bottom: 56.25%;
+																		background-color: #000000;
 
-																		.-hide {
-																			display: none;
-																		}
-
-																		&__overlay {
+																		&__media {
 																			position: absolute;
-																			top: 0;
 																			right: 0;
-																			bottom: 0;
 																			left: 0;
 																			width: 100%;
 																			height: 100%;
-																			z-index: 10;
-																			background-size: cover;
-																			background-position: center;
-																			background-repeat: no-repeat;
+																			z-index: 1;
+
+																			&.-bg-image {
+																				background-size: cover;
+																				background-position: center;
+																				background-repeat: no-repeat;
+																			}
 
 																			&:hover {
-																				.video-thumbnail__icon {
-																					&.youtube-icon {
-																						.ytp-large-play-button-bg {
-																							transition: fill .1s cubic-bezier(0.0,0.0,0.2,1),fill-opacity .1s cubic-bezier(0.0,0.0,0.2,1);
-																							fill: #f00;
-																							fill-opacity: 1;
-																						}
-																					}
+																				.youtube-icon__figure {
+																					transition: fill .1s cubic-bezier(0.0,0.0,0.2,1),fill-opacity .1s cubic-bezier(0.0,0.0,0.2,1);
+																					fill: #f00;
+																					fill-opacity: 1;
 																				}
 																			}
 																		}
@@ -3351,7 +3407,7 @@
 																		width: 68px;
 																		height: 48px;
 
-																		.ytp-large-play-button-bg {
+																		&__figure {
 																			transition: fill .1s cubic-bezier(0.4,0.0,1,1),fill-opacity .1s cubic-bezier(0.4,0.0,1,1);
 																		}
 																	}
@@ -3368,26 +3424,24 @@
 																<code class="language-js">
 																	// YOUTUBE THUMBNAIL
 
-																	// 1) add thumbnail
-																	$('.js-youtube-video-thumbnail').each(function() {
-																		var youtubeVideoSrc = $(this).children('iframe').attr('data-youtube-src'),
-																				youtubeVideoID = youtubeVideoSrc.split('/').pop();
+																	function getYouTubeVideoId(videoItem) {
+																		var videoThumbnailUrl = videoItem.find('.js-youtube-thumbnail-media').attr('style');
 
-																		$(this).children('.video-thumbnail__overlay').css('background-image', 'url(https://img.youtube.com/vi/' + youtubeVideoID + '/sddefault.jpg)');
-																	});
+																		return videoThumbnailUrl.split('/')[videoThumbnailUrl.split('/').length - 2];
+																	}
 
-																	// 2) on click play iframe
-																	$('.js-youtube-video-thumbnail').on('click' , function() {
-																		var $this = $(this),
-																				youtubeVideoSrc = $this.children('iframe').attr('data-youtube-src');
+																	function insertYouTubeIframe() {
+																		$('.js-youtube-thumbnail').on('click', function() {
+																			var youTubeIframe = $('&#60;iframe class="youtube-thumbnail__media" allowfullscreen&#62;&#60;/iframe&#62;');
+																					youTubeIframe.attr('allow', 'autoplay');
+																					youTubeIframe.attr('src', 'https://www.youtube.com/embed/' + getYouTubeVideoId($(this)) + '?rel=0&showinfo=0&autoplay=1');
 
-																		$this.children('iframe').attr('src', youtubeVideoSrc + '?autoplay=1');
-																		$this.children('iframe').removeClass('-hide');
+																			$(this).find('.js-youtube-thumbnail-media').remove();
+																			$(this).append(youTubeIframe);
+																		})
+																	}
 
-																		setTimeout(function() {
-																			$this.children('.video-thumbnail__overlay').addClass('-hide');
-																		}, 300);
-																	});
+																	insertYouTubeIframe();
 																</code>
 															</pre>
 														</div>
@@ -3438,32 +3492,32 @@
 											<div class="row">
 												<div class="col-sm-6">
 													<!-- VIMEO THUMBNAIL -->
-													<div class="responsive-video -ratio-16-9 video-thumbnail js-vimeo-video-thumbnail">
-														<div class="video-thumbnail__overlay">
-															<div class="video-thumbnail__icon vimeo-icon">
-																<svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid" tabindex="-1">
-																	<path class="fill" fill="#fff" d="M1 0l19 10L1 20z"/>
-																</svg>
+													<div class="vimeo-thumbnail js-vimeo-thumbnail" data-vimeo-url="https://vimeo.com/43338103">
+														<div class="vimeo-thumbnail__media -bg-image js-vimeo-thumbnail-media">
+															<div class="vimeo-thumbnail__icon">
+																<div class="vimeo-icon">
+																	<svg class="vimeo-icon__icon" viewBox="0 0 20 20" preserveAspectRatio="xMidYMid" tabindex="-1">
+																		<path class="fill" fill="#fff" d="M1 0l19 10L1 20z"/>
+																	</svg>
+																</div>
 															</div>
 														</div>
-
-														<iframe class="responsive-video__item -hide" data-vimeo-src="https://player.vimeo.com/video/43338103" allowfullscreen></iframe>
 													</div>
 													<!-- VIMEO THUMBNAIL END -->
 												</div>
 
 												<div class="col-sm-6">
 													<!-- VIMEO THUMBNAIL -->
-													<div class="responsive-video -ratio-16-9 video-thumbnail js-vimeo-video-thumbnail">
-														<div class="video-thumbnail__overlay">
-															<div class="video-thumbnail__icon vimeo-icon">
-																<svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid" tabindex="-1">
-																	<path class="fill" fill="#fff" d="M1 0l19 10L1 20z"/>
-																</svg>
+													<div class="vimeo-thumbnail js-vimeo-thumbnail" data-vimeo-url="https://vimeo.com/49190462">
+														<div class="vimeo-thumbnail__media -bg-image js-vimeo-thumbnail-media">
+															<div class="vimeo-thumbnail__icon">
+																<div class="vimeo-icon">
+																	<svg class="vimeo-icon__icon" viewBox="0 0 20 20" preserveAspectRatio="xMidYMid" tabindex="-1">
+																		<path class="fill" fill="#fff" d="M1 0l19 10L1 20z"/>
+																	</svg>
+																</div>
 															</div>
 														</div>
-
-														<iframe class="responsive-video__item -hide" data-vimeo-src="https://player.vimeo.com/video/43120185" allowfullscreen></iframe>
 													</div>
 													<!-- VIMEO THUMBNAIL END -->
 												</div>
@@ -3490,7 +3544,6 @@
 
 														<div class="attention-text attention-text-block__text">
 															<p>Do not forget to insert your <strong>VIDEO_ID</strong> to iframe.</p>
-															<p>This component is dependent on <a class="js-no-scroll link-slideup -white" href="#responsive-video">Embed responsive video</a>.</p>
 														</div>
 													</div>
 												</div>
@@ -3516,16 +3569,16 @@
 														<div class="code-example">
 															<script type="text/plain" class="language-markup line-numbers">
 																<!-- VIMEO THUMBNAIL -->
-																<div class="responsive-video -ratio-16-9 video-thumbnail js-vimeo-video-thumbnail">
-																	<div class="video-thumbnail__overlay">
-																		<div class="video-thumbnail__icon vimeo-icon">
-																			<svg viewBox="0 0 20 20" preserveAspectRatio="xMidYMid" tabindex="-1">
-																				<path class="fill" fill="#fff" d="M1 0l19 10L1 20z"/>
-																			</svg>
+																<div class="vimeo-thumbnail js-vimeo-thumbnail" data-vimeo-url="https://vimeo.com/VIDEO_ID">
+																	<div class="vimeo-thumbnail__media -bg-image js-vimeo-thumbnail-media">
+																		<div class="vimeo-thumbnail__icon">
+																			<div class="vimeo-icon">
+																				<svg class="vimeo-icon__icon" viewBox="0 0 20 20" preserveAspectRatio="xMidYMid" tabindex="-1">
+																					<path class="fill" fill="#fff" d="M1 0l19 10L1 20z"/>
+																				</svg>
+																			</div>
 																		</div>
 																	</div>
-
-																	<iframe class="responsive-video__item -hide" data-vimeo-src="https://player.vimeo.com/video/VIDEO_ID" allowfullscreen></iframe>
 																</div>
 																<!-- VIMEO THUMBNAIL END -->
 															</script>
@@ -3538,26 +3591,25 @@
 														<div class="code-example">
 															<pre class="line-numbers">
 																<code class="language-scss">
-																	.video-thumbnail {
+																	.vimeo-thumbnail {
+																		position: relative;
 																		cursor: pointer;
-																		background-color: #000;
+																		padding-bottom: 56.25%;
+																		background-color: #000000;
 
-																		.-hide {
-																			display: none;
-																		}
-
-																		&__overlay {
+																		&__media {
 																			position: absolute;
-																			top: 0;
 																			right: 0;
-																			bottom: 0;
 																			left: 0;
 																			width: 100%;
 																			height: 100%;
-																			z-index: 10;
-																			background-size: cover;
-																			background-position: center;
-																			background-repeat: no-repeat;
+																			z-index: 1;
+
+																			&.-bg-image {
+																				background-size: cover;
+																				background-position: center;
+																				background-repeat: no-repeat;
+																			}
 
 																			&:hover {
 																				.vimeo-icon {
@@ -3581,7 +3633,7 @@
 																		background: rgba(23,35,34,.75);
 																		border-radius: .5em;
 
-																		svg {
+																		&__icon {
 																			position: absolute;
 																			top: 50%;
 																			left: 50%;
@@ -3602,30 +3654,37 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// VIMEO THUMBNAIL
+																	function getVimeoVideoId(vimeoBlock) {
+																		return vimeoBlock.attr('data-vimeo-url').split('/').pop();
+																	}
 
-																	// 1) add thumbnail
-																	$('.js-vimeo-video-thumbnail').each(function() {
-																		var $this = $(this),
-																				vimeoVideoID = $this.children('iframe').attr('data-vimeo-src').split('/').pop();
-
-																		$.getJSON('https://www.vimeo.com/api/v2/video/' + vimeoVideoID + '.json?callback=?', { format: 'json' }, function (data) {
+																	function setVimeoThumbnailBackground(vimeoBlock) {
+																		$.getJSON('https://www.vimeo.com/api/v2/video/' + getVimeoVideoId(vimeoBlock) + '.json?callback=?', { format: 'json' }, function (data) {
 																			var thumbnailImg = data[0].thumbnail_large;
-																			$this.children('.video-thumbnail__overlay').css('background-image', 'url(' + thumbnailImg + ')');
+																			vimeoBlock.find('.js-vimeo-thumbnail-media').css('background-image', 'url(' + thumbnailImg + ')');
 																		});
-																	});
+																	}
 
-																	// 2) on click play iframe
-																	$('.js-vimeo-video-thumbnail').on('click' , function() {
-																		var $this = $(this),
-																				vimeoVideoSrc = $this.children('iframe').attr('data-vimeo-src');
+																	function setVimeoThumbnailBackgroundToAllBlocks() {
+																		$('.js-vimeo-thumbnail').each(function() {
+																			setVimeoThumbnailBackground($(this));
+																		});
+																	}
 
-																		$this.children('iframe').attr('src', vimeoVideoSrc + '?autoplay=1');
-																		$this.children('iframe').removeClass('-hide');
+																	setVimeoThumbnailBackgroundToAllBlocks();
 
-																		setTimeout(function() {
-																			$this.children('.video-thumbnail__overlay').addClass('-hide');
-																		}, 300);
-																	});
+																	function insertVimeoIframe() {
+																		$('.js-vimeo-thumbnail').on('click', function() {
+																			var vimeoIframe = $('&#60;iframe class="vimeo-thumbnail__media" allowfullscreen&#62;&#60;/iframe&#62;');
+																					vimeoIframe.attr('allow', 'autoplay');
+																					vimeoIframe.attr('src', 'https://player.vimeo.com/video/' + getVimeoVideoId($(this)) + '?autoplay=1');
+
+																			$(this).find('.js-vimeo-thumbnail-media').remove();
+																			$(this).append(vimeoIframe);
+																		})
+																	}
+
+																	insertVimeoIframe();
 																</code>
 															</pre>
 														</div>

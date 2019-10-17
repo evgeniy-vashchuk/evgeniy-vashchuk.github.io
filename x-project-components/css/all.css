@@ -4334,6 +4334,7 @@ button.bg-dark:focus {
 
 .align-self-auto {
   -ms-flex-item-align: auto !important;
+  -ms-grid-row-align: auto !important;
   align-self: auto !important; }
 
 .align-self-start {
@@ -4346,6 +4347,7 @@ button.bg-dark:focus {
 
 .align-self-center {
   -ms-flex-item-align: center !important;
+  -ms-grid-row-align: center !important;
   align-self: center !important; }
 
 .align-self-baseline {
@@ -4354,6 +4356,7 @@ button.bg-dark:focus {
 
 .align-self-stretch {
   -ms-flex-item-align: stretch !important;
+  -ms-grid-row-align: stretch !important;
   align-self: stretch !important; }
 
 @media (min-width: 576px) {
@@ -4445,6 +4448,7 @@ button.bg-dark:focus {
     align-content: stretch !important; }
   .align-self-sm-auto {
     -ms-flex-item-align: auto !important;
+    -ms-grid-row-align: auto !important;
     align-self: auto !important; }
   .align-self-sm-start {
     -ms-flex-item-align: start !important;
@@ -4454,12 +4458,14 @@ button.bg-dark:focus {
     align-self: flex-end !important; }
   .align-self-sm-center {
     -ms-flex-item-align: center !important;
+    -ms-grid-row-align: center !important;
     align-self: center !important; }
   .align-self-sm-baseline {
     -ms-flex-item-align: baseline !important;
     align-self: baseline !important; }
   .align-self-sm-stretch {
     -ms-flex-item-align: stretch !important;
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important; } }
 
 @media (min-width: 768px) {
@@ -4551,6 +4557,7 @@ button.bg-dark:focus {
     align-content: stretch !important; }
   .align-self-md-auto {
     -ms-flex-item-align: auto !important;
+    -ms-grid-row-align: auto !important;
     align-self: auto !important; }
   .align-self-md-start {
     -ms-flex-item-align: start !important;
@@ -4560,12 +4567,14 @@ button.bg-dark:focus {
     align-self: flex-end !important; }
   .align-self-md-center {
     -ms-flex-item-align: center !important;
+    -ms-grid-row-align: center !important;
     align-self: center !important; }
   .align-self-md-baseline {
     -ms-flex-item-align: baseline !important;
     align-self: baseline !important; }
   .align-self-md-stretch {
     -ms-flex-item-align: stretch !important;
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important; } }
 
 @media (min-width: 992px) {
@@ -4657,6 +4666,7 @@ button.bg-dark:focus {
     align-content: stretch !important; }
   .align-self-lg-auto {
     -ms-flex-item-align: auto !important;
+    -ms-grid-row-align: auto !important;
     align-self: auto !important; }
   .align-self-lg-start {
     -ms-flex-item-align: start !important;
@@ -4666,12 +4676,14 @@ button.bg-dark:focus {
     align-self: flex-end !important; }
   .align-self-lg-center {
     -ms-flex-item-align: center !important;
+    -ms-grid-row-align: center !important;
     align-self: center !important; }
   .align-self-lg-baseline {
     -ms-flex-item-align: baseline !important;
     align-self: baseline !important; }
   .align-self-lg-stretch {
     -ms-flex-item-align: stretch !important;
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important; } }
 
 @media (min-width: 1200px) {
@@ -4763,6 +4775,7 @@ button.bg-dark:focus {
     align-content: stretch !important; }
   .align-self-xl-auto {
     -ms-flex-item-align: auto !important;
+    -ms-grid-row-align: auto !important;
     align-self: auto !important; }
   .align-self-xl-start {
     -ms-flex-item-align: start !important;
@@ -4772,12 +4785,14 @@ button.bg-dark:focus {
     align-self: flex-end !important; }
   .align-self-xl-center {
     -ms-flex-item-align: center !important;
+    -ms-grid-row-align: center !important;
     align-self: center !important; }
   .align-self-xl-baseline {
     -ms-flex-item-align: baseline !important;
     align-self: baseline !important; }
   .align-self-xl-stretch {
     -ms-flex-item-align: stretch !important;
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important; } }
 
 .float-left {
@@ -8974,16 +8989,10 @@ html, body {
 
 .custom-checkbox {
   position: relative;
-  display: inline-block;
   padding-left: 35px;
-  margin-right: 15px;
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
   line-height: 25px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
+  cursor: pointer; }
   .custom-checkbox__checkmark {
     position: absolute;
     top: 50%;
@@ -8994,9 +9003,13 @@ html, body {
     width: 25px;
     height: 25px;
     background-color: #4C4E6C;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s; }
+    -webkit-box-shadow: 0 0 0 0 #c0c774;
+    box-shadow: 0 0 0 0 #c0c774;
+    -webkit-transition: background-color 0.3s, -webkit-box-shadow 0.3s;
+    transition: background-color 0.3s, -webkit-box-shadow 0.3s;
+    -o-transition: background-color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s; }
   .custom-checkbox__icon {
     position: absolute;
     top: 50%;
@@ -9005,39 +9018,39 @@ html, body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     display: inline-block;
-    font-size: 0.9rem;
+    font-size: 15px;
     color: #fff;
     opacity: 0;
-    -webkit-transition: 0.2s;
-    -o-transition: 0.2s;
-    transition: 0.2s; }
+    -webkit-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    transition: opacity 0.2s; }
   .custom-checkbox__input {
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    visibility: hidden; }
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden; }
     .custom-checkbox__input:checked + .custom-checkbox__checkmark {
       background-color: #26263F; }
       .custom-checkbox__input:checked + .custom-checkbox__checkmark .custom-checkbox__icon {
         opacity: 1; }
     .custom-checkbox__input:disabled + .custom-checkbox__checkmark {
-      background-color: rgba(76, 78, 108, 0.5); }
+      background-color: #a2a3b4; }
+    .custom-checkbox__input:focus + .custom-checkbox__checkmark {
+      -webkit-box-shadow: 0 0 0 3px #c0c774;
+      box-shadow: 0 0 0 3px #c0c774; }
   .custom-checkbox:hover .custom-checkbox__input:not(:disabled):not(:checked) + .custom-checkbox__checkmark {
     background-color: #61648a; }
 
 .custom-radio {
   position: relative;
-  display: inline-block;
   padding-left: 35px;
-  margin-right: 15px;
-  margin-bottom: 1rem;
+  margin-bottom: 15px;
   line-height: 25px;
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none; }
+  cursor: pointer; }
   .custom-radio__checkmark {
     position: absolute;
     top: 50%;
@@ -9049,9 +9062,13 @@ html, body {
     height: 25px;
     border-radius: 50%;
     background-color: #4C4E6C;
-    -webkit-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s; }
+    -webkit-box-shadow: 0 0 0 0 #c0c774;
+    box-shadow: 0 0 0 0 #c0c774;
+    -webkit-transition: background-color 0.3s, -webkit-box-shadow 0.3s;
+    transition: background-color 0.3s, -webkit-box-shadow 0.3s;
+    -o-transition: background-color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    transition: background-color 0.3s, box-shadow 0.3s, -webkit-box-shadow 0.3s; }
   .custom-radio__icon {
     position: absolute;
     top: 50%;
@@ -9060,24 +9077,30 @@ html, body {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     display: inline-block;
-    font-size: 0.65rem;
-    color: #fff;
-    -webkit-transition: 0.2s;
-    -o-transition: 0.2s;
-    transition: 0.2s;
+    font-size: 9px;
+    color: #ffffff;
+    -webkit-transition: opacity 0.2s;
+    -o-transition: opacity 0.2s;
+    transition: opacity 0.2s;
     opacity: 0; }
   .custom-radio__input {
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    visibility: hidden; }
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden; }
     .custom-radio__input:checked + .custom-radio__checkmark {
       background-color: #26263F; }
       .custom-radio__input:checked + .custom-radio__checkmark .custom-radio__icon {
         opacity: 1; }
     .custom-radio__input:disabled + .custom-radio__checkmark {
-      background-color: rgba(76, 78, 108, 0.5); }
+      background-color: #a2a3b4; }
+    .custom-radio__input:focus + .custom-radio__checkmark {
+      -webkit-box-shadow: 0 0 0 3px #c0c774;
+      box-shadow: 0 0 0 3px #c0c774; }
   .custom-radio:hover .custom-radio__input:not(:disabled):not(:checked) + .custom-radio__checkmark {
     background-color: #61648a; }
 
@@ -9154,55 +9177,47 @@ html, body {
     background-color: rgba(255, 255, 255, 0); } }
 
 .responsive-video {
-  position: relative;
-  display: block;
-  width: 100%;
-  padding: 0;
-  overflow: hidden;
-  background-color: #000; }
+  position: relative; }
   .responsive-video__item {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
+    right: 0;
     z-index: 1;
     width: 100%;
     height: 100%;
     border: 0; }
-  .responsive-video:before {
-    display: block;
-    content: ""; }
-  .responsive-video.-ratio-16-9:before {
-    padding-top: 56.25%; }
-  .responsive-video.-ratio-4-3:before {
-    padding-top: 75%; }
-  .responsive-video.-ratio-1-1:before {
-    padding-top: 100%; }
+  .responsive-video.-ratio-16-9 {
+    padding-bottom: 56.25%; }
+  .responsive-video.-ratio-4-3 {
+    padding-bottom: 75%; }
+  .responsive-video.-ratio-1-1 {
+    padding-bottom: 100%; }
 
-.video-thumbnail {
+.youtube-thumbnail {
+  position: relative;
   cursor: pointer;
-  background-color: #000; }
-  .video-thumbnail .-hide {
-    display: none; }
-  .video-thumbnail__overlay {
+  padding-bottom: 56.25%;
+  background-color: #000000; }
+  .youtube-thumbnail__media {
     position: absolute;
-    top: 0;
     right: 0;
-    bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; }
-    .video-thumbnail__overlay:hover .video-thumbnail__icon.youtube-icon .ytp-large-play-button-bg {
+    z-index: 1; }
+    .youtube-thumbnail__media.-bg-image {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; }
+    .youtube-thumbnail__media:hover .youtube-icon__figure {
       -webkit-transition: fill 0.1s cubic-bezier(0, 0, 0.2, 1), fill-opacity 0.1s cubic-bezier(0, 0, 0.2, 1);
       -o-transition: fill 0.1s cubic-bezier(0, 0, 0.2, 1), fill-opacity 0.1s cubic-bezier(0, 0, 0.2, 1);
       transition: fill 0.1s cubic-bezier(0, 0, 0.2, 1), fill-opacity 0.1s cubic-bezier(0, 0, 0.2, 1);
       fill: #f00;
       fill-opacity: 1; }
-  .video-thumbnail__icon {
+  .youtube-thumbnail__icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -9213,31 +9228,30 @@ html, body {
 .youtube-icon {
   width: 68px;
   height: 48px; }
-  .youtube-icon .ytp-large-play-button-bg {
+  .youtube-icon__figure {
     -webkit-transition: fill 0.1s cubic-bezier(0.4, 0, 1, 1), fill-opacity 0.1s cubic-bezier(0.4, 0, 1, 1);
     -o-transition: fill 0.1s cubic-bezier(0.4, 0, 1, 1), fill-opacity 0.1s cubic-bezier(0.4, 0, 1, 1);
     transition: fill 0.1s cubic-bezier(0.4, 0, 1, 1), fill-opacity 0.1s cubic-bezier(0.4, 0, 1, 1); }
 
-.video-thumbnail {
+.vimeo-thumbnail {
+  position: relative;
   cursor: pointer;
-  background-color: #000; }
-  .video-thumbnail .-hide {
-    display: none; }
-  .video-thumbnail__overlay {
+  padding-bottom: 56.25%;
+  background-color: #000000; }
+  .vimeo-thumbnail__media {
     position: absolute;
-    top: 0;
     right: 0;
-    bottom: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat; }
-    .video-thumbnail__overlay:hover .vimeo-icon {
+    z-index: 1; }
+    .vimeo-thumbnail__media.-bg-image {
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat; }
+    .vimeo-thumbnail__media:hover .vimeo-icon {
       background-color: #3CAEF2; }
-  .video-thumbnail__icon {
+  .vimeo-thumbnail__icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -9253,7 +9267,7 @@ html, body {
   transition: opacity 250ms ease-out,background-color 40ms,color 40ms;
   background: rgba(23, 35, 34, 0.75);
   border-radius: .5em; }
-  .vimeo-icon svg {
+  .vimeo-icon__icon {
     position: absolute;
     top: 50%;
     left: 50%;
