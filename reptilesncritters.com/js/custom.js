@@ -1,41 +1,34 @@
 $(document).ready(function() {
 
-	function showOverlay() {
-		$('.js-categories-navigation-overlay').fadeIn(300);
-	}
-
-	function hideOverlay() {
-		$('.js-categories-navigation-overlay').fadeOut(300);
-	}
-
+	// CATEGORIES NAVIGATION
 	function showCategoriesNavigation() {
 		$('.js-categories-navigation').addClass('-show');
+		$('html').addClass('-overflow-hidden');
+		$('.js-categories-navigation-overlay').fadeIn(300);
 	}
 
 	function hideCategoriesNavigation() {
 		$('.js-categories-navigation').removeClass('-show');
+		$('html').removeClass('-overflow-hidden');
+		$('.js-categories-navigation-overlay').fadeOut(300);
 	}
 
-	function openCategoriesNavigation() {
-		$(document).on('click', '.js-hamburger-icon:not(.-active)', function() {
+	$('.js-hamburger-icon').on('click', function() {
+		if (!$(this).hasClass('-active')) {
+			// OPEN
 			$(this).addClass('-active');
-			$('body').addClass('-overflow-hidden');
-
-			showOverlay();
 			showCategoriesNavigation();
-		});
-	}
 
-	function closeCategoriesNavigation() {
-		$(document).on('click', '.js-hamburger-icon.-active, .js-categories-navigation-overlay', function(){
-			$('.js-hamburger-icon').removeClass('-active');
-			$('body').removeClass('-overflow-hidden');
-
-			hideOverlay();
+		} else {
+			// CLOSE
+			$(this).removeClass('-active');
 			hideCategoriesNavigation();
-		});
-	}
+		}
+	});
 
-	openCategoriesNavigation();
-	closeCategoriesNavigation();
+	$('.js-categories-navigation-overlay').on('click', function() {
+		$('.js-hamburger-icon').removeClass('-active');
+		hideCategoriesNavigation();
+	});
+	// CATEGORIES NAVIGATION END
 });

@@ -975,6 +975,14 @@ body {background-color:white;}
 
 .-overflow-hidden {
 	overflow: hidden;
+	position: relative;
+	height: 100%;
+}
+
+.-overflow-hidden body {
+	overflow: hidden;
+	position: relative;
+	height: 100%;
 }
 
 /* hamburger icon */
@@ -1067,6 +1075,7 @@ body {background-color:white;}
 		top: 50%;
 		right: 15px;
 		transform: translate(0, -50%);
+		z-index: 10;
 	}
 
 	body {
