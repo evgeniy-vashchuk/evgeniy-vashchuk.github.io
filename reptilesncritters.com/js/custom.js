@@ -3,13 +3,13 @@ $(document).ready(function() {
 	// CATEGORIES NAVIGATION
 	function showCategoriesNavigation() {
 		$('.js-categories-navigation').addClass('-show');
-		$('html').addClass('-overflow-hidden');
+		bodyScrollLock.disableBodyScroll(document.querySelector('.js-categories-navigation'));
 		$('.js-categories-navigation-overlay').fadeIn(300);
 	}
 
 	function hideCategoriesNavigation() {
 		$('.js-categories-navigation').removeClass('-show');
-		$('html').removeClass('-overflow-hidden');
+		bodyScrollLock.enableBodyScroll(document.querySelector('.js-categories-navigation'));
 		$('.js-categories-navigation-overlay').fadeOut(300);
 	}
 
