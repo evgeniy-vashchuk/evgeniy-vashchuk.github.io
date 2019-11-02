@@ -823,7 +823,7 @@ img.products {max-width: 162px;}
 @media only screen and (min-width: 1px) and (max-width: 768px) {
 .blue-bg, .lime-gr-bg{margin-top:11px;}
 .rept-pad{margin-top:23px;}
-.navbar-col {display:none;}
+.top-panel .navbar {display:none;}
 .image{ display:none;}
 .image li{margin:15px 7px;}
 .top-cart ul li a {font-size: 14px;}
