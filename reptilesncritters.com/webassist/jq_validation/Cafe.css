@@ -1,0 +1,78 @@
+/*right triangle*/
+.serverInvalidState {
+  display:none;	
+}
+
+.validation-close {
+	font-size: 12px;
+    position: absolute;
+    right: 4px;
+    top: 5px;
+	cursor: pointer;
+	color: #FFFFFF;
+	border: 0px solid #FFFFFF;
+	-webkit-border-radius: 0px;
+	-moz-border-radius: 0px;
+	border-radius: 0px;
+	padding: 0px;
+	font-family: monospace;
+	font-weight: normal;
+	font-style: normal;
+}
+
+.Cafe {
+	position:absolute;
+	padding:15px 15px 15px 15px ;
+	color:#FFFFFF;
+	background:#992d21; /* default background for browsers without gradient support */
+	
+	background-image:        -webkit-gradient(linear, 0 0, 0 100%, from(#992d21), to(#992d21));
+    background-image: -webkit-linear-gradient(top, #992d21, #992d21); /* For Chrome and Safari */
+    background-image:    -moz-linear-gradient(top, #992d21, #992d21); /* For old Fx (3.6 to 15) */
+    background-image:     -ms-linear-gradient(top, #992d21, #992d21); /* For pre-releases of IE 10*/
+    background-image:      -o-linear-gradient(top, #992d21, #992d21); /* For old Opera (11.1 to 12.0) */ 
+    background-image:         linear-gradient(to bottom, #992d21, #992d21); /* Standard syntax; must be last */
+	
+	-webkit-border-radius:0px;
+	-moz-border-radius:0px;
+	border-radius:0px;
+	border: 1px solid #4a3723;
+	
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: undefined;
+	font-style: inherit;
+	max-width: 350em;
+	white-space: nowrap;
+}
+
+/* THE POINTER
+------------------------------------------------------------------------------------------------------------------------------- */
+
+.Cafe-wrapper {
+	opacity:0.8;
+	position:absolute;
+	top:0;
+	left:0;
+}
+
+.Cafe-before {
+	position:absolute;
+	border-style:solid;
+    display:block; 
+    width:0;
+	border-width:17.236067977499786px 34.47213595499957px 0 0; /* vary these values to change the angle of the vertex */
+	border-style:solid;
+	border-color:#4a3723 transparent; 
+}
+
+.Cafe-after {
+	position:absolute;
+	content:"";
+	border:0;
+	border-width:15px 30px 0 0;
+	border-style:solid;
+	border-color:#992d21 transparent;
+    display:block;
+    width:0;
+}
