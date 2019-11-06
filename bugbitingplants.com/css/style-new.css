@@ -719,15 +719,12 @@ element.style {
 @media only screen and (min-width: 980px) and (max-width: 1024px) {
 .navigation ul{padding-left:0px;}
 .rept-rgt-pic{padding:20px 0 10px;}
-.top-cart ul li a {font-size:9px;}
 .image li {width:117px!important;}
 .image li a {font-size:17px; line-height:24px;}
 .content-sec-par {min-height:320px!important;}
 .content-sec-par-home {min-height:320px!important;}
 .home{min-height:150px!important;}
-.top-cart ul {width:65%!important;}
 .form-control {font-size:10px!important;}
-.top-cart ul li:first-child a {padding:0px 3px 0px 0px!important; margin:0px 3px 0px 0px!important;}
 .box {
     /* width: 350px; */
     height: 340px;
