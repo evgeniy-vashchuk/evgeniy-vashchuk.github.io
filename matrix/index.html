@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Main | The Matrix app</title>
+	<meta name="description" content="The Matrix app">
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+
+	<!-- like wab app in IOS -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="#333257" />
+
+	<!-- <meta name="apple-itunes-app" content="app-id=570060128"> -->
+
+	<!-- connection FAVICONS -->
+	<link rel="icon" href="img/favicon/favicon.ico">
+	<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+
+	<!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+	<meta name="theme-color" content="#333257">
+
+	<!-- connection CSS -->
+	<link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+
+	<!-- MOBILE MENU -->
+	<div class="mobile-menu js-mobile-menu">
+		<div class="mobile-menu__content">
+			<div class="mobile-menu__nav-list">
+				<nav>
+					<ul class="simple-list -gray js-main-navigation">
+						<li class="simple-list__item">
+							<a href="#welcome-section" class="simple-list__link">Welcome</a>
+						</li>
+						<li class="simple-list__item">
+							<a href="#our-app-section" class="simple-list__link">Our app</a>
+						</li>
+						<li class="simple-list__item">
+							<a href="#categories-section" class="simple-list__link">Categories</a>
+						</li>
+						<li class="simple-list__item">
+							<a href="#to-use-section" class="simple-list__link">To use</a>
+						</li>
+						<li class="simple-list__item">
+							<a href="#i-want-to-section" class="simple-list__link">I Want To</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+
+			<div class="mobile-menu__figures-block">
+				<img src="img/figures/mobile-menu/figure-1.svg" class="mobile-menu__figure js-mobile-menu-figure -first" alt="">
+				<img src="img/figures/mobile-menu/figure-2.svg" class="mobile-menu__figure js-mobile-menu-figure -second" alt="">
+				<img src="img/figures/mobile-menu/figure-3.svg" class="mobile-menu__figure js-mobile-menu-figure -third" alt="">
+				<img src="img/figures/mobile-menu/figure-4.svg" class="mobile-menu__figure js-mobile-menu-figure -fourth" alt="">
+			</div>
+		</div>
+	</div>
+	<!-- MOBILE MENU END -->
+
+	<!-- HEADER -->
+	<header class="header js-header js-animation-item animation-item-ft" data-animation-delay="500">
+		<div class="header-wrap">
+			<div class="container-wide">
+				<div class="header__content">
+					<div class="header__left-side">
+						<a href="/" class="header__logo logo-letter">
+							<img src="img/logo-letter.svg" alt="Logo">
+						</a>
+					</div>
+
+					<div class="header__right-side">
+						<div class="header__nav-list">
+							<nav>
+								<ul class="simple-list -gray js-main-navigation">
+									<li class="simple-list__item">
+										<a href="#welcome-section" class="simple-list__link">Welcome</a>
+									</li>
+									<li class="simple-list__item">
+										<a href="#our-app-section" class="simple-list__link">Our app</a>
+									</li>
+									<li class="simple-list__item">
+										<a href="#categories-section" class="simple-list__link">Categories</a>
+									</li>
+									<li class="simple-list__item">
+										<a href="#to-use-section" class="simple-list__link">To use</a>
+									</li>
+									<li class="simple-list__item -like-btn">
+										<a href="#i-want-to-section" class="simple-list__link">I Want To</a>
+									</li>
+								</ul>
+							</nav>
+						</div>
+
+						<!-- HAMBURGER ICON -->
+						<div class="header__hamburger-icon-block hamburger-icon-block js-hamburger">
+							<div class="hamburger-icon">
+								<span class="hamburger-icon__cross"></span>
+
+								<span class="hamburger-icon__lines">
+									<span class="hamburger-icon__line-middle"></span>
+								</span>
+							</div>
+						</div>
+						<!-- HAMBURGER ICON END -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- HEADER END -->
+
+	<!-- CONTENT -->
+	<main class="main js-parallax-scene">
+		<!-- SECTION WELCOME -->
+		<section class="section-welcome section js-plate -purple-bg -white-text" id="welcome-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-7">
+						<div class="section-welcome__main-content">
+							<h1 class="section-welcome__title js-animation-item animation-item-fr">We know everything about you!</h1>
+
+							<ul class="list-with-decoration js-animation-item animation-item-fr" data-animation-delay="100">
+								<li class="list-with-decoration__item">Do you want to know about yourself that you don’t know?</li>
+								<li class="list-with-decoration__item">Or maybe to find out the personal qualities of someone else?</li>
+							</ul>
+
+							<h6 class="section-welcome__description -mb-50 js-animation-item animation-item-fr" data-animation-delay="200">Then download the application and you'll know more than you can imagine.</h6>
+
+							<div class="section-welcome__button-block js-animation-item animation-item-fr" data-animation-delay="300">
+								<a href="#?" class="btn-app-download">
+									<img class="btn-app-download__icon" src="img/apple.svg" alt="Icon">
+
+									<div class="btn-app-download__text-block">
+										<div class="btn-app-download__small-text">Download on the</div>
+										<div class="btn-app-download__main-text">App Store</div>
+									</div>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-5 section-welcome__block-with-figures">
+						<!-- figures -->
+						<div class="section-welcome__figures">
+							<div class="section-welcome__figures-container">
+								<div class="section-welcome__figures-wrapper">
+									<img class="section-welcome__figure -first js-animation-item animation-item-fb" data-animation-delay="200" src="img/figures/welcome-section/1.svg" alt="">
+									<img class="section-welcome__figure -second js-animation-item animation-item-fb" data-animation-delay="300" src="img/figures/welcome-section/2.svg" alt="">
+									<img class="section-welcome__figure -third js-animation-item animation-item-fb" data-animation-delay="400" src="img/figures/welcome-section/3.svg" alt="">
+									<img class="section-welcome__figure -fourth js-animation-item animation-item-fb" data-animation-delay="500" src="img/figures/welcome-section/4.svg" alt="">
+									<img class="section-welcome__figure -fifth js-animation-item animation-item-fb" data-animation-delay="600" src="img/figures/welcome-section/5.svg" alt="">
+								</div>
+							</div>
+						</div>
+						<!-- figures END -->
+
+						<!-- phone -->
+						<div class="section-welcome__phone js-animation-item animation-item-fb" data-animation-delay="200">
+							<div class="phone-block phone-with-inner-animation js-plate-item">
+								<img class="phone-block__shape" src="img/phone-shape.svg" alt="Phone shape">
+
+								<div class="phone-block__inner-content phone-with-inner-animation__content">
+									<div class="phone-with-inner-animation__inner-image -first">
+										<img src="img/welcome-phone/inner-parts/1.svg" class="js-parallax-item" data-depth="0.1" alt="Image">
+									</div>
+									<div class="phone-with-inner-animation__inner-image -second">
+										<img src="img/welcome-phone/inner-parts/2.svg" class="js-parallax-item" data-depth="0.15" alt="Image">
+									</div>
+									<div class="phone-with-inner-animation__inner-image -third">
+										<img src="img/welcome-phone/inner-parts/3.svg" class="js-parallax-item" data-depth="0.13" alt="Image">
+									</div>
+									<div class="phone-with-inner-animation__inner-image -fourth">
+										<img src="img/welcome-phone/inner-parts/4.svg" class="js-parallax-item" data-depth="0.07" alt="Image">
+									</div>
+								</div>
+
+								<div class="phone-with-inner-animation__logo">
+									<img src="img/logo-white.svg" alt="Logo">
+								</div>
+
+								<h3 class="phone-with-inner-animation__text">Hello!<br> Open your World</h3>
+							</div>
+						</div>
+						<!-- phone END -->
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- SECTION WELCOME -->
+
+		<!-- SECTION OUR APP -->
+		<section class="section-our-app section -purple-bg -white-text" id="our-app-section">
+			<div class="section-our-app__content">
+				<div class="container">
+					<div class="row">
+						<div class="section-our-app__text-block col">
+							<h2 class="js-animation-item animation-item-fr">The Matrix app</h2>
+
+							<div class="section-our-app__text text-block -left-indent -with-decoration js-animation-item animation-item-fr" data-animation-delay="100">
+								<p>We have developed the Matrix application which will make personal characteristics for any person. The app has been tested for more than <strong>1000+ people</strong> and surprisingly accurate calc. With the Matrix, you'll know your inclinations and predispositions. You'll know your strengths and weaknesses. And this will help you in shaping your career, relationships and successful life in general.</p>
+							</div>
+
+							<h6 class="section-our-app__sub-title js-animation-item animation-item-fr" data-animation-delay="200"><strong>The core of the Matrix</strong> is ​​a neural network with artificial intelligence. It has no analogues in the world. And it can surprise you.</h6>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="section-our-app__features-block">
+				<div class="section-our-app__features-block-inner features-block">
+					<!-- ITEM 1 -->
+					<div class="features-block__item features-block-item -first -pink js-animation-item animation-item-fb">
+						<div class="features-block-item__main-block">
+							<div class="features-block-item__content">
+								<div class="features-block-item__icon">
+									<img src="img/features-items/features-icon-1.svg" alt="Icon">
+								</div>
+								<h6 class="features-block-item__title">98% match personalities</h6>
+							</div>
+						</div>
+					</div>
+					<!-- ITEM 1 END -->
+
+					<!-- ITEM 2 -->
+					<div class="features-block__item features-block-item -second -purple js-animation-item animation-item-fb" data-animation-delay="50">
+						<div class="features-block-item__main-block">
+							<div class="features-block-item__content">
+								<div class="features-block-item__icon">
+									<img src="img/features-items/features-icon-2.svg" alt="Icon">
+								</div>
+								<h6 class="features-block-item__title">Individual characteristic</h6>
+							</div>
+						</div>
+					</div>
+					<!-- ITEM 2 END -->
+
+					<!-- ITEM 3 -->
+					<div class="features-block__item features-block-item -third -green js-animation-item animation-item-fb" data-animation-delay="100">
+						<div class="features-block-item__main-block">
+							<div class="features-block-item__content">
+								<div class="features-block-item__icon">
+									<img src="img/features-items/features-icon-3.svg" alt="Icon">
+								</div>
+								<h6 class="features-block-item__title">Artificial intelligence & neural network</h6>
+							</div>
+						</div>
+					</div>
+					<!-- ITEM 3 END -->
+
+					<!-- ITEM 4 -->
+					<div class="features-block__item features-block-item -fourth -yellow js-animation-item animation-item-fb" data-animation-delay="150">
+						<div class="features-block-item__main-block">
+							<div class="features-block-item__content">
+								<div class="features-block-item__icon">
+									<img src="img/features-items/features-icon-4.svg" alt="Icon">
+								</div>
+								<h6 class="features-block-item__title">People are becoming happier</h6>
+							</div>
+						</div>
+					</div>
+					<!-- ITEM 4 END -->
+				</div>
+			</div>
+
+			<!-- figures -->
+			<div class="section-our-app__figures">
+				<div class="section-our-app__figures-container">
+					<img class="section-our-app__figure -first js-animation-item animation-item-fb" src="img/figures/our-app-section/1.svg" alt="">
+					<img class="section-our-app__figure -second js-animation-item animation-item-fb" data-animation-delay="100" src="img/figures/our-app-section/2.svg" alt="">
+					<img class="section-our-app__figure -third js-animation-item animation-item-fb" data-animation-delay="200" src="img/figures/our-app-section/3.svg" alt="">
+				</div>
+			</div>
+			<!-- figures END -->
+		</section>
+		<!-- SECTION OUR APP END -->
+
+		<!-- SECTION CATEGORIES -->
+		<section class="section-categories section" id="categories-section">
+			<div class="section-categories__figures">
+				<div class="section-categories__figures-container">
+					<img class="section-categories__figure -first js-animation-item animation-item-fb" src="img/figures/categories-section/1.svg" alt="">
+					<img class="section-categories__figure -second js-animation-item animation-item-fb" src="img/figures/categories-section/2.svg" alt="">
+				</div>
+			</div>
+
+			<div class="section-categories__content-block">
+				<div class="container">
+					<div class="row">
+						<div class="col-xl-7 order-2 order-xl-1 section-categories__col-with-phone">
+							<!-- phone -->
+							<div class="section-categories__phone-block phone-block phone-with-categories">
+								<img class="phone-block__shape" src="img/phone-shape.svg" alt="Phone shape">
+
+								<div class="phone-block__inner-content">
+
+									<div class="app-categories-screen">
+										<div class="app-main-bar">
+											<div class="app-avatar-block -white">
+												<div class="app-avatar-block__image">
+													<img src="img/app-images/avatar-white.svg" alt="Avatar">
+												</div>
+
+												<div class="app-avatar-block__text-block">
+													<p class="app-avatar-block__name">Valery</p>
+													<p class="app-avatar-block__date">04.08.2001</p>
+												</div>
+											</div>
+
+											<div class="app-available-dates-block">
+												<p class="app-available-dates-block__number">2</p>
+												<p class="app-available-dates-block__text">Available dates</p>
+											</div>
+										</div>
+
+										<div class="app-categories-screen__main-block app-categories-block">
+											<p class="app-categories-block__title">Information about you</p>
+
+											<div class="app-categories-block__categories-grid">
+												<div class="app-categories-block__categories-col">
+													<div class="app-categories-item">
+														<div class="app-categories-item__image">
+															<img src="img/app-images/categories-img-1.svg" alt="Categories image">
+														</div>
+
+														<p class="app-categories-item__title">Personal features</p>
+													</div>
+												</div>
+												<div class="app-categories-block__categories-col">
+													<div class="app-categories-item">
+														<div class="app-categories-item__image">
+															<img src="img/app-images/categories-img-2.svg" alt="Categories image">
+														</div>
+
+														<p class="app-categories-item__title">Destiny</p>
+													</div>
+												</div>
+												<div class="app-categories-block__categories-col">
+													<div class="app-categories-item">
+														<div class="app-categories-item__image">
+															<img src="img/app-images/categories-img-3.svg" alt="Categories image">
+														</div>
+
+														<p class="app-categories-item__title">Money</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="phone-block__app-bottom-bar app-bottom-bar">
+										<div class="app-bottom-bar__col -left">
+											<div class="app-bottom-bar__icon">
+												<img src="img/app-images/bar-icon-1.svg" alt="Icon">
+											</div>
+											<div class="app-bottom-bar__icon">
+												<img src="img/app-images/bar-icon-2.svg" alt="Icon">
+											</div>
+										</div>
+
+										<div class="app-bottom-bar__col -right">
+											<div class="app-bottom-bar__icon">
+												<img src="img/app-images/bar-icon-3.svg" alt="Icon">
+											</div>
+											<div class="app-bottom-bar__icon">
+												<img src="img/app-images/bar-icon-4.svg" alt="Icon">
+											</div>
+										</div>
+
+										<div class="app-bottom-bar__main-button app-main-button">
+											<img class="app-main-button__icon" src="img/app-images/main-button-shape.svg" alt="Main button">
+											<p class="app-main-button__text">Find out more</p>
+										</div>
+									</div>
+								</div>
+
+								<!-- outside items -->
+								<div class="phone-with-categories__outside-item -first">
+									<div class="js-animation-item animation-item-fr">
+										<div class="app-categories-item js-parallax-item" data-depth="0.03">
+											<div class="app-categories-item__image">
+												<img src="img/app-images/categories-img-4.svg" alt="Categories image">
+											</div>
+
+											<p class="app-categories-item__title">Previous life</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="phone-with-categories__outside-item -second">
+									<div class="js-animation-item animation-item-fl" data-animation-delay="50">
+										<div class="app-categories-item js-parallax-item" data-depth="0.08">
+											<div class="app-categories-item__image">
+												<img src="img/app-images/categories-img-5.svg" alt="Categories image">
+											</div>
+
+											<p class="app-categories-item__title">Relationships</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="phone-with-categories__outside-item -third">
+									<div class="js-animation-item animation-item-fl" data-animation-delay="100">
+										<div class="app-categories-item js-parallax-item" data-depth="0.05">
+											<div class="app-categories-item__image">
+												<img src="img/app-images/categories-img-6.svg" alt="Categories image">
+											</div>
+
+											<p class="app-categories-item__title">Health</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="phone-with-categories__outside-item -fourth">
+									<div class="js-animation-item animation-item-fl" data-animation-delay="150">
+										<div class="app-categories-item js-parallax-item" data-depth="0.03">
+											<div class="app-categories-item__image">
+												<img src="img/app-images/categories-img-7.svg" alt="Categories image">
+											</div>
+
+											<p class="app-categories-item__title">Life guidance</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="phone-with-categories__outside-item -fifth">
+									<div class="js-animation-item animation-item-fr" data-animation-delay="150">
+										<div class="app-categories-item js-parallax-item" data-depth="0.05">
+											<div class="app-categories-item__image">
+												<img src="img/app-images/categories-img-8.svg" alt="Categories image">
+											</div>
+
+											<p class="app-categories-item__title">Sexiness</p>
+										</div>
+									</div>
+								</div>
+
+								<div class="phone-with-categories__outside-item -sixth">
+									<div class="js-animation-item animation-item-fl" data-animation-delay="50">
+										<div class="app-categories-item js-parallax-item" data-depth="0.1">
+											<div class="app-categories-item__image">
+												<img src="img/app-images/categories-img-9.svg" alt="Categories image">
+											</div>
+
+											<p class="app-categories-item__title">Programs</p>
+										</div>
+									</div>
+								</div>
+								<!-- outside items END -->
+							</div>
+							<!-- phone END -->
+						</div>
+
+						<div class="col-xl-5 order-1 order-xl-2">
+							<div class="section-categories__content">
+								<h2 class="js-animation-item animation-item-fr">12 pages of life</h2>
+
+								<div class="text-block -left-indent js-animation-item animation-item-fr" data-animation-delay="100">
+									<p>We will divide the feature into <strong>12 pages</strong> to make the application as convenient and user-friendly as possible.</p>
+								</div>
+
+								<h6 class="section-categories__description -mb-50 js-animation-item animation-item-fr" data-animation-delay="200">Download the application to see all the features of the Matrix</h6>
+
+								<div class="section-categories__button-block js-animation-item animation-item-fr" data-animation-delay="300">
+									<a href="#?" class="btn-app-download">
+										<img class="btn-app-download__icon" src="img/apple.svg" alt="Icon">
+
+										<div class="btn-app-download__text-block">
+											<div class="btn-app-download__small-text">Download on the</div>
+											<div class="btn-app-download__main-text">App Store</div>
+										</div>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- SECTION CATEGORIES END -->
+
+		<!-- SECTION TO USE -->
+		<section class="section-to-use section" id="to-use-section">
+			<div class="section-to-use__figures">
+				<div class="section-to-use__figures-container">
+					<img class="section-to-use__figure -first js-animation-item animation-item-fb" src="img/figures/to-use-section/1.svg" alt="">
+					<img class="section-to-use__figure -second js-animation-item animation-item-fb" data-animation-delay="100" src="img/figures/to-use-section/2.svg" alt="">
+					<img class="section-to-use__figure -third js-animation-item animation-item-fb" data-animation-delay="200" src="img/figures/to-use-section/3.svg" alt="">
+				</div>
+			</div>
+
+			<div class="section-to-use__content-block">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8">
+							<h2 class="section-to-use__title js-animation-item animation-item-fr">Want to know how to use the Matrix?</h2>
+
+							<div class="section-to-use__description text-block -left-indent js-animation-item animation-item-fr" data-animation-delay="100">
+								<p>Matrix will make you a <strong>unique calculation</strong>. And it will help you find answers to many vital questions.</p>
+							</div>
+
+							<ul class="list-with-icon js-animation-item animation-item-fr" data-animation-delay="200">
+								<li class="list-with-icon__item">
+									<span class="list-with-icon__icon">
+										<img src="img/icons-for-list/1.svg" alt="Icon">
+									</span>
+									What do people expect from you?
+								</li>
+								<li class="list-with-icon__item">
+									<span class="list-with-icon__icon">
+										<img src="img/icons-for-list/2.svg" alt="Icon">
+									</span>
+									What to expect from people around you?
+								</li>
+								<li class="list-with-icon__item">
+									<span class="list-with-icon__icon">
+										<img src="img/icons-for-list/3.svg" alt="Icon">
+									</span>
+									Who are your friends?
+								</li>
+								<li class="list-with-icon__item">
+									<span class="list-with-icon__icon">
+										<img src="img/icons-for-list/4.svg" alt="Icon">
+									</span>
+									Why do your relatives be such?
+								</li>
+								<li class="list-with-icon__item">
+									<span class="list-with-icon__icon">
+										<img src="img/icons-for-list/5.svg" alt="Icon">
+									</span>
+									Who is your soulmate and love?
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- phones -->
+			<div class="section-to-use__phones-inverted-wrapper">
+				<div class="section-to-use__phones-inverted-block js-animation-item animation-item-fr">
+					<div class="section-to-use__phone-item -first">
+						<div class="phone-block phone-with-checks js-parallax-item" data-depth="0.04">
+							<img class="phone-block__shape" src="img/phone-shape.svg" alt="Phone shape">
+
+							<div class="phone-block__inner-content">
+								<div class="app-checks-screen">
+
+									<div class="app-main-bar">
+										<p class="app-main-title">My checks</p>
+
+										<div class="app-available-dates-block">
+											<p class="app-available-dates-block__number">2</p>
+											<p class="app-available-dates-block__text">Available dates</p>
+										</div>
+									</div>
+
+									<div class="app-content">
+										<div class="app-checks-list">
+											<div class="app-checks-list__item app-check-item">
+												<div class="app-avatar-block -black">
+													<div class="app-avatar-block__image">
+														<img src="img/app-images/avatar-black.svg" alt="Avatar">
+													</div>
+
+													<div class="app-avatar-block__text-block">
+														<p class="app-avatar-block__name">Jamison</p>
+														<p class="app-avatar-block__date">01.12.2003</p>
+													</div>
+												</div>
+
+												<svg class="app-check-item__arrow" width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity=".4" fill="#302F61"><path d="M.845 11.428a.767.767 0 01-.072-1.083l4.02-4.587A.767.767 0 015.947 6.77l-4.02 4.587a.767.767 0 01-1.082.072z"/><path d="M5.872 6.84a.767.767 0 01-1.082-.075L.78 2.154a.767.767 0 111.158-1.007l4.01 4.611a.767.767 0 01-.076 1.083z"/></g></svg>
+											</div>
+
+											<div class="app-checks-list__item app-check-item">
+												<div class="app-avatar-block -black">
+													<div class="app-avatar-block__image">
+														<img src="img/app-images/avatar-black.svg" alt="Avatar">
+													</div>
+
+													<div class="app-avatar-block__text-block">
+														<p class="app-avatar-block__name">Shirley</p>
+														<p class="app-avatar-block__date">03.07.2001</p>
+													</div>
+												</div>
+
+												<svg class="app-check-item__arrow" width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity=".4" fill="#302F61"><path d="M.845 11.428a.767.767 0 01-.072-1.083l4.02-4.587A.767.767 0 015.947 6.77l-4.02 4.587a.767.767 0 01-1.082.072z"/><path d="M5.872 6.84a.767.767 0 01-1.082-.075L.78 2.154a.767.767 0 111.158-1.007l4.01 4.611a.767.767 0 01-.076 1.083z"/></g></svg>
+											</div>
+
+											<div class="app-checks-list__item app-check-item">
+												<div class="app-avatar-block -black">
+													<div class="app-avatar-block__image">
+														<img src="img/app-images/avatar-black.svg" alt="Avatar">
+													</div>
+
+													<div class="app-avatar-block__text-block">
+														<p class="app-avatar-block__name">Laraine</p>
+														<p class="app-avatar-block__date">07.04.2004</p>
+													</div>
+												</div>
+
+												<svg class="app-check-item__arrow" width="7" height="12" fill="none" xmlns="http://www.w3.org/2000/svg"><g opacity=".4" fill="#302F61"><path d="M.845 11.428a.767.767 0 01-.072-1.083l4.02-4.587A.767.767 0 015.947 6.77l-4.02 4.587a.767.767 0 01-1.082.072z"/><path d="M5.872 6.84a.767.767 0 01-1.082-.075L.78 2.154a.767.767 0 111.158-1.007l4.01 4.611a.767.767 0 01-.076 1.083z"/></g></svg>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="phone-block__app-bottom-bar app-bottom-bar">
+									<div class="app-bottom-bar__col -left">
+										<div class="app-bottom-bar__icon">
+											<img src="img/app-images/bar-icon-1.svg" alt="Icon">
+										</div>
+										<div class="app-bottom-bar__icon">
+											<img src="img/app-images/bar-icon-2.svg" alt="Icon">
+										</div>
+									</div>
+
+									<div class="app-bottom-bar__col -right">
+										<div class="app-bottom-bar__icon">
+											<img src="img/app-images/bar-icon-3.svg" alt="Icon">
+										</div>
+										<div class="app-bottom-bar__icon">
+											<img src="img/app-images/bar-icon-4.svg" alt="Icon">
+										</div>
+									</div>
+
+									<div class="app-bottom-bar__main-button app-main-button">
+										<img class="app-main-button__icon" src="img/app-images/main-button-shape.svg" alt="Main button">
+										<p class="app-main-button__text">Find out more</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="section-to-use__phone-item -second">
+						<div class="phone-block phone-with-forecast js-parallax-item" data-depth="0.05">
+							<img class="phone-block__shape" src="img/phone-shape.svg" alt="Phone shape">
+
+							<div class="phone-block__inner-content">
+								<div class="app-forecast-screen">
+									<svg class="app-forecast-screen__arrow" width="17" height="11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.536 7.275L14.54 1.27a1.213 1.213 0 011.716 1.716L9.394 9.849a1.212 1.212 0 01-1.716 0L.814 2.986A1.213 1.213 0 112.53 1.27l6.006 6.005z" fill="#302F61" opacity=".3"/></svg>
+
+									<div class="app-forecast-screen__image">
+										<img src="img/app-images/forecast-image.svg" alt="Forecast image">
+									</div>
+
+									<p class="app-forecast-screen__title">Forecast</p>
+
+									<div class="app-forecast-screen__forecast-line app-forecast-line">
+										<div class="app-forecast-line__item">20</div>
+										<div class="app-forecast-line__item">21-22</div>
+										<div class="app-forecast-line__item -active">23.5-24</div>
+										<div class="app-forecast-line__item">25</div>
+										<div class="app-forecast-line__item">26-27</div>
+
+										<p class="app-forecast-line__text">Years old</p>
+									</div>
+
+									<p class="app-forecast-screen__sub-title">23.5-24 years old</p>
+
+									<div class="app-forecast-screen__text">
+										<p>There comes a stage in which it is important to show the talents to a wide circle of people, literally to go on stage and boldly declare oneself. Intuition, which will lead to fateful events, will help...</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- phones END -->
+		</section>
+		<!-- SECTION TO USE END -->
+
+		<!-- SECTION REVIEWS -->
+		<section class="section-reviews section">
+			<div class="section-reviews__figures">
+				<div class="section-reviews__figures-container">
+					<img class="section-reviews__figure -first js-animation-item animation-item-fb" src="img/figures/reviews-section/1.svg" alt="">
+					<img class="section-reviews__figure -second js-animation-item animation-item-fb" data-animation-delay="100" src="img/figures/reviews-section/2.svg" alt="">
+					<img class="section-reviews__figure -third js-animation-item animation-item-fb" data-animation-delay="200" src="img/figures/reviews-section/3.svg" alt="">
+				</div>
+			</div>
+
+			<div class="section-reviews__content-block">
+				<div class="container">
+					<h2 class="section-reviews__title js-animation-item animation-item-fb">And these are people who have already discovered the Matrix app</h2>
+
+					<div class="reviews-slider js-reviews-slider">
+						<div class="review-card js-animation-item animation-item-fr" data-animation-delay="10">
+							<div class="review-card__main-content">
+								<h5>Brilliant!!!!</h5>
+
+								<div class="review-card__rating">
+									<div class="rating-block -five">
+										<ul class="rating-block__empty-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+										</ul>
+
+										<ul class="rating-block__full-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="review-card__text text-block">
+									<p>Wow!!! This is just amazing! I learned so much about my boyfriend from the app and it all matches him. Now I broke up with him, not a reliable guy, I always knew that )))</p>
+								</div>
+							</div>
+
+							<div class="review-card__autor-date">
+								<div class="review-card__autor">
+									<p class="review-card__name">Racheal</p>
+									<p class="review-card__from">from AppStore</p>
+								</div>
+
+								<p class="review-card__date">Mar 14</p>
+							</div>
+						</div>
+
+						<div class="review-card js-animation-item animation-item-fr" data-animation-delay="100">
+							<div class="review-card__main-content">
+								<h5>Really surprised! )</h5>
+
+								<div class="review-card__rating">
+									<div class="rating-block -five">
+										<ul class="rating-block__empty-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+										</ul>
+
+										<ul class="rating-block__full-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="review-card__text text-block">
+									<p>I really liked it. Deserved 5 stars. I’ll check everyone. I could learn a lot of things)</p>
+								</div>
+							</div>
+
+							<div class="review-card__autor-date">
+								<div class="review-card__autor">
+									<p class="review-card__name">Charles</p>
+									<p class="review-card__from">from AppStore</p>
+								</div>
+
+								<p class="review-card__date">Aug 5</p>
+							</div>
+						</div>
+
+						<div class="review-card js-animation-item animation-item-fr" data-animation-delay="200">
+							<div class="review-card__main-content">
+								<h5>Liked the app but 4</h5>
+
+								<div class="review-card__rating">
+									<div class="rating-block -four">
+										<ul class="rating-block__empty-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+										</ul>
+
+										<ul class="rating-block__full-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="review-card__text text-block">
+									<p>Interestingly, but it’s sad that your life has already been painted by someone from birth to the last day, so 4.</p>
+								</div>
+							</div>
+
+							<div class="review-card__autor-date">
+								<div class="review-card__autor">
+									<p class="review-card__name">Corine</p>
+									<p class="review-card__from">from AppStore</p>
+								</div>
+
+								<p class="review-card__date">May 16</p>
+							</div>
+						</div>
+
+						<div class="review-card js-animation-item animation-item-fr" data-animation-delay="300">
+							<div class="review-card__main-content">
+								<h5>This is just a super tool!!</h5>
+
+								<div class="review-card__rating">
+									<div class="rating-block -five">
+										<ul class="rating-block__empty-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+										</ul>
+
+										<ul class="rating-block__full-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="review-card__text text-block">
+									<p>This is just a super tool! I check all of my colleagues at work and conduct staff recruitment by studying the personal qualities of each employee. Perfect!</p>
+								</div>
+							</div>
+
+							<div class="review-card__autor-date">
+								<div class="review-card__autor">
+									<p class="review-card__name">Charisse</p>
+									<p class="review-card__from">from AppStore</p>
+								</div>
+
+								<p class="review-card__date">Sep 28</p>
+							</div>
+						</div>
+
+						<div class="review-card js-animation-item animation-item-fr" data-animation-delay="400">
+							<div class="review-card__main-content">
+								<h5>Brilliant!!!!</h5>
+
+								<div class="review-card__rating">
+									<div class="rating-block -five">
+										<ul class="rating-block__empty-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+										</ul>
+
+										<ul class="rating-block__full-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="review-card__text text-block">
+									<p>Wow!!! This is just amazing! I learned so much about my boyfriend from the app and it all matches him. Now I broke up with him, not a reliable guy, I always knew that )))</p>
+								</div>
+							</div>
+
+							<div class="review-card__autor-date">
+								<div class="review-card__autor">
+									<p class="review-card__name">Racheal</p>
+									<p class="review-card__from">from AppStore</p>
+								</div>
+
+								<p class="review-card__date">Mar 14</p>
+							</div>
+						</div>
+
+						<div class="review-card js-animation-item animation-item-fr" data-animation-delay="500">
+							<div class="review-card__main-content">
+								<h5>Really surprised! )</h5>
+
+								<div class="review-card__rating">
+									<div class="rating-block -five">
+										<ul class="rating-block__empty-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+										</ul>
+
+										<ul class="rating-block__full-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="review-card__text text-block">
+									<p>I really liked it. Deserved 5 stars. I’ll check everyone. I could learn a lot of things)</p>
+								</div>
+							</div>
+
+							<div class="review-card__autor-date">
+								<div class="review-card__autor">
+									<p class="review-card__name">Charles</p>
+									<p class="review-card__from">from AppStore</p>
+								</div>
+
+								<p class="review-card__date">Aug 5</p>
+							</div>
+						</div>
+
+						<div class="review-card js-animation-item animation-item-fr" data-animation-delay="600">
+							<div class="review-card__main-content">
+								<h5>Liked the app but 4</h5>
+
+								<div class="review-card__rating">
+									<div class="rating-block -four">
+										<ul class="rating-block__empty-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-empty.svg" alt="Star">
+											</li>
+										</ul>
+
+										<ul class="rating-block__full-block rating-list">
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+											<li class="rating-list__item">
+												<img src="img/icon-star-full.svg" alt="Star">
+											</li>
+										</ul>
+									</div>
+								</div>
+
+								<div class="review-card__text text-block">
+									<p>Interestingly, but it’s sad that your life has already been painted by someone from birth to the last day, so 4.</p>
+								</div>
+							</div>
+
+							<div class="review-card__autor-date">
+								<div class="review-card__autor">
+									<p class="review-card__name">Corine</p>
+									<p class="review-card__from">from AppStore</p>
+								</div>
+
+								<p class="review-card__date">May 16</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- SECTION REVIEWS END -->
+	</main>
+	<!-- CONTENT END -->
+
+	<!-- FOOTER -->
+	<footer class="footer">
+		<div class="footer__content -purple-bg">
+			<!-- FIGURES -->
+			<div class="footer__figures">
+				<div class="footer__figures-container">
+					<img class="footer__figure -first js-animation-item animation-item-fb" src="img/figures/i-want-to-section/figures-1.svg" alt="">
+					<img class="footer__figure -second js-animation-item animation-item-fb" data-animation-delay="100" src="img/figures/i-want-to-section/figures-2.svg" alt="">
+					<img class="footer__figure -third js-animation-item animation-item-fb" data-animation-delay="200" src="img/figures/i-want-to-section/figures-3.svg" alt="">
+					<img class="footer__figure -fourth js-animation-item animation-item-fb" data-animation-delay="300" src="img/figures/i-want-to-section/figures-4.svg" alt="">
+				</div>
+			</div>
+			<!-- FIGURES END -->
+
+			<!-- SECTION I WANT TO -->
+			<section class="footer__content-section section-i-want-to section -white-text" id="i-want-to-section">
+				<div class="container">
+					<div class="section-i-want-to__content">
+						<h2 class="section-i-want-to__title js-animation-item animation-item-fb">Try our technology on yourself right now</h2>
+
+						<h6 class="-op-80 -mb-50 js-animation-item animation-item-fb" data-animation-delay="100">In addition, you can download applications absolutely free.</h6>
+
+						<div class="section-i-want-to__button-block js-animation-item animation-item-fb" data-animation-delay="200">
+							<a href="#?" class="btn-app-download">
+								<img class="btn-app-download__icon" src="img/apple.svg" alt="Icon">
+
+								<div class="btn-app-download__text-block">
+									<div class="btn-app-download__small-text">Download on the</div>
+									<div class="btn-app-download__main-text">App Store</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- SECTION I WANT TO END -->
+
+			<div class="footer__main-content js-animation-item animation-item-fb">
+				<div class="container">
+					<div class="footer__lists-block">
+						<nav class="footer__lists-block-item">
+							<ul class="simple-list -gray js-main-navigation">
+								<li class="simple-list__item">
+									<a href="#welcome-section" class="simple-list__link">Welcome</a>
+								</li>
+								<li class="simple-list__item">
+									<a href="#our-app-section" class="simple-list__link">Our app</a>
+								</li>
+								<li class="simple-list__item">
+									<a href="#categories-section" class="simple-list__link">Categories</a>
+								</li>
+								<li class="simple-list__item">
+									<a href="#to-use-section" class="simple-list__link">To use</a>
+								</li>
+								<li class="simple-list__item">
+									<a href="#i-want-to-section" class="simple-list__link">I Want To</a>
+								</li>
+							</ul>
+						</nav>
+
+						<nav class="footer__lists-block-item">
+							<ul class="simple-list -small -light-gray text-right d-md-none">
+								<li class="simple-list__item">
+									<a href="#writeToUs" class="simple-list__link">Write to us</a>
+								</li>
+								<li class="simple-list__item">
+									<a href="terms-and-conditions.html" class="simple-list__link" target="_blank">Terms & conditions</a>
+								</li>
+								<li class="simple-list__item">
+									<a href="privacy-policy.html" class="simple-list__link" target="_blank">Privacy policy</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+
+					<div class="footer__bottom-block">
+						<div class="footer__logo-and-text footer-logo-and-text">
+							<a href="/" class="footer-logo-and-text__logo">
+								<img src="img/logo.svg" alt="Logo">
+							</a>
+
+							<p class="footer-logo-and-text__text">© 2019. All rights reserved.</p>
+						</div>
+
+						<nav>
+							<ul class="simple-list -small -light-gray d-none d-md-block">
+								<li class="simple-list__item">
+									<a href="#writeToUs" class="simple-list__link">Write to us</a>
+								</li>
+								<li class="simple-list__item">
+									<a href="terms-and-conditions.html" class="simple-list__link" target="_blank">Terms & conditions</a>
+								</li>
+								<li class="simple-list__item">
+									<a href="privacy-policy.html" class="simple-list__link" target="_blank">Privacy policy</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!-- FOOTER END -->
+
+	<!-- WRITE TO US MODAL -->
+	<div class="modal fade" id="writeToUs" tabindex="-1" role="dialog" aria-labelledby="writeToUsLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-body">
+					<span class="modal__close-button close-modal-button" data-dismiss="modal">
+						<img class="close-modal-button__icon" src="img/cross.svg" alt="Cross icon">
+					</span>
+
+					<h2 class="modal__title" id="writeToUsLabel">Write to us</h2>
+
+					<p class="modal__description enlarged-text">Write to us if you have any questions or if you want to just thank!</p>
+
+					<form class="modal__form">
+						<div class="form-group">
+							<label for="form-email">Your email</label>
+							<input type="email" class="form-control" id="form-email">
+						</div>
+						<div class="form-group">
+							<label for="form-message">Message</label>
+							<textarea class="form-control" id="form-message" rows="3"></textarea>
+						</div>
+
+						<div class="submit-block">
+							<button type="submit" class="btn btn-md btn-primary">Send</button>
+						</div>
+					</form>
+
+					<p class="text-center mb-0">
+						Or write to us by email <a href="mailto:svetasmirechka@yandex.ru">svetasmirechka@yandex.ru</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- WRITE TO US MODAL END -->
+
+	<!-- connection JAVASCRIPT -->
+	<script src="js/libs.min.js"></script>
+	<script src="js/main.min.js"></script>
+</body>
+</html>
