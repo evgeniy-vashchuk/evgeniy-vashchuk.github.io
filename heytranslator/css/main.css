@@ -7192,12 +7192,12 @@ h1, .h1 {
 }
 
 .navbar-brand {
-	max-width: 200px;
+	width: 200px;
 }
 
 @media only screen and (max-width: 575px) {
 	.navbar-brand {
-		max-width: 150px;
+		width: 150px;
 	}
 }
 
@@ -7231,6 +7231,12 @@ h1, .h1 {
 @media only screen and (min-width: 768px) {
 	.section-welcome__main-text-block {
 		margin-bottom: 0;
+	}
+}
+
+@media only screen and (min-width: 1650px) {
+	.section-welcome__main-title {
+		padding-right: 30px;
 	}
 }
 
