@@ -6415,10 +6415,6 @@ ul {
 	user-select: text;
 }
 
-html, body {
-	height: 100%;
-}
-
 .container-fluid, .container-sm, .container-md, .container-lg, .container-xl {
 	max-width: calc(1600px + 40px);
 }
@@ -6770,7 +6766,7 @@ strong {
 .wrap-for-sticky {
 	box-sizing: border-box;
 	position: relative;
-	min-height: 100%;
+	min-height: 100vh;
 }
 
 .footer {
@@ -7119,6 +7115,10 @@ strong {
 	}
 }
 
+.section-quote {
+	overflow: hidden;
+}
+
 @media only screen and (max-width: 767px) {
 	.section-quote .container {
 		max-width: 100%;
@@ -7127,6 +7127,8 @@ strong {
 }
 
 .section-quote__block {
+	position: relative;
+	z-index: 1;
 	background-color: #f7f8f8;
 	padding: 80px 0;
 }
@@ -7137,11 +7139,31 @@ strong {
 	}
 }
 
+@media only screen and (min-width: 1260px) {
+	.section-quote__block {
+		max-width: 900px;
+		margin-left: auto;
+	}
+}
+
 @media only screen and (min-width: 1700px) {
 	.section-quote__block {
 		margin-left: 300px;
 		width: 1080px;
+		max-width: none;
 	}
+}
+
+.section-quote__block:after {
+	content: '';
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: -9999px;
+	z-index: -1;
+	background-color: #f7f8f8;
 }
 
 .section-quote__block p {
@@ -7171,8 +7193,10 @@ strong {
 	}
 }
 
-.section-about__bottom-content {
-	padding-bottom: 0;
+@media only screen and (min-width: 768px) {
+	.section-about__bottom-content {
+		padding-bottom: 0;
+	}
 }
 
 .section-about__bottom-description {
@@ -7197,7 +7221,7 @@ strong {
 
 @media only screen and (max-width: 767px) {
 	.section-necessity {
-		padding-top: 150px;
+		padding-top: 80px;
 	}
 }
 
@@ -7276,8 +7300,36 @@ strong {
 	}
 }
 
+@media only screen and (min-width: 1260px) {
+	.section-opportunities__content-col {
+		flex: 0 0 58.33333%;
+		max-width: 58.33333%;
+	}
+}
+
+@media only screen and (min-width: 1700px) {
+	.section-opportunities__content-col {
+		max-width: 75%;
+		flex: 0 0 75%;
+	}
+}
+
 .section-opportunities__img-col {
 	padding-bottom: 80px;
+}
+
+@media only screen and (min-width: 1260px) {
+	.section-opportunities__img-col {
+		flex: 0 0 41.66667%;
+		max-width: 41.66667%;
+	}
+}
+
+@media only screen and (min-width: 1700px) {
+	.section-opportunities__img-col {
+		max-width: 25%;
+		flex: 0 0 25%;
+	}
 }
 
 @media only screen and (min-width: 768px) {

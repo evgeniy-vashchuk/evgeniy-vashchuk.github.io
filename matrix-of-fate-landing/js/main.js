@@ -132,8 +132,15 @@
     var animationComplete = true;
     $('a[href^="#"]:not(.js-no-scroll)').on('click', function (e) {
       e.preventDefault();
-      var idOfElement = $(this).attr('href');
-      var top = $(idOfElement).offset().top;
+      var idOfElement = $(this).attr('href'),
+          scrollToTop = $(this).hasClass('js-without-compensation'),
+          compensation = 0;
+
+      if ($(window).width() > 767 && !scrollToTop) {
+        compensation = 60;
+      }
+
+      var top = $(idOfElement).offset().top + compensation;
 
       if (animationComplete) {
         animationComplete = false;
