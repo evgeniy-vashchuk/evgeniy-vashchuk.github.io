@@ -1,0 +1,198 @@
+// COLORS
+$white:    #ffffff;
+$gray-100: #f8f9fa;
+$gray-200: #c4c4c4;
+$gray-300: #e5e5e5;
+$gray-400: #ced4da;
+$gray-500: #f7f8f8;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000000;
+$black-for-text:    #222831;
+$black-for-section: #171b21;
+
+$blue:    #007bff;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #dc3545;
+$orange:  #f8a977;
+$yellow:  #ffc107;
+$green:   #7ee48e;
+$teal:    #20c997;
+$cyan:    #17a2b8;
+
+$primary:       $orange;
+$secondary:     $black-for-text;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+
+// MAIN
+$body-bg:                   $white;
+$body-color:                $secondary;
+$enable-rounded:            false;
+$border-width:              1px !default;
+$border-radius:             .25rem !default;
+$border-radius-lg:          .3rem !default;
+$border-radius-sm:          .2rem !default;
+
+// TYPOGRAPHY
+$font-family-sans-serif:    'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+$font-family-serif:         'Philosopher', 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
+$font-family-monospace:     SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base:          $font-family-sans-serif;
+
+$font-size-base:            1.25rem;
+$font-size-lg:              $font-size-base * 1.25 !default;
+$font-size-sm:              $font-size-base * .875 !default;
+$font-weight-base:          400;
+$line-height-base:          1.8;
+$line-height-sm:            1.5 !default;
+$line-height-lg:            1.5 !default;
+
+$paragraph-margin-bottom:   20px;
+
+$h1-font-size:              46px;
+$h2-font-size:              36px;
+$h3-font-size:              32px; //
+$h4-font-size:              28px; //
+$h5-font-size:              24px;
+$h6-font-size:              17px;
+$headings-font-family:      'Source Sans Pro', $font-family-sans-serif;
+$headings-font-weight:      700;
+$headings-line-height:      1.4;
+$headings-color:            inherit;
+
+// GRID
+$grid-gutter-width: 40px;
+$grid-columns: 12;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1260px);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1200px);
+$container-fluid-max-width: 1600px;
+
+// LINKS
+$link-color:                              $secondary;
+$link-decoration:                         none;
+$link-hover-color:                        $primary;
+$link-hover-decoration:                   none;
+
+// Buttons + Forms
+//
+// Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
+
+$input-btn-padding-y:         .375rem !default;
+$input-btn-padding-x:         .75rem !default;
+$input-btn-font-family:       $headings-font-family !default;
+$input-btn-font-size:         18px !default;
+$input-btn-line-height:       $line-height-base !default;
+
+$input-btn-focus-width:       .2rem !default;
+$input-btn-focus-color:       rgba($primary, .25) !default;
+$input-btn-focus-box-shadow:  0 0 0 $input-btn-focus-width $input-btn-focus-color !default;
+
+$input-btn-padding-y-sm:      .25rem !default;
+$input-btn-padding-x-sm:      .5rem !default;
+$input-btn-font-size-sm:      18px !default;
+$input-btn-line-height-sm:    $line-height-base !default;
+
+$input-btn-padding-y-lg:      1.282rem !default;
+$input-btn-padding-x-lg:      40px !default;
+$input-btn-font-size-lg:      18px !default;
+$input-btn-line-height-lg:    $line-height-lg !default;
+
+$input-btn-border-width:      $border-width !default;
+
+// Buttons
+// For each of Bootstrap's buttons, define text, background, and border color.
+
+$btn-padding-y:               $input-btn-padding-y !default;
+$btn-padding-x:               $input-btn-padding-x !default;
+$btn-font-family:             $input-btn-font-family !default;
+$btn-font-size:               $input-btn-font-size !default;
+$btn-line-height:             $input-btn-line-height !default;
+$btn-white-space:             null !default; // Set to `nowrap` to prevent text wrapping
+
+$btn-padding-y-sm:            $input-btn-padding-y-sm !default;
+$btn-padding-x-sm:            $input-btn-padding-x-sm !default;
+$btn-font-size-sm:            $input-btn-font-size-sm !default;
+$btn-line-height-sm:          $input-btn-line-height-sm !default;
+
+$btn-padding-y-lg:            $input-btn-padding-y-lg !default;
+$btn-padding-x-lg:            $input-btn-padding-x-lg !default;
+$btn-font-size-lg:            $input-btn-font-size-lg !default;
+$btn-line-height-lg:          $input-btn-line-height-lg !default;
+
+$btn-border-width:            $input-btn-border-width !default;
+
+$btn-font-weight:             600 !default;
+$btn-box-shadow:              inset 0 1px 0 rgba($white, .15), 0 1px 1px rgba($black, .075) !default;
+$btn-focus-width:             $input-btn-focus-width !default;
+$btn-focus-box-shadow:        $input-btn-focus-box-shadow !default;
+$btn-disabled-opacity:        .65 !default;
+$btn-active-box-shadow:       inset 0 3px 5px rgba($black, .125) !default;
+
+$btn-link-disabled-color:     $gray-600 !default;
+
+$btn-block-spacing-y:         .5rem !default;
+
+// Allows for customizing button radius independently from global border radius
+$btn-border-radius:           $border-radius !default;
+$btn-border-radius-lg:        $border-radius-lg !default;
+$btn-border-radius-sm:        $border-radius-sm !default;
+
+$btn-transition:              color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out !default;
+
+// Z-INDEX MASTER LIST
+$zindex-dropdown:                   1000;
+$zindex-sticky:                     1020;
+$zindex-fixed:                      1030;
+$zindex-modal-backdrop:             1040;
+$zindex-modal:                      1050;
+$zindex-popover:                    1060;
+$zindex-tooltip:                    1070;
+
+// ICOMOON FONT PATH =================================
+$icomoon-font-path: "../fonts/icomoon/";
+
+// SLICK SLIDER THEME (OPTIONAL) =================================
+$slick-font-family: "Font Awesome 5 Free";
+$slick-arrow-color: $primary;
+$slick-prev-character: "\f0a8";
+$slick-next-character: "\f0a9";
+$slick-dot-character: "\f111";
+$slick-dot-color: $primary;
+$slick-dot-color-active: $slick-dot-color;
+$slick-dot-size: 10px;
+$slick-opacity-default: 1;
+$slick-opacity-on-hover: 1;
+$slick-opacity-not-active: 1;
+
+// custom
+
+// arrow
+$slick-arrow-size: 1.5rem;
+$slick-arrow-weight: 900;
+$slick-arrow-width: 25px;
+$slick-arrow-height: $slick-arrow-width;
+$slick-arrow-bg: transparent;
+// dots
+$slick-dots-width: 7px;
+$slick-dots-height: $slick-dots-width;
+$slick-dots-weigth: 900;
+$slick-dots-margin-left-right: 5px;
+
+// SCROLLBAR STYLING (OPTIONAL) =================================
+$scrollbar-width: 10px;
+$scrollbar-height: $scrollbar-width;
+$scrollbar-track-bg-color: $secondary;
+$scrollbar-thumb-color: $primary;
+$scrollbar-thumb-rounding: 0px;
+$scrollbar-thumb-icon-vertical: none; // url(../img/icon-scrollbar-vertical.png);
+$scrollbar-thumb-icon-horizontal: none; // url(../img/icon-scrollbar-horizontal.png);

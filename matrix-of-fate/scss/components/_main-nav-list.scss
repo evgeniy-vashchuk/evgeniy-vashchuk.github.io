@@ -1,0 +1,29 @@
+.main-nav-list {
+	font-size: 18px;
+	font-family: $headings-font-family;
+
+	@include min-w(md) {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		&:not(:last-child) {
+			margin-bottom: 30px;
+
+			@include min-w(md) {
+				margin-bottom: 0;
+				margin-right: 30px;
+			}
+
+			@include min-w(xl) {
+				margin-right: 60px;
+			}
+		}
+	}
+
+	&__link {
+		transition: color 0.3s;
+	}
+}

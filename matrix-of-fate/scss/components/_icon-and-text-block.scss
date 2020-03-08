@@ -1,0 +1,28 @@
+.icon-and-text-block {
+	text-align: center;
+	margin-bottom: 70px;
+
+	@include min-w(md) {
+		margin-bottom: 140px;
+	}
+
+	&__icon {
+		@include sizeElement(50px);
+		@include flexCenter;
+
+		margin: 0 auto 30px;
+
+		@include min-w(md) {
+			margin-bottom: 50px;
+		}
+	}
+
+	&__item-text {
+		font-size: 15px;
+		color: $black;
+
+		@include min-w(md) {
+			font-size: 17px;
+		}
+	}
+}

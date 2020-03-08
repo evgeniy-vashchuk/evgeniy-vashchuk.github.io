@@ -1,0 +1,48 @@
+.list-with-check {
+	@include min-w(lg) {
+		padding-left: 50px;
+	}
+
+	&__item {
+		position: relative;
+		padding-left: 70px;
+
+		@include min-w(lg) {
+			padding-left: 130px;
+		}
+
+		&:before {
+			@include sizeElement(40px);
+			@include flexCenter;
+
+			content: "\e902";
+			font-family: icomoon;
+			position: absolute;
+			top: 0;
+			left: 0;
+			border-radius: 50%;
+			border: 1px solid rgba($secondary, 0.1);
+			color: $green;
+			font-size: 10px;
+
+			@include min-w(lg) {
+				@include sizeElement(50px);
+
+				font-size: 13px;
+			}
+		}
+
+		&:not(:last-child) {
+			margin-bottom: 35px;
+		}
+	}
+
+	&__text {
+		font-weight: 300;
+		font-size: 15px;
+
+		@include min-w(lg) {
+			font-size: 17px;
+		}
+	}
+}
