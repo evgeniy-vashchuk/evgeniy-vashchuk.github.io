@@ -13591,4 +13591,13 @@ mark {
   background-color: #23242a !important;
   border-color: #23242a; }
 
+.header-logo {
+  width: 110px; }
+  @media screen and (min-width: 575px) {
+    .header-logo {
+      width: 180px; } }
+  @media screen and (min-width: 767px) {
+    .header-logo {
+      width: 240px; } }
+
 /*# sourceMappingURL=theme.css.map */
