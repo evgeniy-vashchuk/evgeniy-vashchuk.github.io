@@ -7,6 +7,7 @@
     initBackgroundVideo();
     initSliders();
     initProgressBar();
+    initSvgAnimation();
   }); // INIT BACKGROUND VIDEOS
 
   function initBackgroundVideo() {
@@ -99,6 +100,35 @@
     if ($('.js-progress-bar-time').length) {
       timer(initialTimerTime);
     }
+  } // SVG ANIMATION
+
+
+  function initSvgAnimation() {
+    function svgAnimation(svgItem, duration) {
+      $(svgItem).addClass('-animation-init');
+      new Vivus(svgItem, {
+        duration: duration,
+        type: 'oneByOne'
+      });
+    }
+
+    function svgAnimationOnScroll() {
+      var svgItem = $('.js-svg-animation-item');
+
+      if (svgItem.length) {
+        svgItem.waypoint({
+          handler: function handler() {
+            if (!this.element.svgAnimationInit) {
+              this.element.svgAnimationInit = true;
+              svgAnimation(this.element, 100);
+            }
+          },
+          offset: '80%'
+        });
+      }
+    }
+
+    svgAnimationOnScroll();
   }
 })(jQuery);
 //# sourceMappingURL=main.js.map
