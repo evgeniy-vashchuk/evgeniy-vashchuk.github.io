@@ -7,7 +7,7 @@
     initBackgroundVideo();
     initSliders();
     initProgressBar();
-    initSvgAnimation();
+    initSvgInjection();
   }); // INIT BACKGROUND VIDEOS
 
   function initBackgroundVideo() {
@@ -100,6 +100,15 @@
     if ($('.js-progress-bar-time').length) {
       timer(initialTimerTime);
     }
+  } // SVG INJECTION
+
+
+  function initSvgInjection() {
+    var mySVGsToInject = document.querySelectorAll('.js-svg-inject'),
+        injectorOptions = {};
+    SVGInjector(mySVGsToInject, injectorOptions, function () {
+      initSvgAnimation();
+    });
   } // SVG ANIMATION
 
 
