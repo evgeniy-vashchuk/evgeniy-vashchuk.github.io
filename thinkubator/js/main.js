@@ -8,6 +8,7 @@
     initSliders();
     initProgressBar();
     initSvgInjection();
+    initMobileMenu();
   }); // INIT BACKGROUND VIDEOS
 
   function initBackgroundVideo() {
@@ -138,6 +139,15 @@
     }
 
     svgAnimationOnScroll();
+  } // MOBILE MENU
+
+
+  function initMobileMenu() {
+    $(".js-hamburger").click(function (e) {
+      e.preventDefault();
+      $(this).toggleClass("-active");
+      $(".js-mobile-menu").slideToggle(300);
+    });
   }
 })(jQuery);
 //# sourceMappingURL=main.js.map
