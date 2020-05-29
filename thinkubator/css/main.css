@@ -15275,13 +15275,7 @@ input[type="submit"] {
 
 @media only screen and (min-width: 768px) {
 	.section-welcome__content {
-		min-height: calc(100vh - 30px);
-	}
-}
-
-@media only screen and (min-width: 992px) {
-	.section-welcome__content {
-		min-height: calc(100vh - 40px);
+		min-height: 100vh;
 	}
 }
 
