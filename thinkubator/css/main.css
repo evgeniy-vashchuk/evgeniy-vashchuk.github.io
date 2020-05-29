@@ -1552,7 +1552,7 @@ select.form-control:focus::-ms-value {
 
 .form-control-lg {
 	height: calc(1.5em + 1rem + 2px);
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 30px;
 	font-size: 1.79688rem;
 	line-height: 1.5;
 	border-radius: 0.3rem;
@@ -2500,7 +2500,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-lg {
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 30px;
 	font-size: 1.79688rem;
 	line-height: 1.5;
 	border-radius: 0.3rem;
@@ -2946,7 +2946,7 @@ input[type="button"].btn-block {
 .input-group-lg > .input-group-append > .input-group-text,
 .input-group-lg > .input-group-prepend > .btn,
 .input-group-lg > .input-group-append > .btn {
-	padding: 0.5rem 1rem;
+	padding: 0.5rem 30px;
 	font-size: 1.79688rem;
 	line-height: 1.5;
 	border-radius: 0.3rem;
@@ -14297,22 +14297,6 @@ ul {
 	user-select: text;
 }
 
-.page-wrapper {
-	position: relative;
-}
-
-@media only screen and (min-width: 768px) {
-	.page-wrapper {
-		padding: 15px;
-	}
-}
-
-@media only screen and (min-width: 992px) {
-	.page-wrapper {
-		padding: 20px;
-	}
-}
-
 .container-wide {
 	max-width: 1450px;
 	margin: 0 auto;
@@ -14371,7 +14355,7 @@ h1, .h1 {
 }
 
 h2, .h2 {
-	font-size: 20px;
+	font-size: 28px;
 }
 
 h3, .h3 {
@@ -14383,11 +14367,11 @@ h4, .h4 {
 }
 
 h5, .h5 {
-	font-size: 14px;
+	font-size: 16px;
 }
 
 h6, .h6 {
-	font-size: 14px;
+	font-size: 16px;
 }
 
 @media only screen and (min-width: 576px) {
@@ -14395,7 +14379,7 @@ h6, .h6 {
 		font-size: 36px;
 	}
 	h2, .h2 {
-		font-size: 26px;
+		font-size: 30px;
 	}
 	h3, .h3 {
 		font-size: 22px;
@@ -14795,19 +14779,8 @@ h6, .h6 {
 	padding: 12px 15px;
 }
 
-@media only screen and (min-width: 768px) {
-	.header {
-		top: 15px;
-		left: 15px;
-		right: 15px;
-	}
-}
-
 @media only screen and (min-width: 992px) {
 	.header {
-		top: 20px;
-		left: 20px;
-		right: 20px;
 		padding: 12px 40px;
 	}
 }
@@ -14996,6 +14969,13 @@ h6, .h6 {
 	}
 }
 
+@media only screen and (max-width: 991px) {
+	.btn-lg {
+		font-size: 24px;
+		line-height: 1.1;
+	}
+}
+
 .btn-gray {
 	color: #000000;
 	background-color: #f7f7f7;
@@ -15015,10 +14995,6 @@ h6, .h6 {
 	color: #ffffff;
 }
 
-.btn.-with-under-text {
-	line-height: 1.5;
-}
-
 @media only screen and (min-width: 992px) {
 	.btn.-with-under-text {
 		padding: 10px 100px;
@@ -15031,6 +15007,13 @@ h6, .h6 {
 	font-weight: 300;
 	font-size: 12px;
 	color: #061127;
+	padding-top: 5px;
+}
+
+@media only screen and (min-width: 992px) {
+	.btn.-with-under-text span {
+		padding-top: 0;
+	}
 }
 
 .play-btn {
@@ -15234,7 +15217,7 @@ input[type="submit"] {
 	width: 100%;
 }
 
-.aweber-form input[placeholder="First Name*"] {
+.aweber-form input[placeholder="First Name*"], .aweber-form input[value="First Name*"] {
 	background-image: url("../img/icons/avatar.png");
 	background-repeat: no-repeat;
 	background-position: 8px center;
@@ -15242,12 +15225,12 @@ input[type="submit"] {
 }
 
 @media only screen and (min-width: 992px) {
-	.aweber-form input[placeholder="First Name*"] {
+	.aweber-form input[placeholder="First Name*"], .aweber-form input[value="First Name*"] {
 		background-size: 39px;
 	}
 }
 
-.aweber-form input[placeholder="Email*"] {
+.aweber-form input[placeholder="Email*"], .aweber-form input[value="Email*"] {
 	background-image: url("../img/icons/email.png");
 	background-repeat: no-repeat;
 	background-position: 10px center;
@@ -15255,7 +15238,7 @@ input[type="submit"] {
 }
 
 @media only screen and (min-width: 992px) {
-	.aweber-form input[placeholder="Email*"] {
+	.aweber-form input[placeholder="Email*"], .aweber-form input[value="Email*"] {
 		background-position: 15px center;
 		background-size: 32px;
 	}
@@ -15733,69 +15716,6 @@ input[type="submit"] {
 .logo-item img {
 	max-height: 100%;
 	flex-shrink: 0;
-}
-
-.body-borders {
-	display: none;
-}
-
-@media only screen and (min-width: 768px) {
-	.body-borders {
-		display: block;
-	}
-}
-
-.body-border {
-	position: fixed;
-	z-index: 1030;
-	background-color: #ffffff;
-}
-
-.body-border.-top, .body-border.-bottom {
-	height: 15px;
-	left: 0;
-	right: 0;
-	width: 100%;
-}
-
-@media only screen and (min-width: 992px) {
-	.body-border.-top, .body-border.-bottom {
-		height: 20px;
-	}
-}
-
-.body-border.-left, .body-border.-right {
-	width: 15px;
-	top: 0;
-	bottom: 0;
-	height: 100%;
-}
-
-@media only screen and (min-width: 992px) {
-	.body-border.-left, .body-border.-right {
-		width: 20px;
-	}
-}
-
-.body-border.-top {
-	top: 0;
-}
-
-.body-border.-bottom {
-	bottom: 0;
-}
-
-.body-border.-left {
-	left: 0;
-}
-
-.body-border.-right {
-	right: 0;
-}
-
-.body-border.-with-shadow {
-	z-index: 1025;
-	box-shadow: 0 0 14px 0 rgba(0, 0, 0, 0.1);
 }
 
 .works-slider {

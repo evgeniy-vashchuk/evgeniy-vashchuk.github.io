@@ -48,7 +48,7 @@
       arrows: false,
       infinite: true,
       slidesToShow: 1,
-      centerPadding: "50px",
+      centerPadding: "30px",
       mobileFirst: true,
       responsive: [{
         breakpoint: 575,
