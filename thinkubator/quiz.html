@@ -15,10 +15,8 @@
 		<!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE)-->
 		<meta name="theme-color" content="#000000">
 
-		<!-- connection GOOGLE FONTS-->
-
 		<!-- connection CSS-->
-		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="main.css">
 	</head>
 
 	<body>
@@ -72,8 +70,200 @@
 						<div class="section-welcome-for-quiz__description text-block">
 							<p>Get your 100% FREE no-obligation 30-Minute Strategy Session Call ($1,000 Value) and we’ll show you our proprietary growth system to not only survive, but thrive through the Corona crisis.</p>
 						</div>
-						<div class="section-welcome-for-quiz__quiz-block">
-							<div class="involveme-block"></div>
+					</div>
+
+					<div class="section-welcome-for-quiz__quiz-block">
+						<div class="quiz-block">
+							<div class="quiz-block__preloader preloader-overlay js-quiz-preloader">
+								<div class="preloader-overlay__preloader-item preloader-item"></div>
+							</div>
+
+							<div class="quiz-block__quiz-form js-quiz-form-block">
+								<form class="quiz-form js-quiz-form" action="#">
+									<div>
+										<h3>Your name</h3>
+										<section class="step-section">
+											<h2 class="step-title">Enter your name</h2>
+
+											<fieldset>
+												<input class="required" name="User name" type="text" placeholder="Your name">
+											</fieldset>
+										</section>
+
+										<h3>Your email</h3>
+										<section class="step-section">
+											<h2 class="step-title">Enter your email</h2>
+
+											<fieldset>
+												<input class="required" name="User email" type="email" placeholder="Your email">
+											</fieldset>
+										</section>
+
+										<h3>Range slider example</h3>
+										<section class="step-section">
+											<h2 class="step-title">Range slider example</h2>
+
+											<fieldset>
+												<input class="js-range-slider" name="Range slider example" type="text" data-min="0" data-max="1000" data-from="500" data-step="1" data-prefix="$" required>
+											</fieldset>
+										</section>
+
+										<h3>Textarea example</h3>
+										<section class="step-section">
+											<h2 class="step-title">Textarea example</h2>
+
+											<fieldset>
+												<textarea name="Textarea example" placeholder="Enter your text" required></textarea>
+											</fieldset>
+										</section>
+
+										<h3>Input example</h3>
+										<section class="step-section">
+											<h2 class="step-title">Input example</h2>
+
+											<fieldset>
+												<input name="Input example" type="text" placeholder="Enter your text" required>
+											</fieldset>
+										</section>
+
+										<h3>Standart checkbox example</h3>
+										<section class="step-section">
+											<h2 class="step-title">Standart checkbox example</h2>
+
+											<fieldset>
+												<label class="standart-checkbox">
+													<input class="standart-checkbox__input" value="Example text 1" name="Standart checkbox example" type="checkbox" required="required"/>
+													<div class="standart-checkbox__item"><i class="standart-checkbox__icon"></i>
+														<div class="standart-checkbox__text">Example text 1</div>
+													</div>
+												</label>
+												<label class="standart-checkbox">
+													<input class="standart-checkbox__input" value="Example text 2" name="Standart checkbox example" type="checkbox" required="required"/>
+													<div class="standart-checkbox__item"><i class="standart-checkbox__icon"></i>
+														<div class="standart-checkbox__text">Example text 2</div>
+													</div>
+												</label>
+												<label class="standart-checkbox">
+													<input class="standart-checkbox__input" value="Example text 3" name="Standart checkbox example" type="checkbox" required="required"/>
+													<div class="standart-checkbox__item"><i class="standart-checkbox__icon"></i>
+														<div class="standart-checkbox__text">Example text 3</div>
+													</div>
+												</label>
+												<label class="standart-checkbox">
+													<input class="standart-checkbox__input" value="Example text 4" name="Standart checkbox example" type="checkbox" required="required"/>
+													<div class="standart-checkbox__item"><i class="standart-checkbox__icon"></i>
+														<div class="standart-checkbox__text">Example text 4</div>
+													</div>
+												</label>
+											</fieldset>
+										</section>
+
+										<h3>Standart radio button example</h3>
+										<section class="step-section">
+											<h2 class="step-title">Standart radio button example</h2>
+
+											<fieldset>
+												<label class="standart-radio">
+													<input class="standart-radio__input" value="Example text 1" name="Standart radio button example" type="radio" required="required"/>
+													<div class="standart-radio__item"><i class="standart-radio__icon"></i>
+														<div class="standart-radio__text">Example text 1</div>
+													</div>
+												</label>
+												<label class="standart-radio">
+													<input class="standart-radio__input" value="Example text 2" name="Standart radio button example" type="radio" required="required"/>
+													<div class="standart-radio__item"><i class="standart-radio__icon"></i>
+														<div class="standart-radio__text">Example text 2</div>
+													</div>
+												</label>
+												<label class="standart-radio">
+													<input class="standart-radio__input" value="Example text 3" name="Standart radio button example" type="radio" required="required"/>
+													<div class="standart-radio__item"><i class="standart-radio__icon"></i>
+														<div class="standart-radio__text">Example text 3</div>
+													</div>
+												</label>
+												<label class="standart-radio">
+													<input class="standart-radio__input" value="Example text 4" name="Standart radio button example" type="radio" required="required"/>
+													<div class="standart-radio__item"><i class="standart-radio__icon"></i>
+														<div class="standart-radio__text">Example text 4</div>
+													</div>
+												</label>
+											</fieldset>
+										</section>
+
+										<h3>Checkbox with icon example</h3>
+										<section class="step-section">
+											<h2 class="step-title">Checkbox with icon example</h2>
+
+											<fieldset>
+												<label class="checkbox-with-icon">
+													<input class="checkbox-with-icon__input" value="Example text 1" name="Checkbox with icon example" type="checkbox" required="required"/>
+													<div class="checkbox-with-icon__item"><i class="checkbox-with-icon__icon far fa-address-card"></i>
+														<div class="checkbox-with-icon__text">Example text 1</div>
+													</div>
+												</label>
+												<label class="checkbox-with-icon">
+													<input class="checkbox-with-icon__input" value="Example text 2" name="Checkbox with icon example" type="checkbox" required="required"/>
+													<div class="checkbox-with-icon__item"><i class="checkbox-with-icon__icon fas fa-anchor"></i>
+														<div class="checkbox-with-icon__text">Example text 2</div>
+													</div>
+												</label>
+												<label class="checkbox-with-icon">
+													<input class="checkbox-with-icon__input" value="Example text 3" name="Checkbox with icon example" type="checkbox" required="required"/>
+													<div class="checkbox-with-icon__item"><i class="checkbox-with-icon__icon fas fa-atlas"></i>
+														<div class="checkbox-with-icon__text">Example text 3</div>
+													</div>
+												</label>
+												<label class="checkbox-with-icon">
+													<input class="checkbox-with-icon__input" value="Example text 4" name="Checkbox with icon example" type="checkbox" required="required"/>
+													<div class="checkbox-with-icon__item"><i class="checkbox-with-icon__icon fas fa-baby-carriage"></i>
+														<div class="checkbox-with-icon__text">Example text 4</div>
+													</div>
+												</label>
+											</fieldset>
+										</section>
+
+										<h3>Radio with icon example</h3>
+										<section class="step-section">
+											<h2 class="step-title">Radio with icon example</h2>
+
+											<fieldset>
+												<label class="radio-with-icon">
+													<input class="radio-with-icon__input" value="Example text 1" name="Radio with icon example" type="radio" required="required"/>
+													<div class="radio-with-icon__item"><i class="radio-with-icon__icon far fa-address-card"></i>
+														<div class="radio-with-icon__text">Example text 1</div>
+													</div>
+												</label>
+												<label class="radio-with-icon">
+													<input class="radio-with-icon__input" value="Example text 2" name="Radio with icon example" type="radio" required="required"/>
+													<div class="radio-with-icon__item"><i class="radio-with-icon__icon fas fa-anchor"></i>
+														<div class="radio-with-icon__text">Example text 2</div>
+													</div>
+												</label>
+												<label class="radio-with-icon">
+													<input class="radio-with-icon__input" value="Example text 3" name="Radio with icon example" type="radio" required="required"/>
+													<div class="radio-with-icon__item"><i class="radio-with-icon__icon fas fa-atlas"></i>
+														<div class="radio-with-icon__text">Example text 3</div>
+													</div>
+												</label>
+												<label class="radio-with-icon">
+													<input class="radio-with-icon__input" value="Example text 4" name="Radio with icon example" type="radio" required="required"/>
+													<div class="radio-with-icon__item"><i class="radio-with-icon__icon fas fa-baby-carriage"></i>
+														<div class="radio-with-icon__text">Example text 4</div>
+													</div>
+												</label>
+											</fieldset>
+										</section>
+									</div>
+								</form>
+							</div>
+
+							<div class="quiz-block__thanks-block js-quiz-thanks-block">
+								<h2>Thank you for your answers!</h2>
+
+								<div class="text-block">
+									<p>We will definitely review them and contact you later. Good luck!</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
