@@ -1940,41 +1940,43 @@ fieldset:disabled .quiz-form .actions ul[role="menu"] a,
 	pointer-events: none;
 }
 
-.btn-primary, .quiz-form .actions ul[role="menu"] a {
+.btn-primary, input[type="submit"], .quiz-form .actions ul[role="menu"] a {
 	color: #ffffff;
 	background-color: #497de3;
 	border-color: #497de3;
 }
 
-.btn-primary:hover, .quiz-form .actions ul[role="menu"] a:hover {
+.btn-primary:hover, input:hover[type="submit"], .quiz-form .actions ul[role="menu"] a:hover {
 	color: #ffffff;
 	background-color: #2865de;
 	border-color: #215fd8;
 }
 
-.btn-primary:focus, .quiz-form .actions ul[role="menu"] a:focus, .btn-primary.focus, .quiz-form .actions ul[role="menu"] a.focus {
+.btn-primary:focus, input:focus[type="submit"], .quiz-form .actions ul[role="menu"] a:focus, .btn-primary.focus, input.focus[type="submit"], .quiz-form .actions ul[role="menu"] a.focus {
 	color: #ffffff;
 	background-color: #2865de;
 	border-color: #215fd8;
 	box-shadow: 0 0 0 0.2rem rgba(100, 145, 231, 0.5);
 }
 
-.btn-primary.disabled, .quiz-form .actions ul[role="menu"] a.disabled, .btn-primary:disabled, .quiz-form .actions ul[role="menu"] a:disabled {
+.btn-primary.disabled, input.disabled[type="submit"], .quiz-form .actions ul[role="menu"] a.disabled, .btn-primary:disabled, input:disabled[type="submit"], .quiz-form .actions ul[role="menu"] a:disabled {
 	color: #ffffff;
 	background-color: #497de3;
 	border-color: #497de3;
 }
 
-.btn-primary:not(:disabled):not(.disabled):active, .quiz-form .actions ul[role="menu"] a:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, .quiz-form .actions ul[role="menu"] a:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active, input:not(:disabled):not(.disabled):active[type="submit"], .quiz-form .actions ul[role="menu"] a:not(:disabled):not(.disabled):active, .btn-primary:not(:disabled):not(.disabled).active, input:not(:disabled):not(.disabled).active[type="submit"], .quiz-form .actions ul[role="menu"] a:not(:disabled):not(.disabled).active,
 .show > .btn-primary.dropdown-toggle,
+.show > input.dropdown-toggle[type="submit"],
 .quiz-form .actions ul[role="menu"] .show > a.dropdown-toggle {
 	color: #ffffff;
 	background-color: #215fd8;
 	border-color: #205acd;
 }
 
-.btn-primary:not(:disabled):not(.disabled):active:focus, .quiz-form .actions ul[role="menu"] a:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, .quiz-form .actions ul[role="menu"] a:not(:disabled):not(.disabled).active:focus,
+.btn-primary:not(:disabled):not(.disabled):active:focus, input:not(:disabled):not(.disabled):active:focus[type="submit"], .quiz-form .actions ul[role="menu"] a:not(:disabled):not(.disabled):active:focus, .btn-primary:not(:disabled):not(.disabled).active:focus, input:not(:disabled):not(.disabled).active:focus[type="submit"], .quiz-form .actions ul[role="menu"] a:not(:disabled):not(.disabled).active:focus,
 .show > .btn-primary.dropdown-toggle:focus,
+.show > input.dropdown-toggle:focus[type="submit"],
 .quiz-form .actions ul[role="menu"] .show > a.dropdown-toggle:focus {
 	box-shadow: 0 0 0 0.2rem rgba(100, 145, 231, 0.5);
 }
@@ -14975,16 +14977,6 @@ body {
 	overflow-x: hidden;
 }
 
-select {
-	-webkit-appearance: none;
-	-moz-appearance: none;
-	appearance: none;
-}
-
-select::-ms-expand {
-	display: none;
-}
-
 ::-ms-clear {
 	display: none;
 }
@@ -15768,12 +15760,12 @@ h6, .h6 {
 	background-color: #dedede;
 }
 
-.btn-white, .fancybox-button, input[type="submit"] {
+.btn-white, .fancybox-button, .aweber-form.-white input[type='submit'] {
 	color: #000000;
 	background-color: #ffffff;
 }
 
-.btn-white:hover, .fancybox-button:hover, input:hover[type="submit"] {
+.btn-white:hover, .fancybox-button:hover, .aweber-form.-white input:hover[type='submit'] {
 	background-color: #497de3;
 	color: #ffffff;
 }
@@ -15867,6 +15859,7 @@ input[type='email'],
 input[type='search'],
 input[type='password'],
 input[type='url'],
+select,
 textarea {
 	display: block;
 	width: 100%;
@@ -15887,6 +15880,7 @@ input[type='email']::-webkit-input-placeholder,
 input[type='search']::-webkit-input-placeholder,
 input[type='password']::-webkit-input-placeholder,
 input[type='url']::-webkit-input-placeholder,
+select::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
 	color: #6f706f;
 }
@@ -15897,6 +15891,7 @@ input[type='email']::-moz-placeholder,
 input[type='search']::-moz-placeholder,
 input[type='password']::-moz-placeholder,
 input[type='url']::-moz-placeholder,
+select::-moz-placeholder,
 textarea::-moz-placeholder {
 	opacity: 1;
 	color: #6f706f;
@@ -15908,6 +15903,7 @@ input[type='email']:-moz-placeholder,
 input[type='search']:-moz-placeholder,
 input[type='password']:-moz-placeholder,
 input[type='url']:-moz-placeholder,
+select:-moz-placeholder,
 textarea:-moz-placeholder {
 	color: #6f706f;
 }
@@ -15918,6 +15914,7 @@ input[type='email']:-ms-input-placeholder,
 input[type='search']:-ms-input-placeholder,
 input[type='password']:-ms-input-placeholder,
 input[type='url']:-ms-input-placeholder,
+select:-ms-input-placeholder,
 textarea:-ms-input-placeholder {
 	color: #6f706f;
 }
@@ -15929,6 +15926,7 @@ textarea:-ms-input-placeholder {
 	input[type='search'],
 	input[type='password'],
 	input[type='url'],
+	select,
 	textarea {
 		padding: 16px;
 		font-size: 18px;
@@ -15941,6 +15939,7 @@ input[type='email']:focus,
 input[type='search']:focus,
 input[type='password']:focus,
 input[type='url']:focus,
+select:focus,
 textarea:focus {
 	border-color: #adb5bd;
 }
@@ -15951,6 +15950,7 @@ input[type='email'].error,
 input[type='search'].error,
 input[type='password'].error,
 input[type='url'].error,
+select.error,
 textarea.error {
 	border-color: #dc3545;
 }
@@ -15966,6 +15966,8 @@ input[type='password'][name*="name"],
 input[type='password'][name*="Name"],
 input[type='url'][name*="name"],
 input[type='url'][name*="Name"],
+select[name*="name"],
+select[name*="Name"],
 textarea[name*="name"],
 textarea[name*="Name"] {
 	background-image: url("img/icons/avatar.png");
@@ -15987,6 +15989,8 @@ textarea[name*="Name"] {
 	input[type='password'][name*="Name"],
 	input[type='url'][name*="name"],
 	input[type='url'][name*="Name"],
+	select[name*="name"],
+	select[name*="Name"],
 	textarea[name*="name"],
 	textarea[name*="Name"] {
 		padding-left: 60px;
@@ -16005,6 +16009,8 @@ input[type='password'][name*="email"],
 input[type='password'][name*="Email"],
 input[type='url'][name*="email"],
 input[type='url'][name*="Email"],
+select[name*="email"],
+select[name*="Email"],
 textarea[name*="email"],
 textarea[name*="Email"] {
 	background-image: url("img/icons/email.png");
@@ -16026,6 +16032,8 @@ textarea[name*="Email"] {
 	input[type='password'][name*="Email"],
 	input[type='url'][name*="email"],
 	input[type='url'][name*="Email"],
+	select[name*="email"],
+	select[name*="Email"],
 	textarea[name*="email"],
 	textarea[name*="Email"] {
 		padding-left: 60px;
@@ -16373,6 +16381,17 @@ textarea {
 	right: 10px;
 }
 
+.aweber-form.-white input[type='text'] {
+	border-color: #ffffff;
+	color: #ffffff;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.aweber-form.-white input[type='text']:focus {
+	border-color: #999999;
+}
+
 .aweber-form .previewLabel, .aweber-form .af-header {
 	display: none;
 }
@@ -16399,15 +16418,7 @@ textarea {
 }
 
 .aweber-form input[type='text'] {
-	border-color: #ffffff;
-	color: #ffffff;
-	background-color: transparent;
-	box-shadow: none;
 	padding-left: 45px;
-}
-
-.aweber-form input[type='text']:focus {
-	border-color: #999999;
 }
 
 @media only screen and (min-width: 992px) {
@@ -16950,12 +16961,8 @@ textarea {
 	}
 }
 
-.works-slider-item__title-block {
+.works-slider-item__text-block {
 	text-align: center;
-}
-
-.works-slider-item__title {
-	margin-bottom: 0;
 }
 
 .works-slider-item__title a {
@@ -16965,6 +16972,19 @@ textarea {
 
 .works-slider-item__title a:hover {
 	color: #497de3;
+}
+
+.works-slider-item__description {
+	font-size: 14px;
+	font-weight: 300;
+	max-width: 500px;
+	margin: 0 auto;
+}
+
+@media only screen and (min-width: 576px) {
+	.works-slider-item__description {
+		font-size: 16px;
+	}
 }
 
 .item-with-icon {
@@ -17269,8 +17289,8 @@ textarea {
 }
 
 .quiz-form .steps ul[role="tablist"] a {
-	width: 18px;
-	height: 18px;
+	width: 16px;
+	height: 16px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -17281,6 +17301,13 @@ textarea {
 	background-color: #ced4da;
 	color: #ffffff;
 	transition: color 0.3s, background-color 0.3s;
+}
+
+@media only screen and (min-width: 400px) {
+	.quiz-form .steps ul[role="tablist"] a {
+		width: 18px;
+		height: 18px;
+	}
 }
 
 @media only screen and (min-width: 768px) {
@@ -17438,6 +17465,10 @@ textarea {
 
 .quiz-block__thanks-block {
 	text-align: center;
+	display: none;
+}
+
+.quiz-block__aweber-form {
 	display: none;
 }
 

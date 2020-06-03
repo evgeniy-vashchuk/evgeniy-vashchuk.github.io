@@ -86,7 +86,7 @@
 											<h2 class="step-title">Enter your name</h2>
 
 											<fieldset>
-												<input class="required" name="User name" type="text" placeholder="Your name">
+												<input class="js-user-name" name="User name" type="text" placeholder="Your name" required>
 											</fieldset>
 										</section>
 
@@ -95,7 +95,7 @@
 											<h2 class="step-title">Enter your email</h2>
 
 											<fieldset>
-												<input class="required" name="User email" type="email" placeholder="Your email">
+												<input class="js-user-email" name="User email" type="email" placeholder="Your email" required>
 											</fieldset>
 										</section>
 
@@ -104,7 +104,7 @@
 											<h2 class="step-title">Range slider example</h2>
 
 											<fieldset>
-												<input class="js-range-slider" name="Range slider example" type="text" data-min="0" data-max="1000" data-from="500" data-step="1" data-prefix="$" required>
+												<input class="js-range-slider js-budget-value" name="Range slider example" type="text" data-min="0" data-max="1000" data-budget-line="500" data-step="1" data-prefix="$" required>
 											</fieldset>
 										</section>
 
@@ -257,6 +257,83 @@
 								</form>
 							</div>
 
+							<div class="quiz-block__aweber-form aweber-form js-quiz-aweber-form">
+								<!--  AWeber Web Form Generator 3.0.1-->
+								<form class="af-form-wrapper" method="post" accept-charset="UTF-8" action="https://www.aweber.com/scripts/addlead.pl">
+									<div style="display: none;">
+										<input type="hidden" name="meta_web_form_id" value="170638396">
+										<input type="hidden" name="meta_split_id">
+										<input type="hidden" name="listname" value="awlist5615695">
+										<input id="redirect_17b9e03f104c2cc135cf86b0ef282a92" type="hidden" name="redirect">
+										<input type="hidden" name="meta_adtracking" value="Thinkubator_Form_for_QUIZ">
+										<input type="hidden" name="meta_message" value="1">
+										<input type="hidden" name="meta_required" value="name,email,custom Type of subscriber">
+										<input type="hidden" name="meta_tooltip" value="name||First Name*,,email||Email*,,custom Type of subscriber||Subscriber Budget Type">
+									</div>
+									<div class="af-form" id="af-form-170638396">
+										<div class="af-body af-standards" id="af-body-170638396">
+											<div class="af-element">
+												<label class="previewLabel" for="awf_field-107010817"></label>
+												<div class="af-textWrap">
+													<input class="text" id="awf_field-107010817" type="text" name="name" value="First Name*" onfocus="if (this.value == 'First Name*') { this.value = ''; }" onblur="if (this.value == '') { this.value='First Name*';}" tabindex="500">
+												</div>
+												<div class="af-clear"></div>
+											</div>
+											<div class="af-element">
+												<label class="previewLabel" for="awf_field-107010818"></label>
+												<div class="af-textWrap">
+													<input class="text" id="awf_field-107010818" type="text" name="email" value="Email*" tabindex="501" onfocus="if (this.value == 'Email*') { this.value = ''; }" onblur="if (this.value == '') { this.value='Email*';}">
+												</div>
+												<div class="af-clear"></div>
+											</div>
+											<div class="af-element">
+												<label class="previewLabel" for="awf_field-107010819">Type of subscriber:</label>
+												<div class="af-selectWrap">
+													<select id="awf_field-107010819" name="custom Type of subscriber" tabindex="502">
+														<option class="multiChoice" selected value="Above budget">Above budget</option>
+														<option class="multiChoice" value="Below budget">Below budget</option>
+													</select>
+												</div>
+												<input type="hidden" name="meta_preselected_awf_field-107010819" value="Above budget">
+												<input type="hidden" name="tagif_custom Type of subscriber:Above budget" value="Above budget">
+												<input type="hidden" name="tagif_custom Type of subscriber:Below budget" value="Below budget">
+												<div class="af-clear"></div>
+											</div>
+											<div class="af-element buttonContainer">
+												<input class="submit" name="submit" type="submit" value="Yes, please send it!" tabindex="503">
+												<div class="af-clear"></div>
+											</div>
+										</div>
+									</div>
+									<div style="display: none;"><img src="https://forms.aweber.com/form/displays.htm?id=jOwMbMwczJxs" alt></div>
+								</form>
+								<script type="text/javascript">
+									<!--
+										(function() {
+											var IE = /*@cc_on!@*/false;
+											if (!IE) { return; }
+											if (document.compatMode && document.compatMode == 'BackCompat') {
+												if (document.getElementById("af-form-170638396")) {
+													document.getElementById("af-form-170638396").className = 'af-form af-quirksMode';
+												}
+												if (document.getElementById("af-body-170638396")) {
+													document.getElementById("af-body-170638396").className = "af-body inline af-quirksMode";
+												}
+												if (document.getElementById("af-header-170638396")) {
+													document.getElementById("af-header-170638396").className = "af-header af-quirksMode";
+												}
+												if (document.getElementById("af-footer-170638396")) {
+													document.getElementById("af-footer-170638396").className = "af-footer af-quirksMode";
+												}
+											}
+										})();
+										-->
+
+								</script>
+								<script type="text/javascript">document.getElementById('redirect_17b9e03f104c2cc135cf86b0ef282a92').value = document.location;</script>
+								<!--  /AWeber Web Form Generator 3.0.1-->
+							</div>
+
 							<div class="quiz-block__thanks-block js-quiz-thanks-block">
 								<h2>Thank you for your answers!</h2>
 
@@ -336,8 +413,12 @@
 						<div class="works-slider-item">
 							<div class="works-slider-item__image" style="background-image: url(img/works/1.jpg)"></div>
 
-							<div class="works-slider-item__title-block">
-								<h6 class="works-slider-item__title">David Haase Photography</h6>
+							<div class="works-slider-item__text-block">
+								<h5 class="works-slider-item__title">David Haase Photography</h5>
+
+								<div class="works-slider-item__description text-block">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolores obcaecati repellat nam debitis cupiditate!</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -345,8 +426,12 @@
 						<div class="works-slider-item">
 							<div class="works-slider-item__image" style="background-image: url(img/works/2.jpg)"></div>
 
-							<div class="works-slider-item__title-block">
-								<h6 class="works-slider-item__title">David Haase Photography</h6>
+							<div class="works-slider-item__text-block">
+								<h5 class="works-slider-item__title">David Haase Photography</h5>
+
+								<div class="works-slider-item__description text-block">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolores obcaecati repellat nam debitis cupiditate!</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -354,8 +439,12 @@
 						<div class="works-slider-item">
 							<div class="works-slider-item__image" style="background-image: url(img/works/3.jpg)"></div>
 
-							<div class="works-slider-item__title-block">
-								<h6 class="works-slider-item__title">David Haase Photography</h6>
+							<div class="works-slider-item__text-block">
+								<h5 class="works-slider-item__title">David Haase Photography</h5>
+
+								<div class="works-slider-item__description text-block">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolores obcaecati repellat nam debitis cupiditate!</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -363,8 +452,12 @@
 						<div class="works-slider-item">
 							<div class="works-slider-item__image" style="background-image: url(img/works/4.jpg)"></div>
 
-							<div class="works-slider-item__title-block">
-								<h6 class="works-slider-item__title">David Haase Photography</h6>
+							<div class="works-slider-item__text-block">
+								<h5 class="works-slider-item__title">David Haase Photography</h5>
+
+								<div class="works-slider-item__description text-block">
+									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora dolores obcaecati repellat nam debitis cupiditate!</p>
+								</div>
 							</div>
 						</div>
 					</div>

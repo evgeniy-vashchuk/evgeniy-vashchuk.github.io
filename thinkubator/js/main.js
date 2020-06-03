@@ -10,15 +10,7 @@
     initSvgInjection();
     initMobileMenu();
     initQuiz();
-    initRangeSlider(); // $('.aweber-form input[name="name"]').val('Test name fdfdsfds');
-    // $('.aweber-form input[name="email"]').val('test-emsdfdsfdsfail@mail.com');
-    // $('.aweber-form .af-selectWrap select').val('Below budget');
-    // $('body').on('click', function() {
-    // 	$('.aweber-form input[type="submit"]').click();
-    // });
-    // $('.aweber-form input[type="submit"]').on('click', function(e){
-    // 	e.stopPropagation();
-    // });
+    initRangeSlider();
   }); // INIT BACKGROUND VIDEOS
 
   function initBackgroundVideo() {
@@ -53,16 +45,15 @@
 
   function initSliders() {
     $(".js-works-slider").slick({
-      centerMode: true,
       dots: true,
       arrows: false,
       infinite: true,
       slidesToShow: 1,
-      centerPadding: "30px",
       mobileFirst: true,
       responsive: [{
         breakpoint: 575,
         settings: {
+          centerMode: true,
           centerPadding: "20%"
         }
       }]
@@ -280,6 +271,58 @@
 
   function initQuiz() {
     var quizForm = $(".js-quiz-form");
+
+    function finishQuiz() {
+      $('.js-quiz-preloader').fadeIn();
+      setTimeout(function () {
+        $('.js-quiz-form-block').hide();
+        $('.js-quiz-thanks-block').show();
+      }, 2000);
+      setTimeout(function () {
+        $('.js-quiz-preloader').fadeOut();
+      }, 3000);
+    }
+
+    function submitAweberForm() {
+      if (quizForm.find(".js-range-slider.js-budget-value").first().length) {
+        var name = quizForm.find(".js-user-name").first().val(),
+            email = quizForm.find(".js-user-email").first().val(),
+            budget = +quizForm.find(".js-range-slider.js-budget-value").first().val(),
+            budgetLine = +quizForm.find(".js-range-slider.js-budget-value").first().attr('data-budget-line'),
+            aweberForm = $('.js-quiz-aweber-form'); // set values
+
+        aweberForm.find('input[name="name"]').val(name);
+        aweberForm.find('input[name="email"]').val(email);
+
+        if (budget >= budgetLine) {
+          aweberForm.find('.af-selectWrap select').val('Above budget');
+        } else {
+          aweberForm.find('.af-selectWrap select').val('Below budget');
+        } // submit form
+
+
+        setTimeout(function () {
+          aweberForm.find('input[type="submit"]').click();
+          aweberForm.find('input[type="submit"]').on('click', function (e) {
+            e.stopPropagation();
+          });
+        }, 3000);
+      }
+    }
+
+    function formSubmit() {
+      var formData = serialize(quizForm[0]).join("\n");
+      $.ajax({
+        type: 'POST',
+        url: 'quiz-form.php',
+        data: formData,
+        success: function success() {
+          submitAweberForm();
+          finishQuiz();
+        }
+      });
+    }
+
     quizForm.validate({
       errorPlacement: function errorPlacement(error, element) {
         return true;
@@ -311,26 +354,26 @@
         return quizForm.valid();
       },
       onFinished: function onFinished(event, currentIndex) {
-        var formData = serialize(quizForm[0]).join("\n");
-        $('.js-quiz-preloader').fadeIn();
-        setTimeout(function () {
-          $('.js-quiz-form-block').hide();
-          $('.js-quiz-thanks-block').show();
-        }, 2000);
-        setTimeout(function () {
-          $('.js-quiz-preloader').fadeOut();
-        }, 3000);
-        setTimeout(function () {
-          alert(formData);
-        }, 5000);
+        formSubmit();
       }
     });
   } // INIT RANGE SLIDER
 
 
   function initRangeSlider() {
-    $(".js-range-slider").ionRangeSlider({
-      hide_min_max: true
+    var rangeSlider = $(".js-range-slider");
+    rangeSlider.each(function () {
+      var dataMaxValue = 0;
+      $(this).ionRangeSlider({
+        hide_min_max: true,
+        onStart: function onStart(data) {
+          dataMaxValue = data.max;
+        }
+      });
+      var rangeSliderInstance = $(this).data("ionRangeSlider");
+      rangeSliderInstance.update({
+        from: dataMaxValue / 2
+      });
     });
   }
 })(jQuery);
