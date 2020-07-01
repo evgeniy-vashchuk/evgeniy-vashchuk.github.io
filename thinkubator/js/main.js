@@ -329,11 +329,11 @@
       },
       highlight: function highlight(element, errorClass, validClass) {
         $(element).addClass(errorClass).removeClass(validClass);
-        $(element).closest("fieldset").addClass(errorClass);
+        $(element).closest(".fieldset").addClass(errorClass);
       },
       unhighlight: function unhighlight(element, errorClass, validClass) {
         $(element).removeClass(errorClass).addClass(validClass);
-        $(element).closest("fieldset").removeClass(errorClass);
+        $(element).closest(".fieldset").removeClass(errorClass);
       }
     });
     quizForm.children("div").steps({
