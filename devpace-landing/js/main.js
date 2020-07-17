@@ -513,7 +513,7 @@
 
 		// custom icon
 		var icon = {
-			url: '../img/map-pin.svg',
+			url: '/../img/map-pin.svg',
 			scaledSize: new google.maps.Size(42, 60)
 		};
 
