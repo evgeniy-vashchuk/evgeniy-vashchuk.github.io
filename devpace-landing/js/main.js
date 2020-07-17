@@ -16,8 +16,7 @@
 
 	var mobileBreakpoint = 768,
 			isMobile = $(window).width() < mobileBreakpoint,
-			isDesktop = $(window).width() >= mobileBreakpoint,
-			currentUrl = window.location.href;
+			isDesktop = $(window).width() >= mobileBreakpoint;
 
 	// INIT PRELOADER
 	function iniPreloader(preloaderItem, hideTimeout) {
@@ -481,7 +480,7 @@
 	// INIT SCENE
 	function initScene() {
 		var container = $('.js-360-scene'),
-				image360 = currentUrl + container.attr('data-img'),
+				image360 = container.attr('data-img'),
 				panorama = new PANOLENS.ImagePanorama( image360 );
 
 		var viewer = new PANOLENS.Viewer({
@@ -514,7 +513,7 @@
 
 		// custom icon
 		var icon = {
-			url: currentUrl + 'img/map-pin.svg',
+			url: 'img/map-pin.svg',
 			scaledSize: new google.maps.Size(42, 60)
 		};
 
