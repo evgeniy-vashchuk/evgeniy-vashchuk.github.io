@@ -16,7 +16,7 @@
 		<meta name="theme-color" content="#000000">
 
 		<!-- connection GOOGLE FONTS-->
-		<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,500;0,600;0,700;0,800;0,900;1,500&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,500&amp;display=swap" rel="stylesheet">
 
 		<!-- connection CSS-->
 		<link rel="stylesheet" href="css/main.css">
@@ -45,7 +45,7 @@
 								<li class="main-navigation__item"><a class="main-navigation__link" href="#">Blog</a></li>
 							</ul>
 
-							<div class="header__btn-block"><a class="btn btn-primary" href="#">Talk to Us</a></div>
+							<div class="header__btn-block"><a class="header__btn btn btn-primary btn-sm" href="#">Talk to Us</a><a class="header__btn btn btn-pink btn-sm" href="#">Become a Collaborator<i class="btn__icon fas fa-user-plus"></i></a></div>
 						</div>
 					</div>
 				</div>
@@ -54,7 +54,7 @@
 		<!-- HEADER END-->
 
 		<!-- CONTENT-->
-		<main class="main">
+		<main class="main js-parallax-scene">
 			<!-- SECTION WELCOME-->
 			<section class="section-welcome -bottom">
 				<div class="section-welcome__bg lazy js-lazy" data-src="img/section-welcome-people-bg.jpg"></div>
@@ -127,9 +127,11 @@
 							<div class="section-about__img-block">
 								<div class="img-with-decoration-border -left-bottom -to-right-alignment">
 									<div class="img-with-decoration-border__img">
-										<div class="img-with-decoration-border__decoration-border js-active-on-scroll"></div>
+										<div class="img-with-decoration-border__decoration-border js-active-on-scroll">
+											<div class="img-with-decoration-border__decoration-border-inner parallax-item js-parallax-item" data-depth="0.1"></div>
+										</div>
 
-										<div class="img-with-decoration-border__img-block"><img class="of-cover-image lazy js-lazy" src="img/placeholder-for-lazy.gif" data-src="img/section-about-img.jpg" alt="Office"/></div>
+										<div class="img-with-decoration-border__img-block parallax-item js-parallax-item" data-depth="0.05"><img class="of-cover-image lazy js-lazy" src="img/placeholder-for-lazy.gif" data-src="img/section-about-img.jpg" alt="Office"/></div>
 									</div>
 								</div>
 							</div>
@@ -165,9 +167,11 @@
 							<div class="section-founder__img-block">
 								<div class="img-with-decoration-border -right-bottom -long">
 									<div class="img-with-decoration-border__img">
-										<div class="img-with-decoration-border__decoration-border js-active-on-scroll"></div>
+										<div class="img-with-decoration-border__decoration-border js-active-on-scroll">
+											<div class="img-with-decoration-border__decoration-border-inner parallax-item js-parallax-item" data-depth="0.1"></div>
+										</div>
 
-										<div class="img-with-decoration-border__img-block"><img class="of-cover-image lazy js-lazy" src="img/placeholder-for-lazy.gif" data-src="img/section-founder-img.jpg" alt="Matthew MacQuarrie photo"/></div>
+										<div class="img-with-decoration-border__img-block parallax-item js-parallax-item" data-depth="0.05"><img class="of-cover-image lazy js-lazy" src="img/placeholder-for-lazy.gif" data-src="img/section-founder-img.jpg" alt="Matthew MacQuarrie photo"/></div>
 									</div>
 								</div>
 							</div>

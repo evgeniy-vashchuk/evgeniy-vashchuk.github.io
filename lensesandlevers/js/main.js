@@ -3,6 +3,7 @@
 (function ($) {
   'use strict';
 
+  var MOBILE_BREACKPOINT = 768;
   $(document).ready(function () {
     initMobileMenu();
     initObjectFitImagesPolyfil();
@@ -10,6 +11,10 @@
     initAnimationsOnScroll();
     initCountUp();
     initMasonryLayout();
+
+    if ($(window).width() > MOBILE_BREACKPOINT) {
+      initParallaxForItems();
+    }
   }); // MOBILE MENU
 
   function initMobileMenu() {
@@ -115,7 +120,7 @@
           handler: function handler() {
             if (!this.element.countUpInit) {
               this.element.countUpInit = true;
-              countUpNumbers(this.element, 5000);
+              countUpNumbers(this.element, 8000);
             }
           },
           offset: '80%'
@@ -128,10 +133,34 @@
 
 
   function initMasonryLayout() {
-    $('.js-masonry-layout').masonry({
+    var masonryLayoutBlock = $('.js-masonry-layout');
+    masonryLayoutBlock.masonry({
       itemSelector: '.js-masonry-grid-item',
       horizontalOrder: true
     });
+    $('.js-simple-accordion').on('shown.bs.collapse', function () {
+      if ($(this).closest('.js-masonry-layout').length) {
+        masonryLayoutBlock.masonry();
+      }
+    });
+    $('.js-simple-accordion').on('hidden.bs.collapse', function () {
+      if ($(this).closest('.js-masonry-layout').length) {
+        masonryLayoutBlock.masonry();
+      }
+    });
+  } // INIT PARALLAX FOR ITEMS
+
+
+  function initParallaxForItems() {
+    if ($('.js-parallax-scene').length) {
+      var scene = $('.js-parallax-scene');
+      scene.each(function () {
+        new Parallax(this, {
+          selector: '.js-parallax-item',
+          pointerEvents: true
+        });
+      });
+    }
   }
 })(jQuery);
 //# sourceMappingURL=main.js.map

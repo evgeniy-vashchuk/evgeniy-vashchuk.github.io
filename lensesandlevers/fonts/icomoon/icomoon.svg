@@ -9,4 +9,5 @@
 <glyph unicode="&#x20;" horiz-adv-x="512" d="" />
 <glyph unicode="&#xe900;" glyph-name="arrow-right" d="M585.144 886.858l-109.714-109.714 256.001-256.001h-731.431v-146.285h731.428l-255.998-256.003 109.714-109.714 438.856 438.856z" />
 <glyph unicode="&#xe901;" glyph-name="arrow-right-angle" d="M328.623-64l512 512-512 512-145.247-145.252 366.753-366.748-366.753-366.748z" />
+<glyph unicode="&#xe902;" glyph-name="arrow-bottom-angle" d="M0 631.377l512-512 512 512-145.252 145.247-366.748-366.753-366.748 366.753z" />
 </font></defs></svg>
