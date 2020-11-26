@@ -16982,7 +16982,7 @@ h6,
 
 @media only screen and (min-width: 992px) {
 	.section-primary-roles {
-		padding: 125px 0 145px;
+		padding: 125px 0 135px;
 	}
 }
 
@@ -17667,6 +17667,7 @@ h6,
 	flex-wrap: wrap;
 	padding-left: 0;
 	list-style-type: none;
+	margin-bottom: 0;
 }
 
 .primary-roles-list__item {
@@ -17684,6 +17685,12 @@ h6,
 @media only screen and (min-width: 768px) {
 	.primary-roles-list__item {
 		max-width: 260px;
+	}
+}
+
+@media only screen and (max-width: 575px) {
+	.primary-roles-list__item:last-child {
+		margin-bottom: 0;
 	}
 }
 
