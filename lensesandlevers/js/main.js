@@ -5,29 +5,47 @@
 
   var MOBILE_BREACKPOINT = 768;
   $(document).ready(function () {
+    colorHeaderAfterScroll();
     initMobileMenu();
     initObjectFitImagesPolyfil();
     initLazyLoadingForImages();
     initAnimationsOnScroll();
     initCountUp();
     initMasonryLayout();
+    initBackgroundVideo();
 
     if ($(window).width() > MOBILE_BREACKPOINT) {
       initParallaxForItems();
     }
-  }); // MOBILE MENU
+  }); // COLOR HEADER AFTER SCROLL
+
+  function colorHeaderAfterScroll() {
+    var header = $('.js-header');
+    $(window).on('scroll', function () {
+      if ($(this).scrollTop() > 1) {
+        header.addClass('-active');
+      } else {
+        header.removeClass('-active');
+      }
+    });
+
+    if ($(document).scrollTop() > 1) {
+      header.addClass('-active');
+    }
+  } // MOBILE MENU
+
 
   function initMobileMenu() {
     function openMenu() {
       $('.js-hamburger-menu').addClass('-active');
       $('.js-mobile-menu').addClass('-active');
-      $('.js-header').addClass('-active');
+      $('.js-header').addClass('-show-overlay');
     }
 
     function closeMenu() {
       $('.js-hamburger-menu').removeClass('-active');
       $('.js-mobile-menu').removeClass('-active');
-      $('.js-header').removeClass('-active');
+      $('.js-header').removeClass('-show-overlay');
     }
 
     $('.js-hamburger-menu').on('click', function (e) {
@@ -152,13 +170,43 @@
 
 
   function initParallaxForItems() {
-    if ($('.js-parallax-scene').length) {
+    if ($('.js-parallax-item').length) {
       var scene = $('.js-parallax-scene');
       scene.each(function () {
         new Parallax(this, {
           selector: '.js-parallax-item',
           pointerEvents: true
         });
+      });
+    }
+  } // INIT BACKGROUND VIDEOS
+
+
+  function initBackgroundVideo() {
+    var videoSettings = {
+      containment: '.js-video-block',
+      startAt: 0,
+      mute: true,
+      ratio: 'auto',
+      showControls: false,
+      autoPlay: true,
+      loop: true,
+      showYTLogo: false,
+      stopMovieOnBlur: false
+    };
+
+    if ($('.js-youtube-bg-video').length) {
+      $('.js-youtube-bg-video').YTPlayer(videoSettings);
+    }
+
+    if ($('.js-vimeo-bg-video').length) {
+      $('.js-vimeo-bg-video').vimeo_player(videoSettings);
+    }
+
+    if ($('.js-html-bg-video').length) {
+      $('.js-html-bg-video').bgVideo({
+        showPausePlay: false,
+        pauseAfter: 0
       });
     }
   }
