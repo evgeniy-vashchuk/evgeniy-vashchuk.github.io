@@ -13,6 +13,7 @@
     initCountUp();
     initMasonryLayout();
     initBackgroundVideo();
+    initAddFocusClass();
 
     if ($(window).width() > MOBILE_BREACKPOINT) {
       initParallaxForItems();
@@ -209,6 +210,19 @@
         pauseAfter: 0
       });
     }
+  } // INIT ADD FOCUS CLASS
+
+
+  function initAddFocusClass() {
+    $('.js-custom-form-item-field').on("blur focus", function () {
+      var inputFilled = this.value.trim().length > 0;
+
+      if (inputFilled) {
+        $(this).addClass('-filled');
+      } else {
+        $(this).removeClass('-filled');
+      }
+    });
   }
 })(jQuery);
 //# sourceMappingURL=main.js.map
