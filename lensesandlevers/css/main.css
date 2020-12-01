@@ -16585,7 +16585,7 @@ textarea {
 	z-index: 1;
 }
 
-.custom-form-item textarea + .custom-form-item__label {
+.custom-form-item textarea ~ .custom-form-item__label {
 	height: 200px;
 }
 
@@ -16608,16 +16608,16 @@ textarea {
 	transition-delay: 36000s;
 }
 
-.custom-form-item__field.wpcf7-not-valid + .custom-form-item__label {
+.custom-form-item__field.wpcf7-not-valid ~ .custom-form-item__label {
 	background-color: rgba(220, 53, 69, 0.15);
 }
 
-.custom-form-item__field:focus + .custom-form-item__label:before, .custom-form-item__field.-filled + .custom-form-item__label:before {
+.custom-form-item__field:focus ~ .custom-form-item__label:before, .custom-form-item__field.-filled ~ .custom-form-item__label:before {
 	border-width: 2em 8px 8px;
 	border-color: #3a398f;
 }
 
-.custom-form-item__field:focus + .custom-form-item__label .custom-form-item__label-content, .custom-form-item__field.-filled + .custom-form-item__label .custom-form-item__label-content {
+.custom-form-item__field:focus ~ .custom-form-item__label .custom-form-item__label-content, .custom-form-item__field.-filled ~ .custom-form-item__label .custom-form-item__label-content {
 	color: #ffffff;
 }
 
