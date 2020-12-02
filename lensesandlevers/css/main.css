@@ -17651,6 +17651,7 @@ textarea {
 .blog-card {
 	display: flex;
 	flex-direction: column;
+	width: 100%;
 	background-color: #3a398f;
 	color: #ffffff;
 	margin-bottom: 30px;
@@ -18803,7 +18804,7 @@ body {
 	justify-content: center;
 	width: 40px;
 	height: 40px;
-	font-size: 16px;
+	font-size: 15px;
 	border-radius: 50%;
 	background-color: #dee2e6;
 	color: #171a1d;
@@ -18836,7 +18837,7 @@ body {
 }
 
 .pagination ul.page-numbers .page-numbers.prev:hover, .pagination ul.page-numbers .page-numbers.next:hover {
-	background-color: #4140a1;
+	background-color: #33327d;
 	color: #ffffff;
 }
 
