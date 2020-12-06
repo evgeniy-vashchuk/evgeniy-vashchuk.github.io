@@ -14,6 +14,8 @@
     initMasonryLayout();
     initBackgroundVideo();
     initAddFocusClass();
+    initStagesAligment();
+    initModalScrollbarCompensation();
 
     if ($(window).width() > MOBILE_BREACKPOINT) {
       initParallaxForItems();
@@ -90,15 +92,6 @@
 
 
   function initAnimationsOnScroll() {
-    $('.js-footer-title-with-arrow').waypoint({
-      handler: function handler() {
-        if (!this.element.activeInit) {
-          this.element.activeInit = true;
-          $(this.element).addClass('-active');
-        }
-      },
-      offset: '80%'
-    });
     $('.js-active-on-scroll').waypoint({
       handler: function handler() {
         if (!this.element.activeInit) {
@@ -222,6 +215,88 @@
       } else {
         $(this).removeClass('-filled');
       }
+    });
+  } // INIT STAGES ALIGMENT
+
+
+  function initStagesAligment() {
+    var stagesBlock = $('.js-stages');
+    if (!stagesBlock.length) return;
+
+    function isOdd(num) {
+      return num % 2 == 1;
+    }
+
+    function setTopPaddingForAligment() {
+      var stageItemTextBlockMaxHeight = 0,
+          stageItemPathBlockHeight = $('.js-stage-item-path-arrow').outerHeight();
+      stagesBlock.find('.js-stage-item').each(function (index) {
+        var index = index + 1,
+            stageItemTextBlock = $(this).find('.js-stage-item-text-block');
+        stageItemTextBlock.css('height', 'auto');
+
+        if (isOdd(index)) {
+          if (stageItemTextBlock.outerHeight() > stageItemTextBlockMaxHeight) {
+            stageItemTextBlockMaxHeight = stageItemTextBlock.outerHeight();
+          }
+        }
+      });
+      stagesBlock.find('.js-stage-item').each(function (index) {
+        var index = index + 1;
+
+        if (isOdd(index)) {
+          $(this).find('.js-stage-item-text-block').css('height', 'auto');
+          $(this).find('.js-stage-item-text-block').css('height', stageItemTextBlockMaxHeight);
+        }
+
+        if (!isOdd(index)) {
+          $(this).css('padding-top', stageItemTextBlockMaxHeight + stageItemPathBlockHeight / 2);
+        }
+      });
+    }
+
+    setTopPaddingForAligment();
+    $(window).on('resize', function () {
+      setTopPaddingForAligment();
+    });
+  } // INIT MODAL SCROLLBAR COMPENSATION
+
+
+  function initModalScrollbarCompensation() {
+    var widthOfScrollbar;
+
+    function getScrollBarWidth() {
+      if (window.innerWidth > $(window).width()) {
+        var $outer = $('<div>').css({
+          visibility: 'hidden',
+          width: 100,
+          overflow: 'scroll'
+        }).appendTo('body'),
+            widthWithScroll = $('<div>').css({
+          width: '100%'
+        }).appendTo($outer).outerWidth();
+        $outer.remove();
+        widthOfScrollbar = 100 - widthWithScroll;
+        return 100 - widthWithScroll;
+      } else {
+        return widthOfScrollbar = 0;
+      }
+    }
+
+    function addScrollbarCompensation(element) {
+      element.css('padding-right', widthOfScrollbar);
+    }
+
+    function removeScrollbarCompensation(element) {
+      element.css('padding-right', 0);
+    }
+
+    $('.modal').on('show.bs.modal', function (e) {
+      getScrollBarWidth();
+      addScrollbarCompensation($('.js-header'));
+    });
+    $('.modal').on('hidden.bs.modal', function (e) {
+      removeScrollbarCompensation($('.js-header'));
     });
   }
 })(jQuery);

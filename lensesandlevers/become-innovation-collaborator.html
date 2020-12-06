@@ -46,7 +46,10 @@
 									<li class="main-navigation__item"><a class="main-navigation__link" href="#">Blog</a></li>
 								</ul>
 
-								<div class="header__btn-block"><a class="header__btn btn btn-primary btn-sm" href="#">Talk to Us</a><a class="header__btn btn btn-pink btn-sm" href="#">Become a Collaborator<i class="btn__icon fas fa-user-plus"></i></a></div>
+								<ul class="header__btn-navigation">
+									<li class="header__btn-navigation-item"><a class="btn btn-primary btn-sm" href="#">Talk to Us</a></li>
+									<li class="header__btn-navigation-item"><a class="btn btn-pink btn-sm" href="#">Become a Collaborator<i class="btn__icon fas fa-user-plus"></i></a></li>
+								</ul>
 							</div>
 						</div>
 					</div>
@@ -153,7 +156,7 @@
 								<div class="text-content-block__description text-block">
 									<p>You will bring an external perspective and complementary skills to an Internal Innovation Team during an innovation cycle. In practical terms, this means spending 1-2 hours per week thinking about and discussing an innovation challenge as member of the team for a period of approximately 70 days.</p>
 								</div>
-								<a class="btn btn-pink" href="#">Get Started</a>
+								<a class="btn btn-pink" href="#" data-toggle="modal" data-target="#becomeAnInnovationCollaboratorModal">Get Started</a>
 							</div>
 						</div>
 
@@ -275,20 +278,73 @@
 
 						<div class="section-reasons-to-become__bottom-block">
 							<h2 class="text-primary">Want to Become an Innovation Collaborator?</h2>
-							<a class="btn btn-lg btn-pink" href="#">Get Started</a>
+							<a class="btn btn-lg btn-pink" href="#" data-toggle="modal" data-target="#becomeAnInnovationCollaboratorModal">Get Started</a>
 						</div>
 					</div>
 				</div>
 			</section>
 			<!-- SECTION REASONS TO BECOME END-->
 		</main>
+		<!-- BECOME AN INNOVATION COLLABORATOR MODAL-->
+		<div class="modal fade" id="becomeAnInnovationCollaboratorModal" tabindex="-1" aria-labelledby="becomeAnInnovationCollaboratorModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered modal-xl">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h4 class="modal-title" id="becomeAnInnovationCollaboratorModalLabel">Become an Innovation Collaborator</h4>
+						<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+					</div>
+					<div class="modal-body">
+						<form class="form" method="post" action="#">
+							<div class="row">
+								<div class="col-lg-6">
+									<div class="custom-form-item js-custom-form-item">
+										<input class="custom-form-item__field js-custom-form-item-field" type="text" name="Name" id="become-an-innovation-collaborator-form-name">
+										<label class="custom-form-item__label" for="become-an-innovation-collaborator-form-name"><span class="custom-form-item__label-content">Name</span></label>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="custom-form-item js-custom-form-item">
+										<input class="custom-form-item__field js-custom-form-item-field" type="email" name="Email" id="become-an-innovation-collaborator-form-email">
+										<label class="custom-form-item__label" for="become-an-innovation-collaborator-form-email"><span class="custom-form-item__label-content">Email</span></label>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="custom-form-item js-custom-form-item">
+										<input class="custom-form-item__field js-custom-form-item-field" type="text" name="Organization" id="become-an-innovation-collaborator-form-organization">
+										<label class="custom-form-item__label" for="become-an-innovation-collaborator-form-organization"><span class="custom-form-item__label-content">Organization</span></label>
+									</div>
+								</div>
+								<div class="col-lg-6">
+									<div class="custom-form-item js-custom-form-item">
+										<input class="custom-form-item__field js-custom-form-item-field" type="text" name="How did you hear about us?" id="become-an-innovation-collaborator-form-heard-from">
+										<label class="custom-form-item__label" for="become-an-innovation-collaborator-form-heard-from"><span class="custom-form-item__label-content">How did you hear about us?</span></label>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="custom-form-item js-custom-form-item">
+										<textarea class="custom-form-item__field js-custom-form-item-field" name="Message" id="contact-form-message"></textarea>
+										<label class="custom-form-item__label" for="contact-form-message"><span class="custom-form-item__label-content">Message</span></label>
+									</div>
+								</div>
+							</div>
+
+							<div class="modal-footer form__btn p-0">
+								<button class="btn btn-secondary" type="button" data-dismiss="modal">Close</button>
+								<button class="btn btn-primary" type="submit">Send</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- BECOME AN INNOVATION COLLABORATOR MODAL END-->
 		<!-- CONTENT END-->
 
 		<!-- FOOTER-->
 		<footer class="footer">
 			<div class="container">
 				<div class="footer__title">
-					<h2 class="title-with-bg -with-arrow js-footer-title-with-arrow mb-0"><span class="title-with-bg__text">Connect with us to learn more.</span></h2>
+					<h2 class="title-with-bg -with-arrow mb-0 js-active-on-scroll"><span class="title-with-bg__text">Connect with us to learn more.</span></h2>
 				</div>
 
 				<div class="footer__bottom-content">
