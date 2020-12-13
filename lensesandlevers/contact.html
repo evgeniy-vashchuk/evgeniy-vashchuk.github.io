@@ -61,7 +61,7 @@
 		<!-- CONTENT-->
 		<main class="main js-parallax-scene">
 			<!-- SECTION WELCOME-->
-			<section class="section-welcome -header-compensation -center">
+			<section class="main__section section-welcome -center">
 				<div class="section-welcome__bg lazy js-lazy" data-src="img/section-welcome-contact-bg.jpg"></div>
 
 
@@ -76,53 +76,55 @@
 			</section>
 
 			<!-- SECTION CONTACT-->
-			<section class="section-contact section -with-footer-protection">
-				<div class="container">
-					<div class="section-contact__title-holder">
-						<h2 class="section-contact__title">Do you want to contact us?</h2>
-						<div class="section-contact__description text-block">
-							<p>For all enquiries, please email us using the form below.</p>
+			<section class="main__section section-contact">
+				<div class="section-contact__main-content section -with-footer-protection">
+					<div class="container">
+						<div class="section-contact__title-holder">
+							<h2 class="section-contact__title">Do you want to contact us?</h2>
+							<div class="section-contact__description text-block">
+								<p>For all enquiries, please email us using the form below.</p>
+							</div>
 						</div>
+
+						<form class="form" method="post" action="#">
+							<div class="row">
+								<div class="col-md-6">
+									<div class="custom-form-item js-custom-form-item">
+										<input class="custom-form-item__field js-custom-form-item-field" type="text" name="Name" id="contact-form-name">
+										<label class="custom-form-item__label" for="contact-form-name"><span class="custom-form-item__label-content">First Name</span></label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="custom-form-item js-custom-form-item">
+										<input class="custom-form-item__field js-custom-form-item-field" type="email" name="Email" id="contact-form-email">
+										<label class="custom-form-item__label" for="contact-form-email"><span class="custom-form-item__label-content">Email</span></label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="custom-form-item js-custom-form-item">
+										<input class="custom-form-item__field js-custom-form-item-field" type="text" name="Company" id="contact-form-company">
+										<label class="custom-form-item__label" for="contact-form-company"><span class="custom-form-item__label-content">Company</span></label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="custom-form-item js-custom-form-item">
+										<input class="custom-form-item__field js-custom-form-item-field" type="number" name="Phone" id="contact-form-phone">
+										<label class="custom-form-item__label" for="contact-form-phone"><span class="custom-form-item__label-content">Phone</span></label>
+									</div>
+								</div>
+								<div class="col-12">
+									<div class="custom-form-item js-custom-form-item">
+										<textarea class="custom-form-item__field js-custom-form-item-field" name="Message" id="contact-form-message"></textarea>
+										<label class="custom-form-item__label" for="contact-form-message"><span class="custom-form-item__label-content">Message</span></label>
+									</div>
+								</div>
+							</div>
+
+							<div class="form__btn">
+								<button class="btn btn-primary" type="submit">Send</button>
+							</div>
+						</form>
 					</div>
-
-					<form class="form" method="post" action="#">
-						<div class="row">
-							<div class="col-md-6">
-								<div class="custom-form-item js-custom-form-item">
-									<input class="custom-form-item__field js-custom-form-item-field" type="text" name="Name" id="contact-form-name">
-									<label class="custom-form-item__label" for="contact-form-name"><span class="custom-form-item__label-content">First Name</span></label>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="custom-form-item js-custom-form-item">
-									<input class="custom-form-item__field js-custom-form-item-field" type="email" name="Email" id="contact-form-email">
-									<label class="custom-form-item__label" for="contact-form-email"><span class="custom-form-item__label-content">Email</span></label>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="custom-form-item js-custom-form-item">
-									<input class="custom-form-item__field js-custom-form-item-field" type="text" name="Company" id="contact-form-company">
-									<label class="custom-form-item__label" for="contact-form-company"><span class="custom-form-item__label-content">Company</span></label>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="custom-form-item js-custom-form-item">
-									<input class="custom-form-item__field js-custom-form-item-field" type="number" name="Phone" id="contact-form-phone">
-									<label class="custom-form-item__label" for="contact-form-phone"><span class="custom-form-item__label-content">Phone</span></label>
-								</div>
-							</div>
-							<div class="col-12">
-								<div class="custom-form-item js-custom-form-item">
-									<textarea class="custom-form-item__field js-custom-form-item-field" name="Message" id="contact-form-message"></textarea>
-									<label class="custom-form-item__label" for="contact-form-message"><span class="custom-form-item__label-content">Message</span></label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form__btn">
-							<button class="btn btn-primary" type="submit">Send</button>
-						</div>
-					</form>
 				</div>
 			</section>
 			<!-- SECTION CONTACT END-->
