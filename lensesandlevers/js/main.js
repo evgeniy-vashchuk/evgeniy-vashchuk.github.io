@@ -14,6 +14,7 @@
     initMasonryLayout();
     initBackgroundVideo();
     initAddFocusClass();
+    initResetFormAfterClose();
     initStagesAligment();
     initModalScrollbarCompensation();
 
@@ -207,13 +208,35 @@
 
 
   function initAddFocusClass() {
-    $('.js-custom-form-item-field').on("blur focus", function () {
+    $('.js-custom-form-item-field').on('focus', function () {
+      $(this).closest('.js-custom-form-item').addClass('-active');
+
+      if ($(this).hasClass('wpcf7-not-valid')) {
+        $(this).removeClass('wpcf7-not-valid');
+      }
+    });
+    $('.js-custom-form-item-field').on("blur", function () {
       var inputFilled = this.value.trim().length > 0;
 
       if (inputFilled) {
-        $(this).addClass('-filled');
+        $(this).closest('.js-custom-form-item').addClass('-active');
       } else {
-        $(this).removeClass('-filled');
+        $(this).closest('.js-custom-form-item').removeClass('-active');
+      }
+    });
+  } // INIT RESET FORM AFTER CLOSE
+
+
+  function initResetFormAfterClose() {
+    $('.modal').on('hidden.bs.modal', function (e) {
+      var resetButton = $(this).find('.js-reset-form');
+
+      if (resetButton.length) {
+        resetButton.trigger('click');
+        $(this).find('.js-custom-form-item').removeClass('-active');
+        $(this).find('.js-custom-form-item-field').removeClass('wpcf7-not-valid');
+        $(this).find('.wpcf7-not-valid-tip').hide();
+        $(this).find('.wpcf7-response-output').hide();
       }
     });
   } // INIT STAGES ALIGMENT

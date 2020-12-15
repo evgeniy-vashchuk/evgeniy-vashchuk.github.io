@@ -1,4 +1,13 @@
 @charset "UTF-8";
+/*
+	Theme Name: Lenses and Levers
+	Theme URI: https://www.lensesandlevers.com/
+	Description: WordPress Theme
+	Version: 1.0.0
+	Author: Evgeniy Vashchuk
+	Author URI: https://evgeniy-vashchuk.github.io/
+	Tags: HTML5, CSS3, JS
+*/
 :root {
 	--blue: #007bff;
 	--indigo: #6610f2;
@@ -15749,6 +15758,10 @@ img {
 	}
 }
 
+.main__section:last-child .section-method-description__img-block {
+	margin-bottom: 0;
+}
+
 @media only screen and (min-width: 1350px) {
 	.container.-wider {
 		max-width: 1285px;
@@ -15969,6 +15982,7 @@ blockquote {
 	font-style: italic;
 	color: #808183;
 	margin-bottom: 25px;
+	font-weight: 500;
 }
 
 @media only screen and (min-width: 576px) {
@@ -16613,7 +16627,7 @@ textarea {
 	font-size: 13.3475px;
 }
 
-.form-control:hover {
+.form-control:hover:not(.wpcf7-not-valid) {
 	background-color: rgba(58, 57, 143, 0.1);
 }
 
@@ -16639,7 +16653,6 @@ textarea {
 	margin-top: 2rem;
 }
 
-.form.wpcf7-form .wpcf7-not-valid-tip,
 .form.wpcf7-form .ajax-loader {
 	display: none !important;
 }
@@ -16648,14 +16661,36 @@ textarea {
 	margin: 30px 0 0 0 !important;
 	padding: 15px !important;
 	font-size: 16px;
+	font-weight: 500;
+	text-align: center;
 }
 
 .form.wpcf7-form.invalid .wpcf7-response-output {
-	border-color: #ffc107 !important;
+	border-color: rgba(220, 53, 69, 0.75) !important;
 }
 
 .form.wpcf7-form.sent .wpcf7-response-output {
 	border-color: #28a745 !important;
+}
+
+.form .codedropz-upload-wrapper .dnd-upload-status .dnd-upload-details .dnd-progress-bar span {
+	background-color: #3a398f;
+}
+
+.form .codedropz-upload-wrapper .dnd-upload-status .dnd-upload-details .dnd-progress-bar {
+	background-color: #dee2e6;
+}
+
+.form .codedropz-upload-wrapper .dnd-upload-status .dnd-upload-details .name {
+	color: #000000;
+}
+
+.form .codedropz-upload-wrapper a {
+	transition: color 0.3s;
+}
+
+.form .codedropz-upload-wrapper .codedropz-upload-inner {
+	white-space: inherit;
 }
 
 .custom-form-item {
@@ -16667,12 +16702,51 @@ textarea {
 	z-index: 1;
 }
 
-.custom-form-item textarea ~ .custom-form-item__label {
-	height: 200px;
+.custom-form-item .wpcf7-form-control-wrap {
+	position: static;
+}
+
+.custom-form-item .wpcf7-form-control.wpcf7-recaptcha ~ .wpcf7-not-valid-tip {
+	position: static;
+	font-size: 16px !important;
+	background: transparent;
+	padding-top: 5px;
+	color: #dc3545;
+}
+
+.custom-form-item .wpcf7-form-control.wpcf7-recaptcha > div {
+	cursor: pointer;
+}
+
+.custom-form-item .wpcf7-not-valid-tip {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(220, 53, 69, 0.15);
+	pointer-events: none;
+	font-size: 0 !important;
+	transition: opacity 0.3s;
 }
 
 .custom-form-item:hover .custom-form-item__label {
 	background-color: rgba(58, 57, 143, 0.1);
+}
+
+.custom-form-item.-with-textarea .custom-form-item__label {
+	height: 200px;
+}
+
+.custom-form-item.-active .custom-form-item__label:before {
+	border-width: 2em 8px 8px;
+	border-color: #3a398f;
+}
+
+.custom-form-item.-active .custom-form-item__label .custom-form-item__label-content {
+	color: #ffffff;
 }
 
 .custom-form-item__field {
@@ -16680,8 +16754,9 @@ textarea {
 	display: block;
 	border: none;
 	border-radius: 0;
-	padding: 2.15em 1rem 0;
+	padding: 2em 1rem 15px;
 	width: 100%;
+	height: 100%;
 	background: transparent;
 	color: #495057;
 	font-size: 1rem;
@@ -16690,17 +16765,12 @@ textarea {
 	transition-delay: 36000s;
 }
 
-.custom-form-item__field.wpcf7-not-valid ~ .custom-form-item__label {
+.custom-form-item__field.wpcf7-not-valid {
 	background-color: rgba(220, 53, 69, 0.15);
 }
 
-.custom-form-item__field:focus ~ .custom-form-item__label:before, .custom-form-item__field.-filled ~ .custom-form-item__label:before {
-	border-width: 2em 8px 8px;
-	border-color: #3a398f;
-}
-
-.custom-form-item__field:focus ~ .custom-form-item__label .custom-form-item__label-content, .custom-form-item__field.-filled ~ .custom-form-item__label .custom-form-item__label-content {
-	color: #ffffff;
+.custom-form-item__field:not(.wpcf7-not-valid) ~ .wpcf7-not-valid-tip {
+	opacity: 0;
 }
 
 .custom-form-item__label {
