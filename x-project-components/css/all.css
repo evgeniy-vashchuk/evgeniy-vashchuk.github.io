@@ -8805,7 +8805,7 @@ readers do not read off random characters that represent icons */
   bottom: 0;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: #FFFFFF;
   z-index: 9999; }
   .preloader-overlay__preloader-item {
     position: absolute;
@@ -8818,8 +8818,8 @@ readers do not read off random characters that represent icons */
 .preloader-item {
   height: 50px;
   width: 50px;
-  border: 5px solid rgba(38, 38, 63, 0.3);
-  border-top: 5px solid #26263F;
+  border: 5px solid rgba(0, 0, 0, 0.3);
+  border-top: 5px solid #000000;
   border-radius: 50%;
   -webkit-animation: rotate 1s infinite linear;
   animation: rotate 1s infinite linear; }
@@ -8839,6 +8839,89 @@ readers do not read off random characters that represent icons */
   100% {
     -webkit-transform: translate(-50%, -50%) rotate(360deg);
     transform: translate(-50%, -50%) rotate(360deg); } }
+
+.hamburger-menu {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  text-decoration: none; }
+  .hamburger-menu.-active .hamburger-menu__bars {
+    background-color: rgba(0, 0, 0, 0); }
+    .hamburger-menu.-active .hamburger-menu__bars:before {
+      visibility: visible;
+      bottom: 0;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      transform: rotate(-45deg);
+      -webkit-transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      -o-transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      transition: bottom 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1); }
+    .hamburger-menu.-active .hamburger-menu__bars:after {
+      visibility: visible;
+      top: 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+      -webkit-transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      -o-transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      transition: top 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .hamburger-menu.-without-animation .hamburger-menu__bars,
+  .hamburger-menu.-without-animation .hamburger-menu__bars:before,
+  .hamburger-menu.-without-animation .hamburger-menu__bars:after {
+    -webkit-transition: none;
+    -o-transition: none;
+    transition: none; }
+  .hamburger-menu__wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 28px; }
+  .hamburger-menu__bars, .hamburger-menu__bars:before, .hamburger-menu__bars:after {
+    width: 50px;
+    height: 4px;
+    background-color: #000000;
+    border-radius: 0; }
+  .hamburger-menu__bars {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    -webkit-transition: background-color 0ms 300ms;
+    -o-transition: background-color 0ms 300ms;
+    transition: background-color 0ms 300ms; }
+    .hamburger-menu__bars:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 12px;
+      -webkit-transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      -o-transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      transition: bottom 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      visibility: visible; }
+    .hamburger-menu__bars:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 12px;
+      -webkit-transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      -o-transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      transition: top 300ms 300ms cubic-bezier(0.23, 1, 0.32, 1), transform 300ms cubic-bezier(0.23, 1, 0.32, 1), -webkit-transform 300ms cubic-bezier(0.23, 1, 0.32, 1);
+      visibility: visible; }
 
 .svg-animation-item {
   fill: none; }
@@ -8939,14 +9022,11 @@ readers do not read off random characters that represent icons */
   .filter-item.-blue {
     background-color: #3b46bd; }
 
-html, body {
-  height: 100%; }
-
 .wrap-for-sticky {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   position: relative;
-  min-height: 100%; }
+  min-height: 100vh; }
 
 .footer.-sticky {
   position: absolute;
@@ -9107,14 +9187,6 @@ html, body {
 .google-map {
   height: 300px;
   background-color: #26263F; }
-  .google-map.-map-absolute {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
   .google-map .gm-style-cc {
     display: none; }
   .google-map a[href^="http://maps.google.com/maps"],
@@ -9276,6 +9348,29 @@ html, body {
     transform: translate(-50%, -50%);
     width: 20px;
     height: 20px; }
+
+.bg-video-block {
+  position: relative;
+  height: 300px; }
+  .bg-video-block__html-bg-video {
+    position: absolute;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    -webkit-transition: opacity 300ms linear;
+    -o-transition: opacity 300ms linear;
+    transition: opacity 300ms linear; }
+    .bg-video-block__html-bg-video.is-visible {
+      opacity: 1; }
 
 /* PrismJS 1.14.0
 http://prismjs.com/download.html#themes=prism&languages=markup+css+clike+javascript+sass+scss&plugins=line-numbers+toolbar+previewers+unescaped-markup+normalize-whitespace+copy-to-clipboard */
@@ -9817,25 +9912,25 @@ button {
   @media only screen and (max-width: 575px) {
     .header {
       padding: 4px 0; } }
-  .header.-small-header {
+  .header.-active {
     border-width: 0; }
-    .header.-small-header .main-logo-wrap {
+    .header.-active .main-logo-wrap {
       max-width: 150px;
       min-width: 150px; }
       @media only screen and (max-width: 575px) {
-        .header.-small-header .main-logo-wrap {
+        .header.-active .main-logo-wrap {
           max-width: 100px;
           min-width: 100px; } }
-    .header.-small-header .github-corner-wrap {
+    .header.-active .github-corner-wrap {
       top: 0;
       right: 0;
       width: 61px;
       height: 61px; }
       @media only screen and (max-width: 575px) {
-        .header.-small-header .github-corner-wrap {
+        .header.-active .github-corner-wrap {
           width: 42px;
           height: 42px; } }
-    .header.-small-header .header__progress-container {
+    .header.-active .header__progress-container {
       left: 0;
       right: 0; }
   .header__progress-container {
@@ -9895,7 +9990,7 @@ button {
       max-width: 100px;
       min-width: 100px; } }
 
-.header-right-block__hamburger-menu {
+.header-right-block__hamburger-menu-item {
   margin-left: 15px; }
 
 .github-corner-wrap {
@@ -9984,7 +10079,7 @@ button {
     -webkit-animation: octocat-wave 560ms ease-in-out;
     animation: octocat-wave 560ms ease-in-out; } }
 
-.hamburger-menu {
+.hamburger-menu-item {
   width: 42px;
   height: 42px;
   display: block;
@@ -9992,39 +10087,39 @@ button {
   cursor: pointer;
   position: relative; }
   @media only screen and (max-width: 767px) {
-    .hamburger-menu {
+    .hamburger-menu-item {
       width: 34px;
       height: 34px; } }
-  .hamburger-menu__icon {
+  .hamburger-menu-item__icon {
     display: block;
     position: relative;
     height: 4px;
     margin: 7px 0;
     background-color: #F1E9E4; }
     @media only screen and (max-width: 767px) {
-      .hamburger-menu__icon {
+      .hamburger-menu-item__icon {
         height: 3px;
         margin: 6px 0; } }
-    .hamburger-menu__icon.-one {
+    .hamburger-menu-item__icon.-one {
       -webkit-transition: all .3s .5s;
       -o-transition: all .3s .5s;
       transition: all .3s .5s; }
-    .hamburger-menu__icon.-two {
+    .hamburger-menu-item__icon.-two {
       -webkit-transition: all .3s .3s;
       -o-transition: all .3s .3s;
       transition: all .3s .3s; }
-    .hamburger-menu__icon.-three {
+    .hamburger-menu-item__icon.-three {
       -webkit-transition: all .3s .1s;
       -o-transition: all .3s .1s;
       transition: all .3s .1s; }
-  .hamburger-menu.-open-menu .hamburger-menu__icon.-one {
+  .hamburger-menu-item.-open-menu .hamburger-menu-item__icon.-one {
     margin: 0;
     width: 100%;
     height: 100%;
     -webkit-transition: all .3s .1s;
     -o-transition: all .3s .1s;
     transition: all .3s .1s; }
-  .hamburger-menu.-open-menu .hamburger-menu__icon.-two {
+  .hamburger-menu-item.-open-menu .hamburger-menu-item__icon.-two {
     background-color: #25253E;
     -webkit-transform: translateY(-24px) rotateZ(45deg);
     -ms-transform: translateY(-24px) rotate(45deg);
@@ -10032,7 +10127,7 @@ button {
     -webkit-transition: all .3s .3s;
     -o-transition: all .3s .3s;
     transition: all .3s .3s; }
-  .hamburger-menu.-open-menu .hamburger-menu__icon.-three {
+  .hamburger-menu-item.-open-menu .hamburger-menu-item__icon.-three {
     background-color: #25253E;
     -webkit-transform: translateY(-33px) rotateZ(-45deg);
     -ms-transform: translateY(-33px) rotate(-45deg);

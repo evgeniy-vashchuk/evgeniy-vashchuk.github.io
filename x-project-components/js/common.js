@@ -129,7 +129,7 @@ $(document).ready(function() {
 		'touch': false
 	});
 
-	$('.js-hamburger-menu').on('click', function() {
+	$('.js-hamburger-menu-item').on('click', function() {
 		$(this).toggleClass('-open-menu');
 		slideout.toggle();
 	});
@@ -185,7 +185,7 @@ $(document).ready(function() {
 		.on('beforeclose', function() {
 			this.panel.classList.remove('-open');
 			this.panel.removeEventListener('click', close);
-			$('.js-hamburger-menu').removeClass('-open-menu');
+			$('.js-hamburger-menu-item').removeClass('-open-menu');
 		});
 
 	$('.js-list-group .list-group-item').on('click', function() {

@@ -19,7 +19,7 @@
 		padding: 4px 0;
 	}
 
-	&.-small-header {
+	&.-active {
 		border-width: 0;
 
 		.main-logo-wrap {
@@ -102,7 +102,7 @@
 }
 
 .header-right-block {
-	&__hamburger-menu {
+	&__hamburger-menu-item {
 		margin-left: 15px;
 	}
 }

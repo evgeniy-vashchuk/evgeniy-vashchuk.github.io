@@ -60,10 +60,10 @@
 						<i class="fas fa-download"></i>
 					</a>
 
-					<div class="hamburger-menu header-right-block__hamburger-menu js-hamburger-menu d-block d-lg-none">
-						<span class="hamburger-menu__icon -one"></span>
-						<span class="hamburger-menu__icon -two"></span>
-						<span class="hamburger-menu__icon -three"></span>
+					<div class="hamburger-menu-item header-right-block__hamburger-menu-item js-hamburger-menu-item d-block d-lg-none">
+						<span class="hamburger-menu-item__icon -one"></span>
+						<span class="hamburger-menu-item__icon -two"></span>
+						<span class="hamburger-menu-item__icon -three"></span>
 					</div>
 				</div>
 			</div>
@@ -158,6 +158,16 @@
 								</tr>
 							</thead>
 							<tbody>
+								<tr>
+									<td>
+										<div class="description-text">
+											<p>A little refactoring of all components. Added Hamburger menu, Viewport units on mobile and Background video components.</p>
+										</div>
+									</td>
+									<td>
+										24.03.2021
+									</td>
+								</tr>
 								<tr>
 									<td>
 										<div class="description-text">
@@ -314,7 +324,7 @@
 														<div class="code-example">
 															<pre class="line-numbers">
 																<code class="language-scss">
-																	$preloader-overlay-bg-color: #fff;
+																	$preloader-overlay-bg-color: #FFFFFF;
 
 																	.preloader-overlay {
 																		position: fixed;
@@ -339,8 +349,8 @@
 																	.preloader-item {
 																		height: 50px;
 																		width: 50px;
-																		border: 5px solid rgba(#26263F, 0.3);
-																		border-top: 5px solid #26263F;
+																		border: 5px solid rgba(#000000, 0.3);
+																		border-top: 5px solid #000000;
 																		border-radius: 50%;
 																		animation: rotate 1s infinite linear;
 																	}
@@ -349,6 +359,7 @@
 																		0% {
 																			transform: translate(-50%, -50%) rotate(0deg);
 																		}
+
 																		100% {
 																			transform: translate(-50%, -50%) rotate(360deg);
 																		}
@@ -364,21 +375,335 @@
 														<div class="code-example">
 															<pre class="line-numbers">
 																<code class="language-js">
-																	function hidePreloader(preloaderItem, hideTimeout) {
+																	// PRELOADER
+																	function initPreloader() {
+																		var preloader = $('.js-preloader'),
+																				hideTimeout = 1000;
+
 																		// hide preloader by click
-																		preloaderItem.on('click', function() {
+																		preloader.on('click', function() {
 																			$(this).fadeOut('slow');
 																		});
 
 																		$(window).on('load', function() {
 																			// hide preloader
 																			setTimeout(function() {
-																				preloaderItem.fadeOut('slow');
+																				preloader.fadeOut('slow');
 																			}, hideTimeout);
 																		});
 																	}
 
-																	hidePreloader($('.js-preloader'), 1000);
+																	initPreloader();
+																</code>
+															</pre>
+														</div>
+													</div>
+													<!-- javascript END -->
+												</div>
+												<!-- TABS CONTENT END -->
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Hamburger menu -->
+								<div class="component-block-wrap" id="hamburger-menu">
+									<div class="component-block">
+										<!-- title -->
+										<h3 class="section-title -apricot-border -component-title">
+											<a class="section-title__anchor js-no-scroll" href="#hamburger-menu">
+												Hamburger menu
+
+												<i class="fas fa-hashtag"></i>
+											</a>
+
+											<span class="badge-block">
+												<span class="badge-block__badge badge -html">
+													<span>HTML</span>
+													<i class="fab fa-html5"></i>
+												</span>
+												<span class="badge-block__badge badge -sass">
+													<span>SASS</span>
+													<i class="fab fa-sass"></i>
+												</span>
+												<span class="badge-block__badge badge -js">
+													<span>JS</span>
+													<i class="fab fa-js"></i>
+												</span>
+											</span>
+										</h3>
+										<!-- title END -->
+
+										<!-- description -->
+										<div class="description-text">
+											<p>Animated hamburger menu icon. The sizes of the hamburger menu are set via scss variables.</p>
+										</div>
+
+										<!-- example -->
+										<div class="component-block-example-block -mb-16">
+
+											<a href="#" class="hamburger-menu js-hamburger-menu" aria-label="Toggle menu">
+												<div class="hamburger-menu__wrap">
+													<div class="hamburger-menu__bars"></div>
+												</div>
+											</a>
+
+										</div>
+
+										<!-- usage -->
+										<div class="component-block-usage">
+											<!-- button -->
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#hamburger-menu-collapse" role="button" aria-expanded="false" aria-controls="hamburger-menu-collapse">
+												example
+												<i class="fas fa-angle-down"></i>
+											</a>
+
+											<!-- code example -->
+											<div class="collapse" id="hamburger-menu-collapse">
+												<!-- NAVS FOR TABS -->
+												<ul class="nav nav-tabs component-block-usage__nav-tabs" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll active" id="hamburger-menu-html-tab" data-toggle="tab" href="#hamburger-menu-html" role="tab" aria-controls="hamburger-menu-html" aria-selected="true">HTML</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll" id="hamburger-menu-sass-tab" data-toggle="tab" href="#hamburger-menu-sass" role="tab" aria-controls="hamburger-menu-sass" aria-selected="false">SASS</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll" id="hamburger-menu-js-tab" data-toggle="tab" href="#hamburger-menu-js" role="tab" aria-controls="hamburger-menu-js" aria-selected="false">JS</a>
+													</li>
+												</ul>
+												<!-- NAVS FOR TABS END -->
+
+												<!-- TABS CONTENT -->
+												<div class="tab-content">
+													<!-- html -->
+													<div class="tab-pane show active" id="hamburger-menu-html" role="tabpanel" aria-labelledby="hamburger-menu-html-tab">
+														<div class="code-example">
+															<script type="text/plain" class="language-markup line-numbers">
+																<!-- HAMBURGER MENU -->
+																<a href="#" class="hamburger-menu js-hamburger-menu" aria-label="Toggle menu">
+																	<div class="hamburger-menu__wrap">
+																		<div class="hamburger-menu__bars"></div>
+																	</div>
+																</a>
+																<!-- HAMBURGER MENU END -->
+															</script>
+														</div>
+													</div>
+													<!-- html END -->
+
+													<!-- sass -->
+													<div class="tab-pane" id="hamburger-menu-sass" role="tabpanel" aria-labelledby="hamburger-menu-sass-tab">
+														<div class="code-example">
+															<pre class="line-numbers">
+																<code class="language-scss">
+																	$bar-width: 50px;
+																	$bar-height: 4px;
+																	$bar-spacing: 8px;
+																	$bar-border-radius: 0;
+																	$bar-color: #000000;
+																	$opening-time: 600ms;
+
+																	.hamburger-menu {
+																		position: relative;
+																		display: inline-block;
+																		width: $bar-width;
+																		height: $bar-width;
+																		text-decoration: none;
+
+																		&.-active {
+																			.hamburger-menu__bars {
+																				background-color: rgba($bar-color, 0);
+
+																				&:before {
+																					visibility: visible;
+																					bottom: 0;
+																					transform: rotate(-45deg);
+																					transition: bottom $opening-time/2 cubic-bezier(0.23, 1, 0.32, 1), transform $opening-time/2 $opening-time/2 cubic-bezier(0.23, 1, 0.32, 1);
+																				}
+
+																				&:after {
+																					visibility: visible;
+																					top: 0;
+																					transform: rotate(45deg);
+																					transition: top $opening-time/2 cubic-bezier(0.23, 1, 0.32, 1), transform $opening-time/2 $opening-time/2 cubic-bezier(0.23, 1, 0.32, 1);
+																				}
+																			}
+																		}
+
+																		&.-without-animation {
+																			.hamburger-menu__bars,
+																			.hamburger-menu__bars:before,
+																			.hamburger-menu__bars:after {
+																				transition: none;
+																			}
+																		}
+
+																		&__wrap {
+																			position: absolute;
+																			top: 50%;
+																			left: 50%;
+																			transform: translate(-50%, -50%);
+																			width: $bar-width;
+																			height: $bar-height * 3 + $bar-spacing * 2;
+																		}
+
+																		&__bars,
+																		&__bars:before,
+																		&__bars:after {
+																			width: $bar-width;
+																			height: $bar-height;
+																			background-color: $bar-color;
+																			border-radius: $bar-border-radius;
+																		}
+
+																		&__bars {
+																			position: absolute;
+																			top: 50%;
+																			left: 50%;
+																			transform: translate(-50%, -50%);
+																			transition: background-color 0ms $opening-time/2;
+
+																			&:before {
+																				content: "";
+																				position: absolute;
+																				left: 0;
+																				bottom: $bar-spacing + $bar-height;
+																				transition: bottom $opening-time/2 $opening-time/2 cubic-bezier(0.23, 1, 0.32, 1), transform $opening-time/2 cubic-bezier(0.23, 1, 0.32, 1);
+																				visibility: visible;
+																			}
+
+																			&:after {
+																				content: "";
+																				position: absolute;
+																				left: 0;
+																				top: $bar-spacing + $bar-height;
+																				transition: top $opening-time/2 $opening-time/2 cubic-bezier(0.23, 1, 0.32, 1), transform $opening-time/2 cubic-bezier(0.23, 1, 0.32, 1);
+																				visibility: visible;
+																			}
+																		}
+																	}
+																</code>
+															</pre>
+														</div>
+													</div>
+													<!-- sass END -->
+
+													<!-- javascript -->
+													<div class="tab-pane" id="hamburger-menu-js" role="tabpanel" aria-labelledby="hamburger-menu-js-tab">
+														<div class="code-example">
+															<pre class="line-numbers">
+																<code class="language-js">
+																	// HAMBURGER MENU
+																	function initHamburgerMenu() {
+																		$('.js-hamburger-menu').on('click', function(e) {
+																			e.preventDefault();
+
+																			if ($(this).hasClass('-active')) {
+																				$(this).removeClass('-active');
+																			} else {
+																				$(this).addClass('-active')
+																			}
+																		})
+																	}
+
+																	initHamburgerMenu();
+																</code>
+															</pre>
+														</div>
+													</div>
+													<!-- javascript END -->
+												</div>
+												<!-- TABS CONTENT END -->
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Viewport units on mobile -->
+								<div class="component-block-wrap" id="viewport-units-on-mobile">
+									<div class="component-block">
+										<!-- title -->
+										<h3 class="section-title -apricot-border -component-title">
+											<a class="section-title__anchor js-no-scroll" href="#viewport-units-on-mobile">
+												Viewport units on mobile
+
+												<i class="fas fa-hashtag"></i>
+											</a>
+
+											<span class="badge-block">
+												<span class="badge-block__badge badge -sass">
+													<span>SASS</span>
+													<i class="fab fa-sass"></i>
+												</span>
+												<span class="badge-block__badge badge -js">
+													<span>JS</span>
+													<i class="fab fa-js"></i>
+												</span>
+											</span>
+										</h3>
+										<!-- title END -->
+
+										<!-- description -->
+										<div class="description-text">
+											<p>The trick to viewport units on mobile.</p>
+										</div>
+
+										<!-- usage -->
+										<div class="component-block-usage">
+											<!-- button -->
+											<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#viewport-units-on-mobile-collapse" role="button" aria-expanded="false" aria-controls="viewport-units-on-mobile-collapse">
+												example
+												<i class="fas fa-angle-down"></i>
+											</a>
+
+											<!-- code example -->
+											<div class="collapse" id="viewport-units-on-mobile-collapse">
+												<!-- NAVS FOR TABS -->
+												<ul class="nav nav-tabs component-block-usage__nav-tabs" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll active" id="viewport-units-on-mobile-sass-tab" data-toggle="tab" href="#viewport-units-on-mobile-sass" role="tab" aria-controls="viewport-units-on-mobile-sass" aria-selected="false">SASS</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll" id="viewport-units-on-mobile-js-tab" data-toggle="tab" href="#viewport-units-on-mobile-js" role="tab" aria-controls="viewport-units-on-mobile-js" aria-selected="false">JS</a>
+													</li>
+												</ul>
+												<!-- NAVS FOR TABS END -->
+
+												<!-- TABS CONTENT -->
+												<div class="tab-content">
+													<!-- sass -->
+													<div class="tab-pane show active" id="viewport-units-on-mobile-sass" role="tabpanel" aria-labelledby="viewport-units-on-mobile-sass-tab">
+														<div class="code-example">
+															<pre class="line-numbers">
+																<code class="language-scss">
+																	.menu {
+																		height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+																		height: calc(var(--vh, 1vh) * 100);
+																	}
+																</code>
+															</pre>
+														</div>
+													</div>
+													<!-- sass END -->
+
+													<!-- javascript -->
+													<div class="tab-pane" id="viewport-units-on-mobile-js" role="tabpanel" aria-labelledby="viewport-units-on-mobile-js-tab">
+														<div class="code-example">
+															<pre class="line-numbers">
+																<code class="language-js">
+																	// VIEWPORT UNITS ON MOBILE
+																	function initViewportUnitsOnMobile() {
+																		var vh = window.innerHeight * 0.01;
+																		document.documentElement.style.setProperty('--vh', vh + 'px');
+
+																		$(window).on('resize', function() {
+																			vh = window.innerHeight * 0.01;
+																			document.documentElement.style.setProperty('--vh', vh + 'px');
+																		});
+																	}
+
+																	initViewportUnitsOnMobile();
 																</code>
 															</pre>
 														</div>
@@ -546,33 +871,37 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// SVG ANIMATION
-																	function svgAnimation(svgItem, duration) {
-																		$(svgItem).addClass('-animation-init');
+																	function initSvgAnimation() {
+																		function svgAnimation(svgItem, duration) {
+																			$(svgItem).addClass('-animation-init');
 
-																		new Vivus(svgItem, {
-																			duration: duration,
-																			type: 'oneByOne'
-																		});
-																	}
-
-																	function svgAnimationOnScroll() {
-																		var svgItem = $('.js-svg-animation-item');
-
-																		if (svgItem.length) {
-																			svgItem.waypoint({
-																				handler: function() {
-																					if (!this.element.svgAnimationInit) {
-																						this.element.svgAnimationInit = true;
-
-																						svgAnimation(this.element, 300)
-																					}
-																				},
-																				offset: '80%'
-																			})
+																			new Vivus(svgItem, {
+																				duration: duration,
+																				type: 'oneByOne'
+																			});
 																		}
+
+																		function svgAnimationOnScroll() {
+																			var svgItem = $('.js-svg-animation-item');
+
+																			if (svgItem.length) {
+																				svgItem.waypoint({
+																					handler: function() {
+																						if (!this.element.svgAnimationInit) {
+																							this.element.svgAnimationInit = true;
+
+																							svgAnimation(this.element, 300)
+																						}
+																					},
+																					offset: '80%'
+																				})
+																			}
+																		}
+
+																		svgAnimationOnScroll();
 																	}
 
-																	svgAnimationOnScroll();
+																	initSvgAnimation();
 																</code>
 															</pre>
 														</div>
@@ -651,13 +980,13 @@
 														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
 
 														<div class="attention-text attention-text-block__text">
-															<p>This component is dependent on <a href="https://inorganik.github.io/countUp.js/" class="link-slideup -white" target="_blank">countUp.js</a>, and <a href="http://imakewebthings.com/waypoints/" class="link-slideup -white" target="_blank">waypoints.js</a>.</p>
+															<p>This component is dependent on <a href="https://inorganik.github.io/countUp.js/" class="link-slideup -white" target="_blank">countUp.umd.js</a>, and <a href="http://imakewebthings.com/waypoints/" class="link-slideup -white" target="_blank">waypoints.js</a>.</p>
 														</div>
 													</div>
 
 													<pre class="line-numbers">
 														<code class="language-html">
-															&#60;script src="/path/to/countUp.js"&#62;&#60;/script&#62;
+															&#60;script src="/path/to/countUp.umd.js"&#62;&#60;/script&#62;
 															&#60;script src="/path/to/waypoints.js"&#62;&#60;/script&#62;
 															&#60;script src="/path/to/common.js"&#62;&#60;/script&#62;
 														</code>
@@ -729,41 +1058,48 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// COUNT UP
-																	function countUpNumbers(countUpItem, duration) {
-																		var countNumber = $(countUpItem).attr('data-count-number'),
-																				numbersAfterComma = 0;
+																	function initCountUp() {
+																		function countUpNumbers(countUpItem, duration) {
+																			var countNumber = $(countUpItem).attr('data-count-number'),
+																					numbersAfterComma = 0;
 
-																		if (countNumber.indexOf('.') > 0) {
-																			numbersAfterComma = countNumber.length - (countNumber.indexOf('.') + 1);
+																			if (countNumber.indexOf('.') > 0) {
+																				numbersAfterComma = countNumber.length - (countNumber.indexOf('.') + 1);
+																			}
+
+																			var options = {
+																				startVal: 0,
+																				decimalPlaces: numbersAfterComma,
+																				duration: duration/1000,
+																				useEasing: true,
+																				decimal: '.',
+																				suffix: '%'
+																			};
+
+																			new countUp.CountUp(countUpItem, countNumber, options).start();
 																		}
 
-																		var options = {
-																			useEasing: true,
-																			decimal: '.',
-																			suffix: '%'
-																		};
+																		function countUpNumbersOnScroll() {
+																			var countUpItem = $('.js-count-up-item');
 
-																		new CountUp(countUpItem, 0, countNumber, numbersAfterComma, duration/1000, options).start();
-																	}
+																			if (countUpItem.length) {
+																				countUpItem.waypoint({
+																					handler: function() {
+																						if (!this.element.countUpInit) {
+																							this.element.countUpInit = true;
 
-																	function countUpNumbersOnScroll() {
-																		var countUpItem = $('.js-count-up-item');
-
-																		if (countUpItem.length) {
-																			countUpItem.waypoint({
-																				handler: function() {
-																					if (!this.element.countUpInit) {
-																						this.element.countUpInit = true;
-
-																						countUpNumbers(this.element, 4000);
-																					}
-																				},
-																				offset: '80%'
-																			})
+																							countUpNumbers(this.element, 8000);
+																						}
+																					},
+																					offset: '80%'
+																				})
+																			}
 																		}
+
+																		countUpNumbersOnScroll();
 																	}
 
-																	countUpNumbersOnScroll();
+																	initCountUp();
 																</code>
 															</pre>
 														</div>
@@ -886,13 +1222,13 @@
 														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
 
 														<div class="attention-text attention-text-block__text">
-															<p>This component is dependent on <a href="https://inorganik.github.io/countUp.js/" class="link-slideup -white" target="_blank">countUp.js</a>, and <a href="http://imakewebthings.com/waypoints/" class="link-slideup -white" target="_blank">waypoints.js</a>.</p>
+															<p>This component is dependent on <a href="https://inorganik.github.io/countUp.js/" class="link-slideup -white" target="_blank">countUp.umd.js</a>, and <a href="http://imakewebthings.com/waypoints/" class="link-slideup -white" target="_blank">waypoints.js</a>.</p>
 														</div>
 													</div>
 
 													<pre class="line-numbers">
 														<code class="language-html">
-															&#60;script src="/path/to/countUp.js"&#62;&#60;/script&#62;
+															&#60;script src="/path/to/countUp.umd.js"&#62;&#60;/script&#62;
 															&#60;script src="/path/to/waypoints.js"&#62;&#60;/script&#62;
 															&#60;script src="/path/to/common.js"&#62;&#60;/script&#62;
 														</code>
@@ -1040,58 +1376,61 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// PROGRESS BARS
-																	function progressBars(progressBarsBlock, duration) {
-																		var progressBarItem = $(progressBarsBlock).find('.js-progress-bar-item');
+																	function initProgressBars() {
+																		function progressBars(progressBarsBlock, duration) {
+																			var progressBarItem = $(progressBarsBlock).find('.js-progress-bar-item');
 
-																		progressBarItem.each(function() {
-																			var progressBarsFillItem = $(this).find('.js-progress-bar-strip'),
-																					progressBarsCountUpItem = $(this).find('.js-progress-bar-percent'),
-																					progressBarPercent = progressBarsCountUpItem.attr('data-progress-percent');
+																			progressBarItem.each(function() {
+																				var progressBarsFillItem = $(this).find('.js-progress-bar-strip'),
+																						progressBarsCountUpItem = $(this).find('.js-progress-bar-percent'),
+																						progressBarPercent = progressBarsCountUpItem.attr('data-progress-percent');
 
-																			// progress bar fill animation
-																			progressBarsFillItem.animate({
-																				width: progressBarPercent + '%'
-																			}, duration, 'swing');
+																				// progress bar fill animation
+																				progressBarsFillItem.animate({
+																					width: progressBarPercent + '%'
+																				}, duration, 'swing');
 
-																			// count up animation
-																			var options = {
-																				useEasing: false,
-																				decimal: '.',
-																				suffix: '%'
-																			};
+																				// find amount of numbers after the decimal point
+																				var numbersAfterComma = 0;
 
-																			// find amount of numbers after the decimal point
-																			var numbersAfterComma = 0;
+																				if (progressBarPercent.indexOf('.') > 0) {
+																					numbersAfterComma = progressBarPercent.length - (progressBarPercent.indexOf('.') + 1);
+																				}
 
-																			if (progressBarPercent.indexOf('.') > 0) {
-																				numbersAfterComma = progressBarPercent.length - (progressBarPercent.indexOf('.') + 1);
-																			}
+																				// count up animation
+																				var options = {
+																					useEasing: false,
+																					decimal: '.',
+																					decimalPlaces: numbersAfterComma,
+																					duration: duration/1000,
+																					suffix: '%'
+																				};
 
-																			var countUpElement = progressBarsCountUpItem.get(0),
-																					numAnim = new CountUp(countUpElement, 0, progressBarPercent, numbersAfterComma, duration/1000, options);
-
-																			numAnim.start();
-																		});
-																	}
-
-																	function progressBarsOnScroll() {
-																		var progressBarsBlock = $('.js-progress-bars');
-
-																		if (progressBarsBlock.length) {
-																			progressBarsBlock.waypoint({
-																				handler: function() {
-																					if (!this.element.progressBarsInit) {
-																						this.element.progressBarsInit = true;
-
-																						progressBars(this.element, 4000);
-																					}
-																				},
-																				offset: '80%'
-																			})
+																				new countUp.CountUp(progressBarsCountUpItem.get(0), progressBarPercent, options).start();
+																			});
 																		}
+
+																		function progressBarsOnScroll() {
+																			var progressBarsBlock = $('.js-progress-bars');
+
+																			if (progressBarsBlock.length) {
+																				progressBarsBlock.waypoint({
+																					handler: function() {
+																						if (!this.element.progressBarsInit) {
+																							this.element.progressBarsInit = true;
+
+																							progressBars(this.element, 4000);
+																						}
+																					},
+																					offset: '80%'
+																				})
+																			}
+																		}
+
+																		progressBarsOnScroll();
 																	}
 
-																	progressBarsOnScroll();
+																	initProgressBars();
 																</code>
 															</pre>
 														</div>
@@ -1379,7 +1718,7 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// SHUFFLE FILTER
-																	function filterInit() {
+																	function initFilter() {
 																		var filterContainer = $('.js-filter-container');
 
 																		if (filterContainer.length) {
@@ -1410,7 +1749,7 @@
 																		}
 																	}
 
-																	filterInit();
+																	initFilter();
 																</code>
 															</pre>
 														</div>
@@ -1424,13 +1763,13 @@
 									</div>
 								</div>
 
-								<!-- Small header after scroll -->
-								<div class="component-block-wrap" id="small-header">
+								<!-- Active header after scroll -->
+								<div class="component-block-wrap" id="active-header">
 									<div class="component-block">
 										<!-- title -->
 										<h3 class="section-title -apricot-border -component-title">
-											<a class="section-title__anchor js-no-scroll" href="#small-header">
-												Small header after scroll
+											<a class="section-title__anchor js-no-scroll" href="#active-header">
+												Active header after scroll
 
 												<i class="fas fa-hashtag"></i>
 											</a>
@@ -1446,32 +1785,32 @@
 
 										<!-- description -->
 										<div class="description-text">
-											<p>Adding <strong class="red-text">class="-small-header"</strong> after the start of scrolling and removing it, when you are at the top of the page. With this class you can styling the small header.</p>
+											<p>Adding <strong class="red-text">class="-active"</strong> after the start of scrolling and removing it, when you are at the top of the page. With this class you can make the header smaller or fill it with color.</p>
 										</div>
 
 										<!-- usage -->
 										<div class="component-block-usage">
 											<!-- button -->
 											<div class="component-block-usage-btn">
-												<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#small-header-collapse" role="button" aria-expanded="false" aria-controls="small-header-collapse">
+												<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#active-header-collapse" role="button" aria-expanded="false" aria-controls="active-header-collapse">
 													example
 													<i class="fas fa-angle-down"></i>
 												</a>
 											</div>
 
 											<!-- code example -->
-											<div class="collapse" id="small-header-collapse">
+											<div class="collapse" id="active-header-collapse">
 
 												<!-- NAVS FOR TABS -->
 												<ul class="nav nav-tabs component-block-usage__nav-tabs" role="tablist">
 													<li class="nav-item">
-														<a class="nav-link js-no-scroll active" id="small-header-html-tab" data-toggle="tab" href="#small-header-html" role="tab" aria-controls="small-header-html" aria-selected="true">HTML</a>
+														<a class="nav-link js-no-scroll active" id="active-header-html-tab" data-toggle="tab" href="#active-header-html" role="tab" aria-controls="active-header-html" aria-selected="true">HTML</a>
 													</li>
 													<li class="nav-item">
-														<a class="nav-link js-no-scroll" id="small-header-sass-tab" data-toggle="tab" href="#small-header-sass" role="tab" aria-controls="small-header-sass" aria-selected="false">SASS</a>
+														<a class="nav-link js-no-scroll" id="active-header-sass-tab" data-toggle="tab" href="#active-header-sass" role="tab" aria-controls="active-header-sass" aria-selected="false">SASS</a>
 													</li>
 													<li class="nav-item">
-														<a class="nav-link js-no-scroll" id="small-header-js-tab" data-toggle="tab" href="#small-header-js" role="tab" aria-controls="small-header-js" aria-selected="false">JS</a>
+														<a class="nav-link js-no-scroll" id="active-header-js-tab" data-toggle="tab" href="#active-header-js" role="tab" aria-controls="active-header-js" aria-selected="false">JS</a>
 													</li>
 												</ul>
 												<!-- NAVS FOR TABS END -->
@@ -1479,7 +1818,7 @@
 												<!-- TABS CONTENT -->
 												<div class="tab-content">
 													<!-- html -->
-													<div class="tab-pane show active" id="small-header-html" role="tabpanel" aria-labelledby="small-header-html-tab">
+													<div class="tab-pane show active" id="active-header-html" role="tabpanel" aria-labelledby="active-header-html-tab">
 														<div class="code-example">
 															<script type="text/plain" class="language-markup line-numbers">
 																<header class="header js-header">
@@ -1491,12 +1830,12 @@
 													<!-- html END -->
 
 													<!-- sass -->
-													<div class="tab-pane" id="small-header-sass" role="tabpanel" aria-labelledby="small-header-sass-tab">
+													<div class="tab-pane" id="active-header-sass" role="tabpanel" aria-labelledby="active-header-sass-tab">
 														<div class="code-example">
 															<pre class="line-numbers">
 																<code class="language-scss">
 																	.header {
-																		&.-small-header {
+																		&.-active {
 																			// small header styles
 																		}
 																	}
@@ -1507,28 +1846,28 @@
 													<!-- sass END -->
 
 													<!-- javascript -->
-													<div class="tab-pane" id="small-header-js" role="tabpanel" aria-labelledby="small-header-js-tab">
+													<div class="tab-pane" id="active-header-js" role="tabpanel" aria-labelledby="active-header-js-tab">
 														<div class="code-example">
 															<pre class="line-numbers">
 																<code class="language-js">
-																	// SMALL HEADER AFTER SCROLL
-																	function smallHeaderAfterScroll(distanceY) {
+																	// ACTIVE HEADER AFTER SCROLL
+																	function initActiveHeaderAfterScroll() {
 																		var header = $('.js-header');
 
 																		$(window).on('scroll', function() {
-																			if ($(this).scrollTop() > distanceY) {
-																				header.addClass('-small-header');
+																			if ($(this).scrollTop() > 10) {
+																				header.addClass('-active');
 																			} else {
-																				header.removeClass('-small-header');
+																				header.removeClass('-active');
 																			}
 																		});
 
-																		if ($(document).scrollTop() > distanceY) {
-																			header.addClass('-small-header');
+																		if ($(document).scrollTop() > 10) {
+																			header.addClass('-active');
 																		}
 																	}
 
-																	smallHeaderAfterScroll(1);
+																	initActiveHeaderAfterScroll();
 																</code>
 															</pre>
 														</div>
@@ -1627,14 +1966,10 @@
 														<div class="code-example">
 															<pre class="line-numbers">
 																<code class="language-scss">
-																	html, body {
-																		height: 100%;
-																	}
-
 																	.wrap-for-sticky {
 																		box-sizing: border-box;
 																		position: relative;
-																		min-height: 100%;
+																		min-height: 100vh;
 																	}
 
 																	.footer {
@@ -1658,20 +1993,18 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// STICKY FOOTER
-																	function stickyFooter() {
+																	function initStickyFooter() {
 																		// 1) height of footer
 																		var footerHeight = $('.js-footer').outerHeight();
 
 																		// 2) compensation
-																		$('.js-wrap-for-sticky').css({
-																			'padding-bottom': footerHeight
-																		});
+																		$('.js-wrap-for-sticky').css('padding-bottom', footerHeight);
 																	}
 
-																	stickyFooter();
+																	initStickyFooter();
 
 																	$(window).on('resize', function() {
-																		stickyFooter();
+																		initStickyFooter();
 																	});
 																</code>
 															</pre>
@@ -1822,49 +2155,52 @@
 														<div class="code-example">
 															<pre class="line-numbers">
 																<code class="language-js">
-																	// SCROLL TOP BUTTON
-																	function showHideScrollTopBtn(distance) {
-																		var scrollTopBtn = $('.js-scroll-top-btn');
+																	function initScrollTopBtn() {
+																		function showHideScrollTopBtn(distance) {
+																			var scrollTopBtn = $('.js-scroll-top-btn');
 
-																		$(window).on('scroll', function() {
-																			if ($(this).scrollTop() > distance) {
-																				scrollTopBtn.addClass('-show');
-																			} else {
-																				scrollTopBtn.removeClass('-show');
-																			}
-																		});
+																			$(window).on('scroll', function() {
+																				if ($(this).scrollTop() > distance) {
+																					scrollTopBtn.addClass('-show');
+																				} else {
+																					scrollTopBtn.removeClass('-show');
+																				}
+																			});
 
-																		if ($(document).scrollTop() > distance) scrollTopBtn.addClass('-show');
-																	}
+																			if ($(document).scrollTop() > distance) scrollTopBtn.addClass('-show');
+																		}
 
-																	function scrollTopAnimation() {
-																		var scrollTopBtn = $('.js-scroll-top-btn'),
-																				scrollingComplete = true;
-
-																		scrollTopBtn.on('click', function() {
-
-																			if (scrollingComplete) {
-																				scrollingComplete = false;
-
-																				$('body, html').animate({
-																					scrollTop: 0
-																				}, 1000 ).promise().done(function() {
+																		function scrollTopAnimation() {
+																			var scrollTopBtn = $('.js-scroll-top-btn'),
 																					scrollingComplete = true;
-																				});
 
-																				return false;
-																			}
-																		});
+																			scrollTopBtn.on('click', function() {
+
+																				if (scrollingComplete) {
+																					scrollingComplete = false;
+
+																					$('body, html').animate({
+																						scrollTop: 0
+																					}, 1000 ).promise().done(function() {
+																						scrollingComplete = true;
+																					});
+
+																					return false;
+																				}
+																			});
+																		}
+
+																		function scrollTopBtn() {
+																			// 1) checking the distance from the top of the page
+																			showHideScrollTopBtn(100);
+																			// 2) сlick event to scroll top
+																			scrollTopAnimation();
+																		}
+
+																		scrollTopBtn();
 																	}
 
-																	function scrollTopBtn() {
-																		// 1) checking the distance from the top of the page
-																		showHideScrollTopBtn(100);
-																		// 2) сlick event to scroll top
-																		scrollTopAnimation();
-																	}
-
-																	scrollTopBtn();
+																	initScrollTopBtn();
 																</code>
 															</pre>
 														</div>
@@ -1878,13 +2214,13 @@
 									</div>
 								</div>
 
-								<!-- Scroll to element -->
-								<div class="component-block-wrap" id="scroll-to-element">
+								<!-- Smooth anchor links -->
+								<div class="component-block-wrap" id="smooth-anchor-links">
 									<div class="component-block">
 										<!-- title -->
 										<h3 class="section-title -apricot-border -component-title">
-											<a class="section-title__anchor js-no-scroll" href="#scroll-to-element">
-												Scroll to element
+											<a class="section-title__anchor js-no-scroll" href="#smooth-anchor-links">
+												Smooth anchor links
 
 												<i class="fas fa-hashtag"></i>
 											</a>
@@ -1909,21 +2245,21 @@
 										<div class="component-block-usage">
 											<!-- button -->
 											<div class="component-block-usage-btn">
-												<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#scroll-to-element-collapse" role="button" aria-expanded="false" aria-controls="scroll-to-element-collapse">
+												<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#smooth-anchor-links-collapse" role="button" aria-expanded="false" aria-controls="smooth-anchor-links-collapse">
 													example
 													<i class="fas fa-angle-down"></i>
 												</a>
 											</div>
 											<!-- code example -->
-											<div class="collapse" id="scroll-to-element-collapse">
+											<div class="collapse" id="smooth-anchor-links-collapse">
 
 												<!-- NAVS FOR TABS -->
 												<ul class="nav nav-tabs component-block-usage__nav-tabs" role="tablist">
 													<li class="nav-item">
-														<a class="nav-link js-no-scroll active" id="scroll-to-element-html-tab" data-toggle="tab" href="#scroll-to-element-html" role="tab" aria-controls="scroll-to-element-html" aria-selected="true">HTML</a>
+														<a class="nav-link js-no-scroll active" id="smooth-anchor-links-html-tab" data-toggle="tab" href="#smooth-anchor-links-html" role="tab" aria-controls="smooth-anchor-links-html" aria-selected="true">HTML</a>
 													</li>
 													<li class="nav-item">
-														<a class="nav-link js-no-scroll" id="scroll-to-element-js-tab" data-toggle="tab" href="#scroll-to-element-js" role="tab" aria-controls="scroll-to-element-js" aria-selected="false">JS</a>
+														<a class="nav-link js-no-scroll" id="smooth-anchor-links-js-tab" data-toggle="tab" href="#smooth-anchor-links-js" role="tab" aria-controls="smooth-anchor-links-js" aria-selected="false">JS</a>
 													</li>
 												</ul>
 												<!-- NAVS FOR TABS END -->
@@ -1931,7 +2267,7 @@
 												<!-- TABS CONTENT -->
 												<div class="tab-content">
 													<!-- html -->
-													<div class="tab-pane show active" id="scroll-to-element-html" role="tabpanel" aria-labelledby="scroll-to-element-html-tab">
+													<div class="tab-pane show active" id="smooth-anchor-links-html" role="tabpanel" aria-labelledby="smooth-anchor-links-html-tab">
 														<div class="code-example">
 															<script type="text/plain" class="language-markup line-numbers">
 																<!-- TARGET -->
@@ -1945,15 +2281,15 @@
 													<!-- html END -->
 
 													<!-- javascript -->
-													<div class="tab-pane" id="scroll-to-element-js" role="tabpanel" aria-labelledby="scroll-to-element-js-tab">
+													<div class="tab-pane" id="smooth-anchor-links-js" role="tabpanel" aria-labelledby="smooth-anchor-links-js-tab">
 														<div class="code-example">
 															<pre class="line-numbers">
 																<code class="language-js">
-																	// SCROLL TO ELEMENT
-																	function scrollToElement() {
+																	// SMOOTH ANCHOR LINKS
+																	function initSmoothAnchorLinks() {
 																		var animationComplete = true;
 
-																		$('a[href^="#"]:not(.js-no-scroll)').on('click', function(e) {
+																		$('a[href^="#"]:not([href="#"]):not(.js-no-scroll)').on('click', function(e) {
 																			e.preventDefault();
 
 																			// height of header (for offset)
@@ -1978,7 +2314,7 @@
 																		});
 																	}
 
-																	scrollToElement();
+																	initSmoothAnchorLinks();
 																</code>
 															</pre>
 														</div>
@@ -2032,17 +2368,15 @@
 													<pre class="line-numbers">
 														<code class="language-js">
 															// WIDTH OF SCROLLBAR
-															var widthOfScrollbar;
-
 															function getScrollBarWidth() {
 																if (window.innerWidth > $(window).width()) {
 																	var $outer = $('&#60;div&#62;').css({visibility: 'hidden', width: 100, overflow: 'scroll'}).appendTo('body'),
 																			widthWithScroll = $('&#60;div&#62;').css({width: '100%'}).appendTo($outer).outerWidth();
 																	$outer.remove();
-																	widthOfScrollbar = 100 - widthWithScroll;
+																	window.widthOfScrollbar = 100 - widthWithScroll;
 																	return 100 - widthWithScroll;
 																} else {
-																	return widthOfScrollbar = 0;
+																	return window.widthOfScrollbar = 0;
 																}
 															}
 
@@ -2053,7 +2387,7 @@
 															});
 
 															function addScrollbarCompensation(element) {
-																element.css('padding-right', widthOfScrollbar);
+																element.css('padding-right', window.widthOfScrollbar);
 															}
 
 															function removeScrollbarCompensation(element) {
@@ -2537,7 +2871,7 @@
 													<h5 class="component-block-sub-title">Standart map:</h5>
 
 													<!-- GOOGLE MAP -->
-													<div class="js-map google-map"></div>
+													<div class="js-map google-map" data-coordinate-x="40.712348" data-coordinate-y="-74.006720"></div>
 													<!-- GOOGLE MAP END -->
 
 												</div>
@@ -2604,7 +2938,7 @@
 														<div class="code-example">
 															<script type="text/plain" class="language-markup line-numbers">
 																<!-- GOOGLE MAP -->
-																<div class="js-map google-map"></div>
+																<div class="js-map google-map" data-coordinate-x="40.712348" data-coordinate-y="-74.006720"></div>
 																<!-- GOOGLE MAP END -->
 															</script>
 
@@ -2625,16 +2959,6 @@
 																	.google-map {
 																		height: 300px;
 																		background-color: #26263F;
-
-																		&.-map-absolute {
-																			position: absolute;
-																			top: 0;
-																			right: 0;
-																			bottom: 0;
-																			left: 0;
-																			width: 100%;
-																			height: 100%;
-																		}
 
 																		// hide bottom labels
 																		.gm-style-cc {
@@ -2665,12 +2989,13 @@
 
 																		if (!mapBlock.length) return;
 
-																		var coordinates = new google.maps.LatLng(40.712348, -74.006720),
-																		zoom = 12;
+																		var coordinateX = mapBlock.attr('data-coordinate-x'),
+																				coordinateY = mapBlock.attr('data-coordinate-y'),
+																				coordinates = new google.maps.LatLng(coordinateX, coordinateY);
 
 																		var map = new google.maps.Map(mapBlock.get(0), {
 																			center: coordinates,
-																			zoom: zoom,
+																			zoom: 12,
 																			disableDefaultUI: true,
 																			zoomControl: true,
 																			fullscreenControl: true,
@@ -2861,7 +3186,7 @@
 										<!-- example -->
 										<div class="component-block-example-block -mb-16">
 											<!-- GOOGLE MAP -->
-											<div class="js-map-with-marker google-map"></div>
+											<div class="js-map-with-marker google-map" data-coordinate-x="40.712348" data-coordinate-y="-74.006720"></div>
 											<!-- GOOGLE MAP END -->
 										</div>
 
@@ -2898,7 +3223,7 @@
 														<div class="code-example">
 															<script type="text/plain" class="language-markup line-numbers">
 																<!-- GOOGLE MAP -->
-																<div class="js-map-with-marker google-map"></div>
+																<div class="js-map-with-marker google-map" data-coordinate-x="40.712348" data-coordinate-y="-74.006720"></div>
 																<!-- GOOGLE MAP END -->
 															</script>
 														</div>
@@ -2982,12 +3307,13 @@
 
 																		if (!mapBlock.length) return;
 
-																		var coordinates = new google.maps.LatLng(40.709541, -74.007984),
-																		zoom = 16;
+																		var coordinateX = mapBlock.attr('data-coordinate-x'),
+																				coordinateY = mapBlock.attr('data-coordinate-y'),
+																				coordinates = new google.maps.LatLng(coordinateX, coordinateY);
 
 																		var map = new google.maps.Map(mapBlock.get(0), {
 																			center: coordinates,
-																			zoom: zoom,
+																			zoom: 12,
 																			disableDefaultUI: true,
 																			zoomControl: false,
 																			fullscreenControl: false,
@@ -3423,25 +3749,28 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// YOUTUBE THUMBNAIL
+																	function initYouTubeThumbnail() {
+																		function getYouTubeVideoId(videoItem) {
+																			var videoThumbnailUrl = videoItem.find('.js-youtube-thumbnail-media').attr('style');
 
-																	function getYouTubeVideoId(videoItem) {
-																		var videoThumbnailUrl = videoItem.find('.js-youtube-thumbnail-media').attr('style');
+																			return videoThumbnailUrl.split('/')[videoThumbnailUrl.split('/').length - 2];
+																		}
 
-																		return videoThumbnailUrl.split('/')[videoThumbnailUrl.split('/').length - 2];
+																		function insertYouTubeIframe() {
+																			$('.js-youtube-thumbnail').on('click', function() {
+																				var youTubeIframe = $('&#60;iframe class="youtube-thumbnail__media" allowfullscreen&#62;&#60;/iframe&#62;');
+																						youTubeIframe.attr('allow', 'autoplay');
+																						youTubeIframe.attr('src', 'https://www.youtube.com/embed/' + getYouTubeVideoId($(this)) + '?rel=0&showinfo=0&autoplay=1');
+
+																				$(this).find('.js-youtube-thumbnail-media').remove();
+																				$(this).append(youTubeIframe);
+																			})
+																		}
+
+																		insertYouTubeIframe();
 																	}
 
-																	function insertYouTubeIframe() {
-																		$('.js-youtube-thumbnail').on('click', function() {
-																			var youTubeIframe = $('&#60;iframe class="youtube-thumbnail__media" allowfullscreen&#62;&#60;/iframe&#62;');
-																					youTubeIframe.attr('allow', 'autoplay');
-																					youTubeIframe.attr('src', 'https://www.youtube.com/embed/' + getYouTubeVideoId($(this)) + '?rel=0&showinfo=0&autoplay=1');
-
-																			$(this).find('.js-youtube-thumbnail-media').remove();
-																			$(this).append(youTubeIframe);
-																		})
-																	}
-
-																	insertYouTubeIframe();
+																	initYouTubeThumbnail();
 																</code>
 															</pre>
 														</div>
@@ -3521,7 +3850,6 @@
 													</div>
 													<!-- VIMEO THUMBNAIL END -->
 												</div>
-
 											</div>
 										</div>
 
@@ -3654,37 +3982,197 @@
 															<pre class="line-numbers">
 																<code class="language-js">
 																	// VIMEO THUMBNAIL
-																	function getVimeoVideoId(vimeoBlock) {
-																		return vimeoBlock.attr('data-vimeo-url').split('/').pop();
+																	function initVimeoThumbnail() {
+																		function getVimeoVideoId(vimeoBlock) {
+																			return vimeoBlock.attr('data-vimeo-url').split('/').pop();
+																		}
+
+																		function setVimeoThumbnailBackground(vimeoBlock) {
+																			$.getJSON('https://vimeo.com/api/v2/video/' + getVimeoVideoId(vimeoBlock) + '.json', function (data) {
+																				var thumbnailImg = data[0].thumbnail_large;
+
+																				vimeoBlock.find('.js-vimeo-thumbnail-media').css('background-image', 'url(' + thumbnailImg + ')');
+																			});
+																		}
+
+																		function setVimeoThumbnailBackgroundToAllBlocks() {
+																			$('.js-vimeo-thumbnail').each(function() {
+																				setVimeoThumbnailBackground($(this));
+																			});
+																		}
+
+																		setVimeoThumbnailBackgroundToAllBlocks();
+
+																		function insertVimeoIframe() {
+																			$('.js-vimeo-thumbnail').on('click', function() {
+																				var vimeoIframe = $('&#60;iframe class="vimeo-thumbnail__media" allowfullscreen&#62;&#60;/iframe&#62;');
+																						vimeoIframe.attr('allow', 'autoplay');
+																						vimeoIframe.attr('src', 'https://player.vimeo.com/video/' + getVimeoVideoId($(this)) + '?autoplay=1');
+
+																				$(this).find('.js-vimeo-thumbnail-media').remove();
+																				$(this).append(vimeoIframe);
+																			})
+																		}
+
+																		insertVimeoIframe();
 																	}
 
-																	function setVimeoThumbnailBackground(vimeoBlock) {
-																		$.getJSON('https://www.vimeo.com/api/v2/video/' + getVimeoVideoId(vimeoBlock) + '.json?callback=?', { format: 'json' }, function (data) {
-																			var thumbnailImg = data[0].thumbnail_large;
-																			vimeoBlock.find('.js-vimeo-thumbnail-media').css('background-image', 'url(' + thumbnailImg + ')');
-																		});
+																	initVimeoThumbnail();
+																</code>
+															</pre>
+														</div>
+													</div>
+													<!-- javascript END -->
+												</div>
+												<!-- TABS CONTENT END -->
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Background video -->
+								<div class="component-block-wrap" id="background-video">
+									<div class="component-block">
+										<!-- title -->
+										<h3 class="section-title -apricot-border -component-title">
+											<a class="section-title__anchor js-no-scroll" href="#background-video">
+												Background video
+
+												<i class="fas fa-hashtag"></i>
+											</a>
+
+											<span class="badge-block">
+												<span class="badge-block__badge badge -html">
+													<span>HTML</span>
+													<i class="fab fa-html5"></i>
+												</span>
+												<span class="badge-block__badge badge -sass">
+													<span>SASS</span>
+													<i class="fab fa-sass"></i>
+												</span>
+												<span class="badge-block__badge badge -js">
+													<span>JS</span>
+													<i class="fab fa-js"></i>
+												</span>
+											</span>
+										</h3>
+										<!-- title END -->
+
+										<!-- description -->
+										<div class="description-text">
+											<p>Background video for the block. May be useful for background video for a section.</p>
+										</div>
+
+										<!-- example -->
+										<div class="component-block-example-block -mb-16">
+											<div class="bg-video-block">
+												<video class="bg-video-block__html-bg-video js-html-bg-video" loop autoplay muted playsinline>
+													<source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+												</video>
+											</div>
+										</div>
+
+										<!-- usage -->
+										<div class="component-block-usage">
+											<!-- button -->
+											<div class="component-block-usage-btn">
+												<a class="btn btn-md btn-primary btn-icon js-no-scroll" data-toggle="collapse" href="#blackground-video-collapse" role="button" aria-expanded="false" aria-controls="blackground-video-collapse">
+													example
+													<i class="fas fa-angle-down"></i>
+												</a>
+											</div>
+											<!-- code example -->
+											<div class="collapse" id="blackground-video-collapse">
+
+												<!-- attention -->
+												<div class="component-block-attention -small-indents">
+													<div class="attention-text-block -mb-0">
+														<i class="fas fa-exclamation-triangle attention-text-block__icon"></i>
+
+														<div class="attention-text attention-text-block__text">
+															<p>This component is dependent on <a class="link-slideup -white" href="https://github.com/BGStock/jquery-background-video" target="_blank">jquery-background-video</a>.</p>
+														</div>
+													</div>
+												</div>
+
+												<!-- NAVS FOR TABS -->
+												<ul class="nav nav-tabs component-block-usage__nav-tabs" role="tablist">
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll active" id="background-video-html-tab" data-toggle="tab" href="#background-video-html" role="tab" aria-controls="background-video-html" aria-selected="true">HTML</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll" id="background-video-sass-tab" data-toggle="tab" href="#background-video-sass" role="tab" aria-controls="background-video-sass" aria-selected="false">SASS</a>
+													</li>
+													<li class="nav-item">
+														<a class="nav-link js-no-scroll" id="background-video-js-tab" data-toggle="tab" href="#background-video-js" role="tab" aria-controls="background-video-js" aria-selected="false">JS</a>
+													</li>
+												</ul>
+												<!-- NAVS FOR TABS END -->
+
+												<!-- TABS CONTENT -->
+												<div class="tab-content">
+													<!-- html -->
+													<div class="tab-pane show active" id="background-video-html" role="tabpanel" aria-labelledby="background-video-html-tab">
+														<div class="code-example">
+															<script type="text/plain" class="language-markup line-numbers">
+																<div class="bg-video-block">
+																	<video class="bg-video-block__html-bg-video js-html-bg-video" loop autoplay muted playsinline>
+																		<source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4">
+																	</video>
+																</div>
+															</script>
+														</div>
+													</div>
+													<!-- html END -->
+
+													<!-- sass -->
+													<div class="tab-pane" id="background-video-sass" role="tabpanel" aria-labelledby="background-video-sass-tab">
+														<div class="code-example">
+															<pre class="line-numbers">
+																<code class="language-scss">
+																	.bg-video-block {
+																		position: relative;
+																		height: 300px;
+
+																		&__html-bg-video {
+																			position: absolute;
+																			min-width: 100%;
+																			min-height: 100%;
+																			width: auto;
+																			height: auto;
+																			top: 50%;
+																			left: 50%;
+																			object-fit: cover;
+																			transform: translate(-50%,-50%);
+																			opacity: 0;
+																			transition: opacity 300ms linear;
+
+																			&.is-visible {
+																				opacity: 1;
+																			}
+																		}
+																	}
+																</code>
+															</pre>
+														</div>
+													</div>
+													<!-- sass END -->
+
+													<!-- javascript -->
+													<div class="tab-pane" id="background-video-js" role="tabpanel" aria-labelledby="background-video-js-tab">
+														<div class="code-example">
+															<pre class="line-numbers">
+																<code class="language-js">
+																	function initBackgroundVideo() {
+																		if ($('.js-html-bg-video').length) {
+																			$('.js-html-bg-video').bgVideo({
+																				showPausePlay: false,
+																				pauseAfter: 0
+																			});
+																		}
 																	}
 
-																	function setVimeoThumbnailBackgroundToAllBlocks() {
-																		$('.js-vimeo-thumbnail').each(function() {
-																			setVimeoThumbnailBackground($(this));
-																		});
-																	}
-
-																	setVimeoThumbnailBackgroundToAllBlocks();
-
-																	function insertVimeoIframe() {
-																		$('.js-vimeo-thumbnail').on('click', function() {
-																			var vimeoIframe = $('&#60;iframe class="vimeo-thumbnail__media" allowfullscreen&#62;&#60;/iframe&#62;');
-																					vimeoIframe.attr('allow', 'autoplay');
-																					vimeoIframe.attr('src', 'https://player.vimeo.com/video/' + getVimeoVideoId($(this)) + '?autoplay=1');
-
-																			$(this).find('.js-vimeo-thumbnail-media').remove();
-																			$(this).append(vimeoIframe);
-																		})
-																	}
-
-																	insertVimeoIframe();
+																	initBackgroundVideo();
 																</code>
 															</pre>
 														</div>
@@ -3708,14 +4196,16 @@
 
 								<div class="side-navigation__list-group list-group js-list-group js-scroll-spy">
 									<a href="#preloader" class="list-group-item list-group-item-action js-no-scroll">Preloader</a>
+									<a href="#hamburger-menu" class="list-group-item list-group-item-action js-no-scroll">Hamburger menu</a>
+									<a href="#viewport-units-on-mobile" class="list-group-item list-group-item-action js-no-scroll">Viewport units on mobile</a>
 									<a href="#svg-animation" class="list-group-item list-group-item-action js-no-scroll">SVG animation</a>
 									<a href="#count-up" class="list-group-item list-group-item-action js-no-scroll">Count up</a>
 									<a href="#progress-bars" class="list-group-item list-group-item-action js-no-scroll">Progress bars</a>
 									<a href="#shuffle-filter" class="list-group-item list-group-item-action js-no-scroll">Shuffle filter</a>
-									<a href="#small-header" class="list-group-item list-group-item-action js-no-scroll">Small header after scroll</a>
+									<a href="#active-header" class="list-group-item list-group-item-action js-no-scroll">Active header after scroll</a>
 									<a href="#sticky-footer" class="list-group-item list-group-item-action js-no-scroll">Sticky footer</a>
 									<a href="#scroll-top-button" class="list-group-item list-group-item-action js-no-scroll">Scroll top button</a>
-									<a href="#scroll-to-element" class="list-group-item list-group-item-action js-no-scroll">Scroll to element</a>
+									<a href="#smooth-anchor-links" class="list-group-item list-group-item-action js-no-scroll">Smooth anchor links</a>
 									<a href="#width-of-scrollbar" class="list-group-item list-group-item-action js-no-scroll">Width of scrollbar</a>
 									<a href="#custom-checkbox-radio" class="list-group-item list-group-item-action js-no-scroll">Custom checkbox and radio</a>
 									<a href="#google-map" class="list-group-item list-group-item-action js-no-scroll">Google map</a>
@@ -3723,6 +4213,7 @@
 									<a href="#responsive-video" class="list-group-item list-group-item-action js-no-scroll">Embed responsive video</a>
 									<a href="#youtube-thumbnail" class="list-group-item list-group-item-action js-no-scroll">Youtube thumbnail</a>
 									<a href="#vimeo-thumbnail" class="list-group-item list-group-item-action js-no-scroll">Vimeo thumbnail</a>
+									<a href="#background-video" class="list-group-item list-group-item-action js-no-scroll">Background video</a>
 								</div>
 							</aside>
 						</div>
@@ -3752,14 +4243,16 @@
 
 		<div class="side-navigation__list-group list-group js-list-group js-scroll-spy">
 			<a href="#preloader" class="list-group-item list-group-item-action js-no-scroll">Preloader</a>
+			<a href="#hamburger-menu" class="list-group-item list-group-item-action js-no-scroll">Hamburger menu</a>
+			<a href="#viewport-units-on-mobile" class="list-group-item list-group-item-action js-no-scroll">Viewport units on mobile</a>
 			<a href="#svg-animation" class="list-group-item list-group-item-action js-no-scroll">SVG animation</a>
 			<a href="#count-up" class="list-group-item list-group-item-action js-no-scroll">Count up</a>
 			<a href="#progress-bars" class="list-group-item list-group-item-action js-no-scroll">Progress bars</a>
 			<a href="#shuffle-filter" class="list-group-item list-group-item-action js-no-scroll">Shuffle filter</a>
-			<a href="#small-header" class="list-group-item list-group-item-action js-no-scroll">Small header after scroll</a>
+			<a href="#active-header" class="list-group-item list-group-item-action js-no-scroll">Active header after scroll</a>
 			<a href="#sticky-footer" class="list-group-item list-group-item-action js-no-scroll">Sticky footer</a>
 			<a href="#scroll-top-button" class="list-group-item list-group-item-action js-no-scroll">Scroll top button</a>
-			<a href="#scroll-to-element" class="list-group-item list-group-item-action js-no-scroll">Scroll to element</a>
+			<a href="#smooth-anchor-links" class="list-group-item list-group-item-action js-no-scroll">Smooth anchor links</a>
 			<a href="#width-of-scrollbar" class="list-group-item list-group-item-action js-no-scroll">Width of scrollbar</a>
 			<a href="#custom-checkbox-radio" class="list-group-item list-group-item-action js-no-scroll">Custom checkbox and radio</a>
 			<a href="#google-map" class="list-group-item list-group-item-action js-no-scroll">Google map</a>
@@ -3767,6 +4260,7 @@
 			<a href="#responsive-video" class="list-group-item list-group-item-action js-no-scroll">Embed responsive video</a>
 			<a href="#youtube-thumbnail" class="list-group-item list-group-item-action js-no-scroll">Youtube thumbnail</a>
 			<a href="#vimeo-thumbnail" class="list-group-item list-group-item-action js-no-scroll">Vimeo thumbnail</a>
+			<a href="#background-video" class="list-group-item list-group-item-action js-no-scroll">Background video</a>
 		</div>
 
 		<!-- download button -->
@@ -3788,8 +4282,9 @@
 	<script src="libs/waypoints.js/jquery.waypoints.min.js"></script>
 	<script src="libs/slideout.js/slideout.min.js"></script>
 	<script src="libs/stickyfill/stickyfill.min.js"></script>
-	<script src="libs/countUp/countUp.min.js"></script>
+	<script src="libs/countUp/countUp.umd.js"></script>
 	<script src="libs/vivus/vivus.min.js"></script>
+	<script src="libs/jquery-background-video/jquery.background-video.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoik2Sle8UV-ysloqMOF2dK0mnXpb5z3I"></script>
 	<script src="libs/x-project-components/x-project-components.js"></script>
 
