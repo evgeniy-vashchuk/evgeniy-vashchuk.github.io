@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Name of the site - Main</title>
+		<meta name="description" content="Description of the site">
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<!-- connection FAVICONS -->
+		<link rel="icon" href="img/favicon/favicon.ico">
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+
+		<!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+		<meta name="theme-color" content="#F4C900">
+
+		<!-- connection GOOGLE FONTS -->
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&amp;display=swap" rel="stylesheet">
+
+		<!-- connection CSS -->
+		<link rel="stylesheet" href="main.css">
+	</head>
+
+	<body>
+		<!--  PRELOADER -->
+		<div class="preloader-overlay js-preloader">
+			<div class="preloader-overlay__preloader-item">
+				<svg class="preloader" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 266 160">
+					<path class="preloader__item -first" fill="#53DE80" d="M151.8 151.3c-10.9 10.9-28.6 10.9-39.5 0L9.1 48.2C-1.8 37.3-1.8 19.6 9.1 8.7 20-2.2 37.7-2.2 48.6 8.7l103.2 103.2c10.9 10.8 10.9 28.5 0 39.4z"></path>
+					<path class="preloader__item -second" fill="#4256DB" d="M256.9 151.3c-10.9 10.9-28.6 10.9-39.5 0L114.2 48.2c-10.9-10.9-10.9-28.6 0-39.5 10.9-10.9 28.6-10.9 39.5 0l100.4 101.1c10.9 10.9 13.7 30.6 2.8 41.5z"></path>
+					<path class="preloader__item -third" fill="#FACB24" d="M237.1 159.5c-15.4 0-27.9-12.5-27.9-27.9V28.4C209.2 13 221.7.5 237.1.5 252.5.5 265 13 265 28.4v103.2c.1 15.4-12.4 27.9-27.9 27.9z"></path>
+				</svg>
+			</div>
+		</div>
+		<!--  PRELOADER END -->
+
+		<div class="wrap-for-sticky js-wrap-for-sticky">
+			<!-- HEADER -->
+			<header class="header js-header">
+				<div class="header__container container">
+					<div class="header__content"><a class="header__logo" href="#"><img src="img/logo-with-text.svg" alt="WakeNet logo"></a>
+
+						<div class="header__hamburger-menu"><a class="hamburger-menu js-hamburger-menu" href="#" aria-label="Toggle menu">
+							<div class="hamburger-menu__wrap">
+								<div class="hamburger-menu__bars"></div>
+							</div></a></div>
+
+						<div class="header__menu-block js-header-menu-block">
+							<ul class="header-nav-list">
+								<li class="header-nav-list__item"><a class="header-nav-list__link" href="#">Who we are</a></li>
+								<li class="header-nav-list__item"><a class="header-nav-list__link" href="#">Blog</a></li>
+								<li class="header-nav-list__item"><a class="header-nav-list__link" href="#">Contact</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</header>
+			<!-- HEADER END -->
+
+			<!-- CONTENT -->
+			<main class="main">
+				<!-- SECTION WELCOME BLOG -->
+				<section class="section-welcome-blog section">
+					<div class="container">
+						<div class="section-welcome-blog__main-content section" style="background-image: url(img/logo.svg)">
+							<h1 class="h2 animation-item -from-top js-animation-item">Blog</h1>
+							<div class="section-welcome-blog__description text-block animation-item -from-top js-animation-item" data-delay="200">
+								<p>WakeNet AB was founded in 2000 and has since then handled thousands of online marketing campaigns.</p>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- SECTION WELCOME BLOG END -->
+
+				<!-- SECTION BLOG GRID -->
+				<section class="section-blog-grid section">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-6 d-flex">
+								<div class="blog-card"><a class="blog-card__img" href="#"><img class="ofi js-ofi" src="img/blog-grid/1.jpg" alt="Photo"/></a>
+
+									<div class="blog-card__body">
+										<div class="blog-card__main-content">
+											<div class="blog-info blog-card__info">
+												<div class="blog-info__date-and-name">
+													<h6 class="blog-info__date">April, 2021</h6>
+													<h6 class="blog-info__name">Johan Smith</h6>
+												</div>
+
+												<h5 class="blog-info__title">Lorem Ipsum</h5>
+											</div>
+
+											<div class="blog-card__description text-block">
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+										</div>
+
+										<div class="blog-card__btn"><a class="btn-with-round -sm -secondary-gray" href="#">Learn more</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 d-flex">
+								<div class="blog-card"><a class="blog-card__img" href="#"><img class="ofi js-ofi" src="img/blog-grid/2.jpg" alt="Photo"/></a>
+
+									<div class="blog-card__body">
+										<div class="blog-card__main-content">
+											<div class="blog-info blog-card__info">
+												<div class="blog-info__date-and-name">
+													<h6 class="blog-info__date">April, 2021</h6>
+													<h6 class="blog-info__name">Johan Smith</h6>
+												</div>
+
+												<h5 class="blog-info__title">Lorem Ipsum</h5>
+											</div>
+
+											<div class="blog-card__description text-block">
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+										</div>
+
+										<div class="blog-card__btn"><a class="btn-with-round -sm -secondary-gray" href="#">Learn more</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 d-flex">
+								<div class="blog-card"><a class="blog-card__img" href="#"><img class="ofi js-ofi" src="img/blog-grid/3.jpg" alt="Photo"/></a>
+
+									<div class="blog-card__body">
+										<div class="blog-card__main-content">
+											<div class="blog-info blog-card__info">
+												<div class="blog-info__date-and-name">
+													<h6 class="blog-info__date">April, 2021</h6>
+													<h6 class="blog-info__name">Johan Smith</h6>
+												</div>
+
+												<h5 class="blog-info__title">Lorem Ipsum</h5>
+											</div>
+
+											<div class="blog-card__description text-block">
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+										</div>
+
+										<div class="blog-card__btn"><a class="btn-with-round -sm -secondary-gray" href="#">Learn more</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 d-flex">
+								<div class="blog-card"><a class="blog-card__img" href="#"><img class="ofi js-ofi" src="img/blog-grid/4.jpg" alt="Photo"/></a>
+
+									<div class="blog-card__body">
+										<div class="blog-card__main-content">
+											<div class="blog-info blog-card__info">
+												<div class="blog-info__date-and-name">
+													<h6 class="blog-info__date">April, 2021</h6>
+													<h6 class="blog-info__name">Johan Smith</h6>
+												</div>
+
+												<h5 class="blog-info__title">Lorem Ipsum</h5>
+											</div>
+
+											<div class="blog-card__description text-block">
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+										</div>
+
+										<div class="blog-card__btn"><a class="btn-with-round -sm -secondary-gray" href="#">Learn more</a></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-6 d-flex">
+								<div class="blog-card"><a class="blog-card__img" href="#"><img class="ofi js-ofi" src="img/blog-grid/5.jpg" alt="Photo"/></a>
+
+									<div class="blog-card__body">
+										<div class="blog-card__main-content">
+											<div class="blog-info blog-card__info">
+												<div class="blog-info__date-and-name">
+													<h6 class="blog-info__date">April, 2021</h6>
+													<h6 class="blog-info__name">Johan Smith</h6>
+												</div>
+
+												<h5 class="blog-info__title">Lorem Ipsum</h5>
+											</div>
+
+											<div class="blog-card__description text-block">
+												<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+											</div>
+										</div>
+
+										<div class="blog-card__btn"><a class="btn-with-round -sm -secondary-gray" href="#">Learn more</a></div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="pagination">
+							<ul class="page-numbers">
+								<li><a class="prev page-numbers" href="#">Prev</a></li>
+								<li><a class="page-numbers" href="#">1</a></li>
+								<li><span class="page-numbers current" aria-current="page">2</span></li>
+								<li><a class="page-numbers" href="#">3</a></li>
+								<li><a class="page-numbers" href="#">4</a></li>
+								<li><span class="page-numbers dots">…</span></li>
+								<li><a class="page-numbers" href="#">10</a></li>
+								<li><a class="next page-numbers" href="#">Next</a></li>
+							</ul>
+							<p class="pagination-navigation">2 of 10</p>
+						</div>
+					</div>
+				</section>
+				<!-- SECTION BLOG GRID END -->
+
+				<!-- SECTION CONTACT BANNER -->
+				<section class="section-contact-banner section">
+					<div class="container">
+						<div class="section-contact-banner__block" style="background-image: url(img/section-contact-banner-bg.png)">
+							<h2 class="section-contact-banner__title animation-item -from-top js-animation-item">Apply to work with the company</h2>
+
+							<div class="section-contact-banner__description text-block animation-item -from-top js-animation-item" data-delay="200">
+								<p>Provide us with your contact details and we will reach out as soon as possible.</p>
+							</div>
+
+							<div class="animation-item -from-top js-animation-item" data-delay="400"><a class="btn-with-round -md -white" href="#">Contact</a></div>
+						</div>
+					</div>
+				</section>
+				<!-- SECTION CONTACT BANNER END -->
+			</main>
+			<!-- CONTENT END -->
+
+			<!-- FOOTER -->
+			<footer class="footer -sticky js-footer">
+				<div class="footer__top-content">
+					<div class="container">
+						<div class="row no-gutters align-items-center">
+							<div class="col-md-7 col-xl-6">
+								<div class="footer__newsletter-bg-block newsletter-bg-block js-animation-item">
+									<div class="mailchimp-form">
+										<form class="mc4wp-form mc4wp-form-175 mc4wp-form-submitted mc4wp-form-success" id="mc4wp-form-1" method="post" data-id="175" data-name="Test form">
+											<div class="mc4wp-form-fields">
+												<p>
+													<label>Newsletter:
+														<input type="email" name="EMAIL" placeholder="E-mail" required>
+													</label>
+												</p>
+												<p>
+													<button type="submit">Sign up</button>
+												</p>
+											</div>
+											<label style="display: none !important;">Leave this field empty if you're human:
+												<input type="text" name="_mc4wp_honeypot" tabindex="-1" autocomplete="off">
+											</label>
+											<input type="hidden" name="_mc4wp_timestamp" value="1619271155">
+											<input type="hidden" name="_mc4wp_form_id" value="175">
+											<input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1">
+											<div class="mc4wp-response">
+												<div class="mc4wp-alert mc4wp-success" role="alert">
+													<p>Thank you, your sign-up request was successful! Please check your email inbox to confirm.</p>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="col-md-5 col-xl-6">
+								<div class="footer__main-content">
+									<div class="footer__navs-block">
+										<div class="footer__widget-col">
+											<div class="contacts-widget">
+												<h6 class="contacts-widget__title">Address:</h6>
+
+												<ul class="contacts-widget__list">
+													<li><a href="https://maps.google.com/maps?q=wakenetabdanderyd,sweden" target="_blank">WakeNet AB Danderyd, Sweden</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="footer__widget-col">
+											<div class="contacts-widget">
+												<h6 class="contacts-widget__title">E-mail:</h6>
+
+												<ul class="contacts-widget__list">
+													<li><a href="mailto:info@wakenet.se">info@wakenet.se</a>
+													</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div class="footer__socials-block">
+										<ul class="socials-list footer__socials-list">
+											<li class="socials-list__item"><a class="socials-list__link" href="#" aria-label="Social link"><i class="fab fa-twitter"></i></a></li>
+											<li class="socials-list__item"><a class="socials-list__link" href="#" aria-label="Social link"><i class="fab fa-facebook-f"></i></a></li>
+											<li class="socials-list__item"><a class="socials-list__link" href="#" aria-label="Social link"><i class="fab fa-linkedin-in"></i></a></li>
+											<li class="socials-list__item"><a class="socials-list__link" href="#" aria-label="Social link"><i class="fab fa-instagram"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer__bottom-content">
+					<div class="container">
+						<div class="footer__bottom-content-wrap"><a class="footer__logo" href="#"><img src="img/logo-with-text-gray.svg" alt="WakeNet logo"></a>
+
+							<p class="footer__copyright">© WakeNet 2021</p>
+						</div>
+					</div>
+				</div>
+			</footer>
+			<!-- FOOTER END -->
+		</div>
+
+		<!-- connection JAVASCRIPT -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoik2Sle8UV-ysloqMOF2dK0mnXpb5z3I"></script>
+		<script src="js/libs.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
