@@ -18571,7 +18571,7 @@ textarea.form-control {
 	overflow: hidden;
 }
 
-.icon-and-content-card__icon {
+.icon-and-content-card__icon-round {
 	width: 60px;
 	height: 60px;
 	display: flex;
@@ -18579,17 +18579,18 @@ textarea.form-control {
 	justify-content: center;
 	border-radius: 50%;
 	background-color: #EB3878;
+	color: #ffffff;
 	overflow: hidden;
 	transform: translate(0, 100%);
 	transition: transform 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.icon-and-content-card__icon.-active {
+.icon-and-content-card__icon-round.-active {
 	transform: translate(0, 0);
 }
 
-.icon-and-content-card__icon-img {
-	max-width: 50px;
+.icon-and-content-card__icon {
+	font-size: 32px;
 }
 
 .icon-and-content-card__body {
