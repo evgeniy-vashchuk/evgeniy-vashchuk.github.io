@@ -7300,9 +7300,7 @@ form button.btn {
 }
 
 .section-welcome {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+	position: relative;
 	padding: 130px 0;
 }
 
@@ -7334,10 +7332,27 @@ form button.btn {
 	max-width: 750px;
 }
 
-.section-selected-text {
+.section-welcome__bg {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.section-welcome__main-wrap {
+	position: relative;
+	z-index: 5;
+}
+
+.section-selected-text {
+	position: relative;
 }
 
 @media only screen and (min-width: 992px) {
@@ -7376,11 +7391,29 @@ form button.btn {
 	margin-bottom: 35px;
 }
 
-.section-about-us {
+.section-selected-text__bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	pointer-events: none;
+}
+
+.section-selected-text__main-wrap {
+	position: relative;
+	z-index: 5;
+}
+
+.section-about-us {
+	position: relative;
 	color: #ffffff;
+	background-color: #000000;
 }
 
 @media only screen and (min-width: 992px) {
@@ -7397,10 +7430,27 @@ form button.btn {
 	margin-bottom: 30px;
 }
 
-.section-our-services {
+.section-about-us__bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	pointer-events: none;
+}
+
+.section-about-us__main-wrap {
+	position: relative;
+	z-index: 5;
+}
+
+.section-our-services {
+	position: relative;
 	padding-bottom: 250px;
 }
 
@@ -7441,6 +7491,29 @@ form button.btn {
 		margin: 95px 0 0 15px;
 		max-width: 485px;
 	}
+}
+
+.section-our-services__bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	pointer-events: none;
+}
+
+.section-our-services__main-wrap {
+	position: relative;
+	z-index: 5;
+}
+
+.section-industries {
+	position: relative;
 }
 
 .section-industries__block {
@@ -7488,11 +7561,10 @@ form button.btn {
 }
 
 .section-industries__content-block {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+	position: relative;
 	padding: 15px;
 	color: #ffffff;
+	background-color: #000000;
 }
 
 @media only screen and (min-width: 576px) {
@@ -7521,6 +7593,25 @@ form button.btn {
 	}
 }
 
+.section-industries__content-block-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	pointer-events: none;
+}
+
+.section-industries__list {
+	position: relative;
+	z-index: 5;
+}
+
 @media only screen and (min-width: 768px) {
 	.section-industries__list {
 		column-count: 2;
@@ -7528,9 +7619,7 @@ form button.btn {
 }
 
 .section-welcome-small {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+	position: relative;
 	text-align: center;
 	padding: 135px 0 75px;
 }
@@ -7541,6 +7630,29 @@ form button.btn {
 	}
 }
 
+.section-welcome-small__bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	pointer-events: none;
+}
+
+.section-welcome-small__main-wrap {
+	position: relative;
+	z-index: 5;
+}
+
+.section-phases-of-our-process__list .section-phases-of-our-process__item:nth-child(2n) {
+	background-color: #0d0d0d;
+}
+
 @media only screen and (min-width: 768px) {
 	.section-phases-of-our-process__list .section-phases-of-our-process__item:nth-child(2n) .section-phases-of-our-process__item-content {
 		margin-left: auto;
@@ -7548,10 +7660,9 @@ form button.btn {
 }
 
 .section-phases-of-our-process__item {
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
+	position: relative;
 	color: #ffffff;
+	background-color: #000000;
 }
 
 @media only screen and (min-width: 1320px) {
@@ -7562,6 +7673,25 @@ form button.btn {
 
 .section-phases-of-our-process__item-content {
 	max-width: 530px;
+}
+
+.section-phases-of-our-process__item-bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	pointer-events: none;
+}
+
+.section-phases-of-our-process__item-main-wrap {
+	position: relative;
+	z-index: 5;
 }
 
 @media only screen and (min-width: 1320px) {
@@ -7778,8 +7908,13 @@ body {
 	}
 }
 
-.text-lettering-animation.-active .word {
+.text-lettering-animation {
+	opacity: 0;
+}
+
+.text-lettering-animation.-active {
 	opacity: 1;
+	transition: opacity 2s;
 }
 
 .text-lettering-animation.-active .word > span {
@@ -7790,8 +7925,6 @@ body {
 	display: inline-block;
 	overflow: hidden;
 	position: relative;
-	opacity: 0;
-	transition: opacity 2s;
 }
 
 .text-lettering-animation .word > span {
