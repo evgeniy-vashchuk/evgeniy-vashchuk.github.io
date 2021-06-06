@@ -6393,8 +6393,8 @@ img {
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
-	src: url("../fonts/HelveticaNeue/HelveticaNeue-Bold.eot");
-	src: url("../fonts/HelveticaNeue/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/HelveticaNeue/HelveticaNeue-Bold.woff2") format("woff2"), url("../fonts/HelveticaNeue/HelveticaNeue-Bold.woff") format("woff"), url("../fonts/HelveticaNeue/HelveticaNeue-Bold.ttf") format("truetype");
+	src: url("fonts/HelveticaNeue/HelveticaNeue-Bold.eot");
+	src: url("fonts/HelveticaNeue/HelveticaNeue-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/HelveticaNeue/HelveticaNeue-Bold.woff2") format("woff2"), url("fonts/HelveticaNeue/HelveticaNeue-Bold.woff") format("woff"), url("fonts/HelveticaNeue/HelveticaNeue-Bold.ttf") format("truetype");
 }
 
 @font-face {
@@ -6402,8 +6402,8 @@ img {
 	font-weight: 500;
 	font-style: normal;
 	font-display: swap;
-	src: url("../fonts/LitSans/LitSans-Medium.eot");
-	src: url("../fonts/LitSans/LitSans-Medium.eot?#iefix") format("embedded-opentype"), url("../fonts/LitSans/LitSans-Medium.woff2") format("woff2"), url("../fonts/LitSans/LitSans-Medium.woff") format("woff"), url("../fonts/LitSans/LitSans-Medium.ttf") format("truetype");
+	src: url("fonts/LitSans/LitSans-Medium.eot");
+	src: url("fonts/LitSans/LitSans-Medium.eot?#iefix") format("embedded-opentype"), url("fonts/LitSans/LitSans-Medium.woff2") format("woff2"), url("fonts/LitSans/LitSans-Medium.woff") format("woff"), url("fonts/LitSans/LitSans-Medium.ttf") format("truetype");
 }
 
 @font-face {
@@ -6411,8 +6411,8 @@ img {
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
-	src: url("../fonts/LouisGeorgeCafe/LouisGeorgeCafe-Regular.eot");
-	src: url("../fonts/LouisGeorgeCafe/LouisGeorgeCafe-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/LouisGeorgeCafe/LouisGeorgeCafe-Regular.woff2") format("woff2"), url("../fonts/LouisGeorgeCafe/LouisGeorgeCafe-Regular.woff") format("woff"), url("../fonts/LouisGeorgeCafe/LouisGeorgeCafe-Regular.ttf") format("truetype");
+	src: url("fonts/LouisGeorgeCafe/LouisGeorgeCafe-Regular.eot");
+	src: url("fonts/LouisGeorgeCafe/LouisGeorgeCafe-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/LouisGeorgeCafe/LouisGeorgeCafe-Regular.woff2") format("woff2"), url("fonts/LouisGeorgeCafe/LouisGeorgeCafe-Regular.woff") format("woff"), url("fonts/LouisGeorgeCafe/LouisGeorgeCafe-Regular.ttf") format("truetype");
 }
 
 @font-face {
@@ -6420,8 +6420,8 @@ img {
 	font-weight: 700;
 	font-style: normal;
 	font-display: swap;
-	src: url("../fonts/LouisGeorgeCafe/LouisGeorgeCafe-Bold.eot");
-	src: url("../fonts/LouisGeorgeCafe/LouisGeorgeCafe-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/LouisGeorgeCafe/LouisGeorgeCafe-Bold.woff2") format("woff2"), url("../fonts/LouisGeorgeCafe/LouisGeorgeCafe-Bold.woff") format("woff"), url("../fonts/LouisGeorgeCafe/LouisGeorgeCafe-Bold.ttf") format("truetype");
+	src: url("fonts/LouisGeorgeCafe/LouisGeorgeCafe-Bold.eot");
+	src: url("fonts/LouisGeorgeCafe/LouisGeorgeCafe-Bold.eot?#iefix") format("embedded-opentype"), url("fonts/LouisGeorgeCafe/LouisGeorgeCafe-Bold.woff2") format("woff2"), url("fonts/LouisGeorgeCafe/LouisGeorgeCafe-Bold.woff") format("woff"), url("fonts/LouisGeorgeCafe/LouisGeorgeCafe-Bold.ttf") format("truetype");
 }
 
 @font-face {
@@ -6429,8 +6429,8 @@ img {
 	font-weight: 400;
 	font-style: normal;
 	font-display: swap;
-	src: url("../fonts/NowAlt/NowAlt-Regular.eot");
-	src: url("../fonts/NowAlt/NowAlt-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/NowAlt/NowAlt-Regular.woff2") format("woff2"), url("../fonts/NowAlt/NowAlt-Regular.woff") format("woff"), url("../fonts/NowAlt/NowAlt-Regular.ttf") format("truetype");
+	src: url("fonts/NowAlt/NowAlt-Regular.eot");
+	src: url("fonts/NowAlt/NowAlt-Regular.eot?#iefix") format("embedded-opentype"), url("fonts/NowAlt/NowAlt-Regular.woff2") format("woff2"), url("fonts/NowAlt/NowAlt-Regular.woff") format("woff"), url("fonts/NowAlt/NowAlt-Regular.ttf") format("truetype");
 }
 
 h1, .h1 {
