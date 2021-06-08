@@ -6,7 +6,8 @@ jQuery(function ($) {
 	initViewportUnitsOnMobile();
 	initSmoothAnchorLinks();
 	initTextLetteringAnimation();
-	initLazyLoadingForImages(); // HAMBURGER MENU
+	initLazyLoadingForImages();
+	initBackgroundVideo(); // HAMBURGER MENU
 
 	function initHamburgerMenu() {
 		var body = $('body'),
@@ -144,5 +145,15 @@ jQuery(function ($) {
 			effect: 'fadeIn',
 			effectTime: 300
 		});
+	} // BACKGROUND VIDEO
+
+
+	function initBackgroundVideo() {
+		if ($('.js-html-bg-video').length) {
+			$('.js-html-bg-video').bgVideo({
+				showPausePlay: false,
+				pauseAfter: 0
+			});
+		}
 	}
 });
