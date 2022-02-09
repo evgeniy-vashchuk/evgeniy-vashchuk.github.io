@@ -614,6 +614,10 @@ h6, .h6 {
 	color: #ffffff;
 }
 
+.btn-primary:focus {
+	outline: 5px solid rgba(111, 201, 87, 0.25);
+}
+
 .btn-primary:hover {
 	background-color: #53b33a;
 	color: #ffffff;
@@ -851,6 +855,7 @@ input[type='submit'] {
 .section-starting {
 	min-height: calc(100vh - (60px + 60px));
 	min-height: calc((var(--vh, 1vh) * 100) - (60px + 60px));
+	transition: min-height 0.5s;
 	display: flex;
 	align-items: center;
 }
@@ -910,6 +915,7 @@ input[type='submit'] {
 .section-confirmation {
 	min-height: calc(100vh - 60px);
 	min-height: calc((var(--vh, 1vh) * 100) - 60px);
+	transition: min-height 0.5s;
 	display: none;
 	align-items: center;
 }
@@ -1119,7 +1125,11 @@ input[type='submit'] {
 	pointer-events: auto;
 }
 
-.survey-question-item.active:not(.answered) .survey-question-item__next-btn {
+.survey-question-item.valid.focused .survey-question-item__next-btn {
+	display: block;
+}
+
+.survey-question-item.not-valid .error-text {
 	display: block;
 }
 

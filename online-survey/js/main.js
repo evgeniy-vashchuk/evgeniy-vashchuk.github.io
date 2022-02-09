@@ -6,6 +6,10 @@ jQuery(function ($) {
 	initInputMask();
 	initSurveyFunctionality();
 
+	$(window).on('beforeunload', function () {
+		$(window).scrollTop(0);
+	});
+
 	// VIEWPORT UNITS ON MOBILE
 	function initViewportUnitsOnMobile() {
 		var vh = window.innerHeight * 0.01;
@@ -29,7 +33,7 @@ jQuery(function ($) {
 
 				$("body, html").animate({
 					scrollTop: element.offset().top - offset },
-				500).promise().done(function () {
+				350).promise().done(function () {
 					animationComplete = true;
 				});
 			}
@@ -69,9 +73,9 @@ jQuery(function ($) {
 	// SURVEY FUNCTIONALITY
 	function initSurveyFunctionality() {
 		var surveyQuestionItem = $('.js-survey-question-item'),
-		nextQuestionBtn = $('.js-survey-go-to-next-question'),
 		surveySubmitBtn = $('.js-survey-submit-btn'),
 		formItems = '.js-text-input, .js-email-input, .js-phone-input, .js-textarea',
+		formItemsExcludingPhoneInput = formItems.replace(', .js-phone-input', ''),
 		scrollAnimationComplete = true;
 
 		function scrollToElement(element) {
@@ -82,7 +86,7 @@ jQuery(function ($) {
 
 				$('body, html').animate({
 					scrollTop: element.offset().top - headerHeight },
-				500).promise().done(function () {
+				350).promise().done(function () {
 					scrollAnimationComplete = true;
 
 					if (element.hasClass('js-survey-question-item')) setFormFocus(element);
@@ -107,8 +111,10 @@ jQuery(function ($) {
 		function detectTypeOfQuestion(question) {
 			var typeOfQuestion = '';
 
-			if (question.find('.js-checkbox-radio-input').length) {
-				typeOfQuestion = 'with-checkbox-or-radio';
+			if (question.find('.js-checkbox-input').length) {
+				typeOfQuestion = 'with-checkbox-input';
+			} else if (question.find('.js-radio-input').length) {
+				typeOfQuestion = 'with-radio-input';
 			} else if (question.find('.js-text-input').length) {
 				typeOfQuestion = 'with-text-input';
 			} else if (question.find('.js-email-input').length) {
@@ -134,56 +140,95 @@ jQuery(function ($) {
 			});
 		}
 
-		function setQuestionIsNotValid(question) {
-			var questionError = question.find('.js-error-text');
-
-			scrollToElement(question);
-			questionError.addClass('active');
-		}
-
 		function validateQuestion(question) {
-			var questionIsValid = true,
+			var questionIsValid = false,
 			typeOfQuestion = detectTypeOfQuestion(question);
 
-			switch (typeOfQuestion) {
-				case 'with-checkbox-or-radio':
-					var hasAtLeastOneCheckedInput = false;
+			function validateCheckboxOrRadioQuestion(checkboxOrRadio) {
+				var questionIsValid = false,
+				hasAtLeastOneCheckedInput = false;
 
-					question.find('.js-checkbox-radio-input').each(function () {
-						if ($(this).is(':checked')) {
-							hasAtLeastOneCheckedInput = true;
-						}
-					});
-
-					if (!hasAtLeastOneCheckedInput) {
-						questionIsValid = false;
+				checkboxOrRadio.each(function () {
+					if ($(this).is(':checked')) {
+						hasAtLeastOneCheckedInput = true;
 					}
+				});
+
+				if (hasAtLeastOneCheckedInput) {
+					questionIsValid = true;
+				}
+
+				return questionIsValid;
+			}
+
+			function validateTextInput(input) {
+				var questionIsValid = false;
+
+				if (input.val().length > 0) questionIsValid = true;
+
+				return questionIsValid;
+			}
+
+			function validateEmailInput(input) {
+				var questionIsValid = false,
+				emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+				if (input.val().match(emailFormat)) questionIsValid = true;
+
+				return questionIsValid;
+			}
+
+			function validatePhoneInput(input) {
+				var questionIsValid = false;
+
+				if (input.hasClass('valid')) questionIsValid = true;
+
+				return questionIsValid;
+			}
+
+			function validateTextarea(textarea) {
+				var questionIsValid = false;
+
+				if (textarea.val().length > 20) questionIsValid = true;
+
+				return questionIsValid;
+			}
+
+			switch (typeOfQuestion) {
+				case 'with-checkbox-input':
+					var checkboxInputs = question.find('.js-checkbox-input');
+
+					questionIsValid = validateCheckboxOrRadioQuestion(checkboxInputs);
+
+					break;
+				case 'with-radio-input':
+					var radioInputs = question.find('.js-radio-input');
+
+					questionIsValid = validateCheckboxOrRadioQuestion(radioInputs);
 
 					break;
 				case 'with-text-input':
 					var textInput = question.find('.js-text-input');
 
-					if (textInput.val().length === 0) questionIsValid = false;
+					questionIsValid = validateTextInput(textInput);
 
 					break;
 				case 'with-email-input':
-					var emailInput = question.find('.js-email-input'),
-					emailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+					var emailInput = question.find('.js-email-input');
 
-					if (!emailInput.val().match(emailFormat)) questionIsValid = false;
+					questionIsValid = validateEmailInput(emailInput);
 
 					break;
 				case 'with-phone-input':
-					var phoneInput = question.find('.js-phone-input'),
-					phoneIsValid = phoneInput.hasClass('valid');
+					var phoneInput = question.find('.js-phone-input');
 
-					if (!phoneIsValid) questionIsValid = false;
+					questionIsValid = validatePhoneInput(phoneInput);
 
 					break;
 				case 'with-textarea':
-					var textareaInput = question.find('.js-textarea');
+					var textarea = question.find('.js-textarea');
 
-					if (textareaInput.val().length <= 20) questionIsValid = false;
+					questionIsValid = validateTextarea(textarea);
 
 					break;}
 
@@ -229,48 +274,137 @@ jQuery(function ($) {
 			}
 		}
 
-		function goToNextQuestion() {
-			nextQuestionBtn.on('click', function (e) {
+		function updateAnsweredQuestionsInfo() {
+			$('.js-checkbox-input, .js-radio-input').on('change', function () {
+				setAnsweredQuestionsInfo();
+			});
+
+			$(formItems).on('input', function () {
+				setAnsweredQuestionsInfo();
+			});
+		}
+
+		function goToNextQuestion(currentQuestion) {
+			var currentQuestionIsValid = validateQuestion(currentQuestion);
+
+			if (currentQuestionIsValid) {
+				currentQuestion.addClass('answered');
+
+				hideNextBtn(currentQuestion);
+
+				var nextQuestion = currentQuestion.next();
+
+				nextQuestion.addClass('active');
+				scrollToElement(nextQuestion);
+			}
+		}
+
+		function setOrRemoveValidStatus(question) {
+			var questionIsValid = validateQuestion(question);
+
+			if (questionIsValid) {
+				question.addClass('valid');
+				question.removeClass('not-valid');
+			} else {
+				question.removeClass('valid');
+				question.addClass('not-valid');
+			}
+		}
+
+		function showNextBtn(question) {
+			question.find('.js-survey-next-question').removeClass('hide');
+		}
+
+		function hideNextBtn(question) {
+			question.find('.js-survey-next-question').addClass('hide');
+		}
+
+		function setFocusetQuestion() {
+			$('.js-checkbox-input, .js-radio-input').on('change', function (e) {
+				var currentQuestion = $(this).closest('.js-survey-question-item');
+
+				surveyQuestionItem.removeClass('focused');
+				currentQuestion.addClass('focused');
+			});
+
+			$(formItems).on('focus', function (e) {
+				var currentQuestion = $(e.currentTarget).closest('.js-survey-question-item');
+
+				surveyQuestionItem.removeClass('focused');
+				currentQuestion.addClass('focused');
+			});
+		}
+
+		function formEvents() {
+			$('.js-checkbox-input').on('change', function () {
+				var question = $(this).closest('.js-survey-question-item');
+
+				showNextBtn(question);
+				setOrRemoveValidStatus(question);
+				scrollToElement(question);
+			});
+
+			$('.js-radio-input').on('change', function () {
+				var question = $(this).closest('.js-survey-question-item');
+
+				setOrRemoveValidStatus(question);
+				goToNextQuestion(question);
+			});
+
+			$(formItemsExcludingPhoneInput).on('input', function () {
+				var question = $(this).closest('.js-survey-question-item');
+
+				showNextBtn(question);
+				setOrRemoveValidStatus(question);
+			});
+
+			$('.js-phone-input').on('input', function () {
+				var question = $(this).closest('.js-survey-question-item');
+
+				setOrRemoveValidStatus(question);
+				goToNextQuestion(question);
+			});
+		}
+
+		function nextButtonInit() {
+			var button = $('.js-survey-go-to-next-question');
+
+			button.on('click', function (e) {
 				e.preventDefault();
 
-				var currentQuestion = $(this).closest('.js-survey-question-item'),
-				questionIsValid = validateQuestion(currentQuestion);
+				var currentQuestion = $(this).closest('.js-survey-question-item');
 
-				if (questionIsValid) {
-					currentQuestion.addClass('answered');
-					currentQuestion.find('.js-error-text').removeClass('active');
+				goToNextQuestion(currentQuestion);
+			});
+		}
 
-					var nextQuestion = surveyQuestionItem.not('.answered').first();
+		function enterKeyPressListener() {
+			$(formItems).keypress(function (e) {
+				var key = e.which,
+				currentQuestion = $(this).closest('.js-survey-question-item');
 
-					nextQuestion.addClass('active');
-					scrollToElement(nextQuestion);
-				} else {
-					setQuestionIsNotValid(currentQuestion);
+				if (key == 13) {
+					goToNextQuestion(currentQuestion);
+					setOrRemoveValidStatus(currentQuestion);
+
+					return false;
+				}
+			});
+
+			$('.js-checkbox-input').keypress(function (e) {
+				var key = e.which,
+				currentQuestion = $(this).closest('.js-survey-question-item');
+
+				if (key == 13) {
+					goToNextQuestion(currentQuestion);
+					setOrRemoveValidStatus(currentQuestion);
+
+					return false;
 				}
 			});
 		}
 
-		function clearErrorOnActive() {
-			$('.js-checkbox-radio-input').on('change', function () {
-				$(this).closest('.js-survey-question-item').find('.js-error-text').removeClass('active');
-			});
-
-			$(formItems).on('input', function () {
-				$(this).closest('.js-survey-question-item').find('.js-error-text').removeClass('active');
-			});
-		}
-
-		function updateAnsweredQuestionsInfo() {
-			$('.js-checkbox-radio-input').on('change', function () {
-				setAnsweredQuestionsInfo();
-			});
-
-			$(formItems).on('input', function () {
-				setAnsweredQuestionsInfo();
-			});
-		}
-
-		function showConfirmation() {
+		function finishSurvey() {
 			var preloader = $('.js-preloader'),
 			surveyBottomBar = $('.js-survey-bottom-bar'),
 			starting = $('.js-starting'),
@@ -284,6 +418,8 @@ jQuery(function ($) {
 				starting.addClass('hide');
 				survey.addClass('hide');
 				confirmation.addClass('active');
+
+				$(window).scrollTop(0);
 			}, 2000);
 
 			setTimeout(function () {
@@ -295,29 +431,33 @@ jQuery(function ($) {
 			$('.js-survey-form').on('submit', function (e) {
 				e.preventDefault();
 
-				var allQuestions = $('.js-survey-question-item'),
-				surveyIsValid = true;
+				var surveyIsValid = false;
 
-				allQuestions.each(function () {
+				surveyQuestionItem.each(function () {
 					var currentQuestion = $(this),
-					questionIsValid = validateQuestion(currentQuestion);
+					questionIsValid = currentQuestion.is('.valid');
 
 					if (questionIsValid) {
-						if (!currentQuestion.hasClass('answered')) {
-							scrollToElement(currentQuestion);
-
-							return false;
-						}
+						surveyIsValid = true;
 					} else {
-						setQuestionIsNotValid(currentQuestion);
 						surveyIsValid = false;
-
-						return false;
 					}
 				});
 
 				if (surveyIsValid) {
-					showConfirmation();
+					finishSurvey();
+				} else {
+					surveyQuestionItem.each(function () {
+						var currentQuestion = $(this),
+						questionIsValidAndAnswered = currentQuestion.is('.answered.valid');
+
+						if (!questionIsValidAndAnswered) {
+							setOrRemoveValidStatus(currentQuestion);
+							scrollToElement(currentQuestion);
+
+							return false;
+						}
+					});
 				}
 			});
 		}
@@ -325,9 +465,11 @@ jQuery(function ($) {
 		setTotalQuestionsCount();
 		questionTitleScroll();
 		setFormActiveOnBlur();
-		goToNextQuestion();
-		clearErrorOnActive();
 		updateAnsweredQuestionsInfo();
+		formEvents();
+		nextButtonInit();
+		setFocusetQuestion();
+		enterKeyPressListener();
 		surveySubmit();
 	}
 });
