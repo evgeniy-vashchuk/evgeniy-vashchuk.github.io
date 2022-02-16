@@ -25,7 +25,7 @@ jQuery(function ($) {
 	function initSmoothAnchorLinks() {
 		var animationComplete = true,
 		smoothAnchorLinks = $('a[href*="#"]:not([href="#"]):not(.js-no-scroll)'),
-		headerHeight = $(".js-header").length ? $(".js-header").outerHeight() : 0;
+		headerHeight = $('.js-header').length ? $('.js-header').outerHeight() : 0;
 
 		function scrollToElement(element) {var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
 			if (animationComplete && element.length) {
@@ -77,6 +77,35 @@ jQuery(function ($) {
 		formItems = '.js-text-input, .js-email-input, .js-phone-input, .js-textarea',
 		formItemsExcludingPhoneInput = formItems.replace(', .js-phone-input', ''),
 		scrollAnimationComplete = true;
+
+		function ratingFunctionality() {
+			$('.js-rating-star').on('mouseover', function () {
+				var rating = $(this).closest('.js-rating'),
+				hover = $(this).index() + 1;
+
+				rating.attr('data-hover', hover);
+			});
+
+			$('.js-rating').on('mouseover', function () {
+				$(this).addClass('hovering');
+			});
+
+			$('.js-rating').on('mouseleave', function () {
+				$(this).removeClass('hovering');
+			});
+
+			$('.js-rating-star').on('click', function () {
+				var rating = $(this).closest('.js-rating'),
+				question = $(this).closest('.js-survey-question-item'),
+				ratingInput = question.find('.js-text-input'),
+				select = $(this).index() + 1;
+
+				rating.attr('data-select', select);
+				rating.removeClass('hovering');
+				ratingInput.val(select);
+				ratingInput.trigger('input');
+			});
+		}
 
 		function scrollToElement(element) {
 			var headerHeight = $('.js-header').length ? $('.js-header').outerHeight() : 0;
@@ -333,6 +362,13 @@ jQuery(function ($) {
 				surveyQuestionItem.removeClass('focused');
 				currentQuestion.addClass('focused');
 			});
+
+			$('.js-rating-star').on('click', function (e) {
+				var currentQuestion = $(e.currentTarget).closest('.js-survey-question-item');
+
+				surveyQuestionItem.removeClass('focused');
+				currentQuestion.addClass('focused');
+			});
 		}
 
 		function formEvents() {
@@ -462,6 +498,7 @@ jQuery(function ($) {
 			});
 		}
 
+		ratingFunctionality();
 		setTotalQuestionsCount();
 		questionTitleScroll();
 		setFormActiveOnBlur();
