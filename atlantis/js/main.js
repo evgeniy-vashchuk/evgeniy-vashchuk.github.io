@@ -7,6 +7,8 @@ jQuery(function ($) {
 	initViewportUnitsOnMobile();
 	initMovementParallax();
 	initCountUp();
+	initAnimationOnScroll();
+	initSplitting();
 
 	// ACTIVE HEADER AFTER SCROLL
 	function initActiveHeaderAfterScroll() {
@@ -139,6 +141,33 @@ jQuery(function ($) {
 		}
 
 		countUpNumbersOnScroll();
+	}
+
+	// ANIMATION ON SCROLL
+	function initAnimationOnScroll() {
+		var target = $('.js-animation-item');
+
+		if (target.length) {
+			target.waypoint({
+				handler: function handler() {
+					if (!this.element.animationInit) {
+						this.element.animationInit = true;
+
+						$(this.element).addClass('active');
+					}
+				},
+				offset: '90%' });
+
+		}
+	}
+
+	// SPLITTING WORDS
+	function initSplitting() {
+		var target = document.getElementsByClassName('js-splitting');
+
+		for (var i = 0; i < target.length; i++) {
+			var results = Splitting({ target: target[i], by: 'chars' });
+		}
 	}
 
 });
