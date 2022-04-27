@@ -8,7 +8,6 @@ jQuery(function ($) {
 	initMovementParallax();
 	initCountUp();
 	initAnimationOnScroll();
-	initSplitting();
 
 	// ACTIVE HEADER AFTER SCROLL
 	function initActiveHeaderAfterScroll() {
@@ -158,15 +157,6 @@ jQuery(function ($) {
 				},
 				offset: '90%' });
 
-		}
-	}
-
-	// SPLITTING WORDS
-	function initSplitting() {
-		var target = document.getElementsByClassName('js-splitting');
-
-		for (var i = 0; i < target.length; i++) {
-			var results = Splitting({ target: target[i], by: 'chars' });
 		}
 	}
 
