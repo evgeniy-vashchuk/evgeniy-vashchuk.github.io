@@ -18439,65 +18439,6 @@ body.compensate-for-scrollbar {
 	}
 }
 
-/* Recommended styles for Splitting */
-.splitting .word,
-.splitting .char {
-	display: inline-block;
-}
-
-/* Psuedo-element chars */
-.splitting .char {
-	position: relative;
-}
-
-/**
- * Populate the psuedo elements with the character to allow for expanded effects
- * Set to `display: none` by default; just add `display: block` when you want
- * to use the psuedo elements
- */
-.splitting .char::before,
-.splitting .char::after {
-	content: attr(data-char);
-	position: absolute;
-	top: 0;
-	left: 0;
-	visibility: hidden;
-	transition: inherit;
-	user-select: none;
-}
-
-/* Expanded CSS Variables */
-.splitting {
-	/* The center word index */
-	--word-center: calc((var(--word-total) - 1) / 2);
-	/* The center character index */
-	--char-center: calc((var(--char-total) - 1) / 2);
-	/* The center character index */
-	--line-center: calc((var(--line-total) - 1) / 2);
-}
-
-.splitting .word {
-	/* Pecent (0-1) of the word's position */
-	--word-percent: calc(var(--word-index) / var(--word-total));
-	/* Pecent (0-1) of the line's position */
-	--line-percent: calc(var(--line-index) / var(--line-total));
-}
-
-.splitting .char {
-	/* Percent (0-1) of the char's position */
-	--char-percent: calc(var(--char-index) / var(--char-total));
-	/* Offset from center, positive & negative */
-	--char-offset: calc(var(--char-index) - var(--char-center));
-	/* Absolute distance from center, only positive */
-	--distance: calc(
-     (var(--char-offset) * var(--char-offset)) / var(--char-center)
-  );
-	/* Distance from center where -1 is the far left, 0 is center, 1 is far right */
-	--distance-sine: calc(var(--char-offset) / var(--char-center));
-	/* Distance from center where 1 is far left/far right, 0 is center */
-	--distance-percent: calc((var(--distance) / var(--char-center)));
-}
-
 *,
 *:hover,
 *:focus,
@@ -20665,15 +20606,8 @@ h6, .h6,
 	justify-content: center;
 	counter-reset: progressList;
 	overflow: hidden;
-	padding-bottom: 30px;
 	margin-bottom: 25px;
 	border-bottom: 1px solid #d3ccb0;
-}
-
-@media (min-width: 576px) {
-	.progress-list {
-		padding-bottom: 40px;
-	}
 }
 
 @media (min-width: 768px) {
@@ -20682,35 +20616,18 @@ h6, .h6,
 	}
 }
 
-.progress-list:before {
-	content: '';
-	position: absolute;
-	bottom: 0;
-	left: 50%;
-	display: block;
-	height: 30px;
-	width: 1px;
-	background-color: #d3ccb0;
-}
-
-@media (min-width: 576px) {
-	.progress-list:before {
-		height: 40px;
-	}
-}
-
 .progress-list__item {
 	position: relative;
 	display: inline-flex;
 	flex-direction: column;
 	align-items: center;
-	margin-bottom: 10px;
+	padding-bottom: 40px;
 	width: 275px;
 }
 
 @media (min-width: 576px) {
 	.progress-list__item {
-		margin-bottom: 20px;
+		padding-bottom: 60px;
 	}
 }
 
@@ -20760,6 +20677,28 @@ h6, .h6,
 	background-color: #faa751;
 	color: #004970;
 	border-color: #faa751;
+}
+
+.progress-list__button.active:after {
+	height: 30px;
+}
+
+@media (min-width: 576px) {
+	.progress-list__button.active:after {
+		height: 40px;
+	}
+}
+
+.progress-list__button:after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	display: block;
+	height: 0;
+	width: 1px;
+	background-color: #d3ccb0;
+	transition: height 0.3s;
 }
 
 .progress-list__button:before {
