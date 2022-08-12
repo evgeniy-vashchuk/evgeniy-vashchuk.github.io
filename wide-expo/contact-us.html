@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<title>Contact us - WideExpo</title>
+		<meta name="description" content="Description of the site">
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<!-- connection FAVICONS -->
+		<link rel="icon" href="img/favicon/favicon.ico">
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+
+		<!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+		<meta name="theme-color" content="#2A3333">
+
+		<!-- connection GOOGLE FONTS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&amp;display=swap" rel="stylesheet">
+
+		<!-- connection CSS -->
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+		<!-- HEADER -->
+		<div class="offcanvas offcanvas-end" id="offcanvasHeaderMenu" tabindex="-1" aria-labelledby="offcanvasHeaderMenuLabel">
+			<div class="offcanvas-header">
+				<h3 class="offcanvas-title" id="offcanvasHeaderMenuLabel">Menu</h3><a class="hamburger-menu active" aria-label="Close menu" href="#offcanvasHeaderMenu" data-bs-dismiss="offcanvas">
+					<div class="hamburger-menu__wrap">
+						<div class="hamburger-menu__bars"></div>
+					</div></a>
+			</div>
+			<div class="offcanvas-body">
+				<ul class="header-nav">
+					<li class="header-nav__item"><a class="header-nav__link" href="#">Home</a></li>
+					<li class="header-nav__item"><a class="header-nav__link" href="#">Piattaforma</a></li>
+					<li class="header-nav__item"><a class="header-nav__link" href="#">Chi siamo</a></li>
+					<li class="header-nav__item"><a class="header-nav__link" href="#">Press</a></li>
+					<li class="header-nav__item"><a class="header-nav__link" href="#">Contatti</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<header class="header fixed-top js-header">
+			<div class="container">
+				<div class="header__main-content"><a class="header__logo" href="#"><img src="img/logo-colored.svg" alt="WideExpo"></a>
+
+					<div class="header__menu-and-hamburger">
+						<div class="header__menu d-none d-md-block">
+							<ul class="header-nav">
+								<li class="header-nav__item"><a class="header-nav__link" href="#">Home</a></li>
+								<li class="header-nav__item"><a class="header-nav__link" href="#">Piattaforma</a></li>
+								<li class="header-nav__item"><a class="header-nav__link" href="#">Chi siamo</a></li>
+								<li class="header-nav__item"><a class="header-nav__link" href="#">Press</a></li>
+								<li class="header-nav__item"><a class="header-nav__link" href="#">Contatti</a></li>
+							</ul>
+						</div>
+
+						<div class="header__hamburger d-inline-flex d-md-none"><a class="hamburger-menu" aria-label="Open menu" data-bs-toggle="offcanvas" href="#offcanvasHeaderMenu" role="button" aria-controls="offcanvasHeaderMenu">
+							<div class="hamburger-menu__wrap">
+								<div class="hamburger-menu__bars"></div>
+							</div></a></div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- HEADER END -->
+
+		<!-- CONTENT -->
+		<main class="main">
+			<!-- SECTION CONTACT US -->
+			<section class="section-contact-us">
+				<div class="container">
+					<div class="row align-items-start align-items-xl-center">
+						<div class="col-md-extra-5 section-contact-us__text-col">
+							<div class="section-contact-us__title-wrap">
+								<h1 class="text-white">Contattaci</h1>
+								<h4 class="font-inherit text-white mb-0">Inviaci un messaggio! Siamo qui per te.</h4>
+							</div>
+						</div>
+						<div class="col-md-extra-7 section-contact-us__form-col">
+							<form class="form-block border-2xl" action="#">
+								<div class="row">
+									<div class="col-sm-6 col-md-extra-12 col-lg-6">
+										<div class="mb-3 mb-sm-5">
+											<input class="form-control" type="text" name="Name" placeholder="Name">
+										</div>
+									</div>
+									<div class="col-sm-6 col-md-extra-12 col-lg-6">
+										<div class="mb-3 mb-sm-5">
+											<input class="form-control" type="email" name="Email" placeholder="Email">
+										</div>
+									</div>
+									<div class="col-sm-6 col-md-extra-12 col-lg-6">
+										<div class="mb-3 mb-sm-5">
+											<input class="form-control" type="number" name="Phone" placeholder="Numero di telefono">
+										</div>
+									</div>
+									<div class="col-sm-6 col-md-extra-12 col-lg-6">
+										<div class="mb-3 mb-sm-5">
+											<input class="form-control" type="text" name="Agency" placeholder="Azienda">
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="mb-3 mb-sm-5">
+											<input class="form-control" type="text" name="What are you looking for?" placeholder="Cosa cerchi?">
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="mb-3 mb-sm-5">
+											<textarea class="form-control" name="Message" placeholder="Messaggio"></textarea>
+										</div>
+									</div>
+									<div class="col-12">
+										<button class="btn btn-gradient w-100" type="submit"><span>Invia</span></button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- SECTION CONTACT US END -->
+
+			<!-- SECTION MAP -->
+			<section class="section-map">
+				<div class="container">
+					<div class="section-map__wrap">
+						<div class="section-map__map-holder">
+							<!--  GOOGLE MAP -->
+							<div class="js-map google-map" data-coordinate-x="45.45924453774323" data-coordinate-y="9.20882462701111"></div>
+							<!--  GOOGLE MAP END -->
+						</div>
+
+						<div class="row">
+							<div class="col-lg-8 col-xl-7 col-xxl-6">
+								<div class="section-map__main-content">
+									<h2 class="h1">Cerchi più informazioni?</h2>
+									<h4 class="font-inherit text-secondary mb-4 mb-lg-6">Contattaci!</h4>
+
+									<div class="section-map__contacts-block border-2xl">
+										<div class="row">
+											<div class="col-xs-6 col-sm-4 d-flex">
+												<div class="card-contact">
+													<div class="card-contact__icon"><span class="icomoon-phone"></span></div>
+
+													<p class="card-contact__title">Numero di telefono</p><a class="card-contact__link" href="tel:+393486137727" target="_blank">+39 348 613 7727</a>
+												</div>
+											</div>
+											<div class="col-xs-6 col-sm-4 d-flex">
+												<div class="card-contact">
+													<div class="card-contact__icon"><span class="icomoon-email"></span></div>
+
+													<p class="card-contact__title">Email</p><a class="card-contact__link" href="mailto:info@wideexpo.com">info@wideexpo.com</a>
+												</div>
+											</div>
+											<div class="col-sm-4 d-flex">
+												<div class="card-contact">
+													<div class="card-contact__icon"><span class="icomoon-location"></span></div>
+
+													<p class="card-contact__title">Indirizzo</p><a class="card-contact__link" href="http://maps.google.com/?q=ViaSpartaco10,20135Milan,Italy">Via Spartaco 10, 20135 Milan, Italy</a>
+												</div>
+											</div>
+										</div>
+
+										<ul class="social-list primary justify-content-center mt-3 mt-sm-0">
+											<li class="social-list__item"><a class="social-list__link" href="#"><span class="icomoon-youtube"></span></a></li>
+											<li class="social-list__item"><a class="social-list__link" href="#"><span class="icomoon-facebook"></span></a></li>
+											<li class="social-list__item"><a class="social-list__link" href="#"><span class="icomoon-instagram"></span></a></li>
+											<li class="social-list__item"><a class="social-list__link" href="#"><span class="icomoon-linkedin"></span></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- SECTION MAP END -->
+
+			<!-- SECTION BECOME PART -->
+			<section class="section-become-part" style="background-image: url(img/section-become-part-bg-lines.svg)">
+				<div class="section-become-part__main-content" style="background-image: url(img/section-become-part-bg.svg)">
+					<div class="container">
+						<div class="row justify-content-end">
+							<div class="col-md-extra-8 col-lg-7 col-xl-5">
+								<div class="section-become-part__block">
+									<div class="section-become-part__block-inner">
+										<h2 class="section-become-part__title">Campagna di equity crowdfundin di WideExpo</h2>
+										<h4 class="section-become-part__sub-title text-secondary font-inherit">Diventa parte del progetto</h4><a class="btn btn-gradient w-100" href="#"><span>Investi</span></a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- SECTION BECOME PART END -->
+		</main>
+		<!-- CONTENT END -->
+
+		<!-- FOOTER -->
+		<footer class="footer">
+			<div class="container">
+				<div class="footer__wrap">
+					<div class="footer__inner-content">
+						<div class="footer__top-content">
+							<div class="row">
+								<div class="col-lg-4 col-xxl-3">
+									<div class="footer__logo-desc-and-socials">
+										<div class="row">
+											<div class="col-md-6 col-lg-12"><a class="footer__logo" href="#"><img src="img/logo-white.svg" alt="WideExpo"></a>
+
+												<div class="footer__desc text-block text-xl">
+													<p>Il primo network digitale per le fiere italiane e internazionali</p>
+												</div>
+											</div>
+											<div class="col-md-6 col-lg-12">
+												<ul class="social-list white justify-content-center justify-content-sm-start justify-content-md-end justify-content-lg-start">
+													<li class="social-list__item"><a class="social-list__link" href="#"><span class="icomoon-youtube"></span></a></li>
+													<li class="social-list__item"><a class="social-list__link" href="#"><span class="icomoon-facebook"></span></a></li>
+													<li class="social-list__item"><a class="social-list__link" href="#"><span class="icomoon-instagram"></span></a></li>
+													<li class="social-list__item"><a class="social-list__link" href="#"><span class="icomoon-linkedin"></span></a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="col-lg-7 col-xl-6 col-xxl-5 offset-lg-1 offset-xl-2 offset-xxl-4">
+									<div class="row remove-gutters-sm-down">
+										<div class="col-xs-6 col-sm-4 d-flex">
+											<div class="footer-title-and-nav">
+												<h4 class="footer-title-and-nav__title text-white">Legal</h4>
+
+												<ul class="footer-nav">
+													<li class="footer-nav__item"><a class="footer-nav__link" href="#">Terms & Conditions</a></li>
+													<li class="footer-nav__item"><a class="footer-nav__link" href="#">Privacy Policy</a></li>
+													<li class="footer-nav__item"><a class="footer-nav__link" href="#">Cookies Policy</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-xs-6 col-sm-4 d-flex">
+											<div class="footer-title-and-nav">
+												<h4 class="footer-title-and-nav__title text-white">Company</h4>
+
+												<ul class="footer-nav">
+													<li class="footer-nav__item"><a class="footer-nav__link" href="#">About</a></li>
+													<li class="footer-nav__item"><a class="footer-nav__link" href="#">Solution</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-xs-6 col-sm-4 d-flex">
+											<div class="footer-title-and-nav">
+												<h4 class="footer-title-and-nav__title text-white">Contact</h4>
+
+												<ul class="footer-nav">
+													<li class="footer-nav__item"><a class="footer-nav__link" href="tel:+723478392">+723478392</a></li>
+													<li class="footer-nav__item"><a class="footer-nav__link" href="mailto:info@wideexpo.com">info@wideexpo.com</a></li>
+													<li class="footer-nav__item d-none d-sm-block"><a class="footer-nav__link" href="http://maps.google.com/?q=ViaSpartaco10,20135Milan,Italy" target="_blank">Via Spartaco 10,<br> 20135 Milan, Italy</a></li>
+												</ul>
+											</div>
+										</div>
+										<div class="col-xs-6 col-sm-4 d-flex d-sm-none">
+											<div class="footer-title-and-nav">
+												<h4 class="footer-title-and-nav__title text-white">Address</h4>
+
+												<ul class="footer-nav">
+													<li class="footer-nav__item"><a class="footer-nav__link" href="http://maps.google.com/?q=ViaSpartaco10,20135Milan,Italy" target="_blank">Via Spartaco 10,<br> 20135 Milan, Italy</a></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="footer__bottom-content">
+							<div class="text-center text-block text-lg">
+								<p>Copyright © 2022 WideExpo S.r.l. All rights reserved.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- FOOTER END -->
+
+		<!-- connection JAVASCRIPT -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoik2Sle8UV-ysloqMOF2dK0mnXpb5z3I"></script>
+		<script src="js/libs.js"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>
