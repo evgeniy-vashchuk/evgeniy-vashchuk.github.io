@@ -6,6 +6,7 @@ $(function () {
 	initCountdown();
 	initTabsList();
 	initSliders();
+	initMap();
 });
 
 // ACTIVE HEADER AFTER SCROLL
@@ -114,6 +115,7 @@ function initSliders() {
 			nav: false,
 			mouseDrag: true,
 			loop: false,
+			speed: 500,
 			responsive: {
 				576: {
 					items: 2 },
@@ -160,5 +162,3 @@ function initMap() {
 		icon: icon });
 
 }
-
-initMap();
