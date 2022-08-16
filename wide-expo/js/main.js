@@ -106,30 +106,69 @@ function initTabsList() {
 function initSliders() {
 	var sliderDigitalNetwork = $('.js-slider-digital-network');
 
-	sliderDigitalNetwork.each(function () {
-		var slider = tns({
-			container: this,
-			items: 1,
-			gutter: 12,
-			controls: false,
-			nav: false,
-			mouseDrag: true,
-			loop: false,
-			speed: 500,
-			responsive: {
-				576: {
-					items: 2 },
+	if (sliderDigitalNetwork.length) {
+		sliderDigitalNetwork.each(function () {
+			var slider = tns({
+				container: this,
+				items: 1,
+				gutter: 12,
+				controls: false,
+				nav: false,
+				mouseDrag: true,
+				loop: false,
+				speed: 500,
+				responsive: {
+					576: {
+						items: 2 },
 
-				800: {
-					items: 3,
-					gutter: 40 },
+					800: {
+						items: 3,
+						gutter: 30 },
 
-				1200: {
-					gutter: 70 } } });
+					1620: {
+						gutter: 70 } } });
 
 
 
-	});
+		});
+	}
+
+	var sliderOurTeam = $('.js-slider-our-team'),
+	sliderOurTeamObj = {},
+	ourTeamPhotoItem = $('.js-our-team-photo-item');
+
+	if (sliderOurTeam.length) {
+		sliderOurTeam.each(function () {
+			sliderOurTeamObj = tns({
+				container: this,
+				items: 1,
+				gutter: 30,
+				controlsPosition: 'bottom',
+				controlsText: ['<span class="icomoon-arrow-left"></span>', '<span class="icomoon-arrow-right"></span>'],
+				nav: false,
+				mouseDrag: true,
+				loop: false,
+				speed: 500 });
+
+		});
+
+		ourTeamPhotoItem.on('click', function (e) {
+			e.preventDefault();
+
+			var index = +$(this).attr('data-team-photo') - 1;
+
+			sliderOurTeamObj.goTo(index);
+			ourTeamPhotoItem.removeClass('active');
+			$(this).addClass('active');
+		});
+
+		sliderOurTeamObj.events.on('transitionStart', function (info) {
+			var index = info.displayIndex;
+
+			ourTeamPhotoItem.removeClass('active');
+			$('.js-our-team-photo-item[data-team-photo="' + index + '"]').addClass('active');
+		});
+	}
 }
 
 // STANDARD GOOGLE MAP
