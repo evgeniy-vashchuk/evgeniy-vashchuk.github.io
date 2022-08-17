@@ -13887,11 +13887,11 @@ body {
 	}
 	h4,
 .h4 {
-		font-size: 16px;
+		font-size: 20px;
 	}
 	h5,
 .h5 {
-		font-size: 16px;
+		font-size: 18px;
 	}
 	h6,
 .h6 {
@@ -13961,7 +13961,7 @@ h6,
 	}
 	h2,
 .h2 {
-		font-size: 42px;
+		font-size: 40px;
 	}
 	h3,
 .h3 {
@@ -13987,7 +13987,7 @@ h6,
 	}
 	h2,
 .h2 {
-		font-size: 42px;
+		font-size: 36px;
 	}
 	h3,
 .h3 {
@@ -14013,7 +14013,7 @@ h6,
 	}
 	h2,
 .h2 {
-		font-size: 44px;
+		font-size: 40px;
 	}
 	h3,
 .h3 {
@@ -14035,19 +14035,19 @@ h6,
 @media only screen and (min-width: 1200px) {
 	h1,
 .h1 {
-		font-size: 80px;
+		font-size: 56px;
 	}
 	h2,
 .h2 {
-		font-size: 46px;
+		font-size: 40px;
 	}
 	h3,
 .h3 {
-		font-size: 38px;
+		font-size: 36px;
 	}
 	h4,
 .h4 {
-		font-size: 30px;
+		font-size: 28px;
 	}
 	h5,
 .h5 {
@@ -14124,7 +14124,7 @@ h6,
 }
 @media (min-width: 992px) {
 	.text-xl {
-		font-size: 20px !important;
+		font-size: 18px !important;
 	}
 }
 @media (min-width: 1620px) {
@@ -14161,7 +14161,7 @@ h1, .h1 {
 h2, .h2 {
 	margin-bottom: 20px;
 }
-@media (min-width: 992px) {
+@media (min-width: 1620px) {
 	h2, .h2 {
 		margin-bottom: 35px;
 	}
@@ -14265,11 +14265,6 @@ h4, .h4 {
 		padding: 25px 0;
 	}
 }
-@media (min-width: 1200px) {
-	.header {
-		padding: 40px 0;
-	}
-}
 @media (min-width: 1620px) {
 	.header {
 		padding: 55px 0;
@@ -14281,11 +14276,6 @@ h4, .h4 {
 @media (min-width: 720px) {
 	.header.fixed-top + .main {
 		padding-top: 120px;
-	}
-}
-@media (min-width: 992px) {
-	.header.fixed-top + .main {
-		padding-top: 180px;
 	}
 }
 @media (min-width: 1620px) {
@@ -14326,11 +14316,6 @@ h4, .h4 {
 @media (min-width: 720px) {
 	.header__logo {
 		max-width: 140px;
-	}
-}
-@media (min-width: 992px) {
-	.header__logo {
-		max-width: 180px;
 	}
 }
 @media (min-width: 1620px) {
@@ -14384,11 +14369,6 @@ h4, .h4 {
 	line-height: 1.1;
 	transition: color 0.3s;
 }
-@media (min-width: 992px) {
-	.header-nav__link {
-		font-size: 20px;
-	}
-}
 @media (min-width: 1620px) {
 	.header-nav__link {
 		font-size: 1.375rem;
@@ -14422,11 +14402,6 @@ h4, .h4 {
 @media (min-width: 576px) {
 	.footer {
 		margin-bottom: 30px;
-	}
-}
-@media (min-width: 992px) {
-	.footer {
-		margin-bottom: 50px;
 	}
 }
 @media (min-width: 1620px) {
@@ -14513,20 +14488,15 @@ h4, .h4 {
 	width: 100%;
 	margin-bottom: 25px;
 }
-@media (min-width: 720px) {
-	.footer__logo {
-		margin-bottom: 30px;
-	}
-}
 @media (min-width: 992px) {
 	.footer__logo {
 		max-width: 150px;
-		margin-bottom: 40px;
 	}
 }
 @media (min-width: 1620px) {
 	.footer__logo {
 		max-width: 210px;
+		margin-bottom: 40px;
 	}
 }
 .footer__desc {
@@ -14566,15 +14536,10 @@ h4, .h4 {
 }
 @media (min-width: 576px) {
 	.footer__bottom-content {
-		padding: 25px 0;
+		padding: 15px 0;
 	}
 }
-@media (min-width: 720px) {
-	.footer__bottom-content {
-		padding: 45px 0;
-	}
-}
-@media (min-width: 992px) {
+@media (min-width: 1620px) {
 	.footer__bottom-content {
 		padding: 25px 0;
 	}
@@ -14600,6 +14565,11 @@ h4, .h4 {
 	margin-top: 15px;
 }
 @media (min-width: 720px) {
+	.footer-nav__item:not(:first-child) {
+		margin-top: 20px;
+	}
+}
+@media (min-width: 1620px) {
 	.footer-nav__item:not(:first-child) {
 		margin-top: 35px;
 	}
@@ -14657,7 +14627,7 @@ h4, .h4 {
 		font-size: 16px;
 	}
 }
-@media (min-width: 720px) {
+@media (min-width: 1620px) {
 	.footer-title-and-nav__title {
 		margin-bottom: 35px;
 	}
@@ -14830,13 +14800,8 @@ textarea.form-control {
 }
 @media (min-width: 992px) {
 	.section-welcome-about-wrap {
-		background-position: top 50px center;
-		background-size: 98%;
-	}
-}
-@media (min-width: 1620px) {
-	.section-welcome-about-wrap {
 		background-position: top center;
+		background-size: 98%;
 	}
 }
 .section-welcome {
@@ -14858,6 +14823,11 @@ textarea.form-control {
 	}
 }
 @media (min-width: 992px) {
+	.section-welcome {
+		padding: 60px 0;
+	}
+}
+@media (min-width: 1620px) {
 	.section-welcome {
 		padding: 80px 0;
 	}
@@ -14882,7 +14852,7 @@ textarea.form-control {
 }
 @media (min-width: 992px) {
 	.section-welcome__title {
-		margin-bottom: 60px;
+		margin-bottom: 40px;
 	}
 }
 @media (min-width: 1620px) {
@@ -14897,11 +14867,6 @@ textarea.form-control {
 }
 .section-welcome__countdown {
 	max-width: 600px;
-}
-@media (min-width: 1200px) {
-	.section-welcome__countdown {
-		max-width: 680px;
-	}
 }
 @media (min-width: 1620px) {
 	.section-welcome__countdown {
@@ -14933,10 +14898,15 @@ textarea.form-control {
 }
 @media (min-width: 992px) {
 	.section-about {
-		padding-top: 80px;
+		padding-top: 60px;
 		background-repeat: no-repeat;
 		background-size: 30%;
 		background-position: right -5% bottom 50px;
+	}
+}
+@media (min-width: 1620px) {
+	.section-about {
+		padding-top: 80px;
 	}
 }
 .section-about__title-holder {
@@ -14991,7 +14961,7 @@ textarea.form-control {
 }
 @media (min-width: 720px) {
 	.section-fair {
-		padding-bottom: 100px;
+		padding-bottom: 60px;
 	}
 }
 @media (min-width: 800px) {
@@ -15051,6 +15021,11 @@ textarea.form-control {
 }
 @media (min-width: 992px) {
 	.section-fair__title {
+		margin-bottom: 50px;
+	}
+}
+@media (min-width: 1620px) {
+	.section-fair__title {
 		margin-bottom: 65px;
 	}
 }
@@ -15078,7 +15053,7 @@ textarea.form-control {
 }
 @media (min-width: 992px) {
 	.section-digital-network {
-		padding: 100px 0;
+		padding: 60px 0;
 	}
 }
 @media (min-width: 1620px) {
@@ -15092,11 +15067,6 @@ textarea.form-control {
 }
 .section-digital-network__title-holder {
 	margin-bottom: 50px;
-}
-@media (min-width: 1200px) {
-	.section-digital-network__title-holder {
-		margin-bottom: 80px;
-	}
 }
 @media (min-width: 1620px) {
 	.section-digital-network__title-holder {
@@ -15227,6 +15197,11 @@ textarea.form-control {
 	padding: 25px;
 }
 @media (min-width: 576px) {
+	.section-become-part__block-inner {
+		padding: 40px 30px 30px;
+	}
+}
+@media (min-width: 1620px) {
 	.section-become-part__block-inner {
 		padding: 60px 40px 40px;
 	}
@@ -15958,7 +15933,7 @@ textarea.form-control {
 	margin-bottom: 10px;
 	font-family: inherit;
 }
-@media (min-width: 360px) {
+@media (min-width: 1620px) {
 	.card-about__title {
 		font-size: 22px;
 		margin-bottom: 20px;
@@ -16073,6 +16048,11 @@ textarea.form-control {
 	padding-top: 100%;
 }
 @media (min-width: 1200px) {
+	.card-digital-network__img {
+		max-width: 180px;
+	}
+}
+@media (min-width: 1620px) {
 	.card-digital-network__img {
 		max-width: 100%;
 		margin-bottom: 30px;
@@ -16487,11 +16467,6 @@ textarea.form-control {
 		padding: 25px;
 	}
 }
-@media (min-width: 1200px) {
-	.countdown-block__wrap {
-		padding: 30px;
-	}
-}
 @media (min-width: 1620px) {
 	.countdown-block__wrap {
 		padding: 30px 50px 40px;
@@ -16599,6 +16574,11 @@ textarea.form-control {
 }
 @media (min-width: 1200px) {
 	.countdown__title {
+		font-size: 18px;
+	}
+}
+@media (min-width: 1620px) {
+	.countdown__title {
 		font-size: 22px;
 		margin-bottom: 0;
 	}
@@ -16610,6 +16590,11 @@ textarea.form-control {
 	font-size: 32px;
 }
 @media (min-width: 1200px) {
+	.countdown__value {
+		font-size: 42px;
+	}
+}
+@media (min-width: 1620px) {
 	.countdown__value {
 		font-size: 56px;
 	}
