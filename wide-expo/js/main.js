@@ -7,6 +7,7 @@ $(function () {
 	initTabsList();
 	initSliders();
 	initMap();
+	initAos();
 });
 
 // ACTIVE HEADER AFTER SCROLL
@@ -199,5 +200,14 @@ function initMap() {
 		map: map,
 		animation: google.maps.Animation.BOUNCE,
 		icon: icon });
+
+}
+
+// ANIMATION ON SCROLL
+function initAos() {
+	AOS.init({
+		duration: 1000,
+		once: true,
+		easing: 'ease-in-out' });
 
 }
