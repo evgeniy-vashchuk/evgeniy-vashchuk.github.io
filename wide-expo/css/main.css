@@ -12896,10 +12896,20 @@ h6,
 		column-count: 2;
 	}
 }
+@media (min-width: 360px) {
+	.text-xs-two-cols > * {
+		break-inside: avoid-column;
+	}
+}
 
 @media (min-width: 992px) {
 	.text-lg-two-cols {
 		column-count: 2;
+	}
+}
+@media (min-width: 992px) {
+	.text-lg-two-cols > * {
+		break-inside: avoid-column;
 	}
 }
 
@@ -13055,16 +13065,6 @@ h4, .h4 {
 	align-items: center;
 	justify-content: space-between;
 }
-@media (min-width: 720px) {
-	.header__main-content {
-		margin: 0 -15px;
-	}
-}
-@media (min-width: 992px) {
-	.header__main-content {
-		margin: 0;
-	}
-}
 .header__logo {
 	display: block;
 	max-width: 95px;
@@ -13184,13 +13184,7 @@ h4, .h4 {
 	border-radius: 41px;
 	background: linear-gradient(to right, #245795, #8AD3A8);
 }
-@media (min-width: 720px) {
-	.footer__wrap:before {
-		left: -15px;
-		right: -15px;
-	}
-}
-@media only screen and (min-width: 1800px) {
+@media (min-width: 1800px) {
 	.footer__wrap:before {
 		left: -140px;
 		right: -140px;
@@ -13549,38 +13543,72 @@ textarea.form-control {
 	position: relative;
 	z-index: 5;
 }
+.section-welcome-about-wrap__bg-block {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+}
+.section-welcome-about-wrap__bg-container {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	bottom: 0;
+	transform: translate(-50%, 0);
+	width: 100%;
+	height: 100%;
+}
+@media (min-width: 1800px) {
+	.section-welcome-about-wrap__bg-container {
+		position: static;
+		transform: none;
+	}
+}
+.section-welcome-about-wrap__bg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
 @media (max-width: 575.98px) {
-	.section-welcome-about-wrap {
+	.section-welcome-about-wrap__bg {
 		background-image: none !important;
 	}
 }
 @media (min-width: 576px) {
-	.section-welcome-about-wrap {
+	.section-welcome-about-wrap__bg {
 		background-repeat: no-repeat;
-		background-size: 600px;
+		background-size: 550px;
 		background-position: top center;
 	}
 }
 @media (min-width: 720px) {
-	.section-welcome-about-wrap {
+	.section-welcome-about-wrap__bg {
 		background-size: 835px;
 	}
 }
 @media (min-width: 800px) {
-	.section-welcome-about-wrap {
-		background-size: 115%;
-	}
-}
-@media (min-width: 992px) {
-	.section-welcome-about-wrap {
-		background-position: top center;
-		background-size: 70%;
+	.section-welcome-about-wrap__bg {
+		background-size: contain;
+		left: 32px;
+		right: 32px;
 	}
 }
 @media (min-width: 1800px) {
-	.section-welcome-about-wrap {
+	.section-welcome-about-wrap__bg {
 		background-size: 98%;
+		left: 0;
+		right: 0;
 	}
+}
+.section-welcome-about-wrap__sections {
+	position: relative;
+	z-index: 5;
 }
 .section-welcome {
 	padding: 20px 0;
@@ -13927,12 +13955,12 @@ textarea.form-control {
 }
 @media (min-width: 1200px) {
 	.section-become-part__main-content {
-		background-position: left 30% center;
+		background-position: left 25% center;
 	}
 }
 @media (min-width: 1400px) {
 	.section-become-part__main-content {
-		background-size: 35%;
+		background-size: 40%;
 	}
 }
 @media (min-width: 1800px) {
@@ -14276,13 +14304,25 @@ textarea.form-control {
 	.section-platform-welcome__bg {
 		left: auto;
 		top: 0;
+		right: 20px;
 		width: 60%;
 		height: auto;
 		bottom: 100px;
 	}
 }
+@media (min-width: 992px) {
+	.section-platform-welcome__bg {
+		right: 50px;
+	}
+}
+@media (min-width: 1400px) {
+	.section-platform-welcome__bg {
+		right: 100px;
+	}
+}
 @media (min-width: 1800px) {
 	.section-platform-welcome__bg {
+		right: 0;
 		bottom: 200px;
 	}
 }
@@ -14734,6 +14774,11 @@ textarea.form-control {
 		margin-bottom: 16px;
 	}
 }
+@media (min-width: 800px) {
+	.card-fair {
+		padding: 40px 25px;
+	}
+}
 @media (min-width: 1800px) {
 	.card-fair {
 		padding: 80px 65px 45px;
@@ -14757,15 +14802,6 @@ textarea.form-control {
 	.card-fair__icon {
 		width: 200px;
 		height: 170px;
-	}
-}
-.card-fair__title {
-	color: #ffffff;
-	margin-bottom: 10px;
-}
-@media (min-width: 576px) {
-	.card-fair__title {
-		margin-bottom: 5px;
 	}
 }
 .card-fair__text {
@@ -14947,7 +14983,7 @@ textarea.form-control {
 	backdrop-filter: blur(32px);
 	-webkit-backdrop-filter: blur(32px);
 	box-shadow: 0 15px 30px rgba(33, 85, 69, 0.05);
-	padding: 30px 12px;
+	padding: 30px 20px;
 	width: 100%;
 	margin-bottom: 16px;
 }
@@ -14983,7 +15019,7 @@ textarea.form-control {
 		max-width: 140px;
 	}
 }
-@media (max-width: 575.98px) {
+@media (max-width: 359.98px) {
 	.card-solution__text {
 		font-size: 12px !important;
 	}
@@ -15522,10 +15558,15 @@ textarea.form-control {
 }
 @media (min-width: 576px) {
 	.slider-digital-network {
-		max-width: 466px;
+		max-width: 650px;
 	}
 }
-@media (min-width: 800px) {
+@media (min-width: 992px) {
+	.slider-digital-network {
+		max-width: 1100px;
+	}
+}
+@media (min-width: 1800px) {
 	.slider-digital-network {
 		max-width: 1412px;
 	}

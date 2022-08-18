@@ -123,8 +123,10 @@ function initSliders() {
 						items: 2 },
 
 					800: {
-						items: 3,
 						gutter: 30 },
+
+					992: {
+						items: 3 },
 
 					1620: {
 						gutter: 70 } } });
