@@ -8,6 +8,7 @@ $(function () {
 	initSliders();
 	initMap();
 	initAos();
+	initFormValidate();
 });
 
 // ACTIVE HEADER AFTER SCROLL
@@ -212,4 +213,25 @@ function initAos() {
 		once: true,
 		easing: 'ease-in-out' });
 
+}
+
+// FORM VALIDATE
+function initFormValidate() {
+	var form = $('.js-form-validate');
+
+	if (form.length) {
+		form.validate({
+			lang: 'it',
+			errorClass: 'is-invalid',
+
+			errorPlacement: function errorPlacement(error, element) {
+				error.addClass('invalid-feedback');
+				error.insertAfter(element);
+			},
+
+			submitHandler: function submitHandler(form) {
+				$('#formSuccessModal').modal('show');
+			} });
+
+	}
 }
