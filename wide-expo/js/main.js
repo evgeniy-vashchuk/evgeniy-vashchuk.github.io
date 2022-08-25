@@ -194,7 +194,7 @@ function initMap() {
 
 	// OPTIONAL - custom icon
 	var icon = {
-		url: '/../img/map-marker.svg',
+		url: './../img/map-marker.svg',
 		scaledSize: new google.maps.Size(51, 63) };
 
 
@@ -230,7 +230,18 @@ function initFormValidate() {
 			},
 
 			submitHandler: function submitHandler(form) {
-				$('#formSuccessModal').modal('show');
+				$.ajax({
+					type: 'POST',
+					url: './../files/mail.php',
+					data: $(form).serialize() }).
+				done(function () {
+					setTimeout(function () {
+						$('#formSuccessModal').modal('show');
+						$(form).trigger('reset');
+					}, 1000);
+				});
+
+				return false;
 			} });
 
 	}
