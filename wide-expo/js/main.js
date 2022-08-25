@@ -194,7 +194,7 @@ function initMap() {
 
 	// OPTIONAL - custom icon
 	var icon = {
-		url: '../img/map-marker.svg',
+		url: '/../img/map-marker.svg',
 		scaledSize: new google.maps.Size(51, 63) };
 
 
