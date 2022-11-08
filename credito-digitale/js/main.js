@@ -167,7 +167,7 @@ $(function () {
 
 		function addMarker(latLng, name, address) {
 			var icon = {
-				url: '../img/map-marker.svg',
+				url: './img/map-marker.svg',
 				scaledSize: new google.maps.Size(53, 70)
 			};
 
