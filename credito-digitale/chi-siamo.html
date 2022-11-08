@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 	<head>
-		<title>Chi siamo - WideExpo</title>
+		<title>Chi siamo - Credito Digitale</title>
 		<meta name="description" content="Description of the site">
 		<meta charset="UTF-8">
 		<meta name="format-detection" content="telephone=no">
@@ -13,71 +13,39 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
 
 		<!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
-		<meta name="theme-color" content="#2A3333">
+		<meta name="theme-color" content="#2C2C2C">
 
 		<!-- connection GOOGLE FONTS -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&amp;display=swap" rel="stylesheet">
 
 		<!-- connection CSS -->
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 
 	<body>
-		<!-- COOKIES BANNER -->
-		<div class="cookies-banner d-none js-cookies-banner">
-			<div class="container">
-				<div class="cookies-banner__main-content">
-					<div class="cookies-banner__text-block">
-						<h6 class="cookies-banner__title">Teniamo alla tua privacy!</h6>
-						<div class="cookies-banner__text text-block text-secondary">
-							<p>Questo sito web utilizza i cookies per analisi e per migliorare i servizi offerti. Cliccando su “Accetto”, si acconsente al loro utilizzo in conformità con la nostra <a href="politica-sulla-riservatezza.html">Politica sui Cookies</a>.</p>
-						</div>
-					</div>
-
-					<div class="cookies-banner__actions"><a class="link-bold js-reject-cookies" href="#">Rifiuto</a><a class="btn btn-gradient js-accept-cookies" href="#"><span>Accetto</span></a></div>
-				</div>
-			</div>
-		</div>
-		<!-- COOKIES BANNER END -->
-
 		<!-- HEADER -->
-		<div class="offcanvas offcanvas-end" id="offcanvasHeaderMenu" tabindex="-1" aria-labelledby="offcanvasHeaderMenuLabel">
-			<div class="offcanvas-header">
-				<h3 class="offcanvas-title" id="offcanvasHeaderMenuLabel">Menu</h3><a class="hamburger-menu active" aria-label="Close menu" href="#offcanvasHeaderMenu" data-bs-dismiss="offcanvas">
-					<div class="hamburger-menu__wrap">
-						<div class="hamburger-menu__bars"></div>
-					</div></a>
-			</div>
-			<div class="offcanvas-body">
-				<ul class="header-nav">
-					<li class="header-nav__item"><a class="header-nav__link" href="index.html">Home</a></li>
-					<li class="header-nav__item"><a class="header-nav__link" href="piattaforma.html">Piattaforma</a></li>
-					<li class="header-nav__item"><a class="header-nav__link" href="chi-siamo.html">Chi siamo</a></li>
-					<li class="header-nav__item"><a class="header-nav__link" href="contatti.html">Contatti</a></li>
-				</ul>
-			</div>
-		</div>
-
 		<header class="header fixed-top js-header">
-			<div class="container">
-				<div class="header__main-content"><a class="header__logo" href="index.html"><img src="img/logo-colored.svg" alt="WideExpo"></a>
+			<div class="header__wrap">
+				<div class="container">
+					<div class="header__main-content"><a class="header__logo" href="#"><img src="img/logo.svg" alt="Logo"></a>
 
-					<div class="header__menu-and-hamburger">
-						<div class="header__menu d-none d-md-block">
-							<ul class="header-nav">
-								<li class="header-nav__item"><a class="header-nav__link" href="index.html">Home</a></li>
-								<li class="header-nav__item"><a class="header-nav__link" href="piattaforma.html">Piattaforma</a></li>
-								<li class="header-nav__item"><a class="header-nav__link" href="chi-siamo.html">Chi siamo</a></li>
-								<li class="header-nav__item"><a class="header-nav__link" href="contatti.html">Contatti</a></li>
-							</ul>
+						<div class="header__right-content">
+							<div class="header__menu js-header-menu">
+								<ul class="header-nav">
+									<li class="header-nav__item"><a class="header-nav__link" href="index.html">Home</a></li>
+									<li class="header-nav__item"><a class="header-nav__link" href="servizi.html">Servizi</a></li>
+									<li class="header-nav__item"><a class="header-nav__link active" href="chi-siamo.html">Chi siamo</a></li>
+									<li class="header-nav__item"><a class="header-nav__link" href="contatti.html">Contatti</a></li>
+									<li class="header-nav__item"><a class="header-nav__link" href="preventivatore.html">Preventivatore</a></li>
+								</ul>
+							</div>
+							<a class="hamburger-menu d-md-none js-hamburger-menu" href="#" aria-label="Toggle menu">
+								<div class="hamburger-menu__wrap">
+									<div class="hamburger-menu__bars"></div>
+								</div></a>
 						</div>
-
-						<div class="header__hamburger d-inline-flex d-md-none"><a class="hamburger-menu" aria-label="Open menu" data-bs-toggle="offcanvas" href="#offcanvasHeaderMenu" role="button" aria-controls="offcanvasHeaderMenu">
-							<div class="hamburger-menu__wrap">
-								<div class="hamburger-menu__bars"></div>
-							</div></a></div>
 					</div>
 				</div>
 			</div>
@@ -86,166 +54,120 @@
 
 		<!-- CONTENT -->
 		<main class="main">
-			<!-- SECTION ABOUT WELCOME -->
-			<section class="section-about-welcome">
-				<div class="container">
-					<div class="section-about-welcome__title-holder">
-						<h1 class="section-about-welcome__title">Il futuro delle esposizioni fieristiche.<br> <span class="text-primary">Accessibile</span>, <span class="text-primary">Interconnesso</span>, <span class="text-primary">Sostenibile</span>.</h1>
-						<h4 class="font-inherit text-secondary mb-0">Il primo marketplace digitale delle fiere italiane</h4>
-					</div>
-				</div>
-
-				<div class="section-about-welcome__team-block">
-					<div class="section-about-welcome__team-block-inner">
-						<div class="container">
-							<div class="section-about-welcome__team-img-wrap"><img class="section-about-welcome__team-img" src="img/section-about-welcome-img.svg" alt="Team photo"></div>
-
-							<div class="section-about-welcome__text-block border-radius-2xl" data-aos="fade-up">
-								<h2>Le origini</h2>
-								<div class="text-block text-secondary text-xl text-lg-two-cols">
-									<p>WideExpo è una giovane startup innovativa italiana, nata a Torino nel 2022, dall’intuizione di Antonio e Francesco Orpheu. In seguito ad un’ esperienza pluriennale nel mondo e mercato fieristico, notano che il settore registra un gap strutturale sempre più evidente: meno visitatori, meno vendite dirette e costi crescenti.  É proprio dall’analisi di questi problemi strutturali che nasce l’esigenza di agire per evitare un ridimensionamento di un mercato economicamente e culturalmente importante come quello delle esposizioni fieristiche. Come? Abbracciando i cambiamenti portati dalle generazioni di oggi e di domani, che prediligono esperienze sempre più ibride tra mondo reale e piazza digitale. Questi presupposti portano al concepimento di WE (Wide Expo), il futuro delle esposizioni fieristiche che connette gli eventi reali con una platea globale e digitale.</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- SECTION ABOUT WELCOME END -->
-
-			<!-- SECTION IMAGE AND TEXT -->
-			<section class="section-image-and-text">
-				<div class="container">
-					<div class="section-image-and-text__list">
-						<div class="row align-items-center">
-							<div class="col-md-extra-6 mb-4 mb-sm-6 mb-md-extra-0">
-								<h2>Vision</h2>
-								<div class="text-block text-xl">
-									<p>Preservare il patrimonio fieristico e farlo evolvere nel mondo globale di oggi, attraverso una soluzione che sarà un vero e proprio acceleratore di fiere ed un partner di sviluppo commerciale</p>
-								</div>
-							</div>
-							<div class="col-md-extra-6 text-center" data-aos="fade-left"><img src="img/section-image-and-text/2.svg" alt="Image"></div>
-						</div>
-						<div class="row align-items-center">
-							<div class="col-md-extra-6 mb-4 mb-sm-6 mb-md-extra-0">
-								<h2>Mission</h2>
-								<div class="text-block text-xl">
-									<p>Offrire un servizio a costi ridotti e basso impatto ambientale, estendendo le potenzialità delle fiere ad un pubblico più ampio, dalle start- up alle microimprese, puntando sull’unica formula vincente: il gioco di squadra.</p>
-								</div>
-							</div>
-							<div class="col-md-extra-6 text-center" data-aos="fade-right"><img src="img/section-image-and-text/1.svg" alt="Image"></div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- SECTION IMAGE AND TEXT END -->
-
-			<!-- SECTION -->
-			<section class="section bg-gradient">
+			<!-- SECTION WHO WE ARE -->
+			<section class="section-who-we-are section">
 				<div class="container">
 					<div class="row">
-						<div class="col-xs-6 col-lg-12 d-flex align-items-center">
-							<h2 class="text-white">Values</h2>
+						<div class="col-md-8 offset-md-4">
+							<h2>Chi siamo</h2>
+							<div class="text-block mb-10">
+								<p>Il servizio che offriamo parte da un <strong>assunto molto preciso</strong>: la digitalizzazione dei processi aziendali, qualunque essi siano, è alla base dello sviluppo economico di ciascuna realtà imprenditoriale per almeno i prossimi 10 anni.</p>
+								<p>Ciò significa, come confermano tutti i macro indicatori, che se una società vuole rimanere competitiva sul mercato ed eventualmente aumentare i propri profitti, ha <strong>un'unica scelta inevitabile</strong>: iniziare o continuare il proprio processo di digitalizzazione.</p>
+								<p>In questo contesto, Credito Digitale ti permette di approcciare con semplicità alla trasformazione 4.0: occupandosi della concettualizzazione e dello sviluppo informatico e allo stesso tempo dell’accesso alle agevolazioni fiscali. Grazie agli incentivi, riguardanti gli investimenti in attività di innovazione tecnologica 4.0, della <strong>legge 160 del 27 Dicembre 2019</strong> si accede al credito d’imposta, importante per realizzare con più tranquillità e in economia la tua soluzione IT ottimale. Grazie a Credito Digitale potrai digitalizzare i processi aziendali in maniera più sostenibile e conveniente.</p>
+							</div>
+							<div class="section-who-we-are__img" data-aos="fade-left"><img class="of-cover" src="img/section-who-we-are-img.jpg" alt="Image"></div>
 						</div>
-						<div class="col-xs-6 col-lg-4 d-flex">
-							<div class="card-fair border-radius-2xl" data-aos="fade-up">
-								<div class="card-fair__icon"><img class="of-contain" src="img/card-fair/1.svg" alt="Icon"></div>
-
-								<div class="card-fair__body">
-									<h4 class="text-white">Sostenibilità</h4>
-
-									<div class="card-fair__text text-block text-xl">
-										<p>Crediamo nella sfida a impatto zero, proponendo progetti e iniziative che rispettano le persone e l’ambiente</p>
-									</div>
+					</div>
+					<div class="row remove-last-child-margin">
+						<div class="col-md-4">
+							<div class="mb-6 mb-lg-0">
+								<h3 class="mb-lg-8">Mission</h3>
+								<div class="text-block">
+									<p>Attraverso il credito d'imposta, permettiamo alle PMI italiane di realizzare sistemi informatici ad alta avanguardia tecnologica, per incrementare la propria forza competitiva sul mercato.</p>
 								</div>
 							</div>
 						</div>
-						<div class="col-xs-6 col-lg-4 d-flex">
-							<div class="card-fair border-radius-2xl" data-aos="fade-up" data-aos-delay="150">
-								<div class="card-fair__icon"><img class="of-contain" src="img/card-fair/2.svg" alt="Icon"></div>
-
-								<div class="card-fair__body">
-									<h4 class="text-white">Efficienza</h4>
-
-									<div class="card-fair__text text-block text-xl">
-										<p>Ci poniamo l’obiettivo di abbattere i costi degli espositori e dei visitatori, grazie all’ottimizzazione dei processi e della tecnologia</p>
-									</div>
+						<div class="col-md-4">
+							<div class="mb-6 mb-lg-0">
+								<h3 class="mb-lg-8">Vision</h3>
+								<div class="text-block">
+									<p>Accelerare la transizione digitale e la crescita dei nostri clienti, minimizzando i rischi.</p>
 								</div>
 							</div>
 						</div>
-						<div class="col-xs-6 col-lg-4 d-flex">
-							<div class="card-fair border-radius-2xl" data-aos="fade-up" data-aos-delay="300">
-								<div class="card-fair__icon"><img class="of-contain" src="img/card-fair/3.svg" alt="Icon"></div>
-
-								<div class="card-fair__body">
-									<h4 class="text-white">Comunità</h4>
-
-									<div class="card-fair__text text-block text-xl">
-										<p>Una community che supporta le esposizioni di nuova generazione così come quelle tradizionali, portando un valore aggiunto che permette a tutte le realtà di crescere</p>
-									</div>
-								</div>
+						<div class="col-md-4">
+							<div class="mb-6 mb-lg-0">
+								<h3 class="mb-lg-8">Values</h3>
+								<ul class="list-with-dash">
+									<li>Innovazione</li>
+									<li>Competitività</li>
+									<li>Fiducia</li>
+									<li>Sostenibilità</li>
+									<li>Internazionalizzazione</li>
+								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!-- SECTION END -->
+			<!-- SECTION WHO WE ARE END -->
 
 			<!-- SECTION OUR TEAM -->
 			<section class="section-our-team section">
 				<div class="container">
-					<div class="row align-items-center">
-						<div class="col-md-extra-6 col-xl-5">
-							<div class="mb-7 mb-md-extra-0">
-								<div class="section-our-team__title-holder">
-									<h2 class="mb-4">Il nostro Team</h2>
-									<h4 class="font-inherit text-secondary">Tra Esperienza, Innovazione e Futuro</h4>
+					<div class="text-center">
+						<h2>Il nostro team</h2>
+					</div>
+
+					<div class="row remove-last-child-margin">
+						<div class="col-sm-6 col-md-4">
+							<div class="card-team-member" data-aos="fade-up">
+								<div class="card-team-member__img"><img class="of-cover" src="img/card-team-member/1.jpg" alt="Image"></div>
+
+								<div class="card-team-member__title-wrap">
+									<h5>Dott. Marco Blini</h5>
 								</div>
 
-								<div class="section-our-team__about-block border-radius-2xl" data-aos="fade-up">
-									<div class="slider-our-team">
-										<div class="js-slider-our-team">
-											<div>
-												<h4 class="mb-1">Antonio Orpheu</h4>
-												<p class="text-lg"><strong>Founder</strong></p>
-												<div class="text-block text-secondary">
-													<p>Laureato in Economia e Commercio, con oltre 30 anni di esperienza nell’avvio e nella gestione di mercati esteri per aziende di medie dimensioni operanti nella produzione e vendita di prodotti di alta gamma, in particolare nei settori tessile ed edile. Conosce le caratteristiche del settore e ne intercetta i bisogni in un momento di forte cambiamento. Ha viaggiato in tutto il mondo e parla 5 lingue: italiano, portoghese, inglese, spagnolo, tedesco. Oggi decide di lanciarsi in una sfida per innovare  il settore che ha caratterizzato l’esperienza lavorativa di una vita.</p>
-												</div>
-											</div>
-											<div>
-												<h4 class="mb-1">Francesco Orpheu</h4>
-												<p class="text-lg"><strong>Founder</strong></p>
-												<div class="text-block text-secondary">
-													<p>Laureato in Ingegneria della Produzione Industriale e Innovazione tecnologica presso il Politecnico di Torino, Francesco ha uno spiccato interesse per l’innovazione e la transizione digitale, oltre che una grande sensibilità al tema della sostenibilità. Nonostante la giovane età ha già vissuto in Paesi e città diverse, maturando esperienze nel settore dell’automazione industriale e del marketing. L’internazionalità vissuta in famiglia e le sue esperienze personali di studio e lavoro lo hanno reso particolarmente dinamico e flessibile.</p>
-												</div>
-											</div>
-											<div>
-												<h4 class="mb-1">Leonardo Foa</h4>
-												<p class="text-lg"><strong>Strategic Partner</strong></p>
-												<div class="text-block text-secondary">
-													<p>Ha un’esperienza pluriennale nel mondo della comunicazione digitale, lavorando nei settori della finanza, delle istituzioni pubbliche e delle relazioni con i media. Oggi lavora con startup emergenti in qualità di Digital Communications Strategist. Laureato in Business Administration presso l’Università Bocconi e in Business Development presso la Grenoble Ecole de Management, parla 4 lingue: Inglese, Francese, Italiano e Tedesco.</p>
-												</div>
-											</div>
-											<div>
-												<h4 class="mb-1">Mokka Studios</h4>
-												<p class="text-lg"><strong>Technology Partner</strong></p>
-												<div class="text-block text-secondary">
-													<p>È un'azienda innovativa che produce sistemi informatici complessi. Vanta una consolidata esperienza in svariati settori: intelligenza artificiale, realtà aumentata, sharing economy, e-commerce  e non solo. Riunendo professionisti del settore e giovani talenti, ha una visione collettiva: offrire esperienze digitali con un tocco umano.</p>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
+								<ul class="list-with-dots">
+									<li>Chief Financial Officer di [B]IoHT S.r.l.</li>
+									<li>R&D 4.0, Taxation & Auditing</li>
+								</ul>
 							</div>
 						</div>
+						<div class="col-sm-6 col-md-4">
+							<div class="card-team-member" data-aos="fade-up" data-aos-delay="150">
+								<div class="card-team-member__img"><img class="of-cover" src="img/card-team-member/2.jpg" alt="Image"></div>
 
-						<div class="col-md-extra-6 offset-xl-1">
-							<div class="p-3 pb-sm-6 p-md-extra-0">
-								<div class="our-team-round-block ms-md-extra-6 ms-xl-0"><img src="img/our-team-round-block-img.svg" alt="Image">
-									<a class="our-team-round-block__photo-item js-our-team-photo-item top active" href="#" data-team-photo="1">
-										<div class="our-team-round-block__photo-item-inner"><img class="of-cover" src="img/our-team-round-block/antonio-orpheu.jpg" alt="Photo"></div></a><a class="our-team-round-block__photo-item js-our-team-photo-item top-left" href="#" data-team-photo="2">
-										<div class="our-team-round-block__photo-item-inner"><img class="of-cover" src="img/our-team-round-block/francesco-orpheu.jpg" alt="Photo"></div></a><a class="our-team-round-block__photo-item js-our-team-photo-item bottom-left" href="#" data-team-photo="3">
-										<div class="our-team-round-block__photo-item-inner"><img class="of-cover" src="img/our-team-round-block/leonardo-foa.jpg" alt="Photo"></div></a><a class="our-team-round-block__photo-item js-our-team-photo-item bottom" href="#" data-team-photo="4">
-										<div class="our-team-round-block__photo-item-inner"><img class="of-cover" src="img/our-team-round-block/mokka-studios.svg" alt="Photo"></div></a>
+								<div class="card-team-member__title-wrap">
+									<h5>Dott. Luca Blini</h5>
+								</div>
+
+								<ul class="list-with-dots">
+									<li>Managing Partner di Studio Associato Crovella Blini Commercialista</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-4">
+							<div class="card-team-member" data-aos="fade-up" data-aos-delay="300">
+								<div class="card-team-member__img"><img class="of-cover" src="img/card-team-member/3.jpg" alt="Image"></div>
+
+								<div class="card-team-member__title-wrap">
+									<h5>Dott. Matteo BLini</h5>
+								</div>
+
+								<ul class="list-with-dots">
+									<li>Chief Executive Officer di [B]IoHT S.r.l.</li>
+									<li>R&D 4.0, Taxation & Auditing</li>
+								</ul>
+							</div>
+						</div>
+						<div class="col-sm-6 col-md-12">
+							<div class="card-team-member horizontal" data-aos="fade-up">
+								<div class="row align-items-md-center">
+									<div class="col-md-8">
+										<div class="card-team-member__img"><img class="of-cover" src="img/card-team-member/4.jpg" alt="Image"></div>
+									</div>
+
+									<div class="col-md-4">
+										<div class="card-team-member__title-wrap">
+											<h5 class="mb-md-2">Mokka Studios S.r.l.</h5>
+											<h6 class="d-none d-md-block">Technology Partner</h6>
+										</div>
+
+										<div class="text-block text-center text-md-start">
+											<p>Mokka Studios S.r.l. si occupa della concettualizzazione e della realizzazione di sistemi informatici complessi. Il principale obiettivo della società è quello di produrre tecnologie innovative a misura d'uomo e accessibili a tutti, sia dal punto di vista economico sia dell'esperienza d'uso, per favorire la piena realizzazione di un umanesimo digitale.</p>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -254,142 +176,70 @@
 			</section>
 			<!-- SECTION OUR TEAM END -->
 
-			<!-- SECTION PRESS -->
-			<section class="section-press" style="background-image: url(img/section-press-bg.svg)">
-				<div class="container">
-					<div class="section-press__title-wrap">
-						<h2 class="text-white section-press__title">Press</h2>
-						<h4 class="text-white">Dicono di noi</h4>
-					</div>
-
-					<div class="row section-press__cards-grid">
-						<div class="col-xs-extra-4"><a class="card-press border-radius-2xl" href="https://www.startupgeeks.it/wideexpo-francesco-orpheu-intervista/#Parliamo_di_WideExpo_Cosa_fate" target="_blank"><img class="card-press__logo" src="img/card-press/startup-geeks.png" alt="Logo"></a>
-							<div class="card-press border-radius-2xl"><img class="card-press__logo" src="img/card-press/money.png" alt="Logo"></div>
-						</div>
-						<div class="col-xs-extra-4">
-							<div class="card-press border-radius-2xl section-press__card-with-indent"><img class="card-press__logo" src="img/card-press/forbs.png" alt="Logo"></div>
-							<div class="card-press border-radius-2xl">
-								<h2 class="card-press__text">Soon</h2>
-							</div>
-						</div>
-						<div class="col-xs-extra-4"><a class="card-press border-radius-2xl" href="https://www.startupswallet.com/news/it/opstart/intervista-cco-wideexpo-antonio-orpheu/#Perche_investire_in_WideExpo" target="_blank"><img class="card-press__logo" src="img/card-press/startups-wallet.png" alt="Logo"></a>
-							<div class="card-press border-radius-2xl">
-								<h2 class="card-press__text">Soon</h2>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- SECTION PRESS END -->
-
-			<!-- SECTION BECOME PART -->
-			<section class="section-become-part" style="background-image: url(img/section-become-part-bg-lines.svg)">
-				<div class="section-become-part__main-content" style="background-image: url(img/section-become-part-bg.svg)">
+			<!-- SECTION CONTACT US -->
+			<section class="section-contact-us section pb-0">
+				<div class="section-contact-us__wrap">
 					<div class="container">
-						<div class="row justify-content-end">
-							<div class="col-md-extra-8 col-lg-7 col-xl-6 col-xl-extra-5">
-								<div class="section-become-part__block" data-aos="fade-up">
-									<div class="section-become-part__block-inner">
-										<h2 class="section-become-part__title">Campagna di<br> equity crowdfunding di<br> WideExpo</h2>
-										<h4 class="section-become-part__sub-title text-secondary font-inherit">Diventa parte del progetto</h4><a class="btn btn-gradient w-100" href="https://www.opstart.it/it/progetti/dettaglio/13823-wideexpo" target="_blank"><span>Investi</span></a>
+						<div class="row align-items-center mb-8 d-sm-none">
+							<div class="col-3"><img class="d-block" src="img/section-contact-us-arrow.svg" alt="Arrow image" data-aos="fade-right"></div>
+							<div class="col-9">
+								<h2 class="mb-0">Contattaci</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-3 col-sm-4 col-md-2 col-xl-4 d-none d-sm-block">
+								<div class="section-contact-us__arrow-img-wrap" data-aos="fade-right"><img class="section-contact-us__arrow-img" src="img/section-contact-us-arrow.svg" alt="Arrow image"></div>
+							</div>
+							<div class="col-sm-8 col-md-5 col-xl-4">
+								<div class="section-contact-us__text-content">
+									<div class="section-contact-us__title-wrap">
+										<h2 class="mb-8 d-none d-sm-block">Contattaci</h2>
+										<div class="text-block fz-20-on-mobile">
+											<p>Scrivici per scoprire quanto risparmi!</p>
+										</div>
 									</div>
+									<div class="text-end text-sm-start"><a class="link-with-arrow" href="servizi.html">Scrivici</a></div>
+								</div>
+							</div>
+							<div class="col-sm-8 col-md-5 col-xl-4 offset-sm-4 offset-md-0">
+								<div class="section-contact-us__img-wrap">
+									<div class="section-contact-us__img"><img class="of-cover position-right" src="img/section-contact-us-img.jpg" alt="Image"></div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!-- SECTION BECOME PART END -->
+			<!-- SECTION CONTACT US END -->
 		</main>
 		<!-- CONTENT END -->
 
 		<!-- FOOTER -->
 		<footer class="footer">
-			<div class="container">
-				<div class="footer__wrap">
-					<div class="footer__inner-content">
-						<div class="footer__top-content">
-							<div class="row">
-								<div class="col-lg-4 col-xxl-3">
-									<div class="footer__logo-desc-and-socials">
-										<div class="row">
-											<div class="col-md-6 col-lg-12"><a class="footer__logo" href="#"><img src="img/logo-white.svg" alt="WideExpo"></a>
+			<div class="container"><a class="footer__logo" href="#"><img src="img/logo.svg" alt="Logo"></a>
 
-												<div class="footer__desc text-block text-xl">
-													<p>Il primo network digitale per le fiere italiane e internazionali</p>
-												</div>
-											</div>
-											<div class="col-md-6 col-lg-12">
-												<ul class="social-list white justify-content-center justify-content-sm-start justify-content-md-end justify-content-lg-start">
-													<li class="social-list__item"><a class="social-list__link" href="https://www.instagram.com/wide.expo/" target="_blank"><span class="icomoon-instagram"></span></a></li>
-													<li class="social-list__item"><a class="social-list__link" href="https://www.linkedin.com/company/wideexpo/about/" target="_blank"><span class="icomoon-linkedin"></span></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
+				<div class="footer__nav">
+					<ul class="footer-nav">
+						<li class="footer-nav__item"><a class="footer-nav__link" href="index.html">Home</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="servizi.html">Servizi</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="chi-siamo.html">Chi siamo</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="contatti.html">Contatti</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="preventivatore.html">Preventivatore</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="privacy-policy.html">Legal Notes</a></li>
+					</ul>
+				</div>
 
-								<div class="col-lg-8 col-xxl-9">
-									<div class="row remove-gutters-sm-down justify-content-end">
-										<div class="col-xs-6 col-sm-4 col-lg-auto d-flex">
-											<div class="footer-title-and-nav pe-4 pe-xl-6">
-												<h4 class="footer-title-and-nav__title text-white">Privacy & Cookies</h4>
-
-												<ul class="footer-nav">
-													<li class="footer-nav__item"><a class="footer-nav__link" href="politica-sulla-riservatezza.html">Privacy & Cookies policy</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-xs-6 col-sm-4 col-lg-auto d-flex">
-											<div class="footer-title-and-nav pe-4 pe-xl-6">
-												<h4 class="footer-title-and-nav__title text-white">Azienda</h4>
-
-												<ul class="footer-nav">
-													<li class="footer-nav__item"><a class="footer-nav__link" href="piattaforma.html">Piattaforma</a></li>
-													<li class="footer-nav__item"><a class="footer-nav__link" href="chi-siamo.html">Chi siamo</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-xs-6 col-sm-4 col-lg-auto d-flex">
-											<div class="footer-title-and-nav pe-4 pe-xl-6">
-												<h4 class="footer-title-and-nav__title text-white">Info</h4>
-
-												<ul class="footer-nav">
-													<li class="footer-nav__item"><a class="footer-nav__link" href="tel:+393927837786">+39 392 7837786</a></li>
-													<li class="footer-nav__item"><a class="footer-nav__link" href="mailto:info@wideexpo.com">info@wideexpo.com</a></li>
-													<li class="footer-nav__item d-none d-sm-block"><a class="footer-nav__link" href="http://maps.google.com/?q=ViaFabioFilzi33,20124Milano,Italia" target="_blank">Via Fabio Filzi 33,<br> 20124 Milano, Italia</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-xs-6 col-sm-4 col-lg-auto d-flex d-sm-none">
-											<div class="footer-title-and-nav pe-4 pe-xl-6">
-												<h4 class="footer-title-and-nav__title text-white">Indirizzo</h4>
-
-												<ul class="footer-nav">
-													<li class="footer-nav__item"><a class="footer-nav__link" href="http://maps.google.com/?q=ViaFabioFilzi33,20124Milano,Italia" target="_blank">Via Fabio Filzi 33,<br> 20124 Milano, Italia</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="footer__bottom-content">
-							<div class="text-center text-block">
-								<p class="mb-1">Copyright © 2022 WideExpo S.r.l. Tutti i diritti riservati.</p>
-								<p>Designed by <a href="https://www.mokkastudios.com" target="_blank">Mokka Studios</a>.</p>
-							</div>
-						</div>
-					</div>
+				<div class="footer__copyright remove-last-child-margin">
+					<p class="mb-2">Copyright © <span class="js-year"></span> Credito Digitale. All Rights Reserved.</p>
+					<p>Crafted with love by <a href="https://www.mokkastudios.com" target="_blank"><span class="icomoon-mokka-studio"></span> Mokka Studios</a></p>
 				</div>
 			</div>
 		</footer>
 		<!-- FOOTER END -->
 
 		<!-- connection JAVASCRIPT -->
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoik2Sle8UV-ysloqMOF2dK0mnXpb5z3I"></script>
 		<script src="js/libs.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoik2Sle8UV-ysloqMOF2dK0mnXpb5z3I"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>

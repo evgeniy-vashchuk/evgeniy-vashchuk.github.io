@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="it">
+	<head>
+		<title>Preventivatore - Credito Digitale</title>
+		<meta name="description" content="Description of the site">
+		<meta charset="UTF-8">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+		<!-- connection FAVICONS -->
+		<link rel="icon" href="img/favicon/favicon.ico">
+		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+
+		<!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+		<meta name="theme-color" content="#2C2C2C">
+
+		<!-- connection GOOGLE FONTS -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&amp;display=swap" rel="stylesheet">
+
+		<!-- connection CSS -->
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+
+	<body>
+		<!-- HEADER -->
+		<header class="header fixed-top js-header">
+			<div class="header__wrap">
+				<div class="container">
+					<div class="header__main-content"><a class="header__logo" href="#"><img src="img/logo.svg" alt="Logo"></a>
+
+						<div class="header__right-content">
+							<div class="header__menu js-header-menu">
+								<ul class="header-nav">
+									<li class="header-nav__item"><a class="header-nav__link" href="index.html">Home</a></li>
+									<li class="header-nav__item"><a class="header-nav__link" href="servizi.html">Servizi</a></li>
+									<li class="header-nav__item"><a class="header-nav__link" href="chi-siamo.html">Chi siamo</a></li>
+									<li class="header-nav__item"><a class="header-nav__link" href="contatti.html">Contatti</a></li>
+									<li class="header-nav__item"><a class="header-nav__link active" href="preventivatore.html">Preventivatore</a></li>
+								</ul>
+							</div>
+							<a class="hamburger-menu d-md-none js-hamburger-menu" href="#" aria-label="Toggle menu">
+								<div class="hamburger-menu__wrap">
+									<div class="hamburger-menu__bars"></div>
+								</div></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- HEADER END -->
+
+		<!-- CONTENT -->
+		<main class="main">
+			<!-- SECTION -->
+			<section class="section">
+				<div class="container">
+					<div class="row justify-content-end">
+						<div class="col-lg-8">
+							<h1 class="h2 mb-6 mb-md-8">Calcola il credito d’imposta</h1>
+							<p class="mb-10">Digitalizzare i processi produttivi non è mai stato così conveniente.</p>
+							<p class="mb-13 mb-md-15">Inserendo di seguito il costo del personale che sostiene annualmente la tua azienda, il numero dei lavoratori subordinati e selezionando il macro settore merceologico, possiamo stimare a quanto può ammontare il credito d’imposta che potrai utilizzare per realizzare un software aziendale ad hoc per portare la tua attività nel futuro digitale 4.0.</p>
+
+							<form class="js-form-calculate-the-tax-credit">
+								<div class="row">
+									<div class="col-sm-6">
+										<div class="form-item-wrap">
+											<input class="form-control js-only-numbers js-annual-staff-cost" type="text" name="Annual staff cost" placeholder="Costo del personale annuo" min="0" required>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<div class="form-item-wrap">
+											<input class="form-control js-only-numbers" type="number" name="Number of employees" placeholder="Numero di lavoratori subordinati" min="0" required>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="form-item-wrap disable-select-absolute js-select-parent">
+											<select class="js-select" name="Macro sector" data-placeholder="Macro settore">
+												<option label=" "></option>
+												<option value="Costruzioni ed Estrazioni">Costruzioni ed Estrazioni</option>
+												<option value="Attività manifatturiere">Attività manifatturiere</option>
+												<option value="Trasporto e magazzinaggio">Trasporto e magazzinaggio</option>
+												<option value="Sanità, Servizi Sociali">Sanità, Servizi Sociali</option>
+												<option value="Agricoltura e Pesca">Agricoltura e Pesca</option>
+												<option value="Pubblica Amministrazione">Pubblica Amministrazione</option>
+												<option value="Istruzione">Istruzione</option>
+												<option value="Attività dei servizi di alloggio e ristorazione">Attività dei servizi di alloggio e ristorazione</option>
+												<option value="Attività finanziarie e assicurative">Attività finanziarie e assicurative</option>
+												<option value="Attività artistiche, sportive, di intrattenimento e divertimento">Attività artistiche, sportive, di intrattenimento e divertimento</option>
+												<option value="Altro">Altro</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-12">
+										<button class="link-with-arrow text-secondary" type="submit">Calcola</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+
+					<div class="modal fade" id="modalCalculateTheTaxCredit" tabindex="-1" aria-labelledby="modalCalculateTheTaxCreditLabel" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered modal-xl">
+							<div class="modal-content">
+								<button class="modal__close-btn" type="button" data-bs-dismiss="modal" aria-label="Close"><span class="icomoon-close"></span></button>
+
+								<div class="modal-header">
+									<div class="modal__logo"><img src="img/logo-dark.svg" alt="Logo"></div>
+								</div>
+
+								<div class="slider-calculate-the-tax-credit">
+									<div class="js-slider-calculate-the-tax-credit">
+										<div>
+											<div class="modal-body">
+												<h2 class="mb-6 mb-md-8" id="modalCalculateTheTaxCreditLabel">Ci siamo!</h2>
+												<p class="mb-8 mb-md-10">Ecco cosa dicono i nostri analisti:</p>
+												<p class="mb-8 mb-md-13">In base ai dati inseriti, il range di credito d’imposta che potremmo generare per realizzare un prodotto informatico ad hoc per la tua azienda va:</p>
+												<p class="mb-10 mb-md-15">da <span class="h4">€<span class="js-calc-lower-number">0</span></span> a <span class="h4">€<span class="js-calc-upper-number">0</span></span></p>
+											</div>
+											<div class="modal-footer"><a class="link-with-arrow text-secondary js-go-next-slide" href="#">Scopri di più</a></div>
+										</div>
+										<div>
+											<div class="modal-body">
+												<h2>Siamo pronti per vincere con te la sfida al 4.0!</h2>
+												<p class="mb-10 mb-md-15">Prenota una consulenza online gratuita di 30 minuti con un nostro analista per comprendere i prossimi passi per realizzare un software aziendale ad hoc tramite il credito d’imposta.</p>
+												<div class="mb-10 mb-md-15 text-end"><a class="link-with-arrow text-secondary" href="contatti.html">Prenota consulenza gratuita</a></div>
+												<form class="js-form-contact">
+													<!--  Hidden Required Fields -->
+													<input type="hidden" name="project_name" value="Credito Digitale">
+													<input type="hidden" name="admin_email" value="info@credito-cigitale.com">
+													<input type="hidden" name="form_subject" value="Credito Digitale - Email from contact form">
+													<!--  END Hidden Required Fields -->
+
+													<h6 class="mb-8 mb-md-13">In alternativa, per essere ricontattato, puoi compilare il seguente form:</h6>
+
+													<div class="form-item-wrap">
+														<input class="form-control" type="text" name="Name and surname" placeholder="Nome e cognome*" minlength="3" required>
+													</div>
+													<div class="form-item-wrap">
+														<input class="form-control" type="text" name="Business name" placeholder="Ragione sociale*" minlength="3" required>
+													</div>
+													<div class="form-item-wrap">
+														<input class="form-control" type="email" name="email" placeholder="Email*" required>
+													</div>
+													<div class="form-item-wrap">
+														<input class="form-control js-only-numbers" type="text" name="phone" placeholder="Telefono">
+													</div>
+
+													<div class="text-end">
+														<button class="link-with-arrow text-secondary" type="submit">Invia</button>
+													</div>
+												</form>
+											</div>
+										</div>
+										<div>
+											<div class="modal-body">
+												<h2 class="mb-6 mb-md-8">Grazie!</h2>
+												<p class="mb-10 mb-md-15">Verrai ricontattato da un nostro analista il prima possibile.</p>
+											</div>
+											<div class="modal-footer"><a class="link-with-close text-secondary" href="#" data-bs-dismiss="modal" aria-label="Close">Chiudi</a></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- SECTION END -->
+
+			<!-- SECTION CONTACT US -->
+			<section class="section-contact-us section pb-0">
+				<div class="section-contact-us__wrap">
+					<div class="container">
+						<div class="row align-items-center mb-8 d-sm-none">
+							<div class="col-3"><img class="d-block" src="img/section-contact-us-arrow.svg" alt="Arrow image" data-aos="fade-right"></div>
+							<div class="col-9">
+								<h2 class="mb-0">Contattaci</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-3 col-sm-4 col-md-2 col-xl-4 d-none d-sm-block">
+								<div class="section-contact-us__arrow-img-wrap" data-aos="fade-right"><img class="section-contact-us__arrow-img" src="img/section-contact-us-arrow.svg" alt="Arrow image"></div>
+							</div>
+							<div class="col-sm-8 col-md-5 col-xl-4">
+								<div class="section-contact-us__text-content">
+									<div class="section-contact-us__title-wrap">
+										<h2 class="mb-8 d-none d-sm-block">Contattaci</h2>
+										<div class="text-block fz-20-on-mobile">
+											<p>Scrivici per scoprire quanto risparmi!</p>
+										</div>
+									</div>
+									<div class="text-end text-sm-start"><a class="link-with-arrow" href="servizi.html">Scrivici</a></div>
+								</div>
+							</div>
+							<div class="col-sm-8 col-md-5 col-xl-4 offset-sm-4 offset-md-0">
+								<div class="section-contact-us__img-wrap">
+									<div class="section-contact-us__img"><img class="of-cover position-right" src="img/section-contact-us-img.jpg" alt="Image"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- SECTION CONTACT US END -->
+		</main>
+		<!-- CONTENT END -->
+
+		<!-- FOOTER -->
+		<footer class="footer">
+			<div class="container"><a class="footer__logo" href="#"><img src="img/logo.svg" alt="Logo"></a>
+
+				<div class="footer__nav">
+					<ul class="footer-nav">
+						<li class="footer-nav__item"><a class="footer-nav__link" href="index.html">Home</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="servizi.html">Servizi</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="chi-siamo.html">Chi siamo</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="contatti.html">Contatti</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="preventivatore.html">Preventivatore</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="privacy-policy.html">Legal Notes</a></li>
+					</ul>
+				</div>
+
+				<div class="footer__copyright remove-last-child-margin">
+					<p class="mb-2">Copyright © <span class="js-year"></span> Credito Digitale. All Rights Reserved.</p>
+					<p>Crafted with love by <a href="https://www.mokkastudios.com" target="_blank"><span class="icomoon-mokka-studio"></span> Mokka Studios</a></p>
+				</div>
+			</div>
+		</footer>
+		<!-- FOOTER END -->
+
+		<!-- connection JAVASCRIPT -->
+		<script src="js/libs.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoik2Sle8UV-ysloqMOF2dK0mnXpb5z3I"></script>
+		<script src="js/main.js"></script>
+	</body>
+</html>

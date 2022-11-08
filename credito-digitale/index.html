@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="it">
 	<head>
-		<title>Home - WideExpo</title>
+		<title>Home - Credito Digitale</title>
 		<meta name="description" content="Description of the site">
 		<meta charset="UTF-8">
 		<meta name="format-detection" content="telephone=no">
@@ -13,71 +13,39 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
 
 		<!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
-		<meta name="theme-color" content="#2A3333">
+		<meta name="theme-color" content="#2C2C2C">
 
 		<!-- connection GOOGLE FONTS -->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&amp;display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;700&amp;display=swap" rel="stylesheet">
 
 		<!-- connection CSS -->
 		<link rel="stylesheet" href="css/main.css">
 	</head>
 
 	<body>
-		<!-- COOKIES BANNER -->
-		<div class="cookies-banner d-none js-cookies-banner">
-			<div class="container">
-				<div class="cookies-banner__main-content">
-					<div class="cookies-banner__text-block">
-						<h6 class="cookies-banner__title">Teniamo alla tua privacy!</h6>
-						<div class="cookies-banner__text text-block text-secondary">
-							<p>Questo sito web utilizza i cookies per analisi e per migliorare i servizi offerti. Cliccando su “Accetto”, si acconsente al loro utilizzo in conformità con la nostra <a href="politica-sulla-riservatezza.html">Politica sui Cookies</a>.</p>
-						</div>
-					</div>
-
-					<div class="cookies-banner__actions"><a class="link-bold js-reject-cookies" href="#">Rifiuto</a><a class="btn btn-gradient js-accept-cookies" href="#"><span>Accetto</span></a></div>
-				</div>
-			</div>
-		</div>
-		<!-- COOKIES BANNER END -->
-
 		<!-- HEADER -->
-		<div class="offcanvas offcanvas-end" id="offcanvasHeaderMenu" tabindex="-1" aria-labelledby="offcanvasHeaderMenuLabel">
-			<div class="offcanvas-header">
-				<h3 class="offcanvas-title" id="offcanvasHeaderMenuLabel">Menu</h3><a class="hamburger-menu active" aria-label="Close menu" href="#offcanvasHeaderMenu" data-bs-dismiss="offcanvas">
-					<div class="hamburger-menu__wrap">
-						<div class="hamburger-menu__bars"></div>
-					</div></a>
-			</div>
-			<div class="offcanvas-body">
-				<ul class="header-nav">
-					<li class="header-nav__item"><a class="header-nav__link" href="index.html">Home</a></li>
-					<li class="header-nav__item"><a class="header-nav__link" href="piattaforma.html">Piattaforma</a></li>
-					<li class="header-nav__item"><a class="header-nav__link" href="chi-siamo.html">Chi siamo</a></li>
-					<li class="header-nav__item"><a class="header-nav__link" href="contatti.html">Contatti</a></li>
-				</ul>
-			</div>
-		</div>
-
 		<header class="header fixed-top js-header">
-			<div class="container">
-				<div class="header__main-content"><a class="header__logo" href="index.html"><img src="img/logo-colored.svg" alt="WideExpo"></a>
+			<div class="header__wrap">
+				<div class="container">
+					<div class="header__main-content"><a class="header__logo" href="#"><img src="img/logo.svg" alt="Logo"></a>
 
-					<div class="header__menu-and-hamburger">
-						<div class="header__menu d-none d-md-block">
-							<ul class="header-nav">
-								<li class="header-nav__item"><a class="header-nav__link" href="index.html">Home</a></li>
-								<li class="header-nav__item"><a class="header-nav__link" href="piattaforma.html">Piattaforma</a></li>
-								<li class="header-nav__item"><a class="header-nav__link" href="chi-siamo.html">Chi siamo</a></li>
-								<li class="header-nav__item"><a class="header-nav__link" href="contatti.html">Contatti</a></li>
-							</ul>
+						<div class="header__right-content">
+							<div class="header__menu js-header-menu">
+								<ul class="header-nav">
+									<li class="header-nav__item"><a class="header-nav__link active" href="index.html">Home</a></li>
+									<li class="header-nav__item"><a class="header-nav__link" href="servizi.html">Servizi</a></li>
+									<li class="header-nav__item"><a class="header-nav__link" href="chi-siamo.html">Chi siamo</a></li>
+									<li class="header-nav__item"><a class="header-nav__link" href="contatti.html">Contatti</a></li>
+									<li class="header-nav__item"><a class="header-nav__link" href="preventivatore.html">Preventivatore</a></li>
+								</ul>
+							</div>
+							<a class="hamburger-menu d-md-none js-hamburger-menu" href="#" aria-label="Toggle menu">
+								<div class="hamburger-menu__wrap">
+									<div class="hamburger-menu__bars"></div>
+								</div></a>
 						</div>
-
-						<div class="header__hamburger d-inline-flex d-md-none"><a class="hamburger-menu" aria-label="Open menu" data-bs-toggle="offcanvas" href="#offcanvasHeaderMenu" role="button" aria-controls="offcanvasHeaderMenu">
-							<div class="hamburger-menu__wrap">
-								<div class="hamburger-menu__bars"></div>
-							</div></a></div>
 					</div>
 				</div>
 			</div>
@@ -86,414 +54,159 @@
 
 		<!-- CONTENT -->
 		<main class="main">
-			<div class="section-welcome-about-wrap">
-				<div class="section-welcome-about-wrap__bg-block">
-					<div class="container section-welcome-about-wrap__bg-container">
-						<div class="section-welcome-about-wrap__bg">
-							<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-							<lottie-player class="section-welcome-about-wrap__lottie-animation" src="files/section-welcome-animation.json" background="transparent" speed="1" loop autoplay></lottie-player>
-						</div>
-					</div>
-				</div>
-
-				<div class="section-welcome-about-wrap__sections">
-					<!-- SECTION -->
-					<section class="section-welcome">
-						<div class="container">
-							<div class="row">
-								<div class="col-sm-6 col-xxl-5">
-									<div class="section-welcome__title-holder">
-										<h1 class="section-welcome__title">Il futuro delle esposizioni fieristiche</h1>
-									</div>
-
-									<div class="section-welcome__img d-sm-none">
-										<lottie-player class="section-welcome__img-lottie" src="files/section-welcome-animation.json" background="transparent" speed="1" loop autoplay></lottie-player>
-									</div>
-								</div>
-							</div>
-
-							<div class="section-welcome__countdown">
-								<div class="countdown-block" data-aos="fade-up">
-									<div class="countdown-block__wrap">
-										<div class="countdown-block__main-block">
-											<div class="countdown js-countdown" data-start-date="2022/09/30" data-final-date="2022/12/30 14:00:00">
-												<div class="countdown__item">
-													<div class="countdown__cell">
-														<p class="countdown__title">Progresso</p>
-														<h2 class="countdown__value js-progress-value">0%</h2>
-													</div>
-													<div class="countdown__cell">
-														<p class="countdown__title">Giorni</p>
-														<h2 class="countdown__value js-days">0</h2>
-													</div>
-													<div class="countdown__cell">
-														<p class="countdown__title">Ore</p>
-														<h2 class="countdown__value js-hours">0</h2>
-													</div>
-													<div class="countdown__cell">
-														<p class="countdown__title">Min</p>
-														<h2 class="countdown__value js-minutes">0</h2>
-													</div>
-												</div>
-
-												<div class="countdown__progress">
-													<div class="countdown__progress-inner js-progress-width"></div>
-												</div>
-											</div>
-										</div>
-
-										<div class="countdown-block__btn-block"><a class="countdown-block__btn btn btn-light" href="https://www.opstart.it/it/progetti/dettaglio/13823-wideexpo" target="_blank">Investi</a></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- SECTION END -->
-
-					<!-- SECTION ABOUT -->
-					<section class="section-about" style="background-image: url(img/bg-lines.svg)">
-						<div class="container">
-							<div class="section-about__title-holder">
-								<div class="row">
-									<div class="col-md-extra-8 col-lg-7 col-xl-6 col-xxl-5 offset-md-extra-4 offset-lg-5 offset-xl-6">
-										<h2>WideExpo, la fusione tra fiera tradizionale ed esperienza digitale</h2>
-									</div>
-									<div class="col-md-extra-8 col-lg-7 col-xl-6 offset-md-extra-4 offset-lg-5 offset-xl-6">
-										<div class="section-about__text text-block text-xl text-secondary">
-											<p>WideExpo è la prima piattaforma digitale che connette i principali eventi fieristici italiani con una platea globale. I visitatori potranno partecipare a più fiere contemporaneamente, gli espositori moltiplicheranno i loro contatti.</p>
-										</div>
-									</div>
-								</div>
-							</div>
-
-							<div class="row justify-content-end">
-								<div class="col-lg-11 col-xl-10 col-xl-extra-9 col-xxl-8">
-									<div class="row gutter-34">
-										<div class="col-6 col-sm-4 d-flex">
-											<div class="card-about border-radius-2xl" data-aos="fade-up">
-												<div class="card-about__icon"><img src="img/card-about/1.svg" alt="Image"></div>
-
-												<div class="card-about__body">
-													<h6 class="card-about__title text-dark">Network</h6>
-
-													<div class="card-about__text text-block text-xl">
-														<p>Scopri e visita tutte le esposizioni da un unico luogo</p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-6 col-sm-4 d-flex">
-											<div class="card-about border-radius-2xl" data-aos="fade-up" data-aos-delay="150">
-												<div class="card-about__icon"><img src="img/card-about/2.svg" alt="Image"></div>
-
-												<div class="card-about__body">
-													<h6 class="card-about__title text-dark">Acceleratore di fiere</h6>
-
-													<div class="card-about__text text-block text-xl">
-														<p>Incontra e parla con espositori e visitatori alla portata di un click</p>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="col-sm-4 d-flex">
-											<div class="card-about border-radius-2xl horizontal-on-mobile" data-aos="fade-up" data-aos-delay="300">
-												<div class="card-about__icon"><img src="img/card-about/3.svg" alt="Image"></div>
-
-												<div class="card-about__body">
-													<h6 class="card-about__title text-dark">Amplificatore di contatti</h6>
-
-													<div class="card-about__text text-block text-xl">
-														<p>Conosci e fatti conoscere, da tutti</p>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-					<!-- SECTION ABOUT END -->
-				</div>
-			</div>
-
-			<!-- SECTION FAIR -->
-			<section class="section-fair">
-				<div class="section-fair__wrap">
+			<!-- SECTION WELCOME -->
+			<section class="section-welcome section">
+				<div class="section-welcome__wrap">
 					<div class="container">
-						<div class="row">
-							<div class="col-xs-6 col-lg-12 d-flex align-items-center">
-								<h2 class="section-fair__title pe-4">Una fiera alla portata di tutti</h2>
-							</div>
-							<div class="col-xs-6 col-lg-4 d-flex">
-								<div class="card-fair border-radius-2xl" data-aos="fade-up">
-									<div class="card-fair__icon"><img class="of-contain" src="img/card-fair/1.svg" alt="Icon"></div>
-
-									<div class="card-fair__body">
-										<h4 class="text-white">Sostenibilità</h4>
-
-										<div class="card-fair__text text-block text-xl">
-											<p>Crediamo nella sfida a impatto zero, proponendo progetti e iniziative che rispettano le persone e l’ambiente</p>
-										</div>
-									</div>
+						<div class="section-welcome__main-content">
+							<div class="row">
+								<div class="col-md-9 order-2 order-md-1">
+									<h1 class="h2 section-welcome__title">Credito Digitale: soluzioni IT e risparmio fiscale</h1><a class="link-with-arrow text-white" href="chi-siamo.html">Scopri di più</a>
 								</div>
-							</div>
-							<div class="col-xs-6 col-lg-4 d-flex">
-								<div class="card-fair border-radius-2xl" data-aos="fade-up" data-aos-delay="150">
-									<div class="card-fair__icon"><img class="of-contain" src="img/card-fair/2.svg" alt="Icon"></div>
-
-									<div class="card-fair__body">
-										<h4 class="text-white">Profittabilità</h4>
-
-										<div class="card-fair__text text-block text-xl">
-											<p>Ci poniamo l’obiettivo di abbattere i costi degli espositori e dei visitatori  grazie all’ottimizzazione dei processi attraverso la tecnologia</p>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-xs-6 col-lg-4 d-flex">
-								<div class="card-fair border-radius-2xl" data-aos="fade-up" data-aos-delay="300">
-									<div class="card-fair__icon"><img class="of-contain" src="img/card-fair/3.svg" alt="Icon"></div>
-
-									<div class="card-fair__body">
-										<h4 class="text-white">Comunità</h4>
-
-										<div class="card-fair__text text-block text-xl">
-											<p>Una community a disposizione di tutti, che supporta le esposizioni di nuova generazione così come quelle tradizionali, portando un valore aggiunto che permette a tutte le realtà di crescere</p>
+								<div class="col-md-3 order-1 order-md-2">
+									<div class="section-welcome__figure-wrap">
+										<div class="section-welcome__figure union-figure">
+											<div class="union-figure__square" data-aos="fade-down-right" data-aos-easing="ease-in-quad"></div>
+											<div class="union-figure__square" data-aos="fade-down" data-aos-easing="ease-in-quad" data-aos-delay="50"></div>
+											<div class="union-figure__square" data-aos="fade-down-left" data-aos-easing="ease-in-quad" data-aos-delay="100"></div>
+											<div class="union-figure__square" data-aos="fade-right" data-aos-easing="ease-in-quad" data-aos-delay="150"></div>
+											<div class="union-figure__square" data-aos="fade-left" data-aos-easing="ease-in-quad" data-aos-delay="200"></div>
+											<div class="union-figure__square" data-aos="fade-up-left" data-aos-easing="ease-in-quad" data-aos-delay="250"></div>
 										</div>
 									</div>
 								</div>
 							</div>
 						</div>
+
+						<div class="section-welcome__img"><img class="of-cover" src="img/section-welcome-img.jpg" alt="Image"></div>
 					</div>
 				</div>
 			</section>
-			<!-- SECTION FAIR END -->
+			<!-- SECTION WELCOME END -->
 
-			<!-- SECTION DIGITAL NETWORK -->
-			<section class="section-digital-network">
-				<div class="section-digital-network__bg" style="background-image: url(img/bg-lines.svg)"></div>
-				<div class="section-digital-network__wrap">
-					<div class="container">
-						<div class="section-digital-network__title-holder">
-							<div class="row">
-								<div class="col-xl-7">
-									<h2 class="mb-xl-0">Il primo network digitale per le fiere italiane e internazionali</h2>
-								</div>
-								<div class="col-xl-5 d-flex justify-content-xl-end align-items-start">
-									<ul class="tabs-list js-tabs-list" role="tablist" data-active="1">
-										<li class="tabs-list__item" role="presentation">
-											<button class="tabs-list__btn btn active" id="visitors-tab" data-bs-toggle="tab" data-bs-target="#visitors-tab-pane" type="button" role="tab" aria-controls="visitors-tab-pane" aria-selected="true">Visitatori</button>
-										</li>
-										<li class="tabs-list__item" role="presentation">
-											<button class="tabs-list__btn btn" id="exhibitors-tab" data-bs-toggle="tab" data-bs-target="#exhibitors-tab-pane" type="button" role="tab" aria-controls="exhibitors-tab-pane" aria-selected="false">Espositori</button>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-
-						<div class="tab-content">
-							<div class="tab-pane fade show active" id="visitors-tab-pane" role="tabpanel" aria-labelledby="visitors-tab" tabindex="0">
-								<div class="slider-digital-network">
-									<div class="js-slider-digital-network">
-										<div class="card-with-dot">
-											<div class="card-with-dot__dot"></div>
-
-											<div class="card-with-dot__card card-digital-network" data-aos="fade-up">
-												<div class="card-digital-network__wrap">
-													<div class="card-digital-network__main-content">
-														<div class="card-digital-network__img"><img class="of-contain" src="img/card-digital-network/visitors/1.svg" alt="Image"></div>
-														<h4 class="card-digital-network__title">Iscriviti alla piattaforma con un semplice click</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="card-with-dot">
-											<div class="card-with-dot__dot"></div>
-
-											<div class="card-with-dot__card card-digital-network" data-aos="fade-up" data-aos-delay="300">
-												<div class="card-digital-network__wrap">
-													<div class="card-digital-network__main-content">
-														<div class="card-digital-network__img"><img class="of-contain" src="img/card-digital-network/visitors/2.svg" alt="Image"></div>
-														<h4 class="card-digital-network__title">Indica i tuoi interessi</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="card-with-dot">
-											<div class="card-with-dot__dot"></div>
-
-											<div class="card-with-dot__card card-digital-network" data-aos="fade-up" data-aos-delay="600">
-												<div class="card-digital-network__wrap">
-													<div class="card-digital-network__main-content">
-														<div class="card-digital-network__img"><img class="of-contain" src="img/card-digital-network/visitors/3.svg" alt="Image"></div>
-														<h4 class="card-digital-network__title">Cerca le principali esposizioni in corso</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="card-with-dot">
-											<div class="card-with-dot__dot"></div>
-
-											<div class="card-with-dot__card card-digital-network" data-aos="fade-up" data-aos-delay="900">
-												<div class="card-digital-network__wrap">
-													<div class="card-digital-network__main-content">
-														<div class="card-digital-network__img"><img class="of-contain" src="img/card-digital-network/visitors/4.svg" alt="Image"></div>
-														<h4 class="card-digital-network__title">Esplora gli stand e scopri i prodotti</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="card-with-dot">
-											<div class="card-with-dot__dot"></div>
-
-											<div class="card-with-dot__card card-digital-network" data-aos="fade-up" data-aos-delay="1200">
-												<div class="card-digital-network__wrap">
-													<div class="card-digital-network__main-content">
-														<div class="card-digital-network__img"><img class="of-contain" src="img/card-digital-network/visitors/5.svg" alt="Image"></div>
-														<h4 class="card-digital-network__title">Parla direttamente con gli espositori</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="card-with-dot">
-											<div class="card-with-dot__dot"></div>
-
-											<div class="card-with-dot__card card-digital-network" data-aos="fade-up" data-aos-delay="1500">
-												<div class="card-digital-network__wrap">
-													<div class="card-digital-network__main-content">
-														<div class="card-digital-network__img"><img class="of-contain" src="img/card-digital-network/visitors/6.svg" alt="Image"></div>
-														<h4 class="card-digital-network__title">Crea un contatto diretto</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="tab-pane fade" id="exhibitors-tab-pane" role="tabpanel" aria-labelledby="exhibitors-tab" tabindex="0">
-								<div class="slider-digital-network">
-									<div class="js-slider-digital-network">
-										<div class="card-with-dot">
-											<div class="card-with-dot__dot"></div>
-
-											<div class="card-with-dot__card card-digital-network" data-aos="fade-up">
-												<div class="card-digital-network__wrap">
-													<div class="card-digital-network__main-content">
-														<div class="card-digital-network__img"><img class="of-contain" src="img/card-digital-network/exhibitors/1.svg" alt="Image"></div>
-														<h4 class="card-digital-network__title">Iscriviti e partecipa alle principali esposizioni italiane</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="card-with-dot">
-											<div class="card-with-dot__dot"></div>
-
-											<div class="card-with-dot__card card-digital-network" data-aos="fade-up" data-aos-delay="300">
-												<div class="card-digital-network__wrap">
-													<div class="card-digital-network__main-content">
-														<div class="card-digital-network__img"><img class="of-contain" src="img/card-digital-network/exhibitors/2.svg" alt="Image"></div>
-														<h4 class="card-digital-network__title">Crea il tuo stand virtuale con le informazioni che vuoi presentare</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="card-with-dot">
-											<div class="card-with-dot__dot"></div>
-
-											<div class="card-with-dot__card card-digital-network" data-aos="fade-up" data-aos-delay="600">
-												<div class="card-digital-network__wrap">
-													<div class="card-digital-network__main-content">
-														<div class="card-digital-network__img"><img class="of-contain" src="img/card-digital-network/exhibitors/3.svg" alt="Image"></div>
-														<h4 class="card-digital-network__title">Decidi il mercato in cui vuoi pubblicizzare i tuoi prodotti</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="card-with-dot">
-											<div class="card-with-dot__dot"></div>
-
-											<div class="card-with-dot__card card-digital-network" data-aos="fade-up" data-aos-delay="900">
-												<div class="card-digital-network__wrap">
-													<div class="card-digital-network__main-content">
-														<div class="card-digital-network__img"><img class="of-contain" src="img/card-digital-network/exhibitors/4.svg" alt="Image"></div>
-														<h4 class="card-digital-network__title">Monitora le visite e le interazioni con il pubblico</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="card-with-dot">
-											<div class="card-with-dot__dot"></div>
-
-											<div class="card-with-dot__card card-digital-network" data-aos="fade-up" data-aos-delay="1200">
-												<div class="card-digital-network__wrap">
-													<div class="card-digital-network__main-content">
-														<div class="card-digital-network__img"><img class="of-contain" src="img/card-digital-network/exhibitors/5.svg" alt="Image"></div>
-														<h4 class="card-digital-network__title">Interagisci con i tuoi nuovi potenziali clienti</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="card-with-dot">
-											<div class="card-with-dot__dot"></div>
-
-											<div class="card-with-dot__card card-digital-network" data-aos="fade-up" data-aos-delay="1500">
-												<div class="card-digital-network__wrap">
-													<div class="card-digital-network__main-content">
-														<div class="card-digital-network__img"><img class="of-contain" src="img/card-digital-network/exhibitors/6.svg" alt="Image"></div>
-														<h4 class="card-digital-network__title">Crea nuovi contatti</h4>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<!-- SECTION DIGITAL NETWORK END -->
-
-			<!-- SECTION PRESS -->
-			<section class="section-press" style="background-image: url(img/section-press-bg.svg)">
+			<!-- SECTION WHO WE ARE -->
+			<section class="section-who-we-are section">
 				<div class="container">
-					<div class="section-press__title-wrap">
-						<h2 class="text-white section-press__title">Press</h2>
-						<h4 class="text-white">Dicono di noi</h4>
-					</div>
-
-					<div class="row section-press__cards-grid">
-						<div class="col-xs-extra-4"><a class="card-press border-radius-2xl" href="https://www.startupgeeks.it/wideexpo-francesco-orpheu-intervista/#Parliamo_di_WideExpo_Cosa_fate" target="_blank"><img class="card-press__logo" src="img/card-press/startup-geeks.png" alt="Logo"></a>
-							<div class="card-press border-radius-2xl"><img class="card-press__logo" src="img/card-press/money.png" alt="Logo"></div>
+					<div class="row">
+						<div class="col-sm-8 offset-sm-4">
+							<h2 class="section-who-we-are__title">Chi siamo</h2>
 						</div>
-						<div class="col-xs-extra-4">
-							<div class="card-press border-radius-2xl section-press__card-with-indent"><img class="card-press__logo" src="img/card-press/forbs.png" alt="Logo"></div>
-							<div class="card-press border-radius-2xl">
-								<h2 class="card-press__text">Soon</h2>
+						<div class="col-sm-3 d-none d-sm-flex">
+							<div class="section-who-we-are__side-color-block-for-text">
+								<div class="section-who-we-are__side-color-block-for-text-inner" data-aos="fade-right"></div>
 							</div>
 						</div>
-						<div class="col-xs-extra-4"><a class="card-press border-radius-2xl" href="https://www.startupswallet.com/news/it/opstart/intervista-cco-wideexpo-antonio-orpheu/#Perche_investire_in_WideExpo" target="_blank"><img class="card-press__logo" src="img/card-press/startups-wallet.png" alt="Logo"></a>
-							<div class="card-press border-radius-2xl">
-								<h2 class="card-press__text">Soon</h2>
+						<div class="col-sm-8 offset-sm-1">
+							<div class="row remove-last-child-margin">
+								<div class="col-lg-6">
+									<p class="mb-lg-0">Credito Digitale nasce dalla collaborazione di due realtà imprenditoriali, Mokka Studios S.r.l. e [B]IoHT S.r.l., consapevoli di quanto la digitalizzazione 4.0 sia fondamentale per permettere alle aziende italiane di rimanere o diventare competitive sul mercato.</p>
+								</div>
+								<div class="col-lg-6">
+									<p class="mb-lg-0">Credito Digitale è la prima realtà italiana a unire la ricerca in transizione digitale e la consulenza fiscale, occupandosi dello sviluppo tecnologico di una soluzione software innovativa e dell’efficientamento fiscale a 360°.</p>
+								</div>
 							</div>
+						</div>
+						<div class="col-sm-8 col-lg-4 offset-sm-4 offset-lg-8">
+							<div class="section-who-we-are__link-wrap"><a class="link-with-arrow text-secondary" href="chi-siamo.html">Scopri di più</a></div>
 						</div>
 					</div>
 				</div>
 			</section>
-			<!-- SECTION PRESS END -->
+			<!-- SECTION WHO WE ARE END -->
 
-			<!-- SECTION BECOME PART -->
-			<section class="section-become-part" style="background-image: url(img/section-become-part-bg-lines.svg)">
-				<div class="section-become-part__main-content" style="background-image: url(img/section-become-part-bg.svg)">
+			<!-- SECTION WHAT DO WE DO -->
+			<section class="section-what-do-we-do section">
+				<div class="container">
+					<h2 class="mb-8 section-what-do-we-do__title">Cosa facciamo</h2>
+
+					<div class="row">
+						<div class="col-sm-8">
+							<div class="section-what-do-we-do__text text-block">
+								<p>La procedura è molto semplice e trasparente e se ne occupa interamente il nostro team di esperti.</p>
+							</div>
+							<div class="row remove-last-child-margin">
+								<div class="col-lg-6">
+									<p class="mb-lg-0">Inizialmente i nostri commercialisti e revisori dei conti analizzano la situazione economico-finanziaria della vostra società per comprendere se i parametri dell'azienda risultano adeguati per poter accedere alle agevolazioni fiscali per investimenti in innovazioni digitali 4.0. In caso di valutazione positiva, viene esposto al cliente il prospetto di calcolo relativo all’ammontare del credito d’imposta (Risparmio fiscale) che si può generare.</p>
+								</div>
+								<div class="col-lg-6">
+									<p class="mb-lg-0">A questo punto, il nostro team di Ideazione & Sviluppo andrà a proporre, in base alle tue richieste ed esigenze, la realizzazione di un software che porti valore aggiunto alla tua azienda. Ovviamente ci occupiamo noi della sua realizzazione e implementazione. Il cliente, successivamente al completamento del progetto di ricerca, potrà usufruire nei 3 anni successivi, del credito d’imposta che i nostri esperti revisori avranno certificato. Permettiamo, quindi, di generare un “risparmio fiscale" che renderà estremamente vantaggiosa la transizione digitale della tua azienda.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-3 offset-1 d-none d-sm-flex">
+							<div class="section-what-do-we-do__side-color-block-for-text">
+								<div class="section-what-do-we-do__side-color-block-for-text-inner" data-aos="fade-left"></div>
+							</div>
+						</div>
+						<div class="col-xxl-8">
+							<div class="text-xxl-end section-what-do-we-do__link-wrap"><a class="link-with-arrow text-secondary" href="preventivatore.html">Verifica quanto puoi risparmiare</a></div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- SECTION WHAT DO WE DO END -->
+
+			<!-- SECTION BENEFITS -->
+			<section class="section-benefits section">
+				<div class="section-benefits__wrap">
 					<div class="container">
-						<div class="row justify-content-end">
-							<div class="col-md-extra-8 col-lg-7 col-xl-6 col-xl-extra-5">
-								<div class="section-become-part__block" data-aos="fade-up">
-									<div class="section-become-part__block-inner">
-										<h2 class="section-become-part__title">Campagna di<br> equity crowdfunding di<br> WideExpo</h2>
-										<h4 class="section-become-part__sub-title text-secondary font-inherit">Diventa parte del progetto</h4><a class="btn btn-gradient w-100" href="https://www.opstart.it/it/progetti/dettaglio/13823-wideexpo" target="_blank"><span>Investi</span></a>
+						<div class="section-benefits__wrap-inner">
+							<div class="section-benefits__decoration-block d-none d-sm-block" data-aos="slide-down"></div>
+
+							<div class="row">
+								<div class="col-sm-8 col-md-9 col-xxl-8 offset-sm-4 offset-md-3 offset-xxl-4">
+									<h2 class="section-benefits__title">I vantaggi per la tua azienda</h2>
+
+									<div class="section-benefits__list">
+										<div class="section-benefits__list-item">
+											<div class="row">
+												<div class="col-lg-6">
+													<h5 class="title-with-star">Tecnologici</h5>
+												</div>
+												<div class="col-lg-6">
+													<ul class="list-with-dash with-indents">
+														<li>Efficientare i processi produttivi aziendali</li>
+														<li>Aumentare flessibilità, velocità, produttività, qualità e competitività</li>
+														<li>Monitorare in tempo reale i sistemi produttivi</li>
+														<li>Ridurre gli sprechi</li>
+														<li>Svolgere analisi sui big data</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+										<div class="section-benefits__list-item">
+											<div class="row">
+												<div class="col-lg-6">
+													<h5 class="title-with-star">Fiscali</h5>
+												</div>
+												<div class="col-lg-6">
+													<ul class="list-with-dash with-indents">
+														<li>Iper e Super ammortamento</li>
+														<li>Nuova Sabatini</li>
+														<li>Fondo di Garanzia</li>
+														<li>Patent Box</li>
+														<li>Credito Imposta Ricerca e Sviluppo e Formazione 4.0</li>
+													</ul>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="row remove-last-child-margin">
+								<div class="col-md-6">
+									<div class="card-benefit mb-md-0">
+										<div class="card-benefit__img"><img class="of-cover" src="img/card-benefit/1.jpg" alt="Image"></div>
+
+										<h6 class="card-benefit__title">Mister Plumber</h6>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="card-benefit mb-md-0">
+										<div class="card-benefit__img"><img class="of-cover" src="img/card-benefit/2.jpg" alt="Image"></div>
+
+										<h6 class="card-benefit__title">Zeroundici</h6>
 									</div>
 								</div>
 							</div>
@@ -501,97 +214,157 @@
 					</div>
 				</div>
 			</section>
-			<!-- SECTION BECOME PART END -->
+			<!-- SECTION BENEFITS END -->
+
+			<!-- SECTION OUR SERVICES -->
+			<section class="section-our-services section">
+				<div class="container">
+					<div class="text-center">
+						<h2>I nostri servizi</h2>
+					</div>
+
+					<div class="row g-0 bordered-grid section-our-services__grid">
+						<div class="col-sm-6 col-xl-4">
+							<div class="card-our-service mb-0">
+								<div class="card-our-service__icon-and-title">
+									<div class="card-our-service__icon round-icon primary"><img src="img/card-our-service/globe.svg" alt="Icon"></div>
+
+									<h3 class="card-our-service__title">Internet of<br> Things</h3>
+								</div>
+								<div class="text-block">
+									<p>Crea una rete di dispositivi connessi per migliorare la comunicazione e la produttività.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-xl-4">
+							<div class="card-our-service mb-0">
+								<div class="card-our-service__icon-and-title">
+									<div class="card-our-service__icon round-icon primary"><img src="img/card-our-service/database.svg" alt="Icon"></div>
+
+									<h3 class="card-our-service__title">Big Data<br> Analytics</h3>
+								</div>
+								<div class="text-block">
+									<p>Utilizza software per la raccolta e la gestione efficiente dei dati, ricavandone grandi benefici.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-xl-4">
+							<div class="card-our-service mb-0">
+								<div class="card-our-service__icon-and-title">
+									<div class="card-our-service__icon round-icon primary"><img src="img/card-our-service/cloud.svg" alt="Icon"></div>
+
+									<h3 class="card-our-service__title">Cloud<br> Computing</h3>
+								</div>
+								<div class="text-block">
+									<p>Sfrutta un’infrastruttura IT comune, flessibile e di progettazione aperta per condividere dati, informazioni e applicazioni attraverso internet oltre i confini aziendali.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-xl-4">
+							<div class="card-our-service mb-0">
+								<div class="card-our-service__icon-and-title">
+									<div class="card-our-service__icon round-icon primary"><img src="img/card-our-service/codesandbox.svg" alt="Icon"></div>
+
+									<h3 class="card-our-service__title">Additive<br> Manufacturing</h3>
+								</div>
+								<div class="text-block">
+									<p>Crea prodotti personalizzati e complessi, non realizzabili con le tecniche tradizionali, utilizzando una minor quantità di materia prima e riducendo tempi di prototipazione e costi.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-xl-4">
+							<div class="card-our-service mb-0">
+								<div class="card-our-service__icon-and-title">
+									<div class="card-our-service__icon round-icon primary"><img src="img/card-our-service/box.svg" alt="Icon"></div>
+
+									<h3 class="card-our-service__title">Augmented<br> Reality</h3>
+								</div>
+								<div class="text-block">
+									<p>Potenzia le interazioni con il mondo reale, integrandolo con informazioni di qualsiasi forma (testuale, grafica, audio, ecc).</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-6 col-xl-4">
+							<div class="card-our-service mb-0">
+								<div class="card-our-service__icon-and-title">
+									<div class="card-our-service__icon round-icon primary"><img src="img/card-our-service/shield.svg" alt="Icon"></div>
+
+									<h3 class="card-our-service__title">Cybersecurity<br> Services</h3>
+								</div>
+								<div class="text-block">
+									<p>Proteggi i tuoi dati, le tue comunicazioni e le tue infrastrutture dalle minacce informatiche o dai furti di informazioni.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- SECTION OUR SERVICES END -->
+
+			<!-- SECTION CONTACT US -->
+			<section class="section-contact-us section pb-0">
+				<div class="section-contact-us__wrap">
+					<div class="container">
+						<div class="row align-items-center mb-8 d-sm-none">
+							<div class="col-3"><img class="d-block" src="img/section-contact-us-arrow.svg" alt="Arrow image" data-aos="fade-right"></div>
+							<div class="col-9">
+								<h2 class="mb-0">Contattaci</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-3 col-sm-4 col-md-2 col-xl-4 d-none d-sm-block">
+								<div class="section-contact-us__arrow-img-wrap" data-aos="fade-right"><img class="section-contact-us__arrow-img" src="img/section-contact-us-arrow.svg" alt="Arrow image"></div>
+							</div>
+							<div class="col-sm-8 col-md-5 col-xl-4">
+								<div class="section-contact-us__text-content">
+									<div class="section-contact-us__title-wrap">
+										<h2 class="mb-8 d-none d-sm-block">Contattaci</h2>
+										<div class="text-block fz-20-on-mobile">
+											<p>Scrivici per scoprire quanto risparmi!</p>
+										</div>
+									</div>
+									<div class="text-end text-sm-start"><a class="link-with-arrow" href="servizi.html">Scrivici</a></div>
+								</div>
+							</div>
+							<div class="col-sm-8 col-md-5 col-xl-4 offset-sm-4 offset-md-0">
+								<div class="section-contact-us__img-wrap">
+									<div class="section-contact-us__img"><img class="of-cover position-right" src="img/section-contact-us-img.jpg" alt="Image"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- SECTION CONTACT US END -->
 		</main>
 		<!-- CONTENT END -->
 
 		<!-- FOOTER -->
 		<footer class="footer">
-			<div class="container">
-				<div class="footer__wrap">
-					<div class="footer__inner-content">
-						<div class="footer__top-content">
-							<div class="row">
-								<div class="col-lg-4 col-xxl-3">
-									<div class="footer__logo-desc-and-socials">
-										<div class="row">
-											<div class="col-md-6 col-lg-12"><a class="footer__logo" href="#"><img src="img/logo-white.svg" alt="WideExpo"></a>
+			<div class="container"><a class="footer__logo" href="#"><img src="img/logo.svg" alt="Logo"></a>
 
-												<div class="footer__desc text-block text-xl">
-													<p>Il primo network digitale per le fiere italiane e internazionali</p>
-												</div>
-											</div>
-											<div class="col-md-6 col-lg-12">
-												<ul class="social-list white justify-content-center justify-content-sm-start justify-content-md-end justify-content-lg-start">
-													<li class="social-list__item"><a class="social-list__link" href="https://www.instagram.com/wide.expo/" target="_blank"><span class="icomoon-instagram"></span></a></li>
-													<li class="social-list__item"><a class="social-list__link" href="https://www.linkedin.com/company/wideexpo/about/" target="_blank"><span class="icomoon-linkedin"></span></a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
+				<div class="footer__nav">
+					<ul class="footer-nav">
+						<li class="footer-nav__item"><a class="footer-nav__link" href="index.html">Home</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="servizi.html">Servizi</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="chi-siamo.html">Chi siamo</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="contatti.html">Contatti</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="preventivatore.html">Preventivatore</a></li>
+						<li class="footer-nav__item"><a class="footer-nav__link" href="privacy-policy.html">Legal Notes</a></li>
+					</ul>
+				</div>
 
-								<div class="col-lg-8 col-xxl-9">
-									<div class="row remove-gutters-sm-down justify-content-end">
-										<div class="col-xs-6 col-sm-4 col-lg-auto d-flex">
-											<div class="footer-title-and-nav pe-4 pe-xl-6">
-												<h4 class="footer-title-and-nav__title text-white">Privacy & Cookies</h4>
-
-												<ul class="footer-nav">
-													<li class="footer-nav__item"><a class="footer-nav__link" href="politica-sulla-riservatezza.html">Privacy & Cookies policy</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-xs-6 col-sm-4 col-lg-auto d-flex">
-											<div class="footer-title-and-nav pe-4 pe-xl-6">
-												<h4 class="footer-title-and-nav__title text-white">Azienda</h4>
-
-												<ul class="footer-nav">
-													<li class="footer-nav__item"><a class="footer-nav__link" href="piattaforma.html">Piattaforma</a></li>
-													<li class="footer-nav__item"><a class="footer-nav__link" href="chi-siamo.html">Chi siamo</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-xs-6 col-sm-4 col-lg-auto d-flex">
-											<div class="footer-title-and-nav pe-4 pe-xl-6">
-												<h4 class="footer-title-and-nav__title text-white">Info</h4>
-
-												<ul class="footer-nav">
-													<li class="footer-nav__item"><a class="footer-nav__link" href="tel:+393927837786">+39 392 7837786</a></li>
-													<li class="footer-nav__item"><a class="footer-nav__link" href="mailto:info@wideexpo.com">info@wideexpo.com</a></li>
-													<li class="footer-nav__item d-none d-sm-block"><a class="footer-nav__link" href="http://maps.google.com/?q=ViaFabioFilzi33,20124Milano,Italia" target="_blank">Via Fabio Filzi 33,<br> 20124 Milano, Italia</a></li>
-												</ul>
-											</div>
-										</div>
-										<div class="col-xs-6 col-sm-4 col-lg-auto d-flex d-sm-none">
-											<div class="footer-title-and-nav pe-4 pe-xl-6">
-												<h4 class="footer-title-and-nav__title text-white">Indirizzo</h4>
-
-												<ul class="footer-nav">
-													<li class="footer-nav__item"><a class="footer-nav__link" href="http://maps.google.com/?q=ViaFabioFilzi33,20124Milano,Italia" target="_blank">Via Fabio Filzi 33,<br> 20124 Milano, Italia</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-
-						<div class="footer__bottom-content">
-							<div class="text-center text-block">
-								<p class="mb-1">Copyright © 2022 WideExpo S.r.l. Tutti i diritti riservati.</p>
-								<p>Designed by <a href="https://www.mokkastudios.com" target="_blank">Mokka Studios</a>.</p>
-							</div>
-						</div>
-					</div>
+				<div class="footer__copyright remove-last-child-margin">
+					<p class="mb-2">Copyright © <span class="js-year"></span> Credito Digitale. All Rights Reserved.</p>
+					<p>Crafted with love by <a href="https://www.mokkastudios.com" target="_blank"><span class="icomoon-mokka-studio"></span> Mokka Studios</a></p>
 				</div>
 			</div>
 		</footer>
 		<!-- FOOTER END -->
 
 		<!-- connection JAVASCRIPT -->
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoik2Sle8UV-ysloqMOF2dK0mnXpb5z3I"></script>
 		<script src="js/libs.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCoik2Sle8UV-ysloqMOF2dK0mnXpb5z3I"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>

@@ -1,283 +1,416 @@
 'use strict';
 
 $(function () {
+	var sliderCalculateTheTaxCreditTns = null;
+
 	initActiveHeaderAfterScroll();
+	initViewportUnitsOnMobile();
+	initHamburgerMenu();
 	initStopAnimationsDuringWindowResizing();
-	initCountdown();
-	initTabsList();
-	initSliders();
-	initMap();
 	initAos();
+	initAccordionScroll();
+	initMapMultipleMarkers();
+	initInputOnlyNumbers();
+	initCustomSelect();
+	initSliders();
 	initFormValidate();
-	initCookiesBanner();
-});
+	initSetYear();
 
-// ACTIVE HEADER AFTER SCROLL
-function initActiveHeaderAfterScroll() {
-	var header = $('.js-header');
+	// ACTIVE HEADER AFTER SCROLL
+	function initActiveHeaderAfterScroll() {
+		var header = $('.js-header');
 
-	$(window).on('scroll', function () {
-		if ($(this).scrollTop() > 10) {
+		$(window).on('scroll', function () {
+			if ($(this).scrollTop() > 10) {
+				header.addClass('active');
+			} else {
+				header.removeClass('active');
+			}
+		});
+
+		if ($(document).scrollTop() > 10) {
 			header.addClass('active');
-		} else {
-			header.removeClass('active');
-		}
-	});
-
-	if ($(document).scrollTop() > 10) {
-		header.addClass('active');
-	}
-}
-
-// STOP ANIMATIONS DURING WINDOW RESIZING
-function initStopAnimationsDuringWindowResizing() {
-	var resizeTimer;
-
-	$(window).on('resize', function () {
-		$('body').addClass('resize-animation-stopper');
-
-		clearTimeout(resizeTimer);
-
-		resizeTimer = setTimeout(function () {
-			$('body').removeClass('resize-animation-stopper');
-		}, 400);
-	});
-}
-
-// COUNTDOWN
-function initCountdown() {
-	var countdown = $('.js-countdown'),
-	countdownProgressValue = countdown.find('.js-progress-value'),
-	countdownProgressWidth = countdown.find('.js-progress-width'),
-	startDate = countdown.attr('data-start-date'),
-	finalDate = countdown.attr('data-final-date');
-
-	if (countdown.length) {
-		countdown.countdown(finalDate, function (event) {
-			var countdownDays = $(this).find('.js-days'),
-			countdownHours = $(this).find('.js-hours'),
-			countdownMinutes = $(this).find('.js-minutes');
-
-			countdownDays.html(event.strftime('%D'));
-			countdownHours.html(event.strftime('%H'));
-			countdownMinutes.html(event.strftime('%M'));
-		});
-
-		setProgress();
-
-		countdown.on('update.countdown', function (event) {
-			setProgress();
-		});
-
-		countdown.on('finish.countdown', function (event) {
-			setProgress();
-		});
-	}
-
-	function getProgress() {
-		var start = new Date(startDate),
-		end = new Date(finalDate),
-		today = new Date(),
-		q = Math.abs(today - start),
-		d = Math.abs(end - start),
-		progressPercent = Math.floor(q / d * 100);
-
-		if (progressPercent > 100) {
-			return 100;
-		} else {
-			return progressPercent;
 		}
 	}
 
-	function setProgress() {
-		var progressPercent = getProgress();
+	// VIEWPORT UNITS ON MOBILE
+	function initViewportUnitsOnMobile() {
+		var vh = window.innerHeight * 0.01;
+		document.documentElement.style.setProperty('--vh', vh + 'px');
 
-		countdownProgressValue.text(progressPercent + '%');
-		countdownProgressWidth.css('width', progressPercent + '%');
-	}
-}
-
-// TABS LIST
-function initTabsList() {
-	$('[data-bs-toggle="tab"]').on('show.bs.tab', function (e) {
-		var currentTabNumber = $(e.target).closest('li').index() + 1,
-		tabsList = $(e.target).closest('.js-tabs-list');
-
-		if (tabsList.length) {
-			tabsList.attr('data-active', currentTabNumber);
-		}
-	});
-}
-
-// SLIDERS
-function initSliders() {
-	var sliderDigitalNetwork = $('.js-slider-digital-network');
-
-	if (sliderDigitalNetwork.length) {
-		sliderDigitalNetwork.each(function () {
-			var slider = tns({
-				container: this,
-				items: 1,
-				gutter: 12,
-				controls: false,
-				nav: false,
-				mouseDrag: true,
-				loop: false,
-				speed: 500,
-				responsive: {
-					576: {
-						items: 2 },
-
-					800: {
-						gutter: 30 },
-
-					992: {
-						items: 3 },
-
-					1620: {
-						gutter: 70 } } });
-
-
-
+		$(window).on('resize', function () {
+			vh = window.innerHeight * 0.01;
+			document.documentElement.style.setProperty('--vh', vh + 'px');
 		});
 	}
 
-	var sliderOurTeam = $('.js-slider-our-team'),
-	sliderOurTeamObj = {},
-	ourTeamPhotoItem = $('.js-our-team-photo-item');
+	// HAMBURGER MENU
+	function initHamburgerMenu() {
+		var hamburger = $('.js-hamburger-menu'),
+			menu = $('.js-header-menu');
 
-	if (sliderOurTeam.length) {
-		sliderOurTeam.each(function () {
-			sliderOurTeamObj = tns({
-				container: this,
-				items: 1,
-				gutter: 30,
-				controlsPosition: 'bottom',
-				controlsText: ['<span class="icomoon-arrow-left"></span>', '<span class="icomoon-arrow-right"></span>'],
-				nav: false,
-				mouseDrag: true,
-				loop: false,
-				speed: 500 });
-
-		});
-
-		ourTeamPhotoItem.on('click', function (e) {
+		hamburger.on('click', function (e) {
 			e.preventDefault();
 
-			var index = +$(this).attr('data-team-photo') - 1;
+			function openMenu() {
+				hamburger.addClass('active');
+				menu.addClass('active');
+				$('body').addClass('overflow-hidden');
+			}
 
-			sliderOurTeamObj.goTo(index);
-			ourTeamPhotoItem.removeClass('active');
-			$(this).addClass('active');
-		});
+			function closeMenu() {
+				hamburger.removeClass('active');
+				menu.removeClass('active');
+				$('body').removeClass('overflow-hidden');
+			}
 
-		sliderOurTeamObj.events.on('transitionStart', function (info) {
-			var index = info.displayIndex;
-
-			ourTeamPhotoItem.removeClass('active');
-			$('.js-our-team-photo-item[data-team-photo="' + index + '"]').addClass('active');
+			if ($(this).hasClass('active')) {
+				closeMenu();
+			} else {
+				openMenu();
+			}
 		});
 	}
-}
 
-// STANDARD GOOGLE MAP
-function initMap() {
-	var mapBlock = $('.js-map');
+	// STOP ANIMATIONS DURING WINDOW RESIZING
+	function initStopAnimationsDuringWindowResizing() {
+		var resizeTimer;
 
-	if (!mapBlock.length) return;
+		$(window).on('resize', function () {
+			$('body').addClass('resize-animation-stopper');
 
-	var coordinateX = mapBlock.attr('data-coordinate-x'),
-	coordinateY = mapBlock.attr('data-coordinate-y'),
-	coordinates = new google.maps.LatLng(coordinateX, coordinateY);
+			clearTimeout(resizeTimer);
 
-	var map = new google.maps.Map(mapBlock.get(0), {
-		center: coordinates,
-		zoom: 13,
-		disableDefaultUI: true,
-		styles: [{ "featureType": "administrative", "elementType": "geometry.fill", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative", "elementType": "labels.text", "stylers": [{ "visibility": "on" }, { "color": "#8e8e8e" }] }, { "featureType": "administrative", "elementType": "labels.text.fill", "stylers": [{ "color": "#7f7f7f" }] }, { "featureType": "administrative", "elementType": "labels.text.stroke", "stylers": [{ "visibility": "off" }] }, { "featureType": "administrative.country", "elementType": "geometry.stroke", "stylers": [{ "color": "#bebebe" }] }, { "featureType": "administrative.province", "elementType": "geometry.stroke", "stylers": [{ "visibility": "on" }, { "color": "#cbcbcb" }, { "weight": "0.69" }] }, { "featureType": "administrative.locality", "elementType": "geometry", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "color": "#ffffff" }, { "saturation": "0" }] }, { "featureType": "poi.attraction", "elementType": "all", "stylers": [{ "visibility": "on" }, { "color": "#ffffff" }, { "saturation": "0" }] }, { "featureType": "poi.attraction", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.business", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.government", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.medical", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.park", "elementType": "geometry.fill", "stylers": [{ "color": "#98da9f" }, { "visibility": "on" }] }, { "featureType": "poi.park", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.place_of_worship", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.school", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.sports_complex", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.sports_complex", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "poi.sports_complex", "elementType": "labels.text", "stylers": [{ "visibility": "off" }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "saturation": "-100" }, { "lightness": "50" }, { "gamma": "1" }] }, { "featureType": "road", "elementType": "geometry.fill", "stylers": [{ "color": "#e4e4e4" }, { "saturation": "0" }] }, { "featureType": "road.highway", "elementType": "all", "stylers": [{ "visibility": "simplified" }, { "saturation": "0" }] }, { "featureType": "road.highway", "elementType": "geometry", "stylers": [{ "color": "#f2f2f2" }, { "saturation": "0" }] }, { "featureType": "road.highway", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.highway", "elementType": "labels.text", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.arterial", "elementType": "all", "stylers": [{ "saturation": "0" }] }, { "featureType": "road.arterial", "elementType": "labels.text", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.arterial", "elementType": "labels.icon", "stylers": [{ "visibility": "off" }] }, { "featureType": "road.local", "elementType": "all", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.local", "elementType": "geometry", "stylers": [{ "color": "#e4e4e4" }, { "lightness": "0" }, { "gamma": "1" }, { "saturation": "0" }] }, { "featureType": "road.local", "elementType": "labels.text", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "visibility": "on" }] }, { "featureType": "transit", "elementType": "labels", "stylers": [{ "hue": "#ff0000" }, { "saturation": "-100" }, { "visibility": "simplified" }] }, { "featureType": "water", "elementType": "all", "stylers": [{ "color": "#cbcbcb" }, { "visibility": "on" }] }, { "featureType": "water", "elementType": "geometry.fill", "stylers": [{ "color": "#f3f3f3" }, { "saturation": "0" }] }, { "featureType": "water", "elementType": "labels", "stylers": [{ "visibility": "off" }] }, { "featureType": "water", "elementType": "labels.text", "stylers": [{ "visibility": "simplified" }] }] });
+			resizeTimer = setTimeout(function () {
+				$('body').removeClass('resize-animation-stopper');
+			}, 400);
+		});
+	}
+
+	// ANIMATION ON SCROLL
+	function initAos() {
+		AOS.init({
+			duration: 1000,
+			once: true,
+			easing: 'ease-in-out'
+		});
+	}
+
+	// ACCORDION SCROLL
+	function initAccordionScroll() {
+		$('.js-accordion .accordion-collapse').on('shown.bs.collapse', function () {
+			var headerOffset = $('.js-header').outerHeight();
+
+			if (headerOffset === undefined) {
+				headerOffset = 0;
+			}
+
+			var top = $(this).closest('.accordion-item').offset().top - headerOffset - 10;
+
+			$('body, html').animate({
+				scrollTop: top
+			}, 300);
+		});
+	}
+
+	// GOOGLE MAP WITH MULTIPLE MARKER
+	function initMapMultipleMarkers() {
+		var mapBlock = $('.js-map-multiple-markers');
+
+		if (!mapBlock.length) return;
+
+		var map = new google.maps.Map(mapBlock.get(0), {
+			disableDefaultUI: true,
+			styles: [{ "featureType": "administrative", "elementType": "all", "stylers": [{ "saturation": "-100" }] }, { "featureType": "administrative.province", "elementType": "all", "stylers": [{ "visibility": "off" }] }, { "featureType": "landscape", "elementType": "all", "stylers": [{ "saturation": -100 }, { "lightness": 65 }, { "visibility": "on" }] }, { "featureType": "poi", "elementType": "all", "stylers": [{ "saturation": -100 }, { "lightness": "50" }, { "visibility": "simplified" }] }, { "featureType": "road", "elementType": "all", "stylers": [{ "saturation": "-100" }] }, { "featureType": "road.highway", "elementType": "all", "stylers": [{ "visibility": "simplified" }] }, { "featureType": "road.arterial", "elementType": "all", "stylers": [{ "lightness": "30" }] }, { "featureType": "road.local", "elementType": "all", "stylers": [{ "lightness": "40" }] }, { "featureType": "transit", "elementType": "all", "stylers": [{ "saturation": -100 }, { "visibility": "simplified" }] }, { "featureType": "water", "elementType": "geometry", "stylers": [{ "hue": "#ffff00" }, { "lightness": -25 }, { "saturation": -97 }] }, { "featureType": "water", "elementType": "labels", "stylers": [{ "lightness": -25 }, { "saturation": -100 }] }]
+		});
+
+		// array of markers (with coordinates, name, address)
+		var multipleMarkers = [
+		{
+			lat: 45.45922196159336,
+			lng: 9.20883535584747,
+			name: 'Ufficio 1',
+			address: 'Via Spartaco 10, Milano'
+		},
+		{
+			lat: 45.06800106010096,
+			lng: 7.701812855834449,
+			name: 'Ufficio 2',
+			address: 'Via Giovanni Francesco Napione 22, Torino'
+		}];
 
 
-	// OPTIONAL - custom icon
-	var icon = {
-		url: './img/map-marker.svg',
-		scaledSize: new google.maps.Size(51, 63) };
+		var infoWindow = new google.maps.InfoWindow();
 
+		google.maps.event.addListener(map, 'click', function () {
+			infoWindow.close();
+		});
 
-	var marker = new google.maps.Marker({
-		position: coordinates,
-		map: map,
-		animation: google.maps.Animation.BOUNCE,
-		icon: icon });
+		// Determine the boundaries of the visible area of the map in accordance with the position of the markers
+		var bounds = new google.maps.LatLngBounds();
 
-}
+		// create the markers
+		for (var i = 0; i < multipleMarkers.length; i++) {
 
-// ANIMATION ON SCROLL
-function initAos() {
-	AOS.init({
-		duration: 1000,
-		once: true,
-		easing: 'ease-in-out' });
+			var latLng = new google.maps.LatLng(multipleMarkers[i].lat, multipleMarkers[i].lng);
+			var name = multipleMarkers[i].name;
+			var address = multipleMarkers[i].address;
 
-}
+			addMarker(latLng, name, address);
 
-// FORM VALIDATE
-function initFormValidate() {
-	var form = $('.js-form-validate');
+			// Expand the boundaries of our visible area by adding the coordinates of our current marker
+			bounds.extend(latLng);
+		}
 
-	if (form.length) {
-		form.validate({
-			lang: 'it',
-			errorClass: 'is-invalid',
+		// Automatically scale the map so that all markers are in the visible area of the map
+		map.fitBounds(bounds);
 
-			errorPlacement: function errorPlacement(error, element) {
-				error.addClass('invalid-feedback');
-				error.insertAfter(element);
-			},
+		function addMarker(latLng, name, address) {
+			var icon = {
+				url: '../img/map-marker.svg',
+				scaledSize: new google.maps.Size(53, 70)
+			};
 
-			submitHandler: function submitHandler(form) {
-				$.ajax({
-					type: 'POST',
-					url: 'https://emanuelespadaro.com/mokka/mail.php',
-					data: $(form).serialize() }).
-				done(function () {
-					setTimeout(function () {
-						$('#formSuccessModal').modal('show');
-						$(form).trigger('reset');
-					}, 1000);
+			var marker = new google.maps.Marker({
+				position: latLng,
+				map: map,
+				title: name,
+				icon: icon
+			});
+
+			google.maps.event.addListener(marker, 'click', function () {
+				var contentString = '<div class="infowindow">' +
+				'<h6>' + name + '</h6>' +
+				'<p>' + address + '</p>' +
+				'</div>';
+
+				infoWindow.setContent(contentString);
+				infoWindow.open(map, marker);
+			});
+		}
+	}
+
+	// INPUT ONLY NUMBERS
+	function initInputOnlyNumbers() {
+		(function ($) {
+			$.fn.inputFilter = function (callback) {
+				return this.on("input keydown keyup mousedown mouseup select contextmenu drop focusout", function (e) {
+					if (callback(this.value)) {
+						// Accepted value
+						this.oldValue = this.value;
+						this.oldSelectionStart = this.selectionStart;
+						this.oldSelectionEnd = this.selectionEnd;
+					} else if (this.hasOwnProperty("oldValue")) {
+						// Rejected value - restore the previous one
+						this.reportValidity();
+						this.value = this.oldValue;
+						this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+					} else {
+						// Rejected value - nothing to restore
+						this.value = "";
+					}
 				});
+			};
+		})(jQuery);
 
-				return false;
-			} });
-
-	}
-}
-
-// COOKIES BANNER
-function initCookiesBanner() {
-	var cookiesBanner = $('.js-cookies-banner'),
-	rejectCookiesBtn = $('.js-reject-cookies'),
-	acceptCookiesBtn = $('.js-accept-cookies');
-
-	if (!cookiesBanner.length) return;
-
-	var cookiesAreRejected = Cookies.get('cookiesAreRejected'),
-	cookiesAreAccepted = Cookies.get('cookiesAreAccepted');
-
-	if (cookiesAreRejected === undefined && cookiesAreAccepted === undefined) {
-		cookiesBanner.removeClass('d-none');
+		$('.js-only-numbers').inputFilter(function (value) {
+			return /^-?\d*$/.test(value);
+		});
 	}
 
-	rejectCookiesBtn.on('click', function (e) {
-		e.preventDefault();
+	// CUSTOM SELECT
+	function initCustomSelect() {
+		var select = $('.js-select');
 
-		Cookies.set('cookiesAreRejected', 'true', { expires: 7 });
-		cookiesBanner.addClass('d-none');
-	});
+		select.each(function () {
+			$(this).select2({
+				minimumResultsForSearch: Infinity,
+				dropdownParent: $(this).closest('.js-select-parent')
+			});
+		});
+	}
 
-	acceptCookiesBtn.on('click', function (e) {
-		e.preventDefault();
+	// SLIDERS
+	function initSliders() {
+		var sliderCalculateTheTaxCredit = $('.js-slider-calculate-the-tax-credit');
 
-		Cookies.set('cookiesAreAccepted', 'true', { expires: 7 });
-		cookiesBanner.addClass('d-none');
-	});
-}
+		if (sliderCalculateTheTaxCredit.length) {
+			sliderCalculateTheTaxCreditTns = tns({
+				container: '.js-slider-calculate-the-tax-credit',
+				gutter: 15,
+				controls: false,
+				nav: false,
+				loop: false,
+				autoHeight: true,
+				touch: false,
+				speed: 1000
+			});
+
+			$('#modalCalculateTheTaxCredit').on('shown.bs.modal', function (e) {
+				sliderCalculateTheTaxCreditTns.updateSliderHeight();
+			});
+
+			$('#modalCalculateTheTaxCredit').on('hidden.bs.modal', function (e) {
+				sliderCalculateTheTaxCreditTns.goTo('first');
+
+				$('.js-form-calculate-the-tax-credit').trigger('reset');
+				$('.js-form-contact').trigger('reset');
+			});
+
+			$('.js-go-next-slide').on('click', function (e) {
+				e.preventDefault();
+
+				sliderCalculateTheTaxCreditTns.goTo('next');
+			});
+		}
+	}
+
+	// FORM VALIDATE
+	function initFormValidate() {
+		var formWriteToUs = $('.js-form-write-to-us');
+
+		if (formWriteToUs.length) {
+			formWriteToUs.validate({
+				lang: 'it',
+				errorClass: 'is-invalid',
+
+				errorPlacement: function errorPlacement(error, element) {
+					error.addClass('invalid-feedback');
+
+					if (element.attr('type') === 'checkbox' && element.closest('.custom-checkbox').length) {
+						error.insertAfter(element.closest('.custom-checkbox'));
+					} else {
+						error.insertAfter(element);
+					}
+				},
+
+				submitHandler: function submitHandler(form) {
+					// $.ajax({
+					// 	type: 'POST',
+					// 	url: 'files/mail.php',
+					// 	data: $(form).serialize()
+					// }).done(function() {
+					// 	setTimeout(function() {
+					// 		// show success block
+					// 		$(form).trigger('reset').addClass('d-none');
+					// 		$('.js-form-write-to-us-success').removeClass('d-none');
+
+					// 		// scroll compensation
+					// 		var headerOffset = $('.js-header').outerHeight();
+
+					// 		if (headerOffset === undefined) {
+					// 			headerOffset = 0;
+					// 		}
+
+					// 		var top = $('#section-write-to-us').offset().top - headerOffset;
+
+					// 		$('body, html').animate({
+					// 			scrollTop: top
+					// 		}, 300);
+					// 	}, 1000);
+					// });
+
+					setTimeout(function () {
+						// show success block
+						$(form).trigger('reset').addClass('d-none');
+						$('.js-form-write-to-us-success').removeClass('d-none');
+
+						// scroll compensation
+						var headerOffset = $('.js-header').outerHeight();
+
+						if (headerOffset === undefined) {
+							headerOffset = 0;
+						}
+
+						var top = $('#section-write-to-us').offset().top - headerOffset;
+
+						$('body, html').animate({
+							scrollTop: top
+						}, 300);
+					}, 1000);
+
+					return false;
+				}
+			});
+		}
+
+		var formCalculateTheTaxCredit = $('.js-form-calculate-the-tax-credit');
+
+		if (formCalculateTheTaxCredit.length) {
+			formCalculateTheTaxCredit.validate({
+				lang: 'it',
+				errorClass: 'is-invalid',
+
+				errorPlacement: function errorPlacement(error, element) {
+					error.addClass('invalid-feedback');
+
+					if (element.attr('type') === 'checkbox' && element.closest('.custom-checkbox').length) {
+						error.insertAfter(element.closest('.custom-checkbox'));
+					} else {
+						error.insertAfter(element);
+					}
+				},
+
+				submitHandler: function submitHandler(form) {
+					var annualStaffCost = +$('.js-annual-staff-cost').val(),
+						calcLowerNumber = Math.round(annualStaffCost * 0.15 * 0.15),
+						calcUpperNumber = Math.round(annualStaffCost * 0.4 * 0.15);
+
+					$('.js-calc-lower-number').text(calcLowerNumber);
+					$('.js-calc-upper-number').text(calcUpperNumber);
+
+					$('#modalCalculateTheTaxCredit').modal('show');
+					$(form).trigger('reset');
+
+					return false;
+				}
+			});
+		}
+
+		var formContact = $('.js-form-contact');
+
+		if (formContact.length) {
+			formContact.validate({
+				lang: 'it',
+				errorClass: 'is-invalid',
+
+				errorPlacement: function errorPlacement(error, element) {
+					error.addClass('invalid-feedback');
+
+					if (element.attr('type') === 'checkbox' && element.closest('.custom-checkbox').length) {
+						error.insertAfter(element.closest('.custom-checkbox'));
+					} else {
+						error.insertAfter(element);
+					}
+				},
+
+				submitHandler: function submitHandler(form) {
+					// $.ajax({
+					// 	type: 'POST',
+					// 	url: 'files/mail.php',
+					// 	data: $(form).serialize()
+					// }).done(function() {
+					// 	setTimeout(function() {
+					// 		$(form).trigger('reset');
+					// 		sliderCalculateTheTaxCreditTns.goTo('next');
+					// 	}, 1000);
+					// });
+
+					setTimeout(function () {
+						$(form).trigger('reset');
+						sliderCalculateTheTaxCreditTns.goTo('next');
+					}, 1000);
+
+					return false;
+				}
+			});
+		}
+	}
+
+	// SET YEAR
+	function initSetYear() {
+		var currentYear = new Date().getFullYear();
+
+		$('.js-year').text(currentYear);
+	}
+});
