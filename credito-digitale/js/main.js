@@ -27,6 +27,7 @@ $(function () {
 	initStickyFooter();
 	initMaskMoney();
 	initSvgInjector();
+	initMatchHeight();
 
 	$(window).on('resize', function () {
 		initStickyFooter();
@@ -519,7 +520,9 @@ $(function () {
 		if (inputWithMask.length) {
 			inputWithMask.each(function () {
 				$(this).maskMoney({
-					prefix: "€"
+					prefix: '€',
+					thousands: '.',
+					decimal: ','
 				});
 			});
 		}
@@ -530,5 +533,10 @@ $(function () {
 		var mySVGsToInject = document.querySelectorAll('img.js-svg-injector');
 
 		SVGInjector(mySVGsToInject);
+	}
+
+	// MATCH HEIGHT
+	function initMatchHeight() {
+		$('.js-match-height').matchHeight();
 	}
 });
