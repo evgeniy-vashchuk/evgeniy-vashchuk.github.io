@@ -1,5 +1,13 @@
 'use strict';
 
+if (location.hash) {
+	window.scrollTo(0, 0);
+
+	setTimeout(function () {
+		window.scrollTo(0, 0);
+	}, 1);
+}
+
 $(function () {
 	var sliderCalculateTheTaxCreditTns = null;
 
@@ -15,20 +23,28 @@ $(function () {
 	initSliders();
 	initFormValidate();
 	initSetYear();
+	initSmoothAnchorLinks();
+	initStickyFooter();
+	initMaskMoney();
+	initSvgInjector();
+
+	$(window).on('resize', function () {
+		initStickyFooter();
+	});
 
 	// ACTIVE HEADER AFTER SCROLL
 	function initActiveHeaderAfterScroll() {
 		var header = $('.js-header');
 
 		$(window).on('scroll', function () {
-			if ($(this).scrollTop() > 10) {
+			if ($(this).scrollTop() > 1) {
 				header.addClass('active');
 			} else {
 				header.removeClass('active');
 			}
 		});
 
-		if ($(document).scrollTop() > 10) {
+		if ($(document).scrollTop() > 1) {
 			header.addClass('active');
 		}
 	}
@@ -247,7 +263,9 @@ $(function () {
 			});
 
 			$('#modalCalculateTheTaxCredit').on('shown.bs.modal', function (e) {
-				sliderCalculateTheTaxCreditTns.updateSliderHeight();
+				setTimeout(function () {
+					sliderCalculateTheTaxCreditTns.updateSliderHeight();
+				}, 100);
 			});
 
 			$('#modalCalculateTheTaxCredit').on('hidden.bs.modal', function (e) {
@@ -352,9 +370,17 @@ $(function () {
 				},
 
 				submitHandler: function submitHandler(form) {
-					var annualStaffCost = +$('.js-annual-staff-cost').val(),
-						calcLowerNumber = Math.round(annualStaffCost * 0.15 * 0.15),
-						calcUpperNumber = Math.round(annualStaffCost * 0.4 * 0.15);
+					function numberWithCommas(x) {
+						var parts = x.toString().split('.');
+						parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.'),
+						parts[1] = parts[1] === undefined ? '00' : Number(0 + '.' + parts[1]).toFixed(2).split('.')[1];
+
+						return parts.join(',');
+					}
+
+					var annualStaffCost = +$('.js-annual-staff-cost').maskMoney('unmasked')[0],
+						calcLowerNumber = numberWithCommas(annualStaffCost * 0.15 * 0.15),
+						calcUpperNumber = numberWithCommas(annualStaffCost * 0.4 * 0.15);
 
 					$('.js-calc-lower-number').text(calcLowerNumber);
 					$('.js-calc-upper-number').text(calcUpperNumber);
@@ -412,5 +438,97 @@ $(function () {
 		var currentYear = new Date().getFullYear();
 
 		$('.js-year').text(currentYear);
+	}
+
+	// SMOOTH ANCHOR LINKS
+	function initSmoothAnchorLinks() {
+		var animationComplete = true,
+			smoothAnchorLinks = $('a[href*="#"]:not([href="#"]):not(.js-no-scroll)'),
+			headerHeight = $('.js-header').length ? $('.js-header').outerHeight() : 0,
+			urlHash = window.location.href.split("#")[1];
+
+		function scrollToElement(element) {var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+			if (animationComplete && element.length) {
+				animationComplete = false;
+
+				$('body, html').animate({
+					scrollTop: element.offset().top - offset
+				}, 500).promise().done(function () {
+					animationComplete = true;
+				});
+			}
+		}
+
+		// link click scroll
+		smoothAnchorLinks.on('click', function () {
+			var idOfElement = $(this).attr('href').split('#')[1],
+				element = $('#' + idOfElement);
+
+			scrollToElement(element, headerHeight);
+		});
+
+		// hash in url scroll
+		var pageReloaded =
+		window.performance.navigation && window.performance.navigation.type === 1 ||
+		window.performance.
+		getEntriesByType('navigation').
+		map(function (nav) {return nav.type;}).
+		includes('reload');
+
+
+		function removeHashFromUrl() {
+			if (window.history) {
+				window.history.pushState('', document.title, window.location.href.replace(window.location.hash, ''));
+			} else {
+				window.location.hash = '';
+			}
+		}
+
+		if (urlHash) {
+			if (pageReloaded) {
+				removeHashFromUrl();
+			} else {
+				var element = $('#' + urlHash);
+
+				setTimeout(function () {
+					if ($('.js-header').length && window.scrollY === 0) {
+						$('body, html').animate({ scrollTop: 2 }, 100).promise().done(function () {
+							setTimeout(function () {
+								headerHeight = $('.js-header').outerHeight();
+
+								scrollToElement(element, headerHeight);
+							}, 500);
+						});
+					}
+				}, 1000);
+			}
+		}
+	}
+
+	// STICKY FOOTER
+	function initStickyFooter() {
+		var footerHeight = $('.js-footer').outerHeight();
+
+		$('.js-wrap-for-sticky').css('padding-bottom', footerHeight);
+	}
+
+	// MASK MONEY
+	function initMaskMoney() {
+		var inputWithMask = $('.js-mask-money');
+
+		if (inputWithMask.length) {
+			inputWithMask.each(function () {
+				$(this).maskMoney({
+					prefix: "€"
+				});
+			});
+		}
+	}
+
+	// SVG INJECTOR
+	function initSvgInjector() {
+		var mySVGsToInject = document.querySelectorAll('img.js-svg-injector');
+
+		SVGInjector(mySVGsToInject);
 	}
 });

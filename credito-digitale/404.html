@@ -10,7 +10,7 @@
 
 		<!-- connection FAVICONS -->
 		<link rel="icon" href="img/favicon/favicon.ico">
-		<link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon-180x180.png">
+		<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon-180x180.png">
 
 		<!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
 		<meta name="theme-color" content="#2C2C2C">
@@ -25,79 +25,81 @@
 	</head>
 
 	<body>
-		<!-- HEADER -->
-		<header class="header fixed-top js-header">
-			<div class="header__wrap">
-				<div class="container">
-					<div class="header__main-content"><a class="header__logo" href="#"><img src="img/logo.svg" alt="Logo"></a>
+		<div class="wrap-for-sticky js-wrap-for-sticky">
+			<!-- HEADER -->
+			<header class="header fixed-top js-header">
+				<div class="header__wrap">
+					<div class="container">
+						<div class="header__main-content"><a class="header__logo" href="index.html"><img src="img/logo.svg" alt="Logo"></a>
 
-						<div class="header__right-content">
-							<div class="header__menu js-header-menu">
-								<ul class="header-nav">
-									<li class="header-nav__item"><a class="header-nav__link" href="index.html">Home</a></li>
-									<li class="header-nav__item"><a class="header-nav__link" href="servizi.html">Servizi</a></li>
-									<li class="header-nav__item"><a class="header-nav__link" href="chi-siamo.html">Chi siamo</a></li>
-									<li class="header-nav__item"><a class="header-nav__link" href="contatti.html">Contatti</a></li>
-									<li class="header-nav__item"><a class="header-nav__link" href="preventivatore.html">Preventivatore</a></li>
-								</ul>
+							<div class="header__right-content">
+								<div class="header__menu js-header-menu">
+									<ul class="header-nav">
+										<li class="header-nav__item"><a class="header-nav__link" href="index.html">Home</a></li>
+										<li class="header-nav__item"><a class="header-nav__link" href="servizi.html">Servizi</a></li>
+										<li class="header-nav__item"><a class="header-nav__link" href="chi-siamo.html">Chi siamo</a></li>
+										<li class="header-nav__item"><a class="header-nav__link" href="contatti.html">Contatti</a></li>
+										<li class="header-nav__item"><a class="header-nav__link" href="preventivatore.html">Preventivatore</a></li>
+									</ul>
+								</div>
+								<a class="hamburger-menu d-md-none js-hamburger-menu" href="#" aria-label="Toggle menu">
+									<div class="hamburger-menu__wrap">
+										<div class="hamburger-menu__bars"></div>
+									</div></a>
 							</div>
-							<a class="hamburger-menu d-md-none js-hamburger-menu" href="#" aria-label="Toggle menu">
-								<div class="hamburger-menu__wrap">
-									<div class="hamburger-menu__bars"></div>
-								</div></a>
 						</div>
 					</div>
 				</div>
-			</div>
-		</header>
-		<!-- HEADER END -->
+			</header>
+			<!-- HEADER END -->
 
-		<!-- CONTENT -->
-		<main class="main">
-			<!-- SECTION -->
-			<section class="section">
-				<div class="container">
-					<div class="row mb-14 mb-md-15">
-						<div class="col-md-8 offset-md-4">
-							<h1 class="h2 mb-8">Oops!</h1>
-							<div class="text-block mb-10 mb-md-13">
-								<p>La pagina che stai cercando è stata spostata, rimossa o potrebbe non esistere</p>
+			<!-- CONTENT -->
+			<main class="main js-main">
+				<!-- SECTION -->
+				<section class="section">
+					<div class="container">
+						<div class="row mb-14 mb-md-15">
+							<div class="col-md-8 offset-md-4">
+								<h1 class="h2 mb-8">Oops!</h1>
+								<div class="text-block mb-10 mb-md-13">
+									<p>La pagina che stai cercando è stata spostata, rimossa o potrebbe non esistere</p>
+								</div>
+								<div class="text-end text-sm-start"><a class="link-with-arrow text-secondary" href="index.html">Torna alla home</a></div>
 							</div>
-							<div class="text-end text-sm-start"><a class="link-with-arrow text-secondary" href="index.html">Torna alla home</a></div>
+						</div>
+						<div class="row justify-content-center justify-content-md-end align-items-center">
+							<div class="col-2 col-md-3 mb-8 mb-md-0"><img src="img/lightning.svg" alt="Image"></div>
+							<div class="col-md-8"><img src="img/404.svg" alt="Image"></div>
 						</div>
 					</div>
-					<div class="row justify-content-center justify-content-md-end align-items-center">
-						<div class="col-2 col-md-3 mb-8 mb-md-0"><img src="img/lightning.svg" alt="Image"></div>
-						<div class="col-md-8"><img src="img/404.svg" alt="Image"></div>
+				</section>
+				<!-- SECTION END -->
+			</main>
+			<!-- CONTENT END -->
+
+			<!-- FOOTER -->
+			<footer class="footer sticky js-footer">
+				<div class="container"><a class="footer__logo" href="#"><img src="img/logo.svg" alt="Logo"></a>
+
+					<div class="footer__nav">
+						<ul class="footer-nav">
+							<li class="footer-nav__item"><a class="footer-nav__link" href="index.html">Home</a></li>
+							<li class="footer-nav__item"><a class="footer-nav__link" href="servizi.html">Servizi</a></li>
+							<li class="footer-nav__item"><a class="footer-nav__link" href="chi-siamo.html">Chi siamo</a></li>
+							<li class="footer-nav__item"><a class="footer-nav__link" href="contatti.html">Contatti</a></li>
+							<li class="footer-nav__item"><a class="footer-nav__link" href="preventivatore.html">Preventivatore</a></li>
+							<li class="footer-nav__item"><a class="footer-nav__link" href="privacy-policy.html">Legal Notes</a></li>
+						</ul>
+					</div>
+
+					<div class="footer__copyright remove-last-child-margin">
+						<p class="mb-2">Copyright © <span class="js-year"></span> Credito Digitale. All Rights Reserved.</p>
+						<p>Crafted with love by <a href="https://www.mokkastudios.com" target="_blank"><span class="icomoon-mokka-studio"></span> Mokka Studios</a></p>
 					</div>
 				</div>
-			</section>
-			<!-- SECTION END -->
-		</main>
-		<!-- CONTENT END -->
-
-		<!-- FOOTER -->
-		<footer class="footer">
-			<div class="container"><a class="footer__logo" href="#"><img src="img/logo.svg" alt="Logo"></a>
-
-				<div class="footer__nav">
-					<ul class="footer-nav">
-						<li class="footer-nav__item"><a class="footer-nav__link" href="index.html">Home</a></li>
-						<li class="footer-nav__item"><a class="footer-nav__link" href="servizi.html">Servizi</a></li>
-						<li class="footer-nav__item"><a class="footer-nav__link" href="chi-siamo.html">Chi siamo</a></li>
-						<li class="footer-nav__item"><a class="footer-nav__link" href="contatti.html">Contatti</a></li>
-						<li class="footer-nav__item"><a class="footer-nav__link" href="preventivatore.html">Preventivatore</a></li>
-						<li class="footer-nav__item"><a class="footer-nav__link" href="privacy-policy.html">Legal Notes</a></li>
-					</ul>
-				</div>
-
-				<div class="footer__copyright remove-last-child-margin">
-					<p class="mb-2">Copyright © <span class="js-year"></span> Credito Digitale. All Rights Reserved.</p>
-					<p>Crafted with love by <a href="https://www.mokkastudios.com" target="_blank"><span class="icomoon-mokka-studio"></span> Mokka Studios</a></p>
-				</div>
-			</div>
-		</footer>
-		<!-- FOOTER END -->
+			</footer>
+			<!-- FOOTER END -->
+		</div>
 
 		<!-- connection JAVASCRIPT -->
 		<script src="js/libs.js"></script>
