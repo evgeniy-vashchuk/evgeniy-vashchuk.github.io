@@ -14786,6 +14786,12 @@ h6, .h6 {
 	transition: none !important;
 }
 
+@media (min-width: 576px) {
+	.ms-sm-50-minus {
+		margin-left: -50px;
+	}
+}
+
 .fs-inherit {
 	font-size: inherit !important;
 }
