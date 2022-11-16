@@ -15120,9 +15120,6 @@ h6, .h6 {
 .link-with-arrow.sm {
 	font-size: 20px;
 }
-.link-with-arrow.sm:after {
-	font-size: 1.15em;
-}
 
 .link-with-close {
 	font-size: 22px;
@@ -16821,7 +16818,7 @@ textarea.form-control, .select2.select2-container--default textarea.select2-sele
 	border: none;
 	font-size: 11px;
 	line-height: 1;
-	transition: color 0.3s;
+	transition: color 0.3s, transform 0.3s;
 }
 @media (min-width: 1200px) {
 	.cookies-banner__btn-close {
@@ -16831,6 +16828,7 @@ textarea.form-control, .select2.select2-container--default textarea.select2-sele
 }
 .cookies-banner__btn-close:hover {
 	color: #26E37A;
+	transform: rotate(90deg);
 }
 .cookies-banner__icon {
 	max-width: 40px;
