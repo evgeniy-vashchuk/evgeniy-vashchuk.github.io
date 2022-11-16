@@ -28,6 +28,7 @@ $(function () {
 	initMaskMoney();
 	initSvgInjector();
 	initMatchHeight();
+	initCookiesBanner();
 
 	$(window).on('resize', function () {
 		initStickyFooter();
@@ -538,5 +539,35 @@ $(function () {
 	// MATCH HEIGHT
 	function initMatchHeight() {
 		$('.js-match-height').matchHeight();
+	}
+
+	// COOKIES BANNER
+	function initCookiesBanner() {
+		var cookiesBanner = $('.js-cookies-banner'),
+			rejectCookiesBtn = $('.js-reject-cookies'),
+			acceptCookiesBtn = $('.js-accept-cookies');
+
+		if (!cookiesBanner.length) return;
+
+		var cookiesAreRejected = Cookies.get('cookiesAreRejected'),
+			cookiesAreAccepted = Cookies.get('cookiesAreAccepted');
+
+		if (cookiesAreRejected === undefined && cookiesAreAccepted === undefined) {
+			cookiesBanner.removeClass('d-none');
+		}
+
+		rejectCookiesBtn.on('click', function (e) {
+			e.preventDefault();
+
+			Cookies.set('cookiesAreRejected', 'true', { expires: 7 });
+			cookiesBanner.addClass('d-none');
+		});
+
+		acceptCookiesBtn.on('click', function (e) {
+			e.preventDefault();
+
+			Cookies.set('cookiesAreAccepted', 'true', { expires: 7 });
+			cookiesBanner.addClass('d-none');
+		});
 	}
 });
