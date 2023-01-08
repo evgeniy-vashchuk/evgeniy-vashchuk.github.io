@@ -30,18 +30,67 @@
 	// =========================
 
 	function initHamburgerMenu() {
-		$('.js-hamburger-menu').on('click', function(e) {
+		var hamburgerMenu = $('.js-hamburger-menu');
+
+		function openMenu() {
+			hamburgerMenu.addClass('-active');
+		}
+
+		function closeMenu() {
+			hamburgerMenu.removeClass('-active');
+		}
+
+		hamburgerMenu.on('click', function(e) {
 			e.preventDefault();
 
-			if ($(this).hasClass('-active')) {
-				$(this).removeClass('-active');
+			if (!$(this).hasClass('-active')) {
+				openMenu();
 			} else {
-				$(this).addClass('-active')
+				closeMenu();
 			}
-		})
+		});
+
+		// close with escape key
+		$(document).keyup(function(e) {
+			if (e.keyCode == 27) {
+				closeMenu();
+			}
+		});
 	}
 
 	initHamburgerMenu();
+
+	// =========================
+	// STOP ANIMATIONS DURING WINDOW RESIZING =================================
+	// =========================
+
+	function initStopAnimationsDuringWindowResizing() {
+		var resizeTimer;
+
+		$(window).on('resize', function() {
+			$('body').addClass('resize-animation-stopper');
+
+			clearTimeout(resizeTimer);
+
+			resizeTimer = setTimeout(function() {
+				$('body').removeClass('resize-animation-stopper');
+			}, 400);
+		});
+	}
+
+	initStopAnimationsDuringWindowResizing();
+
+	// =========================
+	// ONLY NUMERIC INPUT =================================
+	// =========================
+
+	function initOnlyNumericInput() {
+		$('.js-only-numeric-input').on('input', function() {
+			this.value = this.value.replace(/[^\d]/g, '');
+		});
+	}
+
+	initOnlyNumericInput();
 
 	// =========================
 	// VIEWPORT UNITS ON MOBILE =================================
@@ -106,6 +155,8 @@
 
 			if (countNumber.indexOf('.') > 0) {
 				numbersAfterComma = countNumber.length - (countNumber.indexOf('.') + 1);
+			} else if (countNumber.indexOf(',') > 0) {
+				numbersAfterComma = countNumber.length - (countNumber.indexOf(',') + 1);
 			}
 
 			var options = {

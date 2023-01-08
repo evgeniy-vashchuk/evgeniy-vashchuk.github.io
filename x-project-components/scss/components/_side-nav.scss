@@ -14,7 +14,7 @@
 
 	&__list-group {
 		overflow-y: auto;
-		max-height: calc(100vh - 9rem);
+		max-height: calc(100vh - 10rem);
 		display: block;
 
 		@include max-w(991) {
