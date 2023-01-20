@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Test task</title>
+	<meta name="description" content="Description of the site">
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+	<meta name="theme-color" content="#000000">
+
+	<!-- connection CSS -->
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+	<div class="form-block">
+		<div class="form-block__search-block">
+			<input type="text" class="form-control js-search-input" placeholder="Search">
+		</div>
+
+		<div class="form-block__actions-block">
+			<label class="switcher-item">
+				<input type="checkbox" class="switcher-item__input js-show-only-selected">
+
+				<span class="switcher-item__block-wrap">
+					<span class="switcher-item__block"></span>
+
+					<span class="switcher-item__text">Show selected only</span>
+				</span>
+			</label>
+
+			<a href="#" class="form-block__action-link js-clear-all">Clear all</a>
+		</div>
+
+		<div class="form-block__checkbox-list-block">
+			<p class="js-no-selected-elements d-none">There is no selected elements</p>
+			<ul class="form-block__checkbox-list">
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Afghanistan">
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Afghanistan</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Algeria">
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Algeria</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Angola" checked>
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Angola</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Andorra">
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Andorra</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Albania" checked disabled>
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Albania</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Argentina">
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Argentina</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Belgium" checked>
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Belgium</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Brazil">
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Brazil</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Canada" checked>
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Canada</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Cuba">
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Cuba</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Egypt">
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Egypt</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="France" checked>
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">France</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Germany" checked>
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Germany</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Greece">
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Greece</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="India">
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">India</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Japan" checked disabled>
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Japan</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Mexico">
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Mexico</span>
+						</span>
+					</label>
+				</li>
+				<li class="form-block__checkbox-list-item js-checkbox-item">
+					<label class="checkbox-item">
+						<input type="checkbox" class="checkbox-item__input" name="Norway" checked>
+
+						<span class="checkbox-item__block">
+							<span class="checkbox-item__checkmark"></span>
+
+							<span class="checkbox-item__text">Norway</span>
+						</span>
+					</label>
+				</li>
+			</ul>
+		</div>
+
+		<div class="form-block__btn-block">
+			<a href="#" class="btn btn-primary">Save</a>
+		</div>
+	</div>
+
+	<!-- connection JAVASCRIPT -->
+	<script src="js/main.js"></script>
+</body>
+</html>
