@@ -27,7 +27,7 @@
 					<div class="col-auto order-3 order-md-1">
 						<ul class="page-nav-buttons-list">
 							<li class="page-nav-buttons-list__item"><a class="page-nav-btn gray like-link-on-desktop with-dot" href="#"><span class="page-nav-btn__icon icomoon-speech-bubbles"></span><span class="page-nav-btn__text">Chat</span></a></li>
-							<li class="page-nav-buttons-list__item"><a class="page-nav-btn blue-dark" href="#"><span class="page-nav-btn__icon icomoon-people"></span><span class="page-nav-btn__text">All Buyers</span></a></li>
+							<li class="page-nav-buttons-list__item"><a class="page-nav-btn blue-dark" href="#"><span class="page-nav-btn__icon icomoon-people"></span><span class="page-nav-btn__text">All suppliers</span></a></li>
 						</ul>
 					</div>
 					<div class="col d-none d-md-block order-md-2"></div>
@@ -46,8 +46,8 @@
 							<ul class="dropdown-menu dropdown-menu-end dropdown-navigation__dropdown-menu">
 								<li class="dropdown-navigation__dropdown-menu-item"><a class="dropdown-navigation__dropdown-menu-link bg-primary" href="#"><span class="icomoon-user dropdown-navigation__dropdown-menu-link-icon"></span> Personal info</a></li>
 								<li class="dropdown-navigation__dropdown-menu-item"><a class="dropdown-navigation__dropdown-menu-link bg-primary" href="#"><span class="icomoon-target dropdown-navigation__dropdown-menu-link-icon"></span> Targeting</a></li>
-								<li class="dropdown-navigation__dropdown-menu-item"><a class="dropdown-navigation__dropdown-menu-link bg-primary" href="#"><span class="icomoon-settings dropdown-navigation__dropdown-menu-link-icon"></span> Products</a></li>
-								<li class="dropdown-navigation__dropdown-menu-item"><a class="dropdown-navigation__dropdown-menu-link bg-primary" href="#"><span class="icomoon-products dropdown-navigation__dropdown-menu-link-icon"></span> Chat settings</a></li>
+								<li class="dropdown-navigation__dropdown-menu-item"><a class="dropdown-navigation__dropdown-menu-link bg-primary" href="#"><span class="icomoon-products dropdown-navigation__dropdown-menu-link-icon"></span> Products</a></li>
+								<li class="dropdown-navigation__dropdown-menu-item"><a class="dropdown-navigation__dropdown-menu-link bg-primary" href="#"><span class="icomoon-settings dropdown-navigation__dropdown-menu-link-icon"></span> Chat settings</a></li>
 								<li class="dropdown-navigation__dropdown-menu-item"><a class="dropdown-navigation__dropdown-menu-link bg-primary" href="#"><span class="icomoon-accept dropdown-navigation__dropdown-menu-link-icon"></span> Terms of services</a></li>
 								<li class="dropdown-navigation__dropdown-menu-item"><a class="dropdown-navigation__dropdown-menu-link bg-primary revert" href="#"><span class="icomoon-off-button dropdown-navigation__dropdown-menu-link-icon"></span> Log out</a></li>
 							</ul>
@@ -63,7 +63,7 @@
 			<section class="pb-40 pb-md-60">
 				<div class="container">
 					<ul class="page-tabs-links">
-						<li class="page-tabs-links__item"><a class="page-tabs-links__link active" href="#">All buyers</a></li>
+						<li class="page-tabs-links__item"><a class="page-tabs-links__link active" href="#">All suppliers</a></li>
 						<li class="page-tabs-links__item"><a class="page-tabs-links__link with-dot" href="#">Invitations</a></li>
 					</ul>
 
@@ -81,10 +81,10 @@
 									<button class="filter-block__dropdown-toggle js-filter-item-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-display="static"><span class="filter-block__dropdown-filter-counter bg-primary js-filter-counter">0</span> Products</button>
 									<div class="filter-block__dropdown-menu dropdown-menu">
 										<div class="filter-block__dropdown-search-bar">
-											<input class="filter-block__search-input" type="text" placeholder="Search">
+											<input class="filter-block__search-input js-filter-search" type="text" placeholder="Search">
 
 											<label class="switcher-item filter-block__switcher-item">
-												<input class="switcher-item__input" type="checkbox"><span class="switcher-item__block-wrap"><span class="switcher-item__block bg-primary"></span><span class="switcher-item__text">Show selected only</span></span>
+												<input class="switcher-item__input js-filter-only-selected" type="checkbox"><span class="switcher-item__block-wrap"><span class="switcher-item__block bg-primary"></span><span class="switcher-item__text">Show selected only</span></span>
 											</label>
 										</div>
 										<div class="filter-block__dropdown-filter-block">
@@ -131,8 +131,8 @@
 												</li>
 											</ul>
 											<ul class="filter-block__dropdown-filter-actions-list">
-												<li class="filter-block__dropdown-filter-actions-list-item"><a class="btn btn-link px-0" href="#">Clear all</a></li>
-												<li class="filter-block__dropdown-filter-actions-list-item"><a class="btn btn-primary" href="#">Save</a></li>
+												<li class="filter-block__dropdown-filter-actions-list-item"><a class="btn btn-link px-0 js-filters-clear-btn" href="#">Clear all</a></li>
+												<li class="filter-block__dropdown-filter-actions-list-item"><a class="btn btn-primary js-filters-save-btn" href="#">Save</a></li>
 											</ul>
 										</div>
 									</div>
@@ -143,10 +143,10 @@
 									<button class="filter-block__dropdown-toggle js-filter-item-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-display="static"><span class="filter-block__dropdown-filter-counter bg-primary js-filter-counter">0</span> Region or Country</button>
 									<div class="filter-block__dropdown-menu dropdown-menu">
 										<div class="filter-block__dropdown-search-bar">
-											<input class="filter-block__search-input" type="text" placeholder="Search">
+											<input class="filter-block__search-input js-filter-search" type="text" placeholder="Search">
 
 											<label class="switcher-item filter-block__switcher-item">
-												<input class="switcher-item__input" type="checkbox"><span class="switcher-item__block-wrap"><span class="switcher-item__block bg-primary"></span><span class="switcher-item__text">Show selected only</span></span>
+												<input class="switcher-item__input js-filter-only-selected" type="checkbox"><span class="switcher-item__block-wrap"><span class="switcher-item__block bg-primary"></span><span class="switcher-item__text">Show selected only</span></span>
 											</label>
 										</div>
 										<div class="filter-block__dropdown-filter-block">
@@ -208,8 +208,8 @@
 												</li>
 											</ul>
 											<ul class="filter-block__dropdown-filter-actions-list">
-												<li class="filter-block__dropdown-filter-actions-list-item"><a class="btn btn-link px-0" href="#">Clear all</a></li>
-												<li class="filter-block__dropdown-filter-actions-list-item"><a class="btn btn-primary" href="#">Save</a></li>
+												<li class="filter-block__dropdown-filter-actions-list-item"><a class="btn btn-link px-0 js-filters-clear-btn" href="#">Clear all</a></li>
+												<li class="filter-block__dropdown-filter-actions-list-item"><a class="btn btn-primary js-filters-save-btn" href="#">Save</a></li>
 											</ul>
 										</div>
 									</div>
@@ -218,267 +218,213 @@
 						</div>
 					</div>
 
-					<div class="row remove-last-child-margin js-masonry-grid">
-						<div class="col-md-6 col-lg-4">
-							<div class="card-producer js-card-producer active" data-country="Spain, Netherlands" data-products="Meat, Drinks">
-								<h4 class="card-producer__title">Available <span class='text-primary'>sales agent</span> from <span class='text-primary'>Estonia</span></h4>
-								<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
+					<div class="remove-last-child-margin mx-auto masonry-grid js-masonry-grid">
+						<div class="card-producer js-card-producer verified" data-country="Spain, Netherlands" data-products="Meat, Drinks">
+							<h4 class="card-producer__title">Available <span class='text-primary'>sales agent</span> from <span class='text-primary'>Estonia</span></h4>
+							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
-								<ul class="card-producer__info-list">
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Connected to</p>
-										<p class="mb-0">5 Producers</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Description</p>
-										<p class="mb-0">5 years experience in international trading targeting HoReCa sector</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Active in</p>
-										<p class="mb-0">Spain, Netherlands</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Looking for producers of</p>
-										<p class="mb-0">Meat, Drinks</p>
-									</li>
-								</ul>
+							<ul class="card-producer__info-list">
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Connected to</p>
+									<p class="mb-0">5 Producers</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Active in</p>
+									<p class="mb-0">Spain, Netherlands</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Looking for producers of</p>
+									<p class="mb-0">Meat, Drinks</p>
+								</li>
+							</ul>
 
-								<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
-								</div>
-								<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
+							<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
 							</div>
+							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="card-producer js-card-producer active" data-country="Belgium, Germany, United States, Porgutal" data-products="Fresh fruits, vegetables, meat, and beans">
-								<h4 class="card-producer__title">Available <span class='text-primary'>distributor</span> from <span class='text-primary'>United States of America</span></h4>
-								<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
+						<div class="card-producer js-card-producer verified" data-country="Belgium, Germany, United States, Porgutal" data-products="Fresh fruits, vegetables, meat, and beans">
+							<h4 class="card-producer__title">Available <span class='text-primary'>distributor</span> from <span class='text-primary'>United States of America</span></h4>
+							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
-								<ul class="card-producer__info-list">
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Connected to</p>
-										<p class="mb-0">5 Producers</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Description</p>
-										<p class="mb-0">5 years experience in international trading targeting HoReCa sector</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Active in</p>
-										<p class="mb-0">Belgium, Germany, United States, Porgutal</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Looking for producers of</p>
-										<p class="mb-0">Fresh fruits, vegetables, meat, and beans</p>
-									</li>
-								</ul>
+							<ul class="card-producer__info-list">
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Connected to</p>
+									<p class="mb-0">5 Producers</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Active in</p>
+									<p class="mb-0">Belgium, Germany, United States, Porgutal</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Looking for producers of</p>
+									<p class="mb-0">Fresh fruits, vegetables, meat, and beans</p>
+								</li>
+							</ul>
 
-								<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
-								</div>
-								<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
+							<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
 							</div>
+							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="card-producer js-card-producer active" data-country="France" data-products="Frozen food">
-								<h4 class="card-producer__title">Available <span class='text-primary'>sales agent</span> from <span class='text-primary'>Macedonia</span></h4>
-								<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
+						<div class="card-producer js-card-producer verified" data-country="France" data-products="Frozen food">
+							<h4 class="card-producer__title">Available <span class='text-primary'>sales agent</span> from <span class='text-primary'>Macedonia</span></h4>
+							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
-								<ul class="card-producer__info-list">
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Connected to</p>
-										<p class="mb-0">5 Producers</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Description</p>
-										<p class="mb-0">5 years experience in international trading targeting HoReCa sector</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Active in</p>
-										<p class="mb-0">France</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Looking for producers of</p>
-										<p class="mb-0">Frozen food</p>
-									</li>
-								</ul>
+							<ul class="card-producer__info-list">
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Connected to</p>
+									<p class="mb-0">5 Producers</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Active in</p>
+									<p class="mb-0">France</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Looking for producers of</p>
+									<p class="mb-0">Frozen food</p>
+								</li>
+							</ul>
 
-								<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
-								</div>
-								<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
+							<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
 							</div>
+							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="card-producer js-card-producer active" data-country="United Kingdom, Porgutal" data-products="Drinks">
-								<h4 class="card-producer__title">Available <span class='text-primary'>distributor</span> from <span class='text-primary'>China</span></h4>
-								<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
+						<div class="card-producer js-card-producer verified" data-country="United Kingdom, Porgutal" data-products="Drinks">
+							<h4 class="card-producer__title">Available <span class='text-primary'>distributor</span> from <span class='text-primary'>China</span></h4>
+							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
-								<ul class="card-producer__info-list">
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Connected to</p>
-										<p class="mb-0">5 Producers</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Description</p>
-										<p class="mb-0">5 years experience in international trading targeting HoReCa sector</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Active in</p>
-										<p class="mb-0">United Kingdom, Porgutal</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Looking for producers of</p>
-										<p class="mb-0">Drinks</p>
-									</li>
-								</ul>
+							<ul class="card-producer__info-list">
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Connected to</p>
+									<p class="mb-0">5 Producers</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Active in</p>
+									<p class="mb-0">United Kingdom, Porgutal</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Looking for producers of</p>
+									<p class="mb-0">Drinks</p>
+								</li>
+							</ul>
 
-								<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
-								</div>
-								<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
+							<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
 							</div>
+							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="card-producer js-card-producer active" data-country="Netherlands" data-products="Fruit &amp; vegetables, Bread, Frozen food">
-								<h4 class="card-producer__title">Available <span class='text-primary'>distributor</span> from <span class='text-primary'>China</span></h4>
-								<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
+						<div class="card-producer js-card-producer verified" data-country="Netherlands" data-products="Fruit &amp; vegetables, Bread, Frozen food">
+							<h4 class="card-producer__title">Available <span class='text-primary'>distributor</span> from <span class='text-primary'>China</span></h4>
+							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
-								<ul class="card-producer__info-list">
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Connected to</p>
-										<p class="mb-0">5 Producers</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Description</p>
-										<p class="mb-0">5 years experience in international trading targeting HoReCa sector</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Active in</p>
-										<p class="mb-0">Netherlands</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Looking for producers of</p>
-										<p class="mb-0">Fruit &amp; vegetables, Bread, Frozen food</p>
-									</li>
-								</ul>
+							<ul class="card-producer__info-list">
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Connected to</p>
+									<p class="mb-0">5 Producers</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Active in</p>
+									<p class="mb-0">Netherlands</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Looking for producers of</p>
+									<p class="mb-0">Fruit &amp; vegetables, Bread, Frozen food</p>
+								</li>
+							</ul>
 
-								<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
-								</div>
-								<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
+							<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
 							</div>
+							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="card-producer js-card-producer active" data-country="Porgutal" data-products="Fresh convenience food">
-								<h4 class="card-producer__title">Available <span class='text-primary'>retailer</span> from <span class='text-primary'>South Korea</span></h4>
-								<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
+						<div class="card-producer js-card-producer verified" data-country="Porgutal" data-products="Fresh convenience food">
+							<h4 class="card-producer__title">Available <span class='text-primary'>retailer</span> from <span class='text-primary'>South Korea</span></h4>
+							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
-								<ul class="card-producer__info-list">
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Connected to</p>
-										<p class="mb-0">5 Producers</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Description</p>
-										<p class="mb-0">5 years experience in international trading targeting HoReCa sector</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Active in</p>
-										<p class="mb-0">Porgutal</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Looking for producers of</p>
-										<p class="mb-0">Fresh convenience food</p>
-									</li>
-								</ul>
+							<ul class="card-producer__info-list">
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Connected to</p>
+									<p class="mb-0">5 Producers</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Active in</p>
+									<p class="mb-0">Porgutal</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Looking for producers of</p>
+									<p class="mb-0">Fresh convenience food</p>
+								</li>
+							</ul>
 
-								<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
-								</div>
-								<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
+							<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
 							</div>
+							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="card-producer js-card-producer active" data-country="Porgutal, Estonia" data-products="Fresh convenience food, Fruit &amp; vegetables, Fish">
-								<h4 class="card-producer__title">Available <span class='text-primary'>sales agent</span> from <span class='text-primary'>Macedonia</span></h4>
-								<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
+						<div class="card-producer js-card-producer verified" data-country="Porgutal, Estonia" data-products="Fresh convenience food, Fruit &amp; vegetables, Fish">
+							<h4 class="card-producer__title">Available <span class='text-primary'>sales agent</span> from <span class='text-primary'>Macedonia</span></h4>
+							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
-								<ul class="card-producer__info-list">
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Connected to</p>
-										<p class="mb-0">5 Producers</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Description</p>
-										<p class="mb-0">5 years experience in international trading targeting HoReCa sector</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Active in</p>
-										<p class="mb-0">Porgutal, Estonia</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Looking for producers of</p>
-										<p class="mb-0">Fresh convenience food, Fruit &amp; vegetables, Fish</p>
-									</li>
-								</ul>
+							<ul class="card-producer__info-list">
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Connected to</p>
+									<p class="mb-0">5 Producers</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Active in</p>
+									<p class="mb-0">Porgutal, Estonia</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Looking for producers of</p>
+									<p class="mb-0">Fresh convenience food, Fruit &amp; vegetables, Fish</p>
+								</li>
+							</ul>
 
-								<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
-								</div>
-								<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
+							<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
 							</div>
+							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="card-producer js-card-producer active" data-country="Italy, Netherlands, Belgium" data-products="Sausage, Fish">
-								<h4 class="card-producer__title">Available <span class='text-primary'>distributor</span> from <span class='text-primary'>China</span></h4>
-								<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
+						<div class="card-producer js-card-producer verified" data-country="Italy, Netherlands, Belgium" data-products="Sausage, Fish">
+							<h4 class="card-producer__title">Available <span class='text-primary'>distributor</span> from <span class='text-primary'>China</span></h4>
+							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
-								<ul class="card-producer__info-list">
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Connected to</p>
-										<p class="mb-0">5 Producers</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Description</p>
-										<p class="mb-0">5 years experience in international trading targeting HoReCa sector</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Active in</p>
-										<p class="mb-0">Italy, Netherlands, Belgium</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Looking for producers of</p>
-										<p class="mb-0">Sausage, Fish</p>
-									</li>
-								</ul>
+							<ul class="card-producer__info-list">
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Connected to</p>
+									<p class="mb-0">5 Producers</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Active in</p>
+									<p class="mb-0">Italy, Netherlands, Belgium</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Looking for producers of</p>
+									<p class="mb-0">Sausage, Fish</p>
+								</li>
+							</ul>
 
-								<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
-								</div>
-								<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
+							<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
 							</div>
+							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="col-md-6 col-lg-4">
-							<div class="card-producer js-card-producer active" data-country="United States, China" data-products="Meat, Drinks">
-								<h4 class="card-producer__title">Available <span class='text-primary'>sales agent</span> from <span class='text-primary'>Estonia</span></h4>
-								<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
+						<div class="card-producer js-card-producer verified" data-country="United States, China" data-products="Meat, Drinks">
+							<h4 class="card-producer__title">Available <span class='text-primary'>sales agent</span> from <span class='text-primary'>Estonia</span></h4>
+							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
-								<ul class="card-producer__info-list">
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Connected to</p>
-										<p class="mb-0">5 Producers</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Description</p>
-										<p class="mb-0">5 years experience in international trading targeting HoReCa sector</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Active in</p>
-										<p class="mb-0">United States</p>
-									</li>
-									<li class="card-producer__info-list-item">
-										<p class="mb-0 text-gray-500">Looking for producers of</p>
-										<p class="mb-0">Meat, Drinks</p>
-									</li>
-								</ul>
+							<ul class="card-producer__info-list">
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Connected to</p>
+									<p class="mb-0">5 Producers</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Active in</p>
+									<p class="mb-0">United States</p>
+								</li>
+								<li class="card-producer__info-list-item">
+									<p class="mb-0 text-gray-500">Looking for producers of</p>
+									<p class="mb-0">Meat, Drinks</p>
+								</li>
+							</ul>
 
-								<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
-								</div>
-								<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
+							<div class="card-producer__btn-block"><a class="card-producer__btn btn btn-primary-faded" href="#"><span class="icomoon-connect card-producer__btn-icon"></span> Connect</a>
 							</div>
+							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
 					</div>
 				</div>

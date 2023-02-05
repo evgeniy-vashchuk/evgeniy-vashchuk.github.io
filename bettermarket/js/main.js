@@ -23,7 +23,7 @@ var initTooltip = function initTooltip() {
 			setTimeout(function () {
 				tooltip.hide();
 				tooltipTriggerEl.classList.remove('active');
-			}, 3000);
+			}, 4000);
 		});
 	});
 };
@@ -34,7 +34,9 @@ var initMasonryGrid = function initMasonryGrid() {
 	if (masonryGrid.length) {
 		setTimeout(function () {
 			masonryGrid.masonry({
-				percentPosition: true
+				isFitWidth: true,
+				transitionDuration: 0,
+				gutter: 40
 			});
 		}, 100);
 	}
@@ -42,13 +44,22 @@ var initMasonryGrid = function initMasonryGrid() {
 
 var initFiltering = function initFiltering() {
 	var filter = {
+		filterData: {
+			checkedFilters: [],
+			searchRequest: '',
+			onlySelected: false
+		},
 		config: {
 			filter: '.js-filter',
 			filterOverlay: '.js-filter-overlay',
 			filterItem: '.js-filter-item',
 			filterDropdown: '.js-filter-item-dropdown',
 			filterCounter: '.js-filter-counter',
-			filterCheckbox: '.js-filter-checkbox'
+			filterCheckbox: '.js-filter-checkbox',
+			filterSearch: '.js-filter-search',
+			filterOnlySelected: '.js-filter-only-selected',
+			filterClearBtn: '.js-filters-clear-btn',
+			filterSaveBtn: '.js-filters-save-btn'
 		},
 
 		open: function open() {
@@ -61,25 +72,51 @@ var initFiltering = function initFiltering() {
 			$(this.config.filterOverlay).removeClass('active');
 		},
 
-		countFilters: function countFilters(filterItem) {
-			var checkedFilters = [];
+		clearFilterData: function clearFilterData() {
+			this.filterData.checkedFilters = [];
+			this.filterData.searchRequest = '';
+			this.filterData.onlySelected = false;
+		},
+
+		clearFilter: function clearFilter(filterItem) {
+			this.clearFilterData();
+
+			var searchInput = filterItem.find(this.config.filterSearch),
+				checkboxes = filterItem.find(this.config.filterCheckbox),
+				onlySelected = filterItem.find(this.config.filterOnlySelected);
+
+			searchInput.val('');
+			checkboxes.each(function () {
+				$(this).prop('checked', false);
+			});
+			onlySelected.prop('checked', false);
+		},
+
+		countCheckboxes: function countCheckboxes(filterItem) {
+			this.clearFilterData();
+
+			var checkedFilters = this.filterData.checkedFilters;
 
 			filterItem.find(this.config.filterCheckbox).each(function () {
 				if ($(this).is(':checked')) {
-					checkedFilters.push($(this).attr('name'));
+					var name = $(this).attr('name').toLowerCase().replace(/ /g, '_');
+
+					checkedFilters.push(name);
 				}
 			});
+		},
 
-			filterItem.find(this.config.filterCounter).text(checkedFilters.length);
+		getFilters: function getFilters() {
 
-			return checkedFilters;
 		}
 	};
 
 	$(filter.config.filterCheckbox).on('change', function () {
 		var filterItem = $(this).closest(filter.config.filterItem);
 
-		filter.countFilters(filterItem);
+		filter.countCheckboxes(filterItem);
+
+		filterItem.find(filter.config.filterCounter).text(filter.filterData.checkedFilters.length);
 	});
 
 	$(filter.config.filterDropdown).on('show.bs.dropdown', function () {
@@ -88,5 +125,21 @@ var initFiltering = function initFiltering() {
 
 	$(filter.config.filterDropdown).on('hide.bs.dropdown', function () {
 		filter.close();
+	});
+
+	$(filter.config.filterSaveBtn).on('click', function (e) {
+		e.preventDefault();
+
+		var filterItem = $(this).closest(filter.config.filterItem);
+
+		filter.countCheckboxes(filterItem);
+	});
+
+	$(filter.config.filterClearBtn).on('click', function (e) {
+		e.preventDefault();
+
+		var filterItem = $(this).closest(filter.config.filterItem);
+
+		filter.clearFilter(filterItem);
 	});
 };
