@@ -20,6 +20,12 @@
 	</head>
 
 	<body class="orange-theme">
+		<!--  PRELOADER -->
+		<div class="preloader-overlay js-preloader">
+			<div class="preloader-overlay__preloader-item preloader-item"></div>
+		</div>
+		<!--  PRELOADER END -->
+
 		<!-- HEADER -->
 		<header class="header">
 			<div class="container">
@@ -77,7 +83,7 @@
 
 						<div class="row g-0">
 							<div class="col-6">
-								<div class="dropdown filter-block__dropdown js-filter-item">
+								<div class="dropdown filter-block__dropdown js-filter-item" data-filter-type="products">
 									<button class="filter-block__dropdown-toggle js-filter-item-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-display="static"><span class="filter-block__dropdown-filter-counter bg-primary js-filter-counter">0</span> Products</button>
 									<div class="filter-block__dropdown-menu dropdown-menu">
 										<div class="filter-block__dropdown-search-bar">
@@ -88,45 +94,46 @@
 											</label>
 										</div>
 										<div class="filter-block__dropdown-filter-block">
+											<p class="filter-block__no-items-notification d-none js-filter-no-items">There is no selected elements</p>
 											<ul class="filter-block__dropdown-filters-list">
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="drinks"/><span class="checkbox-filter-item__text bg-primary">Drinks</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="drinks"/><span class="checkbox-filter-item__text bg-primary">Drinks<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="frozen-food"/><span class="checkbox-filter-item__text bg-primary">Frozen food</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="frozen-food"/><span class="checkbox-filter-item__text bg-primary">Frozen food<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="meat"/><span class="checkbox-filter-item__text bg-primary">Meat</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="meat"/><span class="checkbox-filter-item__text bg-primary">Meat<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="sausage"/><span class="checkbox-filter-item__text bg-primary">Sausage</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="sausage"/><span class="checkbox-filter-item__text bg-primary">Sausage<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="fresh-convenience-food"/><span class="checkbox-filter-item__text bg-primary">Fresh convenience food</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="fresh-convenience-food"/><span class="checkbox-filter-item__text bg-primary">Fresh convenience food<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="fish"/><span class="checkbox-filter-item__text bg-primary">Fish</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="fish"/><span class="checkbox-filter-item__text bg-primary">Fish<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="fruit-&amp;-vegetables"/><span class="checkbox-filter-item__text bg-primary">Fruit &amp; vegetables</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="fruit-&amp;-vegetables"/><span class="checkbox-filter-item__text bg-primary">Fruit &amp; vegetables<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="bread"/><span class="checkbox-filter-item__text bg-primary">Bread</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="bread"/><span class="checkbox-filter-item__text bg-primary">Bread<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
 											</ul>
@@ -139,7 +146,7 @@
 								</div>
 							</div>
 							<div class="col-6">
-								<div class="dropdown filter-block__dropdown js-filter-item">
+								<div class="dropdown filter-block__dropdown js-filter-item" data-filter-type="country">
 									<button class="filter-block__dropdown-toggle js-filter-item-dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outside" data-bs-display="static"><span class="filter-block__dropdown-filter-counter bg-primary js-filter-counter">0</span> Region or Country</button>
 									<div class="filter-block__dropdown-menu dropdown-menu">
 										<div class="filter-block__dropdown-search-bar">
@@ -150,60 +157,61 @@
 											</label>
 										</div>
 										<div class="filter-block__dropdown-filter-block">
+											<p class="filter-block__no-items-notification d-none js-filter-no-items">There is no selected elements</p>
 											<ul class="filter-block__dropdown-filters-list">
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="spain"/><span class="checkbox-filter-item__text bg-primary">Spain</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="spain"/><span class="checkbox-filter-item__text bg-primary">Spain<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="netherlands"/><span class="checkbox-filter-item__text bg-primary">Netherlands</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="netherlands"/><span class="checkbox-filter-item__text bg-primary">Netherlands<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="belgium"/><span class="checkbox-filter-item__text bg-primary">Belgium</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="belgium"/><span class="checkbox-filter-item__text bg-primary">Belgium<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="germany"/><span class="checkbox-filter-item__text bg-primary">Germany</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="germany"/><span class="checkbox-filter-item__text bg-primary">Germany<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="france"/><span class="checkbox-filter-item__text bg-primary">France</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="france"/><span class="checkbox-filter-item__text bg-primary">France<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="united-kingdom"/><span class="checkbox-filter-item__text bg-primary">United Kingdom</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="united-kingdom"/><span class="checkbox-filter-item__text bg-primary">United Kingdom<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="porgutal"/><span class="checkbox-filter-item__text bg-primary">Porgutal</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="porgutal"/><span class="checkbox-filter-item__text bg-primary">Porgutal<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="estonia"/><span class="checkbox-filter-item__text bg-primary">Estonia</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="estonia"/><span class="checkbox-filter-item__text bg-primary">Estonia<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="italy"/><span class="checkbox-filter-item__text bg-primary">Italy</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="italy"/><span class="checkbox-filter-item__text bg-primary">Italy<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="united-states"/><span class="checkbox-filter-item__text bg-primary">United States</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="united-states"/><span class="checkbox-filter-item__text bg-primary">United States<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
-												<li class="filter-block__dropdown-filter-list-item">
-													<label class="checkbox-filter-item">
-														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="china"/><span class="checkbox-filter-item__text bg-primary">China</span>
+												<li class="filter-block__dropdown-filter-list-item js-filter-checkbox-item">
+													<label class="checkbox-filter-item js-filter-checkbox-label">
+														<input class="checkbox-filter-item__input js-filter-checkbox" type="checkbox" name="china"/><span class="checkbox-filter-item__text bg-primary">China<span class="checkbox-filter-item__triangle-mark text-primary"></span></span>
 													</label>
 												</li>
 											</ul>
@@ -218,8 +226,17 @@
 						</div>
 					</div>
 
+					<div class="empty-block js-filter-empty-block d-none">
+
+						<h1>Nothing found</h1>
+						<div class="empty-block__text text-block text-xl">
+							<p>Please use other filters</p>
+						</div>
+					</div>
+
 					<div class="remove-last-child-margin mx-auto masonry-grid js-masonry-grid">
-						<div class="card-producer js-card-producer active" data-country="Spain, Netherlands" data-products="Meat, Drinks">
+						<div class="masonry-grid__column-sizer js-masonry-grid-column-sizer"></div>
+						<div class="card-producer js-filter-card js-masonry-grid-card active" data-filter-country="Spain, Netherlands" data-filter-products="Meat, Drinks">
 							<h4 class="card-producer__title">Available <span class='text-primary'>sales agent</span> from <span class='text-primary'>Estonia</span></h4>
 							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
@@ -246,7 +263,7 @@
 							</div>
 							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="card-producer js-card-producer active" data-country="Belgium, Germany, United States, Porgutal" data-products="Fresh fruits, vegetables, meat, and beans">
+						<div class="card-producer js-filter-card js-masonry-grid-card active" data-filter-country="Belgium, Germany, United States, Porgutal" data-filter-products="Fresh fruits, vegetables, meat, and beans">
 							<h4 class="card-producer__title">Available <span class='text-primary'>distributor</span> from <span class='text-primary'>United States of America</span></h4>
 							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
@@ -273,7 +290,7 @@
 							</div>
 							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="card-producer js-card-producer active" data-country="France" data-products="Frozen food">
+						<div class="card-producer js-filter-card js-masonry-grid-card active" data-filter-country="France" data-filter-products="Frozen food">
 							<h4 class="card-producer__title">Available <span class='text-primary'>sales agent</span> from <span class='text-primary'>Macedonia</span></h4>
 							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
@@ -300,7 +317,7 @@
 							</div>
 							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="card-producer js-card-producer active" data-country="United Kingdom, Porgutal" data-products="Drinks">
+						<div class="card-producer js-filter-card js-masonry-grid-card active" data-filter-country="United Kingdom, Porgutal" data-filter-products="Drinks">
 							<h4 class="card-producer__title">Available <span class='text-primary'>distributor</span> from <span class='text-primary'>China</span></h4>
 							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
@@ -327,7 +344,7 @@
 							</div>
 							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="card-producer js-card-producer active" data-country="Netherlands" data-products="Fruit &amp; vegetables, Bread, Frozen food">
+						<div class="card-producer js-filter-card js-masonry-grid-card active" data-filter-country="Netherlands" data-filter-products="Fruit &amp; vegetables, Bread, Frozen food">
 							<h4 class="card-producer__title">Available <span class='text-primary'>distributor</span> from <span class='text-primary'>China</span></h4>
 							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
@@ -354,7 +371,7 @@
 							</div>
 							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="card-producer js-card-producer active" data-country="Porgutal" data-products="Fresh convenience food">
+						<div class="card-producer js-filter-card js-masonry-grid-card active" data-filter-country="Porgutal" data-filter-products="Fresh convenience food">
 							<h4 class="card-producer__title">Available <span class='text-primary'>retailer</span> from <span class='text-primary'>South Korea</span></h4>
 							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
@@ -381,7 +398,7 @@
 							</div>
 							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="card-producer js-card-producer active" data-country="Porgutal, Estonia" data-products="Fresh convenience food, Fruit &amp; vegetables, Fish">
+						<div class="card-producer js-filter-card js-masonry-grid-card active" data-filter-country="Porgutal, Estonia" data-filter-products="Fresh convenience food, Fruit &amp; vegetables, Fish">
 							<h4 class="card-producer__title">Available <span class='text-primary'>sales agent</span> from <span class='text-primary'>Macedonia</span></h4>
 							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
@@ -408,7 +425,7 @@
 							</div>
 							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="card-producer js-card-producer active" data-country="Italy, Netherlands, Belgium" data-products="Sausage, Fish">
+						<div class="card-producer js-filter-card js-masonry-grid-card active" data-filter-country="Italy, Netherlands, Belgium" data-filter-products="Sausage, Fish">
 							<h4 class="card-producer__title">Available <span class='text-primary'>distributor</span> from <span class='text-primary'>China</span></h4>
 							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
@@ -435,7 +452,7 @@
 							</div>
 							<span class="card-producer__badge active bg-primary">Active</span><span class="card-producer__badge verified bg-primary">Verified</span><span class="card-producer__badge new bg-danger">new!</span><a class="card-producer__delete-btn" href="#"><span class="icomoon-remove"></span></a>
 						</div>
-						<div class="card-producer js-card-producer active" data-country="United States, China" data-products="Meat, Drinks">
+						<div class="card-producer js-filter-card js-masonry-grid-card active" data-filter-country="United States, China" data-filter-products="Meat, Drinks">
 							<h4 class="card-producer__title">Available <span class='text-primary'>sales agent</span> from <span class='text-primary'>Estonia</span></h4>
 							<h6 class="card-producer__sub-title">Typically replies in <span class='text-primary'>1 working day</span></h6>
 
