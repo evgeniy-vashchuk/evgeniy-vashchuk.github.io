@@ -13163,9 +13163,6 @@ h1, .h1 {
 .checkbox-filter-item:hover .checkbox-filter-item__text {
 	border-color: #232323;
 }
-.checkbox-filter-item.search-matched .checkbox-filter-item__triangle-mark {
-	opacity: 1;
-}
 .checkbox-filter-item__input {
 	position: absolute;
 	width: 1px;
@@ -13198,19 +13195,6 @@ h1, .h1 {
 	border-radius: 22px;
 	padding: 3px 10px 1px;
 	transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-}
-.checkbox-filter-item__triangle-mark {
-	width: 0;
-	height: 0;
-	border-style: solid;
-	border-width: 0 4.5px 7px 4.5px;
-	border-color: transparent transparent currentColor transparent;
-	position: absolute;
-	left: 50%;
-	top: 100%;
-	transform: translate(-50%, 0);
-	display: block;
-	opacity: 0;
 }
 
 .card-producer {

@@ -73,7 +73,6 @@ var initFiltering = function initFiltering() {
 			filterDropdown: '.js-filter-item-dropdown',
 			filterCounter: '.js-filter-counter',
 			filterCheckbox: '.js-filter-checkbox',
-			filterCheckboxLabel: '.js-filter-checkbox-label',
 			filterCheckboxItem: '.js-filter-checkbox-item',
 			filterSearch: '.js-filter-search',
 			filterOnlySelected: '.js-filter-only-selected',
@@ -251,11 +250,13 @@ var initFiltering = function initFiltering() {
 
 		searchFilters: function searchFilters(filterItem, event) {
 			var filterCheckbox = filterItem.find(this.config.filterCheckbox),
-				filterCheckboxLabel = this.config.filterCheckboxLabel,
-				typedText = event.target.value.toLowerCase().replace(/ /g, '-');
+				filterCheckboxItem = this.config.filterCheckboxItem,
+				typedText = event.target.value.toLowerCase().replace(/ /g, '-'),
+				noItems = true,
+				thisObject = this;
 
 			if (typedText === '') {
-				filterItem.find(filterCheckboxLabel).removeClass('search-matched');
+				filterItem.find(filterCheckboxItem).removeClass('d-none');
 
 				return;
 			}
@@ -264,9 +265,16 @@ var initFiltering = function initFiltering() {
 				var checkboxName = $(this).attr('name').toLowerCase().replace(/ /g, '-');
 
 				if (checkboxName.includes(typedText)) {
-					$(this).closest(filterCheckboxLabel).addClass('search-matched');
+					$(this).closest(filterCheckboxItem).removeClass('d-none');
+					noItems = false;
 				} else {
-					$(this).closest(filterCheckboxLabel).removeClass('search-matched');
+					$(this).closest(filterCheckboxItem).addClass('d-none');
+				}
+
+				if (noItems) {
+					thisObject.showNoItemsNotification(filterItem);
+				} else {
+					thisObject.hideNoItemsNotification(filterItem);
 				}
 			});
 		},
