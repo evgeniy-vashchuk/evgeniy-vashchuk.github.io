@@ -1,16 +1,30 @@
 'use strict';
 
-$(window).on('load', function () {
+gsap.registerEffect({
+	name: 'swapText',
+	effect: function effect(targets, config) {
+		var tl = gsap.timeline({ delay: config.delay });
+
+		tl.to(targets, { opacity: 0, duration: config.duration / 2 });
+		tl.add(function () {return targets[0].innerText = config.text;});
+		tl.to(targets, { opacity: 1, duration: config.duration });
+
+		return tl;
+	},
+	defaults: { duration: 0.5 },
+	extendTimeline: true
+});
+
+jQuery(window).on('load', function ($) {
 	portfolio.initPreloader();
 });
 
-$(function () {
+jQuery(function ($) {
 	portfolio.init();
 });
 
 var portfolio = {
 	config: {
-		body: 'body',
 		preloader: '.js-preloader',
 		preloaderText: '.js-preloader-text',
 		portfolioTabs: '.js-portfolio-tabs',
@@ -27,6 +41,11 @@ var portfolio = {
 		carouselFrameList: '.js-carousel-frame-list',
 		fancyboxLink: '.js-fancybox',
 		indexBtnForLightbox: '.js-index-btn-for-lightbox',
+		lightboxCloseMenuBtn: '.js-lightbox-close-menu-btn',
+		lightboxCaption: '.js-lightbox-caption',
+		lightboxTextSlide: '.js-lightbox-text-slide',
+		lightboxLastSlide: '.js-fancybox-last-slide',
+		headerForLightbox: '.js-header-for-lightbox',
 		tabWithCarousel: '.js-tab-with-carousel',
 		goToNextCategory: '.js-go-to-next-category'
 	},
@@ -34,7 +53,9 @@ var portfolio = {
 	status: {
 		categoryChange: false,
 		currentActiveTab: null,
-		currentActiveTabIsFeatured: null
+		currentActiveTabIsFeatured: null,
+		currentCategory: '',
+		lightboxTextIsShown: false
 	},
 
 	instances: {
@@ -77,6 +98,8 @@ var portfolio = {
 
 		function onStart() {
 			$this.blockHorizontalScroll();
+			$this.hideLightboxHeader();
+			$this.hideLastLightboxTextSlide();
 		}
 
 		function onComplete() {
@@ -90,10 +113,10 @@ var portfolio = {
 		}
 
 		openIndexTimeline.add('start');
-		openIndexTimeline.to(this.config.body, { ease: Power4.easeNone, backgroundColor: '#000000', duration: this.config.indexAnimationDuration }, 'start');
+		openIndexTimeline.to('body', { ease: Power4.easeNone, backgroundColor: '#000000', duration: this.config.indexAnimationDuration }, 'start');
 		openIndexTimeline.to(this.config.indexBlock, { ease: Power4.easeInOut, y: 0, duration: this.config.indexAnimationDuration }, 'start');
 		openIndexTimeline.to(this.config.portfolioTabs, { ease: Power4.easeInOut, y: '-100%', duration: this.config.indexAnimationDuration }, 'start');
-		if ($(this.config.body).hasClass('fancybox-active')) {
+		if ($('body').hasClass('fancybox-active')) {
 			openIndexTimeline.to($.fancybox.getInstance().$refs.container.find('.fancybox-inner'), { ease: Power4.easeInOut, y: '-100%', duration: this.config.indexAnimationDuration }, 'start');
 		}
 		openIndexTimeline.to(this.config.indexBlockCloseBtn, { ease: Power4.easeInOut, opacity: 1, duration: 1 }, '-=1');
@@ -186,9 +209,9 @@ var portfolio = {
 
 	setBackgroundColor: function setBackgroundColor() {
 		if (this.status.currentActiveTabIsFeatured) {
-			gsap.to(this.config.body, { ease: Power4.easeNone, backgroundColor: '#DDDDDD', duration: this.config.indexAnimationDuration });
+			gsap.to('body', { ease: Power4.easeNone, backgroundColor: '#DDDDDD', duration: this.config.indexAnimationDuration });
 		} else {
-			gsap.to(this.config.body, { ease: Power4.easeNone, backgroundColor: '#FFFFFF', duration: this.config.indexAnimationDuration });
+			gsap.to('body', { ease: Power4.easeNone, backgroundColor: '#FFFFFF', duration: this.config.indexAnimationDuration });
 		}
 	},
 
@@ -326,6 +349,42 @@ var portfolio = {
 		this.closeIndex();
 	},
 
+	hideLightbox: function hideLightbox() {
+		var hideLightboxTimeline = gsap.timeline({
+			onStart: onStart,
+			onComplete: onComplete
+		});
+
+		function onStart() {
+			$('body').addClass('lightbox-text-transition');
+		}
+
+		function onComplete() {
+			$('body').removeClass('lightbox-text-transition');
+		}
+
+		hideLightboxTimeline.
+		to(this.instances.current.$refs.container, { ease: Power4.easeNone, display: 'none', opacity: 0, duration: 1 });
+	},
+
+	showLightbox: function showLightbox() {
+		var showLightboxTimeline = gsap.timeline({
+			onStart: onStart,
+			onComplete: onComplete
+		});
+
+		function onStart() {
+			$('body').addClass('lightbox-text-transition');
+		}
+
+		function onComplete() {
+			$('body').removeClass('lightbox-text-transition');
+		}
+
+		showLightboxTimeline.
+		to(this.instances.current.$refs.container, { ease: Power4.easeNone, display: 'block', opacity: 1, duration: 1 });
+	},
+
 	lightboxAppearanceAnimation: function lightboxAppearanceAnimation(instance, direction) {
 		var appearanceAnimationTimeline = gsap.timeline(),
 			lightbox = instance.$refs.container.find('.fancybox-inner'),
@@ -345,27 +404,42 @@ var portfolio = {
 		to(lightbox, { ease: Power4.easeInOut, y: 0, duration: 2 }, 'start');
 	},
 
+	showLightboxHeader: function showLightboxHeader() {
+		gsap.to(this.config.headerForLightbox, { ease: Power4.easeNone, display: 'flex', opacity: 1, duration: 1 });
+	},
+
+	hideLightboxHeader: function hideLightboxHeader() {
+		gsap.to(this.config.headerForLightbox, { ease: Power4.easeNone, display: 'none', opacity: 0, duration: 1 });
+	},
+
+	isLastSlide: function isLastSlide(instance) {
+		return instance.currIndex === instance.group.length - 1 && !this.status.currentActiveTabIsFeatured ? true : false;
+	},
+
+	insertLightboxLastSlideText: function insertLightboxLastSlideText(text) {
+		if ($(this.config.lightboxTextSlide).text() !== text) {
+			$(this.config.lightboxTextSlide).text(text);
+		}
+	},
+
+	showLightboxTextSlide: function showLightboxTextSlide() {
+		this.status.lightboxTextIsShown = true;
+		gsap.to(this.config.lightboxTextSlide, { ease: Power4.easeNone, display: 'flex', opacity: 1, duration: 1 });
+	},
+
+	hideLastLightboxTextSlide: function hideLastLightboxTextSlide() {
+		this.status.lightboxTextIsShown = false;
+		gsap.to(this.config.lightboxTextSlide, { ease: Power4.easeNone, display: 'none', opacity: 0, duration: 1 });
+	},
+
 	initSliderLightbox: function initSliderLightbox() {
 		var $this = this;
-
-		$.fancybox.defaults.btnTpl.indexMenu = '<button data-fancybox-index-menu class="fancybox-button fancybox-button--index-menu ' + $this.config.indexBtn.substring(1) + '">' +
-		'<svg width="10" height="9" viewBox="0 0 10 9" fill="none" xmlns="http://www.w3.org/2000/svg">' +
-		'<rect width="4.00098" height="4.00098" fill="black"></rect>' +
-		'<rect y="5" width="4.00098" height="4.00098" fill="black"></rect>' +
-		'<rect x="5.3125" width="4.00098" height="4.00098" fill="black"></rect>' +
-		'<rect x="5.3125" y="5" width="4.00098" height="4.00098" fill="black"></rect>' +
-		'</svg>' +
-		'</button>';
 
 		$.fancybox.defaults.btnTpl.goToNextCategory = '<button data-fancybox-index-menu class="fancybox-button fancybox-button--go-to-next-category ' + $this.config.goToNextCategory.substring(1) + '">Next category</button>';
 
 		$(this.config.fancyboxLink).fancybox({
 			toolbar: true,
-			buttons: [
-			'close',
-			'indexMenu',
-			'goToNextCategory'],
-
+			buttons: ['goToNextCategory'],
 			keyboard: false,
 			animationDuration: 800,
 			transitionEffect: 'slide',
@@ -379,25 +453,40 @@ var portfolio = {
 			touch: false,
 			clickSlide: false,
 			btnTpl: {
-				close:
-				'<button data-fancybox-close class="fancybox-button fancybox-button--close">Menu</button>',
-				arrowLeft:
-				'<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left"></button>',
-				arrowRight:
-				'<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right"></button>'
+				arrowLeft: '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left"></button>',
+				arrowRight: '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right"></button>'
 			},
+
 			onInit: function onInit(instance) {
 				$this.instances.previous = $this.instances.current;
 				$this.instances.current = instance;
 			},
+
 			beforeShow: function beforeShow(instance, slide) {
+				$this.showLightboxHeader();
 				$this.openSliderLightbox();
+
+				if ($($this.config.lightboxCaption).text() !== slide.opts.caption) {
+					gsap.effects.swapText($this.config.lightboxCaption, { text: slide.opts.caption });
+				}
+
+				if ($this.isLastSlide(instance)) {
+					$($this.config.lightboxCaption).addClass('disabled');
+					$this.insertLightboxLastSlideText(slide.src.innerText);
+					$this.showLightboxTextSlide();
+				} else {
+					$($this.config.lightboxCaption).removeClass('disabled');
+				}
+
+				$this.status.currentCategory = slide.opts.caption.replace(' ', '-');
 			},
+
 			beforeClose: function beforeClose(instance, slide) {
 				if (!$this.config.categoryChange) $this.closeSliderLightbox();
 
 				$this.config.categoryChange = false;
 			},
+
 			afterShow: function afterShow(instance, slide) {
 				if (instance.group.length - 1 === instance.currIndex && slide.opts.fancybox !== 'featured') {
 					instance.$refs.navigation.addClass('d-none');
@@ -407,13 +496,27 @@ var portfolio = {
 			}
 		});
 
-		$(this.config.menuBtnForLightbox).on('click', function () {
-			$(this).removeClass('show');
-			$($this.config.indexBtnForLightbox).removeClass('show');
+		$(this.config.lightboxCloseMenuBtn).on('click', function () {
+			$this.hideLightboxHeader();
+			$this.hideLastLightboxTextSlide();
 			$.fancybox.close();
 		});
 
-		$('body').on('click', this.config.indexBtn, function () {
+		$(this.config.lightboxCaption).on('click', function () {
+			var currentCategory = $this.status.currentCategory,
+				lastSlideText = $($this.config.lightboxLastSlide + '[data-fancybox="' + currentCategory + '"]').text();
+
+			if (!$this.status.lightboxTextIsShown) {
+				$this.insertLightboxLastSlideText(lastSlideText);
+				$this.showLightboxTextSlide();
+				$this.hideLightbox();
+			} else {
+				$this.hideLastLightboxTextSlide();
+				$this.showLightbox();
+			}
+		});
+
+		$(this.config.indexBtn).on('click', function () {
 			$this.openIndex();
 		});
 
@@ -422,6 +525,7 @@ var portfolio = {
 				nextCategoryIndex = $this.getNextCategoryIndex(instance);
 
 			$this.config.categoryChange = true;
+			$this.hideLastLightboxTextSlide();
 			$this.changeTab(nextCategoryIndex);
 			$this.openLightbox(nextCategoryIndex, 0);
 			$this.lightboxAppearanceAnimation($this.instances.current, 'fromBottom');
@@ -435,13 +539,15 @@ var portfolio = {
 		});
 	},
 
-	init: function init() {var _this = this;
+	init: function init() {
+		var $this = this;
+
 		this.initHorizontalScrollOnHover();
 		this.initHoverOnIndex();
 		this.initSliderLightbox();
 
 		setTimeout(function () {
-			_this.initTabs();
+			$this.initTabs();
 		}, 100);
 	}
 };
