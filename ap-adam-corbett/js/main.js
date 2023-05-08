@@ -24,10 +24,15 @@ jQuery(function ($) {
 });
 
 var portfolio = {
+	scrollingAnimationId: undefined,
+
 	config: {
 		preloader: '.js-preloader',
 		preloaderText: '.js-preloader-text',
 		portfolioTabs: '.js-portfolio-tabs',
+		portfolioTabsContent: '.js-portfolio-tabs-content',
+		portfolioNavigation: '.js-portfolio-navigation',
+		portfolioAuthorBadge: '.js-portfolio-author-badge',
 		featuredTabBtn: '.js-featured-btn',
 		featuredTabIndex: $('.js-featured-btn').closest('li').index(),
 		indexBlock: '.js-index-block',
@@ -50,25 +55,59 @@ var portfolio = {
 		goToNextCategory: '.js-go-to-next-category'
 	},
 
+	fancyboxOptions: {
+		toolbar: true,
+		buttons: ['goToNextCategory'],
+		keyboard: false,
+		animationDuration: 1200,
+		transitionEffect: 'slide',
+		transitionDuration: 600,
+		hash: false,
+		wheel: false,
+		zoomOpacity: false,
+		clickContent: false,
+		infobar: false,
+		idleTime: false,
+		touch: false,
+		clickSlide: false,
+		backFocus: false,
+		btnTpl: {
+			arrowLeft: '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left"></button>',
+			arrowRight: '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right"></button>'
+		}
+	},
+
 	status: {
 		categoryChange: false,
 		currentActiveTab: null,
 		currentActiveTabIsFeatured: null,
 		currentCategory: '',
-		lightboxTextIsShown: false
+		itIsLastTextSlide: false,
+		lightboxTextIsShown: false,
+		nextCategoryIndex: 0,
+		nextCategoryId: 0,
+		indexIsShown: false
 	},
 
 	instances: {
-		previous: null,
-		current: null
+		current: null,
+		zoomAnimation: []
 	},
+
+	// helper functions
+	isTouchDevice: function isTouchDevice() {
+		return 'ontouchstart' in window ||
+		navigator.maxTouchPoints > 0 ||
+		navigator.msMaxTouchPoints > 0;
+	},
+	// helper functions END
 
 	initPreloader: function initPreloader() {
 		var preloaderTimeline = gsap.timeline({ paused: true }),
 			$this = this;
 
 		function onComplete() {
-			$this.openLightbox(0, 0);
+			$this.openLightbox('featured', 0);
 			$this.lightboxAppearanceAnimation($.fancybox.getInstance(), 'fromBottom');
 		}
 
@@ -97,9 +136,12 @@ var portfolio = {
 		});
 
 		function onStart() {
+			$this.status.indexIsShown = true;
+
 			$this.blockHorizontalScroll();
 			$this.hideLightboxHeader();
 			$this.hideLastLightboxTextSlide();
+			$this.changeTabOnIndex();
 		}
 
 		function onComplete() {
@@ -109,7 +151,8 @@ var portfolio = {
 			$($this.config.indexBlock).addClass('open');
 			gsap.to($this.config.portfolioTabs, { ease: Power1.easeInOut, opacity: 1, duration: 0.75 });
 
-			$.fancybox.close();
+			if ($('body').hasClass('fancybox-active')) $this.hideZoomLightboxes();
+			$.fancybox.close(true);
 		}
 
 		openIndexTimeline.add('start');
@@ -117,7 +160,7 @@ var portfolio = {
 		openIndexTimeline.to(this.config.indexBlock, { ease: Power4.easeInOut, y: 0, duration: this.config.indexAnimationDuration }, 'start');
 		openIndexTimeline.to(this.config.portfolioTabs, { ease: Power4.easeInOut, y: '-100%', duration: this.config.indexAnimationDuration }, 'start');
 		if ($('body').hasClass('fancybox-active')) {
-			openIndexTimeline.to($.fancybox.getInstance().$refs.container.find('.fancybox-inner'), { ease: Power4.easeInOut, y: '-100%', duration: this.config.indexAnimationDuration }, 'start');
+			openIndexTimeline.to(this.instances.current.$refs.container.find('.fancybox-inner'), { ease: Power4.easeInOut, y: '-100%', duration: this.config.indexAnimationDuration }, 'start');
 		}
 		openIndexTimeline.to(this.config.indexBlockCloseBtn, { ease: Power4.easeInOut, opacity: 1, duration: 1 }, '-=1');
 	},
@@ -131,7 +174,10 @@ var portfolio = {
 		});
 
 		function onStart() {
+			$this.status.indexIsShown = false;
+
 			$this.blockHorizontalScroll();
+			$this.resetHorizontalScrolling();
 			$this.initHorizontalScrollOnHover();
 			$($this.config.indexBlock).removeClass('open');
 		}
@@ -157,7 +203,7 @@ var portfolio = {
 			history: false,
 			keyboard: false,
 			breakpoint: false,
-			transitionDuration: 1000
+			transitionDuration: 0
 		};
 
 		var classes = {
@@ -173,7 +219,9 @@ var portfolio = {
 			$this.status.currentActiveTab = info.currentIndex;
 			$this.status.currentActiveTabIsFeatured = $this.status.currentActiveTab === $this.config.featuredTabIndex ? true : false;
 
-			portfolio.setBackgroundColor();
+			if (!$this.status.indexIsShown) $this.setBackgroundColor();
+			// $this.detectIsInViewport(info.$currentPanel);
+			$this.detectIsInViewport();
 		});
 
 		$(this.config.portfolioTabs).skeletabs(options, classes);
@@ -182,14 +230,16 @@ var portfolio = {
 			$this.status.currentActiveTab = info.nextIndex;
 			$this.status.currentActiveTabIsFeatured = $this.status.currentActiveTab === $this.config.featuredTabIndex ? true : false;
 
-			$this.setBackgroundColor();
+			if (!$this.status.indexIsShown) $this.setBackgroundColor();
 			info.$currentPanel.find($this.config.carouselFrame).scrollLeft(0);
 			$this.blockHorizontalScroll();
 		});
 
 		$(portfolio.config.portfolioTabs).on('skeletabs:moved', function (event, info) {
+			$this.resetHorizontalScrolling();
 			$this.initHorizontalScrollOnHover();
 			$this.unblockHorizontalScroll();
+			// $this.detectIsInViewport(info.$currentPanel);
 		});
 
 		$(this.config.indexBtn).on('click', function () {
@@ -205,6 +255,27 @@ var portfolio = {
 
 	changeTab: function changeTab(index) {
 		$(this.config.portfolioTabs).skeletabs('goTo', index);
+	},
+
+	changeTabOnIndex: function changeTabOnIndex() {
+		var $this = this,
+			currentTabIndex = this.status.currentActiveTab;
+
+		$(this.config.indexListLink).on({
+			mouseenter: function mouseenter() {
+				var categoryName = $(this).attr('data-category'),
+					categoryIndex = $this.getCurrentCategoryIndex(categoryName);
+
+				if ($this.status.indexIsShown) {
+					$this.changeTab(categoryIndex);
+				}
+			},
+			mouseleave: function mouseleave() {
+				if ($this.status.indexIsShown) {
+					$this.changeTab(currentTabIndex);
+				}
+			}
+		});
 	},
 
 	setBackgroundColor: function setBackgroundColor() {
@@ -235,14 +306,22 @@ var portfolio = {
 		});
 	},
 
-	isTouchDevice: function isTouchDevice() {
-		return 'ontouchstart' in window ||
-		navigator.maxTouchPoints > 0 ||
-		navigator.msMaxTouchPoints > 0;
+	detectIsInViewport: function detectIsInViewport(activeTab) {
+		$(this.config.fancyboxLink).removeClass('is-in-viewport');
+
+		// activeTab.find(this.config.fancyboxLink).each(function() {
+		$(this.config.fancyboxLink).each(function () {
+			if (ScrollTrigger.isInViewport($(this)[0], 0.5, true)) {
+				$(this).addClass('is-in-viewport');
+			} else {
+				$(this).removeClass('is-in-viewport');
+			}
+		});
 	},
 
 	initHorizontalScrollOnHover: function initHorizontalScrollOnHover() {
-		var isTouch = this.isTouchDevice();
+		var isTouch = this.isTouchDevice(),
+			$this = this;
 
 		$.fn.makeCarousel = function () {
 			var speed = 0,
@@ -278,33 +357,41 @@ var portfolio = {
 					container.scrollLeft(scroll);
 				}
 
-				window.requestAnimationFrame(updateScroll);
+				$this.scrollingAnimationId = requestAnimationFrame(updateScroll);
 			}
 
-			window.requestAnimationFrame(updateScroll);
+			$this.scrollingAnimationId = requestAnimationFrame(updateScroll);
 		};
 
 		if (!isTouch) {
-			$(this.config.carouselFrame).each(function () {
-				$(this).makeCarousel();
-			});
+			// $(this.config.carouselFrame).each(function() {
+			// 	$(this).makeCarousel();
+			// });
+
+			var activeTabCarouselFrame = $($this.config.tabWithCarousel + '.active ').find($this.config.carouselFrame);
+
+			if (activeTabCarouselFrame.length) {
+				activeTabCarouselFrame.makeCarousel();
+			}
 		}
 
-		// const $this = this;
-
-		// $(this.config.carouselFrame).each(function() {
-		// 	let carouselFrameWidth = $(this).innerWidth(),
-		// 			carouselFrameList = $(this).find($this.config.carouselFrameList),
-		// 			carouselFrameListWidth = carouselFrameList[0].scrollWidth;
-
-		// 	if (carouselFrameWidth < carouselFrameListWidth) {
-		// 		$($this.config.portfolioTabs).on('mousemove', function(e) {
-		// 			let scrollValue = ((carouselFrameWidth - carouselFrameListWidth) * (e.pageX / carouselFrameWidth).toFixed(3)).toFixed(1);
-
-		// 			carouselFrameList.scrollLeft(Math.abs(scrollValue))
-		// 		});
-		// 	}
+		// $(this.config.carouselFrame).on('scroll', function() {
+		// 	// $this.detectIsInViewport($($this.config.tabWithCarousel + '.active '));
+		// 	$this.detectIsInViewport();
 		// });
+	},
+
+	updateIsInViewportOnScroll: function updateIsInViewportOnScroll() {
+		var $this = this;
+
+		$(this.config.carouselFrame).on('scroll', function () {
+			// $this.detectIsInViewport($($this.config.tabWithCarousel + '.active '));
+			$this.detectIsInViewport();
+		});
+	},
+
+	resetHorizontalScrolling: function resetHorizontalScrolling() {
+		cancelAnimationFrame(this.scrollingAnimationId);
 	},
 
 	openSliderLightbox: function openSliderLightbox() {
@@ -312,7 +399,8 @@ var portfolio = {
 
 		openSliderLightboxTimeline.
 		add('start').
-		to(this.config.portfolioTabs, { ease: Power1.easeInOut, opacity: 0, duration: 0.75 }, 'start');
+		to(this.config.portfolioNavigation, { ease: Power1.easeInOut, opacity: 0, duration: 0.75 }, 'start').
+		to(this.config.portfolioAuthorBadge, { ease: Power1.easeInOut, opacity: 0, duration: 0.75 }, 'start');
 	},
 
 	closeSliderLightbox: function closeSliderLightbox() {
@@ -320,11 +408,14 @@ var portfolio = {
 
 		openSliderLightboxTimeline.
 		add('start').
-		to(this.config.portfolioTabs, { ease: Power1.easeInOut, opacity: 1, duration: 0.75 }, 'start');
+		to(this.config.portfolioNavigation, { ease: Power1.easeInOut, opacity: 1, duration: 0.75 }, 'start').
+		to(this.config.portfolioAuthorBadge, { ease: Power1.easeInOut, opacity: 1, duration: 0.75 }, 'start');
+
+		$('.fancybox-container').css('transform', 'translateX(0)');
 	},
 
 	getCurrentCategoryIndex: function getCurrentCategoryIndex(category) {
-		return $(this.config.fancyboxLink + '[data-fancybox="' + category + '"]').eq(0).closest(this.config.tabWithCarousel).attr('data-category-index');
+		return +$(this.config.fancyboxLink + '[data-fancybox="' + category.replace(' ', '-'), +'"]').eq(0).closest(this.config.tabWithCarousel).attr('data-category-index');
 	},
 
 	getNextCategoryIndex: function getNextCategoryIndex(instance) {
@@ -334,19 +425,12 @@ var portfolio = {
 		return +currentCategoryIndex + 1 === $(this.config.tabWithCarousel).length ? 1 : +currentCategoryIndex + 1;
 	},
 
-	openLightbox: function openLightbox(categoryIndex, photoIndex) {
-		$(this.config.tabWithCarousel + '[data-category-index="' + categoryIndex + '"] ' + this.config.fancyboxLink + '').eq(photoIndex).trigger('click');
+	getNextCategoryId: function getNextCategoryId(index) {
+		return $(this.config.tabWithCarousel + '[data-category-index="' + index + '"]').find(this.config.fancyboxLink).attr('data-fancybox');
 	},
 
-	openLightboxOnIndex: function openLightboxOnIndex(indexListLink) {
-		var category = indexListLink.attr('data-category'),
-			categoryIndex = +this.getCurrentCategoryIndex(category.replace(' ', '-')),
-			index = $(this.config.indexListLink + '[data-category="' + category + '"]').index(indexListLink);
-
-		this.changeTab(categoryIndex);
-		this.openLightbox(categoryIndex, index);
-		this.lightboxAppearanceAnimation(this.instances.current, 'fromTop');
-		this.closeIndex();
+	openLightbox: function openLightbox(category, photoIndex) {
+		return $.fancybox.open($('[data-fancybox="' + category + '"'), this.fancyboxOptions, photoIndex);
 	},
 
 	hideLightbox: function hideLightbox() {
@@ -385,7 +469,7 @@ var portfolio = {
 		to(this.instances.current.$refs.container, { ease: Power4.easeNone, display: 'block', opacity: 1, duration: 1 });
 	},
 
-	lightboxAppearanceAnimation: function lightboxAppearanceAnimation(instance, direction) {
+	lightboxAppearanceAnimation: function lightboxAppearanceAnimation(instance, direction) {var _this = this;
 		var appearanceAnimationTimeline = gsap.timeline(),
 			lightbox = instance.$refs.container.find('.fancybox-inner'),
 			transform = 0;
@@ -395,6 +479,10 @@ var portfolio = {
 		} else if (direction === 'fromBottom') {
 			transform = '100%';
 		}
+
+		setTimeout(function () {
+			_this.hideZoomLightboxes();
+		});
 
 		appearanceAnimationTimeline.
 		add('start').
@@ -432,37 +520,121 @@ var portfolio = {
 		gsap.to(this.config.lightboxTextSlide, { ease: Power4.easeNone, display: 'none', opacity: 0, duration: 1 });
 	},
 
+	setZoomTransforms: function setZoomTransforms() {
+		var beforeInstancesList = this.instances.zoomAnimation.filter(function (instance) {return instance.position === 'before';}),
+			afterInstancesList = this.instances.zoomAnimation.filter(function (instance) {return instance.position === 'after';}),
+			centerInstance = this.instances.zoomAnimation.find(function (instance) {return instance.position === 'center';});
+
+		setTimeout(function () {
+			beforeInstancesList.forEach(function (beforeInstance, index) {
+				var transformValue = '-' + (beforeInstancesList.length - index) + '00%';
+				beforeInstance.obj.$refs.container.css('transform', 'translateX(' + transformValue + ')');
+			});
+
+			afterInstancesList.forEach(function (afterInstance, index) {
+				var transformValue = index + 1 + '00%';
+				afterInstance.obj.$refs.container.css('transform', 'translateX(' + transformValue + ')');
+			});
+
+			centerInstance.obj.$refs.container.css('transform', 'translateX(0)');
+		});
+	},
+
+	hideZoomLightboxes: function hideZoomLightboxes() {
+		this.instances.zoomAnimation.forEach(function (instance) {
+			gsap.to(instance.obj.$refs.container.find('.fancybox-inner'), { opacity: '0', duration: '0' });
+		});
+	},
+
+	showZoomLightboxes: function showZoomLightboxes() {
+		this.instances.zoomAnimation.forEach(function (instance) {
+			if (!instance.initial) {
+				gsap.to(instance.obj.$refs.container.find('.fancybox-inner'), { opacity: '1', duration: '0' });
+			};
+		});
+	},
+
+	createZoomInstances: function createZoomInstances(initialImage) {
+		var $this = this,
+			currentCategoryId = this.status.currentActiveTabIsFeatured ? 'featured' : this.status.currentCategory,
+			instancesList = [];
+
+		$(this.config.fancyboxLink + '.is-in-viewport' + '[data-fancybox="' + currentCategoryId + '"]').each(function () {var _this2 = this;
+			var thisIndex = $(this).index() - 1,
+				thisIsInitialImage = initialImage.is($(this)),
+				instance = { index: thisIndex, obj: null, initial: false, position: null };
+
+			setTimeout(function () {
+				gsap.to($(_this2), { ease: Power1.easeInOut, opacity: 0, duration: 0 });
+				gsap.to($($this.config.fancyboxLink + ':not(.is-in-viewport)'), { ease: Power1.easeInOut, opacity: 0, duration: 0.5 });
+			}, 50);
+
+			instance.obj = $this.openLightbox(currentCategoryId, thisIndex);
+			instance.obj.forZoomAnimations = true;
+			instance.obj.$refs.container.addClass('for-zoom-animation');
+
+			if (thisIsInitialImage) {
+				instance.initial = true;
+				instance.position = 'center';
+				gsap.to(instance.obj.$refs.container.find('.fancybox-inner'), { opacity: '0', duration: '0' });
+			} else {
+				instance.position = instancesList.some(function (instance) {return instance['initial'] === true;}) ? 'after' : 'before';
+			}
+
+			instancesList.push(instance);
+		});
+
+		this.instances.zoomAnimation = instancesList;
+		this.setZoomTransforms();
+	},
+
+	updateZoomInstances: function updateZoomInstances(currentInstance) {
+		if (!currentInstance.forZoomAnimations && currentInstance.current.opts.$orig.hasClass('is-in-viewport')) {
+			var currentActiveSlideIndex = currentInstance.current.opts.$orig.index() - 1,
+				inTheInstancesIndex = this.instances.zoomAnimation.findIndex(function (instance) {return instance.index === currentActiveSlideIndex;}),
+				gotToActive = false;
+
+			this.instances.zoomAnimation.map(function (instance) {instance.initial = false;instance.position = undefined;});
+			this.instances.zoomAnimation[inTheInstancesIndex].initial = true;
+			this.instances.zoomAnimation[inTheInstancesIndex].position = 'center';
+			this.instances.zoomAnimation.map(function (instance) {
+				if (instance.initial) gotToActive = true;
+
+				if (!instance.initial) {
+					instance.position = !gotToActive ? "before" : "after";
+				}
+			});
+		}
+	},
+
 	initSliderLightbox: function initSliderLightbox() {
-		var $this = this;
+		var $this = this,
+			init = false;
 
+		// init fancybox
 		$.fancybox.defaults.btnTpl.goToNextCategory = '<button data-fancybox-index-menu class="fancybox-button fancybox-button--go-to-next-category ' + $this.config.goToNextCategory.substring(1) + '">Next category</button>';
+		$(this.config.fancyboxLink).fancybox(this.fancyboxOptions);
 
-		$(this.config.fancyboxLink).fancybox({
-			toolbar: true,
-			buttons: ['goToNextCategory'],
-			keyboard: false,
-			animationDuration: 800,
-			transitionEffect: 'slide',
-			transitionDuration: 600,
-			hash: false,
-			wheel: false,
-			zoomOpacity: false,
-			clickContent: false,
-			infobar: false,
-			idleTime: false,
-			touch: false,
-			clickSlide: false,
-			btnTpl: {
-				arrowLeft: '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left"></button>',
-				arrowRight: '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right"></button>'
-			},
+		// fancybox events
+		$(document).on('onInit.fb', function (e, instance, slide) {
+			init = true;
+		});
 
-			onInit: function onInit(instance) {
-				$this.instances.previous = $this.instances.current;
+		$(document).on('afterLoad.fb', function (e, instance, slide) {
+			if (init && !instance.forZoomAnimations) {
+				$this.createZoomInstances(slide.opts.$orig);
+
 				$this.instances.current = instance;
-			},
+				$this.instances.current.activate();
 
-			beforeShow: function beforeShow(instance, slide) {
+				init = false;
+			}
+		});
+
+		$(document).on('beforeShow.fb', function (e, instance, slide) {
+			setTimeout(function () {
+				if (instance.forZoomAnimations) return;
+
 				$this.showLightboxHeader();
 				$this.openSliderLightbox();
 
@@ -471,37 +643,93 @@ var portfolio = {
 				}
 
 				if ($this.isLastSlide(instance)) {
+					$this.status.itIsLastTextSlide = true;
 					$($this.config.lightboxCaption).addClass('disabled');
 					$this.insertLightboxLastSlideText(slide.src.innerText);
 					$this.showLightboxTextSlide();
 				} else {
+					$this.status.itIsLastTextSlide = false;
 					$($this.config.lightboxCaption).removeClass('disabled');
 				}
 
 				$this.status.currentCategory = slide.opts.caption.replace(' ', '-');
-			},
+			});
+		});
 
-			beforeClose: function beforeClose(instance, slide) {
-				if (!$this.config.categoryChange) $this.closeSliderLightbox();
+		$(document).on('afterShow.fb', function (e, instance, slide) {
+			if (instance.forZoomAnimations) return;
 
-				$this.config.categoryChange = false;
-			},
+			$this.status.nextCategoryIndex = $this.getNextCategoryIndex(instance);
+			$this.status.nextCategoryId = $this.getNextCategoryId($this.status.nextCategoryIndex);
 
-			afterShow: function afterShow(instance, slide) {
-				if (instance.group.length - 1 === instance.currIndex && slide.opts.fancybox !== 'featured') {
-					instance.$refs.navigation.addClass('d-none');
-				} else {
-					instance.$refs.navigation.removeClass('d-none');
-				}
+			$('body').addClass('fancybox-disable-transform-transition');
+
+			if (instance.group.length - 1 === instance.currIndex && slide.opts.fancybox !== 'featured') {
+				instance.$refs.navigation.addClass('d-none');
+			} else {
+				instance.$refs.navigation.removeClass('d-none');
+			}
+
+			if ($this.isLastSlide(instance)) {
+				$this.status.categoryChange = true;
+				$.fancybox.close(true);
+				$this.changeTab($this.status.nextCategoryIndex);
+				gsap.to($($this.config.tabWithCarousel + '.active ').find($this.config.fancyboxLink), { ease: Power1.easeInOut, opacity: 0, duration: 0 });
+			}
+
+			$this.hideZoomLightboxes();
+			$this.updateZoomInstances(instance);
+			$this.setZoomTransforms();
+		});
+
+		$(document).on('beforeClose.fb', function (e, instance, slide) {
+			if (instance.forZoomAnimations || $this.status.categoryChange) return;
+			$('body').removeClass('fancybox-disable-transform-transition');
+
+			$this.hideLightboxHeader();
+			$this.closeSliderLightbox();
+
+			if (!instance.current.opts.$orig.hasClass('is-in-viewport')) {
+				$this.hideZoomLightboxes();
+				gsap.to($($this.config.fancyboxLink), { ease: Power1.easeInOut, opacity: 1, duration: 1 });
+			} else {
+				$this.showZoomLightboxes();
+			}
+
+			gsap.to($($this.config.fancyboxLink + ':not(.is-in-viewport)'), { ease: Power1.easeInOut, opacity: 1, duration: 0.5, delay: 0.75 });
+
+			if ($this.status.lightboxTextIsShown) {
+				$this.hideLastLightboxTextSlide();
+				$this.hideZoomLightboxes();
+				gsap.to($($this.config.fancyboxLink), { ease: Power1.easeInOut, opacity: 1, duration: 1 });
 			}
 		});
 
-		$(this.config.lightboxCloseMenuBtn).on('click', function () {
-			$this.hideLightboxHeader();
-			$this.hideLastLightboxTextSlide();
-			$.fancybox.close();
+		$(document).on('afterClose.fb', function (e, instance, slide) {
+			if (instance.forZoomAnimations || $this.status.categoryChange) return;
+
+			gsap.to($($this.config.fancyboxLink + '.is-in-viewport'), { ease: Power1.easeInOut, opacity: 1, duration: 0 });
+			$this.status.categoryChange = false;
 		});
 
+		// additional
+
+		// close menu btn
+		$(this.config.lightboxCloseMenuBtn).on('click', function () {
+			$.fancybox.close(true);
+
+			if ($this.status.itIsLastTextSlide) {
+				$('body').removeClass('fancybox-disable-transform-transition');
+
+				$this.hideLightboxHeader();
+				$this.closeSliderLightbox();
+				$this.hideLastLightboxTextSlide();
+				gsap.to($($this.config.fancyboxLink), { ease: Power1.easeInOut, opacity: 1, duration: 1 });
+				$this.status.categoryChange = false;
+			}
+		});
+
+		// show last slide text
 		$(this.config.lightboxCaption).on('click', function () {
 			var currentCategory = $this.status.currentCategory,
 				lastSlideText = $($this.config.lightboxLastSlide + '[data-fancybox="' + currentCategory + '"]').text();
@@ -516,38 +744,44 @@ var portfolio = {
 			}
 		});
 
+		// open index
 		$(this.config.indexBtn).on('click', function () {
 			$this.openIndex();
 		});
 
-		$('body').on('click', this.config.goToNextCategory, function () {
-			var instance = $.fancybox.getInstance(),
-				nextCategoryIndex = $this.getNextCategoryIndex(instance);
+		// category change
+		$(this.config.lightboxTextSlide).on('click', function () {
+			$this.status.categoryChange = true;
 
-			$this.config.categoryChange = true;
 			$this.hideLastLightboxTextSlide();
-			$this.changeTab(nextCategoryIndex);
-			$this.openLightbox(nextCategoryIndex, 0);
+			$this.instances.current = $this.openLightbox($this.status.nextCategoryId, 0);
 			$this.lightboxAppearanceAnimation($this.instances.current, 'fromBottom');
-			$this.instances.previous.close();
+
+			$this.status.categoryChange = false;
 		});
 
-		$($this.config.indexListLink).on('click', function (e) {
+		// open lightbox on index
+		$(this.config.indexListLink).on('click', function (e) {
 			e.preventDefault();
 
-			$this.openLightboxOnIndex($(this));
+			var categoryName = $(this).attr('data-category'),
+				category = categoryName.replace(' ', '-'),
+				index = $($this.config.indexListLink + '[data-category="' + categoryName + '"]').index($(this));
+
+			$this.instances.current = $this.openLightbox(category, index);
+			$this.lightboxAppearanceAnimation($this.instances.current, 'fromTop');
+			$this.closeIndex();
 		});
 	},
 
-	init: function init() {
-		var $this = this;
-
-		this.initHorizontalScrollOnHover();
+	init: function init() {var _this3 = this;
 		this.initHoverOnIndex();
 		this.initSliderLightbox();
+		this.updateIsInViewportOnScroll();
 
 		setTimeout(function () {
-			$this.initTabs();
+			_this3.initTabs();
+			_this3.initHorizontalScrollOnHover();
 		}, 100);
 	}
 };
