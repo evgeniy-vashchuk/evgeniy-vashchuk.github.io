@@ -74,6 +74,21 @@ var portfolio = {
 		btnTpl: {
 			arrowLeft: '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left"></button>',
 			arrowRight: '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right"></button>'
+		},
+		video: {
+			tpl:
+			'<video class="fancybox-video" muted>' +
+			'<source src="{{src}}" type="{{format}}" />' +
+			'Sorry, your browser doesn\'t support embedded videos, <a href="{{src}}">download</a> and watch with your favorite video player!' +
+			"</video>"
+		},
+		youtube: {
+			controls: 0,
+			showinfo: 0,
+			mute: 1
+		},
+		vimeo: {
+			mute: 1
 		}
 	},
 
@@ -86,7 +101,8 @@ var portfolio = {
 		lightboxTextIsShown: false,
 		nextCategoryIndex: 0,
 		nextCategoryId: 0,
-		indexIsShown: false
+		indexIsShown: false,
+		initialSlideType: null
 	},
 
 	instances: {
@@ -220,7 +236,6 @@ var portfolio = {
 			$this.status.currentActiveTabIsFeatured = $this.status.currentActiveTab === $this.config.featuredTabIndex ? true : false;
 
 			if (!$this.status.indexIsShown) $this.setBackgroundColor();
-			// $this.detectIsInViewport(info.$currentPanel);
 			$this.detectIsInViewport();
 		});
 
@@ -239,7 +254,6 @@ var portfolio = {
 			$this.resetHorizontalScrolling();
 			$this.initHorizontalScrollOnHover();
 			$this.unblockHorizontalScroll();
-			// $this.detectIsInViewport(info.$currentPanel);
 		});
 
 		$(this.config.indexBtn).on('click', function () {
@@ -309,7 +323,6 @@ var portfolio = {
 	detectIsInViewport: function detectIsInViewport(activeTab) {
 		$(this.config.fancyboxLink).removeClass('is-in-viewport');
 
-		// activeTab.find(this.config.fancyboxLink).each(function() {
 		$(this.config.fancyboxLink).each(function () {
 			if (ScrollTrigger.isInViewport($(this)[0], 0.5, true)) {
 				$(this).addClass('is-in-viewport');
@@ -364,28 +377,18 @@ var portfolio = {
 		};
 
 		if (!isTouch) {
-			// $(this.config.carouselFrame).each(function() {
-			// 	$(this).makeCarousel();
-			// });
-
 			var activeTabCarouselFrame = $($this.config.tabWithCarousel + '.active ').find($this.config.carouselFrame);
 
 			if (activeTabCarouselFrame.length) {
 				activeTabCarouselFrame.makeCarousel();
 			}
 		}
-
-		// $(this.config.carouselFrame).on('scroll', function() {
-		// 	// $this.detectIsInViewport($($this.config.tabWithCarousel + '.active '));
-		// 	$this.detectIsInViewport();
-		// });
 	},
 
 	updateIsInViewportOnScroll: function updateIsInViewportOnScroll() {
 		var $this = this;
 
 		$(this.config.carouselFrame).on('scroll', function () {
-			// $this.detectIsInViewport($($this.config.tabWithCarousel + '.active '));
 			$this.detectIsInViewport();
 		});
 	},
@@ -559,7 +562,7 @@ var portfolio = {
 			currentCategoryId = this.status.currentActiveTabIsFeatured ? 'featured' : this.status.currentCategory,
 			instancesList = [];
 
-		$(this.config.fancyboxLink + '.is-in-viewport' + '[data-fancybox="' + currentCategoryId + '"]').each(function () {var _this2 = this;
+		$(this.config.fancyboxLink + '.is-in-viewport' + '[data-fancybox="' + currentCategoryId + '"]:not(.with-video)').each(function () {var _this2 = this;
 			var thisIndex = $(this).index() - 1,
 				thisIsInitialImage = initialImage.is($(this)),
 				instance = { index: thisIndex, obj: null, initial: false, position: null };
@@ -607,6 +610,30 @@ var portfolio = {
 		}
 	},
 
+	fadeOutPhotosWithVideo: function fadeOutPhotosWithVideo() {
+		var photosWithVideoOnActiveTab = $(this.config.tabWithCarousel + '.active').find(this.config.fancyboxLink + '.with-video');
+
+		if (photosWithVideoOnActiveTab.length) {
+			gsap.to($(this.config.tabWithCarousel + '.active').find(this.config.fancyboxLink + '.with-video'), { opacity: '0', duration: '1' });
+		}
+	},
+
+	fadeInPhotosWithVideo: function fadeInPhotosWithVideo() {
+		var photosWithVideoOnActiveTab = $(this.config.tabWithCarousel + '.active').find(this.config.fancyboxLink + '.with-video');
+
+		if (photosWithVideoOnActiveTab.length) {
+			gsap.to(photosWithVideoOnActiveTab, { opacity: '1', duration: '1' });
+		}
+	},
+
+	fadeOutAllPhotosOnTheActiveTab: function fadeOutAllPhotosOnTheActiveTab() {
+		gsap.to($(this.config.tabWithCarousel + '.active').find(this.config.fancyboxLink), { opacity: '0', duration: '1' });
+	},
+
+	fadeInAllPhotosOnTheActiveTab: function fadeInAllPhotosOnTheActiveTab() {
+		gsap.to($(this.config.tabWithCarousel + '.active').find(this.config.fancyboxLink), { opacity: '1', duration: '1' });
+	},
+
 	initSliderLightbox: function initSliderLightbox() {
 		var $this = this,
 			init = false;
@@ -622,10 +649,13 @@ var portfolio = {
 
 		$(document).on('afterLoad.fb', function (e, instance, slide) {
 			if (init && !instance.forZoomAnimations) {
-				$this.createZoomInstances(slide.opts.$orig);
+				if (slide.type !== 'iframe' && slide.type !== 'video') {
+					$this.createZoomInstances(slide.opts.$orig);
+				}
 
 				$this.instances.current = instance;
 				$this.instances.current.activate();
+				$this.status.initialSlideType = slide.type;
 
 				init = false;
 			}
@@ -634,6 +664,12 @@ var portfolio = {
 		$(document).on('beforeShow.fb', function (e, instance, slide) {
 			setTimeout(function () {
 				if (instance.forZoomAnimations) return;
+
+				if (slide.type === 'iframe' || slide.type === 'video') {
+					$this.fadeOutAllPhotosOnTheActiveTab();
+				}
+
+				$this.fadeOutPhotosWithVideo();
 
 				$this.showLightboxHeader();
 				$this.openSliderLightbox();
@@ -677,13 +713,16 @@ var portfolio = {
 				gsap.to($($this.config.tabWithCarousel + '.active ').find($this.config.fancyboxLink), { ease: Power1.easeInOut, opacity: 0, duration: 0 });
 			}
 
-			$this.hideZoomLightboxes();
-			$this.updateZoomInstances(instance);
-			$this.setZoomTransforms();
+			if (slide.type !== 'iframe' && slide.type !== 'video') {
+				$this.hideZoomLightboxes();
+				$this.updateZoomInstances(instance);
+				$this.setZoomTransforms();
+			}
 		});
 
 		$(document).on('beforeClose.fb', function (e, instance, slide) {
 			if (instance.forZoomAnimations || $this.status.categoryChange) return;
+
 			$('body').removeClass('fancybox-disable-transform-transition');
 
 			$this.hideLightboxHeader();
@@ -702,6 +741,17 @@ var portfolio = {
 				$this.hideLastLightboxTextSlide();
 				$this.hideZoomLightboxes();
 				gsap.to($($this.config.fancyboxLink), { ease: Power1.easeInOut, opacity: 1, duration: 1 });
+			}
+
+			$this.fadeInPhotosWithVideo();
+
+			if (slide.type === 'iframe' || slide.type === 'video') {
+				$this.hideZoomLightboxes();
+				$this.fadeInAllPhotosOnTheActiveTab();
+			}
+
+			if ($this.status.initialSlideType === 'iframe' || $this.status.initialSlideType === 'video') {
+				$this.fadeInAllPhotosOnTheActiveTab();
 			}
 		});
 

@@ -2313,6 +2313,7 @@ a:hover {
 	border: none;
 	border-radius: 0;
 	line-height: inherit;
+	color: #000000;
 	cursor: pointer;
 }
 .header-for-lightbox__menu-btn:hover {
@@ -2328,6 +2329,7 @@ a:hover {
 	border: none;
 	border-radius: 0;
 	line-height: inherit;
+	color: #000000;
 	cursor: pointer;
 }
 .header-for-lightbox__caption:hover {
