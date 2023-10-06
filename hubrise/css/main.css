@@ -21396,6 +21396,9 @@ a.with-underline {
 	}
 }
 .section-welcome {
+	display: flex;
+	align-items: center;
+	min-height: 100vh;
 	background-color: #101828;
 	padding: 110px 0 50px;
 	color: #ffffff;
