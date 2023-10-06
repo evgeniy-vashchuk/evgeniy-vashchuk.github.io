@@ -20640,7 +20640,7 @@ img, svg {
 body {
 	min-width: 320px;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 1449.98px) {
 	body {
 		font-size: 16px;
 	}
@@ -20733,11 +20733,11 @@ h6,
 @media only screen and (min-width: 768px) {
 	h1,
 	.h1 {
-		font-size: 50px;
+		font-size: 44px;
 	}
 	h2,
 	.h2 {
-		font-size: 40px;
+		font-size: 34px;
 	}
 	h3,
 	.h3 {
@@ -20759,11 +20759,11 @@ h6,
 @media only screen and (min-width: 992px) {
 	h1,
 	.h1 {
-		font-size: 60px;
+		font-size: 44px;
 	}
 	h2,
 	.h2 {
-		font-size: 50px;
+		font-size: 34px;
 	}
 	h3,
 	.h3 {
@@ -20785,23 +20785,23 @@ h6,
 @media only screen and (min-width: 1200px) {
 	h1,
 	.h1 {
-		font-size: 60px;
+		font-size: 50px;
 	}
 	h2,
 	.h2 {
-		font-size: 50px;
+		font-size: 40px;
 	}
 	h3,
 	.h3 {
-		font-size: 30px;
+		font-size: 26px;
 	}
 	h4,
 	.h4 {
-		font-size: 24px;
+		font-size: 20px;
 	}
 	h5,
 	.h5 {
-		font-size: 20px;
+		font-size: 18px;
 	}
 	h6,
 	.h6 {
@@ -20834,7 +20834,7 @@ h6,
 		font-size: 14px;
 	}
 }
-@media (max-width: 767.98px) {
+@media (max-width: 1449.98px) {
 	p {
 		margin-bottom: 1rem;
 	}
@@ -20869,7 +20869,7 @@ h6,
 		font-size: 14px !important;
 	}
 }
-@media (min-width: 768px) {
+@media (min-width: 1450px) {
 	.text-sm {
 		font-size: 1rem !important;
 	}
@@ -21314,12 +21314,24 @@ h6, .h6 {
 }
 @media (min-width: 768px) {
 	.btn:not(.btn-sm):not(.btn-lg) {
+		min-height: 52px;
+	}
+}
+@media (min-width: 1450px) {
+	.btn:not(.btn-sm):not(.btn-lg) {
 		min-height: 60px;
 	}
 }
 @media (max-width: 767.98px) {
 	.btn:not(.btn-sm):not(.btn-lg) {
 		font-size: 16px;
+	}
+}
+@media (max-width: 1449.98px) {
+	.btn:not(.btn-sm):not(.btn-lg) {
+		font-size: 16px;
+		padding-left: 30px;
+		padding-right: 30px;
 	}
 }
 .btn-sm, .btn-group-sm > .btn {
@@ -21385,12 +21397,12 @@ a.with-underline {
 .section {
 	padding: 40px 0;
 }
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
 	.section {
 		padding: 60px 0;
 	}
 }
-@media (min-width: 1200px) {
+@media (min-width: 1450px) {
 	.section {
 		padding: 80px 0;
 	}
@@ -21410,7 +21422,7 @@ a.with-underline {
 }
 @media (min-width: 992px) {
 	.section-welcome {
-		padding: 180px 0 80px;
+		padding: 160px 0 80px;
 	}
 }
 @media (min-width: 1450px) {
@@ -21420,7 +21432,7 @@ a.with-underline {
 }
 .section-welcome__content-column {
 	position: relative;
-	margin-bottom: 40px;
+	margin-bottom: 60px;
 }
 @media (min-width: 768px) {
 	.section-welcome__content-column {
@@ -21774,7 +21786,7 @@ a.with-underline {
 		padding: 20px 40px;
 	}
 }
-@media (min-width: 1200px) {
+@media (min-width: 1450px) {
 	.profile-item__content {
 		padding: 20px 60px;
 	}
@@ -21794,7 +21806,7 @@ a.with-underline {
 	overflow: hidden;
 	margin-bottom: 20px;
 }
-@media (min-width: 992px) {
+@media (min-width: 1450px) {
 	.profile-item__icon {
 		width: 80px;
 		height: 80px;
@@ -21928,7 +21940,7 @@ a.with-underline {
 	left: 12px;
 	z-index: 5;
 }
-@media (min-width: 576px) {
+@media (min-width: 1450px) {
 	.order-fulfillment-item__icon {
 		width: 60px;
 		height: 60px;
@@ -21954,7 +21966,7 @@ a.with-underline {
 	border-radius: 8px;
 	max-width: calc(100% - 80px);
 }
-@media (min-width: 576px) {
+@media (min-width: 1450px) {
 	.order-fulfillment-item__title {
 		bottom: 20px;
 		left: 88px;
@@ -22090,7 +22102,7 @@ a.with-underline {
 		padding: 15px 30px;
 	}
 }
-@media (min-width: 1200px) {
+@media (min-width: 1450px) {
 	.customer-service-item__title {
 		min-height: 80px;
 	}
@@ -22142,7 +22154,7 @@ a.with-underline {
 .tech-solution-item__title {
 	position: absolute;
 	top: 20px;
-	left: 24px;
+	left: 20px;
 	z-index: 5;
 	margin-bottom: 0;
 	border-radius: 12px;
@@ -22154,21 +22166,17 @@ a.with-underline {
 	min-height: 48px;
 	display: inline-flex;
 	align-items: center;
-	max-width: calc(100% - 48px);
+	max-width: calc(100% - 40px);
 }
 @media (min-width: 768px) {
 	.tech-solution-item__title {
 		padding: 10px 40px;
 		min-height: 60px;
-		left: 40px;
-		max-width: calc(100% - 80px);
 	}
 }
-@media (min-width: 1200px) {
+@media (min-width: 1450px) {
 	.tech-solution-item__title {
 		min-height: 80px;
-		left: 20px;
-		max-width: calc(100% - 40px);
 	}
 }
 
@@ -22243,6 +22251,11 @@ a.with-underline {
 	}
 }
 @media (min-width: 1200px) {
+	.banner-block {
+		min-height: 375px;
+	}
+}
+@media (min-width: 1450px) {
 	.banner-block {
 		min-height: 450px;
 	}
