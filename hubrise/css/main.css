@@ -21040,7 +21040,7 @@ h6, .h6 {
 	padding: 10px 0;
 	background-color: #101828;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 	.header.active {
 		padding: 15px 0;
 	}
@@ -21053,7 +21053,7 @@ h6, .h6 {
 .header.active .header__mobile-menu-close-btn {
 	top: 16px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 	.header.active .header__mobile-menu-close-btn {
 		top: 24px;
 	}
@@ -21068,7 +21068,7 @@ h6, .h6 {
 	width: 100%;
 	transform: translate(0, -3px);
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 	.header__logo {
 		max-width: 72px;
 		transform: translate(0, -5px);
@@ -21080,7 +21080,7 @@ h6, .h6 {
 	line-height: 1;
 	color: #ffffff;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 	.header__hamburger-menu {
 		font-size: 48px;
 	}
@@ -21142,7 +21142,7 @@ h6, .h6 {
 .header__mobile-menu-close-btn:hover {
 	color: #ffffff;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
 	.header__mobile-menu-close-btn {
 		width: 48px;
 		height: 48px;
@@ -21978,7 +21978,7 @@ a.with-underline {
 	-webkit-backdrop-filter: blur(20px);
 	backdrop-filter: blur(20px);
 	padding: 0 20px;
-	border-radius: 8px;
+	border-radius: 12px;
 	max-width: calc(100% - 80px);
 }
 @media (min-width: 1800px) {
@@ -21986,7 +21986,6 @@ a.with-underline {
 		bottom: 20px;
 		left: 88px;
 		line-height: 60px;
-		border-radius: 20px;
 		padding: 0 28px;
 		max-width: calc(100% - 108px);
 	}
@@ -22117,11 +22116,6 @@ a.with-underline {
 		padding: 15px 30px;
 	}
 }
-@media (min-width: 1800px) {
-	.customer-service-item__title {
-		min-height: 80px;
-	}
-}
 
 .tech-solution-item {
 	position: relative;
@@ -22187,11 +22181,6 @@ a.with-underline {
 	.tech-solution-item__title {
 		padding: 10px 40px;
 		min-height: 60px;
-	}
-}
-@media (min-width: 1800px) {
-	.tech-solution-item__title {
-		min-height: 80px;
 	}
 }
 
