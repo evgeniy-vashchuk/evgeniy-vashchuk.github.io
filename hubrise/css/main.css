@@ -21775,6 +21775,13 @@ h6, .h6 {
 	}
 }
 
+@media (min-width: 992px) {
+	.rounded-bottom-lg-20 {
+		border-bottom-left-radius: 20px !important;
+		border-bottom-right-radius: 20px !important;
+	}
+}
+
 @keyframes rotate {
 	0% {
 		transform: rotate(0deg);
