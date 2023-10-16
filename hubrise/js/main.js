@@ -6,6 +6,7 @@ jQuery(function ($) {
 	initMenu();
 	initStopAnimationsDuringWindowResizing();
 	initAos();
+	initForms();
 });
 
 // ACTIVE HEADER AFTER SCROLL
@@ -42,9 +43,11 @@ function initParallaxForItems() {
 	}
 
 	// on scroll
-	var rellax = new Rellax('.js-rellax', {
-		center: true
-	});
+	if ($('.js-rellax').length) {
+		var rellax = new Rellax('.js-rellax', {
+			center: true
+		});
+	}
 }
 
 // HAMBURGER MENU
@@ -104,5 +107,18 @@ function initAos() {
 		duration: 1000,
 		once: true,
 		easing: 'ease-in-out'
+	});
+}
+
+// FORMS
+function initForms() {
+	var select = $('.js-select');
+
+	select.each(function () {
+		$(this).select2({
+			dropdownParent: $(this).closest('.js-select-container'),
+			minimumResultsForSearch: -1,
+			theme: "bootstrap"
+		});
 	});
 }
