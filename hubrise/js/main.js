@@ -2,7 +2,7 @@
 
 jQuery(function ($) {
 	initActiveHeaderAfterScroll();
-	initParallaxForItems();
+	initParallax();
 	initMenu();
 	initStopAnimationsDuringWindowResizing();
 	initAos();
@@ -27,7 +27,7 @@ function initActiveHeaderAfterScroll() {
 }
 
 // PARALLAX FOR ITEMS
-function initParallaxForItems() {
+function initParallax() {
 	// on mouse movement
 	var parallaxScene = $('.js-parallax-scene');
 
