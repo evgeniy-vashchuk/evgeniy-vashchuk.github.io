@@ -1,13 +1,13 @@
 'use strict';
 
-jQuery(function ($) {
+(function ($) {
 	initActiveHeaderAfterScroll();
 	initParallax();
 	initMenu();
 	initStopAnimationsDuringWindowResizing();
 	initAos();
 	initForms();
-});
+})(jQuery);
 
 // ACTIVE HEADER AFTER SCROLL
 function initActiveHeaderAfterScroll() {
@@ -58,12 +58,12 @@ function initMenu() {
 
 	function openMenu() {
 		menu.addClass('active');
-		$('body').addClass('overflow-hidden');
+		// $('body').addClass('overflow-hidden');
 	}
 
 	function closeMenu() {
 		menu.removeClass('active');
-		$('body').removeClass('overflow-hidden');
+		// $('body').removeClass('overflow-hidden');
 	}
 
 	openMenuBtn.on('click', function (e) {

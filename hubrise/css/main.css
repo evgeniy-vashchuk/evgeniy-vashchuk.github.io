@@ -21383,6 +21383,9 @@ body {
 		margin-top: -40px;
 	}
 }
+.main > section:last-child.section-content-and-side-img {
+	padding-bottom: 0;
+}
 
 @font-face {
 	font-family: "Clinton";
@@ -21978,8 +21981,8 @@ h6, .h6 {
 		position: fixed;
 		top: 0;
 		left: 0;
-		right: 0;
 		bottom: 0;
+		width: 100vw;
 		z-index: 1030;
 		background-color: #101828;
 		opacity: 0;
@@ -22105,6 +22108,9 @@ h6, .h6 {
 		min-width: 220px;
 		margin-top: 25px !important;
 	}
+}
+.header-menu__item .dropdown-menu > li {
+	margin: 0 !important;
 }
 @media (max-width: 1199.98px) {
 	.header-menu__item .dropdown-item {
@@ -23574,10 +23580,15 @@ textarea.form-control {
 .order-fulfillment-item__icon {
 	width: 42px;
 	height: 42px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
 	position: absolute;
 	bottom: 12px;
 	left: 12px;
 	z-index: 5;
+	background-color: #ffffff;
+	border-radius: 50%;
 }
 @media (min-width: 425px) {
 	.order-fulfillment-item__icon {
@@ -23591,6 +23602,17 @@ textarea.form-control {
 		height: 60px;
 		bottom: 20px;
 		left: 20px;
+	}
+}
+.order-fulfillment-item__icon-holder {
+	width: 24px;
+	height: 24px;
+	position: relative;
+}
+@media (min-width: 1800px) {
+	.order-fulfillment-item__icon-holder {
+		width: 30px;
+		height: 30px;
 	}
 }
 .order-fulfillment-item__badge {
