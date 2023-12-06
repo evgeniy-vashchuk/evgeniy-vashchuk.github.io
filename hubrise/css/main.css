@@ -23509,11 +23509,16 @@ textarea.form-control {
 	width: 100%;
 	padding: 20px;
 	margin-bottom: 30px;
+	transition: background-color 0.3s, border-color 0.3s;
 }
 @media (min-width: 768px) {
 	.card-review {
 		padding: 40px 40px 70px 40px;
 	}
+}
+.card-review:hover {
+	background-color: #f4e8ff;
+	border-color: #8B00FF;
 }
 .card-review__header {
 	margin-bottom: 30px;
@@ -25080,11 +25085,16 @@ textarea.form-control {
 	background-color: #FFDF5A;
 	color: #101828;
 	padding: 10px 20px;
+	transition: background-color 0.3s, color 0.3s;
 }
 @media (min-width: 992px) {
 	.oval-icon-and-text-item {
 		padding: 18px 36px;
 	}
+}
+.oval-icon-and-text-item:hover {
+	background-color: #8B00FF;
+	color: #ffffff;
 }
 .oval-icon-and-text-item__icon {
 	display: inline-flex;
