@@ -23338,7 +23338,7 @@ textarea.form-control {
 }
 @media (min-width: 1200px) {
 	.card-round-icon-and-title {
-		margin-bottom: 35px;
+		margin-bottom: 40px;
 	}
 }
 @media (min-width: 1800px) {
@@ -24993,18 +24993,14 @@ textarea.form-control {
 }
 @media (min-width: 992px) {
 	.block-with-side-purple-cards:nth-child(2n) .block-with-side-purple-cards__cards {
-		padding-right: 35px;
+		padding-right: calc(50px - 0.625rem);
 	}
 }
 @media (min-width: 1200px) {
 	.block-with-side-purple-cards:nth-child(2n) .block-with-side-purple-cards__cards {
 		margin-right: 0;
 		margin-left: -45px;
-	}
-}
-@media (min-width: 1800px) {
-	.block-with-side-purple-cards:nth-child(2n) .block-with-side-purple-cards__cards {
-		padding-right: 65px;
+		padding-right: calc(65px - 0.625rem);
 	}
 }
 .block-with-side-purple-cards__col-text {
@@ -25062,18 +25058,13 @@ textarea.form-control {
 }
 @media (min-width: 992px) {
 	.block-with-side-purple-cards__cards {
-		padding-left: 35px;
+		padding-left: calc(50px - 0.625rem);
 	}
 }
 @media (min-width: 1200px) {
 	.block-with-side-purple-cards__cards {
 		margin-right: -45px;
-		padding: 70px 0 35px 35px;
-	}
-}
-@media (min-width: 1800px) {
-	.block-with-side-purple-cards__cards {
-		padding: 105px 0 70px 65px;
+		padding: 65px 0 25px calc(65px - 0.625rem);
 	}
 }
 
