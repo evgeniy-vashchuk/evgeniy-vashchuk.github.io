@@ -1,0 +1,139 @@
+{
+	"@metadata": {
+		"authors": [
+			"Evgeniy Vashchuk"
+		],
+		"last-updated": "12-06-2024",
+		"locale": "en"
+	},
+
+	"__comment": "================ GLOBAL ================",
+
+	"portfolio-global-logo-name": "Evgeniy",
+	"portfolio-global-logo-position": "web developer",
+
+	"portfolio-global-page-navigation-home": "home",
+	"portfolio-global-page-navigation-about": "about",
+	"portfolio-global-page-navigation-projects": "projects",
+	"portfolio-global-page-navigation-contacts": "contacts",
+
+	"portfolio-global-english-language": "en",
+	"portfolio-global-ukrainian-language": "ua",
+
+	"portfolio-global-preloader-text": "loading",
+
+	"portfolio-global-grid-icon-tooltipe-open": "menu",
+	"portfolio-global-grid-icon-tooltipe-close": "close",
+
+	"portfolio-global-menu-language": "Language:",
+	"portfolio-global-menu-navigation": "Navigation:",
+	"portfolio-global-menu-social": "Socials:",
+
+	"portfolio-global-scroll-top-text": "to top",
+
+	"__comment": "================ HOME PAGE ================",
+
+	"portfolio-home-additional-text": "digital portfolio",
+
+	"portfolio-home-explore-button": "explore",
+
+	"portfolio-home-prev-slide": "previos",
+	"portfolio-home-next-slide": "next",
+
+	"portfolio-home-intro-label": "intro",
+
+	"portfolio-home-fullpage-menu-title": "My works",
+
+	"__comment": "================ HOME PAGE SLIDER ================",
+
+	"portfolio-slider-welcome-title": "hello",
+	"portfolio-slider-welcome-description": "I’m Evgeniy, web developer",
+	"portfolio-slider-mokka-description": "website for IT company",
+	"portfolio-slider-certitude-description": "corporate website",
+	"portfolio-slider-kapture-description": "landing-page for portable SSD",
+	"portfolio-slider-farmarossi-description": "online store website",
+	"portfolio-slider-wakenet-description": "website for marketing company",
+	"portfolio-slider-adam.c.-description": "personal website for photographer",
+	"portfolio-slider-wideexpo-description": "corporate website",
+	"portfolio-slider-hubrise-description": "website for logistics company",
+
+	"__comment": "================ ABOUT PAGE ================",
+
+	"portfolio-about-title": "Hi, nice to meet you!",
+
+	"portfolio-about-section-about-title": "about me",
+	"portfolio-about-section-about-paragraph-1": "My name is Evgeniy Vashchuk, and I am a seasoned Front-end Developer from Ukraine with more than seven years of extensive experience. Throughout my career, I have honed my skills in web-development, ensuring that I can create clean, maintainable, and responsive web interfaces.",
+	"portfolio-about-section-about-paragraph-2": "My ability to collaborate with UX/UI designers and Back-end developers has allowed me to deliver comprehensive and user-friendly web solutions. My goal is to leverage my diverse skill set to continue creating exceptional user experiences and drive the success of future projects. I am inspired by creating great work with people who want to building something awesome!",
+
+	"portfolio-about-section-skills-title": "my skills",
+	"portfolio-about-section-skills-paragraph-1": "Main area of my expertise is front end development and everything related with this side of the web.",
+
+	"portfolio-about-section-technologies-title": "technologies",
+	"portfolio-about-section-technologies-paragraph-1": "Here is a selection of relevant technologies that I have experience with:",
+
+	"portfolio-about-section-services-title": "services",
+	"portfolio-about-section-services-list-1": "Front-end development",
+	"portfolio-about-section-services-list-2": "Valid and clean code",
+	"portfolio-about-section-services-list-3": "Cross-browser, responsive, adaptive development",
+	"portfolio-about-section-services-list-4": "Advanced animation",
+	"portfolio-about-section-services-list-5": "Accessibility & semantics",
+	"portfolio-about-section-services-list-6": "Integration in Wordpress CMS",
+	"portfolio-about-section-services-list-7": "Creation of e-commerce based on WooCommerce",
+
+	"portfolio-about-section-experience-title": "experience",
+	"portfolio-about-section-present": "Present",
+	"portfolio-about-section-experience-item-1": "Courses – Developing web applications with JavaScript.",
+	"portfolio-about-section-experience-item-2": "Developed fully functional responsive websites using HTML5, CSS3, JavaScript and JQuery. Developed and support websites for different companies using Wordpress (CMS).",
+	"portfolio-about-section-experience-item-3": "Worked with e-commerce projects built on Magento. Communicated with back-end developers to solve tasks of the project.",
+	"portfolio-about-section-experience-item-4": "Developed websites and worked with WordPress and Squarespace CMS. Tested front-end code in multiple browsers to ensure crossbrowser compatability.",
+	"portfolio-about-section-experience-item-5": "Developed user-friendly web interfaces. Collaborated with back-end developers and designers to implement responsive design and enhance the functionality of the company's web applications.",
+
+	"portfolio-about-resume": "resume",
+
+	"__comment": "================ CONTACTS PAGE ================",
+
+	"portfolio-contacts-top-title": "Do you have any questions?",
+	"portfolio-contacts-bottom-title": "Contact me",
+
+	"portfolio-contacts-list-title-1": "email",
+	"portfolio-contacts-list-title-2": "telegram",
+	"portfolio-contacts-list-title-3": "phone",
+
+	"portfolio-contacts-form-title": "If you wanna get in touch, talk to me about a project collaboration or just say hi, fill up the awesome form below:",
+	"portfolio-contacts-form-email": "email",
+	"portfolio-contacts-form-name": "name",
+	"portfolio-contacts-form-text": "text",
+	"portfolio-contacts-form-submit-text": "send message",
+
+	"portfolio-contacts-thanks-text-left": "Thanks, to the designer",
+	"portfolio-contacts-thanks-text-name": "Artem Kolomiitsev",
+	"portfolio-contacts-thanks-text-right": "for cooperation in the project.",
+	"portfolio-contacts-thanks-tooltipe": "want a cool design?",
+
+	"portfolio-contacts-copyright-text": "All Right Reserved.",
+
+	"portfolio-contacts-form-success-message-1": "Thank you for your message!",
+	"portfolio-contacts-form-success-message-2": "I will reply soon.",
+	"portfolio-contacts-form-error-message": "Oops, there was an error...",
+
+	"portfolio-contacts-form-validation-required-text": "This field is required.",
+	"portfolio-contacts-form-validation-email-text": "Please enter a valid email address.",
+	"portfolio-contacts-form-validation-minlength-text": "Please enter at least {0} characters.",
+
+	"__comment": "================ PROJECT PAGE ================",
+
+	"portfolio-project-section-description-title": "description",
+	"portfolio-project-section-preview-title": "live preview",
+	"portfolio-project-section-preview-tooltipe": "visit website",
+
+	"portfolio-project-section-description-mokka-description": "It is corporate web-site for IT company from Italy. The site was build on Laravel. It is user-friendly website that meets the IT company's needs and supports its business objectives.",
+	"portfolio-project-section-description-certitude-description": "This is medium size project - corporate web site for the firm that specializing in professional, legally defensible workplace investigations. Build on WordPress.",
+	"portfolio-project-section-description-kapture-description": "This landing-page was developed for the presentation of an electronic product - portable SSD. Site includes many different animations and effects.",
+	"portfolio-project-section-description-farmarossi-description": "This is online store website of pharmacy and perfumery in Italy. It was build on WordPress CMS with WooCommerce plugin.",
+	"portfolio-project-section-description-wakenet-description": "This is a website for a marketing company, that included several pages and some small animations. Was made on WordPress.",
+	"portfolio-project-section-description-adam.c.-description": "This site was developed for photographer in order to show his work. All site is in minimalist design along with animation transitions between viewing and selecting photos.",
+	"portfolio-project-section-description-wideexpo-description": "It is corporate web-site based on WordPress. It includes svg-animations, sliders and multilingual.",
+	"portfolio-project-section-description-hubrise-description": "This is a corporate website to represent the big logistics company. Made in modern design with light animations. Build on WordPress.",
+
+	"portfolio-project-next-button": "next"
+}
