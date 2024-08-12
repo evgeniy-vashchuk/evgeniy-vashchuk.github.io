@@ -23253,7 +23253,7 @@ textarea.form-control-lg {
 }
 @font-face {
 	font-family: "icomoon";
-	src: url("../../fonts/icomoon/icomoon.ttf?jcg36b") format("truetype"), url("../../fonts/icomoon/icomoon.woff?jcg36b") format("woff"), url("../../fonts/icomoon/icomoon.svg?jcg36b#icomoon") format("svg");
+	src: url("../fonts/icomoon/icomoon.ttf?jcg36b") format("truetype"), url("../fonts/icomoon/icomoon.woff?jcg36b") format("woff"), url("../fonts/icomoon/icomoon.svg?jcg36b#icomoon") format("svg");
 	font-weight: normal;
 	font-style: normal;
 	font-display: block;
