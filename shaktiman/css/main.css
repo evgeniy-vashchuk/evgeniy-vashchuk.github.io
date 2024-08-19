@@ -3490,9 +3490,12 @@ progress {
 		-webkit-overflow-scrolling: touch;
 	}
 }
-.form-label {
+.form-label, body .ur-frontend-form .ur-form-row .ur-form-grid label.ur-label,
+.user-registration .ur-frontend-form .ur-form-row .ur-form-grid .user-registration-form-row label[for] {
 	margin-bottom: 0.5rem;
 	font-size: 0.875rem;
+	font-weight: 500;
+	color: #101010;
 }
 
 .col-form-label {
@@ -3500,7 +3503,9 @@ progress {
 	padding-bottom: calc(0.7441rem + 1px);
 	margin-bottom: 0;
 	font-size: inherit;
+	font-weight: 500;
 	line-height: 1.3;
+	color: #101010;
 }
 
 .col-form-label-lg {
@@ -3521,7 +3526,7 @@ progress {
 	color: var(--bs-secondary-color);
 }
 
-.form-control {
+.form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text {
 	display: block;
 	width: 100%;
 	padding: 0.7441rem 0.75rem;
@@ -3537,41 +3542,41 @@ progress {
 	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-	.form-control {
+	.form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text {
 		transition: none;
 	}
 }
-.form-control[type=file] {
+.form-control[type=file], html body .ur-frontend-form .ur-form-row .ur-form-grid [type=file].input-text {
 	overflow: hidden;
 }
-.form-control[type=file]:not(:disabled):not([readonly]) {
+.form-control[type=file]:not(:disabled):not([readonly]), html body .ur-frontend-form .ur-form-row .ur-form-grid [type=file].input-text:not(:disabled):not([readonly]) {
 	cursor: pointer;
 }
-.form-control:focus {
+.form-control:focus, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text:focus {
 	color: var(--bs-body-color);
 	background-color: #ffffff;
 	border-color: #F26A21;
 	outline: 0;
-	box-shadow: 0 0 0 0.25rem rgba(242, 106, 33, 0.25);
+	box-shadow: none;
 }
-.form-control::-webkit-date-and-time-value {
+.form-control::-webkit-date-and-time-value, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text::-webkit-date-and-time-value {
 	min-width: 85px;
 	height: 1.3em;
 	margin: 0;
 }
-.form-control::-webkit-datetime-edit {
+.form-control::-webkit-datetime-edit, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text::-webkit-datetime-edit {
 	display: block;
 	padding: 0;
 }
-.form-control::placeholder {
+.form-control::placeholder, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text::placeholder {
 	color: #B1B1B1;
 	opacity: 1;
 }
-.form-control:disabled {
+.form-control:disabled, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text:disabled {
 	background-color: var(--bs-secondary-bg);
 	opacity: 1;
 }
-.form-control::file-selector-button {
+.form-control::file-selector-button, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text::file-selector-button {
 	padding: 0.7441rem 0.75rem;
 	margin: -0.7441rem -0.75rem;
 	margin-inline-end: 0.75rem;
@@ -3586,11 +3591,11 @@ progress {
 	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-	.form-control::file-selector-button {
+	.form-control::file-selector-button, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text::file-selector-button {
 		transition: none;
 	}
 }
-.form-control:hover:not(:disabled):not([readonly])::file-selector-button {
+.form-control:hover:not(:disabled):not([readonly])::file-selector-button, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text:hover:not(:disabled):not([readonly])::file-selector-button {
 	background-color: var(--bs-secondary-bg);
 }
 
@@ -3637,7 +3642,7 @@ progress {
 	margin-inline-end: 1rem;
 }
 
-textarea.form-control {
+textarea.form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid textarea.input-text {
 	min-height: calc(1.3em + 1.4882rem + calc(1px * 2));
 }
 textarea.form-control-sm {
@@ -3727,13 +3732,13 @@ textarea.form-control-lg {
 	border-radius: var(--bs-border-radius-lg);
 }
 
-.form-check {
+.form-check, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list {
 	display: block;
 	min-height: 1.7142857143em;
 	padding-left: 2em;
 	margin-bottom: 0;
 }
-.form-check .form-check-input {
+.form-check .form-check-input, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-check-input, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-check-input, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .user-registration-form__input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox {
 	float: left;
 	margin-left: -2em;
 }
@@ -3743,13 +3748,13 @@ textarea.form-control-lg {
 	padding-left: 0;
 	text-align: right;
 }
-.form-check-reverse .form-check-input {
+.form-check-reverse .form-check-input, .form-check-reverse .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-check-reverse .user-registration-form__input-checkbox, .form-check-reverse .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-check-reverse .input-checkbox {
 	float: right;
 	margin-right: -2em;
 	margin-left: 0;
 }
 
-.form-check-input {
+.form-check-input, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox {
 	--bs-form-check-bg: #F4F4F4;
 	flex-shrink: 0;
 	width: 1.4285714286em;
@@ -3765,41 +3770,41 @@ textarea.form-control-lg {
 	border: var(--bs-border-width) solid #C7C7C7;
 	print-color-adjust: exact;
 }
-.form-check-input[type=checkbox] {
+.form-check-input[type=checkbox], .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox [type=checkbox].user-registration-form__input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list [type=checkbox].input-checkbox {
 	border-radius: 0.25em;
 }
-.form-check-input[type=radio] {
+.form-check-input[type=radio], .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox [type=radio].user-registration-form__input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list [type=radio].input-checkbox {
 	border-radius: 50%;
 }
-.form-check-input:active {
+.form-check-input:active, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:active, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:active {
 	filter: brightness(90%);
 }
-.form-check-input:focus {
+.form-check-input:focus, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:focus, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:focus {
 	border-color: #F26A21;
 	outline: 0;
-	box-shadow: 0 0 0 0.25rem rgba(242, 106, 33, 0.25);
+	box-shadow: none;
 }
-.form-check-input:checked {
+.form-check-input:checked, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:checked, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:checked {
 	background-color: #F26A21;
 	border-color: #F26A21;
 }
-.form-check-input:checked[type=checkbox] {
+.form-check-input:checked[type=checkbox], .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:checked[type=checkbox], .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:checked[type=checkbox] {
 	--bs-form-check-bg-image: url("data:image/svg+xml,%3csvg fill='%23ffffff' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 110 110.2' style='enable-background:new 0 0 110 110.2;' xml:space='preserve'%3e%3cpath d='M39.4,73.7l52.7-52.7c0.8-0.8,2-0.8,2.7,0l7.1,7.1c0.8,0.8,0.8,2,0,2.7L40.8,92c-0.8,0.8-2,0.8-2.7,0l-30-29.9c-0.8-0.8-0.8-2,0-2.7l7.2-7.2c0.8-0.8,2-0.8,2.7,0L39.4,73.7z'/%3e%3c/svg%3e");
 }
-.form-check-input:checked[type=radio] {
+.form-check-input:checked[type=radio], .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:checked[type=radio], .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:checked[type=radio] {
 	--bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23ffffff'/%3e%3c/svg%3e");
 }
-.form-check-input[type=checkbox]:indeterminate {
+.form-check-input[type=checkbox]:indeterminate, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox [type=checkbox].user-registration-form__input-checkbox:indeterminate, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list [type=checkbox].input-checkbox:indeterminate {
 	background-color: #F26A21;
 	border-color: #F26A21;
 	--bs-form-check-bg-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23ffffff' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M6 10h8'/%3e%3c/svg%3e");
 }
-.form-check-input:disabled {
+.form-check-input:disabled, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:disabled, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:disabled {
 	pointer-events: none;
 	filter: none;
 	opacity: 0.5;
 }
-.form-check-input[disabled] ~ .form-check-label, .form-check-input:disabled ~ .form-check-label {
+.form-check-input[disabled] ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-check-input[disabled] ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox [disabled].user-registration-form__input-checkbox ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox [disabled].user-registration-form__input-checkbox ~ span, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-check-input[disabled] ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox [disabled].user-registration-form__input-checkbox ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list [disabled].user-registration-form__input-checkbox ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list [disabled].input-checkbox ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox [disabled].input-checkbox ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list [disabled].input-checkbox ~ span, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list [disabled].input-checkbox ~ .ur-checkbox-label, .form-check-input:disabled ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-check-input:disabled ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:disabled ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:disabled ~ span, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-check-input:disabled ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:disabled ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .user-registration-form__input-checkbox:disabled ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:disabled ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox .input-checkbox:disabled ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:disabled ~ span, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:disabled ~ .ur-checkbox-label {
 	cursor: default;
 	opacity: 0.5;
 }
@@ -3807,7 +3812,7 @@ textarea.form-control-lg {
 .form-switch {
 	padding-left: 2.5em;
 }
-.form-switch .form-check-input {
+.form-switch .form-check-input, .form-switch .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-switch .user-registration-form__input-checkbox, .form-switch .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-switch .input-checkbox {
 	--bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%2816, 16, 16, 0.25%29'/%3e%3c/svg%3e");
 	width: 2em;
 	margin-left: -2.5em;
@@ -3817,14 +3822,14 @@ textarea.form-control-lg {
 	transition: background-position 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-	.form-switch .form-check-input {
+	.form-switch .form-check-input, .form-switch .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-switch .user-registration-form__input-checkbox, .form-switch .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-switch .input-checkbox {
 		transition: none;
 	}
 }
-.form-switch .form-check-input:focus {
+.form-switch .form-check-input:focus, .form-switch .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:focus, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-switch .user-registration-form__input-checkbox:focus, .form-switch .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:focus, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-switch .input-checkbox:focus {
 	--bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23F26A21'/%3e%3c/svg%3e");
 }
-.form-switch .form-check-input:checked {
+.form-switch .form-check-input:checked, .form-switch .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:checked, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-switch .user-registration-form__input-checkbox:checked, .form-switch .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:checked, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-switch .input-checkbox:checked {
 	background-position: right center;
 	--bs-form-switch-bg: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23ffffff'/%3e%3c/svg%3e");
 }
@@ -3832,7 +3837,7 @@ textarea.form-control-lg {
 	padding-right: 2.5em;
 	padding-left: 0;
 }
-.form-switch.form-check-reverse .form-check-input {
+.form-switch.form-check-reverse .form-check-input, .form-switch.form-check-reverse .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-switch.form-check-reverse .user-registration-form__input-checkbox, .form-switch.form-check-reverse .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-switch.form-check-reverse .input-checkbox {
 	margin-right: -2.5em;
 	margin-left: 0;
 }
@@ -3847,7 +3852,9 @@ textarea.form-control-lg {
 	clip: rect(0, 0, 0, 0);
 	pointer-events: none;
 }
-.btn-check[disabled] + .btn, .btn-check:disabled + .btn {
+.btn-check[disabled] + .btn, body .ur-frontend-form .btn-check[disabled] + button,
+body .ur-frontend-form .btn-check[disabled] + input[type=submit], .btn-check:disabled + .btn, body .ur-frontend-form .btn-check:disabled + button,
+body .ur-frontend-form .btn-check:disabled + input[type=submit] {
 	pointer-events: none;
 	filter: none;
 	opacity: 0.65;
@@ -3864,10 +3871,10 @@ textarea.form-control-lg {
 	outline: 0;
 }
 .form-range:focus::-webkit-slider-thumb {
-	box-shadow: 0 0 0 1px #F4F4F4, 0 0 0 0.25rem rgba(242, 106, 33, 0.25);
+	box-shadow: 0 0 0 1px #F4F4F4, none;
 }
 .form-range:focus::-moz-range-thumb {
-	box-shadow: 0 0 0 1px #F4F4F4, 0 0 0 0.25rem rgba(242, 106, 33, 0.25);
+	box-shadow: 0 0 0 1px #F4F4F4, none;
 }
 .form-range::-moz-focus-outer {
 	border: 0;
@@ -3938,7 +3945,7 @@ textarea.form-control-lg {
 .form-floating {
 	position: relative;
 }
-.form-floating > .form-control,
+.form-floating > .form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text,
 .form-floating > .form-control-plaintext,
 .form-floating > .form-select {
 	height: calc(3.5rem + calc(1px * 2));
@@ -3966,21 +3973,21 @@ textarea.form-control-lg {
 		transition: none;
 	}
 }
-.form-floating > .form-control,
+.form-floating > .form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text,
 .form-floating > .form-control-plaintext {
 	padding: 1rem 0.75rem;
 }
-.form-floating > .form-control::placeholder,
+.form-floating > .form-control::placeholder, html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text::placeholder,
 .form-floating > .form-control-plaintext::placeholder {
 	color: transparent;
 }
-.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown),
+.form-floating > .form-control:focus, html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text:focus, .form-floating > .form-control:not(:placeholder-shown), html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text:not(:placeholder-shown),
 .form-floating > .form-control-plaintext:focus,
 .form-floating > .form-control-plaintext:not(:placeholder-shown) {
 	padding-top: 1.625rem;
 	padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:-webkit-autofill,
+.form-floating > .form-control:-webkit-autofill, html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text:-webkit-autofill,
 .form-floating > .form-control-plaintext:-webkit-autofill {
 	padding-top: 1.625rem;
 	padding-bottom: 0.625rem;
@@ -3989,15 +3996,17 @@ textarea.form-control-lg {
 	padding-top: 1.625rem;
 	padding-bottom: 0.625rem;
 }
-.form-floating > .form-control:focus ~ label,
+.form-floating > .form-control:focus ~ label, html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text:focus ~ label,
 .form-floating > .form-control:not(:placeholder-shown) ~ label,
+html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text:not(:placeholder-shown) ~ label,
 .form-floating > .form-control-plaintext ~ label,
 .form-floating > .form-select ~ label {
 	color: rgba(var(--bs-body-color-rgb), 0.65);
 	transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
-.form-floating > .form-control:focus ~ label::after,
+.form-floating > .form-control:focus ~ label::after, html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text:focus ~ label::after,
 .form-floating > .form-control:not(:placeholder-shown) ~ label::after,
+html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text:not(:placeholder-shown) ~ label::after,
 .form-floating > .form-control-plaintext ~ label::after,
 .form-floating > .form-select ~ label::after {
 	position: absolute;
@@ -4008,7 +4017,7 @@ textarea.form-control-lg {
 	background-color: #ffffff;
 	border-radius: var(--bs-border-radius-sm);
 }
-.form-floating > .form-control:-webkit-autofill ~ label {
+.form-floating > .form-control:-webkit-autofill ~ label, html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text:-webkit-autofill ~ label {
 	color: rgba(var(--bs-body-color-rgb), 0.65);
 	transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
@@ -4016,11 +4025,13 @@ textarea.form-control-lg {
 	border-width: 1px 0;
 }
 .form-floating > :disabled ~ label,
-.form-floating > .form-control:disabled ~ label {
+.form-floating > .form-control:disabled ~ label,
+html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text:disabled ~ label {
 	color: #878787;
 }
 .form-floating > :disabled ~ label::after,
-.form-floating > .form-control:disabled ~ label::after {
+.form-floating > .form-control:disabled ~ label::after,
+html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text:disabled ~ label::after {
 	background-color: var(--bs-secondary-bg);
 }
 
@@ -4031,7 +4042,7 @@ textarea.form-control-lg {
 	align-items: stretch;
 	width: 100%;
 }
-.input-group > .form-control,
+.input-group > .form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-group > .input-text,
 .input-group > .form-select,
 .input-group > .form-floating {
 	position: relative;
@@ -4039,16 +4050,20 @@ textarea.form-control-lg {
 	width: 1%;
 	min-width: 0;
 }
-.input-group > .form-control:focus,
+.input-group > .form-control:focus, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-group > .input-text:focus,
 .input-group > .form-select:focus,
 .input-group > .form-floating:focus-within {
 	z-index: 5;
 }
-.input-group .btn {
+.input-group .btn, .input-group body .ur-frontend-form button, body .ur-frontend-form .input-group button,
+.input-group body .ur-frontend-form input[type=submit],
+body .ur-frontend-form .input-group input[type=submit] {
 	position: relative;
 	z-index: 2;
 }
-.input-group .btn:focus {
+.input-group .btn:focus, .input-group body .ur-frontend-form button:focus, body .ur-frontend-form .input-group button:focus,
+.input-group body .ur-frontend-form input[type=submit]:focus,
+body .ur-frontend-form .input-group input[type=submit]:focus {
 	z-index: 5;
 }
 
@@ -4067,19 +4082,23 @@ textarea.form-control-lg {
 	border-radius: var(--bs-border-radius-sm);
 }
 
-.input-group-lg > .form-control,
+.input-group-lg > .form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-group-lg > .input-text,
 .input-group-lg > .form-select,
 .input-group-lg > .input-group-text,
-.input-group-lg > .btn {
+.input-group-lg > .btn,
+body .ur-frontend-form .input-group-lg > button,
+body .ur-frontend-form .input-group-lg > input[type=submit] {
 	padding: 0.5rem 1rem;
 	font-size: 1.125rem;
 	border-radius: var(--bs-border-radius-lg);
 }
 
-.input-group-sm > .form-control,
+.input-group-sm > .form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-group-sm > .input-text,
 .input-group-sm > .form-select,
 .input-group-sm > .input-group-text,
-.input-group-sm > .btn {
+.input-group-sm > .btn,
+body .ur-frontend-form .input-group-sm > button,
+body .ur-frontend-form .input-group-sm > input[type=submit] {
 	padding: 0.25rem 1rem;
 	font-size: 0.875rem;
 	border-radius: var(--bs-border-radius-sm);
@@ -4093,6 +4112,7 @@ textarea.form-control-lg {
 .input-group:not(.has-validation) > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
 .input-group:not(.has-validation) > .dropdown-toggle:nth-last-child(n+3),
 .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-control,
+html body .ur-frontend-form .ur-form-row .ur-form-grid .input-group:not(.has-validation) > .form-floating:not(:last-child) > .input-text,
 .input-group:not(.has-validation) > .form-floating:not(:last-child) > .form-select {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
@@ -4100,6 +4120,7 @@ textarea.form-control-lg {
 .input-group.has-validation > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu):not(.form-floating),
 .input-group.has-validation > .dropdown-toggle:nth-last-child(n+4),
 .input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-control,
+html body .ur-frontend-form .ur-form-row .ur-form-grid .input-group.has-validation > .form-floating:nth-last-child(n+3) > .input-text,
 .input-group.has-validation > .form-floating:nth-last-child(n+3) > .form-select {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
@@ -4109,7 +4130,7 @@ textarea.form-control-lg {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
-.input-group > .form-floating:not(:first-child) > .form-control,
+.input-group > .form-floating:not(:first-child) > .form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-group > .form-floating:not(:first-child) > .input-text,
 .input-group > .form-floating:not(:first-child) > .form-select {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
@@ -4144,10 +4165,10 @@ textarea.form-control-lg {
 	display: block;
 }
 
-.was-validated .form-control:valid, .form-control.is-valid {
+.was-validated .form-control:valid, .was-validated html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text:valid, html body .ur-frontend-form .ur-form-row .ur-form-grid .was-validated .input-text:valid, .form-control.is-valid, html body .ur-frontend-form .ur-form-row .ur-form-grid .is-valid.input-text {
 	border-color: var(--bs-form-valid-border-color);
 }
-.was-validated .form-control:valid:focus, .form-control.is-valid:focus {
+.was-validated .form-control:valid:focus, .was-validated html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text:valid:focus, html body .ur-frontend-form .ur-form-row .ur-form-grid .was-validated .input-text:valid:focus, .form-control.is-valid:focus, html body .ur-frontend-form .ur-form-row .ur-form-grid .is-valid.input-text:focus {
 	border-color: var(--bs-form-valid-border-color);
 	box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.25);
 }
@@ -4160,24 +4181,24 @@ textarea.form-control-lg {
 	box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.25);
 }
 
-.was-validated .form-check-input:valid, .form-check-input.is-valid {
+.was-validated .form-check-input:valid, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:valid, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .was-validated .user-registration-form__input-checkbox:valid, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:valid, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .input-checkbox:valid, .form-check-input.is-valid, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .is-valid.user-registration-form__input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .is-valid.input-checkbox {
 	border-color: var(--bs-form-valid-border-color);
 }
-.was-validated .form-check-input:valid:checked, .form-check-input.is-valid:checked {
+.was-validated .form-check-input:valid:checked, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:valid:checked, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .was-validated .user-registration-form__input-checkbox:valid:checked, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:valid:checked, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .input-checkbox:valid:checked, .form-check-input.is-valid:checked, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .is-valid.user-registration-form__input-checkbox:checked, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .is-valid.input-checkbox:checked {
 	background-color: var(--bs-form-valid-color);
 }
-.was-validated .form-check-input:valid:focus, .form-check-input.is-valid:focus {
+.was-validated .form-check-input:valid:focus, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:valid:focus, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .was-validated .user-registration-form__input-checkbox:valid:focus, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:valid:focus, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .input-checkbox:valid:focus, .form-check-input.is-valid:focus, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .is-valid.user-registration-form__input-checkbox:focus, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .is-valid.input-checkbox:focus {
 	box-shadow: 0 0 0 0.25rem rgba(var(--bs-success-rgb), 0.25);
 }
-.was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
+.was-validated .form-check-input:valid ~ .form-check-label, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-check-input:valid ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .was-validated .form-check-input:valid ~ span, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:valid ~ .form-check-label, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:valid ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .was-validated .user-registration-form__input-checkbox:valid ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .was-validated .user-registration-form__input-checkbox:valid ~ span, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-check-input:valid ~ .ur-checkbox-label, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:valid ~ .ur-checkbox-label, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .user-registration-form__input-checkbox:valid ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .form-check-input:valid ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:valid ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .user-registration-form__input-checkbox:valid ~ .ur-checkbox-label, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:valid ~ .form-check-label, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox .input-checkbox:valid ~ span, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:valid ~ span, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:valid ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .input-checkbox:valid ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated label.user-registration-form__label-for-checkbox .input-checkbox:valid ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .input-checkbox:valid ~ span, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .input-checkbox:valid ~ .ur-checkbox-label, .form-check-input.is-valid ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-check-input.is-valid ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .is-valid.user-registration-form__input-checkbox ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .is-valid.user-registration-form__input-checkbox ~ span, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-check-input.is-valid ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox .is-valid.user-registration-form__input-checkbox ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .is-valid.user-registration-form__input-checkbox ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .is-valid.input-checkbox ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox .is-valid.input-checkbox ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .is-valid.input-checkbox ~ span, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .is-valid.input-checkbox ~ .ur-checkbox-label {
 	color: var(--bs-form-valid-color);
 }
 
-.form-check-inline .form-check-input ~ .valid-feedback {
+.form-check-inline .form-check-input ~ .valid-feedback, .form-check-inline .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox ~ .valid-feedback, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-check-inline .user-registration-form__input-checkbox ~ .valid-feedback, .form-check-inline .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox ~ .valid-feedback, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-check-inline .input-checkbox ~ .valid-feedback {
 	margin-left: 0.5em;
 }
 
-.was-validated .input-group > .form-control:not(:focus):valid, .input-group > .form-control:not(:focus).is-valid,
+.was-validated .input-group > .form-control:not(:focus):valid, .was-validated html body .ur-frontend-form .ur-form-row .ur-form-grid .input-group > .input-text:not(:focus):valid, html body .ur-frontend-form .ur-form-row .ur-form-grid .was-validated .input-group > .input-text:not(:focus):valid, .input-group > .form-control:not(:focus).is-valid, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-group > .input-text:not(:focus).is-valid,
 .was-validated .input-group > .form-select:not(:focus):valid,
 .input-group > .form-select:not(:focus).is-valid,
 .was-validated .input-group > .form-floating:not(:focus-within):valid,
@@ -4214,10 +4235,10 @@ textarea.form-control-lg {
 	display: block;
 }
 
-.was-validated .form-control:invalid, .form-control.is-invalid {
+.was-validated .form-control:invalid, .was-validated html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text:invalid, html body .ur-frontend-form .ur-form-row .ur-form-grid .was-validated .input-text:invalid, .form-control.is-invalid, html body .ur-frontend-form .ur-form-row .ur-form-grid .is-invalid.input-text {
 	border-color: var(--bs-form-invalid-border-color);
 }
-.was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
+.was-validated .form-control:invalid:focus, .was-validated html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text:invalid:focus, html body .ur-frontend-form .ur-form-row .ur-form-grid .was-validated .input-text:invalid:focus, .form-control.is-invalid:focus, html body .ur-frontend-form .ur-form-row .ur-form-grid .is-invalid.input-text:focus {
 	border-color: var(--bs-form-invalid-border-color);
 	box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
 }
@@ -4230,24 +4251,24 @@ textarea.form-control-lg {
 	box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
 }
 
-.was-validated .form-check-input:invalid, .form-check-input.is-invalid {
+.was-validated .form-check-input:invalid, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:invalid, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .was-validated .user-registration-form__input-checkbox:invalid, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:invalid, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .input-checkbox:invalid, .form-check-input.is-invalid, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .is-invalid.user-registration-form__input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .is-invalid.input-checkbox {
 	border-color: var(--bs-form-invalid-border-color);
 }
-.was-validated .form-check-input:invalid:checked, .form-check-input.is-invalid:checked {
+.was-validated .form-check-input:invalid:checked, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:invalid:checked, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .was-validated .user-registration-form__input-checkbox:invalid:checked, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:invalid:checked, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .input-checkbox:invalid:checked, .form-check-input.is-invalid:checked, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .is-invalid.user-registration-form__input-checkbox:checked, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .is-invalid.input-checkbox:checked {
 	background-color: var(--bs-form-invalid-color);
 }
-.was-validated .form-check-input:invalid:focus, .form-check-input.is-invalid:focus {
+.was-validated .form-check-input:invalid:focus, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:invalid:focus, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .was-validated .user-registration-form__input-checkbox:invalid:focus, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:invalid:focus, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .input-checkbox:invalid:focus, .form-check-input.is-invalid:focus, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .is-invalid.user-registration-form__input-checkbox:focus, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .is-invalid.input-checkbox:focus {
 	box-shadow: 0 0 0 0.25rem rgba(var(--bs-danger-rgb), 0.25);
 }
-.was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {
+.was-validated .form-check-input:invalid ~ .form-check-label, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-check-input:invalid ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .was-validated .form-check-input:invalid ~ span, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:invalid ~ .form-check-label, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:invalid ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .was-validated .user-registration-form__input-checkbox:invalid ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .was-validated .user-registration-form__input-checkbox:invalid ~ span, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-check-input:invalid ~ .ur-checkbox-label, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:invalid ~ .ur-checkbox-label, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .user-registration-form__input-checkbox:invalid ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .form-check-input:invalid ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox:invalid ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .user-registration-form__input-checkbox:invalid ~ .ur-checkbox-label, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:invalid ~ .form-check-label, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox .input-checkbox:invalid ~ span, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:invalid ~ span, .was-validated .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox:invalid ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .input-checkbox:invalid ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated label.user-registration-form__label-for-checkbox .input-checkbox:invalid ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .input-checkbox:invalid ~ span, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .was-validated .input-checkbox:invalid ~ .ur-checkbox-label, .form-check-input.is-invalid ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-check-input.is-invalid ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .is-invalid.user-registration-form__input-checkbox ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .is-invalid.user-registration-form__input-checkbox ~ span, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-check-input.is-invalid ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox .is-invalid.user-registration-form__input-checkbox ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .is-invalid.user-registration-form__input-checkbox ~ .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .is-invalid.input-checkbox ~ .form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list label.user-registration-form__label-for-checkbox .is-invalid.input-checkbox ~ span, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .ur-field-item.field-checkbox .ur-checkbox-list .is-invalid.input-checkbox ~ span, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .is-invalid.input-checkbox ~ .ur-checkbox-label {
 	color: var(--bs-form-invalid-color);
 }
 
-.form-check-inline .form-check-input ~ .invalid-feedback {
+.form-check-inline .form-check-input ~ .invalid-feedback, .form-check-inline .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox ~ .invalid-feedback, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .form-check-inline .user-registration-form__input-checkbox ~ .invalid-feedback, .form-check-inline .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox ~ .invalid-feedback, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .form-check-inline .input-checkbox ~ .invalid-feedback {
 	margin-left: 0.5em;
 }
 
-.was-validated .input-group > .form-control:not(:focus):invalid, .input-group > .form-control:not(:focus).is-invalid,
+.was-validated .input-group > .form-control:not(:focus):invalid, .was-validated html body .ur-frontend-form .ur-form-row .ur-form-grid .input-group > .input-text:not(:focus):invalid, html body .ur-frontend-form .ur-form-row .ur-form-grid .was-validated .input-group > .input-text:not(:focus):invalid, .input-group > .form-control:not(:focus).is-invalid, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-group > .input-text:not(:focus).is-invalid,
 .was-validated .input-group > .form-select:not(:focus):invalid,
 .input-group > .form-select:not(:focus).is-invalid,
 .was-validated .input-group > .form-floating:not(:focus-within):invalid,
@@ -4255,7 +4276,9 @@ textarea.form-control-lg {
 	z-index: 4;
 }
 
-.btn {
+.btn, body .ur-frontend-form button,
+body .ur-frontend-form input[type=submit],
+body .ur-frontend-form button[type=submit] {
 	--bs-btn-padding-x: 2.125rem;
 	--bs-btn-padding-y: 0.25rem;
 	--bs-btn-font-family: ;
@@ -4288,44 +4311,65 @@ textarea.form-control-lg {
 	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
-	.btn {
+	.btn, body .ur-frontend-form button,
+	body .ur-frontend-form input[type=submit],
+	body .ur-frontend-form button[type=submit] {
 		transition: none;
 	}
 }
-.btn:hover {
+.btn:hover, body .ur-frontend-form button:hover,
+body .ur-frontend-form input[type=submit]:hover {
 	color: var(--bs-btn-hover-color);
 	background-color: var(--bs-btn-hover-bg);
 	border-color: var(--bs-btn-hover-border-color);
 }
-.btn-check + .btn:hover {
+.btn-check + .btn:hover, body .ur-frontend-form .btn-check + button:hover,
+body .ur-frontend-form .btn-check + input[type=submit]:hover {
 	color: var(--bs-btn-color);
 	background-color: var(--bs-btn-bg);
 	border-color: var(--bs-btn-border-color);
 }
-.btn:focus-visible {
+.btn:focus-visible, body .ur-frontend-form button:focus-visible,
+body .ur-frontend-form input[type=submit]:focus-visible {
 	color: var(--bs-btn-hover-color);
 	background-color: var(--bs-btn-hover-bg);
 	border-color: var(--bs-btn-hover-border-color);
 	outline: 0;
 	box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn-check:focus-visible + .btn {
+.btn-check:focus-visible + .btn, body .ur-frontend-form .btn-check:focus-visible + button,
+body .ur-frontend-form .btn-check:focus-visible + input[type=submit] {
 	border-color: var(--bs-btn-hover-border-color);
 	outline: 0;
 	box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn-check:checked + .btn, :not(.btn-check) + .btn:active, .btn:first-child:active, .btn.active, .btn.show {
+.btn-check:checked + .btn, body .ur-frontend-form .btn-check:checked + button,
+body .ur-frontend-form .btn-check:checked + input[type=submit], :not(.btn-check) + .btn:active, body .ur-frontend-form :not(.btn-check) + button:active,
+body .ur-frontend-form :not(.btn-check) + input[type=submit]:active, .btn:first-child:active, body .ur-frontend-form button:first-child:active,
+body .ur-frontend-form input[type=submit]:first-child:active, .btn.active, body .ur-frontend-form button.active,
+body .ur-frontend-form input.active[type=submit], .btn.show, body .ur-frontend-form button.show,
+body .ur-frontend-form input.show[type=submit] {
 	color: var(--bs-btn-active-color);
 	background-color: var(--bs-btn-active-bg);
 	border-color: var(--bs-btn-active-border-color);
 }
-.btn-check:checked + .btn:focus-visible, :not(.btn-check) + .btn:active:focus-visible, .btn:first-child:active:focus-visible, .btn.active:focus-visible, .btn.show:focus-visible {
+.btn-check:checked + .btn:focus-visible, body .ur-frontend-form .btn-check:checked + button:focus-visible,
+body .ur-frontend-form .btn-check:checked + input[type=submit]:focus-visible, :not(.btn-check) + .btn:active:focus-visible, body .ur-frontend-form :not(.btn-check) + button:active:focus-visible,
+body .ur-frontend-form :not(.btn-check) + input[type=submit]:active:focus-visible, .btn:first-child:active:focus-visible, body .ur-frontend-form button:first-child:active:focus-visible,
+body .ur-frontend-form input[type=submit]:first-child:active:focus-visible, .btn.active:focus-visible, body .ur-frontend-form button.active:focus-visible,
+body .ur-frontend-form input.active[type=submit]:focus-visible, .btn.show:focus-visible, body .ur-frontend-form button.show:focus-visible,
+body .ur-frontend-form input.show[type=submit]:focus-visible {
 	box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn-check:checked:focus-visible + .btn {
+.btn-check:checked:focus-visible + .btn, body .ur-frontend-form .btn-check:checked:focus-visible + button,
+body .ur-frontend-form .btn-check:checked:focus-visible + input[type=submit] {
 	box-shadow: var(--bs-btn-focus-box-shadow);
 }
-.btn:disabled, .btn.disabled, fieldset:disabled .btn {
+.btn:disabled, body .ur-frontend-form button:disabled,
+body .ur-frontend-form input[type=submit]:disabled, .btn.disabled, body .ur-frontend-form button.disabled,
+body .ur-frontend-form input.disabled[type=submit], fieldset:disabled .btn, fieldset:disabled body .ur-frontend-form button, body .ur-frontend-form fieldset:disabled button,
+fieldset:disabled body .ur-frontend-form input[type=submit],
+body .ur-frontend-form fieldset:disabled input[type=submit] {
 	color: var(--bs-btn-disabled-color);
 	pointer-events: none;
 	background-color: var(--bs-btn-disabled-bg);
@@ -4333,7 +4377,9 @@ textarea.form-control-lg {
 	opacity: var(--bs-btn-disabled-opacity);
 }
 
-.btn-primary {
+.btn-primary, body .ur-frontend-form button,
+body .ur-frontend-form input[type=submit],
+body .ur-frontend-form button[type=submit] {
 	--bs-btn-color: #101010;
 	--bs-btn-bg: #F26A21;
 	--bs-btn-border-color: #F26A21;
@@ -4664,14 +4710,16 @@ textarea.form-control-lg {
 	color: var(--bs-btn-hover-color);
 }
 
-.btn-lg, .btn-group-lg > .btn {
+.btn-lg, .btn-group-lg > .btn, body .ur-frontend-form .btn-group-lg > button,
+body .ur-frontend-form .btn-group-lg > input[type=submit] {
 	--bs-btn-padding-y: 0.5rem;
 	--bs-btn-padding-x: 1rem;
 	--bs-btn-font-size: 1.125rem;
 	--bs-btn-border-radius: 50rem;
 }
 
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, body .ur-frontend-form .btn-group-sm > button,
+body .ur-frontend-form .btn-group-sm > input[type=submit] {
 	--bs-btn-padding-y: 0.25rem;
 	--bs-btn-padding-x: 1rem;
 	--bs-btn-font-size: 0.875rem;
@@ -5053,23 +5101,49 @@ textarea.form-control-lg {
 	display: inline-flex;
 	vertical-align: middle;
 }
-.btn-group > .btn,
-.btn-group-vertical > .btn {
+.btn-group > .btn, body .ur-frontend-form .btn-group > button,
+body .ur-frontend-form .btn-group > input[type=submit],
+.btn-group-vertical > .btn,
+body .ur-frontend-form .btn-group-vertical > button,
+body .ur-frontend-form .btn-group-vertical > input[type=submit] {
 	position: relative;
 	flex: 1 1 auto;
 }
-.btn-group > .btn-check:checked + .btn,
+.btn-group > .btn-check:checked + .btn, body .ur-frontend-form .btn-group > .btn-check:checked + button,
+body .ur-frontend-form .btn-group > .btn-check:checked + input[type=submit],
 .btn-group > .btn-check:focus + .btn,
+body .ur-frontend-form .btn-group > .btn-check:focus + button,
+body .ur-frontend-form .btn-group > .btn-check:focus + input[type=submit],
 .btn-group > .btn:hover,
+body .ur-frontend-form .btn-group > button:hover,
+body .ur-frontend-form .btn-group > input[type=submit]:hover,
 .btn-group > .btn:focus,
+body .ur-frontend-form .btn-group > button:focus,
+body .ur-frontend-form .btn-group > input[type=submit]:focus,
 .btn-group > .btn:active,
+body .ur-frontend-form .btn-group > button:active,
+body .ur-frontend-form .btn-group > input[type=submit]:active,
 .btn-group > .btn.active,
+body .ur-frontend-form .btn-group > button.active,
+body .ur-frontend-form .btn-group > input.active[type=submit],
 .btn-group-vertical > .btn-check:checked + .btn,
+body .ur-frontend-form .btn-group-vertical > .btn-check:checked + button,
+body .ur-frontend-form .btn-group-vertical > .btn-check:checked + input[type=submit],
 .btn-group-vertical > .btn-check:focus + .btn,
+body .ur-frontend-form .btn-group-vertical > .btn-check:focus + button,
+body .ur-frontend-form .btn-group-vertical > .btn-check:focus + input[type=submit],
 .btn-group-vertical > .btn:hover,
+body .ur-frontend-form .btn-group-vertical > button:hover,
+body .ur-frontend-form .btn-group-vertical > input[type=submit]:hover,
 .btn-group-vertical > .btn:focus,
+body .ur-frontend-form .btn-group-vertical > button:focus,
+body .ur-frontend-form .btn-group-vertical > input[type=submit]:focus,
 .btn-group-vertical > .btn:active,
-.btn-group-vertical > .btn.active {
+body .ur-frontend-form .btn-group-vertical > button:active,
+body .ur-frontend-form .btn-group-vertical > input[type=submit]:active,
+.btn-group-vertical > .btn.active,
+body .ur-frontend-form .btn-group-vertical > button.active,
+body .ur-frontend-form .btn-group-vertical > input.active[type=submit] {
 	z-index: 1;
 }
 
@@ -5085,19 +5159,30 @@ textarea.form-control-lg {
 .btn-group {
 	border-radius: 50rem;
 }
-.btn-group > :not(.btn-check:first-child) + .btn,
+.btn-group > :not(.btn-check:first-child) + .btn, body .ur-frontend-form .btn-group > :not(.btn-check:first-child) + button,
+body .ur-frontend-form .btn-group > :not(.btn-check:first-child) + input[type=submit],
 .btn-group > .btn-group:not(:first-child) {
 	margin-left: calc(var(--bs-border-width) * -1);
 }
-.btn-group > .btn:not(:last-child):not(.dropdown-toggle),
+.btn-group > .btn:not(:last-child):not(.dropdown-toggle), body .ur-frontend-form .btn-group > button:not(:last-child):not(.dropdown-toggle),
+body .ur-frontend-form .btn-group > input[type=submit]:not(:last-child):not(.dropdown-toggle),
 .btn-group > .btn.dropdown-toggle-split:first-child,
-.btn-group > .btn-group:not(:last-child) > .btn {
+body .ur-frontend-form .btn-group > button.dropdown-toggle-split:first-child,
+body .ur-frontend-form .btn-group > input.dropdown-toggle-split[type=submit]:first-child,
+.btn-group > .btn-group:not(:last-child) > .btn,
+body .ur-frontend-form .btn-group > .btn-group:not(:last-child) > button,
+body .ur-frontend-form .btn-group > .btn-group:not(:last-child) > input[type=submit] {
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 }
-.btn-group > .btn:nth-child(n+3),
+.btn-group > .btn:nth-child(n+3), body .ur-frontend-form .btn-group > button:nth-child(n+3),
+body .ur-frontend-form .btn-group > input[type=submit]:nth-child(n+3),
 .btn-group > :not(.btn-check) + .btn,
-.btn-group > .btn-group:not(:first-child) > .btn {
+body .ur-frontend-form .btn-group > :not(.btn-check) + button,
+body .ur-frontend-form .btn-group > :not(.btn-check) + input[type=submit],
+.btn-group > .btn-group:not(:first-child) > .btn,
+body .ur-frontend-form .btn-group > .btn-group:not(:first-child) > button,
+body .ur-frontend-form .btn-group > .btn-group:not(:first-child) > input[type=submit] {
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -5113,12 +5198,14 @@ textarea.form-control-lg {
 	margin-right: 0;
 }
 
-.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split {
+.btn-sm + .dropdown-toggle-split, .btn-group-sm > .btn + .dropdown-toggle-split, body .ur-frontend-form .btn-group-sm > button + .dropdown-toggle-split,
+body .ur-frontend-form .btn-group-sm > input[type=submit] + .dropdown-toggle-split {
 	padding-right: 0.75rem;
 	padding-left: 0.75rem;
 }
 
-.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split {
+.btn-lg + .dropdown-toggle-split, .btn-group-lg > .btn + .dropdown-toggle-split, body .ur-frontend-form .btn-group-lg > button + .dropdown-toggle-split,
+body .ur-frontend-form .btn-group-lg > input[type=submit] + .dropdown-toggle-split {
 	padding-right: 0.75rem;
 	padding-left: 0.75rem;
 }
@@ -5128,21 +5215,33 @@ textarea.form-control-lg {
 	align-items: flex-start;
 	justify-content: center;
 }
-.btn-group-vertical > .btn,
+.btn-group-vertical > .btn, body .ur-frontend-form .btn-group-vertical > button,
+body .ur-frontend-form .btn-group-vertical > input[type=submit],
 .btn-group-vertical > .btn-group {
 	width: 100%;
 }
-.btn-group-vertical > .btn:not(:first-child),
+.btn-group-vertical > .btn:not(:first-child), body .ur-frontend-form .btn-group-vertical > button:not(:first-child),
+body .ur-frontend-form .btn-group-vertical > input[type=submit]:not(:first-child),
 .btn-group-vertical > .btn-group:not(:first-child) {
 	margin-top: calc(var(--bs-border-width) * -1);
 }
-.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle),
-.btn-group-vertical > .btn-group:not(:last-child) > .btn {
+.btn-group-vertical > .btn:not(:last-child):not(.dropdown-toggle), body .ur-frontend-form .btn-group-vertical > button:not(:last-child):not(.dropdown-toggle),
+body .ur-frontend-form .btn-group-vertical > input[type=submit]:not(:last-child):not(.dropdown-toggle),
+.btn-group-vertical > .btn-group:not(:last-child) > .btn,
+body .ur-frontend-form .btn-group-vertical > .btn-group:not(:last-child) > button,
+body .ur-frontend-form .btn-group-vertical > .btn-group:not(:last-child) > input[type=submit] {
 	border-bottom-right-radius: 0;
 	border-bottom-left-radius: 0;
 }
-.btn-group-vertical > .btn ~ .btn,
-.btn-group-vertical > .btn-group:not(:first-child) > .btn {
+.btn-group-vertical > .btn ~ .btn, body .ur-frontend-form .btn-group-vertical > button ~ .btn,
+body .ur-frontend-form .btn-group-vertical > input[type=submit] ~ .btn, body .ur-frontend-form .btn-group-vertical > .btn ~ button, body .ur-frontend-form .btn-group-vertical > button ~ button,
+body .ur-frontend-form .btn-group-vertical > input[type=submit] ~ button,
+body .ur-frontend-form .btn-group-vertical > .btn ~ input[type=submit],
+body .ur-frontend-form .btn-group-vertical > button ~ input[type=submit],
+body .ur-frontend-form .btn-group-vertical > input[type=submit] ~ input[type=submit],
+.btn-group-vertical > .btn-group:not(:first-child) > .btn,
+body .ur-frontend-form .btn-group-vertical > .btn-group:not(:first-child) > button,
+body .ur-frontend-form .btn-group-vertical > .btn-group:not(:first-child) > input[type=submit] {
 	border-top-left-radius: 0;
 	border-top-right-radius: 0;
 }
@@ -5954,7 +6053,7 @@ textarea.form-control-lg {
 	--bs-accordion-btn-icon-transform: rotate(-180deg);
 	--bs-accordion-btn-icon-transition: transform 0.2s ease-in-out;
 	--bs-accordion-btn-active-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23612a0d'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-	--bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(242, 106, 33, 0.25);
+	--bs-accordion-btn-focus-box-shadow: none;
 	--bs-accordion-body-padding-x: 1.25rem;
 	--bs-accordion-body-padding-y: 1rem;
 	--bs-accordion-active-color: var(--bs-primary-text-emphasis);
@@ -6217,7 +6316,8 @@ textarea.form-control-lg {
 	display: none;
 }
 
-.btn .badge {
+.btn .badge, body .ur-frontend-form button .badge,
+body .ur-frontend-form input[type=submit] .badge {
 	position: relative;
 	top: -1px;
 }
@@ -7636,7 +7736,8 @@ textarea.form-control-lg {
 }
 
 .spinner-grow,
-.spinner-border {
+.spinner-border,
+body .ur-front-spinner:after {
 	display: inline-block;
 	width: var(--bs-spinner-width);
 	height: var(--bs-spinner-height);
@@ -7650,9 +7751,9 @@ textarea.form-control-lg {
 		transform: rotate(360deg) /* rtl:ignore */;
 	}
 }
-.spinner-border {
-	--bs-spinner-width: 2rem;
-	--bs-spinner-height: 2rem;
+.spinner-border, body .ur-front-spinner:after {
+	--bs-spinner-width: 3rem;
+	--bs-spinner-height: 3rem;
 	--bs-spinner-vertical-align: -0.125em;
 	--bs-spinner-border-width: 0.25em;
 	--bs-spinner-animation-speed: 0.75s;
@@ -7677,8 +7778,8 @@ textarea.form-control-lg {
 	}
 }
 .spinner-grow {
-	--bs-spinner-width: 2rem;
-	--bs-spinner-height: 2rem;
+	--bs-spinner-width: 3rem;
+	--bs-spinner-height: 3rem;
 	--bs-spinner-vertical-align: -0.125em;
 	--bs-spinner-animation-speed: 0.75s;
 	--bs-spinner-animation-name: spinner-grow;
@@ -7692,7 +7793,7 @@ textarea.form-control-lg {
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.spinner-border,
+	.spinner-border, body .ur-front-spinner:after,
 	.spinner-grow {
 		--bs-spinner-animation-speed: 1.5s;
 	}
@@ -8282,7 +8383,8 @@ textarea.form-control-lg {
 	background-color: currentcolor;
 	opacity: 0.5;
 }
-.placeholder.btn::before {
+.placeholder.btn::before, body .ur-frontend-form button.placeholder::before,
+body .ur-frontend-form input.placeholder[type=submit]::before {
 	display: inline-block;
 	content: "";
 }
@@ -23622,8 +23724,15 @@ body {
 	min-width: 320px;
 }
 
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
 .main {
 	overflow: hidden;
+	flex-grow: 1;
 }
 .main > .section:last-child {
 	padding-bottom: 92px;
@@ -23883,46 +23992,46 @@ h3, .h3 {
 	object-fit: cover;
 }
 
-.custom-scrollbar::-webkit-scrollbar-button, .mega-menu__products-block::-webkit-scrollbar-button, .mega-menu__inner-block::-webkit-scrollbar-button, html::-webkit-scrollbar-button {
+.custom-scrollbar::-webkit-scrollbar-button, .modal::-webkit-scrollbar-button, .mega-menu__products-block::-webkit-scrollbar-button, .mega-menu__inner-block::-webkit-scrollbar-button, html::-webkit-scrollbar-button {
 	background-image: url();
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 0;
 }
-.custom-scrollbar::-webkit-scrollbar-track, .mega-menu__products-block::-webkit-scrollbar-track, .mega-menu__inner-block::-webkit-scrollbar-track, html::-webkit-scrollbar-track {
+.custom-scrollbar::-webkit-scrollbar-track, .modal::-webkit-scrollbar-track, .mega-menu__products-block::-webkit-scrollbar-track, .mega-menu__inner-block::-webkit-scrollbar-track, html::-webkit-scrollbar-track {
 	background-color: #101010;
 }
-.custom-scrollbar::-webkit-scrollbar-track:active, .mega-menu__products-block::-webkit-scrollbar-track:active, .mega-menu__inner-block::-webkit-scrollbar-track:active, html::-webkit-scrollbar-track:active {
+.custom-scrollbar::-webkit-scrollbar-track:active, .modal::-webkit-scrollbar-track:active, .mega-menu__products-block::-webkit-scrollbar-track:active, .mega-menu__inner-block::-webkit-scrollbar-track:active, html::-webkit-scrollbar-track:active {
 	background-color: #1d1d1d;
 }
-.custom-scrollbar::-webkit-scrollbar-thumb, .mega-menu__products-block::-webkit-scrollbar-thumb, .mega-menu__inner-block::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
+.custom-scrollbar::-webkit-scrollbar-thumb, .modal::-webkit-scrollbar-thumb, .mega-menu__products-block::-webkit-scrollbar-thumb, .mega-menu__inner-block::-webkit-scrollbar-thumb, html::-webkit-scrollbar-thumb {
 	border-radius: 8px;
 	background-color: #F26A21;
 	background-repeat: no-repeat;
 	background-position: center;
 }
-.custom-scrollbar::-webkit-scrollbar-thumb:hover, .mega-menu__products-block::-webkit-scrollbar-thumb:hover, .mega-menu__inner-block::-webkit-scrollbar-thumb:hover, html::-webkit-scrollbar-thumb:hover {
+.custom-scrollbar::-webkit-scrollbar-thumb:hover, .modal::-webkit-scrollbar-thumb:hover, .mega-menu__products-block::-webkit-scrollbar-thumb:hover, .mega-menu__inner-block::-webkit-scrollbar-thumb:hover, html::-webkit-scrollbar-thumb:hover {
 	background-color: #f37a39;
 }
-.custom-scrollbar::-webkit-scrollbar-thumb:active, .mega-menu__products-block::-webkit-scrollbar-thumb:active, .mega-menu__inner-block::-webkit-scrollbar-thumb:active, html::-webkit-scrollbar-thumb:active {
+.custom-scrollbar::-webkit-scrollbar-thumb:active, .modal::-webkit-scrollbar-thumb:active, .mega-menu__products-block::-webkit-scrollbar-thumb:active, .mega-menu__inner-block::-webkit-scrollbar-thumb:active, html::-webkit-scrollbar-thumb:active {
 	background-color: #ec5b0e;
 }
-.custom-scrollbar::-webkit-scrollbar-thumb:vertical, .mega-menu__products-block::-webkit-scrollbar-thumb:vertical, .mega-menu__inner-block::-webkit-scrollbar-thumb:vertical, html::-webkit-scrollbar-thumb:vertical {
+.custom-scrollbar::-webkit-scrollbar-thumb:vertical, .modal::-webkit-scrollbar-thumb:vertical, .mega-menu__products-block::-webkit-scrollbar-thumb:vertical, .mega-menu__inner-block::-webkit-scrollbar-thumb:vertical, html::-webkit-scrollbar-thumb:vertical {
 	background-image: 8px;
 }
-.custom-scrollbar::-webkit-resizer, .mega-menu__products-block::-webkit-resizer, .mega-menu__inner-block::-webkit-resizer, html::-webkit-resizer {
+.custom-scrollbar::-webkit-resizer, .modal::-webkit-resizer, .mega-menu__products-block::-webkit-resizer, .mega-menu__inner-block::-webkit-resizer, html::-webkit-resizer {
 	background-image: url("");
 	background-repeat: no-repeat;
 	background-color: #101010;
 	width: 8px;
 	height: 8px;
 }
-.custom-scrollbar::-webkit-scrollbar, .mega-menu__products-block::-webkit-scrollbar, .mega-menu__inner-block::-webkit-scrollbar, html::-webkit-scrollbar {
+.custom-scrollbar::-webkit-scrollbar, .modal::-webkit-scrollbar, .mega-menu__products-block::-webkit-scrollbar, .mega-menu__inner-block::-webkit-scrollbar, html::-webkit-scrollbar {
 	width: 8px;
 	height: 8px;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-	.custom-scrollbar, .mega-menu__products-block, .mega-menu__inner-block, html {
+	.custom-scrollbar, .modal, .mega-menu__products-block, .mega-menu__inner-block, html {
 		scrollbar-face-color: #F26A21;
 		scrollbar-track-color: #101010;
 		scrollbar-shadow-color: #F26A21;
@@ -23930,7 +24039,7 @@ h3, .h3 {
 	}
 }
 @supports (-moz-appearance: none) {
-	.custom-scrollbar, .mega-menu__products-block, .mega-menu__inner-block, html {
+	.custom-scrollbar, .modal, .mega-menu__products-block, .mega-menu__inner-block, html {
 		scrollbar-width: auto;
 		scrollbar-color: #F26A21 #101010;
 	}
@@ -23959,6 +24068,11 @@ h3, .h3 {
 	transition: none !important;
 }
 
+.row.list-reset {
+	padding: 0;
+	list-style-type: none;
+}
+
 @keyframes rotate {
 	0% {
 		transform: rotate(0deg);
@@ -23970,6 +24084,18 @@ h3, .h3 {
 .header {
 	background-color: #ffffff;
 	transition: background-color 0.3s, box-shadow 0.3s;
+}
+.header:not(.fixed-top) {
+	position: relative;
+	z-index: 5;
+}
+.header ~ .main .fixed-section + .section {
+	margin-top: calc(100dvh - 60px);
+}
+@media (min-width: 992px) {
+	.header ~ .main .fixed-section + .section {
+		margin-top: calc(100dvh - 120px);
+	}
 }
 .header.fixed-top ~ .main {
 	padding-top: 60px;
@@ -24142,40 +24268,52 @@ h3, .h3 {
 	margin-bottom: 16px;
 }
 
-.btn {
+.btn, body .ur-frontend-form button,
+body .ur-frontend-form input[type=submit],
+body .ur-frontend-form button[type=submit] {
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
 }
-.btn:not(.btn-sm):not(.btn-lg) {
+.btn:not(.btn-sm):not(.btn-lg), body .ur-frontend-form button:not(.btn-sm):not(.btn-lg),
+body .ur-frontend-form input[type=submit]:not(.btn-sm):not(.btn-lg) {
 	min-height: 44px;
 }
-.btn-sm, .btn-group-sm > .btn {
+.btn-sm, .btn-group-sm > .btn, body .ur-frontend-form .btn-group-sm > button,
+body .ur-frontend-form .btn-group-sm > input[type=submit] {
 	min-height: 34px;
 }
-.btn-sm.with-icon, .btn-group-sm > .with-icon.btn {
+.btn-sm.with-icon, .btn-group-sm > .with-icon.btn, body .ur-frontend-form .btn-group-sm > button.with-icon,
+body .ur-frontend-form .btn-group-sm > input.with-icon[type=submit] {
 	padding-left: 12px;
 	padding-right: 12px;
 }
-.btn-sm.with-icon [class^=icomoon-], .btn-group-sm > .with-icon.btn [class^=icomoon-] {
+.btn-sm.with-icon [class^=icomoon-], .btn-group-sm > .with-icon.btn [class^=icomoon-], body .ur-frontend-form .btn-group-sm > button.with-icon [class^=icomoon-],
+body .ur-frontend-form .btn-group-sm > input.with-icon[type=submit] [class^=icomoon-] {
 	display: inline-block;
 	font-size: 24px;
 }
-.btn-sm.with-icon [class^=icomoon-]:first-child, .btn-group-sm > .with-icon.btn [class^=icomoon-]:first-child {
+.btn-sm.with-icon [class^=icomoon-]:first-child, .btn-group-sm > .with-icon.btn [class^=icomoon-]:first-child, body .ur-frontend-form .btn-group-sm > button.with-icon [class^=icomoon-]:first-child,
+body .ur-frontend-form .btn-group-sm > input.with-icon[type=submit] [class^=icomoon-]:first-child {
 	padding-right: 8px;
 }
-.btn-sm.with-icon [class^=icomoon-]:last-child, .btn-group-sm > .with-icon.btn [class^=icomoon-]:last-child {
+.btn-sm.with-icon [class^=icomoon-]:last-child, .btn-group-sm > .with-icon.btn [class^=icomoon-]:last-child, body .ur-frontend-form .btn-group-sm > button.with-icon [class^=icomoon-]:last-child,
+body .ur-frontend-form .btn-group-sm > input.with-icon[type=submit] [class^=icomoon-]:last-child {
 	padding-left: 8px;
 }
-.btn .icomoon-arrow-right {
+.btn .icomoon-arrow-right, body .ur-frontend-form button .icomoon-arrow-right,
+body .ur-frontend-form input[type=submit] .icomoon-arrow-right {
 	display: inline-block;
 	padding-left: 4px;
 	transition: transform 0.3s;
 }
-.btn:hover .icomoon-arrow-right {
+.btn:hover .icomoon-arrow-right, body .ur-frontend-form button:hover .icomoon-arrow-right,
+body .ur-frontend-form input[type=submit]:hover .icomoon-arrow-right {
 	transform: translateX(8px);
 }
-.btn-primary {
+.btn-primary, body .ur-frontend-form button,
+body .ur-frontend-form input[type=submit],
+body .ur-frontend-form button[type=submit] {
 	--bs-btn-color: #ffffff;
 	--bs-btn-bg: #F26A21;
 	--bs-btn-border-color: #F26A21;
@@ -24446,15 +24584,153 @@ h3, .h3 {
 	border-color: #ffc107;
 }
 
-.form-label {
+body .ur-frontend-form {
+	padding: 0 !important;
+	border: none;
+	margin-bottom: 0;
+}
+body .ur-frontend-form .create-account-phone .description {
+	display: none;
+}
+
+.user-registration {
+	margin: 0 !important;
+	background-color: transparent !important;
+}
+.user-registration p {
+	margin-bottom: 16px;
+}
+
+body .ur-frontend-form .ur-form-row .ur-form-grid label.ur-label,
+.user-registration .ur-frontend-form .ur-form-row .ur-form-grid .user-registration-form-row label[for] {
+	display: inline-block;
+	margin-top: 0;
+	font-weight: 500;
+}
+body .ur-frontend-form .ur-form-row .ur-form-grid label.ur-label .required,
+.user-registration .ur-frontend-form .ur-form-row .ur-form-grid .user-registration-form-row label[for] .required {
+	display: none;
+}
+
+body .ur-form-row span.input-wrapper {
+	display: block;
+}
+
+html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text {
+	margin-bottom: 0;
+}
+
+body .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item {
+	margin-bottom: 16px;
+}
+
+body .ur-frontend-form .ur-form-row {
+	margin: 0 -10px;
+}
+
+body .ur-frontend-form button,
+body .ur-frontend-form input[type=submit],
+body .ur-frontend-form button[type=submit] {
+	width: 100%;
+	float: none;
+	border-radius: 0.5rem;
+	margin-right: 0;
+}
+
+body .ur-frontend-form .ur-button-container {
+	padding: 0;
+	margin-top: 16px;
+}
+
+.field-checkbox ul {
+	padding-left: 0;
+}
+
+.field-checkbox .ur-label {
+	display: none !important;
+}
+
+.ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox ul li:last-child {
+	margin-bottom: 0;
+}
+
+.ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list {
+	font-size: 0.875rem !important;
+	line-height: 1.3 !important;
+}
+.ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox {
+	font-size: inherit !important;
+}
+.ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .ur-checkbox-label {
+	margin: 0 !important;
+}
+
+.ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox {
+	font-size: 0.875rem !important;
+	line-height: 1.3 !important;
+	margin-top: 0;
+}
+.ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox {
+	font-size: inherit !important;
+}
+#user-registration .ur-form-grid {
+	display: flex;
+	flex-direction: column;
+}
+#user-registration .ur-form-grid > * {
+	order: 100;
+}
+#user-registration .ur-form-grid .user-registration-form-row {
+	order: 10;
+}
+#user-registration .ur-form-grid .user-registration-form__label-for-checkbox {
+	order: 20;
+}
+#user-registration .ur-form-grid p:empty {
+	display: none;
+}
+
+body .user-registration-error {
+	border-color: #dc3545;
+	background-color: rgba(220, 53, 69, 0.1);
+	color: #dc3545;
+}
+body .user-registration-error strong {
+	padding-right: 4px;
+}
+
+body .ur-front-spinner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: none;
+	background-color: rgba(255, 255, 255, 0.8);
+	margin: 0 !important;
+	float: none !important;
+}
+body .ur-front-spinner:after {
+	content: "";
+	display: inline-block;
+	color: #101010;
+}
+
+.form-label, body .ur-frontend-form .ur-form-row .ur-form-grid label.ur-label,
+.user-registration .ur-frontend-form .ur-form-row .ur-form-grid .user-registration-form-row label[for] {
 	cursor: pointer;
 }
 
-.form-control {
+.form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text {
 	caret-color: var(--bs-body-color);
 	text-overflow: ellipsis;
 }
-textarea.form-control {
+textarea.form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid textarea.input-text {
 	height: 200px;
 }
 
@@ -24465,12 +24741,12 @@ textarea.form-control {
 	left: 0;
 }
 
-.form-check {
+.form-check, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox {
 	position: relative;
 	display: flex;
 	align-items: center;
 }
-.form-check-input {
+.form-check-input, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .input-checkbox, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox .user-registration-form__input-checkbox {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
@@ -24479,7 +24755,7 @@ textarea.form-control {
 	cursor: pointer;
 	background-size: 75%;
 }
-.form-check-label {
+.form-check-label, .ur-frontend-form .ur-form-row .ur-form-grid .ur-field-item.field-checkbox .ur-checkbox-list .ur-checkbox-label, .ur-frontend-form .ur-form-row .ur-form-grid label.user-registration-form__label-for-checkbox span {
 	cursor: pointer;
 }
 
@@ -24623,12 +24899,7 @@ textarea.form-control {
 .fixed-section + .section {
 	position: relative;
 	z-index: 10;
-	margin-top: calc(100dvh + 1.5rem - 60px);
-}
-@media (min-width: 992px) {
-	.fixed-section + .section {
-		margin-top: calc(100dvh + 3.125rem - 120px);
-	}
+	margin-top: 100dvh;
 }
 .fixed-section ~ .section {
 	position: relative;
@@ -24741,11 +25012,18 @@ textarea.form-control {
 	content: "";
 	background-color: rgba(16, 16, 16, 0.3);
 }
-.card-news__category {
+.card-news__categories {
 	position: absolute;
 	left: 16px;
 	bottom: 16px;
 	z-index: 5;
+}
+@media (min-width: 768px) {
+	.card-news__categories {
+		left: 24px;
+	}
+}
+.card-news__category {
 	display: inline-flex;
 	align-items: center;
 	min-height: 30px;
@@ -24756,11 +25034,6 @@ textarea.form-control {
 	border-radius: 50rem;
 	color: #ffffff;
 	border: 1px solid currentColor;
-}
-@media (min-width: 768px) {
-	.card-news__category {
-		left: 24px;
-	}
 }
 .card-news__content {
 	padding: 24px 16px 16px;
@@ -24969,6 +25242,36 @@ textarea.form-control {
 		max-width: 80vw;
 	}
 }
+.slider-default__holder:not(.slick-initialized) {
+	--bs-gutter-x: 1.25rem;
+	--bs-gutter-y: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: calc(-1 * var(--bs-gutter-y));
+	margin-right: calc(-0.5 * var(--bs-gutter-x));
+	margin-left: calc(-0.5 * var(--bs-gutter-x));
+	flex-wrap: nowrap;
+}
+.slider-default__holder:not(.slick-initialized) > div {
+	flex-shrink: 0;
+	width: 100%;
+	max-width: 100%;
+	padding-right: calc(var(--bs-gutter-x) * 0.5);
+	padding-left: calc(var(--bs-gutter-x) * 0.5);
+	margin-top: var(--bs-gutter-y);
+}
+@media (min-width: 768px) {
+	.slider-default__holder:not(.slick-initialized) > div {
+		flex: 0 0 auto;
+		width: 50%;
+	}
+}
+@media (min-width: 1200px) {
+	.slider-default__holder:not(.slick-initialized) > div {
+		flex: 0 0 auto;
+		width: 33.33333333%;
+	}
+}
 .slider-default .slick-list {
 	overflow: initial;
 }
@@ -24977,6 +25280,9 @@ textarea.form-control {
 	align-items: center;
 	justify-content: center;
 	flex-wrap: wrap;
+}
+.slider-products:not(.slick-initialized) > div:not(:first-child) {
+	display: none;
 }
 .slider-products__img {
 	position: relative;
@@ -25019,6 +25325,42 @@ textarea.form-control {
 .slider-follow-us {
 	max-width: 85%;
 }
+.slider-follow-us__holder:not(.slick-initialized) {
+	--bs-gutter-x: 1.25rem;
+	--bs-gutter-y: 0;
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: calc(-1 * var(--bs-gutter-y));
+	margin-right: calc(-0.5 * var(--bs-gutter-x));
+	margin-left: calc(-0.5 * var(--bs-gutter-x));
+	flex-wrap: nowrap;
+}
+.slider-follow-us__holder:not(.slick-initialized) > div {
+	flex-shrink: 0;
+	width: 100%;
+	max-width: 100%;
+	padding-right: calc(var(--bs-gutter-x) * 0.5);
+	padding-left: calc(var(--bs-gutter-x) * 0.5);
+	margin-top: var(--bs-gutter-y);
+}
+@media (min-width: 576px) {
+	.slider-follow-us__holder:not(.slick-initialized) > div {
+		flex: 0 0 auto;
+		width: 50%;
+	}
+}
+@media (min-width: 768px) {
+	.slider-follow-us__holder:not(.slick-initialized) > div {
+		flex: 0 0 auto;
+		width: 33.33333333%;
+	}
+}
+@media (min-width: 1200px) {
+	.slider-follow-us__holder:not(.slick-initialized) > div {
+		flex: 0 0 auto;
+		width: 25%;
+	}
+}
 @media (min-width: 425px) {
 	.slider-follow-us {
 		max-width: 292px;
@@ -25033,12 +25375,17 @@ textarea.form-control {
 	overflow: initial;
 }
 
+.slick-list {
+	margin: 0 -0.625rem;
+}
+
 .slick-slide {
 	padding: 0 0.625rem;
 }
 
-.slick-list {
-	margin: 0 -0.625rem;
+.slick-track {
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .slick-arrow {
@@ -25350,7 +25697,8 @@ textarea.form-control {
 @media (min-width: 768px) {
 	.modal__form {
 		max-width: 300px;
-		margin: 0 auto;
+		margin-left: auto !important;
+		margin-right: auto !important;
 	}
 }
 

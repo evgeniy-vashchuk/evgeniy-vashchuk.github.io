@@ -244,6 +244,28 @@ var breakpointXs = +getComputedStyle(document.documentElement).getPropertyValue(
 				);
 			});
 		}
+
+		var phoneInputWP = $('.create-account-phone .input-text');
+
+		if (phoneInputWP.length) {
+			phoneInputWP.each(function () {
+				IMask(
+					$(this)[0],
+					{
+						mask: $(this).closest('.create-account-phone').find('.description').text()
+					}
+				);
+			});
+		}
+
+		// disable auto-scrolling for register form
+		$('form.register button[type="submit"]').on('click', function (event) {
+			var scrollPosition = $(window).scrollTop();
+
+			setTimeout(function () {
+				$(window).scrollTop(scrollPosition);
+			}, 1);
+		});
 	}
 
 	// WIDTH OF SCROLLBAR
@@ -293,10 +315,12 @@ var breakpointXs = +getComputedStyle(document.documentElement).getPropertyValue(
 	function initMegaMenu() {
 		// back to first active tab on dropdown close
 		var megaMenuDropdown = document.getElementsByClassName('js-mega-menu-toggle')[0];
-		megaMenuDropdown.addEventListener('hide.bs.dropdown', function (event) {
-			$('.mega-menu .mega-menu__category-list > li:first-child [data-bs-toggle="tab"]').tab('show');
-			$('.mega-menu .mega-menu__sub-category-list > li:first-child [data-bs-toggle="tab"]').tab('show');
-		});
+		if (typeof megaMenuDropdown != 'undefined' && megaMenuDropdown != null) {
+			megaMenuDropdown.addEventListener('hide.bs.dropdown', function (event) {
+				$('.mega-menu .mega-menu__category-list > li:first-child [data-bs-toggle="tab"]').tab('show');
+				$('.mega-menu .mega-menu__sub-category-list > li:first-child [data-bs-toggle="tab"]').tab('show');
+			});
+		}
 
 		// open mega menu
 		$('.js-category-tab').on('click', function () {
@@ -315,9 +339,11 @@ var breakpointXs = +getComputedStyle(document.documentElement).getPropertyValue(
 
 		// close mega menu on offcanvas close
 		var offcanvasMenu = document.getElementById('offcanvas-menu');
-		offcanvasMenu.addEventListener('hidden.bs.offcanvas', function (event) {
-			$('body').removeClass('sub-category-open products-open');
-		});
+		if (typeof offcanvasMenu != 'undefined' && offcanvasMenu != null) {
+			offcanvasMenu.addEventListener('hidden.bs.offcanvas', function (event) {
+				$('body').removeClass('sub-category-open products-open');
+			});
+		}
 
 		// back buttons
 		$('.js-back-from-category').on('click', function () {
