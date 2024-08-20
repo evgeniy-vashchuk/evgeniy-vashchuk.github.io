@@ -8,6 +8,14 @@ var breakpointXs = +getComputedStyle(document.documentElement).getPropertyValue(
 	breakpointXxl = +getComputedStyle(document.documentElement).getPropertyValue('--bs-breakpoint-xl').replace(/px/g, '') - 1;
 
 (function ($) {
+	function addScrollbarCompensation(element) {
+		element.css('padding-right', window.widthOfScrollbar);
+	}
+
+	function removeScrollbarCompensation(element) {
+		element.css('padding-right', 0);
+	}
+
 	initStopAnimationsDuringWindowResizing();
 	initActiveHeaderAfterScroll();
 	initSlider();
@@ -66,7 +74,9 @@ var breakpointXs = +getComputedStyle(document.documentElement).getPropertyValue(
 			infinite: false,
 			autoplay: false,
 			mobileFirst: true,
-			speed: 800,
+			speed: 400,
+			touchThreshold: 100,
+			swipeToSlide: true,
 			responsive: [
 			{
 				breakpoint: breakpointMd,
@@ -100,7 +110,9 @@ var breakpointXs = +getComputedStyle(document.documentElement).getPropertyValue(
 			pauseOnFocus: false,
 			mobileFirst: true,
 			speed: 800,
+			touchThreshold: 100,
 			pauseOnHover: false,
+			swipeToSlide: true,
 			responsive: [
 			{
 				breakpoint: breakpointSm,
@@ -154,7 +166,7 @@ var breakpointXs = +getComputedStyle(document.documentElement).getPropertyValue(
 			var options = {
 				startVal: 0,
 				decimalPlaces: numbersAfterComma,
-				duration: 5,
+				duration: 3,
 				useEasing: true,
 				decimal: ',',
 				preffix: !preffix ? '' : preffix,
@@ -180,13 +192,11 @@ var breakpointXs = +getComputedStyle(document.documentElement).getPropertyValue(
 
 	// SPLITTER TEXT
 	function initSplitterText() {
-		splt({
-			target: '.js-splitter-text'
-		});
+		$('.js-splitter-text').lettering('words').children('span').lettering();
 
 		ScrollTrigger.batch('.js-filled-text', {
 			onEnter: function onEnter(elements) {
-				gsap.to('.js-splitter-text .char', {
+				gsap.to('.js-splitter-text [class^="char"]', {
 					color: "#FFFFFF",
 					stagger: {
 						each: 0.04
@@ -284,14 +294,6 @@ var breakpointXs = +getComputedStyle(document.documentElement).getPropertyValue(
 
 	// MODAL
 	function initModal() {
-		function addScrollbarCompensation(element) {
-			element.css('padding-right', window.widthOfScrollbar);
-		}
-
-		function removeScrollbarCompensation(element) {
-			element.css('padding-right', 0);
-		}
-
 		$('.modal').on('show.bs.modal', function (e) {
 			addScrollbarCompensation($('.js-fixed-section, .js-bg-video'));
 		});
@@ -316,6 +318,16 @@ var breakpointXs = +getComputedStyle(document.documentElement).getPropertyValue(
 		// back to first active tab on dropdown close
 		var megaMenuDropdown = document.getElementsByClassName('js-mega-menu-toggle')[0];
 		if (typeof megaMenuDropdown != 'undefined' && megaMenuDropdown != null) {
+			megaMenuDropdown.addEventListener('show.bs.dropdown', function (event) {
+				$('body').addClass('overflow-hidden');
+				addScrollbarCompensation($('.js-header, .js-fixed-section, .js-bg-video'));
+			});
+
+			megaMenuDropdown.addEventListener('hidden.bs.dropdown', function (event) {
+				$('body').removeClass('overflow-hidden');
+				removeScrollbarCompensation($('.js-header, .js-fixed-section, .js-bg-video'));
+			});
+
 			megaMenuDropdown.addEventListener('hide.bs.dropdown', function (event) {
 				$('.mega-menu .mega-menu__category-list > li:first-child [data-bs-toggle="tab"]').tab('show');
 				$('.mega-menu .mega-menu__sub-category-list > li:first-child [data-bs-toggle="tab"]').tab('show');

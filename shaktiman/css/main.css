@@ -3499,8 +3499,8 @@ progress {
 }
 
 .col-form-label {
-	padding-top: calc(0.7441rem + 1px);
-	padding-bottom: calc(0.7441rem + 1px);
+	padding-top: 0.8066rem;
+	padding-bottom: 0.8066rem;
 	margin-bottom: 0;
 	font-size: inherit;
 	font-weight: 500;
@@ -3509,14 +3509,14 @@ progress {
 }
 
 .col-form-label-lg {
-	padding-top: calc(0.5rem + 1px);
-	padding-bottom: calc(0.5rem + 1px);
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
 	font-size: 1.125rem;
 }
 
 .col-form-label-sm {
-	padding-top: calc(0.25rem + 1px);
-	padding-bottom: calc(0.25rem + 1px);
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
 	font-size: 0.875rem;
 }
 
@@ -3529,7 +3529,7 @@ progress {
 .form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text {
 	display: block;
 	width: 100%;
-	padding: 0.7441rem 0.75rem;
+	padding: 0.8066rem 0.75rem;
 	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 1.3;
@@ -3537,9 +3537,9 @@ progress {
 	appearance: none;
 	background-color: #ffffff;
 	background-clip: padding-box;
-	border: 1px solid transparent;
+	border: 0 solid transparent;
 	border-radius: var(--bs-border-radius-sm);
-	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
 	.form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text {
@@ -3577,8 +3577,8 @@ progress {
 	opacity: 1;
 }
 .form-control::file-selector-button, html body .ur-frontend-form .ur-form-row .ur-form-grid .input-text::file-selector-button {
-	padding: 0.7441rem 0.75rem;
-	margin: -0.7441rem -0.75rem;
+	padding: 0.8066rem 0.75rem;
+	margin: -0.8066rem -0.75rem;
 	margin-inline-end: 0.75rem;
 	color: var(--bs-body-color);
 	background-color: var(--bs-tertiary-bg);
@@ -3586,7 +3586,7 @@ progress {
 	border-color: inherit;
 	border-style: solid;
 	border-width: 0;
-	border-inline-end-width: 1px;
+	border-inline-end-width: 0;
 	border-radius: 0;
 	transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
@@ -3602,13 +3602,13 @@ progress {
 .form-control-plaintext {
 	display: block;
 	width: 100%;
-	padding: 0.7441rem 0;
+	padding: 0.8066rem 0;
 	margin-bottom: 0;
 	line-height: 1.3;
 	color: var(--bs-body-color);
 	background-color: transparent;
 	border: solid transparent;
-	border-width: 1px 0;
+	border-width: 0 0;
 }
 .form-control-plaintext:focus {
 	outline: 0;
@@ -3619,7 +3619,7 @@ progress {
 }
 
 .form-control-sm {
-	min-height: calc(1.3em + 0.5rem + calc(1px * 2));
+	min-height: calc(1.3em + 0.5rem + calc(0 * 2));
 	padding: 0.25rem 1rem;
 	font-size: 0.875rem;
 	border-radius: var(--bs-border-radius-sm);
@@ -3631,7 +3631,7 @@ progress {
 }
 
 .form-control-lg {
-	min-height: calc(1.3em + 1rem + calc(1px * 2));
+	min-height: calc(1.3em + 1rem + calc(0 * 2));
 	padding: 0.5rem 1rem;
 	font-size: 1.125rem;
 	border-radius: var(--bs-border-radius-lg);
@@ -3643,19 +3643,19 @@ progress {
 }
 
 textarea.form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid textarea.input-text {
-	min-height: calc(1.3em + 1.4882rem + calc(1px * 2));
+	min-height: calc(1.3em + 1.6132rem + calc(0 * 2));
 }
 textarea.form-control-sm {
-	min-height: calc(1.3em + 0.5rem + calc(1px * 2));
+	min-height: calc(1.3em + 0.5rem + calc(0 * 2));
 }
 textarea.form-control-lg {
-	min-height: calc(1.3em + 1rem + calc(1px * 2));
+	min-height: calc(1.3em + 1rem + calc(0 * 2));
 }
 
 .form-control-color {
 	width: 3rem;
-	height: calc(1.3em + 1.4882rem + calc(1px * 2));
-	padding: 0.7441rem;
+	height: calc(1.3em + 1.6132rem + calc(0 * 2));
+	padding: 0.8066rem;
 }
 .form-control-color:not(:disabled):not([readonly]) {
 	cursor: pointer;
@@ -3669,17 +3669,17 @@ textarea.form-control-lg {
 	border-radius: var(--bs-border-radius-sm);
 }
 .form-control-color.form-control-sm {
-	height: calc(1.3em + 0.5rem + calc(1px * 2));
+	height: calc(1.3em + 0.5rem + calc(0 * 2));
 }
 .form-control-color.form-control-lg {
-	height: calc(1.3em + 1rem + calc(1px * 2));
+	height: calc(1.3em + 1rem + calc(0 * 2));
 }
 
 .form-select {
 	--bs-form-select-bg-img: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
 	display: block;
 	width: 100%;
-	padding: 0.7441rem 2.25rem 0.7441rem 0.75rem;
+	padding: 0.8066rem 2.25rem 0.8066rem 0.75rem;
 	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 1.3;
@@ -3690,9 +3690,9 @@ textarea.form-control-lg {
 	background-repeat: no-repeat;
 	background-position: right 0.75rem center;
 	background-size: 16px 12px;
-	border: 1px solid transparent;
+	border: 0 solid transparent;
 	border-radius: var(--bs-border-radius-sm);
-	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 @media (prefers-reduced-motion: reduce) {
 	.form-select {
@@ -3948,8 +3948,8 @@ body .ur-frontend-form .btn-check:disabled + input[type=submit] {
 .form-floating > .form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-text,
 .form-floating > .form-control-plaintext,
 .form-floating > .form-select {
-	height: calc(3.5rem + calc(1px * 2));
-	min-height: calc(3.5rem + calc(1px * 2));
+	height: calc(3.5rem + calc(0 * 2));
+	min-height: calc(3.5rem + calc(0 * 2));
 	line-height: 1.25;
 }
 .form-floating > label {
@@ -3964,7 +3964,7 @@ body .ur-frontend-form .btn-check:disabled + input[type=submit] {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	pointer-events: none;
-	border: 1px solid transparent;
+	border: 0 solid transparent;
 	transform-origin: 0 0;
 	transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
 }
@@ -4022,7 +4022,7 @@ html body .ur-frontend-form .ur-form-row .ur-form-grid .form-floating > .input-t
 	transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
 .form-floating > .form-control-plaintext ~ label {
-	border-width: 1px 0;
+	border-width: 0 0;
 }
 .form-floating > :disabled ~ label,
 .form-floating > .form-control:disabled ~ label,
@@ -4070,7 +4070,7 @@ body .ur-frontend-form .input-group input[type=submit]:focus {
 .input-group-text {
 	display: flex;
 	align-items: center;
-	padding: 0.7441rem 0.75rem;
+	padding: 0.8066rem 0.75rem;
 	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 1.3;
@@ -4078,7 +4078,7 @@ body .ur-frontend-form .input-group input[type=submit]:focus {
 	text-align: center;
 	white-space: nowrap;
 	background-color: var(--bs-tertiary-bg);
-	border: 1px solid transparent;
+	border: 0 solid transparent;
 	border-radius: var(--bs-border-radius-sm);
 }
 
@@ -4126,7 +4126,7 @@ html body .ur-frontend-form .ur-form-row .ur-form-grid .input-group.has-validati
 	border-bottom-right-radius: 0;
 }
 .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
-	margin-left: calc(1px * -1);
+	margin-left: calc(0 * -1);
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -23637,7 +23637,7 @@ input[type=search]:focus::-webkit-input-placeholder,
 input[type=password]:focus::-webkit-input-placeholder,
 input[type=url]:focus::-webkit-input-placeholder,
 textarea:focus::-webkit-input-placeholder {
-	opacity: 0;
+	opacity: 0 !important;
 }
 input[type=text]:focus::-moz-placeholder,
 input[type=tel]:focus::-moz-placeholder,
@@ -23648,7 +23648,7 @@ input[type=password]:focus::-moz-placeholder,
 input[type=url]:focus::-moz-placeholder,
 textarea:focus::-moz-placeholder {
 	opacity: 1;
-	opacity: 0;
+	opacity: 0 !important;
 }
 input[type=text]:focus:-moz-placeholder,
 input[type=tel]:focus:-moz-placeholder,
@@ -23658,7 +23658,7 @@ input[type=search]:focus:-moz-placeholder,
 input[type=password]:focus:-moz-placeholder,
 input[type=url]:focus:-moz-placeholder,
 textarea:focus:-moz-placeholder {
-	opacity: 0;
+	opacity: 0 !important;
 }
 input[type=text]:focus:-ms-input-placeholder,
 input[type=tel]:focus:-ms-input-placeholder,
@@ -23668,7 +23668,7 @@ input[type=search]:focus:-ms-input-placeholder,
 input[type=password]:focus:-ms-input-placeholder,
 input[type=url]:focus:-ms-input-placeholder,
 textarea:focus:-ms-input-placeholder {
-	opacity: 0;
+	opacity: 0 !important;
 }
 input[type=text]:disabled,
 input[type=tel]:disabled,
@@ -24059,7 +24059,7 @@ h3, .h3 {
 	overflow: hidden;
 }
 
-.filled-text .char {
+.filled-text-white {
 	color: rgba(255, 255, 255, 0.3);
 }
 
@@ -24393,16 +24393,16 @@ body .ur-frontend-form button[type=submit] {
 }
 .select2-container--bootstrap .select2-selection {
 	height: auto;
-	padding: 0.7441rem 2.25rem 0.7441rem 0.75rem;
+	padding: 0.8066rem 2.25rem 0.8066rem 0.75rem;
 	font-size: 0.875rem;
 	font-weight: 400;
 	line-height: 1.3;
 	color: var(--bs-body-color);
 	background-color: #ffffff;
-	border: 1px solid transparent;
+	border: 0 solid transparent;
 	border-radius: var(--bs-border-radius-sm);
 	box-shadow: var(--bs-box-shadow-inset);
-	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .select2-container--bootstrap .select2-selection[aria-disabled=true] {
 	background-color: var(--bs-secondary-bg);
@@ -24429,7 +24429,7 @@ body .ur-frontend-form button[type=submit] {
 }
 .select2-container--bootstrap .select2-dropdown {
 	background-color: #ffffff;
-	border: 1px solid #F26A21;
+	border: 0 solid #F26A21;
 	border-radius: var(--bs-border-radius-sm);
 	z-index: 1000;
 	overflow: hidden;
@@ -24437,12 +24437,12 @@ body .ur-frontend-form button[type=submit] {
 .select2-container--bootstrap .select2-dropdown--above {
 	border-bottom-left-radius: 0 !important;
 	border-bottom-right-radius: 0 !important;
-	transform: translate(0, 1px);
+	transform: translate(0, 0);
 }
 .select2-container--bootstrap .select2-dropdown--below {
 	border-top-left-radius: 0 !important;
 	border-top-right-radius: 0 !important;
-	transform: translate(0, -1px);
+	transform: translate(0, 0);
 }
 .select2-container--bootstrap .select2-results {
 	max-height: 300px;
@@ -24505,8 +24505,8 @@ body .ur-frontend-form button[type=submit] {
 	font-weight: 400;
 	line-height: 1.3;
 	color: var(--bs-body-color);
-	padding: 0.7441rem 0.75rem;
-	transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+	padding: 0.8066rem 0.75rem;
+	transition: border-color 0.15s ease-in-out, background-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .select2-container--bootstrap .select2-results__option:hover {
 	background-color: #F26A21;
@@ -24591,6 +24591,12 @@ body .ur-frontend-form {
 }
 body .ur-frontend-form .create-account-phone .description {
 	display: none;
+}
+body .ur-frontend-form .ur-checkbox-list .input-checkbox {
+	border: var(--bs-border-width) solid #C7C7C7 !important;
+}
+body .ur-frontend-form .ur-checkbox-list .input-checkbox:checked {
+	border-color: #F26A21 !important;
 }
 
 .user-registration {
@@ -24719,6 +24725,31 @@ body .ur-front-spinner:after {
 	content: "";
 	display: inline-block;
 	color: #101010;
+}
+
+.ur-field-item.field-user_pass + #user_pass_error {
+	display: none !important;
+}
+
+.user-registration-password-hint {
+	margin: 8px 0 !important;
+}
+
+.user-registration-message {
+	border-color: #198754;
+	background-color: rgba(25, 135, 84, 0.1);
+	color: #198754;
+}
+
+.user-registration-message, .user-registration-error, .user-registration-coupon-error, .user-registration-info {
+	position: relative;
+	padding-left: 44px !important;
+}
+.user-registration-message:before, .user-registration-error:before, .user-registration-coupon-error:before, .user-registration-info:before {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translate(0, -50%);
 }
 
 .form-label, body .ur-frontend-form .ur-form-row .ur-form-grid label.ur-label,
@@ -25500,8 +25531,7 @@ textarea.form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid te
 @media (min-width: 992px) {
 	.mega-menu__inner-block {
 		padding: 32px 24px 58px 24px;
-		height: 622px;
-		max-height: calc(100dvh - 120px);
+		height: calc(100dvh - 120px);
 	}
 }
 @media (max-width: 991.98px) {
@@ -25632,8 +25662,7 @@ textarea.form-control, html body .ur-frontend-form .ur-form-row .ur-form-grid te
 }
 @media (min-width: 992px) {
 	.mega-menu__products-block {
-		height: 622px;
-		max-height: calc(100dvh - 120px);
+		height: calc(100dvh - 120px);
 		background-color: transparent;
 	}
 }

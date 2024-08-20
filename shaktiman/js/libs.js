@@ -25,7 +25,79 @@ r._afterUpdate=null,r._rows=a,r._parse=n,r._parseOptions=i,r._apply=function(e,o
 display:n};a[s.property]="",e.css(a),e.outerHeight(!1)>i&&(i=e.outerHeight(!1)),o?e.attr("style",o):e.css("display","")})}a.each(function(){var e=t(this),o=0;s.target&&e.is(s.target)||("border-box"!==e.css("box-sizing")&&(o+=n(e.css("border-top-width"))+n(e.css("border-bottom-width")),o+=n(e.css("padding-top"))+n(e.css("padding-bottom"))),e.css(s.property,i-o+"px"))})}),u.each(function(){var e=t(this);e.attr("style",e.data("style-cache")||null)}),r._maintainScroll&&t(window).scrollTop(c/p*t("html").outerHeight(!0)),
 this},r._applyDataApi=function(){var e={};t("[data-match-height], [data-mh]").each(function(){var o=t(this),n=o.attr("data-mh")||o.attr("data-match-height");n in e?e[n]=e[n].add(o):e[n]=o}),t.each(e,function(){this.matchHeight(!0)})};var s=function(e){r._beforeUpdate&&r._beforeUpdate(e,r._groups),t.each(r._groups,function(){r._apply(this.elements,this.options)}),r._afterUpdate&&r._afterUpdate(e,r._groups)};r._update=function(n,a){if(a&&"resize"===a.type){var i=t(window).width();if(i===e)return;e=i;
 }n?o===-1&&(o=setTimeout(function(){s(a),o=-1},r._throttle)):s(a)},t(r._applyDataApi);var h=t.fn.on?"on":"bind";t(window)[h]("load",function(t){r._update(!1,t)}),t(window)[h]("resize orientationchange",function(t){r._update(!0,t)})});
-function splt({target:e=".splt",reveal:t=!1}){let l=[];const n=document.querySelectorAll(e);for(let e=0;e<n.length;e++){n[e].setAttribute("id","i"+[e+1]),l.push(n[e].innerHTML);const i=n[e].innerHTML.split("");for(let l=0;l<i.length;l++){const r=document.createElement("span");if(n[e].appendChild(r),r.setAttribute("id","c"+[l+1])," "==i[l])r.classList.add("whtSpc");else{r.classList.add("char");const e=document.querySelectorAll(".char");for(let t=0;t<e.length;t++)e[t].style.display="inline-block",e[t].style.overflow="hidden",e[t].style.verticalAlign="top"}if(1==t){const e=document.createElement("span");e.innerHTML=i[l],r.appendChild(e),e.setAttribute("id","r"),e.classList.add("reveal");const t=document.querySelectorAll(".reveal");for(let e=0;e<t.length;e++)t[e].style.display="inherit",t[e].style.overflow="inherit",t[e].style.verticalAlign="inherit"}else r.innerHTML=i[l]}n[e].removeChild(n[e].childNodes[0])}splt.revert=(()=>{for(let e=0;e<n.length;e++)n[e].removeAttribute("id"),n[e].innerHTML=l[e]})}
+/*global jQuery */
+/*!
+* Lettering.JS 0.7.0
+*
+* Copyright 2010, Dave Rupert http://daverupert.com
+* Released under the WTFPL license
+* http://sam.zoy.org/wtfpl/
+*
+* Thanks to Paul Irish - http://paulirish.com - for the feedback.
+*
+* Date: Mon Sep 20 17:14:00 2010 -0600
+*/
+(function($){
+	function injector(t, splitter, klass, after) {
+		var text = t.text()
+		, a = text.split(splitter)
+		, inject = '';
+		if (a.length) {
+			$(a).each(function(i, item) {
+				inject += '<span class="'+klass+(i+1)+'" aria-hidden="true">'+item+'</span>'+after;
+			});
+			t.attr('aria-label',text)
+			.empty()
+			.append(inject)
+
+		}
+	}
+
+
+	var methods = {
+		init : function() {
+
+			return this.each(function() {
+				injector($(this), '', 'char', '');
+			});
+
+		},
+
+		words : function() {
+
+			return this.each(function() {
+				injector($(this), ' ', 'word', ' ');
+			});
+
+		},
+
+		lines : function() {
+
+			return this.each(function() {
+				var r = "eefec303079ad17405c889e092e105b0";
+				// Because it's hard to split a <br/> tag consistently across browsers,
+				// (*ahem* IE *ahem*), we replace all <br/> instances with an md5 hash
+				// (of the word "split").  If you're trying to use this plugin on that
+				// md5 hash string, it will fail because you're being ridiculous.
+				injector($(this).children("br").replaceWith(r).end(), r, 'line', '');
+			});
+
+		}
+	};
+
+	$.fn.lettering = function( method ) {
+		// Method calling logic
+		if ( method && methods[method] ) {
+			return methods[ method ].apply( this, [].slice.call( arguments, 1 ));
+		} else if ( method === 'letters' || ! method ) {
+			return methods.init.apply( this, [].slice.call( arguments, 0 ) ); // always pass an array
+		}
+		$.error( 'Method ' +  method + ' does not exist on jQuery.lettering' );
+		return this;
+	};
+
+})(jQuery);
+
 /*!
  * GSAP 3.12.5
  * https://gsap.com
