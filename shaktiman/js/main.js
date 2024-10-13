@@ -281,7 +281,7 @@ var breakpointXs = +getComputedStyle(document.documentElement).
     function detectDistance() {
       var sectionHeight = fixedSection.outerHeight();
 
-      if ($(document).scrollTop() > sectionHeight * 1.5) {
+      if ($(document).scrollTop() > sectionHeight * 1) {
         fixedSection.addClass('d-none');
       } else {
         fixedSection.removeClass('d-none');
