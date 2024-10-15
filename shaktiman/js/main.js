@@ -478,7 +478,7 @@ var breakpointXs = +getComputedStyle(document.documentElement).
       showMoreContent = $('.js-show-more-content');
 
     var checkExpandable = function checkExpandable() {
-      if (showMoreContent.outerHeight() > 1000) {
+      if (showMoreContent.outerHeight() > 800) {
         showMoreBtn.removeClass('d-none');
         showMoreContent.addClass('expandable');
       }

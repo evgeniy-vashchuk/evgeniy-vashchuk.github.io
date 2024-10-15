@@ -1178,11 +1178,6 @@
                     <span>Brochure</span>
                   </button>
                 </div>
-                <div class="col-auto d-flex align-items-center" id="test">
-                  <button class="btn-action link-dark" type="button" data-bs-toggle="modal" data-bs-target="#modal-login">
-                    <span class="icomoon-profile"></span>
-                  </button>
-                </div>
                 <div class="col-auto d-flex align-items-center d-lg-none">
                   <button class="btn-action link-dark" aria-label="Toggle menu" aria-controls="offcanvas-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu">
                     <span class="icomoon-hamburger"></span>
@@ -1229,79 +1224,6 @@
       </div>
     </div>
 
-    <div class="modal fade" id="modal-login" aria-labelledby="modal-login-label" aria-hidden="true" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <button class="btn-close" aria-label="Close" type="button" data-bs-dismiss="modal"></button>
-          <div class="modal-body">
-            <h5 class="text-center mb-24" id="modal-login-label">Login</h5>
-
-            <form action="#">
-              <div class="modal__form remove-last-child-margin">
-                <div class="mb-16">
-                  <label class="form-label" for="login-email">Email</label>
-                  <input class="form-control" id="login-email" type="email" placeholder="email">
-                </div>
-                <div class="mb-16">
-                  <label class="form-label" for="login-password">Password</label>
-                  <input class="form-control" id="login-password" type="password" placeholder="password">
-                </div>
-                <div class="mb-16 form-check text-sm">
-                  <input class="form-check-input" id="login-remember-me" type="checkbox">
-                  <label class="form-check-label" for="login-remember-me">Remember me</label>
-                </div>
-                <div class="mb-24">
-                  <button class="btn btn-primary w-100 rounded-1" type="submit">Login in</button>
-                </div>
-                <p class="text-sm text-secondary text-center mb-0">No account? <a href="#" class="link-dark text-decoration-underline" data-bs-dismiss="modal" data-open-next-modal="#modal-create-account">Create account</a>
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="modal-create-account" aria-labelledby="modal-create-account-label" aria-hidden="true" tabindex="-1">
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <button class="btn-close" aria-label="Close" type="button" data-bs-dismiss="modal"></button>
-          <div class="modal-body">
-            <h5 class="text-center mb-24" id="modal-create-account-label">Create account</h5>
-
-            <form action="#">
-              <div class="modal__form remove-last-child-margin">
-                <div class="mb-16">
-                  <label class="form-label" for="register-full-name">Full name</label>
-                  <input class="form-control" id="register-full-name" type="text" placeholder="Jonh Doe">
-                </div>
-                <div class="mb-16">
-                  <label class="form-label" for="register-phone">Phone</label>
-                  <input class="form-control js-phone-input" id="register-phone" type="text" data-mask="+{39} - 0 - 000 - 000" placeholder="+39 - 6 - 666 - 666">
-                </div>
-                <div class="mb-16">
-                  <label class="form-label" for="register-email">Email</label>
-                  <input class="form-control" id="register-email" type="email" placeholder="email">
-                </div>
-                <div class="mb-16">
-                  <label class="form-label" for="register-password">Password</label>
-                  <input class="form-control" id="register-password" type="password" placeholder="password">
-                </div>
-                <div class="mb-16 form-check text-sm">
-                  <input class="form-check-input" id="register-privacy-policy" type="checkbox">
-                  <label class="form-check-label" for="register-privacy-policy">Privacy policy</label>
-                </div>
-                <div class="mb-24">
-                  <button class="btn btn-primary w-100 rounded-1" type="submit">Sign up</button>
-                </div>
-                <p class="text-sm text-secondary text-center mb-0">I have account? <a href="#" class="link-dark text-decoration-underline" data-bs-dismiss="modal" data-bs-toggle="modal" data-open-next-modal="#modal-login">Login in</a>
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
     <!-- HEADER END -->
 
     <!-- CONTENT -->
@@ -1519,7 +1441,7 @@
         <div class="container">
           <h3>Areas of application</h3>
 
-          <div class="row row-cols-1 row-cols-xs-2 row-cols-md-3 row-cols-xl-5 gy-20 justify-content-center">
+          <div class="row row-cols-1 row-cols-xxs-2 row-cols-md-3 row-cols-xl-5 gy-20 justify-content-center">
             <div class="col d-flex">
               <div class="card-area">
                 <div class="card-area__icon">
@@ -2203,9 +2125,6 @@
                       </li>
                       <li class="footer-menu__item">
                         <a class="link-dark fw-regular" href="#">After Sales</a>
-                      </li>
-                      <li class="footer-menu__item">
-                        <a class="link-dark fw-regular" href="#" data-bs-toggle="modal" data-bs-target="#modal-login">Login</a>
                       </li>
                     </ul>
                   </div>
