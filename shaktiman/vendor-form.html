@@ -34,30 +34,6 @@
 
 <body>
   <div class="wrapper">
-    <!-- SOCIALS -->
-    <ul class="socials-fixed-list">
-      <li class="socials-fixed-list__item">
-        <a class="socials-fixed-list__link" href="#" target="_blank">
-          <span class="icomoon-linkedin"></span>
-        </a>
-      </li>
-      <li class="socials-fixed-list__item">
-        <a class="socials-fixed-list__link" href="#" target="_blank">
-          <span class="icomoon-x"></span>
-        </a>
-      </li>
-      <li class="socials-fixed-list__item">
-        <a class="socials-fixed-list__link" href="#" target="_blank">
-          <span class="icomoon-instagram"></span>
-        </a>
-      </li>
-      <li class="socials-fixed-list__item">
-        <a class="socials-fixed-list__link" href="#" target="_blank">
-          <span class="icomoon-facebook"></span>
-        </a>
-      </li>
-    </ul>
-    <!-- SOCIALS END -->
 
     <!-- CHAT -->
     <button class="btn-chat-toggle" type="button">
@@ -1206,7 +1182,7 @@
                 </div>
                 <div class="mb-16">
                   <label class="form-label" for="brochure-phone">Phone</label>
-                  <input class="form-control js-phone-input" id="brochure-phone" type="text" data-mask="+{1} 000 000 000" placeholder="Enter phone number(e.g. +1 123 345 789)">
+                  <input class="form-control" id="brochure-phone" type="number" placeholder="Enter phone number(e.g. +1 123 345 789)">
                 </div>
                 <div class="mb-16">
                   <label class="form-label" for="brochure-email">Email</label>
@@ -1305,13 +1281,16 @@
                         <input class="form-control" id="address-2" type="text" placeholder="Enter second address">
                       </div>
                       <div class="col-xs-7">
-                        <label class="form-label" for="district">District<span class="text-danger">*</span>
-                        </label>
-                        <select class="form-select" id="district" required>
-                          <option value disabled selected>Select district</option>
-                          <option value="1">District 1</option>
-                          <option value="2">District 2</option>
-                        </select>
+                        <div class="js-select-container" data-placeholder="Select district">
+                          <label class="form-label" for="district">District<span class="text-danger">*</span>
+                          </label>
+                          <select class="form-select js-select" id="district" required>
+                            <option></option>
+                            <option value="1">District 1</option>
+                            <option value="2">District 2</option>
+                            <option value="3">District 3</option>
+                          </select>
+                        </div>
                       </div>
                       <div class="col-xs-5">
                         <label class="form-label" for="zip-code">ZIP Code<span class="text-danger">*</span>
@@ -1324,22 +1303,28 @@
                         <input class="form-control" id="city" type="text" placeholder="Enter city name" required>
                       </div>
                       <div class="col-xs-6">
-                        <label class="form-label" for="state">State<span class="text-danger">*</span>
-                        </label>
-                        <select class="form-select" id="state" required>
-                          <option value disabled selected>Select state</option>
-                          <option value="1">California</option>
-                          <option value="2">New York</option>
-                        </select>
+                        <div class="js-select-container" data-placeholder="Select state">
+                          <label class="form-label" for="state">State<span class="text-danger">*</span>
+                          </label>
+                          <select class="form-select js-select" id="state" required>
+                            <option></option>
+                            <option value="1">State 1</option>
+                            <option value="2">State 2</option>
+                            <option value="3">State 3</option>
+                          </select>
+                        </div>
                       </div>
                       <div class="col-12">
-                        <label class="form-label" for="country">Country<span class="text-danger">*</span>
-                        </label>
-                        <select class="form-select" id="country" required>
-                          <option value disabled selected>Select country</option>
-                          <option value="1">Country 1</option>
-                          <option value="2">Country 2</option>
-                        </select>
+                        <div class="js-select-container" data-placeholder="Select country">
+                          <label class="form-label" for="country">Country<span class="text-danger">*</span>
+                          </label>
+                          <select class="form-select js-select" id="country" required>
+                            <option></option>
+                            <option value="1">Country 1</option>
+                            <option value="2">Country 2</option>
+                            <option value="3">Country 3</option>
+                          </select>
+                        </div>
                       </div>
                     </div>
                     <div class="text-center">
@@ -1379,7 +1364,7 @@
                       <div class="col-12">
                         <label class="form-label" for="phone-number">Phone number<span class="text-danger">*</span>
                         </label>
-                        <input class="form-control js-phone-input" id="phone-number" type="text" data-mask="+{39} - 0 - 000 - 000" placeholder="Enter phone number" required>
+                        <input class="form-control" id="phone-number" type="text" placeholder="Enter phone number" required>
                       </div>
                       <div class="col-12">
                         <label class="form-label" for="pan">PAN<span class="text-danger">*</span>

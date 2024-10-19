@@ -47,7 +47,6 @@ var breakpointXs = +getComputedStyle(document.documentElement).
   initFancybox();
   initShowMore();
   initSticky();
-  initMap();
 
   $(window).on('resize', function () {
     initScrollBarWidth();
@@ -297,31 +296,6 @@ var breakpointXs = +getComputedStyle(document.documentElement).
 
   // FORMS
   function initForms() {
-    var phoneInput = $('.js-phone-input');
-
-    if (phoneInput.length) {
-      phoneInput.each(function () {
-        IMask(
-          $(this)[0],
-          { mask: $(this).attr('data-mask') }
-        );
-      });
-    }
-
-    var phoneInputWP = $('.create-account-phone .input-text');
-
-    if (phoneInputWP.length) {
-      phoneInputWP.each(function () {
-        IMask(
-          $(this)[0],
-          {
-            mask: $(this).closest('.create-account-phone').find('.description').
-            text()
-          }
-        );
-      });
-    }
-
     // disable auto-scrolling for register form
     $('form.register button[type="submit"]').on('click', function (event) {
       var scrollPosition = $(window).scrollTop();
@@ -352,6 +326,27 @@ var breakpointXs = +getComputedStyle(document.documentElement).
         });
       }
     }, false);
+
+    // custom select
+    var select = $('.js-select');
+
+    select.each(function () {
+      $(this).select2({
+        // dropdownParent: $(this).closest('.js-select-container'),
+        minimumResultsForSearch: -1,
+        width: '100%',
+        theme: 'bootstrap',
+        placeholder: $(this).closest('.js-select-container').data('placeholder')
+      });
+
+      $(this).on('change', function () {
+        if ($(this).val() !== '') {
+          $(this).addClass('hide-cf7-error');
+        } else {
+          $(this).removeClass('hide-cf7-error');
+        }
+      });
+    });
   }
 
   // WIDTH OF SCROLLBAR
@@ -424,12 +419,16 @@ var breakpointXs = +getComputedStyle(document.documentElement).
       if (withSubCategory) {
         $('body').addClass('sub-category-open');
       } else {
-        $('body').addClass('products-open');
+        setTimeout(function () {
+          $('body').addClass('products-open');
+        }, 10);
       }
     });
 
     $('.js-sub-category-tab').on('click', function () {
-      $('body').addClass('products-open');
+      setTimeout(function () {
+        $('body').addClass('products-open');
+      }, 50);
     });
 
     // close mega menu on offcanvas close
@@ -523,37 +522,41 @@ var breakpointXs = +getComputedStyle(document.documentElement).
       });
     }
   }
-
-  // STANDARD GOOGLE MAP
-  function initMap() {
-    var mapBlock = $('.js-map');
-
-    if (!mapBlock.length) return;
-
-    var coordinateX = mapBlock.attr('data-coordinate-x'),
-      coordinateY = mapBlock.attr('data-coordinate-y'),
-      coordinates = new google.maps.LatLng(coordinateX, coordinateY),
-      iconUrl = mapBlock.attr('data-icon');
-
-    var map = new google.maps.Map(mapBlock.get(0), {
-      center: coordinates,
-      zoom: 14,
-      disableDefaultUI: true,
-      zoomControlOptions: { position: google.maps.ControlPosition.RIGHT_CENTER },
-      /* eslint-disable */
-      styles: [{ featureType: 'administrative.locality', elementType: 'all', stylers: [{ hue: '#2c2e33' }, { saturation: 7 }, { lightness: 19 }, { visibility: 'on' }] }, { featureType: 'administrative.locality', elementType: 'labels.text', stylers: [{ visibility: 'on' }, { saturation: '-3' }] }, { featureType: 'administrative.locality', elementType: 'labels.text.fill', stylers: [{ color: '#fd901b' }] }, { featureType: 'landscape', elementType: 'all', stylers: [{ hue: '#ffffff' }, { saturation: -100 }, { lightness: 100 }, { visibility: 'simplified' }] }, { featureType: 'poi', elementType: 'all', stylers: [{ hue: '#ffffff' }, { saturation: -100 }, { lightness: 100 }, { visibility: 'off' }] }, { featureType: 'poi.school', elementType: 'geometry.fill', stylers: [{ color: '#f39247' }, { saturation: '0' }, { visibility: 'on' }] }, { featureType: 'road', elementType: 'geometry', stylers: [{ hue: '#ff6f00' }, { saturation: '100' }, { lightness: 31 }, { visibility: 'simplified' }] }, { featureType: 'road', elementType: 'geometry.stroke', stylers: [{ color: '#f39247' }, { saturation: '0' }] }, { featureType: 'road', elementType: 'labels', stylers: [{ hue: '#008eff' }, { saturation: -93 }, { lightness: 31 }, { visibility: 'on' }] }, { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{ color: '#fd901b' }] }, { featureType: 'road.arterial', elementType: 'geometry.stroke', stylers: [{ visibility: 'on' }, { color: '#f3dbc8' }, { saturation: '0' }] }, { featureType: 'road.arterial', elementType: 'labels', stylers: [{ hue: '#bbc0c4' }, { saturation: -93 }, { lightness: -2 }, { visibility: 'simplified' }] }, { featureType: 'road.arterial', elementType: 'labels.text', stylers: [{ visibility: 'off' }] }, { featureType: 'road.local', elementType: 'geometry', stylers: [{ hue: '#e9ebed' }, { saturation: -90 }, { lightness: -8 }, { visibility: 'simplified' }] }, { featureType: 'transit', elementType: 'all', stylers: [{ hue: '#e9ebed' }, { saturation: 10 }, { lightness: 69 }, { visibility: 'on' }] }, { featureType: 'water', elementType: 'all', stylers: [{ hue: '#e9ebed' }, { saturation: -78 }, { lightness: 67 }, { visibility: 'simplified' }] }, { featureType: 'water', elementType: 'geometry.fill', stylers: [{ color: '#e9e9e9' }] }]
-      /* eslint-enable */
-    });
-
-    var icon = {
-      url: iconUrl,
-      scaledSize: new google.maps.Size(48, 48)
-    };
-
-    var marker = new google.maps.Marker({
-      position: coordinates,
-      map: map,
-      icon: icon
-    });
-  }
 })(jQuery);
+
+// STANDARD GOOGLE MAP
+function initMap() {
+  var mapBlock = $('.js-map');
+
+  if (!mapBlock.length) return;
+
+  var coordinateX = +mapBlock.attr('data-coordinate-x'),
+    coordinateY = +mapBlock.attr('data-coordinate-y'),
+    position = { lat: coordinateX, lng: coordinateY },
+    iconUrl = mapBlock.attr('data-icon');
+
+  /* eslint-disable */
+  var styledMapType = new google.maps.StyledMapType([{ featureType: 'administrative.locality', elementType: 'all', stylers: [{ hue: '#2c2e33' }, { saturation: 7 }, { lightness: 19 }, { visibility: 'on' }] }, { featureType: 'administrative.locality', elementType: 'labels.text', stylers: [{ visibility: 'on' }, { saturation: '-3' }] }, { featureType: 'administrative.locality', elementType: 'labels.text.fill', stylers: [{ color: '#fd901b' }] }, { featureType: 'landscape', elementType: 'all', stylers: [{ hue: '#ffffff' }, { saturation: -100 }, { lightness: 100 }, { visibility: 'simplified' }] }, { featureType: 'poi', elementType: 'all', stylers: [{ hue: '#ffffff' }, { saturation: -100 }, { lightness: 100 }, { visibility: 'off' }] }, { featureType: 'poi.school', elementType: 'geometry.fill', stylers: [{ color: '#f39247' }, { saturation: '0' }, { visibility: 'on' }] }, { featureType: 'road', elementType: 'geometry', stylers: [{ hue: '#ff6f00' }, { saturation: '100' }, { lightness: 31 }, { visibility: 'simplified' }] }, { featureType: 'road', elementType: 'geometry.stroke', stylers: [{ color: '#f39247' }, { saturation: '0' }] }, { featureType: 'road', elementType: 'labels', stylers: [{ hue: '#008eff' }, { saturation: -93 }, { lightness: 31 }, { visibility: 'on' }] }, { featureType: 'road.highway', elementType: 'geometry.fill', stylers: [{ color: '#fd901b' }] }, { featureType: 'road.arterial', elementType: 'geometry.stroke', stylers: [{ visibility: 'on' }, { color: '#f3dbc8' }, { saturation: '0' }] }, { featureType: 'road.arterial', elementType: 'labels', stylers: [{ hue: '#bbc0c4' }, { saturation: -93 }, { lightness: -2 }, { visibility: 'simplified' }] }, { featureType: 'road.arterial', elementType: 'labels.text', stylers: [{ visibility: 'off' }] }, { featureType: 'road.local', elementType: 'geometry', stylers: [{ hue: '#e9ebed' }, { saturation: -90 }, { lightness: -8 }, { visibility: 'simplified' }] }, { featureType: 'transit', elementType: 'all', stylers: [{ hue: '#e9ebed' }, { saturation: 10 }, { lightness: 69 }, { visibility: 'on' }] }, { featureType: 'water', elementType: 'all', stylers: [{ hue: '#e9ebed' }, { saturation: -78 }, { lightness: 67 }, { visibility: 'simplified' }] }, { featureType: 'water', elementType: 'geometry.fill', stylers: [{ color: '#e9e9e9' }] }]);
+  /* eslint-enable */
+
+  var map = new google.maps.Map(mapBlock.get(0), {
+    zoom: 14,
+    center: position,
+    disableDefaultUI: true,
+    mapId: 'DEMO_MAP_ID'
+  });
+
+  map.mapTypes.set('styled_map', styledMapType);
+  map.setMapTypeId('styled_map');
+
+  var beachFlagImg = document.createElement('img');
+
+  beachFlagImg.src = iconUrl;
+  beachFlagImg.classList.add('marker');
+
+  var marker = new google.maps.marker.AdvancedMarkerElement({
+    map: map,
+    position: position,
+    content: beachFlagImg
+  });
+}
