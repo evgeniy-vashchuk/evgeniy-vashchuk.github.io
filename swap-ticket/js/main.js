@@ -35,7 +35,7 @@ function initSliders() {
     spaceBetween: gridGutterWidth,
     speed: 1000,
     autoplay: {
-      delay: 10000,
+      delay: 3000,
       disableOnInteraction: false
     },
     effect: 'fade'
