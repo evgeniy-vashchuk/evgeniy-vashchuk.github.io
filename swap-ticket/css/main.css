@@ -143,7 +143,7 @@
   --bs-border-radius-pill: 50rem;
   --bs-box-shadow: 0 4px 40px 0 rgba(50, 53, 104, 0.1);
   --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+  --bs-box-shadow-lg: 0 4px 40px 0 rgba(50, 53, 104, 0.25);
   --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075);
   --bs-focus-ring-width: 0.25rem;
   --bs-focus-ring-opacity: 0.25;
@@ -21484,7 +21484,6 @@ h1,
 
 .resize-animation-stopper * {
   transition: none !important;
-  animation: none !important;
 }
 
 .transition-color {
@@ -21755,12 +21754,8 @@ h1,
   background-color: #FFFFFF;
   border-radius: 0.75rem;
   box-shadow: 0 4px 40px 0 rgba(50, 53, 104, 0.1);
-}
-@media (min-width: 576px) {
-  .card-question {
-    animation: card-question 7s infinite backwards;
-    animation-delay: var(--animation-delay);
-  }
+  animation: card-question 7s infinite backwards;
+  animation-delay: var(--animation-delay);
 }
 @media (min-width: 992px) {
   .card-question {
@@ -21773,15 +21768,11 @@ h1,
   padding: 0.66666666em 1.33333333em;
   font-size: 24px;
   border-radius: 50rem;
-}
-@media (min-width: 576px) {
-  .card-question__badge {
-    transform: translateY(20px);
-    opacity: 0;
-    filter: blur(10px);
-    animation: card-question-badge 7s infinite backwards;
-    animation-delay: var(--animation-delay);
-  }
+  transform: translateY(20px);
+  opacity: 0;
+  filter: blur(10px);
+  animation: card-question-badge 7s infinite backwards;
+  animation-delay: var(--animation-delay);
 }
 .card-question__badge.blue {
   color: #007BFF;
@@ -21808,17 +21799,24 @@ h1,
   flex-direction: column;
   flex-grow: 1;
   justify-content: center;
+  min-height: 64px;
+}
+@media (min-width: 420px) {
+  .card-question__body {
+    min-height: 84px;
+  }
+}
+@media (min-width: 992px) {
+  .card-question__body {
+    min-height: 96px;
+  }
 }
 .card-question__text {
   margin-bottom: 0;
-}
-@media (min-width: 576px) {
-  .card-question__text {
-    transform: translateY(10px);
-    opacity: 0;
-    animation: card-question-text 7s infinite backwards;
-    animation-delay: calc(var(--animation-delay) + 0.1s);
-  }
+  transform: translateY(10px);
+  opacity: 0;
+  animation: card-question-text 7s infinite backwards;
+  animation-delay: calc(var(--animation-delay) + 0.1s);
 }
 @media (max-width: 991.98px) {
   .card-question__text {
@@ -21846,6 +21844,13 @@ h1,
   position: relative;
   overflow: hidden;
 }
+@media (min-width: 768px) {
+  .card-advantage-block:hover .card-advantage:not(:hover) {
+    transform: scale(0.9);
+    opacity: 0.75;
+    filter: blur(2px);
+  }
+}
 .card-advantage {
   width: 100%;
   padding: 32px 16px;
@@ -21853,6 +21858,17 @@ h1,
   background-color: #FFFFFF;
   border-radius: 1.25rem;
   box-shadow: 0 4px 40px 0 rgba(50, 53, 104, 0.1);
+}
+@media (min-width: 768px) {
+  .card-advantage {
+    transition: box-shadow 0.3s, transform 0.3s, opacity 0.3s, filter 0.3s;
+  }
+}
+@media (min-width: 768px) {
+  .card-advantage:hover {
+    box-shadow: 0 4px 40px 0 rgba(50, 53, 104, 0.25);
+    transform: scale(1.025);
+  }
 }
 .card-advantage__content {
   position: relative;
