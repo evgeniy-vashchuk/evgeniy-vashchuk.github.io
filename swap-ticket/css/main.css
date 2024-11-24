@@ -1,5 +1,17 @@
 @charset "UTF-8";
 /*!
+  Theme Name: X-Project WP
+  Theme URI: https://github.com/evgeniy-vashchuk/x-project-wp
+  Description: Starter WordPress Theme
+  Version: 1.0.0
+  Author: Evgeniy Vashchuk
+  Author URI: https://evgeniy-vashchuk.github.io/
+  Tags: Starter WordPress Theme, HTML5, CSS3, JS
+
+  License: MIT
+  License URI: http://opensource.org/licenses/mit-license.php
+*/
+/*!
  * Bootstrap  v5.3.3 (https://getbootstrap.com/)
  * Copyright 2011-2024 The Bootstrap Authors
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
@@ -21409,6 +21421,10 @@ h1,
   margin-bottom: 20px;
 }
 
+.text-with-primary-strong strong {
+  color: #007BFF;
+}
+
 .of-contain {
   position: absolute;
   inset: 0;
@@ -21744,6 +21760,42 @@ h1,
     flex-shrink: 0;
     width: 1566px;
   }
+}
+.card-question-block__list [class*=col]:nth-child(12n+1) .card-question {
+  --animation-delay: -2.87752467s;
+}
+.card-question-block__list [class*=col]:nth-child(12n+2) .card-question {
+  --animation-delay: -8.87844033s;
+}
+.card-question-block__list [class*=col]:nth-child(12n+3) .card-question {
+  --animation-delay: -2.17904188s;
+}
+.card-question-block__list [class*=col]:nth-child(12n+4) .card-question {
+  --animation-delay: -5.67309151s;
+}
+.card-question-block__list [class*=col]:nth-child(12n+5) .card-question {
+  --animation-delay: -3.17096086s;
+}
+.card-question-block__list [class*=col]:nth-child(12n+6) .card-question {
+  --animation-delay: -5.9158527s;
+}
+.card-question-block__list [class*=col]:nth-child(12n+7) .card-question {
+  --animation-delay: -1.02654255s;
+}
+.card-question-block__list [class*=col]:nth-child(12n+8) .card-question {
+  --animation-delay: -4.80808228s;
+}
+.card-question-block__list [class*=col]:nth-child(12n+9) .card-question {
+  --animation-delay: -5.31928248s;
+}
+.card-question-block__list [class*=col]:nth-child(12n+10) .card-question {
+  --animation-delay: -7.97186301s;
+}
+.card-question-block__list [class*=col]:nth-child(12n+11) .card-question {
+  --animation-delay: -7.72201268s;
+}
+.card-question-block__list [class*=col]:nth-child(12n+12) .card-question {
+  --animation-delay: -1.84215999s;
 }
 .card-question {
   display: flex;
