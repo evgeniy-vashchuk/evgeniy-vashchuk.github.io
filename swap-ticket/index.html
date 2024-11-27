@@ -78,9 +78,20 @@
                         </div>
                       </div>
                       <div class="col-lg-8 text-lg-end">
-                        <a class="btn btn-primary" href="#" target="_blank">
-                          <span>Book a demo</span>
-                          <span class="icomoon-plane"></span>
+                        <a class="btn btn-primary btn-with-arrow" href="#" target="_blank">
+                          <span class="btn-with-arrow__arrow">
+                            <span class="btn-with-arrow__icons-hover">
+                              <span class="icomoon-chevron-right"></span>
+                              <span class="icomoon-chevron-right"></span>
+                              <span class="icomoon-chevron-right"></span>
+                              <span class="icomoon-chevron-right"></span>
+                              <span class="icomoon-chevron-right"></span>
+                              <span class="icomoon-chevron-right"></span>
+                              <span class="icomoon-chevron-right"></span>
+                              <span class="icomoon-chevron-right"></span>
+                            </span>
+                          </span>
+                          <span class="btn-with-arrow__text">Book a demo</span>
                         </a>
                       </div>
                     </div>
@@ -98,19 +109,7 @@
     <main class="main">
       <!-- SECTION WELCOME -->
       <section class="section-welcome section">
-        <div class="swiper section-welcome__slider js-slider-welcome cover-slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <img src="img/slider-welcome/1.webp" alt="Image">
-            </div>
-            <div class="swiper-slide">
-              <img src="img/slider-welcome/2.webp" alt="Image">
-            </div>
-            <div class="swiper-slide">
-              <img src="img/slider-welcome/3.webp" alt="Image">
-            </div>
-          </div>
-        </div>
+        <div class="section-welcome__bg-img lazy js-lazy" data-bg="img/webp/section-welcome-bg.webp"></div>
 
         <div class="container position-relative z-5">
           <div class="row gy-20 gy-sm-32">
@@ -666,7 +665,7 @@
                   </div>
                 </div>
                 <div class="card-advantage__img" data-aos="fade-up-right" data-aos-duration="1500" data-aos-easing="ease-in-out">
-                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-advantage/1.webp">
+                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-advantage/1.webp">
                 </div>
               </div>
             </div>
@@ -702,7 +701,7 @@
                 <div class="col-24 d-flex">
                   <div class="card-advantage version-3">
                     <div class="card-advantage__img">
-                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-advantage/4.webp">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-advantage/4.webp">
                     </div>
                     <div class="card-advantage__content">
                       <div class="row">
@@ -749,7 +748,7 @@
               <div class="row">
                 <div class="col-md-20 mx-auto">
                   <div class="ratio ratio-60x36 bg-shadow-skew mb-32 mb-xl-44">
-                    <img class="lazy js-lazy of-contain ofp-bottom z-5" src="img/lazy-placeholder.png" alt="Image" data-src="img/image-1.webp">
+                    <img class="lazy js-lazy of-contain ofp-bottom z-5" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/image-1.webp">
                   </div>
                 </div>
               </div>
@@ -792,9 +791,20 @@
               </div>
               <div class="row gx-20 gy-16">
                 <div class="col-xs-auto">
-                  <a class="btn btn-white w-100" href="#" target="_blank">
-                    <span>Book a demo</span>
-                    <span class="icomoon-plane"></span>
+                  <a class="btn btn-white w-100 btn-with-arrow" href="#" target="_blank">
+                    <span class="btn-with-arrow__arrow">
+                      <span class="btn-with-arrow__icons-hover">
+                        <span class="icomoon-chevron-right"></span>
+                        <span class="icomoon-chevron-right"></span>
+                        <span class="icomoon-chevron-right"></span>
+                        <span class="icomoon-chevron-right"></span>
+                        <span class="icomoon-chevron-right"></span>
+                        <span class="icomoon-chevron-right"></span>
+                        <span class="icomoon-chevron-right"></span>
+                        <span class="icomoon-chevron-right"></span>
+                      </span>
+                    </span>
+                    <span class="btn-with-arrow__text">Book a demo</span>
                   </a>
                 </div>
                 <div class="col-xs-auto">
@@ -825,7 +835,7 @@
                 <div class="row align-items-center gy-20">
                   <div class="col-lg-8 d-lg-flex justify-content-lg-end">
                     <div class="collapse-item__img">
-                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/image-2.webp">
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/image-2.webp">
                     </div>
                   </div>
                   <div class="col-lg-15 col-xxl-14 offset-lg-1">
@@ -850,7 +860,9 @@
 
     <!-- FOOTER -->
     <footer class="footer">
-      <div class="footer__bg lazy js-lazy" data-bg="img/footer-bg.webp"></div>
+      <video class="footer__bg-video lazy js-lazy js-bg-video" loop autoplay muted playsinline>
+        <source type="video/mp4" data-src="files/footer-bg-video.mp4">
+      </video>
 
       <div class="footer__text-content">
         <div class="container">

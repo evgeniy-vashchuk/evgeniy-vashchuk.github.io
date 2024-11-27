@@ -28,20 +28,6 @@ function initStopAnimationsDuringWindowResizing() {
   });
 }
 
-// SLIDERS
-function initSliders() {
-  var sliderWelcome = new Swiper('.js-slider-welcome', {
-    slidesPerView: 1,
-    spaceBetween: gridGutterWidth,
-    speed: 1000,
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false
-    },
-    effect: 'fade'
-  });
-}
-
 // ACTIVE HEADER AFTER SCROLL
 function initActiveHeaderAfterScroll() {
   var header = $('.js-header');
@@ -135,12 +121,24 @@ function initHighlightTextOnScroll() {
   });
 }
 
+// BACKGROUND VIDEO
+function initBackgroundVideo() {
+  var video = $('.js-bg-video');
+
+  if (video.length) {
+    video.bgVideo({
+      showPausePlay: false,
+      pauseAfter: 0
+    });
+  }
+}
+
 (function ($) {
   initLazyLoad();
   initStopAnimationsDuringWindowResizing();
-  initSliders();
   initActiveHeaderAfterScroll();
   initAosAnimation();
   initSmoothAnchorLinks();
   initHighlightTextOnScroll();
+  initBackgroundVideo();
 })(jQuery);
