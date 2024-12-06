@@ -19306,7 +19306,7 @@ progress {
 }
 @font-face {
   font-family: "icomoon";
-  src: url("../fonts/icomoon/icomoon.ttf?1yds0s") format("truetype"), url("../fonts/icomoon/icomoon.woff?1yds0s") format("woff"), url("../fonts/icomoon/icomoon.svg?1yds0s#icomoon") format("svg");
+  src: url("../fonts/icomoon/icomoon.ttf?dpczip") format("truetype"), url("../fonts/icomoon/icomoon.woff?dpczip") format("woff"), url("../fonts/icomoon/icomoon.svg?dpczip#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -19323,6 +19323,10 @@ progress {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.icomoon-airplane:before {
+  content: "\e912";
 }
 
 .icomoon-credit-card:before {
@@ -20761,10 +20765,21 @@ h1,
     opacity: 1;
   }
 }
+@keyframes airplane-movement {
+  0% {
+    left: 0;
+    transform: translate(-100%, -50%);
+  }
+  100% {
+    left: 100%;
+    transform: translate(0, -50%);
+  }
+}
 .footer {
   padding: calc(26px + 3.8028169014vw) 0 calc(23.5px + 2.2183098592vw);
   position: relative;
   overflow: hidden;
+  background-color: #0056B3;
 }
 @media (min-width: 1420px) {
   .footer {
@@ -20959,6 +20974,13 @@ h1,
 .btn-white.btn-with-arrow .btn-with-arrow__icons-hover:before, .btn-white.btn-with-arrow .btn-with-arrow__icons-hover:after {
   background: linear-gradient(to right, #0056B3, rgba(0, 86, 179, 0));
 }
+.btn-outline-white.btn-with-arrow .btn-with-arrow__arrow {
+  color: #007BFF;
+  background-color: #FFFFFF;
+}
+.btn-outline-white.btn-with-arrow .btn-with-arrow__icons-hover:before, .btn-outline-white.btn-with-arrow .btn-with-arrow__icons-hover:after {
+  background: linear-gradient(to right, #FFFFFF, rgba(255, 255, 255, 0));
+}
 .btn-outline-primary:hover {
   color: #FFFFFF !important;
 }
@@ -20966,12 +20988,17 @@ h1,
   position: relative;
   padding-right: 0.7777777778em;
   padding-left: calc(3.11111111em - 2px * 2 + 0.7777777778em);
+  overflow: hidden;
 }
 .btn-with-arrow:hover .btn-with-arrow__arrow {
   width: 100%;
 }
 .btn-with-arrow:hover .btn-with-arrow__arrow:before {
   display: none;
+}
+.btn-with-arrow:hover .btn-with-arrow__arrow:after {
+  opacity: 1;
+  animation: airplane-movement 1.5s infinite;
 }
 .btn-with-arrow:hover .btn-with-arrow__icons-hover {
   opacity: 1;
@@ -21002,6 +21029,19 @@ h1,
   transition: visibility 0.3s;
   animation: blink 1.5s infinite;
   content: "\e911";
+}
+.btn-with-arrow__arrow:after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 10;
+  font-size: 2.5em;
+  font-family: "icomoon";
+  line-height: 1;
+  transform: translate(-100%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+  content: "\e912";
 }
 .btn-with-arrow__icons-hover {
   position: absolute;
