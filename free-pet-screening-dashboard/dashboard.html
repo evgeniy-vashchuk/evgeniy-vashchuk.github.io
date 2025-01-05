@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Free Pet Screening — Dashboard</title>
+  <meta name="description" content="We are a modest but successful 20-year experienced online publisher and e-commerce company with a steady list of sites to build in the pet, people directory and telehealth segments.">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#1C49C2">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#1C49C2">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#1C49C2">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#1C49C2">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- SIDE MENU -->
+  <div class="side-menu offcanvas-lg offcanvas-start" id="offcanvas-side-menu" tabindex="-1">
+    <header class="side-menu__header">
+      <div class="row flex-nowrap flex-grow-1 justify-content-between align-items-center">
+        <div class="col d-none d-lg-flex">
+          <a class="side-menu__logo" href="dashboard.html">
+            <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/logo.svg">
+          </a>
+        </div>
+        <div class="col d-flex d-lg-none">
+          <div class="account-photo-name">
+            <div class="row flex-nowrap align-items-center gx-10">
+              <div class="col-auto d-flex">
+                <div class="account-photo-name__avatar">
+                  <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-dark.svg">
+                </div>
+              </div>
+              <div class="col d-flex">
+                <h3 class="mb-0">Catherine Su</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto d-flex d-lg-none">
+          <button class="btn-close h3" aria-label="Close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-side-menu">X</button>
+        </div>
+      </div>
+    </header>
+    <div class="side-menu__body">
+      <ul class="side-menu__nav">
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link active" href="dashboard.html">
+            <span class="side-menu__nav-icon icomoon-dashboard"></span>
+            <span class="side-menu__nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="animals.html">
+            <span class="side-menu__nav-icon icomoon-animals"></span>
+            <span class="side-menu__nav-link-text">Animals</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="animals.html">
+            <span class="side-menu__nav-icon icomoon-residents"></span>
+            <span class="side-menu__nav-link-text">Residents</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="animals.html">
+            <span class="side-menu__nav-icon icomoon-properties"></span>
+            <span class="side-menu__nav-link-text">Properties</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-team-members" href="#collapse-side-menu-team-members" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-team-members"></span>
+            <span class="side-menu__nav-link-text">Team Members</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-team-members">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="property-managers.html">Property managers</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="pet-mapping.html">Pet Mapping</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-policies" href="#collapse-side-menu-policies" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-policies"></span>
+            <span class="side-menu__nav-link-text">Policies</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-policies">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="policies.html">Policies</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="default-state-policies.html">Default state policies</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-settings" href="#collapse-side-menu-settings" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-settings"></span>
+            <span class="side-menu__nav-link-text">Settings</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-settings">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="payments.html">Payments</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="integrations.html">Integrations</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="support.html">
+            <span class="side-menu__nav-icon icomoon-support"></span>
+            <span class="side-menu__nav-link-text">Support</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- SIDE MENU END -->
+
+  <!-- HEADER -->
+  <header class="header fixed-top">
+    <div class="container-fluid">
+      <div class="row justify-content-between align-items-center flex-nowrap">
+        <div class="col d-flex">
+          <a class="header__logo" href="dashboard.html">
+            <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/logo.svg">
+          </a>
+        </div>
+        <div class="col-auto">
+          <div class="row gx-20 align-items-center">
+            <div class="col-auto d-flex">
+              <div class="dropdown d-inline-flex">
+                <button class="dropdown-toggle account-toggler" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,10">
+                  <span class="account-toggler__avatar">
+                    <img class="lazy js-lazy d-none d-lg-block of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-dark.svg">
+                    <img class="lazy js-lazy d-lg-none of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-light.svg">
+                  </span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#">Profile settings</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Log out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-auto d-flex d-lg-none">
+              <button class="header__menu-toggler" aria-controls="offcanvas-side-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-side-menu">
+                <span class="icomoon-hamburger"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <!-- CONTENT -->
+  <main class="dashboard">
+    <div class="dashboard__main">
+      <div class="container-fluid">
+        <div class="row gy-60 gy-lg-15">
+          <div class="col-lg-6 col-xxl-4 d-flex">
+            <div class="card w-100">
+              <div class="card-body">
+                <div class="row align-items-center justify-content-between gy-10 mb-20">
+                  <div class="col-auto">
+                    <span class="icon-item text-blue-light icomoon-animals"></span>
+                  </div>
+                  <div class="col-auto">
+                    <a class="link-with-arrow left-side link-secondary text-lg" href="#">See all</a>
+                  </div>
+                </div>
+
+                <h4 class="text-primary mb-20">Current 3 animals</h4>
+
+                <div class="bg-blue-light rounded-3 border-right-not-last">
+                  <div class="row gx-0">
+                    <div class="col-4">
+                      <div class="px-10 py-30 text-center text-primary">
+                        <h4>0</h4>
+                        <p class="text-xl mb-0">ESA</p>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="px-10 py-30 text-center text-primary">
+                        <h4>0</h4>
+                        <p class="text-xl mb-0">Service</p>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="px-10 py-30 text-center text-primary">
+                        <h4>0</h4>
+                        <p class="text-xl mb-0">Pets</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 col-xxl-4 d-flex">
+            <div class="card w-100">
+              <div class="card-body">
+                <div class="row align-items-center justify-content-between gy-10 mb-20">
+                  <div class="col-auto">
+                    <span class="icon-item text-blue-light icomoon-document-question"></span>
+                  </div>
+                  <div class="col-auto">
+                    <a class="link-with-arrow left-side link-secondary text-lg" href="#">See all</a>
+                  </div>
+                </div>
+
+                <h4 class="text-primary mb-20">Pending approval 0 animals</h4>
+                <p class="text-xl mb-20">0</p>
+
+                <div class="bg-blue-light rounded-3 border-right-not-last">
+                  <div class="row gx-0">
+                    <div class="col-4">
+                      <div class="px-10 py-30 text-center text-primary">
+                        <h4>0</h4>
+                        <p class="text-xl mb-0">ESA</p>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="px-10 py-30 text-center text-primary">
+                        <h4>0</h4>
+                        <p class="text-xl mb-0">Service</p>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="px-10 py-30 text-center text-primary">
+                        <h4>0</h4>
+                        <p class="text-xl mb-0">Pets</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xxl-4 d-flex">
+            <div class="card w-100">
+              <div class="card-body">
+                <span class="icon-item text-blue-light icomoon-analytics mb-20"></span>
+
+                <h4 class="text-primary mb-20">ESA Analytics</h4>
+
+                <div class="row gy-10">
+                  <div class="col-12">
+                    <div class="row align-items-center">
+                      <div class="col-3"></div>
+                      <div class="col-9">
+                        <div class="row">
+                          <div class="col-6 text-center">
+                            <p class="text-lg mb-0">Started</p>
+                          </div>
+                          <div class="col-6 text-center">
+                            <p class="text-lg mb-0">Approved</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="row align-items-center">
+                      <div class="col-3">
+                        <p class="text-lg mb-0">ESA</p>
+                      </div>
+                      <div class="col-9">
+                        <div class="bg-blue-light rounded-3 border-right-not-last">
+                          <div class="row gx-0">
+                            <div class="col-6">
+                              <div class="p-10 text-center text-primary">
+                                <h4 class="mb-0">0</h4>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="p-10 text-center text-primary">
+                                <h4 class="mb-0">0</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="row align-items-center">
+                      <div class="col-3">
+                        <p class="text-lg mb-0">SA</p>
+                      </div>
+                      <div class="col-9">
+                        <div class="bg-blue-light rounded-3 border-right-not-last">
+                          <div class="row gx-0">
+                            <div class="col-6">
+                              <div class="p-10 text-center text-primary">
+                                <h4 class="mb-0">0</h4>
+                              </div>
+                            </div>
+                            <div class="col-6">
+                              <div class="p-10 text-center text-primary">
+                                <h4 class="mb-0">0</h4>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 d-flex">
+            <div class="card w-100">
+              <div class="card-body">
+                <div class="row align-items-center justify-content-between gy-10 mb-20">
+                  <div class="col-auto">
+                    <p class="mb-0 text-lg">Started from 04/13/2023</p>
+                  </div>
+                  <div class="col-auto">
+                    <a class="link-with-arrow left-side link-secondary text-lg" href="#">See all</a>
+                  </div>
+                </div>
+
+                <h4 class="text-primary mb-20">Added Pets</h4>
+
+                <div class="row gx-20">
+                  <div class="col-auto">
+                    <h4 class="mb-0">0 total</h4>
+                  </div>
+                  <div class="col-auto">
+                    <p class="text-xl mb-0">added pets</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xl-6 d-flex">
+            <div class="card w-100">
+              <div class="card-body">
+                <div class="row align-items-center justify-content-between gy-10 mb-20">
+                  <div class="col-auto">
+                    <p class="mb-0 text-lg">Started from 04/13/2023</p>
+                  </div>
+                  <div class="col-auto">
+                    <a class="link-with-arrow left-side link-secondary text-lg" href="#">See all</a>
+                  </div>
+                </div>
+
+                <h4 class="text-primary mb-20">Prevented Animals</h4>
+
+                <div class="row gx-20">
+                  <div class="col-auto">
+                    <h4 class="mb-0">0 total</h4>
+                  </div>
+                  <div class="col-auto">
+                    <p class="text-xl mb-0">prevented animals</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 d-flex">
+            <div class="card w-100">
+              <div class="card-body">
+                <h4 class="text-primary mb-20">Animal Complaints</h4>
+
+                <div class="table-responsive overflow-hidden">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>Created by</th>
+                        <th>Resident name</th>
+                        <th>Unit Number</th>
+                        <th>Status</th>
+                        <th>Type</th>
+                        <th class="with-gear">
+                          <div class="dropdown d-inline-flex">
+                            <button class="dropdown-toggle btn-gear" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,10" data-bs-auto-close="outside" data-bs-popper-config="{&quot;strategy&quot;:&quot;fixed&quot;}">
+                              <span class="icomoon-gear"></span>
+                            </button>
+                            <div class="dropdown-menu table-ordering dropdown-menu-end">
+                              <div class="dropdown-menu__content js-sortable">
+                                <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                                  <div class="col-auto">
+                                    <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                      <span class="icomoon-move"></span>
+                                    </button>
+                                  </div>
+                                  <div class="col">
+                                    <div class="form-check sm fw-bold">
+                                      <input class="form-check-input" id="date" type="checkbox">
+                                      <label class="form-check-label" for="date">Date
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                                  <div class="col-auto">
+                                    <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                      <span class="icomoon-move"></span>
+                                    </button>
+                                  </div>
+                                  <div class="col">
+                                    <div class="form-check sm fw-bold">
+                                      <input class="form-check-input" id="created-by" type="checkbox">
+                                      <label class="form-check-label" for="created-by">Created by
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                                  <div class="col-auto">
+                                    <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                      <span class="icomoon-move"></span>
+                                    </button>
+                                  </div>
+                                  <div class="col">
+                                    <div class="form-check sm fw-bold">
+                                      <input class="form-check-input" id="resident-name" type="checkbox">
+                                      <label class="form-check-label" for="resident-name">Resident name
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                                  <div class="col-auto">
+                                    <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                      <span class="icomoon-move"></span>
+                                    </button>
+                                  </div>
+                                  <div class="col">
+                                    <div class="form-check sm fw-bold">
+                                      <input class="form-check-input" id="unit-number" type="checkbox">
+                                      <label class="form-check-label" for="unit-number">Unit Number
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                                  <div class="col-auto">
+                                    <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                      <span class="icomoon-move"></span>
+                                    </button>
+                                  </div>
+                                  <div class="col">
+                                    <div class="form-check sm fw-bold">
+                                      <input class="form-check-input" id="status" type="checkbox">
+                                      <label class="form-check-label" for="status">Status
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                                  <div class="col-auto">
+                                    <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                      <span class="icomoon-move"></span>
+                                    </button>
+                                  </div>
+                                  <div class="col">
+                                    <div class="form-check sm fw-bold">
+                                      <input class="form-check-input" id="type" type="checkbox">
+                                      <label class="form-check-label" for="type">Type
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="dropdown-menu__footer">
+                                <div class="row gx-10 gy-5">
+                                  <div class="col-auto">
+                                    <button class="btn btn-blue-light btn-sm js-close-dropdown" type="button">APPLY
+                                    </button>
+                                  </div>
+                                  <div class="col-auto">
+                                    <button class="btn btn-link btn-sm js-close-dropdown" type="button">Cancel
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+
+                <div class="text-center py-45">
+                  <h4 class="text-primary mb-10">You don’t have any animal complaints yet.</h4>
+                  <p class="text-lg mb-25">Press the button below to add your first animal complaint.</p>
+                  <a class="btn btn-primary" href="#">
+                    <span class="icomoon-plus-rounded"></span>
+                    <span>ADD AN ANIMAL COMPLAINT</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- CONTENT END -->
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/libs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
