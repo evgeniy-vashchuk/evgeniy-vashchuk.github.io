@@ -1,12 +1,39 @@
 'use strict';
 
-/* global LazyLoad, bootstrap, AirDatepicker, Sortable */function _toConsumableArray(r) {return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(r, a) {if (r) {if ("string" == typeof r) return _arrayLikeToArray(r, a);var t = {}.toString.call(r).slice(8, -1);return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0;}}function _iterableToArray(r) {if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r);}function _arrayWithoutHoles(r) {if (Array.isArray(r)) return _arrayLikeToArray(r);}function _arrayLikeToArray(r, a) {(null == a || a > r.length) && (a = r.length);for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];return n;}
+/* global LazyLoad, bootstrap, AirDatepicker, Sortable */
 
-var breakpointSm = getComputedStyle(document.documentElement).getPropertyValue('--bs-breakpoint-sm').replace(/px/g, '') - 1,
-  breakpointMd = getComputedStyle(document.documentElement).getPropertyValue('--bs-breakpoint-md').replace(/px/g, '') - 1,
-  breakpointLg = getComputedStyle(document.documentElement).getPropertyValue('--bs-breakpoint-lg').replace(/px/g, '') - 1,
-  breakpointXl = getComputedStyle(document.documentElement).getPropertyValue('--bs-breakpoint-xl').replace(/px/g, '') - 1,
-  breakpointXxl = getComputedStyle(document.documentElement).getPropertyValue('--bs-breakpoint-xxl').replace(/px/g, '') - 1;
+// ACTIVE HEADER AFTER SCROLL
+function _toConsumableArray(r) {return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");}function _unsupportedIterableToArray(r, a) {if (r) {if ("string" == typeof r) return _arrayLikeToArray(r, a);var t = {}.toString.call(r).slice(8, -1);return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0;}}function _iterableToArray(r) {if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r);}function _arrayWithoutHoles(r) {if (Array.isArray(r)) return _arrayLikeToArray(r);}function _arrayLikeToArray(r, a) {(null == a || a > r.length) && (a = r.length);for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e];return n;}function initActiveHeaderAfterScroll() {
+  var header = $('.js-header');
+
+  $(window).on('scroll', function () {
+    if ($(this).scrollTop() > 10) {
+      header.addClass('active');
+    } else {
+      header.removeClass('active');
+    }
+  });
+
+  if ($(document).scrollTop() > 10) {
+    header.addClass('active');
+  }
+}
+
+// WIDTH OF SCROLLBAR
+function initScrollBarWidth() {
+  if (window.innerWidth > $(window).width()) {
+    var $outer = $('<div class="custom-scrollbar">').css({ visibility: 'hidden', width: 100, overflow: 'scroll' }).appendTo('body'),
+      widthWithScroll = $('<div>').css({ width: '100%' }).appendTo($outer).
+      outerWidth();
+
+    $outer.remove();
+    window.widthOfScrollbar = 100 - widthWithScroll;
+
+    return 100 - widthWithScroll;
+  } else {
+    return window.widthOfScrollbar = 0;
+  }
+}
 
 // FORMS
 function initForms() {
@@ -177,20 +204,40 @@ function initDropdown() {
 
 // MODAL
 function initModal() {
-  document.addEventListener('DOMContentLoaded', function () {
-    document.addEventListener('hide.bs.modal', function (event) {
-      if (document.activeElement) {
-        document.activeElement.blur();
-      }
-    });
+  document.addEventListener('hide.bs.modal', function (event) {
+    if (document.activeElement) {
+      document.activeElement.blur();
+    }
+  });
+
+  function addScrollbarCompensation(element) {
+    element.css('padding-right', window.widthOfScrollbar);
+  }
+
+  function removeScrollbarCompensation(element) {
+    element.css('padding-right', 0);
+  }
+
+  document.addEventListener('show.bs.modal', function (event) {
+    addScrollbarCompensation($('.js-header'));
+  });
+
+  document.addEventListener('hidden.bs.modal', function (event) {
+    removeScrollbarCompensation($('.js-header'));
   });
 }
 
 (function ($) {
+  initActiveHeaderAfterScroll();
+  initScrollBarWidth();
   initForms();
   initLazyLoad();
   initStopAnimationsDuringWindowResizing();
   initTooltips();
   initDropdown();
   initModal();
+
+  $(window).on('resize', function () {
+    initScrollBarWidth();
+  });
 })(jQuery);
