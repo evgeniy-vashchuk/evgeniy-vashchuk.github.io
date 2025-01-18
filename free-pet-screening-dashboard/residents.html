@@ -1,3 +1,5 @@
+<!-- base -->
+<!-- additional -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +34,7 @@
 
 <body>
   <!-- SIDE MENU -->
-  <div class="side-menu offcanvas-lg offcanvas-start" id="offcanvas-side-menu" tabindex="-1">
+  <div class="side-menu offcanvas-lg offcanvas-end" id="offcanvas-side-menu" tabindex="-1">
     <header class="side-menu__header">
       <div class="row flex-nowrap flex-grow-1 justify-content-between align-items-center">
         <div class="col d-none d-lg-flex">
@@ -55,7 +57,7 @@
           </div>
         </div>
         <div class="col-auto d-flex d-lg-none">
-          <button class="btn-close h3" aria-label="Close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-side-menu">X</button>
+          <button class="btn-close px-5 h3" aria-label="Close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-side-menu">X</button>
         </div>
       </div>
     </header>
@@ -97,7 +99,7 @@
                 <a class="side-menu__sub-nav-link" href="property-managers.html">Property managers</a>
               </li>
               <li class="side-menu__sub-nav-item">
-                <a class="side-menu__sub-nav-link" href="pet-mapping.html">Pet Mapping</a>
+                <a class="side-menu__sub-nav-link" href="pet-mapping.html">Pet mapping</a>
               </li>
             </ul>
           </div>
@@ -194,13 +196,13 @@
       <div class="container-fluid">
         <div class="card wrapper">
           <div class="row align-items-md-center gy-10 mb-30">
-            <div class="col-xs-auto">
+            <div class="col-sm-auto">
               <h3 class="text-primary mb-0">Residents</h3>
             </div>
             <div class="col">
-              <div class="row align-items-center justify-content-xs-end gx-20 gy-10">
+              <div class="row align-items-center justify-content-sm-end gx-20 gy-30">
                 <div class="col-md-auto">
-                  <div class="text-xs-end">
+                  <div class="d-flex justify-content-sm-end pt-5 pt-md-0">
                     <a class="icon-link fw-bold" href="#modal-add-a-new-resident" data-bs-toggle="modal">
                       <span class="bi icomoon-plus-rounded"></span>
                       <span>Add a new resident</span>
@@ -300,9 +302,7 @@
                               <h5 class="mb-10">Screening</h5>
                               <div class="row gy-20 gy-lg-35">
                                 <div class="col-12">
-                                  <p class="d-flex align-items-center flex-nowrap mb-10">
-                                    <span>Resident screening</span>
-                                    <span class="text-xs text-blue-lake-ice ms-5 icomoon-info" data-bs-toggle="tooltip" data-bs-custom-class="yellow-tooltip" data-bs-title="This action will turn On/Off the notifications for this resident"></span>
+                                  <p class="mb-10">Resident screening&nbsp;<span class="text-xs text-blue-lake-ice ms-5 align-middle icomoon-info" data-bs-toggle="tooltip" data-bs-custom-class="yellow-tooltip" data-bs-title="This action will turn On/Off the notifications for this resident"></span>
                                   </p>
                                   <div class="row gx-20">
                                     <div class="col-auto">
@@ -338,233 +338,237 @@
                   </div>
                 </div>
                 <div class="col-auto">
-                  <button class="btn btn-outline-secondary" type="button" data-bs-target="#modal-import-residents" data-bs-toggle="modal">Import residents
-                  </button>
+                  <div class="row justify-content-sm-end gx-20 gy-10">
+                    <div class="col-auto">
+                      <button class="btn btn-outline-secondary" type="button" data-bs-target="#modal-import-residents" data-bs-toggle="modal">Import residents
+                      </button>
 
-                  <div class="modal fade without-body-padding" aria-labelledby="modal-import-residents-label" aria-hidden="true" id="modal-import-residents" tabindex="-1">
-                    <div class="modal-dialog modal-dialog-centered modal-xl">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="modal-import-residents-label">Import CSV</h5>
-                          <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
-                        </div>
-                        <div class="modal-body">
-                          <div class="row gy-30">
-                            <div class="col-lg-6">
-                              <div class="bg-blue-light rounded p-20">
-                                <div class="row gy-20 gy-lg-35">
-                                  <div class="col-12">
-                                    <label class="form-label">Integration type</label>
-                                    <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                                      <option label="Select..."></option>
-                                      <option>Appfolio</option>
-                                      <option>Real Page</option>
-                                      <option>Yardi</option>
-                                    </select>
-                                  </div>
-                                  <div class="col-12">
-                                    <div class="document-info-item border-white">
-                                      <div class="w-100">
-                                        <div class="row align-items-center flex-nowrap">
-                                          <div class="col text-truncate">
-                                            <h6 class="document-info-item__text text-truncate">CSV example</h6>
+                      <div class="modal fade without-body-padding" aria-labelledby="modal-import-residents-label" aria-hidden="true" id="modal-import-residents" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="modal-import-residents-label">Import CSV</h5>
+                              <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="row gy-30">
+                                <div class="col-lg-6">
+                                  <div class="bg-blue-light rounded p-20">
+                                    <div class="row gy-20 gy-lg-35">
+                                      <div class="col-12">
+                                        <label class="form-label">Integration type</label>
+                                        <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                                          <option label="Select..."></option>
+                                          <option>Appfolio</option>
+                                          <option>Real Page</option>
+                                          <option>Yardi</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-12">
+                                        <div class="document-info-item border-white">
+                                          <div class="w-100">
+                                            <div class="row align-items-center flex-nowrap">
+                                              <div class="col text-truncate">
+                                                <h6 class="document-info-item__text text-truncate">CSV example</h6>
+                                              </div>
+                                              <div class="col-auto">
+                                                <div class="row align-items-center gx-5 gy-5">
+                                                  <div class="col-auto">
+                                                    <button class="document-info-item__action-btn" type="button">
+                                                      <span class="icomoon-download"></span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="col-auto">
+                                                    <button class="document-info-item__action-btn" type="button">
+                                                      <span class="icomoon-printer"></span>
+                                                    </button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-12">
+                                        <label class="form-label">Policy</label>
+                                        <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                                          <option label="Select..."></option>
+                                          <option>Pets Allowed - Versatec Investments LLC</option>
+                                          <option>NO Pets Allowed - Versatec Investments LLC</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-12">
+                                        <p class="mb-5">Would you like to move out residents?</p>
+                                        <div class="row gx-20">
+                                          <div class="col-auto">
+                                            <label class="form-check">
+                                              <input class="form-check-input" name="Would you like to move out residents?" type="radio" checked="checked">
+                                              <span class="form-check-label">Yes</span>
+                                            </label>
                                           </div>
                                           <div class="col-auto">
-                                            <div class="row align-items-center gx-5 gy-5">
-                                              <div class="col-auto">
-                                                <button class="document-info-item__action-btn" type="button">
-                                                  <span class="icomoon-download"></span>
-                                                </button>
-                                              </div>
-                                              <div class="col-auto">
-                                                <button class="document-info-item__action-btn" type="button">
-                                                  <span class="icomoon-printer"></span>
-                                                </button>
-                                              </div>
+                                            <label class="form-check">
+                                              <input class="form-check-input" name="Would you like to move out residents?" type="radio">
+                                              <span class="form-check-label">No</span>
+                                            </label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-12">
+                                        <p class="mb-5">Move out residents from properties not registered in the CSV?</p>
+                                        <div class="row gx-20">
+                                          <div class="col-auto">
+                                            <label class="form-check">
+                                              <input class="form-check-input" name="Move out residents from properties not registered in the CSV?" type="radio">
+                                              <span class="form-check-label">Yes</span>
+                                            </label>
+                                          </div>
+                                          <div class="col-auto">
+                                            <label class="form-check">
+                                              <input class="form-check-input" name="Move out residents from properties not registered in the CSV?" type="radio">
+                                              <span class="form-check-label">No</span>
+                                            </label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-12">
+                                        <h5>Upload CSV</h5>
+                                        <div class="file-upload bg-white">
+                                          <input class="file-upload__input" name="file" type="file">
+                                          <div class="file-upload__content">
+                                            <div class="file-upload__content-wrap">
+                                              <p class="mb-0">Browse or drag and drop <strong class="text-blue-lake-ice text-decoration-underline">CSV</strong> here.</p>
+                                              <h6 class="mb-0 pt-15">Accepted 1, rejected 0</h6>
                                             </div>
                                           </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                  <div class="col-12">
-                                    <label class="form-label">Policy</label>
-                                    <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                                      <option label="Select..."></option>
-                                      <option>Pets Allowed - Versatec Investments LLC</option>
-                                      <option>NO Pets Allowed - Versatec Investments LLC</option>
-                                    </select>
-                                  </div>
-                                  <div class="col-12">
-                                    <p class="mb-5">Would you like to move out residents?</p>
-                                    <div class="row gx-20">
-                                      <div class="col-auto">
-                                        <label class="form-check">
-                                          <input class="form-check-input" name="Would you like to move out residents?" type="radio" checked="checked">
-                                          <span class="form-check-label">Yes</span>
-                                        </label>
-                                      </div>
-                                      <div class="col-auto">
-                                        <label class="form-check">
-                                          <input class="form-check-input" name="Would you like to move out residents?" type="radio">
-                                          <span class="form-check-label">No</span>
-                                        </label>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-12">
-                                    <p class="mb-5">Move out residents from properties not registered in the CSV?</p>
-                                    <div class="row gx-20">
-                                      <div class="col-auto">
-                                        <label class="form-check">
-                                          <input class="form-check-input" name="Move out residents from properties not registered in the CSV?" type="radio">
-                                          <span class="form-check-label">Yes</span>
-                                        </label>
-                                      </div>
-                                      <div class="col-auto">
-                                        <label class="form-check">
-                                          <input class="form-check-input" name="Move out residents from properties not registered in the CSV?" type="radio">
-                                          <span class="form-check-label">No</span>
-                                        </label>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="col-12">
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="ps-lg-15">
                                     <h5>Upload CSV</h5>
-                                    <div class="file-upload bg-white">
-                                      <input class="file-upload__input" name="file" type="file">
-                                      <div class="file-upload__content">
-                                        <div class="file-upload__content-wrap">
-                                          <p class="mb-0">Browse or drag and drop <strong class="text-blue-lake-ice text-decoration-underline">CSV</strong> here.</p>
-                                          <h6 class="mb-0 pt-15">Accepted 1, rejected 0</h6>
+                                    <div class="remove-last-child-margin">
+                                      <div class="collapse-item mb-10">
+                                        <button class="collapse-item__btn" aria-expanded="false" aria-controls="collapse-upload-csv-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-upload-csv-1">
+                                          <span class="h6 mb-0">Apply: 0 applicants and 0 animals.</span>
+                                        </button>
+                                        <div class="collapse" id="collapse-upload-csv-1">
+                                          <div class="collapse-item__content">
+                                            <ul class="list-with-check">
+                                              <li>0 new applicants with 0 animals will be applied.</li>
+                                              <li>0 new animals will be applied under existing applicants in OPP</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="collapse-item mb-10">
+                                        <button class="collapse-item__btn" aria-expanded="false" aria-controls="collapse-upload-csv-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-upload-csv-2">
+                                          <span class="h6 mb-0">Move in: 0 residents and 0 animals.</span>
+                                        </button>
+                                        <div class="collapse" id="collapse-upload-csv-2">
+                                          <div class="collapse-item__content">
+                                            <ul class="list-with-check">
+                                              <li>0 residents with 0 animals will be moved in.</li>
+                                              <li>0 new animals will be moved in under existing residents in OPP</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="collapse-item mb-10">
+                                        <button class="collapse-item__btn" aria-expanded="false" aria-controls="collapse-upload-csv-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-upload-csv-3">
+                                          <span class="h6 mb-0">Move out: 0 residents and 0 animals</span>
+                                        </button>
+                                        <div class="collapse" id="collapse-upload-csv-3">
+                                          <div class="collapse-item__content">
+                                            <ul class="list-with-check">
+                                              <li>0 residents will be moved out from 2 properties not registered in the Appfolio system.</li>
+                                              <li>0 residents will be moved out from 0 properties registered in the Appfolio system.</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="collapse-item mb-10">
+                                        <button class="collapse-item__btn" aria-expanded="false" aria-controls="collapse-upload-csv-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-upload-csv-4">
+                                          <span class="h6 mb-0">Move: 0 applicants antd 0 residents</span>
+                                        </button>
+                                        <div class="collapse" id="collapse-upload-csv-4">
+                                          <div class="collapse-item__content">
+                                            <ul class="list-with-check">
+                                              <li>0 residents will be moved.</li>
+                                              <li>0 applicants will be moved.</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="collapse-item mb-10">
+                                        <button class="collapse-item__btn" aria-expanded="false" aria-controls="collapse-upload-csv-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-upload-csv-5">
+                                          <span class="h6 mb-0">Skipped: 0 applicants and 0 residents</span>
+                                        </button>
+                                        <div class="collapse" id="collapse-upload-csv-5">
+                                          <div class="collapse-item__content">
+                                            <ul class="list-with-info">
+                                              <li>0 properties with 0 applicants and 0 residents will be skipped</li>
+                                            </ul>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="collapse-item mb-10">
+                                        <button class="collapse-item__btn" aria-expanded="false" aria-controls="collapse-upload-csv-6" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-upload-csv-6">
+                                          <span class="h6 mb-0">Onboarded: 0 properties</span>
+                                        </button>
+                                        <div class="collapse" id="collapse-upload-csv-6">
+                                          <div class="collapse-item__content">
+                                            <ul class="list-with-check">
+                                              <li>0 properties will be marked as onboarded</li>
+                                              <li>0 residents will be marked as known</li>
+                                              <li>0 animals will be marked as known</li>
+                                            </ul>
+                                          </div>
                                         </div>
                                       </div>
                                     </div>
                                   </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="col-lg-6">
-                              <div class="ps-lg-15">
-                                <h5>Upload CSV</h5>
-                                <div class="remove-last-child-margin">
-                                  <div class="collapse-item mb-10">
-                                    <button class="collapse-item__btn" aria-expanded="false" aria-controls="collapse-upload-csv-1" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-upload-csv-1">
-                                      <span class="h6 mb-0">Apply: 0 applicants and 0 animals.</span>
-                                    </button>
-                                    <div class="collapse" id="collapse-upload-csv-1">
-                                      <div class="collapse-item__content">
-                                        <ul class="list-with-check">
-                                          <li>0 new applicants with 0 animals will be applied.</li>
-                                          <li>0 new animals will be applied under existing applicants in OPP</li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="collapse-item mb-10">
-                                    <button class="collapse-item__btn" aria-expanded="false" aria-controls="collapse-upload-csv-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-upload-csv-2">
-                                      <span class="h6 mb-0">Move in: 0 residents and 0 animals.</span>
-                                    </button>
-                                    <div class="collapse" id="collapse-upload-csv-2">
-                                      <div class="collapse-item__content">
-                                        <ul class="list-with-check">
-                                          <li>0 residents with 0 animals will be moved in.</li>
-                                          <li>0 new animals will be moved in under existing residents in OPP</li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="collapse-item mb-10">
-                                    <button class="collapse-item__btn" aria-expanded="false" aria-controls="collapse-upload-csv-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-upload-csv-3">
-                                      <span class="h6 mb-0">Move out: 0 residents and 0 animals</span>
-                                    </button>
-                                    <div class="collapse" id="collapse-upload-csv-3">
-                                      <div class="collapse-item__content">
-                                        <ul class="list-with-check">
-                                          <li>0 residents will be moved out from 2 properties not registered in the Appfolio system.</li>
-                                          <li>0 residents will be moved out from 0 properties registered in the Appfolio system.</li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="collapse-item mb-10">
-                                    <button class="collapse-item__btn" aria-expanded="false" aria-controls="collapse-upload-csv-4" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-upload-csv-4">
-                                      <span class="h6 mb-0">Move: 0 applicants antd 0 residents</span>
-                                    </button>
-                                    <div class="collapse" id="collapse-upload-csv-4">
-                                      <div class="collapse-item__content">
-                                        <ul class="list-with-check">
-                                          <li>0 residents will be moved.</li>
-                                          <li>0 applicants will be moved.</li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="collapse-item mb-10">
-                                    <button class="collapse-item__btn" aria-expanded="false" aria-controls="collapse-upload-csv-5" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-upload-csv-5">
-                                      <span class="h6 mb-0">Skipped: 0 applicants and 0 residents</span>
-                                    </button>
-                                    <div class="collapse" id="collapse-upload-csv-5">
-                                      <div class="collapse-item__content">
-                                        <ul class="list-with-info">
-                                          <li>0 properties with 0 applicants and 0 residents will be skipped</li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class="collapse-item mb-10">
-                                    <button class="collapse-item__btn" aria-expanded="false" aria-controls="collapse-upload-csv-6" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-upload-csv-6">
-                                      <span class="h6 mb-0">Onboarded: 0 properties</span>
-                                    </button>
-                                    <div class="collapse" id="collapse-upload-csv-6">
-                                      <div class="collapse-item__content">
-                                        <ul class="list-with-check">
-                                          <li>0 properties will be marked as onboarded</li>
-                                          <li>0 residents will be marked as known</li>
-                                          <li>0 animals will be marked as known</li>
-                                        </ul>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
 
-                              <div class="h-100 d-flex align-items-center d-none">
-                                <div class="info-placeholder w-100">
-                                  <div class="info-placeholder__icon">
-                                    <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/info-placeholder/1.svg">
-                                  </div>
+                                  <div class="h-100 d-flex align-items-center d-none">
+                                    <div class="info-placeholder w-100">
+                                      <div class="info-placeholder__icon">
+                                        <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/info-placeholder/1.svg">
+                                      </div>
 
-                                  <h4 class="text-primary">Preview</h4>
-                                  <div class="text-block text-lg">
-                                    <p>Select setting to preview result</p>
+                                      <h4 class="text-primary">Preview</h4>
+                                      <div class="text-block text-lg">
+                                        <p>Select setting to preview result</p>
+                                      </div>
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                          </div>
-                        </div>
-                        <div class="modal-footer">
-                          <div>
-                            <div class="row flex-grow-1 gx-20 gy-10">
-                              <div class="col-auto">
-                                <button class="btn btn-link" type="button" data-bs-dismiss="modal">Cancel
-                                </button>
-                              </div>
-                              <div class="col-auto">
-                                <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">PREVIEW
-                                </button>
+                            <div class="modal-footer">
+                              <div>
+                                <div class="row flex-grow-1 gx-20 gy-10">
+                                  <div class="col-auto">
+                                    <button class="btn btn-link" type="button" data-bs-dismiss="modal">Cancel
+                                    </button>
+                                  </div>
+                                  <div class="col-auto">
+                                    <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">PREVIEW
+                                    </button>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
                     </div>
+                    <div class="col-auto">
+                      <button class="btn btn-outline-secondary" type="button">Export CSV
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <div class="col-auto">
-                  <button class="btn btn-outline-secondary" type="button" data-bs-target="#modal-export-csv" data-bs-toggle="modal">Export CSV
-                  </button>
                 </div>
               </div>
             </div>
@@ -776,7 +780,7 @@
                     </select>
                   </th>
                   <th>
-                    <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                    <select class="form-select js-select bordered-version" data-dropdown-css-class=" bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
                       <option label="Select..."></option>
                       <option selected="selected">All</option>
                       <option>0</option>

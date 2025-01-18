@@ -1,0 +1,894 @@
+<!-- base -->
+<!-- additional -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Free Pet Screening — Default state policies</title>
+  <meta name="description" content="We are a modest but successful 20-year experienced online publisher and e-commerce company with a steady list of sites to build in the pet, people directory and telehealth segments.">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#1C49C2">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#1C49C2">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#1C49C2">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#1C49C2">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- SIDE MENU -->
+  <div class="side-menu offcanvas-lg offcanvas-end" id="offcanvas-side-menu" tabindex="-1">
+    <header class="side-menu__header">
+      <div class="row flex-nowrap flex-grow-1 justify-content-between align-items-center">
+        <div class="col d-none d-lg-flex">
+          <a class="side-menu__logo" href="dashboard.html">
+            <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/logo.svg">
+          </a>
+        </div>
+        <div class="col d-flex d-lg-none">
+          <div class="account-photo-name">
+            <div class="row flex-nowrap align-items-center gx-10">
+              <div class="col-auto d-flex">
+                <div class="account-photo-name__avatar">
+                  <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-dark.svg">
+                </div>
+              </div>
+              <div class="col d-flex">
+                <h3 class="mb-0">Catherine Su</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto d-flex d-lg-none">
+          <button class="btn-close px-5 h3" aria-label="Close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-side-menu">X</button>
+        </div>
+      </div>
+    </header>
+    <div class="side-menu__body">
+      <ul class="side-menu__nav">
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="dashboard.html">
+            <span class="side-menu__nav-icon icomoon-dashboard"></span>
+            <span class="side-menu__nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="animals.html">
+            <span class="side-menu__nav-icon icomoon-animals"></span>
+            <span class="side-menu__nav-link-text">Animals</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="residents.html">
+            <span class="side-menu__nav-icon icomoon-residents"></span>
+            <span class="side-menu__nav-link-text">Residents</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="properties.html">
+            <span class="side-menu__nav-icon icomoon-properties"></span>
+            <span class="side-menu__nav-link-text">Properties</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-team-members" href="#collapse-side-menu-team-members" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-team-members"></span>
+            <span class="side-menu__nav-link-text">Team Members</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-team-members">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="property-managers.html">Property managers</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="pet-mapping.html">Pet mapping</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link active" aria-expanded="false" aria-controls="collapse-side-menu-policies" href="#collapse-side-menu-policies" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-policies"></span>
+            <span class="side-menu__nav-link-text">Policies</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-policies">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="policies.html">Policies</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link active" href="default-state-policies.html">Default state policies</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-settings" href="#collapse-side-menu-settings" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-settings"></span>
+            <span class="side-menu__nav-link-text">Settings</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-settings">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="payments.html">Payments</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="integrations.html">Integrations</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="support.html">
+            <span class="side-menu__nav-icon icomoon-support"></span>
+            <span class="side-menu__nav-link-text">Support</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- SIDE MENU END -->
+
+  <!-- HEADER -->
+  <header class="header fixed-top js-header">
+    <div class="container-fluid">
+      <div class="row justify-content-between align-items-center flex-nowrap">
+        <div class="col d-flex">
+          <a class="header__logo" href="dashboard.html">
+            <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/logo.svg">
+          </a>
+        </div>
+        <div class="col-auto">
+          <div class="row gx-20 align-items-center">
+            <div class="col-auto d-flex">
+              <div class="dropdown d-inline-flex">
+                <button class="dropdown-toggle account-toggler" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,10">
+                  <span class="account-toggler__avatar">
+                    <img class="lazy js-lazy d-none d-lg-block of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-dark.svg">
+                    <img class="lazy js-lazy d-lg-none of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-light.svg">
+                  </span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#">Profile settings</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Log out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-auto d-flex d-lg-none">
+              <button class="header__menu-toggler" aria-controls="offcanvas-side-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-side-menu">
+                <span class="icomoon-hamburger"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <!-- CONTENT -->
+  <main class="dashboard">
+    <div class="dashboard__main">
+      <div class="container-fluid">
+        <div class="card wrapper">
+          <div class="row align-items-md-center gy-10 mb-30">
+            <div class="col-sm-auto">
+              <h3 class="text-primary mb-0">Default state policies</h3>
+            </div>
+            <div class="col">
+              <div class="row align-items-center justify-content-sm-end gx-20 gy-30">
+                <div class="col-md-auto">
+                  <div class="d-flex justify-content-sm-end pt-5 pt-md-0">
+                    <a class="icon-link fw-bold" href="#modal-add-a-new-policy" data-bs-toggle="modal">
+                      <span class="bi icomoon-plus-rounded"></span>
+                      <span>Add a new policy</span>
+                    </a>
+                  </div>
+
+                  <div class="modal fade" aria-labelledby="modal-add-a-new-policy-label" aria-hidden="true" id="modal-add-a-new-policy" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modal-add-a-new-policy-label">Add a new policy</h5>
+                          <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="row gy-20 gy-lg-35">
+                            <div class="col-lg-6">
+                              <label class="form-label" for="name-this-policy">Name this policy</label>
+                              <input class="form-control" id="name-this-policy" type="text" placeholder="Name of the policy">
+                            </div>
+                            <div class="col-lg-6">
+                              <label class="form-label">State</label>
+                              <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select">
+                                <option label="Select"></option>
+                                <option>Alabama</option>
+                                <option>Alaska</option>
+                                <option>Arizona</option>
+                                <option>Arkansas</option>
+                                <option>California</option>
+                                <option>Colorado</option>
+                                <option>Connecticut</option>
+                                <option>Delaware</option>
+                                <option>Florida</option>
+                                <option>Georgia</option>
+                                <option>Hawaii</option>
+                                <option>Idaho</option>
+                                <option>Illinois</option>
+                                <option>Indiana</option>
+                                <option>Iowa</option>
+                                <option>Kansas</option>
+                                <option>Kentucky</option>
+                                <option>Louisiana</option>
+                                <option>Maine</option>
+                                <option>Maryland</option>
+                                <option>Massachusetts</option>
+                                <option>Michigan</option>
+                                <option>Minnesota</option>
+                                <option>Mississippi</option>
+                                <option>Missouri</option>
+                                <option>Montana</option>
+                                <option>Nebraska</option>
+                                <option>Nevada</option>
+                                <option>New Hampshire</option>
+                                <option>New Jersey</option>
+                                <option>New Mexico</option>
+                                <option>New York</option>
+                                <option>North Carolina</option>
+                                <option>North Dakota</option>
+                                <option>Ohio</option>
+                                <option>Oklahoma</option>
+                                <option>Oregon</option>
+                                <option>Pennsylvania</option>
+                                <option>Rhode Island</option>
+                                <option>South Carolina</option>
+                                <option>South Dakota</option>
+                                <option>Tennessee</option>
+                                <option>Texas</option>
+                                <option>Utah</option>
+                                <option>Vermont</option>
+                                <option>Virginia</option>
+                                <option>Washington</option>
+                                <option>West Virginia</option>
+                                <option>Wisconsin</option>
+                                <option>Wyoming</option>
+                              </select>
+                            </div>
+                            <div class="col-12">
+                              <label class="form-check">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-label">Set this policy default for this state</span>
+                              </label>
+                            </div>
+                            <div class="col-12">
+                              <p class="mb-5">Do you require animal training?</p>
+                              <div class="row gx-20">
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you require animal training?" type="radio">
+                                    <span class="form-check-label">No</span>
+                                  </label>
+                                </div>
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you require animal training?" type="radio">
+                                    <span class="form-check-label">Yes</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <h5>Screening</h5>
+                              <p class="mb-5">Do you have a No Pet Policy?</p>
+                              <div class="row gx-20">
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you have a No Pet Policy?" type="radio">
+                                    <span class="form-check-label">No</span>
+                                  </label>
+                                </div>
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you have a No Pet Policy?" type="radio">
+                                    <span class="form-check-label">Yes</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <p class="mb-5">Do you have a pet weight limit?</p>
+                              <div class="row gx-20">
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you have a pet weight limit?" type="radio">
+                                    <span class="form-check-label">No</span>
+                                  </label>
+                                </div>
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you have a pet weight limit?" type="radio">
+                                    <span class="form-check-label">Yes</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-lg-6">
+                              <label class="form-label">What animals do you allow?</label>
+                              <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select">
+                                <option label="Select"></option>
+                                <option>Bird</option>
+                                <option>Cat</option>
+                                <option>Dog</option>
+                                <option>Ferret</option>
+                                <option>Fish</option>
+                                <option>Guinea Pig</option>
+                                <option>Hamster</option>
+                                <option>Hedgehog</option>
+                                <option>Mice</option>
+                                <option>Rabbit</option>
+                                <option>Reptile</option>
+                              </select>
+                            </div>
+                            <div class="col-12">
+                              <p class="mb-5">Do you have restricted Breeds?</p>
+                              <div class="row gx-20">
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you have restricted Breeds?" type="radio">
+                                    <span class="form-check-label">No</span>
+                                  </label>
+                                </div>
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you have restricted Breeds?" type="radio">
+                                    <span class="form-check-label">Yes</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <label class="form-label" for="what-pet-restrictions-do-you-have?">What pet restrictions do you have?</label>
+                              <textarea class="form-control" id="what-pet-restrictions-do-you-have?" placeholder="e.g. only cats and dogs under 50lbs."></textarea>
+                              <div class="pt-10">
+                                <button class="btn btn-outline-blue-light btn-sm px-18" type="button">Load Suggestions
+                                </button>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <label class="form-label" for="what-animal-rules-do-you-have?">What animal rules do you have?</label>
+                              <textarea class="form-control" id="what-animal-rules-do-you-have?" placeholder="e.g. only cats and dogs under 50lbs."></textarea>
+                              <div class="pt-10">
+                                <button class="btn btn-outline-blue-light btn-sm px-18" type="button">Load Suggestions
+                                </button>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <label class="form-label" for="what-instructions-would-you-like-to-give-for-waste-management?">What instructions would you like to give for waste management?</label>
+                              <textarea class="form-control" id="what-instructions-would-you-like-to-give-for-waste-management?" placeholder="e.g. animal waste needs to be taken care of in a manner that it cannot be seen or smelled."></textarea>
+                              <div class="pt-10">
+                                <button class="btn btn-outline-blue-light btn-sm px-18" type="button">Load Suggestions
+                                </button>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <p class="mb-5">Do you have restricted Breeds?</p>
+                              <div class="row gx-20">
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you have restricted Breeds?" type="radio">
+                                    <span class="form-check-label">No</span>
+                                  </label>
+                                </div>
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you have restricted Breeds?" type="radio">
+                                    <span class="form-check-label">Yes</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <p class="mb-5">Do you charge a pet fee?</p>
+                              <div class="row gx-20">
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you charge a pet fee?" type="radio">
+                                    <span class="form-check-label">No</span>
+                                  </label>
+                                </div>
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you charge a pet fee?" type="radio">
+                                    <span class="form-check-label">Yes</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <p class="mb-5">Do you charge a pet deposit?</p>
+                              <div class="row gx-20">
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you charge a pet deposit?" type="radio">
+                                    <span class="form-check-label">No</span>
+                                  </label>
+                                </div>
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you charge a pet deposit?" type="radio">
+                                    <span class="form-check-label">Yes</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <p class="mb-5">Do you charge a monthly pet rent?</p>
+                              <div class="row gx-20">
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you charge a monthly pet rent?" type="radio">
+                                    <span class="form-check-label">No</span>
+                                  </label>
+                                </div>
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you charge a monthly pet rent?" type="radio">
+                                    <span class="form-check-label">Yes</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <p class="mb-5">Do you want to charge an Unauthorized pet fee?</p>
+                              <div class="row gx-20">
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you want to charge an Unauthorized pet fee?" type="radio">
+                                    <span class="form-check-label">No</span>
+                                  </label>
+                                </div>
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you want to charge an Unauthorized pet fee?" type="radio">
+                                    <span class="form-check-label">Yes</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-12">
+                              <p class="mb-5">Do you have DNA testing?</p>
+                              <div class="row gx-20">
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you have DNA testing?" type="radio">
+                                    <span class="form-check-label">No</span>
+                                  </label>
+                                </div>
+                                <div class="col-auto">
+                                  <label class="form-check">
+                                    <input class="form-check-input" name="Do you have DNA testing?" type="radio">
+                                    <span class="form-check-label">Yes</span>
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <div>
+                            <div class="row flex-grow-1 gx-20 gy-10">
+                              <div class="col-auto">
+                                <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">SUBMIT
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="with-sorting">State <span class="icomoon-arrows-double-vertical"></span>
+                  </th>
+                  <th class="with-sorting">Policy Name <span class="icomoon-arrows-double-vertical"></span>
+                  </th>
+                  <th>Actions</th>
+                  <th class="with-gear">
+                    <div class="dropdown d-inline-flex">
+                      <button class="dropdown-toggle btn-gear" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,10" data-bs-auto-close="outside" data-bs-popper-config="{&quot;strategy&quot;:&quot;fixed&quot;}">
+                        <span class="icomoon-gear"></span>
+                      </button>
+                      <div class="dropdown-menu table-ordering dropdown-menu-end">
+                        <div class="dropdown-menu__content js-sortable">
+                          <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                            <div class="col-auto">
+                              <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                <span class="icomoon-move"></span>
+                              </button>
+                            </div>
+                            <div class="col">
+                              <label class="form-check sm fw-bold">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-label">Policy Name</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dropdown-menu__footer">
+                          <div class="row gx-10 gy-5">
+                            <div class="col-auto">
+                              <button class="btn btn-blue-light btn-sm js-close-dropdown" type="button">APPLY
+                              </button>
+                            </div>
+                            <div class="col-auto">
+                              <button class="btn btn-link btn-sm js-close-dropdown" type="button">Cancel
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <th>
+                    <input class="form-control bordered-version" type="text" placeholder="Search">
+                  </th>
+                  <th>
+                    <input class="form-control bordered-version" type="text" placeholder="Search for a policy">
+                  </th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fw-bold">Idaho</td>
+                  <td>
+                    <a class="link-primary text-decoration-none" href="#modal-add-default-policy" data-bs-toggle="modal">+ set a policy</a>
+                  </td>
+                  <td>
+                    <div class="row g-10">
+                      <div class="col-auto">
+                        <button class="btn-action link-gray" type="button" data-bs-target="#modal-edit-policy" data-bs-toggle="modal">
+                          <span class="icomoon-modify"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">Utah</td>
+                  <td>Pets Allowed – Versatec Investments LLC</td>
+                  <td>
+                    <div class="row g-10">
+                      <div class="col-auto">
+                        <button class="btn-action link-gray" type="button" data-bs-target="#modal-edit-policy" data-bs-toggle="modal">
+                          <span class="icomoon-modify"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-footer">
+            <div class="row flex-column flex-md-row align-items-center justify-content-center justify-content-md-end g-30">
+              <div class="col-auto">
+                <p class="mb-0">Results: 1-10 of 34</p>
+              </div>
+              <div class="col-auto">
+                <nav aria-label="Pagination">
+                  <ul class="pagination">
+                    <li class="page-item disabled">
+                      <a class="page-link" aria-label="Previous" href="#">
+                        <span class="icomoon-chevron-left" aria-hidden="true"></span>
+                      </a>
+                    </li>
+                    <li class="page-item active">
+                      <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">3</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">4</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" aria-label="Next" href="#">
+                        <span class="icomoon-chevron-right" aria-hidden="true"></span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="col-auto">
+                <select class="form-select js-select pagination-version" data-dropdown-css-class=" pagination-version" data-minimum-results-for-search="-1">
+                  <option>10/page</option>
+                  <option>20/page</option>
+                  <option>50/page</option>
+                  <option>100/page</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" aria-labelledby="modal-add-default-policy-label" aria-hidden="true" id="modal-add-default-policy" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal-add-default-policy-label">Add default policy for Idaho</h5>
+                  <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
+                </div>
+                <div class="modal-body">
+                  <div class="row gy-20 gy-lg-35">
+                    <div class="col-12">
+                      <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="None">
+                        <option label="None"></option>
+                        <option>Policy Name 1</option>
+                        <option>Policy Name 2</option>
+                      </select>
+                      <div class="pt-10">
+                        <a class="icon-link fw-bold" href="#" data-bs-toggle="modal">
+                          <span class="bi icomoon-plus-rounded"></span>
+                          <span>Add a new policy</span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <div>
+                    <div class="row flex-grow-1 gx-20 gy-10">
+                      <div class="col-auto">
+                        <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">SAVE
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" aria-labelledby="modal-edit-policy-label" aria-hidden="true" id="modal-edit-policy" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal-edit-policy-label">Edit Policy</h5>
+                  <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
+                </div>
+                <div class="modal-body">
+                  <div class="row gy-20 gy-lg-35">
+                    <div class="col-lg-6">
+                      <label class="form-label" for="name-this-policy">Name this policy</label>
+                      <input class="form-control" id="name-this-policy" type="text" placeholder="Name of the policy" value="Pets Allowed - Versatec Investments LLC">
+                    </div>
+                    <div class="col-lg-6">
+                      <label class="form-label">State</label>
+                      <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select">
+                        <option label="Select"></option>
+                        <option>Alabama</option>
+                        <option>Alaska</option>
+                        <option>Arizona</option>
+                        <option>Arkansas</option>
+                        <option>California</option>
+                        <option>Colorado</option>
+                        <option>Connecticut</option>
+                        <option>Delaware</option>
+                        <option>Florida</option>
+                        <option>Georgia</option>
+                        <option>Hawaii</option>
+                        <option selected="selected">Idaho</option>
+                        <option>Illinois</option>
+                        <option>Indiana</option>
+                        <option>Iowa</option>
+                        <option>Kansas</option>
+                        <option>Kentucky</option>
+                        <option>Louisiana</option>
+                        <option>Maine</option>
+                        <option>Maryland</option>
+                        <option>Massachusetts</option>
+                        <option>Michigan</option>
+                        <option>Minnesota</option>
+                        <option>Mississippi</option>
+                        <option>Missouri</option>
+                        <option>Montana</option>
+                        <option>Nebraska</option>
+                        <option>Nevada</option>
+                        <option>New Hampshire</option>
+                        <option>New Jersey</option>
+                        <option>New Mexico</option>
+                        <option>New York</option>
+                        <option>North Carolina</option>
+                        <option>North Dakota</option>
+                        <option>Ohio</option>
+                        <option>Oklahoma</option>
+                        <option>Oregon</option>
+                        <option>Pennsylvania</option>
+                        <option>Rhode Island</option>
+                        <option>South Carolina</option>
+                        <option>South Dakota</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Utah</option>
+                        <option>Vermont</option>
+                        <option>Virginia</option>
+                        <option>Washington</option>
+                        <option>West Virginia</option>
+                        <option>Wisconsin</option>
+                        <option>Wyoming</option>
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-check">
+                        <input class="form-check-input" type="checkbox" checked="checked">
+                        <span class="form-check-label">Set this policy default for this state</span>
+                      </label>
+                    </div>
+                    <div class="col-12">
+                      <p class="mb-5">Do you require animal training?</p>
+                      <div class="row gx-20">
+                        <div class="col-auto">
+                          <label class="form-check">
+                            <input class="form-check-input" name="Do you require animal training?" type="radio" checked="checked">
+                            <span class="form-check-label">No</span>
+                          </label>
+                        </div>
+                        <div class="col-auto">
+                          <label class="form-check">
+                            <input class="form-check-input" name="Do you require animal training?" type="radio">
+                            <span class="form-check-label">Yes</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <p class="text-lg">Additional Conditions</p>
+                      <p class="mb-5">Do you have a No Pet Policy?</p>
+                      <div class="row gx-20">
+                        <div class="col-auto">
+                          <label class="form-check">
+                            <input class="form-check-input" name="Do you have a No Pet Policy?" type="radio" checked="checked">
+                            <span class="form-check-label">No</span>
+                          </label>
+                        </div>
+                        <div class="col-auto">
+                          <label class="form-check">
+                            <input class="form-check-input" name="Do you have a No Pet Policy?" type="radio">
+                            <span class="form-check-label">Yes</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <p class="mb-5">Do you have a pet weight limit?</p>
+                      <div class="row align-items-center gx-20 gy-10">
+                        <div class="col-auto">
+                          <label class="form-check">
+                            <input class="form-check-input" name="Do you have a pet weight limit?" type="radio">
+                            <span class="form-check-label">No</span>
+                          </label>
+                        </div>
+                        <div class="col-auto">
+                          <label class="form-check">
+                            <input class="form-check-input" name="Do you have a pet weight limit?" type="radio" checked="checked">
+                            <span class="form-check-label">Yes</span>
+                          </label>
+                        </div>
+                        <div class="col-auto">
+                          <input class="form-control" type="text" value="50" style="width: 80px;">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">What animals do you allow?</label>
+                      <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select">
+                        <option label="Select"></option>
+                        <option>Bird</option>
+                        <option>Cat</option>
+                        <option>Dog</option>
+                        <option>Ferret</option>
+                        <option>Fish</option>
+                        <option>Guinea Pig</option>
+                        <option>Hamster</option>
+                        <option>Hedgehog</option>
+                        <option>Mice</option>
+                        <option>Rabbit</option>
+                        <option>Reptile</option>
+                      </select>
+
+                      <div class="pt-10">
+                        <div class="row gx-10 gy-5">
+                          <div class="col-auto">
+                            <span class="badge-unit">
+                              <span>Cat</span>
+                              <button class="badge-unit__delete-btn" type="button">
+                                <span class="icomoon-close-rounded"></span>
+                              </button>
+                            </span>
+                          </div>
+                          <div class="col-auto">
+                            <span class="badge-unit">
+                              <span>Dog</span>
+                              <button class="badge-unit__delete-btn" type="button">
+                                <span class="icomoon-close-rounded"></span>
+                              </button>
+                            </span>
+                          </div>
+                          <div class="col-auto">
+                            <span class="badge-unit clear-all">
+                              <span>Clear All</span>
+                              <button class="badge-unit__delete-btn" type="button">
+                                <span class="icomoon-close-rounded"></span>
+                              </button>
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <div>
+                    <div class="row flex-grow-1 gx-20 gy-10">
+                      <div class="col-auto">
+                        <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">SAVE
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- CONTENT END -->
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/libs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

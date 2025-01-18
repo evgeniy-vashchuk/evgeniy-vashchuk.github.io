@@ -1,0 +1,757 @@
+<!-- base -->
+<!-- additional -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Free Pet Screening — Properties</title>
+  <meta name="description" content="We are a modest but successful 20-year experienced online publisher and e-commerce company with a steady list of sites to build in the pet, people directory and telehealth segments.">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#1C49C2">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#1C49C2">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#1C49C2">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#1C49C2">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- SIDE MENU -->
+  <div class="side-menu offcanvas-lg offcanvas-end" id="offcanvas-side-menu" tabindex="-1">
+    <header class="side-menu__header">
+      <div class="row flex-nowrap flex-grow-1 justify-content-between align-items-center">
+        <div class="col d-none d-lg-flex">
+          <a class="side-menu__logo" href="dashboard.html">
+            <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/logo.svg">
+          </a>
+        </div>
+        <div class="col d-flex d-lg-none">
+          <div class="account-photo-name">
+            <div class="row flex-nowrap align-items-center gx-10">
+              <div class="col-auto d-flex">
+                <div class="account-photo-name__avatar">
+                  <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-dark.svg">
+                </div>
+              </div>
+              <div class="col d-flex">
+                <h3 class="mb-0">Catherine Su</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto d-flex d-lg-none">
+          <button class="btn-close px-5 h3" aria-label="Close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-side-menu">X</button>
+        </div>
+      </div>
+    </header>
+    <div class="side-menu__body">
+      <ul class="side-menu__nav">
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="dashboard.html">
+            <span class="side-menu__nav-icon icomoon-dashboard"></span>
+            <span class="side-menu__nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="animals.html">
+            <span class="side-menu__nav-icon icomoon-animals"></span>
+            <span class="side-menu__nav-link-text">Animals</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="residents.html">
+            <span class="side-menu__nav-icon icomoon-residents"></span>
+            <span class="side-menu__nav-link-text">Residents</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link active" href="properties.html">
+            <span class="side-menu__nav-icon icomoon-properties"></span>
+            <span class="side-menu__nav-link-text">Properties</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-team-members" href="#collapse-side-menu-team-members" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-team-members"></span>
+            <span class="side-menu__nav-link-text">Team Members</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-team-members">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="property-managers.html">Property managers</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="pet-mapping.html">Pet mapping</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-policies" href="#collapse-side-menu-policies" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-policies"></span>
+            <span class="side-menu__nav-link-text">Policies</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-policies">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="policies.html">Policies</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="default-state-policies.html">Default state policies</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-settings" href="#collapse-side-menu-settings" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-settings"></span>
+            <span class="side-menu__nav-link-text">Settings</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-settings">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="payments.html">Payments</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="integrations.html">Integrations</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="support.html">
+            <span class="side-menu__nav-icon icomoon-support"></span>
+            <span class="side-menu__nav-link-text">Support</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- SIDE MENU END -->
+
+  <!-- HEADER -->
+  <header class="header fixed-top js-header">
+    <div class="container-fluid">
+      <div class="row justify-content-between align-items-center flex-nowrap">
+        <div class="col d-flex">
+          <a class="header__logo" href="dashboard.html">
+            <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/logo.svg">
+          </a>
+        </div>
+        <div class="col-auto">
+          <div class="row gx-20 align-items-center">
+            <div class="col-auto d-flex">
+              <div class="dropdown d-inline-flex">
+                <button class="dropdown-toggle account-toggler" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,10">
+                  <span class="account-toggler__avatar">
+                    <img class="lazy js-lazy d-none d-lg-block of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-dark.svg">
+                    <img class="lazy js-lazy d-lg-none of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-light.svg">
+                  </span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#">Profile settings</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Log out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-auto d-flex d-lg-none">
+              <button class="header__menu-toggler" aria-controls="offcanvas-side-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-side-menu">
+                <span class="icomoon-hamburger"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <!-- CONTENT -->
+  <main class="dashboard">
+    <div class="dashboard__main">
+      <div class="container-fluid">
+        <div class="card wrapper">
+          <div class="row align-items-md-center gy-10 mb-30">
+            <div class="col-sm-auto">
+              <h3 class="text-primary mb-0">Properties</h3>
+            </div>
+            <div class="col">
+              <div class="row align-items-center justify-content-sm-end gx-20 gy-30">
+                <div class="col-md-auto">
+                  <div class="d-flex justify-content-sm-end pt-5 pt-md-0">
+                    <a class="icon-link fw-bold" href="#modal-add-a-new-property" data-bs-toggle="modal">
+                      <span class="bi icomoon-plus-rounded"></span>
+                      <span>Add a new property</span>
+                    </a>
+                  </div>
+
+                  <div class="modal fade" aria-labelledby="modal-add-a-new-property-label" aria-hidden="true" id="modal-add-a-new-property" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modal-add-a-new-property-label">Add a new property</h5>
+                          <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="remove-last-child-margin">
+                            <div class="text-center mb-20">
+                              <div class="mb-30">
+                                <div class="photo-upload lg">
+                                  <input class="photo-upload__input" name="photo" type="file">
+                                  <div class="photo-upload__content">
+                                    <span class="photo-upload__icon icomoon-photo"></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="text-block text-lg">
+                                <p>Upload an image of your property</p>
+                              </div>
+                            </div>
+                            <div class="mb-20 mb-lg-35">
+                              <label class="form-label" for="property-name">Property name</label>
+                              <input class="form-control" id="property-name" type="text" placeholder="e.g. My first property">
+                            </div>
+
+                            <div class="mb-20 mb-lg-35">
+                              <h5>Address from</h5>
+                              <div class="row gy-20 gy-lg-35">
+                                <div class="col-lg-6">
+                                  <label class="form-label">State</label>
+                                  <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                                    <option label="Select..."></option>
+                                    <option>Alabama</option>
+                                    <option>Alaska</option>
+                                    <option>Arizona</option>
+                                    <option>Arkansas</option>
+                                    <option>California</option>
+                                    <option>Colorado</option>
+                                    <option>Connecticut</option>
+                                    <option>Delaware</option>
+                                    <option>Florida</option>
+                                    <option>Georgia</option>
+                                    <option>Hawaii</option>
+                                    <option>Idaho</option>
+                                    <option>Illinois</option>
+                                    <option>Indiana</option>
+                                    <option>Iowa</option>
+                                    <option>Kansas</option>
+                                    <option>Kentucky</option>
+                                    <option>Louisiana</option>
+                                    <option>Maine</option>
+                                    <option>Maryland</option>
+                                    <option>Massachusetts</option>
+                                    <option>Michigan</option>
+                                    <option>Minnesota</option>
+                                    <option>Mississippi</option>
+                                    <option>Missouri</option>
+                                    <option>Montana</option>
+                                    <option>Nebraska</option>
+                                    <option>Nevada</option>
+                                    <option>New Hampshire</option>
+                                    <option>New Jersey</option>
+                                    <option>New Mexico</option>
+                                    <option>New York</option>
+                                    <option>North Carolina</option>
+                                    <option>North Dakota</option>
+                                    <option>Ohio</option>
+                                    <option>Oklahoma</option>
+                                    <option>Oregon</option>
+                                    <option>Pennsylvania</option>
+                                    <option>Rhode Island</option>
+                                    <option>South Carolina</option>
+                                    <option>South Dakota</option>
+                                    <option>Tennessee</option>
+                                    <option>Texas</option>
+                                    <option>Utah</option>
+                                    <option>Vermont</option>
+                                    <option>Virginia</option>
+                                    <option>Washington</option>
+                                    <option>West Virginia</option>
+                                    <option>Wisconsin</option>
+                                    <option>Wyoming</option>
+                                  </select>
+                                </div>
+                                <div class="col-lg-6">
+                                  <label class="form-label" for="city">City</label>
+                                  <input class="form-control" id="city" type="text" placeholder="City">
+                                </div>
+                                <div class="col-lg-6">
+                                  <label class="form-label" for="zip-code">Zip code</label>
+                                  <input class="form-control" id="zip-code" type="text" placeholder="Zip code">
+                                </div>
+                                <div class="col-lg-6">
+                                  <label class="form-label" for="address-1">Address 1</label>
+                                  <input class="form-control" id="address-1" type="text" placeholder="e.g. 100 State St">
+                                </div>
+                                <div class="col-lg-6">
+                                  <label class="form-label" for="address-2">Address 2</label>
+                                  <input class="form-control" id="address-2" type="text" placeholder="e.g. 100 State St">
+                                </div>
+                                <div class="col-lg-6">
+                                  <label class="form-label">Type of rental</label>
+                                  <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                                    <option label="Select..."></option>
+                                    <option>Single Family</option>
+                                    <option>Duplex</option>
+                                    <option>Triplex</option>
+                                    <option>4+ apartment</option>
+                                  </select>
+                                </div>
+                                <div class="col-12">
+                                  <div class="row align-items-end gy-10">
+                                    <div class="col col-lg-6">
+                                      <label class="form-label" for="specify-the-units">Specify the units</label>
+                                      <input class="form-control" id="specify-the-units" type="text" placeholder="Type number">
+                                    </div>
+                                    <div class="col-sm-auto col-lg-6">
+                                      <button class="btn btn-blue-light equal-height-to-forms" type="button">ADD
+                                      </button>
+                                    </div>
+                                  </div>
+                                  <div class="pt-10">
+                                    <div class="row gx-10 gy-5">
+                                      <div class="col-auto">
+                                        <span class="badge-unit">
+                                          <span>858</span>
+                                          <button class="badge-unit__delete-btn" type="button">
+                                            <span class="icomoon-close-rounded"></span>
+                                          </button>
+                                        </span>
+                                      </div>
+                                      <div class="col-auto">
+                                        <span class="badge-unit">
+                                          <span>200</span>
+                                          <button class="badge-unit__delete-btn" type="button">
+                                            <span class="icomoon-close-rounded"></span>
+                                          </button>
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="mb-20 mb-lg-35">
+                              <h5>Policy</h5>
+                              <div class="row gy-20 gy-lg-35">
+                                <div class="col-12">
+                                  <div class="mb-10">
+                                    <label class="form-label">Assign a policy</label>
+                                    <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                                      <option label="Select..."></option>
+                                    </select>
+                                  </div>
+                                  <a class="icon-link fw-bold" href="#">
+                                    <span class="bi icomoon-plus-rounded"></span>
+                                    <span>Add a new property</span>
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="mb-20 mb-lg-35">
+                              <h5>Screening</h5>
+                              <div class="row gy-20 gy-lg-35">
+                                <div class="col-12">
+                                  <p class="mb-10">Existing tenant screening&nbsp;<span class="text-xs text-blue-lake-ice ms-5 align-middle icomoon-info" data-bs-toggle="tooltip" data-bs-custom-class="yellow-tooltip" data-bs-title="This action will turn On/Off the notifications for all the known residents that are currently living in this property"></span>
+                                  </p>
+                                  <div class="row gx-20">
+                                    <div class="col-auto">
+                                      <label class="form-check">
+                                        <input class="form-check-input" name="Existing tenant screening" type="radio">
+                                        <span class="form-check-label">On</span>
+                                      </label>
+                                    </div>
+                                    <div class="col-auto">
+                                      <label class="form-check">
+                                        <input class="form-check-input" name="Existing tenant screening" type="radio">
+                                        <span class="form-check-label">Off</span>
+                                      </label>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <div>
+                            <div class="row flex-grow-1 gx-20 gy-10">
+                              <div class="col-auto">
+                                <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">SUBMIT
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto">
+                  <div class="row justify-content-sm-end gx-20 gy-10">
+                    <div class="col-auto">
+                      <button class="btn btn-outline-secondary" type="button" data-bs-toggle="modal" data-bs-target="#modal-import-csv">Upload CSV
+                      </button>
+
+                      <div class="modal fade without-body-padding" aria-labelledby="modal-import-csv-label" aria-hidden="true" id="modal-import-csv" tabindex="-1">
+                        <div class="modal-dialog modal-dialog-centered modal-xl">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="modal-import-csv-label">Import CSV</h5>
+                              <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
+                            </div>
+                            <div class="modal-body">
+                              <div class="row gy-30">
+                                <div class="col-lg-6">
+                                  <div class="bg-blue-light rounded p-20">
+                                    <div class="row gy-20 gy-lg-35">
+                                      <div class="col-12">
+                                        <div class="document-info-item border-white">
+                                          <div class="w-100">
+                                            <div class="row align-items-center flex-nowrap">
+                                              <div class="col text-truncate">
+                                                <h6 class="document-info-item__text text-truncate">CSV example</h6>
+                                              </div>
+                                              <div class="col-auto">
+                                                <div class="row align-items-center gx-5 gy-5">
+                                                  <div class="col-auto">
+                                                    <button class="document-info-item__action-btn" type="button">
+                                                      <span class="icomoon-download"></span>
+                                                    </button>
+                                                  </div>
+                                                  <div class="col-auto">
+                                                    <button class="document-info-item__action-btn" type="button">
+                                                      <span class="icomoon-printer"></span>
+                                                    </button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="col-12">
+                                        <h5>Upload CSV</h5>
+                                        <div class="file-upload bg-white">
+                                          <input class="file-upload__input" name="file" type="file">
+                                          <div class="file-upload__content">
+                                            <div class="file-upload__content-wrap">
+                                              <p class="mb-0">Browse or drag and drop <strong class="text-blue-lake-ice text-decoration-underline">CSV</strong> here.</p>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-lg-6">
+                                  <div class="ps-lg-15">
+                                    <h5>Preview</h5>
+                                    <ul class="list-with-info">
+                                      <li>Skipping (already exists): 3 properties out of 3. <a href="#" class="link-blue-lake-ice text-decoration-none">Download</a>
+                                      </li>
+                                    </ul>
+                                  </div>
+
+                                  <div class="h-100 d-flex align-items-center d-none">
+                                    <div class="info-placeholder w-100">
+                                      <div class="info-placeholder__icon">
+                                        <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/info-placeholder/1.svg">
+                                      </div>
+
+                                      <h4 class="text-primary">Preview</h4>
+                                      <div class="text-block text-lg">
+                                        <p>Select setting to preview result</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="modal-footer">
+                              <div>
+                                <div class="row flex-grow-1 gx-20 gy-10">
+                                  <div class="col-auto">
+                                    <button class="btn btn-link" type="button" data-bs-dismiss="modal">Cancel
+                                    </button>
+                                  </div>
+                                  <div class="col-auto">
+                                    <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">PREVIEW
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th class="with-sorting">Property name <span class="icomoon-arrows-double-vertical"></span>
+                  </th>
+                  <th class="with-sorting">Property address <span class="icomoon-arrows-double-vertical"></span>
+                  </th>
+                  <th>Number of units</th>
+                  <th>Pets allowed</th>
+                  <th class="with-sorting">State <span class="icomoon-arrows-double-vertical"></span>
+                  </th>
+                  <th class="with-sorting">Source <span class="icomoon-arrows-double-vertical"></span>
+                  </th>
+                  <th>Actions</th>
+                  <th class="with-gear">
+                    <div class="dropdown d-inline-flex">
+                      <button class="dropdown-toggle btn-gear" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,10" data-bs-auto-close="outside" data-bs-popper-config="{&quot;strategy&quot;:&quot;fixed&quot;}">
+                        <span class="icomoon-gear"></span>
+                      </button>
+                      <div class="dropdown-menu table-ordering dropdown-menu-end">
+                        <div class="dropdown-menu__content js-sortable">
+                          <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                            <div class="col-auto">
+                              <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                <span class="icomoon-move"></span>
+                              </button>
+                            </div>
+                            <div class="col">
+                              <label class="form-check sm fw-bold">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-label">Property Address</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                            <div class="col-auto">
+                              <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                <span class="icomoon-move"></span>
+                              </button>
+                            </div>
+                            <div class="col">
+                              <label class="form-check sm fw-bold">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-label">Number of Units</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                            <div class="col-auto">
+                              <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                <span class="icomoon-move"></span>
+                              </button>
+                            </div>
+                            <div class="col">
+                              <label class="form-check sm fw-bold">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-label">Pets Allowed</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                            <div class="col-auto">
+                              <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                <span class="icomoon-move"></span>
+                              </button>
+                            </div>
+                            <div class="col">
+                              <label class="form-check sm fw-bold">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-label">State</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                            <div class="col-auto">
+                              <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                <span class="icomoon-move"></span>
+                              </button>
+                            </div>
+                            <div class="col">
+                              <label class="form-check sm fw-bold">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-label">Source</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dropdown-menu__footer">
+                          <div class="row gx-10 gy-5">
+                            <div class="col-auto">
+                              <button class="btn btn-blue-light btn-sm js-close-dropdown" type="button">APPLY
+                              </button>
+                            </div>
+                            <div class="col-auto">
+                              <button class="btn btn-link btn-sm js-close-dropdown" type="button">Cancel
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <th>
+                    <input class="form-control bordered-version" type="text" placeholder="Search">
+                  </th>
+                  <th>
+                    <input class="form-control bordered-version" type="text" placeholder="Search for property">
+                  </th>
+                  <th></th>
+                  <th></th>
+                  <th>
+                    <select class="form-select js-select bordered-version" data-dropdown-css-class=" bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                      <option label="Select..."></option>
+                      <option>Alabama</option>
+                      <option>Alaska</option>
+                      <option>Arizona</option>
+                      <option>Arkansas</option>
+                      <option>California</option>
+                      <option>Colorado</option>
+                      <option>Connecticut</option>
+                      <option>Delaware</option>
+                      <option>Florida</option>
+                      <option>Georgia</option>
+                      <option>Hawaii</option>
+                      <option>Idaho</option>
+                      <option>Illinois</option>
+                      <option>Indiana</option>
+                      <option>Iowa</option>
+                      <option>Kansas</option>
+                      <option>Kentucky</option>
+                      <option>Louisiana</option>
+                      <option>Maine</option>
+                      <option>Maryland</option>
+                      <option>Massachusetts</option>
+                      <option>Michigan</option>
+                      <option>Minnesota</option>
+                      <option>Mississippi</option>
+                      <option>Missouri</option>
+                      <option>Montana</option>
+                      <option>Nebraska</option>
+                      <option>Nevada</option>
+                      <option>New Hampshire</option>
+                      <option>New Jersey</option>
+                      <option>New Mexico</option>
+                      <option>New York</option>
+                      <option>North Carolina</option>
+                      <option>North Dakota</option>
+                      <option>Ohio</option>
+                      <option>Oklahoma</option>
+                      <option>Oregon</option>
+                      <option>Pennsylvania</option>
+                      <option>Rhode Island</option>
+                      <option>South Carolina</option>
+                      <option>South Dakota</option>
+                      <option>Tennessee</option>
+                      <option>Texas</option>
+                      <option>Utah</option>
+                      <option>Vermont</option>
+                      <option>Virginia</option>
+                      <option>Washington</option>
+                      <option>West Virginia</option>
+                      <option>Wisconsin</option>
+                      <option>Wyoming</option>
+                    </select>
+                  </th>
+                  <th>
+                    <select class="form-select js-select bordered-version" data-dropdown-css-class=" bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                      <option label="Select..."></option>
+                      <option>All</option>
+                      <option>Imported from ResMan</option>
+                      <option>System Created</option>
+                    </select>
+                  </th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="name-item">
+                      <div class="name-item__round-badge">S</div>
+                      <p class="name-item__text">Southwest 9th Ave</p>
+                    </div>
+                  </td>
+                  <td>219 SW 9th Ave</td>
+                  <td>4</td>
+                  <td>No</td>
+                  <td class="text-uppercase">Florida</td>
+                  <td>System Created</td>
+                  <td>
+                    <div class="row g-10">
+                      <div class="col-auto">
+                        <button class="btn-action link-gray" type="button">
+                          <span class="icomoon-qr-code"></span>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button class="btn-action link-danger" type="button">
+                          <span class="icomoon-delete"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="name-item">
+                      <div class="name-item__round-badge">S</div>
+                      <p class="name-item__text">Southwest 9th Ave</p>
+                    </div>
+                  </td>
+                  <td>219 SW 9th Ave</td>
+                  <td>4</td>
+                  <td>No</td>
+                  <td class="text-uppercase">Florida</td>
+                  <td>System Created</td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- CONTENT END -->
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/libs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

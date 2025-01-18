@@ -41,8 +41,13 @@ function initForms() {
 
   if (select.length) {
     select.each(function () {
-      var selectItem = $(this);
-      var selectContainer = selectItem.closest('.js-select-container');
+      var selectItem = $(this),
+        selectLabel = selectItem.siblings('.form-label'),
+        selectContainer = selectItem.closest('.js-select-container');
+
+      if (selectItem.val()) {
+        selectItem.addClass('is-selected');
+      }
 
       function formatTemplate(item) {
         if (!item.id) {
@@ -64,7 +69,7 @@ function initForms() {
         dropdownParent: selectContainer.length ? selectContainer : false,
         theme: 'bootstrap',
         width: '100%',
-        allowClear: true,
+        allowClear: selectItem.attr('data-placeholder') ? true : false,
         language: {
           noResults: function noResults() {
             return 'No options';
@@ -87,6 +92,10 @@ function initForms() {
           e.preventDefault();
           $(this).off('select2:opening');
         });
+      });
+
+      selectLabel.on('click', function () {
+        selectItem.select2('open');
       });
 
       $('.table-responsive').on('scroll', function () {
@@ -227,6 +236,21 @@ function initModal() {
   });
 }
 
+// TOASTS
+var initToasts = function initToasts() {
+  var buttons = document.querySelectorAll('[data-bs-toggle="toast"]');
+
+  buttons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      var target = button.getAttribute('data-bs-target');
+      var toastElement = document.getElementById(target.substring(1));
+      var toast = new bootstrap.Toast(toastElement);
+
+      toast.show();
+    });
+  });
+};
+
 (function ($) {
   initActiveHeaderAfterScroll();
   initScrollBarWidth();
@@ -236,6 +260,7 @@ function initModal() {
   initTooltips();
   initDropdown();
   initModal();
+  initToasts();
 
   $(window).on('resize', function () {
     initScrollBarWidth();

@@ -1,0 +1,488 @@
+<!-- base -->
+<!-- additional -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Free Pet Screening — Property managers</title>
+  <meta name="description" content="We are a modest but successful 20-year experienced online publisher and e-commerce company with a steady list of sites to build in the pet, people directory and telehealth segments.">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#1C49C2">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#1C49C2">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#1C49C2">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#1C49C2">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- SIDE MENU -->
+  <div class="side-menu offcanvas-lg offcanvas-end" id="offcanvas-side-menu" tabindex="-1">
+    <header class="side-menu__header">
+      <div class="row flex-nowrap flex-grow-1 justify-content-between align-items-center">
+        <div class="col d-none d-lg-flex">
+          <a class="side-menu__logo" href="dashboard.html">
+            <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/logo.svg">
+          </a>
+        </div>
+        <div class="col d-flex d-lg-none">
+          <div class="account-photo-name">
+            <div class="row flex-nowrap align-items-center gx-10">
+              <div class="col-auto d-flex">
+                <div class="account-photo-name__avatar">
+                  <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-dark.svg">
+                </div>
+              </div>
+              <div class="col d-flex">
+                <h3 class="mb-0">Catherine Su</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto d-flex d-lg-none">
+          <button class="btn-close px-5 h3" aria-label="Close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-side-menu">X</button>
+        </div>
+      </div>
+    </header>
+    <div class="side-menu__body">
+      <ul class="side-menu__nav">
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="dashboard.html">
+            <span class="side-menu__nav-icon icomoon-dashboard"></span>
+            <span class="side-menu__nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="animals.html">
+            <span class="side-menu__nav-icon icomoon-animals"></span>
+            <span class="side-menu__nav-link-text">Animals</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="residents.html">
+            <span class="side-menu__nav-icon icomoon-residents"></span>
+            <span class="side-menu__nav-link-text">Residents</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="properties.html">
+            <span class="side-menu__nav-icon icomoon-properties"></span>
+            <span class="side-menu__nav-link-text">Properties</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link active" aria-expanded="false" aria-controls="collapse-side-menu-team-members" href="#collapse-side-menu-team-members" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-team-members"></span>
+            <span class="side-menu__nav-link-text">Team Members</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-team-members">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link active" href="property-managers.html">Property managers</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="pet-mapping.html">Pet mapping</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-policies" href="#collapse-side-menu-policies" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-policies"></span>
+            <span class="side-menu__nav-link-text">Policies</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-policies">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="policies.html">Policies</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="default-state-policies.html">Default state policies</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-settings" href="#collapse-side-menu-settings" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-settings"></span>
+            <span class="side-menu__nav-link-text">Settings</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-settings">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="payments.html">Payments</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="integrations.html">Integrations</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="support.html">
+            <span class="side-menu__nav-icon icomoon-support"></span>
+            <span class="side-menu__nav-link-text">Support</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- SIDE MENU END -->
+
+  <!-- HEADER -->
+  <header class="header fixed-top js-header">
+    <div class="container-fluid">
+      <div class="row justify-content-between align-items-center flex-nowrap">
+        <div class="col d-flex">
+          <a class="header__logo" href="dashboard.html">
+            <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/logo.svg">
+          </a>
+        </div>
+        <div class="col-auto">
+          <div class="row gx-20 align-items-center">
+            <div class="col-auto d-flex">
+              <div class="dropdown d-inline-flex">
+                <button class="dropdown-toggle account-toggler" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,10">
+                  <span class="account-toggler__avatar">
+                    <img class="lazy js-lazy d-none d-lg-block of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-dark.svg">
+                    <img class="lazy js-lazy d-lg-none of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-light.svg">
+                  </span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#">Profile settings</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Log out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-auto d-flex d-lg-none">
+              <button class="header__menu-toggler" aria-controls="offcanvas-side-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-side-menu">
+                <span class="icomoon-hamburger"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <!-- CONTENT -->
+  <main class="dashboard">
+    <div class="dashboard__main">
+      <div class="container-fluid">
+        <div class="card wrapper">
+          <div class="row align-items-md-center gy-10 mb-30">
+            <div class="col-sm-auto">
+              <h3 class="text-primary mb-0">Property managers</h3>
+            </div>
+            <div class="col">
+              <div class="row align-items-center justify-content-sm-end gx-20 gy-30">
+                <div class="col-md-auto">
+                  <div class="d-flex justify-content-sm-end pt-5 pt-md-0">
+                    <a class="icon-link fw-bold" href="#modal-invite-a-property-manager" data-bs-toggle="modal">
+                      <span class="bi icomoon-plus-rounded"></span>
+                      <span>Invite a property manager</span>
+                    </a>
+                  </div>
+
+                  <div class="modal fade" aria-labelledby="modal-invite-a-property-manager-label" aria-hidden="true" id="modal-invite-a-property-manager" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modal-invite-a-property-manager-label">Invite a property manager</h5>
+                          <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="row gy-20 gy-lg-35">
+                            <div class="col-lg-6">
+                              <label class="form-label" for="full-name">Full name</label>
+                              <input class="form-control" id="full-name" type="text" placeholder="Full name">
+                            </div>
+                            <div class="col-lg-6">
+                              <label class="form-label">Position</label>
+                              <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="e.g. Idaho regional manager">
+                                <option label="e.g. Idaho regional manager"></option>
+                              </select>
+                            </div>
+                            <div class="col-lg-6">
+                              <label class="form-label" for="email-address">Email Address</label>
+                              <input class="form-control" id="email-address" type="email" placeholder="johndoe@gmail.com">
+                            </div>
+                            <div class="col-lg-6">
+                              <label class="form-label" for="phone-number">Phone number</label>
+                              <input class="form-control" id="phone-number" type="tel" placeholder="Phone number">
+                            </div>
+                            <div class="col-12">
+                              <label class="form-label">Select the properties</label>
+                              <select class="form-select js-select" data-dropdown-css-class="checkbox-view" data-minimum-results-for-search="-1" data-placeholder="Properties">
+                                <option label="Properties"></option>
+                                <option>Select All</option>
+                                <option>Southwest 25th St</option>
+                                <option>Southwest 9th Ave</option>
+                              </select>
+
+                              <div class="pt-10">
+                                <div class="row gx-10 gy-5">
+                                  <div class="col-auto">
+                                    <span class="badge-unit">
+                                      <span>Southwest 25th St</span>
+                                      <button class="badge-unit__delete-btn" type="button">
+                                        <span class="icomoon-close-rounded"></span>
+                                      </button>
+                                    </span>
+                                  </div>
+                                  <div class="col-auto">
+                                    <span class="badge-unit">
+                                      <span>Southwest 9th Ave</span>
+                                      <button class="badge-unit__delete-btn" type="button">
+                                        <span class="icomoon-close-rounded"></span>
+                                      </button>
+                                    </span>
+                                  </div>
+                                  <div class="col-auto">
+                                    <span class="badge-unit clear-all">
+                                      <span>Clear All</span>
+                                      <button class="badge-unit__delete-btn" type="button">
+                                        <span class="icomoon-close-rounded"></span>
+                                      </button>
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <div>
+                            <div class="row flex-grow-1 gx-20 gy-10">
+                              <div class="col-auto">
+                                <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">SEND THE INVITATION
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Full name</th>
+                  <th>Email</th>
+                  <th>Position</th>
+                  <th>Property count</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                  <th class="with-gear">
+                    <div class="dropdown d-inline-flex">
+                      <button class="dropdown-toggle btn-gear" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,10" data-bs-auto-close="outside" data-bs-popper-config="{&quot;strategy&quot;:&quot;fixed&quot;}">
+                        <span class="icomoon-gear"></span>
+                      </button>
+                      <div class="dropdown-menu table-ordering dropdown-menu-end">
+                        <div class="dropdown-menu__content js-sortable">
+                          <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                            <div class="col-auto">
+                              <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                <span class="icomoon-move"></span>
+                              </button>
+                            </div>
+                            <div class="col">
+                              <label class="form-check sm fw-bold">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-label">Full name</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                            <div class="col-auto">
+                              <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                <span class="icomoon-move"></span>
+                              </button>
+                            </div>
+                            <div class="col">
+                              <label class="form-check sm fw-bold">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-label">Email</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                            <div class="col-auto">
+                              <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                <span class="icomoon-move"></span>
+                              </button>
+                            </div>
+                            <div class="col">
+                              <label class="form-check sm fw-bold">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-label">Position</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                            <div class="col-auto">
+                              <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                <span class="icomoon-move"></span>
+                              </button>
+                            </div>
+                            <div class="col">
+                              <label class="form-check sm fw-bold">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-label">Property count</span>
+                              </label>
+                            </div>
+                          </div>
+                          <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                            <div class="col-auto">
+                              <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                <span class="icomoon-move"></span>
+                              </button>
+                            </div>
+                            <div class="col">
+                              <label class="form-check sm fw-bold">
+                                <input class="form-check-input" type="checkbox">
+                                <span class="form-check-label">Status</span>
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="dropdown-menu__footer">
+                          <div class="row gx-10 gy-5">
+                            <div class="col-auto">
+                              <button class="btn btn-blue-light btn-sm js-close-dropdown" type="button">APPLY
+                              </button>
+                            </div>
+                            <div class="col-auto">
+                              <button class="btn btn-link btn-sm js-close-dropdown" type="button">Cancel
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </th>
+                </tr>
+                <tr>
+                  <th>
+                    <input class="form-control bordered-version" type="text" placeholder="Search">
+                  </th>
+                  <th>
+                    <input class="form-control bordered-version" type="text" placeholder="Search">
+                  </th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="fw-bold">Grant Hartman</td>
+                  <td>granthartmandesign@gmail.com</td>
+                  <td>CEO</td>
+                  <td>1</td>
+                  <td>Pending</td>
+                  <td>
+                    <div class="row g-10">
+                      <div class="col-auto">
+                        <button class="btn-action link-secondary" type="button" data-bs-target="#modal-resend-invitation" data-bs-toggle="modal">
+                          <span class="icomoon-return"></span>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button class="btn-action link-danger" type="button">
+                          <span class="icomoon-delete"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </td>
+                  <td></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="modal fade" aria-labelledby="modal-resend-invitation-label" aria-hidden="true" id="modal-resend-invitation" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="modal-resend-invitation-label">Resend invitation</h5>
+                  <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
+                </div>
+                <div class="modal-body">
+                  <div class="text-block">
+                    <p>You are about to resend this invitation. Do you want to continue?</p>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <div>
+                    <div class="row flex-grow-1 gx-20 gy-10">
+                      <div class="col-auto">
+                        <button class="btn btn-link" type="button" data-bs-dismiss="modal">Cancel
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <span data-bs-toggle="toast" data-bs-target="#toastResendInvitationSuccess">
+                          <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">Yes, resend the invitation
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="toast-container">
+            <div class="toast bg-success" aria-live="assertive" aria-atomic="true" id="toastResendInvitationSuccess" role="alert">
+              <button class="toast__close-btn btn-close h5" aria-label="Close" type="button" data-bs-dismiss="toast">X</button>
+              <div class="toast-body">
+                <p class="mb-0">Property Manager has been re-invited successfully!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- CONTENT END -->
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/libs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

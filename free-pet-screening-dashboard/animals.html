@@ -1,3 +1,5 @@
+<!-- base -->
+<!-- additional -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,7 +34,7 @@
 
 <body>
   <!-- SIDE MENU -->
-  <div class="side-menu offcanvas-lg offcanvas-start" id="offcanvas-side-menu" tabindex="-1">
+  <div class="side-menu offcanvas-lg offcanvas-end" id="offcanvas-side-menu" tabindex="-1">
     <header class="side-menu__header">
       <div class="row flex-nowrap flex-grow-1 justify-content-between align-items-center">
         <div class="col d-none d-lg-flex">
@@ -55,7 +57,7 @@
           </div>
         </div>
         <div class="col-auto d-flex d-lg-none">
-          <button class="btn-close h3" aria-label="Close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-side-menu">X</button>
+          <button class="btn-close px-5 h3" aria-label="Close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-side-menu">X</button>
         </div>
       </div>
     </header>
@@ -97,7 +99,7 @@
                 <a class="side-menu__sub-nav-link" href="property-managers.html">Property managers</a>
               </li>
               <li class="side-menu__sub-nav-item">
-                <a class="side-menu__sub-nav-link" href="pet-mapping.html">Pet Mapping</a>
+                <a class="side-menu__sub-nav-link" href="pet-mapping.html">Pet mapping</a>
               </li>
             </ul>
           </div>
@@ -193,295 +195,299 @@
     <div class="dashboard__main">
       <div class="container-fluid">
         <div class="card wrapper">
-          <div class="row align-items-center gy-10 mb-30">
-            <div class="col">
+          <div class="row align-items-md-center gy-10 mb-30">
+            <div class="col-sm-auto">
               <h3 class="text-primary mb-0">Animals</h3>
             </div>
-            <div class="col-auto">
-              <a class="icon-link fw-bold" href="#modal-create-new-animal" data-bs-toggle="modal">
-                <span class="bi icomoon-plus-rounded"></span>
-                <span>Add new animal</span>
-              </a>
+            <div class="col">
+              <div class="row align-items-center justify-content-sm-end gx-20 gy-30">
+                <div class="col-md-auto">
+                  <div class="d-flex justify-content-sm-end pt-5 pt-md-0">
+                    <a class="icon-link fw-bold" href="#modal-create-new-animal" data-bs-toggle="modal">
+                      <span class="bi icomoon-plus-rounded"></span>
+                      <span>Add new animal</span>
+                    </a>
 
-              <div class="modal fade" aria-labelledby="modal-create-new-animal-label" aria-hidden="true" id="modal-create-new-animal" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="modal-create-new-animal-label">Create new animal</h5>
-                      <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
-                    </div>
-                    <div class="modal-body">
-                      <div class="row gy-20 gy-lg-35">
-                        <div class="col-12">
-                          <label class="form-label">Residency</label>
-                          <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                            <option label="Select..."></option>
-                            <option data-tag="Resident">Catherine Su Southwest 9th Ave 4</option>
-                            <option data-tag="Resident">Catherine Su Southwest 9th Ave 4</option>
-                            <option data-tag="Resident">Catherine Su Southwest 9th Ave 4</option>
-                          </select>
-                        </div>
-                        <div class="col-12">
-                          <span class="form-label">Select animal status</span>
-                          <div class="row gx-20 gy-10">
-                            <div class="col-sm-auto">
-                              <label class="form-check">
-                                <input class="form-check-input" name="Select animal status" type="radio">
-                                <span class="form-check-label">Pending</span>
-                              </label>
-                            </div>
-                            <div class="col-sm-auto">
-                              <label class="form-check">
-                                <input class="form-check-input" name="Select animal status" type="radio">
-                                <span class="form-check-label">Future Animal</span>
-                              </label>
-                            </div>
-                            <div class="col-sm-auto">
-                              <label class="form-check">
-                                <input class="form-check-input" name="Select animal status" type="radio">
-                                <span class="form-check-label">Moved In</span>
-                              </label>
-                            </div>
+                    <div class="modal fade" aria-labelledby="modal-create-new-animal-label" aria-hidden="true" id="modal-create-new-animal" tabindex="-1">
+                      <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="modal-create-new-animal-label">Create new animal</h5>
+                            <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
                           </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <label class="form-label" for="animal-move-in-date">Animal move in date</label>
-                          <input class="form-control datepicker js-datepicker" id="animal-move-in-date" type="text" readonly="readonly" placeholder="Select date">
-                        </div>
-                      </div>
-                      <hr class="text-blue-light">
-                      <h5>Upload animal picture (optional)</h5>
-                      <div class="row gy-20 gy-lg-35">
-                        <div class="col-12">
-                          <div class="photo-upload">
-                            <input class="photo-upload__input" name="photo" type="file">
-                            <div class="photo-upload__content">
-                              <span class="photo-upload__icon icomoon-photo"></span>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="col-lg-6">
-                          <label class="form-label" for="animal-name-(optional)">Animal name (optional)</label>
-                          <input class="form-control" id="animal-name-(optional)" type="text" placeholder="Type animal name">
-                        </div>
-                        <div class="col-lg-6">
-                          <label class="form-label" for="animal-birthdate-(optional)">Animal birthdate (optional)</label>
-                          <input class="form-control datepicker js-datepicker" id="animal-birthdate-(optional)" type="text" readonly="readonly" placeholder="Select date">
-                        </div>
-                        <div class="col-lg-6">
-                          <label class="form-label">Animal type</label>
-                          <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                            <option label="Select..."></option>
-                            <option>Pet</option>
-                            <option>Emotional Support Animal (ESA)</option>
-                            <option>Service Animal (SA)</option>
-                          </select>
-                        </div>
-                        <div class="col-lg-6">
-                          <label class="form-label" for="microchip-number-(optional)">Microchip number (optional)</label>
-                          <input class="form-control" id="microchip-number-(optional)" type="text" placeholder="Type microchip number">
-                        </div>
-                        <div class="col-lg-6">
-                          <label class="form-label">Species (optional)</label>
-                          <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                            <option label="Select..."></option>
-                            <option>Bird</option>
-                            <option>Cat</option>
-                            <option>Dog</option>
-                            <option>Ferret</option>
-                            <option>Fish</option>
-                            <option>Guinea Pig</option>
-                            <option>Hamster</option>
-                            <option>Hedgehog</option>
-                            <option>Mice</option>
-                            <option>Rabbit</option>
-                            <option>Reptile</option>
-                          </select>
-                        </div>
-                        <div class="col-lg-6">
-                          <label class="form-label">Breed (optional)</label>
-                          <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select breed">
-                            <option label="Select breed"></option>
-                            <option label="Empty option"></option>
-                          </select>
-                        </div>
-                        <div class="col-lg-4">
-                          <label class="form-label">Primary color (optional)</label>
-                          <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select primary color">
-                            <option label="Select primary color"></option>
-                            <option>Black</option>
-                            <option>Blue</option>
-                            <option>Brown</option>
-                            <option>Green</option>
-                            <option>Grey</option>
-                            <option>Orange</option>
-                            <option>Red</option>
-                            <option>Tan</option>
-                            <option>White</option>
-                            <option>Yellow</option>
-                          </select>
-                        </div>
-                        <div class="col-lg-4">
-                          <label class="form-label">Secondary color1 (optional)</label>
-                          <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select Secondary Color1">
-                            <option label="Select Secondary Color1"></option>
-                            <option>Black</option>
-                            <option>Blue</option>
-                            <option>Brown</option>
-                            <option>Green</option>
-                            <option>Grey</option>
-                            <option>Orange</option>
-                            <option>Red</option>
-                            <option>Tan</option>
-                            <option>White</option>
-                            <option>Yellow</option>
-                          </select>
-                        </div>
-                        <div class="col-lg-4">
-                          <label class="form-label">Secondary color2 (optional)</label>
-                          <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select Secondary Color2">
-                            <option label="Select Secondary Color2"></option>
-                            <option>Black</option>
-                            <option>Blue</option>
-                            <option>Brown</option>
-                            <option>Green</option>
-                            <option>Grey</option>
-                            <option>Orange</option>
-                            <option>Red</option>
-                            <option>Tan</option>
-                            <option>White</option>
-                            <option>Yellow</option>
-                          </select>
-                        </div>
-                        <div class="col-lg-6">
-                          <label class="form-label" for="weight-(lbs,-optional)">Weight (lbs, optional)</label>
-                          <input class="form-control" id="weight-(lbs,-optional)" type="text" placeholder="Type weight">
-                        </div>
-                        <div class="col-12">
-                          <div class="row align-items-end gx-30 gy-20 gy-lg-10">
-                            <div class="col-lg-auto">
-                              <span class="form-label">Choose a gender (optional)</span>
-                              <div class="radio-pills-list">
-                                <label class="radio-pill">
-                                  <input class="radio-pill__input" name="Choose a gender" type="radio">
-                                  <span class="radio-pill__item">
-                                    <span class="icomoon-female"></span>
-                                    <span>Female</span>
-                                  </span>
-                                </label>
-                                <label class="radio-pill">
-                                  <input class="radio-pill__input" name="Choose a gender" type="radio">
-                                  <span class="radio-pill__item">
-                                    <span class="icomoon-male"></span>
-                                    <span>Male</span>
-                                  </span>
-                                </label>
+                          <div class="modal-body">
+                            <div class="row gy-20 gy-lg-35">
+                              <div class="col-12">
+                                <label class="form-label">Residency</label>
+                                <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                                  <option label="Select..."></option>
+                                  <option data-tag="Resident">Catherine Su Southwest 9th Ave 4</option>
+                                  <option data-tag="Resident">Catherine Su Southwest 9th Ave 4</option>
+                                  <option data-tag="Resident">Catherine Su Southwest 9th Ave 4</option>
+                                </select>
+                              </div>
+                              <div class="col-12">
+                                <span class="form-label">Select animal status</span>
+                                <div class="row gx-20 gy-10">
+                                  <div class="col-sm-auto">
+                                    <label class="form-check">
+                                      <input class="form-check-input" name="Select animal status" type="radio">
+                                      <span class="form-check-label">Pending</span>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-auto">
+                                    <label class="form-check">
+                                      <input class="form-check-input" name="Select animal status" type="radio">
+                                      <span class="form-check-label">Future Animal</span>
+                                    </label>
+                                  </div>
+                                  <div class="col-sm-auto">
+                                    <label class="form-check">
+                                      <input class="form-check-input" name="Select animal status" type="radio">
+                                      <span class="form-check-label">Moved In</span>
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-lg-6">
+                                <label class="form-label" for="animal-move-in-date">Animal move in date</label>
+                                <input class="form-control datepicker js-datepicker" id="animal-move-in-date" type="text" readonly="readonly" placeholder="Select date">
                               </div>
                             </div>
-                            <div class="col-lg-auto pb-lg-5">
-                              <div class="row gx-20 gy-10">
-                                <div class="col-lg-auto">
-                                  <p class="mb-0">Is your animal Spayed?</p>
+                            <hr class="text-blue-light">
+                            <h5>Upload animal picture (optional)</h5>
+                            <div class="row gy-20 gy-lg-35">
+                              <div class="col-12">
+                                <div class="photo-upload">
+                                  <input class="photo-upload__input" name="photo" type="file">
+                                  <div class="photo-upload__content">
+                                    <span class="photo-upload__icon icomoon-photo"></span>
+                                  </div>
                                 </div>
-                                <div class="col-lg-auto">
-                                  <div class="row gx-10 gy-5">
-                                    <div class="col-auto">
-                                      <label class="form-check">
-                                        <input class="form-check-input" name="Is your animal Spayed?" type="radio">
-                                        <span class="form-check-label">Yes</span>
+                              </div>
+                              <div class="col-lg-6">
+                                <label class="form-label" for="animal-name-(optional)">Animal name (optional)</label>
+                                <input class="form-control" id="animal-name-(optional)" type="text" placeholder="Type animal name">
+                              </div>
+                              <div class="col-lg-6">
+                                <label class="form-label" for="animal-birthdate-(optional)">Animal birthdate (optional)</label>
+                                <input class="form-control datepicker js-datepicker" id="animal-birthdate-(optional)" type="text" readonly="readonly" placeholder="Select date">
+                              </div>
+                              <div class="col-lg-6">
+                                <label class="form-label">Animal type</label>
+                                <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                                  <option label="Select..."></option>
+                                  <option>Pet</option>
+                                  <option>Emotional Support Animal (ESA)</option>
+                                  <option>Service Animal (SA)</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-6">
+                                <label class="form-label" for="microchip-number-(optional)">Microchip number (optional)</label>
+                                <input class="form-control" id="microchip-number-(optional)" type="text" placeholder="Type microchip number">
+                              </div>
+                              <div class="col-lg-6">
+                                <label class="form-label">Species (optional)</label>
+                                <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                                  <option label="Select..."></option>
+                                  <option>Bird</option>
+                                  <option>Cat</option>
+                                  <option>Dog</option>
+                                  <option>Ferret</option>
+                                  <option>Fish</option>
+                                  <option>Guinea Pig</option>
+                                  <option>Hamster</option>
+                                  <option>Hedgehog</option>
+                                  <option>Mice</option>
+                                  <option>Rabbit</option>
+                                  <option>Reptile</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-6">
+                                <label class="form-label">Breed (optional)</label>
+                                <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select breed">
+                                  <option label="Select breed"></option>
+                                  <option label="Empty option"></option>
+                                </select>
+                              </div>
+                              <div class="col-lg-4">
+                                <label class="form-label">Primary color (optional)</label>
+                                <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select primary color">
+                                  <option label="Select primary color"></option>
+                                  <option>Black</option>
+                                  <option>Blue</option>
+                                  <option>Brown</option>
+                                  <option>Green</option>
+                                  <option>Grey</option>
+                                  <option>Orange</option>
+                                  <option>Red</option>
+                                  <option>Tan</option>
+                                  <option>White</option>
+                                  <option>Yellow</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-4">
+                                <label class="form-label">Secondary color1 (optional)</label>
+                                <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select Secondary Color1">
+                                  <option label="Select Secondary Color1"></option>
+                                  <option>Black</option>
+                                  <option>Blue</option>
+                                  <option>Brown</option>
+                                  <option>Green</option>
+                                  <option>Grey</option>
+                                  <option>Orange</option>
+                                  <option>Red</option>
+                                  <option>Tan</option>
+                                  <option>White</option>
+                                  <option>Yellow</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-4">
+                                <label class="form-label">Secondary color2 (optional)</label>
+                                <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select Secondary Color2">
+                                  <option label="Select Secondary Color2"></option>
+                                  <option>Black</option>
+                                  <option>Blue</option>
+                                  <option>Brown</option>
+                                  <option>Green</option>
+                                  <option>Grey</option>
+                                  <option>Orange</option>
+                                  <option>Red</option>
+                                  <option>Tan</option>
+                                  <option>White</option>
+                                  <option>Yellow</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-6">
+                                <label class="form-label" for="weight-(lbs,-optional)">Weight (lbs, optional)</label>
+                                <input class="form-control" id="weight-(lbs,-optional)" type="text" placeholder="Type weight">
+                              </div>
+                              <div class="col-12">
+                                <div class="row align-items-end gx-30 gy-20 gy-lg-10">
+                                  <div class="col-lg-auto">
+                                    <span class="form-label">Choose a gender (optional)</span>
+                                    <div class="radio-pills-list">
+                                      <label class="radio-pill">
+                                        <input class="radio-pill__input" name="Choose a gender" type="radio">
+                                        <span class="radio-pill__item">
+                                          <span class="icomoon-female"></span>
+                                          <span>Female</span>
+                                        </span>
+                                      </label>
+                                      <label class="radio-pill">
+                                        <input class="radio-pill__input" name="Choose a gender" type="radio">
+                                        <span class="radio-pill__item">
+                                          <span class="icomoon-male"></span>
+                                          <span>Male</span>
+                                        </span>
                                       </label>
                                     </div>
-                                    <div class="col-auto">
-                                      <label class="form-check">
-                                        <input class="form-check-input" name="Is your animal Spayed?" type="radio">
-                                        <span class="form-check-label">No</span>
-                                      </label>
+                                  </div>
+                                  <div class="col-lg-auto pb-lg-5">
+                                    <div class="row gx-20 gy-10">
+                                      <div class="col-lg-auto">
+                                        <p class="mb-0">Is your animal Spayed?</p>
+                                      </div>
+                                      <div class="col-lg-auto">
+                                        <div class="row gx-10 gy-5">
+                                          <div class="col-auto">
+                                            <label class="form-check">
+                                              <input class="form-check-input" name="Is your animal Spayed?" type="radio">
+                                              <span class="form-check-label">Yes</span>
+                                            </label>
+                                          </div>
+                                          <div class="col-auto">
+                                            <label class="form-check">
+                                              <input class="form-check-input" name="Is your animal Spayed?" type="radio">
+                                              <span class="form-check-label">No</span>
+                                            </label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-12">
+                                    <div class="row gx-20 gy-10">
+                                      <div class="col-lg-auto">
+                                        <p class="mb-0">Is this animal house trained?</p>
+                                      </div>
+                                      <div class="col-lg-auto">
+                                        <div class="row gx-10 gy-5">
+                                          <div class="col-auto">
+                                            <label class="form-check">
+                                              <input class="form-check-input" name="Is this animal house trained?" type="radio">
+                                              <span class="form-check-label">Yes</span>
+                                            </label>
+                                          </div>
+                                          <div class="col-auto">
+                                            <label class="form-check">
+                                              <input class="form-check-input" name="Is this animal house trained?" type="radio">
+                                              <span class="form-check-label">No</span>
+                                            </label>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="col-12">
+                                    <div class="row gx-20 gy-10">
+                                      <div class="col-lg-auto">
+                                        <p class="mb-0">Has the animal ever acted aggressively towards another person?</p>
+                                      </div>
+                                      <div class="col-lg-auto">
+                                        <div class="row gx-10 gy-5">
+                                          <div class="col-auto">
+                                            <label class="form-check">
+                                              <input class="form-check-input" name="Has the animal ever acted aggressively towards another person?" type="radio" checked="checked">
+                                              <span class="form-check-label">Yes</span>
+                                            </label>
+                                          </div>
+                                          <div class="col-auto">
+                                            <label class="form-check">
+                                              <input class="form-check-input" name="Has the animal ever acted aggressively towards another person?" type="radio">
+                                              <span class="form-check-label">No</span>
+                                            </label>
+                                          </div>
+                                        </div>
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                            </div>
-                            <div class="col-12">
-                              <div class="row gx-20 gy-10">
-                                <div class="col-lg-auto">
-                                  <p class="mb-0">Is this animal house trained?</p>
-                                </div>
-                                <div class="col-lg-auto">
-                                  <div class="row gx-10 gy-5">
-                                    <div class="col-auto">
-                                      <label class="form-check">
-                                        <input class="form-check-input" name="Is this animal house trained?" type="radio">
-                                        <span class="form-check-label">Yes</span>
-                                      </label>
-                                    </div>
-                                    <div class="col-auto">
-                                      <label class="form-check">
-                                        <input class="form-check-input" name="Is this animal house trained?" type="radio">
-                                        <span class="form-check-label">No</span>
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
+                              <div class="col-12">
+                                <label class="form-label" for="please-provide-details-about-the-incidents-of-aggression.">Please provide details about the incidents of aggression.</label>
+                                <textarea class="form-control" id="please-provide-details-about-the-incidents-of-aggression." placeholder="Type here"></textarea>
                               </div>
-                            </div>
-                            <div class="col-12">
-                              <div class="row gx-20 gy-10">
-                                <div class="col-lg-auto">
-                                  <p class="mb-0">Has the animal ever acted aggressively towards another person?</p>
-                                </div>
-                                <div class="col-lg-auto">
-                                  <div class="row gx-10 gy-5">
-                                    <div class="col-auto">
-                                      <label class="form-check">
-                                        <input class="form-check-input" name="Has the animal ever acted aggressively towards another person?" type="radio" checked="checked">
-                                        <span class="form-check-label">Yes</span>
-                                      </label>
-                                    </div>
-                                    <div class="col-auto">
-                                      <label class="form-check">
-                                        <input class="form-check-input" name="Has the animal ever acted aggressively towards another person?" type="radio">
-                                        <span class="form-check-label">No</span>
-                                      </label>
-                                    </div>
+                              <div class="col-12">
+                                <h6>Screening</h6>
+                                <p class="mb-10">Animal screening&nbsp;<span class="text-xs text-blue-lake-ice ms-5 align-middle icomoon-info" data-bs-toggle="tooltip" data-bs-custom-class="yellow-tooltip" data-bs-title="This action will turn On/Off the notifications for this animal"></span>
+                                </p>
+                                <div class="row gx-10 gy-5">
+                                  <div class="col-auto">
+                                    <label class="form-check">
+                                      <input class="form-check-input" name="Animal screening" type="radio">
+                                      <span class="form-check-label">On</span>
+                                    </label>
+                                  </div>
+                                  <div class="col-auto">
+                                    <label class="form-check">
+                                      <input class="form-check-input" name="Animal screening" type="radio">
+                                      <span class="form-check-label">Off</span>
+                                    </label>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
-                        </div>
-                        <div class="col-12">
-                          <label class="form-label" for="please-provide-details-about-the-incidents-of-aggression.">Please provide details about the incidents of aggression.</label>
-                          <textarea class="form-control" id="please-provide-details-about-the-incidents-of-aggression." placeholder="Type here"></textarea>
-                        </div>
-                        <div class="col-12">
-                          <h6>Screening</h6>
-                          <p class="d-flex align-items-center flex-nowrap mb-10">
-                            <span>Animal screening</span>
-                            <span class="text-xs text-blue-lake-ice ms-5 icomoon-info" data-bs-toggle="tooltip" data-bs-custom-class="yellow-tooltip" data-bs-title="This action will turn On/Off the notifications for this animal"></span>
-                          </p>
-                          <div class="row gx-10 gy-5">
-                            <div class="col-auto">
-                              <label class="form-check">
-                                <input class="form-check-input" name="Animal screening" type="radio">
-                                <span class="form-check-label">On</span>
-                              </label>
+                          <div class="modal-footer">
+                            <div>
+                              <div class="row flex-grow-1 gx-20 gy-10">
+                                <div class="col-auto">
+                                  <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">CREATE ANIMAL
+                                  </button>
+                                </div>
+                              </div>
                             </div>
-                            <div class="col-auto">
-                              <label class="form-check">
-                                <input class="form-check-input" name="Animal screening" type="radio">
-                                <span class="form-check-label">Off</span>
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <div>
-                        <div class="row flex-grow-1 gx-20 gy-10">
-                          <div class="col-auto">
-                            <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">CREATE ANIMAL
-                            </button>
                           </div>
                         </div>
                       </div>
@@ -754,7 +760,7 @@
                         <input class="form-control bordered-version" type="text" placeholder="Search">
                       </th>
                       <th>
-                        <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <select class="form-select js-select bordered-version" data-dropdown-css-class=" bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
                           <option label="Select..."></option>
                           <option>All</option>
                           <option>Pending ESA</option>
@@ -853,14 +859,8 @@
                     <tr>
                       <td>
                         <div class="name-item">
-                          <div class="row align-items-center flex-nowrap gx-10">
-                            <div class="col-auto">
-                              <div class="name-item__round-badge">D</div>
-                            </div>
-                            <div class="col-auto">
-                              <p class="name-item__text">Dog</p>
-                            </div>
-                          </div>
+                          <div class="name-item__round-badge">D</div>
+                          <p class="name-item__text">Dog</p>
                         </div>
                       </td>
                       <td>Rachel Danny</td>
@@ -901,14 +901,8 @@
                     <tr>
                       <td>
                         <div class="name-item">
-                          <div class="row align-items-center flex-nowrap gx-10">
-                            <div class="col-auto">
-                              <div class="name-item__round-badge">D1</div>
-                            </div>
-                            <div class="col-auto">
-                              <p class="name-item__text">Dog</p>
-                            </div>
-                          </div>
+                          <div class="name-item__round-badge">D1</div>
+                          <p class="name-item__text">Dog</p>
                         </div>
                       </td>
                       <td>Rachel Danny</td>
@@ -949,14 +943,8 @@
                     <tr>
                       <td>
                         <div class="name-item">
-                          <div class="row align-items-center flex-nowrap gx-10">
-                            <div class="col-auto">
-                              <div class="name-item__round-badge">D2</div>
-                            </div>
-                            <div class="col-auto">
-                              <p class="name-item__text">Dog</p>
-                            </div>
-                          </div>
+                          <div class="name-item__round-badge">D2</div>
+                          <p class="name-item__text">Dog</p>
                         </div>
                       </td>
                       <td>Rachel Danny</td>
@@ -1268,7 +1256,7 @@
                         <input class="form-control bordered-version" type="text" placeholder="Search">
                       </th>
                       <th>
-                        <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <select class="form-select js-select bordered-version" data-dropdown-css-class=" bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
                           <option label="Select..."></option>
                           <option>All</option>
                           <option>Pet</option>
@@ -1324,7 +1312,7 @@
                         </select>
                       </th>
                       <th>
-                        <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <select class="form-select js-select bordered-version" data-dropdown-css-class=" bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
                           <option label="Select..."></option>
                           <option>All</option>
                           <option>Yes</option>
@@ -1395,14 +1383,8 @@
                     <tr>
                       <td>
                         <div class="name-item">
-                          <div class="row align-items-center flex-nowrap gx-10">
-                            <div class="col-auto">
-                              <div class="name-item__round-badge">D</div>
-                            </div>
-                            <div class="col-auto">
-                              <p class="name-item__text">Dog</p>
-                            </div>
-                          </div>
+                          <div class="name-item__round-badge">D</div>
+                          <p class="name-item__text">Dog</p>
                         </div>
                       </td>
                       <td>Rachel Danny</td>
@@ -1453,14 +1435,8 @@
                     <tr>
                       <td>
                         <div class="name-item">
-                          <div class="row align-items-center flex-nowrap gx-10">
-                            <div class="col-auto">
-                              <div class="name-item__round-badge">D</div>
-                            </div>
-                            <div class="col-auto">
-                              <p class="name-item__text">Dog</p>
-                            </div>
-                          </div>
+                          <div class="name-item__round-badge">D</div>
+                          <p class="name-item__text">Dog</p>
                         </div>
                       </td>
                       <td>Rachel Danny</td>
@@ -1511,14 +1487,8 @@
                     <tr>
                       <td>
                         <div class="name-item">
-                          <div class="row align-items-center flex-nowrap gx-10">
-                            <div class="col-auto">
-                              <div class="name-item__round-badge">D</div>
-                            </div>
-                            <div class="col-auto">
-                              <p class="name-item__text">Dog</p>
-                            </div>
-                          </div>
+                          <div class="name-item__round-badge">D</div>
+                          <p class="name-item__text">Dog</p>
                         </div>
                       </td>
                       <td>Rachel Danny</td>
@@ -1569,14 +1539,8 @@
                     <tr>
                       <td>
                         <div class="name-item">
-                          <div class="row align-items-center flex-nowrap gx-10">
-                            <div class="col-auto">
-                              <div class="name-item__round-badge">D</div>
-                            </div>
-                            <div class="col-auto">
-                              <p class="name-item__text">Dog</p>
-                            </div>
-                          </div>
+                          <div class="name-item__round-badge">D</div>
+                          <p class="name-item__text">Dog</p>
                         </div>
                       </td>
                       <td>Rachel Danny</td>
@@ -1829,7 +1793,7 @@
                         <input class="form-control bordered-version" type="text" placeholder="Search">
                       </th>
                       <th>
-                        <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <select class="form-select js-select bordered-version" data-dropdown-css-class=" bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
                           <option label="Select..."></option>
                           <option>All</option>
                           <option>Pet</option>
@@ -1882,14 +1846,8 @@
                     <tr>
                       <td>
                         <div class="name-item">
-                          <div class="row align-items-center flex-nowrap gx-10">
-                            <div class="col-auto">
-                              <div class="name-item__round-badge">C</div>
-                            </div>
-                            <div class="col-auto">
-                              <p class="name-item__text">Cat</p>
-                            </div>
-                          </div>
+                          <div class="name-item__round-badge">C</div>
+                          <p class="name-item__text">Cat</p>
                         </div>
                       </td>
                       <td>Catherine Su</td>
@@ -2109,7 +2067,7 @@
                         <input class="form-control bordered-version" type="text" placeholder="Search">
                       </th>
                       <th>
-                        <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <select class="form-select js-select bordered-version" data-dropdown-css-class=" bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
                           <option label="Select..."></option>
                           <option>All</option>
                           <option>Pending ESA</option>
@@ -2195,14 +2153,8 @@
                     <tr>
                       <td>
                         <div class="name-item">
-                          <div class="row align-items-center flex-nowrap gx-10">
-                            <div class="col-auto">
-                              <div class="name-item__round-badge">D</div>
-                            </div>
-                            <div class="col-auto">
-                              <p class="name-item__text">Dog</p>
-                            </div>
-                          </div>
+                          <div class="name-item__round-badge">D</div>
+                          <p class="name-item__text">Dog</p>
                         </div>
                       </td>
                       <td>Rachel Danny</td>
@@ -2499,7 +2451,7 @@
                       </th>
                       <th></th>
                       <th>
-                        <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <select class="form-select js-select bordered-version" data-dropdown-css-class=" bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
                           <option label="Select..."></option>
                           <option>All</option>
                           <option>Pet</option>
@@ -2508,7 +2460,7 @@
                         </select>
                       </th>
                       <th>
-                        <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <select class="form-select js-select bordered-version" data-dropdown-css-class=" bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
                           <option label="Select..."></option>
                           <option>Yes</option>
                           <option>No</option>
@@ -2538,14 +2490,8 @@
                     <tr>
                       <td>
                         <div class="name-item">
-                          <div class="row align-items-center flex-nowrap gx-10">
-                            <div class="col-auto">
-                              <div class="name-item__round-badge">D</div>
-                            </div>
-                            <div class="col-auto">
-                              <p class="name-item__text">Dog</p>
-                            </div>
-                          </div>
+                          <div class="name-item__round-badge">D</div>
+                          <p class="name-item__text">Dog</p>
                         </div>
                       </td>
                       <td>Rachel Danny</td>
@@ -2730,14 +2676,8 @@
                     <tr>
                       <td>
                         <div class="name-item">
-                          <div class="row align-items-center flex-nowrap gx-10">
-                            <div class="col-auto">
-                              <div class="name-item__round-badge">D</div>
-                            </div>
-                            <div class="col-auto">
-                              <p class="name-item__text">Dog</p>
-                            </div>
-                          </div>
+                          <div class="name-item__round-badge">D</div>
+                          <p class="name-item__text">Dog</p>
                         </div>
                       </td>
                       <td>Rachel Danny</td>
