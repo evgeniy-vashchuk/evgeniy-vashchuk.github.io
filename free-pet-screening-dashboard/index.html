@@ -1,5 +1,3 @@
-<!-- base -->
-<!-- additional -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -170,7 +168,7 @@
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end">
                   <li>
-                    <a class="dropdown-item" href="#">Profile settings</a>
+                    <a class="dropdown-item" href="profile-settings.html">Profile settings</a>
                   </li>
                   <li>
                     <a class="dropdown-item" href="#">Log out</a>
@@ -194,538 +192,585 @@
   <main class="dashboard">
     <div class="dashboard__main">
       <div class="container-fluid">
-        <h1>Heading h1</h1>
-        <h2>Heading h2</h2>
-        <h3>Heading h3</h3>
-        <h4>Heading h4</h4>
-        <h5>Heading h5</h5>
-        <h6>Heading h6</h6>
-        <div class="table-responsive mb-30">
-          <table class="table table-striped">
-            <thead>
-              <tr>
-                <th class="with-sorting">Animal name <span class="icomoon-arrows-double-vertical"></span>
-                </th>
-                <th>Tenant name</th>
-                <th>Pending conversion</th>
-                <th>Animal status</th>
-                <th>Verification status</th>
-                <th>Property</th>
-                <th>Animal tag</th>
-                <th>Unit</th>
-                <th>Move in date</th>
-                <th>Move out date</th>
-                <th>Species</th>
-                <th>Breed</th>
-                <th>Birthday</th>
-                <th>Weight(lbs)</th>
-                <th>DNA</th>
-                <th>DNA record</th>
-                <th class="with-gear">
-                  <div class="dropdown d-inline-flex">
-                    <button class="dropdown-toggle btn-gear" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,10" data-bs-auto-close="outside" data-bs-popper-config="{&quot;strategy&quot;:&quot;fixed&quot;}">
-                      <span class="icomoon-gear"></span>
-                    </button>
-                    <div class="dropdown-menu table-ordering dropdown-menu-end">
-                      <div class="dropdown-menu__content js-sortable">
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
+        <div class="card wrapper">
+          <h1>Heading h1</h1>
+          <h2>Heading h2</h2>
+          <h3>Heading h3</h3>
+          <h4>Heading h4</h4>
+          <h5>Heading h5</h5>
+          <h6>Heading h6</h6>
+          <div class="mb-30">
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th class="with-sorting">Animal name <span class="icomoon-arrows-double-vertical"></span>
+                    </th>
+                    <th>Tenant name</th>
+                    <th>Pending conversion</th>
+                    <th>Animal status</th>
+                    <th>Verification status</th>
+                    <th>Property</th>
+                    <th>Animal tag</th>
+                    <th>Unit</th>
+                    <th>Move in date</th>
+                    <th>Move out date</th>
+                    <th>Species</th>
+                    <th>Breed</th>
+                    <th>Birthday</th>
+                    <th>Weight(lbs)</th>
+                    <th>DNA</th>
+                    <th>DNA record</th>
+                    <th class="with-gear">
+                      <div class="dropdown d-inline-flex">
+                        <button class="dropdown-toggle btn-gear" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,10" data-bs-auto-close="outside" data-bs-popper-config="{&quot;strategy&quot;:&quot;fixed&quot;}">
+                          <span class="icomoon-gear"></span>
+                        </button>
+                        <div class="dropdown-menu table-ordering dropdown-menu-end">
+                          <div class="dropdown-menu__content js-sortable">
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox" checked="checked">
+                                  <span class="form-check-label">Tenant name</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">Pending conversion</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">Animal status</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">Verification status</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">Property</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">Animal tag</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">Unit</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">Move in date</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">Move out date</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">Breed</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">Birthday</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">Weight(lbs)</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">DNA</span>
+                                </label>
+                              </div>
+                            </div>
+                            <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
+                              <div class="col-auto">
+                                <button class="btn-drag-and-drop js-sortable-handle" type="button">
+                                  <span class="icomoon-move"></span>
+                                </button>
+                              </div>
+                              <div class="col">
+                                <label class="form-check sm fw-bold">
+                                  <input class="form-check-input" type="checkbox">
+                                  <span class="form-check-label">DNA record</span>
+                                </label>
+                              </div>
+                            </div>
                           </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox" checked="checked">
-                              <span class="form-check-label">Tenant name</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">Pending conversion</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">Animal status</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">Verification status</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">Property</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">Animal tag</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">Unit</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">Move in date</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">Move out date</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">Breed</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">Birthday</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">Weight(lbs)</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">DNA</span>
-                            </label>
-                          </div>
-                        </div>
-                        <div class="row align-items-center flex-nowrap gx-10 py-5 bg-white">
-                          <div class="col-auto">
-                            <button class="btn-drag-and-drop js-sortable-handle" type="button">
-                              <span class="icomoon-move"></span>
-                            </button>
-                          </div>
-                          <div class="col">
-                            <label class="form-check sm fw-bold">
-                              <input class="form-check-input" type="checkbox">
-                              <span class="form-check-label">DNA record</span>
-                            </label>
+                          <div class="dropdown-menu__footer">
+                            <div class="row gx-10 gy-5">
+                              <div class="col-auto">
+                                <button class="btn btn-blue-light btn-sm js-close-dropdown" type="button">APPLY
+                                </button>
+                              </div>
+                              <div class="col-auto">
+                                <button class="btn btn-link btn-sm js-close-dropdown" type="button">Cancel
+                                </button>
+                              </div>
+                            </div>
                           </div>
                         </div>
                       </div>
-                      <div class="dropdown-menu__footer">
-                        <div class="row gx-10 gy-5">
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>
+                      <input class="form-control bordered-version" type="text" placeholder="Search">
+                    </th>
+                    <th>
+                      <input class="form-control bordered-version" type="text" placeholder="Search">
+                    </th>
+                    <th>
+                      <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <option label="Select..."></option>
+                        <option>All</option>
+                        <option>Pending ESA</option>
+                        <option>Pending SA</option>
+                        <option>None</option>
+                      </select>
+                    </th>
+                    <th>
+                      <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <option label="Select..."></option>
+                        <option>Select All</option>
+                        <option>Future Animal</option>
+                        <option>Moved Out</option>
+                        <option>Pending</option>
+                        <option>Not Approved</option>
+                        <option>Retracted</option>
+                        <option>Moved In</option>
+                        <option>Conditionally Approved</option>
+                        <option>Conditionally Moved In</option>
+                      </select>
+                    </th>
+                    <th>
+                      <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <option label="Select..."></option>
+                        <option>Select All</option>
+                        <option>Not Verified</option>
+                        <option>Verified</option>
+                      </select>
+                    </th>
+                    <th>
+                      <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <option label="Select..."></option>
+                        <option>Select All</option>
+                        <option>Southwest 25th St</option>
+                        <option>Southwest 9th Ave</option>
+                      </select>
+                    </th>
+                    <th>
+                      <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <option label="Select..."></option>
+                        <option>Select All</option>
+                        <option>Known</option>
+                        <option>Discovered</option>
+                      </select>
+                    </th>
+                    <th>
+                      <input class="form-control bordered-version" type="text" placeholder="Search">
+                    </th>
+                    <th></th>
+                    <th></th>
+                    <th>
+                      <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <option label="Select..."></option>
+                        <option>Select All</option>
+                        <option>Bird</option>
+                        <option>Cat</option>
+                        <option>Dog</option>
+                        <option>Ferret</option>
+                        <option>Fish</option>
+                        <option>Guinea Pig</option>
+                        <option>Hamster</option>
+                        <option>Hedgehog</option>
+                        <option>Mice</option>
+                        <option>Rabbit</option>
+                        <option>Reptile</option>
+                        <option>Other</option>
+                      </select>
+                    </th>
+                    <th>
+                      <input class="form-control bordered-version" type="text" placeholder="Search">
+                    </th>
+                    <th></th>
+                    <th>
+                      <input class="form-control bordered-version" type="text" placeholder="Search">
+                    </th>
+                    <th>
+                      <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <option label="Select..."></option>
+                        <option>Select All</option>
+                        <option>Required</option>
+                        <option>Not Required</option>
+                      </select>
+                    </th>
+                    <th>
+                      <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                        <option label="Select..."></option>
+                        <option>Select All</option>
+                        <option>Collected</option>
+                        <option>Not Collected</option>
+                      </select>
+                    </th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <div class="name-item">
+                        <div class="name-item__round-badge">D</div>
+                        <p class="name-item__text">Dog</p>
+                      </div>
+                    </td>
+                    <td>Rachel Danny</td>
+                    <td>None</td>
+                    <td>
+                      <span class="badge bg-blue-light text-secondary">
+                        <span>Moved In</span>
+                        <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
+                      </span>
+                    </td>
+                    <td>
+                      <div class="alert-exclamation">
+                        <div class="row align-items-center flex-nowrap gx-10">
                           <div class="col-auto">
-                            <button class="btn btn-blue-light btn-sm js-close-dropdown" type="button">APPLY
-                            </button>
-                          </div>
-                          <div class="col-auto">
-                            <button class="btn btn-link btn-sm js-close-dropdown" type="button">Cancel
-                            </button>
+                            <p class="mb-0">Not verified</p>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </th>
-              </tr>
-              <tr>
-                <th>
-                  <input class="form-control bordered-version" type="text" placeholder="Search">
-                </th>
-                <th>
-                  <input class="form-control bordered-version" type="text" placeholder="Search">
-                </th>
-                <th>
-                  <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                    <option label="Select..."></option>
-                    <option>All</option>
-                    <option>Pending ESA</option>
-                    <option>Pending SA</option>
-                    <option>None</option>
-                  </select>
-                </th>
-                <th>
-                  <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                    <option label="Select..."></option>
-                    <option>Select All</option>
-                    <option>Future Animal</option>
-                    <option>Moved Out</option>
-                    <option>Pending</option>
-                    <option>Not Approved</option>
-                    <option>Retracted</option>
-                    <option>Moved In</option>
-                    <option>Conditionally Approved</option>
-                    <option>Conditionally Moved In</option>
-                  </select>
-                </th>
-                <th>
-                  <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                    <option label="Select..."></option>
-                    <option>Select All</option>
-                    <option>Not Verified</option>
-                    <option>Verified</option>
-                  </select>
-                </th>
-                <th>
-                  <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                    <option label="Select..."></option>
-                    <option>Select All</option>
-                    <option>Southwest 25th St</option>
-                    <option>Southwest 9th Ave</option>
-                  </select>
-                </th>
-                <th>
-                  <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                    <option label="Select..."></option>
-                    <option>Select All</option>
-                    <option>Known</option>
-                    <option>Discovered</option>
-                  </select>
-                </th>
-                <th>
-                  <input class="form-control bordered-version" type="text" placeholder="Search">
-                </th>
-                <th></th>
-                <th></th>
-                <th>
-                  <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                    <option label="Select..."></option>
-                    <option>Select All</option>
-                    <option>Bird</option>
-                    <option>Cat</option>
-                    <option>Dog</option>
-                    <option>Ferret</option>
-                    <option>Fish</option>
-                    <option>Guinea Pig</option>
-                    <option>Hamster</option>
-                    <option>Hedgehog</option>
-                    <option>Mice</option>
-                    <option>Rabbit</option>
-                    <option>Reptile</option>
-                    <option>Other</option>
-                  </select>
-                </th>
-                <th>
-                  <input class="form-control bordered-version" type="text" placeholder="Search">
-                </th>
-                <th></th>
-                <th>
-                  <input class="form-control bordered-version" type="text" placeholder="Search">
-                </th>
-                <th>
-                  <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                    <option label="Select..."></option>
-                    <option>Select All</option>
-                    <option>Required</option>
-                    <option>Not Required</option>
-                  </select>
-                </th>
-                <th>
-                  <select class="form-select js-select bordered-version" data-dropdown-css-class="checkbox-view bordered-version" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                    <option label="Select..."></option>
-                    <option>Select All</option>
-                    <option>Collected</option>
-                    <option>Not Collected</option>
-                  </select>
-                </th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <div class="name-item">
-                    <div class="name-item__round-badge">D</div>
-                    <p class="name-item__text">Dog</p>
-                  </div>
-                </td>
-                <td>Rachel Danny</td>
-                <td>None</td>
-                <td>
-                  <span class="badge bg-blue-light text-secondary">
-                    <span>Moved In</span>
-                    <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
-                  </span>
-                </td>
-                <td>
-                  <div class="alert-exclamation">
-                    <div class="row align-items-center flex-nowrap gx-10">
-                      <div class="col-auto">
-                        <p class="mb-0">Not verified</p>
+                    </td>
+                    <td>Southwest 25th St</td>
+                    <td>
+                      <span class="tag">Known</span>
+                    </td>
+                    <td>1111</td>
+                    <td>09/30/2023</td>
+                    <td>09/30/2024</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="name-item">
+                        <div class="name-item__round-badge">D1</div>
+                        <p class="name-item__text">Dog</p>
                       </div>
-                    </div>
-                  </div>
-                </td>
-                <td>Southwest 25th St</td>
-                <td>
-                  <span class="tag">Known</span>
-                </td>
-                <td>1111</td>
-                <td>09/30/2023</td>
-                <td>09/30/2024</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="name-item">
-                    <div class="name-item__round-badge">D1</div>
-                    <p class="name-item__text">Dog</p>
-                  </div>
-                </td>
-                <td>Rachel Danny</td>
-                <td>None</td>
-                <td>
-                  <span class="badge bg-blue-light text-secondary">
-                    <span>Moved In</span>
-                    <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
-                  </span>
-                </td>
-                <td>
-                  <div class="alert-exclamation">
-                    <div class="row align-items-center flex-nowrap gx-10">
-                      <div class="col-auto">
-                        <p class="mb-0">Not verified</p>
+                    </td>
+                    <td>Rachel Danny</td>
+                    <td>None</td>
+                    <td>
+                      <span class="badge bg-blue-light text-secondary">
+                        <span>Moved In</span>
+                        <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
+                      </span>
+                    </td>
+                    <td>
+                      <div class="alert-exclamation">
+                        <div class="row align-items-center flex-nowrap gx-10">
+                          <div class="col-auto">
+                            <p class="mb-0">Not verified</p>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </td>
-                <td>Southwest 25th St</td>
-                <td>
-                  <span class="tag">Known</span>
-                </td>
-                <td>1111</td>
-                <td>09/30/2023</td>
-                <td>09/30/2024</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  <div class="name-item">
-                    <div class="name-item__round-badge">D2</div>
-                    <p class="name-item__text">Dog</p>
-                  </div>
-                </td>
-                <td>Rachel Danny</td>
-                <td>None</td>
-                <td>
-                  <span class="badge bg-blue-light text-secondary">
-                    <span>Moved In</span>
-                    <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
-                  </span>
-                </td>
-                <td>
-                  <div class="alert-exclamation">
-                    <div class="row align-items-center flex-nowrap gx-10">
-                      <div class="col-auto">
-                        <p class="mb-0">Not verified</p>
+                    </td>
+                    <td>Southwest 25th St</td>
+                    <td>
+                      <span class="tag">Known</span>
+                    </td>
+                    <td>1111</td>
+                    <td>09/30/2023</td>
+                    <td>09/30/2024</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="name-item">
+                        <div class="name-item__round-badge">D2</div>
+                        <p class="name-item__text">Dog</p>
                       </div>
-                    </div>
-                  </div>
-                </td>
-                <td>Southwest 25th St</td>
-                <td>
-                  <span class="tag">Discovered</span>
-                </td>
-                <td>1111</td>
-                <td>09/30/2023</td>
-                <td>09/30/2024</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td>N/A</td>
-                <td>N/A</td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="row g-15 mb-30">
-          <div class="col-auto">
-            <span class="tag">Known</span>
+                    </td>
+                    <td>Rachel Danny</td>
+                    <td>None</td>
+                    <td>
+                      <span class="badge bg-blue-light text-secondary">
+                        <span>Moved In</span>
+                        <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
+                      </span>
+                    </td>
+                    <td>
+                      <div class="alert-exclamation">
+                        <div class="row align-items-center flex-nowrap gx-10">
+                          <div class="col-auto">
+                            <p class="mb-0">Not verified</p>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                    <td>Southwest 25th St</td>
+                    <td>
+                      <span class="tag">Discovered</span>
+                    </td>
+                    <td>1111</td>
+                    <td>09/30/2023</td>
+                    <td>09/30/2024</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>N/A</td>
+                    <td>N/A</td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-footer">
+              <div class="row flex-column flex-md-row align-items-center justify-content-center justify-content-md-end g-30">
+                <div class="col-auto">
+                  <p class="mb-0">Results: 1-10 of 34</p>
+                </div>
+                <div class="col-auto">
+                  <nav aria-label="Pagination">
+                    <ul class="pagination">
+                      <li class="page-item disabled">
+                        <a class="page-link" aria-label="Previous" href="#">
+                          <span class="icomoon-chevron-left" aria-hidden="true"></span>
+                        </a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">4</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" aria-label="Next" href="#">
+                          <span class="icomoon-chevron-right" aria-hidden="true"></span>
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+                <div class="col-auto">
+                  <select class="form-select js-select pagination-version" data-dropdown-css-class=" pagination-version" data-minimum-results-for-search="-1">
+                    <option>10/page</option>
+                    <option>20/page</option>
+                    <option>50/page</option>
+                    <option>100/page</option>
+                  </select>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-auto">
-            <span class="tag">Discovered</span>
+          <div class="row g-15 mb-30">
+            <div class="col-auto">
+              <span class="tag">Known</span>
+            </div>
+            <div class="col-auto">
+              <span class="tag">Discovered</span>
+            </div>
           </div>
-        </div>
-        <div class="row g-15 mb-30">
-          <div class="col-auto">
-            <span class="badge bg-danger text-white">
-              <span>Not Approved</span>
-              <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-custom-class="yellow-tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
-            </span>
+          <div class="row g-15 mb-30">
+            <div class="col-auto">
+              <span class="badge bg-danger text-white">
+                <span>Not Approved</span>
+                <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-custom-class="yellow-tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
+              </span>
+            </div>
+            <div class="col-auto">
+              <span class="badge bg-red-faded text-white">
+                <span>Moved Out</span>
+                <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
+              </span>
+            </div>
+            <div class="col-auto">
+              <span class="badge bg-warning text-secondary">
+                <span>Pending</span>
+                <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
+              </span>
+            </div>
+            <div class="col-auto">
+              <span class="badge bg-blue-light text-secondary">
+                <span>Moved In</span>
+                <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
+              </span>
+            </div>
+            <div class="col-auto">
+              <span class="badge bg-primary text-white">
+                <span>Conditionally Approved</span>
+                <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
+              </span>
+            </div>
+            <div class="col-auto">
+              <span class="badge bg-blue-lake-ice text-white">
+                <span>Conditionally Moved In</span>
+                <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
+              </span>
+            </div>
+            <div class="col-auto">
+              <span class="badge bg-gray text-white">
+                <span>Unspecified</span>
+                <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
+              </span>
+            </div>
           </div>
-          <div class="col-auto">
-            <span class="badge bg-red-faded text-white">
-              <span>Moved Out</span>
-              <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
-            </span>
-          </div>
-          <div class="col-auto">
-            <span class="badge bg-warning text-secondary">
-              <span>Pending</span>
-              <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
-            </span>
-          </div>
-          <div class="col-auto">
-            <span class="badge bg-blue-light text-secondary">
-              <span>Moved In</span>
-              <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
-            </span>
-          </div>
-          <div class="col-auto">
-            <span class="badge bg-primary text-white">
-              <span>Conditionally Approved</span>
-              <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
-            </span>
-          </div>
-          <div class="col-auto">
-            <span class="badge bg-blue-iceberg text-white">
-              <span>Conditionally Moved In</span>
-              <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
-            </span>
-          </div>
-          <div class="col-auto">
-            <span class="badge bg-gray text-white">
-              <span>Unspecified</span>
-              <span class="icomoon-info" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-title="Applied by: Vivian Santilli Date: 06/23/2024 16:38 PM"></span>
-            </span>
-          </div>
-        </div>
-        <div class="row gy-15 mb-20">
-          <div class="col-auto">
-            <a class="btn btn-primary" href="#">MOVE OUT THE ANIMAL</a>
-          </div>
-          <div class="col-auto">
-            <a class="btn btn-blue-light" href="#" data-bs-toggle="modal" data-bs-target="#modal-create-new-animal">CREATE ANIMAL</a>
+          <div class="row gy-15 mb-20">
+            <div class="col-auto">
+              <a class="btn btn-primary" href="#">MOVE OUT THE ANIMAL</a>
+            </div>
+            <div class="col-auto">
+              <a class="btn btn-blue-light" href="#" data-bs-toggle="modal" data-bs-target="#modal-create-new-animal">CREATE ANIMAL</a>
 
-            <div class="modal fade" aria-labelledby="modal-create-new-animal-label" aria-hidden="true" id="modal-create-new-animal" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="modal-create-new-animal-label">Create new animal</h5>
-                    <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
-                  </div>
-                  <div class="modal-body">
-                    <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, eveniet cupiditate iure libero ex debitis inventore voluptatibus laborum quidem quasi sequi quos deleniti facilis reprehenderit! Eaque odio suscipit culpa officia.</p>
-                  </div>
-                  <div class="modal-footer">
-                    <div>
-                      <div class="row flex-grow-1 gx-20 gy-10">
-                        <div class="col-auto">
-                          <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">CREATE ANIMAL
-                          </button>
+              <div class="modal fade" aria-labelledby="modal-create-new-animal-label" aria-hidden="true" id="modal-create-new-animal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modal-create-new-animal-label">Create new animal</h5>
+                      <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
+                    </div>
+                    <div class="modal-body">
+                      <p class="mb-0">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab, eveniet cupiditate iure libero ex debitis inventore voluptatibus laborum quidem quasi sequi quos deleniti facilis reprehenderit! Eaque odio suscipit culpa officia.</p>
+                    </div>
+                    <div class="modal-footer">
+                      <div>
+                        <div class="row flex-grow-1 g-10">
+                          <div class="col-auto">
+                            <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">CREATE ANIMAL
+                            </button>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -733,152 +778,193 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-auto">
-            <a class="btn btn-primary btn-sm" href="#">
-              <span class="icomoon-plus-rounded"></span>
-              <span>Approve</span>
-            </a>
-          </div>
-          <div class="col-auto">
-            <a class="btn btn-red-faded btn-sm" href="#">
-              <span class="icomoon-close"></span>
-              <span>Don’t approve</span>
-            </a>
-          </div>
-          <div class="col-auto">
-            <div class="dropdown d-inline-flex">
-              <button class="btn btn-primary btn-sm" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,0">
-                <span class="icomoon-triangle-down"></span>
-                <span>Actions</span>
-              </button>
-              <ul class="dropdown-menu dropdown-menu-end">
-                <li>
-                  <a class="dropdown-item" href="#">Cancel Move Out</a>
-                </li>
-              </ul>
+            <div class="col-auto">
+              <a class="btn btn-primary btn-sm" href="#">
+                <span class="icomoon-plus-rounded"></span>
+                <span>Approve</span>
+              </a>
+            </div>
+            <div class="col-auto">
+              <a class="btn btn-red-faded btn-sm" href="#">
+                <span class="icomoon-close"></span>
+                <span>Don’t approve</span>
+              </a>
+            </div>
+            <div class="col-auto">
+              <div class="dropdown d-inline-flex">
+                <button class="btn btn-primary btn-sm" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,0">
+                  <span class="icomoon-triangle-down"></span>
+                  <span>Actions</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#">Cancel Move Out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-auto">
+              <a class="btn btn-outline-secondary" href="#">Export CSV</a>
+            </div>
+            <div class="col-auto">
+              <a class="btn btn-link" href="#">Cancel</a>
             </div>
           </div>
-          <div class="col-auto">
-            <a class="btn btn-outline-secondary" href="#">Export CSV</a>
+          <div class="mb-30"></div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae provident aspernatur odio magnam est aut libero iure ex error perspiciatis facere, velit exercitationem inventore consectetur itaque quos nobis! Necessitatibus incidunt eius quasi veritatis ipsum, porro excepturi eos officia harum consequuntur quae earum mollitia sint vel quaerat voluptatibus optio quod itaque quis error placeat libero. Esse, nobis sapiente officiis omnis rem, tempora quod eius, est blanditiis reprehenderit in nemo corrupti cumque. Nihil quaerat quam vero sint, sequi obcaecati facilis veritatis provident repellat quae at neque sapiente illum. Aut quisquam aliquam, aspernatur iste architecto repellendus, blanditiis accusamus hic temporibus molestias veritatis voluptatem.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae provident aspernatur odio magnam est aut libero iure ex error perspiciatis facere, velit exercitationem inventore consectetur itaque quos nobis! Necessitatibus incidunt eius quasi veritatis ipsum, porro excepturi eos officia harum consequuntur quae earum mollitia sint vel quaerat voluptatibus optio quod itaque quis error placeat libero. Esse, nobis sapiente officiis omnis rem, tempora quod eius, est blanditiis reprehenderit in nemo corrupti cumque. Nihil quaerat quam vero sint, sequi obcaecati facilis veritatis provident repellat quae at neque sapiente illum. Aut quisquam aliquam, aspernatur iste architecto repellendus, blanditiis accusamus hic temporibus molestias veritatis voluptatem.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae provident aspernatur odio magnam est aut libero iure ex error perspiciatis facere, velit exercitationem inventore consectetur itaque quos nobis! Necessitatibus incidunt eius quasi veritatis ipsum, porro excepturi eos officia harum consequuntur quae earum mollitia sint vel quaerat voluptatibus optio quod itaque quis error placeat libero. Esse, nobis sapiente officiis omnis rem, tempora quod eius, est blanditiis reprehenderit in nemo corrupti cumque. Nihil quaerat quam vero sint, sequi obcaecati facilis veritatis provident repellat quae at neque sapiente illum. Aut quisquam aliquam, aspernatur iste architecto repellendus, blanditiis accusamus hic temporibus molestias veritatis voluptatem.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae provident aspernatur odio magnam est aut libero iure ex error perspiciatis facere, velit exercitationem inventore consectetur itaque quos nobis! Necessitatibus incidunt eius quasi veritatis ipsum, porro excepturi eos officia harum consequuntur quae earum mollitia sint vel quaerat voluptatibus optio quod itaque quis error placeat libero. Esse, nobis sapiente officiis omnis rem, tempora quod eius, est blanditiis reprehenderit in nemo corrupti cumque. Nihil quaerat quam vero sint, sequi obcaecati facilis veritatis provident repellat quae at neque sapiente illum. Aut quisquam aliquam, aspernatur iste architecto repellendus, blanditiis accusamus hic temporibus molestias veritatis voluptatem.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae provident aspernatur odio magnam est aut libero iure ex error perspiciatis facere, velit exercitationem inventore consectetur itaque quos nobis! Necessitatibus incidunt eius quasi veritatis ipsum, porro excepturi eos officia harum consequuntur quae earum mollitia sint vel quaerat voluptatibus optio quod itaque quis error placeat libero. Esse, nobis sapiente officiis omnis rem, tempora quod eius, est blanditiis reprehenderit in nemo corrupti cumque. Nihil quaerat quam vero sint, sequi obcaecati facilis veritatis provident repellat quae at neque sapiente illum. Aut quisquam aliquam, aspernatur iste architecto repellendus, blanditiis accusamus hic temporibus molestias veritatis voluptatem.</p>
+          <div class="mb-30"></div>
+          <div class="accordion" id="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-collapse-1" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-1">Update name</button>
+              </div>
+              <div class="accordion-collapse collapse" id="accordion-collapse-1" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, laborum!</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-collapse-2" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-2">Update business name</button>
+              </div>
+              <div class="accordion-collapse collapse" id="accordion-collapse-2" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, laborum!</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-collapse-3" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-collapse-3">Update password</button>
+              </div>
+              <div class="accordion-collapse collapse" id="accordion-collapse-3" data-bs-parent="#accordion">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis, laborum!</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="col-auto">
-            <a class="btn btn-link" href="#">Cancel</a>
-          </div>
+          <div class="mb-30"></div>
+          <form>
+            <div class="row gy-15">
+              <div class="col-12">
+                <div class="photo-upload">
+                  <input class="photo-upload__input" name="photo" type="file">
+                  <div class="photo-upload__content">
+                    <span class="photo-upload__icon icomoon-photo"></span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <span class="form-label">Choose a gender (optional)</span>
+                <div class="radio-pills-list">
+                  <label class="radio-pill">
+                    <input class="radio-pill__input" name="choose-a-gender" type="radio">
+                    <span class="radio-pill__item">
+                      <span class="icomoon-female"></span>
+                      <span>Female</span>
+                    </span>
+                  </label>
+                  <label class="radio-pill">
+                    <input class="radio-pill__input" name="choose-a-gender" type="radio">
+                    <span class="radio-pill__item">
+                      <span class="icomoon-male"></span>
+                      <span>Male</span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="lease-to-date">Lease to date</label>
+                <input class="form-control datepicker js-datepicker" id="lease-to-date" type="text" readonly="readonly" placeholder="Select date">
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="microchip-number-(optional)">Microchip number (optional)</label>
+                <input class="form-control is-invalid" id="microchip-number-(optional)" type="text" placeholder="Type microchip number">
+                <div class="invalid-feedback">Field is required</div>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label" for="email">Email</label>
+                <input class="form-control" id="email" type="email" placeholder="Email">
+              </div>
+              <div class="col-12">
+                <label class="form-label">Animal type</label>
+                <select class="form-select js-select" data-dropdown-css-class="checkbox-view" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                  <option label="Select..."></option>
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Animal type</label>
+                <select class="form-select js-select" data-dropdown-css-class="checkbox-view" data-minimum-results-for-search="-1" data-placeholder="Select..." multiple="multiple">
+                  <option>Option 1</option>
+                  <option>Option 2</option>
+                  <option>Option 3</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label">Residency</label>
+                <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
+                  <option label="Select..."></option>
+                  <option data-tag="Resident">Catherine Su Southwest 9th Ave 4</option>
+                  <option data-tag="Resident">Catherine Su Southwest 9th Ave 4</option>
+                  <option data-tag="Resident">Catherine Su Southwest 9th Ave 4</option>
+                </select>
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="please-provide-details-about-the-incidents-of-aggression.">Please provide details about the incidents of aggression.</label>
+                <textarea class="form-control" id="please-provide-details-about-the-incidents-of-aggression." placeholder="Type here"></textarea>
+              </div>
+              <div class="col-12">
+                <div class="row gx-20">
+                  <div class="col-auto">
+                    <label class="form-check">
+                      <input class="form-check-input" name="question" type="radio" checked="checked">
+                      <span class="form-check-label">No</span>
+                    </label>
+                  </div>
+                  <div class="col-auto">
+                    <label class="form-check">
+                      <input class="form-check-input" name="question" type="radio">
+                      <span class="form-check-label">Yes</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <label class="form-check">
+                  <input class="form-check-input" type="checkbox">
+                  <span class="form-check-label">Test mode</span>
+                </label>
+              </div>
+              <div class="col-12">
+                <div class="form-check form-switch form-check-reverse">
+                  <input class="form-check-input" id="animal-screening" type="checkbox" role="switch">
+                  <label class="form-check-label" for="animal-screening">Animal screening</label>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="button" data-bs-toggle="toast" data-bs-target="#toastSuccess">Submit
+                </button>
+
+                <div class="toast-container">
+                  <div class="toast bg-success" aria-live="assertive" aria-atomic="true" id="toastSuccess" role="alert">
+                    <div class="toast-body">
+                      <p class="mb-0">Full name has been successfully updated</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="mb-30"></div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae provident aspernatur odio magnam est aut libero iure ex error perspiciatis facere, velit exercitationem inventore consectetur itaque quos nobis! Necessitatibus incidunt eius quasi veritatis ipsum, porro excepturi eos officia harum consequuntur quae earum mollitia sint vel quaerat voluptatibus optio quod itaque quis error placeat libero. Esse, nobis sapiente officiis omnis rem, tempora quod eius, est blanditiis reprehenderit in nemo corrupti cumque. Nihil quaerat quam vero sint, sequi obcaecati facilis veritatis provident repellat quae at neque sapiente illum. Aut quisquam aliquam, aspernatur iste architecto repellendus, blanditiis accusamus hic temporibus molestias veritatis voluptatem.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae provident aspernatur odio magnam est aut libero iure ex error perspiciatis facere, velit exercitationem inventore consectetur itaque quos nobis! Necessitatibus incidunt eius quasi veritatis ipsum, porro excepturi eos officia harum consequuntur quae earum mollitia sint vel quaerat voluptatibus optio quod itaque quis error placeat libero. Esse, nobis sapiente officiis omnis rem, tempora quod eius, est blanditiis reprehenderit in nemo corrupti cumque. Nihil quaerat quam vero sint, sequi obcaecati facilis veritatis provident repellat quae at neque sapiente illum. Aut quisquam aliquam, aspernatur iste architecto repellendus, blanditiis accusamus hic temporibus molestias veritatis voluptatem.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae provident aspernatur odio magnam est aut libero iure ex error perspiciatis facere, velit exercitationem inventore consectetur itaque quos nobis! Necessitatibus incidunt eius quasi veritatis ipsum, porro excepturi eos officia harum consequuntur quae earum mollitia sint vel quaerat voluptatibus optio quod itaque quis error placeat libero. Esse, nobis sapiente officiis omnis rem, tempora quod eius, est blanditiis reprehenderit in nemo corrupti cumque. Nihil quaerat quam vero sint, sequi obcaecati facilis veritatis provident repellat quae at neque sapiente illum. Aut quisquam aliquam, aspernatur iste architecto repellendus, blanditiis accusamus hic temporibus molestias veritatis voluptatem.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae provident aspernatur odio magnam est aut libero iure ex error perspiciatis facere, velit exercitationem inventore consectetur itaque quos nobis! Necessitatibus incidunt eius quasi veritatis ipsum, porro excepturi eos officia harum consequuntur quae earum mollitia sint vel quaerat voluptatibus optio quod itaque quis error placeat libero. Esse, nobis sapiente officiis omnis rem, tempora quod eius, est blanditiis reprehenderit in nemo corrupti cumque. Nihil quaerat quam vero sint, sequi obcaecati facilis veritatis provident repellat quae at neque sapiente illum. Aut quisquam aliquam, aspernatur iste architecto repellendus, blanditiis accusamus hic temporibus molestias veritatis voluptatem.</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae provident aspernatur odio magnam est aut libero iure ex error perspiciatis facere, velit exercitationem inventore consectetur itaque quos nobis! Necessitatibus incidunt eius quasi veritatis ipsum, porro excepturi eos officia harum consequuntur quae earum mollitia sint vel quaerat voluptatibus optio quod itaque quis error placeat libero. Esse, nobis sapiente officiis omnis rem, tempora quod eius, est blanditiis reprehenderit in nemo corrupti cumque. Nihil quaerat quam vero sint, sequi obcaecati facilis veritatis provident repellat quae at neque sapiente illum. Aut quisquam aliquam, aspernatur iste architecto repellendus, blanditiis accusamus hic temporibus molestias veritatis voluptatem.</p>
-        <div class="mb-30"></div>
-        <form>
-          <div class="row gy-15">
-            <div class="col-12">
-              <div class="photo-upload">
-                <input class="photo-upload__input" name="photo" type="file">
-                <div class="photo-upload__content">
-                  <span class="photo-upload__icon icomoon-photo"></span>
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <span class="form-label">Choose a gender (optional)</span>
-              <div class="radio-pills-list">
-                <label class="radio-pill">
-                  <input class="radio-pill__input" name="choose-a-gender" type="radio">
-                  <span class="radio-pill__item">
-                    <span class="icomoon-female"></span>
-                    <span>Female</span>
-                  </span>
-                </label>
-                <label class="radio-pill">
-                  <input class="radio-pill__input" name="choose-a-gender" type="radio">
-                  <span class="radio-pill__item">
-                    <span class="icomoon-male"></span>
-                    <span>Male</span>
-                  </span>
-                </label>
-              </div>
-            </div>
-            <div class="col-12">
-              <label class="form-label" for="lease-to-date">Lease to date</label>
-              <input class="form-control datepicker js-datepicker" id="lease-to-date" type="text" readonly="readonly" placeholder="Select date">
-            </div>
-            <div class="col-sm-6">
-              <label class="form-label" for="microchip-number-(optional)">Microchip number (optional)</label>
-              <input class="form-control is-invalid" id="microchip-number-(optional)" type="text" placeholder="Type microchip number">
-              <div class="invalid-feedback">Field is required</div>
-            </div>
-            <div class="col-sm-6">
-              <label class="form-label" for="email">Email</label>
-              <input class="form-control" id="email" type="email" placeholder="Email">
-            </div>
-            <div class="col-12">
-              <label class="form-label">Animal type</label>
-              <select class="form-select js-select" data-dropdown-css-class="checkbox-view" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                <option label="Select..."></option>
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <label class="form-label">Animal type</label>
-              <select class="form-select js-select" data-dropdown-css-class="checkbox-view" data-minimum-results-for-search="-1" data-placeholder="Select..." multiple="multiple">
-                <option>Option 1</option>
-                <option>Option 2</option>
-                <option>Option 3</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <label class="form-label">Residency</label>
-              <select class="form-select js-select" data-dropdown-css-class="" data-minimum-results-for-search="-1" data-placeholder="Select...">
-                <option label="Select..."></option>
-                <option data-tag="Resident">Catherine Su Southwest 9th Ave 4</option>
-                <option data-tag="Resident">Catherine Su Southwest 9th Ave 4</option>
-                <option data-tag="Resident">Catherine Su Southwest 9th Ave 4</option>
-              </select>
-            </div>
-            <div class="col-12">
-              <label class="form-label" for="please-provide-details-about-the-incidents-of-aggression.">Please provide details about the incidents of aggression.</label>
-              <textarea class="form-control" id="please-provide-details-about-the-incidents-of-aggression." placeholder="Type here"></textarea>
-            </div>
-            <div class="col-12">
-              <div class="row gx-20">
-                <div class="col-auto">
-                  <label class="form-check">
-                    <input class="form-check-input" name="question" type="radio" checked="checked">
-                    <span class="form-check-label">No</span>
-                  </label>
-                </div>
-                <div class="col-auto">
-                  <label class="form-check">
-                    <input class="form-check-input" name="question" type="radio">
-                    <span class="form-check-label">Yes</span>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="col-12">
-              <label class="form-check">
-                <input class="form-check-input" type="checkbox">
-                <span class="form-check-label">Test mode</span>
-              </label>
-            </div>
-            <div class="col-12">
-              <div class="form-check form-switch form-check-reverse">
-                <input class="form-check-input" id="animal-screening" type="checkbox" role="switch">
-                <label class="form-check-label" for="animal-screening">Animal screening</label>
-              </div>
-            </div>
-            <div class="col-12">
-              <button class="btn btn-primary" type="button">Submit
-              </button>
-            </div>
-          </div>
-        </form>
       </div>
     </div>
   </main>

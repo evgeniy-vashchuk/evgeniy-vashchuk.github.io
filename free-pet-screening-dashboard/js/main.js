@@ -45,7 +45,7 @@ function initForms() {
         selectLabel = selectItem.siblings('.form-label'),
         selectContainer = selectItem.closest('.js-select-container');
 
-      if (selectItem.val()) {
+      if (selectItem.val().length) {
         selectItem.addClass('is-selected');
       }
 

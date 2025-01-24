@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Free Pet Screening — Support</title>
+  <meta name="description" content="We are a modest but successful 20-year experienced online publisher and e-commerce company with a steady list of sites to build in the pet, people directory and telehealth segments.">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#1C49C2">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#1C49C2">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#1C49C2">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#1C49C2">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- SIDE MENU -->
+  <div class="side-menu offcanvas-lg offcanvas-end" id="offcanvas-side-menu" tabindex="-1">
+    <header class="side-menu__header">
+      <div class="row flex-nowrap flex-grow-1 justify-content-between align-items-center">
+        <div class="col d-none d-lg-flex">
+          <a class="side-menu__logo" href="dashboard.html">
+            <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/logo.svg">
+          </a>
+        </div>
+        <div class="col d-flex d-lg-none">
+          <div class="account-photo-name">
+            <div class="row flex-nowrap align-items-center gx-10">
+              <div class="col-auto d-flex">
+                <div class="account-photo-name__avatar">
+                  <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-dark.svg">
+                </div>
+              </div>
+              <div class="col d-flex">
+                <h3 class="mb-0">Catherine Su</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto d-flex d-lg-none">
+          <button class="btn-close px-5 h3" aria-label="Close" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-side-menu">X</button>
+        </div>
+      </div>
+    </header>
+    <div class="side-menu__body">
+      <ul class="side-menu__nav">
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="dashboard.html">
+            <span class="side-menu__nav-icon icomoon-dashboard"></span>
+            <span class="side-menu__nav-link-text">Dashboard</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="animals.html">
+            <span class="side-menu__nav-icon icomoon-animals"></span>
+            <span class="side-menu__nav-link-text">Animals</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="residents.html">
+            <span class="side-menu__nav-icon icomoon-residents"></span>
+            <span class="side-menu__nav-link-text">Residents</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" href="properties.html">
+            <span class="side-menu__nav-icon icomoon-properties"></span>
+            <span class="side-menu__nav-link-text">Properties</span>
+          </a>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-team-members" href="#collapse-side-menu-team-members" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-team-members"></span>
+            <span class="side-menu__nav-link-text">Team Members</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-team-members">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="property-managers.html">Property managers</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="pet-mapping.html">Pet mapping</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-policies" href="#collapse-side-menu-policies" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-policies"></span>
+            <span class="side-menu__nav-link-text">Policies</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-policies">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="policies.html">Policies</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="default-state-policies.html">Default state policies</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link" aria-expanded="false" aria-controls="collapse-side-menu-settings" href="#collapse-side-menu-settings" data-bs-toggle="collapse" role="button">
+            <span class="side-menu__nav-icon icomoon-settings"></span>
+            <span class="side-menu__nav-link-text">Settings</span>
+          </a>
+
+          <div class="collapse" id="collapse-side-menu-settings">
+            <ul class="side-menu__sub-nav">
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="payments.html">Payments</a>
+              </li>
+              <li class="side-menu__sub-nav-item">
+                <a class="side-menu__sub-nav-link" href="integrations.html">Integrations</a>
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="side-menu__nav-item">
+          <a class="side-menu__nav-link active" href="support.html">
+            <span class="side-menu__nav-icon icomoon-support"></span>
+            <span class="side-menu__nav-link-text">Support</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- SIDE MENU END -->
+
+  <!-- HEADER -->
+  <header class="header fixed-top js-header">
+    <div class="container-fluid">
+      <div class="row justify-content-between align-items-center flex-nowrap">
+        <div class="col d-flex">
+          <a class="header__logo" href="dashboard.html">
+            <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Free Pet Screening" data-src="img/logo.svg">
+          </a>
+        </div>
+        <div class="col-auto">
+          <div class="row gx-20 align-items-center">
+            <div class="col-auto d-flex">
+              <div class="dropdown d-inline-flex">
+                <button class="dropdown-toggle account-toggler" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,10">
+                  <span class="account-toggler__avatar">
+                    <img class="lazy js-lazy d-none d-lg-block of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-dark.svg">
+                    <img class="lazy js-lazy d-lg-none of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-light.svg">
+                  </span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="profile-settings.html">Profile settings</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Log out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-auto d-flex d-lg-none">
+              <button class="header__menu-toggler" aria-controls="offcanvas-side-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-side-menu">
+                <span class="icomoon-hamburger"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <!-- CONTENT -->
+  <main class="dashboard">
+    <div class="dashboard__main">
+      <div class="container-fluid">
+        <div class="card wrapper">
+          <h3 class="text-primary mb-30">FAQ</h3>
+
+          <div class="accordion mb-30" id="accordion-faq">
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-1" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-1">What information do I need in order to add a property and send a pet policy contract to my tenant?</button>
+              </div>
+              <div class="accordion-collapse collapse" id="accordion-faq-collapse-1" data-bs-parent="#accordion-faq">
+                <div class="accordion-body">
+                  <div class="text-lg">
+                    <p>You will need your</p>
+                    <ul class="list-with-dot">
+                      <li>Property address</li>
+                      <li>Tenant name and email or phone number</li>
+                      <li>Lease start date</li>
+                      <li>Payment method (if this is your first contract)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-2" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-2">Do you have an ESA letter verification process?</button>
+              </div>
+              <div class="accordion-collapse collapse" id="accordion-faq-collapse-2" data-bs-parent="#accordion-faq">
+                <div class="accordion-body">
+                  <div class="text-lg">
+                    <p>You will need your</p>
+                    <ul class="list-with-dot">
+                      <li>Property address</li>
+                      <li>Tenant name and email or phone number</li>
+                      <li>Lease start date</li>
+                      <li>Payment method (if this is your first contract)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-3" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-3">What do I do if I have questions?</button>
+              </div>
+              <div class="accordion-collapse collapse" id="accordion-faq-collapse-3" data-bs-parent="#accordion-faq">
+                <div class="accordion-body">
+                  <div class="text-lg">
+                    <p>You will need your</p>
+                    <ul class="list-with-dot">
+                      <li>Property address</li>
+                      <li>Tenant name and email or phone number</li>
+                      <li>Lease start date</li>
+                      <li>Payment method (if this is your first contract)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-4" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-4">If my tenants have already signed a pet policy, can I implement this pet policy?</button>
+              </div>
+              <div class="accordion-collapse collapse" id="accordion-faq-collapse-4" data-bs-parent="#accordion-faq">
+                <div class="accordion-body">
+                  <div class="text-lg">
+                    <p>You will need your</p>
+                    <ul class="list-with-dot">
+                      <li>Property address</li>
+                      <li>Tenant name and email or phone number</li>
+                      <li>Lease start date</li>
+                      <li>Payment method (if this is your first contract)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-5" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-5">Do you provide pet policies for every state?</button>
+              </div>
+              <div class="accordion-collapse collapse" id="accordion-faq-collapse-5" data-bs-parent="#accordion-faq">
+                <div class="accordion-body">
+                  <div class="text-lg">
+                    <p>You will need your</p>
+                    <ul class="list-with-dot">
+                      <li>Property address</li>
+                      <li>Tenant name and email or phone number</li>
+                      <li>Lease start date</li>
+                      <li>Payment method (if this is your first contract)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-6" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-6">What information do I need in order to add a property and send a pet policy contract to my tenant?</button>
+              </div>
+              <div class="accordion-collapse collapse" id="accordion-faq-collapse-6" data-bs-parent="#accordion-faq">
+                <div class="accordion-body">
+                  <div class="text-lg">
+                    <p>You will need your</p>
+                    <ul class="list-with-dot">
+                      <li>Property address</li>
+                      <li>Tenant name and email or phone number</li>
+                      <li>Lease start date</li>
+                      <li>Payment method (if this is your first contract)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center">
+            <div class="col-sm-8 col-lg-12 col-xl-8 col-xxl-6">
+              <div class="text-block text-xl text-center">
+                <p>Didn’t find what you were looking for? You can email us directly at <a href="mailto:support@freepetscreening.com" class="link-primary fw-bold text-decoration-none">support@freepetscreening.com</a> with your requests for help!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- CONTENT END -->
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/libs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
