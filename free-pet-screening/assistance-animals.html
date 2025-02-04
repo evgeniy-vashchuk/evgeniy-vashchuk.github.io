@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Free Pet Screening — Assistance animals</title>
+  <meta name="description" content="Description of the site">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#333333">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#333333">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#333333">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#333333">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Palanquin+Dark:wght@500;600&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="header bg-blue-dark fixed-top">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-auto d-flex">
+            <a class="header__logo" href="index.html">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg">
+            </a>
+          </div>
+          <div class="col">
+            <div class="offcanvas-menu offcanvas-lg offcanvas-end" id="offcanvas-menu" aria-labelledby="offcanvas-menu-label" tabindex="-1">
+              <div class="offcanvas-header">
+                <h2 class="offcanvas-title text-white" id="offcanvas-menu-label">Menu</h2>
+              </div>
+              <div class="offcanvas-body d-flex flex-column d-lg-block">
+                <div class="row flex-column flex-lg-row flex-grow-1 align-items-lg-center justify-content-lg-end gx-0 gx-lg-40 gy-40 gy-lg-8">
+                  <div class="col-lg-auto">
+                    <div class="dropdown-center dropdown-header">
+                      <button class="dropdown-toggle" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-offset="0,20">Solutions</button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item with-icon link-with-underline-hover" href="pet-owners.html">
+                            <span class="icomoon-paws"></span> Pet Owners
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item with-icon link-with-underline-hover" href="non-pet-owners.html">
+                            <span class="icomoon-paws-crossed-out"></span> Non Pet Owners
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item with-icon link-with-underline-hover" href="assistance-animals.html">
+                            <span class="icomoon-guide-dog"></span> Assistance Animals
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col-lg-auto">
+                    <div class="dropdown-center dropdown-header">
+                      <button class="dropdown-toggle" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-offset="0,20">Industries</button>
+                      <ul class="dropdown-menu">
+                        <li>
+                          <a class="dropdown-item with-icon link-with-underline-hover" href="long-team-rentals.html">
+                            <span class="icomoon-house"></span> Long Team Rentals
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item with-icon link-with-underline-hover" href="hoas.html">
+                            <span class="icomoon-clipboard-list"></span> HOAs
+                          </a>
+                        </li>
+                        <li>
+                          <a class="dropdown-item with-icon link-with-underline-hover" href="vacation-rentals.html">
+                            <span class="icomoon-home-clock"></span> Vacation Rentals
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="col col-lg-auto d-flex align-items-end">
+                    <button class="btn btn-primary btn-sm w-100 w-lg-auto" type="button">Residents <span class="icomoon-arrow-top-right"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto d-flex d-lg-none align-items-center">
+            <button class="header__menu-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu">
+              <span class="icomoon-hamburger"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- HEADER END -->
+
+    <!-- CONTENT -->
+    <main class="main">
+      <!-- SECTION INTRO -->
+      <section class="section-intro">
+        <div class="section-intro__img">
+          <img class="lazy js-lazy of-cover d-none d-md-block" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/section-intro/bg-3-desktop.webp">
+          <img class="lazy js-lazy of-cover d-md-none" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/section-intro/bg-3-mobile.webp">
+        </div>
+
+        <div class="container position-relative z-5">
+          <div class="row text-center text-md-start">
+            <div class="col-md-7">
+              <h4 class="mb-0">Solutions</h4>
+              <h1 class="mb-16 mb-md-24" data-aos="fade-right" data-aos-duration="2000">Validate Assistance Animal Requests</h1>
+            </div>
+            <div class="col-md-6">
+              <h4 class="text-blue-dark mb-24 mb-md-32 mb-xl-52">A simple and secure platform, FreePetScreening, for property managers, simplifying the process of reviewing requests to accommodate service animals.</h4>
+              <a class="btn btn-primary" href="#">Create my free account</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION INTRO END -->
+
+      <!-- SECTION LOGOS -->
+      <section class="section-logos section">
+        <div class="section-logos__block">
+          <div class="container">
+            <h2 class="text-center mb-xl-60">We’ve screened pets for over 20k+ properties</h2>
+
+            <div class="row align-items-center justify-content-between gy-32">
+              <div class="col-xs-6 col-lg-3">
+                <div class="section-logos__img">
+                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/section-logos/1.svg">
+                </div>
+              </div>
+              <div class="col-xs-6 col-lg-3">
+                <div class="section-logos__img">
+                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/section-logos/2.svg">
+                </div>
+              </div>
+              <div class="col-xs-6 col-lg-3">
+                <div class="section-logos__img">
+                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/section-logos/3.webp">
+                </div>
+              </div>
+              <div class="col-xs-6 col-lg-3">
+                <div class="section-logos__img">
+                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/section-logos/4.svg">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION LOGOS END -->
+
+      <!-- SECTION -->
+      <section class="section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-10 text-center">
+              <h4 class="mb-8">ASSISTANCE ANIMALS</h4>
+              <h2>We Manage Accommodation Request Reviews so Property Managers Can Manage Their Assets</h2>
+            </div>
+          </div>
+
+          <div class="row justify-content-center gx-36 gy-24">
+            <div class="col-md-6 col-lg-4 d-flex">
+              <div class="card-icon-text">
+                <div class="card-icon-text__content">
+                  <div class="card-icon-text__icon">
+                    <div class="card-icon-text__icon-holder">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Icon" data-src="img/card-icon-text/11.svg">
+                    </div>
+                  </div>
+
+                  <h4 class="display-4">Stop Fake ESAs</h4>
+                  <div class="text-block text-sm">
+                    <p>Our health care provider team has written over 300k ESA letters and our Assistance Animal team contacts every health care provider to affirm the documentation submitted is authentic.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex">
+              <div class="card-icon-text">
+                <div class="card-icon-text__content">
+                  <div class="card-icon-text__icon">
+                    <div class="card-icon-text__icon-holder">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Icon" data-src="img/card-icon-text/8.svg">
+                    </div>
+                  </div>
+
+                  <h4 class="display-4">Legally Binding Policies</h4>
+                  <div class="text-block text-sm">
+                    <p>We provide legally binding eSign contract templates tailored for each state’s rental laws so that every pet owner has legally attested to every pet policy you have.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex">
+              <div class="card-icon-text">
+                <div class="card-icon-text__content">
+                  <div class="card-icon-text__icon">
+                    <div class="card-icon-text__icon-holder">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Icon" data-src="img/card-icon-text/10.svg">
+                    </div>
+                  </div>
+
+                  <h4 class="display-4">Increase Pet Revenue</h4>
+                  <div class="text-block text-sm">
+                    <p>Catch unauthorized pets to help recapture lost pet revenue by having a legally binding digital record on file proving that your resident knew your pet policies.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section">
+        <div class="container">
+          <div class="row justify-content-center mb-32 mb-lg-60">
+            <div class="col-xl-10 text-center">
+              <h4 class="mb-8">STOP FAKE ESAs</h4>
+              <h2>Not All Animal Requests Meet Federal Guidelines</h2>
+              <div class="text-block text-lg">
+                <p>Our Assistance Animal review team made up of experienced disability therapists that have written 300k+ ESA letters find a significant number of reasonable accommodation request assistance animals do not meet HUD & FHAct guidelines; therefore, they can be treated as pets.</p>
+                <p>This helps property managers reclaim once lost pet revenue and significantly increases their bottom-line.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="row gy-24">
+            <div class="col-md-6">
+              <div class="ratio ratio-16x9 bg-blue-faded rounded-4">
+                <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/illustration-1.svg">
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="ratio ratio-16x9 bg-blue-faded rounded-4">
+                <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/illustration-2.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section">
+        <div class="card-info reversed centered">
+          <div class="container">
+            <div class="row card-info__row gy-24">
+              <div class="col-md-6 card-info__img-col">
+                <div class="card-info__img" data-aos="fade-left" data-aos-duration="2000">
+                  <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-info/6.jpg">
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-5 card-info__content-col">
+                <h2>Legally Binding Contracts for Every Resident Applicant</h2>
+                <div class="text-block">
+                  <p>Require every pet owner to complete and legally agree to over 20 declarations covering bite history, vaccination history, behavior, etc. Have a legal record of this document in their profile.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION ATTENTION GRABBING -->
+      <section class="section-attention-grabbing section">
+        <div class="section-attention-grabbing__block js-lazy" data-bg="img/section-attention-grabbing-bg.svg">
+          <div class="container">
+            <div class="row align-items-center gy-24">
+              <div class="col-lg-6 text-center">
+                <h4 class="mb-8">RECLAIM LOST Pet Revenue</h4>
+                <h2>Reclaim Lost Pet Revenue</h2>
+                <div class="text-block">
+                  <p>Unauthorized pets can be prevalent in rental portfolios. Catch unauthorized pets through FreePetScreening's platform and have a legal record that of the applicant/resident confirming they don't have a pet. FreePetScreening will help you recapture lost pet revenue for all those unknown pets.</p>
+                </div>
+              </div>
+              <div class="col-lg-5 offset-lg-1 text-center">
+                <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/illustration-3.svg" width="505" height="377">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION ATTENTION GRABBING END -->
+
+      <!-- SECTION -->
+      <section class="section">
+        <div class="container">
+          <h2 class="text-center">Pet & Tenant Onboarding Process</h2>
+
+          <div class="row justify-content-center gx-36 gy-24">
+            <div class="col-md-6 col-lg-4 d-flex">
+              <div class="card-process">
+                <div class="card-process__content">
+                  <div class="card-process__number">1</div>
+
+                  <h4 class="fw-semibold mb-20">Lease Submitted</h4>
+                  <div class="text-block text-lg">
+                    <p>Integrated into the leasing process so no additional work is required by property staff.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex">
+              <div class="card-process">
+                <div class="card-process__content">
+                  <div class="card-process__number">2</div>
+
+                  <h4 class="fw-semibold mb-20">Profile Application Process</h4>
+                  <div class="text-block text-lg">
+                    <p>Rapid profile application completed in just minutes.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6 col-lg-4 d-flex">
+              <div class="card-process">
+                <div class="card-process__content">
+                  <div class="card-process__number">3</div>
+
+                  <h4 class="fw-semibold mb-20">Immediate Results</h4>
+                  <div class="text-block text-lg">
+                    <p>Both pet and tenant are registered with full profiles, legally binding declarations and contracts, and all information at your fingertips.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION BANNER -->
+      <section class="section-banner section">
+        <div class="container">
+          <div class="section-banner__block bg-gradient">
+            <div class="section-banner__bg js-lazy" data-bg="img/section-banner-bg.svg"></div>
+
+            <div class="row gy-72 position-relative">
+              <div class="col-md-4 col-xl-3 offset-md-1 d-flex align-items-end order-2 order-md-1">
+                <div class="section-banner__img">
+                  <img class="js-svg-inject" src="img/section-banner-img.svg" alt="Image">
+                </div>
+              </div>
+              <div class="col-md-6 offset-xl-1 d-flex align-items-center order-1 order-md-2">
+                <div class="section-banner__content">
+                  <h2 class="text-white mb-20">It’s Free!</h2>
+                  <h4 class="text-light mb-32">Create pet and tenant responsible policies to better protect and manage your properties while minimizing your liability.</h4>
+                  <a class="btn btn-primary" href="#">Create my free account</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION BANNER END -->
+    </main>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER -->
+    <footer class="footer bg-blue-dark">
+      <div class="container">
+        <div class="footer__top-content">
+          <div class="row gy-40">
+            <div class="col-sm-4 col-md-6 col-lg-3 col-xl-4 d-flex">
+              <div>
+                <a class="footer__logo" href="index.html">
+                  <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg">
+                </a>
+              </div>
+            </div>
+            <div class="col-xxs-6 col-sm-4 col-md-3">
+              <h4 class="text-blue-light mb-24 mb-lg-32">Solutions</h4>
+              <div class="remove-last-child-margin">
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover text-sm" href="pet-owners.html">Pet owners</a>
+                </div>
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover text-sm" href="non-pet-owners.html">Non pet owners</a>
+                </div>
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover text-sm" href="assistance-animals.html">Assistance animals</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxs-6 col-sm-4 col-md-3">
+              <h4 class="text-blue-light mb-24 mb-lg-32">Industries</h4>
+              <div class="remove-last-child-margin">
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover text-sm" href="long-team-rentals.html">Long Team Rentals</a>
+                </div>
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover text-sm" href="hoas.html">HOAs</a>
+                </div>
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover text-sm" href="vacation-rentals.html">Vacation Rentals</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-xl-2 text-sm-end">
+              <a class="btn btn-primary btn-sm" href="#">Residents <span class="icomoon-arrow-top-right"></span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom-content">
+          <div class="text-block text-sm">
+            <p>© 2025 Free Pet Screening. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+  </div>
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/libs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
