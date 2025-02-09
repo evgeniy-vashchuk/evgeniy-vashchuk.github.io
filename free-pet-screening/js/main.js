@@ -91,6 +91,46 @@ function initAos() {
   AOS.init({ once: true });
 }
 
+// MATCH HEIGHT
+function initMatchHeight() {
+  $('.js-match-height').matchHeight();
+}
+
+// COLLAPSE
+function initCollapse() {
+  function isClamped(item) {
+    return item.scrollHeight > item.offsetHeight;
+  }
+
+  function detectClamp() {
+    var collapse = $('.js-card-collapse');
+
+    collapse.each(function () {
+      var text = $(this).find('.js-card-collapse-text')[0];
+
+      if (isClamped(text)) {
+        $(this).addClass('clamped');
+      } else {
+        $(this).removeClass('clamped');
+      }
+    });
+  }
+
+  detectClamp();
+
+  $(window).on('resize', function () {
+    detectClamp();
+  });
+
+  $('.js-card-collapse-toggle').on('click', function (e) {
+    e.preventDefault();
+
+    var collapse = $(this).closest('.js-card-collapse');
+
+    collapse.toggleClass('active');
+  });
+}
+
 (function ($) {
   initLazyLoad();
   initStopAnimationsDuringWindowResizing();
@@ -98,4 +138,6 @@ function initAos() {
   initCountUp();
   initSvgInjector();
   initAos();
+  initMatchHeight();
+  initCollapse();
 })(jQuery);
