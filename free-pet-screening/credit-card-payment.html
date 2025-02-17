@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Free Pet Screening — Credit card payment</title>
+  <meta name="description" content="Description of the site">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#333333">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#333333">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#333333">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#333333">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Palanquin+Dark:wght@500;600&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="header bg-blue-dark fixed-top">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-auto d-flex">
+            <a class="header__logo" href="index.html">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="170" height="44" style="aspect-ratio: 170/44">
+            </a>
+          </div>
+          <div class="col">
+            <div class="offcanvas-menu offcanvas-xl offcanvas-end" id="offcanvas-menu" aria-labelledby="offcanvas-menu-label" tabindex="-1">
+              <div class="offcanvas-header">
+                <h2 class="offcanvas-title text-white" id="offcanvas-menu-label">Menu</h2>
+              </div>
+              <div class="offcanvas-body">
+                <div class="row align-items-center justify-content-end flex-grow-1 gx-xl-48">
+                  <div class="col-auto">
+                    <div class="row align-items-center gx-28 gy-40 gy-xl-0">
+                      <div class="col-xl-auto">
+                        <div class="dropdown-center dropdown-header">
+                          <a class="dropdown-toggle text-sm fw-bold link-white" aria-expanded="false" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-offset="0,20" role="button">Solutions</a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a class="dropdown-item with-icon link-with-underline-hover" href="pet-owners.html">
+                                <span class="icomoon-paws"></span> Pet Owners
+                              </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item with-icon link-with-underline-hover" href="non-pet-owners.html">
+                                <span class="icomoon-paws-crossed-out"></span> Non Pet Owners
+                              </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item with-icon link-with-underline-hover" href="assistance-animals.html">
+                                <span class="icomoon-guide-dog"></span> Assistance Animals
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-xl-auto">
+                        <div class="dropdown-center dropdown-header">
+                          <a class="dropdown-toggle text-sm fw-bold link-white" aria-expanded="false" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-offset="0,20" role="button">Industries</a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a class="dropdown-item with-icon link-with-underline-hover" href="long-team-rentals.html">
+                                <span class="icomoon-house"></span> Long Team Rentals
+                              </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item with-icon link-with-underline-hover" href="hoas.html">
+                                <span class="icomoon-clipboard-list"></span> HOAs
+                              </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item with-icon link-with-underline-hover" href="vacation-rentals.html">
+                                <span class="icomoon-home-clock"></span> Vacation Rentals
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="col-xl-auto d-none d-xl-inline-flex">
+                        <a class="text-sm fw-bold link-white" href="#">Verify ESA</a>
+                      </div>
+                      <div class="col-xl-auto d-xl-none">
+                        <div class="dropdown-center dropdown-header">
+                          <a class="dropdown-toggle" aria-expanded="false" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside" data-bs-offset="0,20" role="button">Other</a>
+                          <ul class="dropdown-menu">
+                            <li>
+                              <a class="dropdown-item with-icon link-with-underline-hover" href="#">
+                                <span class="icomoon-documents"></span> Verify ESA Letter
+                              </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item with-icon link-with-underline-hover" href="#">
+                                <span class="icomoon-home-person"></span> Residents
+                              </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item with-icon link-with-underline-hover" href="#">
+                                <span class="icomoon-manage-accounts"></span> Property managers
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-auto d-none d-xl-block">
+                    <div class="row">
+                      <div class="col-auto">
+                        <button class="btn btn-blue-light btn-sm" type="button">Property managers <span class="icomoon-arrow-top-right"></span>
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button class="btn btn-primary btn-sm" type="button">Residents <span class="icomoon-arrow-top-right"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto d-flex d-xl-none align-items-center">
+            <button class="header__menu-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu">
+              <span class="icomoon-hamburger"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- HEADER END -->
+
+    <!-- CONTENT -->
+    <main class="main">
+      <!-- SECTION CREDIT CARD PAYMENT -->
+      <section class="section-credit-card-payment section">
+        <div class="container">
+          <div class="section-credit-card-payment__content">
+            <div class="row align-items-center gy-24 mb-40 mb-md-80">
+              <div class="col-lg-7">
+                <div class="pe-xl-64">
+                  <h4 class="text-uppercase text-center text-lg-start">Landlords / Property managers</h4>
+                  <h1 class="mb-lg-32 text-center text-lg-start">Assistance Animal Verification Request</h1>
+                  <div class="text-block mb-32">
+                    <p>You are requesting ESA verification for [Tenant First and Last Name]. The cost to screen and verify this application is <strong class="text-blue">$50</strong> for property managers that do not have an account with us.</p>
+                  </div>
+                  <div class="text-with-icon">
+                    <div class="text-with-icon__icon">
+                      <div class="text-with-icon__icon-holder">
+                        <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/text-with-icon/1.svg">
+                      </div>
+                    </div>
+                    <p class="mb-0 text-blue">Please upload any supporting documents and complete the form below.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-5 text-center text-lg-end">
+                <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/section-credit-card-payment-img.svg" width="474" height="363" style="aspect-ratio: 474/363" data-aos="fade-left" data-aos-duration="2000">
+              </div>
+            </div>
+
+            <form class="section-credit-card-payment__form" action="#">
+              <h2 class="text-center mb-32">Landlord Form</h2>
+
+              <div class="section-credit-card-payment__form-content">
+                <div class="remove-last-child-margin mb-40">
+                  <div class="mb-40 mb-lg-48">
+                    <h4 class="fw-semibold text-uppercase">Tenant</h4>
+                    <div class="row gy-16 gy-lg-24">
+                      <div class="col-12">
+                        <input class="form-control" type="text" placeholder="Name" value="JOHN Q. PETOWNER" disabled="disabled">
+                      </div>
+                      <div class="col-12">
+                        <input class="form-control" type="email" placeholder="Email" value="john@petowner.com" disabled="disabled">
+                      </div>
+                      <div class="col-12">
+                        <input class="form-control" type="tel" placeholder="Phone" value="(858) 757-1212" disabled="disabled">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-40 mb-lg-48">
+                    <h4 class="fw-semibold text-uppercase">Rental property info</h4>
+                    <div class="row gy-16 gy-lg-24">
+                      <div class="col-12">
+                        <input class="form-control" type="text" placeholder="Property Name">
+                      </div>
+                      <div class="col-md-6">
+                        <input class="form-control" type="text" placeholder="Address 1">
+                      </div>
+                      <div class="col-md-6">
+                        <input class="form-control" type="text" placeholder="Address 2">
+                      </div>
+                      <div class="col-md-4-and-half">
+                        <select class="form-select js-select" data-minimum-results-for-search="-1" data-placeholder="City">
+                          <option label="City"></option>
+                          <option>Option 1</option>
+                          <option>Option 2</option>
+                          <option>Option 3</option>
+                        </select>
+                      </div>
+                      <div class="col-xxs-6 col-md-4-and-half">
+                        <select class="form-select js-select" data-minimum-results-for-search="-1" data-placeholder="State">
+                          <option label="State"></option>
+                          <option>Alabama</option>
+                          <option>Alaska</option>
+                          <option>Arizona</option>
+                          <option>Arkansas</option>
+                          <option>California</option>
+                          <option>Colorado</option>
+                          <option>Connecticut</option>
+                          <option>Delaware</option>
+                          <option>Florida</option>
+                          <option>Georgia</option>
+                          <option>Hawaii</option>
+                          <option>Idaho</option>
+                          <option>Illinois</option>
+                          <option>Indiana</option>
+                          <option>Iowa</option>
+                          <option>Kansas</option>
+                          <option>Kentucky</option>
+                          <option>Louisiana</option>
+                          <option>Maine</option>
+                          <option>Maryland</option>
+                          <option>Massachusetts</option>
+                          <option>Michigan</option>
+                          <option>Minnesota</option>
+                          <option>Mississippi</option>
+                          <option>Missouri</option>
+                          <option>Montana</option>
+                          <option>Nebraska</option>
+                          <option>Nevada</option>
+                          <option>New Hampshire</option>
+                          <option>New Jersey</option>
+                          <option>New Mexico</option>
+                          <option>New York</option>
+                          <option>North Carolina</option>
+                          <option>North Dakota</option>
+                          <option>Ohio</option>
+                          <option>Oklahoma</option>
+                          <option>Oregon</option>
+                          <option>Pennsylvania</option>
+                          <option>Rhode Island</option>
+                          <option>South Carolina</option>
+                          <option>South Dakota</option>
+                          <option>Tennessee</option>
+                          <option>Texas</option>
+                          <option>Utah</option>
+                          <option>Vermont</option>
+                          <option>Virginia</option>
+                          <option>Washington</option>
+                          <option>West Virginia</option>
+                          <option>Wisconsin</option>
+                          <option>Wyoming</option>
+                        </select>
+                      </div>
+                      <div class="col-xxs-6 col-md-3">
+                        <input class="form-control" type="number" placeholder="Zip">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-40 mb-lg-48">
+                    <h4 class="fw-semibold text-uppercase">Rental property contact</h4>
+                    <div class="row gy-16 gy-lg-24">
+                      <div class="col-12">
+                        <input class="form-control" type="text" placeholder="Contact Full Name">
+                      </div>
+                      <div class="col-12">
+                        <input class="form-control" type="email" placeholder="Email">
+                      </div>
+                      <div class="col-12">
+                        <input class="form-control" type="tel" placeholder="Telephone">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-40 mb-lg-48">
+                    <h4 class="fw-semibold text-uppercase">Payment info</h4>
+                    <p class="text-lg text-blue">Your card will be charged a one-time fee of $50 to verify this ESA letter</p>
+                    <div class="row gy-16 gy-lg-24">
+                      <div class="col-12">
+                        <input class="form-control" type="text" placeholder="Name on Card">
+                      </div>
+                      <div class="col-12">
+                        <input class="form-control" type="number" placeholder="Credit Card Number">
+                      </div>
+                      <div class="col-xxs-6 col-md-4-and-half">
+                        <input class="form-control" type="text" placeholder="Exp. (mm/yy)">
+                      </div>
+                      <div class="col-xxs-6 col-md-3">
+                        <input class="form-control" type="number" placeholder="CVV">
+                      </div>
+                      <div class="col-md-4-and-half">
+                        <input class="form-control" type="number" placeholder="Billing Zip Code">
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mb-40 mb-lg-48">
+                    <h4 class="fw-semibold text-uppercase">Documents</h4>
+                    <div class="file-input">
+                      <input class="file-input__input" name="file" type="file">
+                      <div class="file-input__content">
+                        <span class="file-input__icon icomoon-file"></span>
+
+                        <p class="mb-4 text-sm text-gray">Click to upload or drag and drop files</p>
+                        <p class="mb-0 text-xs fw-semibold text-gray-light">PNG, JPG, PDF, DOC (max 15 MB)</p>
+                      </div>
+                    </div>
+
+                    <div class="pt-24">
+                      <p class="text-lg text-blue">Uploaded files</p>
+
+                      <div class="uploaded-files">
+                        <div class="uploaded-files__item">
+                          <div class="row align-items-center flex-grow-1 gx-32 gy-16">
+                            <div class="col w-auto min-w-0">
+                              <div class="uploaded-files__item-content">
+                                <div class="w-100">
+                                  <div class="uploaded-files__item-icon">
+                                    <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/uploaded-files-icon.svg">
+                                  </div>
+                                  <p class="uploaded-files__item-name">Document_file.pdf</p>
+                                  <p class="text-xs fw-semibold text-gray mb-0">2.3 MB</p>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-auto">
+                              <a class="text-sm link-gray text-decoration-underline" href="#">Delete</a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="uploaded-files__item">
+                          <div class="row align-items-center flex-grow-1 gx-32 gy-16">
+                            <div class="col w-auto min-w-0">
+                              <div class="uploaded-files__item-content">
+                                <div class="uploaded-files__item-icon">
+                                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/uploaded-files-icon.svg">
+                                </div>
+                                <div class="w-100">
+                                  <p class="uploaded-files__item-name">Document_file.doc</p>
+                                  <div class="uploaded-files__item-progress-block">
+                                    <div class="uploaded-files__item-progress">
+                                      <div class="uploaded-files__item-progress-bar" style="width: 52%"></div>
+                                    </div>
+                                    <p class="uploaded-files__item-progress-percentage">52%</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="col-xs-auto">
+                              <a class="text-sm link-gray text-decoration-underline" href="#">Delete</a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="text-center">
+                  <button class="btn btn-primary" type="submit">Confirm payment
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION CREDIT CARD PAYMENT END -->
+    </main>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER -->
+    <footer class="footer bg-blue-dark">
+      <div class="container">
+        <div class="footer__top-content">
+          <div class="row gy-40">
+            <div class="col-lg-3 d-flex align-items-start">
+              <a class="footer__logo" href="index.html">
+                <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="170" height="44" style="aspect-ratio: 170/44">
+              </a>
+            </div>
+            <div class="col-xxs-6 col-md-4 col-lg-3">
+              <h4 class="text-blue-light mb-24 mb-lg-32">Solutions</h4>
+              <div class="remove-last-child-margin">
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover text-sm" href="pet-owners.html">Pet owners</a>
+                </div>
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover text-sm" href="non-pet-owners.html">Non pet owners</a>
+                </div>
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover text-sm" href="assistance-animals.html">Assistance animals</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-xxs-6 col-md-4 col-lg-3">
+              <h4 class="text-blue-light mb-24 mb-lg-32">Industries</h4>
+              <div class="remove-last-child-margin">
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover text-sm" href="long-team-rentals.html">Long Team Rentals</a>
+                </div>
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover text-sm" href="hoas.html">HOAs</a>
+                </div>
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover text-sm" href="vacation-rentals.html">Vacation Rentals</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 col-lg-3">
+              <h4 class="text-blue-light mb-24 mb-lg-32">Other</h4>
+              <div class="remove-last-child-margin">
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover link-with-icon text-sm" href="#">
+                    <span class="icomoon-documents"></span> Verify ESA Letter
+                  </a>
+                </div>
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover link-with-icon text-sm" href="#">
+                    <span class="icomoon-home-person"></span> Residents
+                  </a>
+                </div>
+                <div class="mb-8">
+                  <a class="link-white link-with-underline-hover link-with-icon text-sm" href="#">
+                    <span class="icomoon-manage-accounts"></span> Property managers
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom-content">
+          <div class="text-block text-sm">
+            <p>© 2025 Free Pet Screening. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+  </div>
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/libs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

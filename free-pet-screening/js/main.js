@@ -1,6 +1,6 @@
 'use strict';
 
-/* global LazyLoad, countUp, Odometer, SVGInjector, AOS */
+/* global LazyLoad, countUp, Odometer, SVGInjector, AOS, Choices */
 
 // LAZY LOAD IMAGES
 function initLazyLoad() {
@@ -131,6 +131,28 @@ function initCollapse() {
   });
 }
 
+// FORMS
+function initForms() {
+  var select = $('.js-select');
+
+  select.each(function () {
+    var selectItem = $(this),
+      selectLabel = selectItem.siblings('.form-label'),
+      selectContainer = selectItem.closest('.js-select-container');
+
+    selectItem.select2({
+      dropdownParent: selectContainer.length ? selectContainer : false,
+      width: '100%',
+      theme: 'bootstrap',
+      minimumResultsForSearch: 10
+    });
+
+    selectLabel.on('click', function () {
+      selectItem.select2('open');
+    });
+  });
+}
+
 (function ($) {
   initLazyLoad();
   initStopAnimationsDuringWindowResizing();
@@ -140,4 +162,5 @@ function initCollapse() {
   initAos();
   initMatchHeight();
   initCollapse();
+  initForms();
 })(jQuery);
