@@ -24932,6 +24932,10 @@ h6,
   min-width: 0;
 }
 
+.row.side-divider > [class*=col-]:not(:last-child) {
+  border-right: 1px solid #1C49C2;
+}
+
 @keyframes dogs-tail-animation {
   0% {
     transform: rotate(-4deg) translate(-4px, -7px);
