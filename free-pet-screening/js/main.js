@@ -1,6 +1,6 @@
 'use strict';
 
-/* global LazyLoad, countUp, Odometer, SVGInjector, AOS, Choices */
+/* global LazyLoad, countUp, Odometer, SVGInjector, AOS */
 
 // LAZY LOAD IMAGES
 function initLazyLoad() {
