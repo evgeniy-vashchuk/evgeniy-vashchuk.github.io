@@ -204,7 +204,67 @@
                   </span>
                 </div>
                 <div class="col-auto">
-                  <a class="link-secondary" href="#">Action History</a>
+                  <a class="link-secondary" href="#modal-action-history" data-bs-toggle="modal">Action History</a>
+
+                  <div class="modal fade" aria-labelledby="modal-action-history-label" aria-hidden="true" id="modal-action-history" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modal-action-history-label">Action History</h5>
+                          <button class="btn-close h5" aria-label="Close" type="button" data-bs-dismiss="modal">X</button>
+                        </div>
+                        <div class="modal-body">
+                          <div class="table-responsive">
+                            <table class="table table-striped">
+                              <thead>
+                                <tr>
+                                  <th>Date</th>
+                                  <th>Action</th>
+                                  <th>User</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <tr>
+                                  <td>09/30/2025</td>
+                                  <td>
+                                    <button class="btn btn-outline-blue-light btn-sm" type="button">Refresh
+                                    </button>
+                                  </td>
+                                  <td>Rachel Danny</td>
+                                </tr>
+                                <tr>
+                                  <td>09/30/2025</td>
+                                  <td>
+                                    <button class="btn btn-outline-blue-light btn-sm" type="button">Refresh
+                                    </button>
+                                  </td>
+                                  <td>Rachel Danny</td>
+                                </tr>
+                                <tr>
+                                  <td>09/30/2025</td>
+                                  <td>
+                                    <button class="btn btn-outline-blue-light btn-sm" type="button">Refresh
+                                    </button>
+                                  </td>
+                                  <td>Rachel Danny</td>
+                                </tr>
+                              </tbody>
+                            </table>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <div>
+                            <div class="row flex-grow-1 g-10">
+                              <div class="col-auto">
+                                <button class="btn btn-blue-light" type="button" data-bs-dismiss="modal">Cancel
+                                </button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -394,6 +454,16 @@
                         </select>
                       </div>
                     </div>
+                    <div class="row gx-10 gy-10 pt-10">
+                      <div class="col-auto">
+                        <button class="btn btn-red-faded btn-sm" type="button">Cancel
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button class="btn btn-primary btn-sm" type="button">Save
+                        </button>
+                      </div>
+                    </div>
                   </div>
                   <div class="mb-15">
                     <div class="row align-items-center gx-10 gy-10">
@@ -416,6 +486,16 @@
                         </select>
                       </div>
                     </div>
+                    <div class="row gx-10 gy-10 pt-10">
+                      <div class="col-auto">
+                        <button class="btn btn-red-faded btn-sm" type="button">Cancel
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button class="btn btn-primary btn-sm" type="button">Save
+                        </button>
+                      </div>
+                    </div>
                   </div>
                   <div class="mb-15">
                     <div class="row align-items-center gx-10 gy-10">
@@ -431,6 +511,16 @@
                     <div class="row">
                       <div class="col-xs-10 col-sm-8 col-xxl-5">
                         <input class="form-control bordered-version white-border with-arrow" type="text" placeholder="Enter...">
+                      </div>
+                    </div>
+                    <div class="row gx-10 gy-10 pt-10">
+                      <div class="col-auto">
+                        <button class="btn btn-red-faded btn-sm" type="button">Cancel
+                        </button>
+                      </div>
+                      <div class="col-auto">
+                        <button class="btn btn-primary btn-sm" type="button">Save
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -846,6 +936,40 @@
                           </div>
                         </div>
                       </div>
+                    </div>
+
+                    <div class="table-responsive">
+                      <table class="table table-striped">
+                        <thead>
+                          <tr>
+                            <th style="width: 50px; min-width: 50px"></th>
+                            <th>Name</th>
+                            <th>Document type</th>
+                            <th>Expiration date</th>
+                            <th>Review status</th>
+                            <th>Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>
+                              <span class="icomoon-document text-primary"></span>
+                            </td>
+                            <td>Rachel Danny</td>
+                            <td>pdf</td>
+                            <td>09/30/2025</td>
+                            <td>Approved</td>
+                            <td class="text-nowrap">
+                              <button class="btn btn-primary btn-sm" type="button">Approve
+                              </button>
+                              <button class="btn btn-red-faded btn-sm" type="button">Deny
+                              </button>
+                              <button class="btn btn-outline-blue-light btn-sm" type="button">In progress
+                              </button>
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
                     </div>
 
                     <div class="info-placeholder">

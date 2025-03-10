@@ -251,6 +251,24 @@ var initToasts = function initToasts() {
   });
 };
 
+// DASHBOARD TABLE HEIGHT
+var initDashboardTableHeight = function initDashboardTableHeight() {
+  var dashboardTable = $('.table-responsive');
+
+  if (dashboardTable.length && dashboardTable.closest('.card.wrapper').length && !dashboardTable.closest('.modal').length) {
+    dashboardTable.each(function () {
+      var table = $(this);
+      var tableOffset = table.offset().top;
+      var viewportHeight = $(window).height();
+      var dashboardPadding = $('.dashboard__main').css('padding-bottom').replace('px', '');
+      var cardWrapperPadding = $('.card.wrapper').css('padding-bottom').replace('px', '');
+      var tableMaxHeight = tableOffset > viewportHeight ? 500 : viewportHeight - tableOffset - dashboardPadding - cardWrapperPadding;
+
+      table.css('max-height', tableMaxHeight);
+    });
+  }
+};
+
 (function ($) {
   initActiveHeaderAfterScroll();
   initScrollBarWidth();
@@ -261,8 +279,10 @@ var initToasts = function initToasts() {
   initDropdown();
   initModal();
   initToasts();
+  initDashboardTableHeight();
 
   $(window).on('resize', function () {
     initScrollBarWidth();
+    initDashboardTableHeight();
   });
 })(jQuery);
