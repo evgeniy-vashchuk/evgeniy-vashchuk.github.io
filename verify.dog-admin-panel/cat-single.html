@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Verify.Dog — Cat Single</title>
+  <meta name="description" content="Verify.dog User Console">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#FFFFFF">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&amp;family=Quicksand:wght@300..700&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- SIDEBAR -->
+  <aside class="sidebar js-sidebar offcanvas-lg offcanvas-start" id="offcanvas-menu" tabindex="-1">
+    <div class="sidebar__header">
+      <a class="sidebar__logo" href="#">
+        <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="120" height="40" style="aspect-ratio: 120/40">
+      </a>
+    </div>
+    <div class="sidebar__body">
+      <nav class="sidebar__nav">
+        <ul class="sidebar__nav-list">
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="#">
+              <span class="btn-menu__icon icomoon-main-console"></span>
+              <span>Main Console</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="dogs.html">
+              <span class="btn-menu__icon icomoon-dogs"></span>
+              <span>Dogs</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="cats.html">
+              <span class="btn-menu__icon icomoon-cats"></span>
+              <span>Cats</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="certification.html">
+              <span class="btn-menu__icon icomoon-certification"></span>
+              <span>Certification</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="#">
+              <span class="btn-menu__icon icomoon-medical-records"></span>
+              <span>Medical Records</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="#">
+              <span class="btn-menu__icon icomoon-travel-forms"></span>
+              <span>Travel Forms</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="sidebar__footer">
+      <a class="btn btn-primary rounded-pill w-100" href="#">
+        <span class="icomoon-support"></span> Support
+      </a>
+    </div>
+  </aside>
+  <!-- SIDEBAR END -->
+
+  <!-- HEADER -->
+  <header class="header js-header">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-auto d-none d-lg-inline-flex">
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="main-console.html">Home</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="cats.html">Cats</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">My Cat</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="col-auto d-inline-flex d-lg-none">
+          <a class="header__logo" href="#">
+            <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="120" height="40" style="aspect-ratio: 120/40">
+          </a>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <div class="row align-items-center">
+            <div class="col-auto d-flex align-items-center">
+              <div class="dropdown dropdown-user-menu">
+                <button class="dropdown-user-menu__toggler" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,8">
+                  <span class="dropdown-user-menu__toggler-avatar">
+                    <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/dropdown-user-menu/avatar.webp">
+                  </span>
+                  <span class="dropdown-user-menu__toggler-text">Martines Tinigiero</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end dropdown-user-menu__menu">
+                  <p class="text-sm fw-normal mb-8">Menu</p>
+                  <a class="btn btn-primary btn-sm w-100" href="user-profile.html">
+                    <span class="icomoon-profile"></span> See Profile
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a class="btn btn-outline-dark btn-sm w-100" href="#">
+                    <span class="icomoon-logout"></span> Logout
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto d-flex d-lg-none align-items-center">
+              <button class="hamburger-menu" aria-label="Toggle menu" aria-controls="offcanvas-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu">
+                <span class="hamburger-menu__wrap">
+                  <span class="hamburger-menu__bars"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <!-- CONTENT -->
+  <main class="main">
+    <div class="container-fluid">
+      <div class="mb-40 d-lg-none">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="main-console.html">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="cats.html">Cats</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">My Cat</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="row gy-24 mb-24">
+        <div class="col">
+          <h1 class="mb-0">My Cat</h1>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-outline-dark btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modal-delete">Delete Pet
+          </button>
+
+          <div class="modal fade" aria-hidden="true" id="modal-delete" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button class="btn-close" aria-label="Close" type="button" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="text-center mb-24">
+                    <span class="icomoon-delete d-inline-block mb-12" style="font-size: 1.5rem"></span>
+                    <h4 class="mb-12">Delete selected item</h4>
+                    <p class="mb-0">Are you sure you want to proceed with deletion?</p>
+                  </div>
+
+                  <div class="row justify-content-center gx-16 gy-8">
+                    <div class="col-auto">
+                      <button class="btn btn-danger btn-sm" type="button" data-bs-dismiss="modal">Delete
+                      </button>
+                    </div>
+                    <div class="col-auto">
+                      <button class="btn btn-outline-dark btn-sm" type="button" data-bs-dismiss="modal">Cancel
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="remove-last-child-margin">
+        <div class="mb-24">
+          <div class="card-default js-edit-card">
+            <div class="card-default__header">
+              <div class="row flex-grow-1 align-items-center gy-16">
+                <div class="col">
+                  <h2 class="mb-0">Basic Information</h2>
+                </div>
+                <div class="col-auto">
+                  <a class="btn btn-primary btn-action js-edit-btn" href="#">
+                    <span class="icomoon-edit"></span>
+                  </a>
+                  <div class="row gx-16 gy-8 justify-content-end js-edit-actions d-none">
+                    <div class="col-auto">
+                      <a class="btn btn-primary btn-sm js-edit-action" href="#">Save Changes</a>
+                    </div>
+                    <div class="col-auto">
+                      <a class="btn btn-outline-dark btn-sm js-edit-action" href="#">Cancel</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row g-24">
+              <div class="col-md-6 col-xl-4">
+                <div class="card-default">
+                  <div class="text-center mb-16 mb-sm-24 mb-xl-40">
+                    <div class="photo-item">
+                      <img class="lazy js-lazy of-cover rounded-pill" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/photo-item/5.webp">
+                      <div class="photo-item__uploader-container js-photo-item-uploader">
+                        <div class="photo-item__uploader">
+                          <input id="photo-item-uploader" name="avatar" type="file" accept="image/png, image/jpeg" hidden="hidden">
+                          <label class="btn btn-primary btn-sm btn-action" for="photo-item-uploader">
+                            <span class="icomoon-edit"></span>
+                          </label>
+                        </div>
+                        <div class="photo-item__delete-overlay">
+                          <a class="text-sm fw-normal link-white" href="#">Delete</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <label class="form-label" for="animale-name">Animale Name</label>
+                  <input class="form-control" id="animale-name" type="text" value="Sunkiy" disabled="disabled">
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-8">
+                <div class="row gx-24 gy-16 gy-sm-24">
+                  <div class="col-sm-6 col-md-12 col-xl-6">
+                    <label class="form-label" for="friendly-name">Friendly Name</label>
+                    <input class="form-control" id="friendly-name" type="text" value="Sunny" disabled="disabled">
+                  </div>
+                  <div class="col-sm-6 col-md-12 col-xl-6">
+                    <label class="form-label" for="date-of-birth">Date of Birth</label>
+                    <input class="form-control datepicker js-datepicker" id="date-of-birth" type="text" value="21.04.2020" readonly="readonly" disabled="disabled">
+                  </div>
+                  <div class="col-sm-6 col-md-12 col-xl-6">
+                    <label class="form-label" for="breed">Breed</label>
+                    <select class="form-select js-select" id="breed" data-placeholder="" disabled="disabled">
+                      <option label="Select"></option>
+                      <option selected="selected">Scottish Fold</option>
+                      <option>Mixed</option>
+                      <option>Maine Coon</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-6 col-md-12 col-xl-6">
+                    <label class="form-label" for="weight-(lbs.)">Weight (lbs.)</label>
+                    <input class="form-control" id="weight-(lbs.)" type="number" value="5" disabled="disabled">
+                  </div>
+                  <div class="col-sm-6 col-md-12 col-xl-6">
+                    <label class="form-label" for="gender">Gender</label>
+                    <select class="form-select js-select" id="gender" data-placeholder="" disabled="disabled">
+                      <option label="Select"></option>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option selected="selected">Female - Spayed</option>
+                      <option>Male - Neutered</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-6 col-md-12 col-xl-6">
+                    <label class="form-label" for="animal-role">Animal Role</label>
+                    <select class="form-select js-select" id="animal-role" data-placeholder="" disabled="disabled">
+                      <option label="Select"></option>
+                      <option selected="selected">Pet</option>
+                      <option>Pest Control / Mouser</option>
+                      <option>Therapy Animal</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-24">
+          <div class="card-default">
+            <div class="card-default__header">
+              <div class="row flex-grow-1 align-items-center gy-16">
+                <div class="col">
+                  <h2 class="mb-0">Certification</h2>
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modal-add-certification">Add Certification
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" aria-labelledby="modal-add-certification-label" aria-hidden="true" id="modal-add-certification" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 class="h1 modal-title" id="modal-add-certification-label">Add Certification</h2>
+                    <button class="btn-close" aria-label="Close" type="button" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="js-select-based-forms" action="#">
+                      <div class="row gx-24 gx-lg-32 gy-16 gy-sm-24 mb-24">
+                        <div class="col-sm-6">
+                          <div class="js-select-container">
+                            <label class="form-label" for="registration-type">Registration Type</label>
+                            <select class="form-select js-select js-select-based" id="registration-type" data-placeholder="">
+                              <option label="Select"></option>
+                              <option selected="selected">Emotional Support</option>
+                              <option>Service Cat</option>
+                              <option>Therapy</option>
+                              <option>Pet</option>
+                              <option>Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Emotional Support, Service Cat, Therapy, Pet, Other]">
+                          <label class="form-label" for="animal-name">Animal Name</label>
+                          <input class="form-control" id="animal-name" type="text" value="Sunkiy" disabled="disabled">
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Emotional Support, Service Cat, Therapy, Pet, Other]">
+                          <label class="form-label" for="certification-number">Certification Number</label>
+                          <input class="form-control" id="certification-number" type="text" value="23 44 45 44">
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Emotional Support, Service Cat, Therapy, Pet, Other]">
+                          <div class="js-datepicker-container">
+                            <label class="form-label" for="date-issued">Date Issued</label>
+                            <input class="form-control datepicker js-datepicker" id="date-issued" type="text" value="12.12.2024" readonly="readonly">
+                          </div>
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Emotional Support, Service Cat, Therapy, Pet, Other]">
+                          <label class="form-label" for="used-by">Used By</label>
+                          <input class="form-control" id="used-by" type="text" value="Joe Doctor">
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Emotional Support]">
+                          <label class="form-label" for="therapist-name">Therapist Name</label>
+                          <input class="form-control" id="therapist-name" type="text" value="Robert">
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Emotional Support]">
+                          <label class="form-label" for="therapist-license-number">Therapist License Number</label>
+                          <input class="form-control" id="therapist-license-number" type="text" value="12 12 12">
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Emotional Support, Service Cat]">
+                          <div class="js-datepicker-container">
+                            <label class="form-label" for="therapist-license-expires">Therapist License Expires</label>
+                            <input class="form-control datepicker js-datepicker" id="therapist-license-expires" type="text" value="12.12.2024" readonly="readonly">
+                          </div>
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Service Cat]">
+                          <div class="js-select-container">
+                            <label class="form-label" for="condition-name">Condition Name</label>
+                            <select class="form-select js-select" id="condition-name" data-placeholder="Select Condition">
+                              <option label="Select Condition"></option>
+                              <option>ADHD</option>
+                              <option>ANXIETY</option>
+                              <option>AUTISM</option>
+                              <option>PSYCHIATRIC SERVICE CAT</option>
+                              <option>PTSD</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div data-select-based-type="[Service Cat]">
+                        <h3 class="mb-24">Training</h3>
+                        <div class="row gx-24 gx-lg-32 gy-16 gy-sm-24 mb-24">
+                          <div class="col-sm-6">
+                            <label class="form-label" for="trainer-name">Trainer Name</label>
+                            <input class="form-control" id="trainer-name" type="text" disabled="disabled">
+                          </div>
+                          <div class="col-sm-6">
+                            <div class="js-select-container">
+                              <label class="form-label" for="trained-for">Trained For</label>
+                              <select class="form-select js-select" id="trained-for" data-placeholder="" multiple="multiple">
+                                <option>Alerting to Anxiety</option>
+                                <option>Alerting to Emotional Shifts</option>
+                                <option>Alerting to Sensory Changes</option>
+                                <option>Assisting with Daily Tasks</option>
+                                <option>Behavioral Disruption</option>
+                                <option>Behavioral Interruptions</option>
+                                <option>Blocking and Covering</option>
+                                <option>Calming Presence</option>
+                                <option>Creating Space</option>
+                                <option>Distraction Techniques</option>
+                                <option>Emotional Support</option>
+                                <option>Encouraging Physical Activity</option>
+                                <option>Encouraging Routine</option>
+                                <option>Focusing Attention</option>
+                                <option>Grounding</option>
+                                <option>Guidance</option>
+                                <option>Guiding and Navigation</option>
+                                <option>Interrupting Distractions</option>
+                                <option>Interrupting Flashbacks</option>
+                                <option>Interrupting Nightmares</option>
+                                <option>Interrupting Self-Harm</option>
+                                <option>Medical Alerting</option>
+                                <option>Medication Reminders</option>
+                                <option>My dog is currently being trained</option>
+                                <option>Navigating Public Spaces</option>
+                                <option>Press to select</option>
+                                <option>Press to select</option>
+                                <option>Panic Attack Response</option>
+                                <option>Pressure Therapy</option>
+                                <option>Providing a Physical Barrier</option>
+                                <option>Providing a Safe Buffer</option>
+                                <option>Providing Comfort</option>
+                                <option>Reminder Cues</option>
+                                <option>Retrieving Items</option>
+                                <option>Room Searches</option>
+                                <option>Routine Assistance</option>
+                                <option>Safety and Navigation</option>
+                                <option>Search and Rescue</option>
+                                <option>Sensory Regulation</option>
+                                <option>Social Interaction</option>
+                                <option>Tactile Stimulation</option>
+                                <option>Task Assistance</option>
+                              </select>
+                            </div>
+                          </div>
+                          <div class="col-12">
+                            <div class="form-check form-switch">
+                              <input class="form-check-input" id="trained-by-self" name="Trained By Self" type="checkbox" role="switch" checked="checked">
+                              <label class="form-check-label" for="trained-by-self">Trained By Self</label>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <h3 class="mb-24">Documents</h3>
+                      <div class="mb-24">
+                        <label class="file-input">
+                          <input class="file-input__input" name="file" type="file" hidden="hidden">
+                          <span class="file-input__content">
+                            <span class="file-input__icon icomoon-file"></span>
+                            <span class="d-block h6 mb-4">Click to upload or drag and drop files</span>
+                            <span class="d-block mb-0 text-sm fw-normal text-gray">PNG, JPG, PDF, DOC (max 15 MB)</span>
+                          </span>
+                        </label>
+                      </div>
+
+                      <div class="mb-24">
+                        <div class="uploaded-files">
+                          <div class="uploaded-files__item">
+                            <div class="row align-items-center flex-grow-1 gx-32 gy-16">
+                              <div class="col w-auto min-w-0">
+                                <div class="uploaded-files__item-content">
+                                  <div class="w-100">
+                                    <div class="uploaded-files__item-icon">
+                                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/uploaded-files-icon.svg">
+                                    </div>
+                                    <p class="uploaded-files__item-name">Document_file.pdf</p>
+                                    <p class="uploaded-files__item-size">2.3 MB</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-auto">
+                                <a class="link-gray-dark text-decoration-underline" href="#">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="uploaded-files__item">
+                            <div class="row align-items-center flex-grow-1 gx-32 gy-16">
+                              <div class="col w-auto min-w-0">
+                                <div class="uploaded-files__item-content">
+                                  <div class="w-100">
+                                    <div class="uploaded-files__item-icon">
+                                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/uploaded-files-icon.svg">
+                                    </div>
+                                    <p class="uploaded-files__item-name">Document_file.doc</p>
+                                    <div class="uploaded-files__item-progress-block">
+                                      <div class="uploaded-files__item-progress">
+                                        <div class="uploaded-files__item-progress-bar" style="width: 52%"></div>
+                                      </div>
+                                      <p class="uploaded-files__item-progress-percentage">52%</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-auto">
+                                <a class="link-gray-dark text-decoration-underline" href="#">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" id="show-on-verification-profile" name="Show On Verification Profile" type="checkbox" role="switch" checked="checked">
+                        <label class="form-check-label" for="show-on-verification-profile">Show On Verification Profile</label>
+                      </div>
+
+                      <div class="pt-24">
+                        <div class="row gx-16 gy-8 justify-content-end">
+                          <div class="col-auto">
+                            <button class="btn btn-primary btn-sm" type="button" data-bs-dismiss="modal">Save Changes
+                            </button>
+                          </div>
+                          <div class="col-auto">
+                            <button class="btn btn-outline-dark btn-sm" type="button" data-bs-dismiss="modal">Cancel
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 row-cols-xxxl-4 gy-16 gy-sm-24 gx-24">
+              <div class="col d-flex">
+                <div class="card-document">
+                  <div class="card-document__actions">
+                    <div class="row g-12">
+                      <div class="col-auto">
+                        <a class="btn btn-gray-light btn-action" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete">
+                          <span class="icomoon-delete"></span>
+                        </a>
+                      </div>
+                      <div class="col-auto">
+                        <a class="btn btn-primary btn-action" href="#">
+                          <span class="icomoon-edit"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-document__content-top">
+                    <div class="card-document__document-img">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-document/1.webp">
+                    </div>
+                    <h3 class="text-center">Emotional Support Animal</h3>
+                  </div>
+                  <div class="card-document__content-bottom">
+                    <div class="row bordered-cols gy-16 mb-24">
+                      <div class="col-12 text-center">
+                        <h6 class="mb-4">Cooper</h6>
+                        <p class="text-sm mb-0">Animal Name</p>
+                      </div>
+                      <div class="col-xs-6 text-center">
+                        <h6 class="mb-4">Melissa Dobson</h6>
+                        <p class="text-sm mb-0">Issued By</p>
+                      </div>
+                      <div class="col-xs-6 text-center">
+                        <h6 class="mb-4">12 32 34</h6>
+                        <p class="text-sm mb-0">Certification Number</p>
+                      </div>
+                    </div>
+                    <a class="btn btn-primary rounded-pill w-100" href="#">Download</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col d-flex">
+                <div class="card-document">
+                  <div class="card-document__actions">
+                    <div class="row g-12">
+                      <div class="col-auto">
+                        <a class="btn btn-gray-light btn-action" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete">
+                          <span class="icomoon-delete"></span>
+                        </a>
+                      </div>
+                      <div class="col-auto">
+                        <a class="btn btn-primary btn-action" href="#">
+                          <span class="icomoon-edit"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-document__content-top">
+                    <div class="card-document__document-img">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-document/1.webp">
+                    </div>
+                    <h3 class="text-center">Service Cat</h3>
+                  </div>
+                  <div class="card-document__content-bottom">
+                    <div class="row bordered-cols gy-16 mb-24">
+                      <div class="col-12 text-center">
+                        <h6 class="mb-4">Cooper</h6>
+                        <p class="text-sm mb-0">Animal Name</p>
+                      </div>
+                      <div class="col-xs-6 text-center">
+                        <h6 class="mb-4">Robert Meniye</h6>
+                        <p class="text-sm mb-0">Issued By</p>
+                      </div>
+                      <div class="col-xs-6 text-center">
+                        <h6 class="mb-4">44 34 55</h6>
+                        <p class="text-sm mb-0">Certification Number</p>
+                      </div>
+                    </div>
+                    <a class="btn btn-primary rounded-pill w-100" href="#">Download</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col d-flex">
+                <div class="card-document">
+                  <div class="card-document__actions">
+                    <div class="row g-12">
+                      <div class="col-auto">
+                        <a class="btn btn-gray-light btn-action" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete">
+                          <span class="icomoon-delete"></span>
+                        </a>
+                      </div>
+                      <div class="col-auto">
+                        <a class="btn btn-primary btn-action" href="#">
+                          <span class="icomoon-edit"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-document__content-top">
+                    <div class="card-document__document-img">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-document/1.webp">
+                    </div>
+                    <h3 class="text-center">Therapy</h3>
+                  </div>
+                  <div class="card-document__content-bottom">
+                    <div class="row bordered-cols gy-16 mb-24">
+                      <div class="col-12 text-center">
+                        <h6 class="mb-4">Cooper</h6>
+                        <p class="text-sm mb-0">Animal Name</p>
+                      </div>
+                      <div class="col-xs-6 text-center">
+                        <h6 class="mb-4">Robert Meniye</h6>
+                        <p class="text-sm mb-0">Issued By</p>
+                      </div>
+                      <div class="col-xs-6 text-center">
+                        <h6 class="mb-4">12 44 65</h6>
+                        <p class="text-sm mb-0">Certification Number</p>
+                      </div>
+                    </div>
+                    <a class="btn btn-primary rounded-pill w-100" href="#">Download</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-24">
+          <div class="card-default">
+            <div class="card-default__header">
+              <div class="row flex-grow-1 align-items-center gy-16">
+                <div class="col">
+                  <h2 class="mb-0">Medical Records</h2>
+                </div>
+                <div class="col-auto">
+                  <button class="btn btn-primary btn-sm" type="button" data-bs-toggle="modal" data-bs-target="#modal-add-medical-record">Add Record
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" aria-labelledby="modal-add-medical-record-label" aria-hidden="true" id="modal-add-medical-record" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h2 class="h1 modal-title" id="modal-add-medical-record-label">Add Medical Record</h2>
+                    <button class="btn-close" aria-label="Close" type="button" data-bs-dismiss="modal"></button>
+                  </div>
+                  <div class="modal-body">
+                    <form class="js-select-based-forms" action="#">
+                      <div class="row gx-24 gx-lg-32 gy-16 gy-sm-24 mb-24">
+                        <div class="col-sm-6">
+                          <div class="js-select-container">
+                            <label class="form-label" for="record-type">Record Type</label>
+                            <select class="form-select js-select js-select-based" id="record-type" data-placeholder="">
+                              <option label="Select"></option>
+                              <option selected="selected">Vaccination</option>
+                              <option>Vet Office Visit</option>
+                              <option>Medication</option>
+                              <option>Surgery</option>
+                              <option>Lab Result</option>
+                              <option>Genetic Testing</option>
+                              <option>Other</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Vaccination, Vet Office Visit, Medication, Surgery, Lab Result, Genetic Testing, Other]">
+                          <label class="form-label" for="animal-name">Animal Name</label>
+                          <input class="form-control" id="animal-name" type="text" value="Sunkiy" disabled="disabled">
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Vaccination, Vet Office Visit, Medication, Surgery, Lab Result, Genetic Testing, Other]">
+                          <div class="js-datepicker-container">
+                            <label class="form-label" for="record-date">Record Date</label>
+                            <input class="form-control datepicker js-datepicker" id="record-date" type="text" value="12.12.2024" readonly="readonly">
+                          </div>
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Vaccination, Medication]">
+                          <label class="form-label" for="vaccination-type">Vaccination Type</label>
+                          <input class="form-control" id="vaccination-type" type="text" value="Rabies">
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Vaccination, Vet Office Visit, Medication, Surgery, Lab Result, Genetic Testing, Other]">
+                          <label class="form-label" for="vet-office-name">Vet Office Name</label>
+                          <input class="form-control" id="vet-office-name" type="text" value="Text">
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Vaccination, Vet Office Visit, Medication, Surgery, Lab Result, Genetic Testing, Other]">
+                          <label class="form-label" for="vet-name">Vet Name</label>
+                          <input class="form-control" id="vet-name" type="text" value="Joe Doctor">
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Vaccination, Medication]">
+                          <div class="js-datepicker-container">
+                            <label class="form-label" for="expiration-date">Expiration Date</label>
+                            <input class="form-control datepicker js-datepicker" id="expiration-date" type="text" value="12.12.2024" readonly="readonly">
+                          </div>
+                        </div>
+                        <div class="col-sm-6" data-select-based-type="[Vaccination, Vet Office Visit, Medication, Surgery, Lab Result, Genetic Testing, Other]">
+                          <label class="form-label" for="vet-office">Vet Office</label>
+                          <input class="form-control" id="vet-office" type="text" value="Veterinary">
+                        </div>
+                        <div class="col-12" data-select-based-type="[Vaccination, Vet Office Visit, Medication, Surgery, Lab Result, Genetic Testing, Other]">
+                          <label class="form-label" for="description">Description</label>
+                          <textarea class="form-control" id="description" placeholder="Tell this more information"></textarea>
+                        </div>
+                      </div>
+                      <h3 class="mb-24">Documents</h3>
+                      <div class="mb-24">
+                        <label class="file-input">
+                          <input class="file-input__input" name="file" type="file" hidden="hidden">
+                          <span class="file-input__content">
+                            <span class="file-input__icon icomoon-file"></span>
+                            <span class="d-block h6 mb-4">Click to upload or drag and drop files</span>
+                            <span class="d-block mb-0 text-sm fw-normal text-gray">PNG, JPG, PDF, DOC (max 15 MB)</span>
+                          </span>
+                        </label>
+                      </div>
+
+                      <div class="mb-24">
+                        <div class="uploaded-files">
+                          <div class="uploaded-files__item">
+                            <div class="row align-items-center flex-grow-1 gx-32 gy-16">
+                              <div class="col w-auto min-w-0">
+                                <div class="uploaded-files__item-content">
+                                  <div class="w-100">
+                                    <div class="uploaded-files__item-icon">
+                                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/uploaded-files-icon.svg">
+                                    </div>
+                                    <p class="uploaded-files__item-name">Document_file.pdf</p>
+                                    <p class="uploaded-files__item-size">2.3 MB</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-sm-auto">
+                                <a class="link-gray-dark text-decoration-underline" href="#">Delete</a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="form-check form-switch">
+                        <input class="form-check-input" id="show-on-verification-profile" name="Show On Verification Profile" type="checkbox" role="switch" checked="checked">
+                        <label class="form-check-label" for="show-on-verification-profile">Show On Verification Profile</label>
+                      </div>
+
+                      <div class="pt-24">
+                        <div class="row gx-16 gy-8 justify-content-end">
+                          <div class="col-auto">
+                            <button class="btn btn-primary btn-sm" type="button" data-bs-dismiss="modal">Save Changes
+                            </button>
+                          </div>
+                          <div class="col-auto">
+                            <button class="btn btn-outline-dark btn-sm" type="button" data-bs-dismiss="modal">Cancel
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 row-cols-xxxl-4 gy-16 gy-sm-24 gx-24">
+              <div class="col d-flex">
+                <div class="card-document">
+                  <div class="card-document__actions">
+                    <div class="row g-12">
+                      <div class="col-auto">
+                        <a class="btn btn-gray-light btn-action" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete">
+                          <span class="icomoon-delete"></span>
+                        </a>
+                      </div>
+                      <div class="col-auto">
+                        <a class="btn btn-primary btn-action" href="#">
+                          <span class="icomoon-edit"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-document__content-top">
+                    <div class="card-document__document-img">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-document/2.webp">
+                    </div>
+                    <h3 class="text-center">Vaccination</h3>
+                  </div>
+                  <div class="card-document__content-bottom">
+                    <div class="row bordered-cols gy-16 mb-24">
+                      <div class="col-12 text-center">
+                        <h6 class="mb-4">Cooper</h6>
+                        <p class="text-sm mb-0">Animal Name</p>
+                      </div>
+                    </div>
+                    <a class="btn btn-primary rounded-pill w-100" href="#">Download</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col d-flex">
+                <div class="card-document">
+                  <div class="card-document__actions">
+                    <div class="row g-12">
+                      <div class="col-auto">
+                        <a class="btn btn-gray-light btn-action" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete">
+                          <span class="icomoon-delete"></span>
+                        </a>
+                      </div>
+                      <div class="col-auto">
+                        <a class="btn btn-primary btn-action" href="#">
+                          <span class="icomoon-edit"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-document__content-top">
+                    <div class="card-document__document-img">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-document/2.webp">
+                    </div>
+                    <h3 class="text-center">Vaccination</h3>
+                  </div>
+                  <div class="card-document__content-bottom">
+                    <div class="row bordered-cols gy-16 mb-24">
+                      <div class="col-12 text-center">
+                        <h6 class="mb-4">Cooper</h6>
+                        <p class="text-sm mb-0">Animal Name</p>
+                      </div>
+                    </div>
+                    <a class="btn btn-primary rounded-pill w-100" href="#">Download</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col d-flex">
+                <div class="card-document">
+                  <div class="card-document__actions">
+                    <div class="row g-12">
+                      <div class="col-auto">
+                        <a class="btn btn-gray-light btn-action" href="#" data-bs-toggle="modal" data-bs-target="#modal-delete">
+                          <span class="icomoon-delete"></span>
+                        </a>
+                      </div>
+                      <div class="col-auto">
+                        <a class="btn btn-primary btn-action" href="#">
+                          <span class="icomoon-edit"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card-document__content-top">
+                    <div class="card-document__document-img">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-document/2.webp">
+                    </div>
+                    <h3 class="text-center">Vaccination</h3>
+                  </div>
+                  <div class="card-document__content-bottom">
+                    <div class="row bordered-cols gy-16 mb-24">
+                      <div class="col-12 text-center">
+                        <h6 class="mb-4">Cooper</h6>
+                        <p class="text-sm mb-0">Animal Name</p>
+                      </div>
+                    </div>
+                    <a class="btn btn-primary rounded-pill w-100" href="#">Download</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-24">
+          <div class="card-default js-edit-card">
+            <div class="card-default__header">
+              <div class="row flex-grow-1 align-items-center gy-16">
+                <div class="col">
+                  <h2 class="mb-0">Other Information</h2>
+                </div>
+                <div class="col-auto">
+                  <a class="btn btn-primary btn-action js-edit-btn" href="#">
+                    <span class="icomoon-edit"></span>
+                  </a>
+                  <div class="row gx-16 gy-8 justify-content-end js-edit-actions d-none">
+                    <div class="col-auto">
+                      <a class="btn btn-primary btn-sm js-edit-action" href="#">Save Changes</a>
+                    </div>
+                    <div class="col-auto">
+                      <a class="btn btn-outline-dark btn-sm js-edit-action" href="#">Cancel</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-8">
+                <label class="form-label" for="here-you-can-describe-any-special-traits-your-pet-has---behavior,-temperament,-dietary-preferences,-or-other-important-details-worth-noting.">Here you can describe any special traits your pet has - behavior, temperament, dietary preferences, or other important details worth noting.</label>
+                <textarea class="form-control" id="here-you-can-describe-any-special-traits-your-pet-has---behavior,-temperament,-dietary-preferences,-or-other-important-details-worth-noting." disabled="disabled">My pet is very friendly and gets along well with children and other animals. He is afraid of loud noises such as fireworks and doesn’t like being left alone. He loves swimming and spending time outdoors. He’s allergic to chicken, so he follows a special diet. He knows basic commands and can become anxious in unfamiliar environments.</textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- CONTENT END -->
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/libs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

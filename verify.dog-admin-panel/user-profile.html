@@ -48,19 +48,19 @@
             </a>
           </li>
           <li class="sidebar__nav-item">
-            <a class="btn-menu" href="#">
+            <a class="btn-menu" href="dogs.html">
               <span class="btn-menu__icon icomoon-dogs"></span>
               <span>Dogs</span>
             </a>
           </li>
           <li class="sidebar__nav-item">
-            <a class="btn-menu" href="#">
+            <a class="btn-menu" href="cats.html">
               <span class="btn-menu__icon icomoon-cats"></span>
               <span>Cats</span>
             </a>
           </li>
           <li class="sidebar__nav-item">
-            <a class="btn-menu" href="#">
+            <a class="btn-menu" href="certification.html">
               <span class="btn-menu__icon icomoon-certification"></span>
               <span>Certification</span>
             </a>
@@ -96,7 +96,7 @@
           <nav aria-label="Breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="#">Home</a>
+                <a href="main-console.html">Home</a>
               </li>
               <li class="breadcrumb-item active" aria-current="page">User Profile</li>
             </ol>
@@ -146,11 +146,11 @@
   <!-- CONTENT -->
   <main class="main">
     <div class="container-fluid">
-      <div class="mb-24 d-lg-none">
+      <div class="mb-40 d-lg-none">
         <nav aria-label="Breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
-              <a href="#">Home</a>
+              <a href="main-console.html">Home</a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">User Profile</li>
           </ol>
@@ -164,18 +164,23 @@
             <div class="text-center mb-24">
               <div class="photo-item">
                 <img class="lazy js-lazy of-cover rounded-pill" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/photo-item/1.webp">
-                <div class="photo-item__uploader">
-                  <input id="photo-item-uploader" name="avatar" type="file" accept="image/png, image/jpeg" hidden="hidden">
-                  <label class="btn btn-primary btn-sm btn-action" for="photo-item-uploader">
-                    <span class="icomoon-edit"></span>
-                  </label>
+                <div class="photo-item__uploader-container js-photo-item-uploader">
+                  <div class="photo-item__uploader">
+                    <input id="photo-item-uploader" name="avatar" type="file" accept="image/png, image/jpeg" hidden="hidden">
+                    <label class="btn btn-primary btn-sm btn-action" for="photo-item-uploader">
+                      <span class="icomoon-edit"></span>
+                    </label>
+                  </div>
+                  <div class="photo-item__delete-overlay">
+                    <a class="text-sm fw-normal link-white" href="#">Delete</a>
+                  </div>
                 </div>
               </div>
             </div>
             <h2 class="h1 text-center">Mr. Martines Tiniero</h2>
             <div class="row">
               <div class="col-sm-8 col-md-6 col-xxl-12 mx-auto">
-                <div class="row bordered-cols">
+                <div class="row bordered-cols gy-16">
                   <div class="col-4 text-center">
                     <p class="fw-medium mb-8">1</p>
                     <p class="text-sm mb-0">Pets</p>
@@ -204,7 +209,7 @@
                   <a class="btn btn-primary btn-action js-edit-btn" href="#">
                     <span class="icomoon-edit"></span>
                   </a>
-                  <div class="row gx-16 gy-8 justify-content-end d-none js-edit-actions">
+                  <div class="row gx-16 gy-8 justify-content-end js-edit-actions d-none">
                     <div class="col-auto">
                       <a class="btn btn-primary btn-sm js-edit-action" href="#">Save Changes</a>
                     </div>
@@ -215,10 +220,11 @@
                 </div>
               </div>
             </div>
-            <div class="row g-24">
+            <div class="row gx-24 gy-16 gy-sm-24">
               <div class="col-md-2">
                 <label class="form-label" for="prefix">Prefix</label>
-                <select class="form-select js-select" id="prefix" disabled="disabled">
+                <select class="form-select js-select" id="prefix" data-placeholder="" disabled="disabled">
+                  <option label="Select"></option>
                   <option selected="selected">Mr.</option>
                   <option>Mrs.</option>
                   <option>Miss</option>
@@ -227,7 +233,7 @@
                 </select>
               </div>
               <div class="col-md-10">
-                <div class="row g-24">
+                <div class="row gx-24 gy-16 gy-sm-24">
                   <div class="col-md-4">
                     <label class="form-label" for="first-name">First Name</label>
                     <input class="form-control" id="first-name" type="text" value="Martines" disabled="disabled">
@@ -252,7 +258,7 @@
               </div>
               <div class="col-sm-4">
                 <label class="form-label" for="date-of-birth">Date of Birth</label>
-                <input class="form-control datepicker js-datepicker" id="date-of-birth" type="text" data-exclude-future="true" placeholder="Select date" value="01.12.1987" readonly="readonly" disabled="disabled">
+                <input class="form-control datepicker js-datepicker" id="date-of-birth" type="text" data-exclude-future="true" value="01.12.1987" readonly="readonly" disabled="disabled">
               </div>
             </div>
           </div>
@@ -268,7 +274,7 @@
                   <a class="btn btn-primary btn-action js-edit-btn" href="#">
                     <span class="icomoon-edit"></span>
                   </a>
-                  <div class="row gx-16 gy-8 justify-content-end d-none js-edit-actions">
+                  <div class="row gx-16 gy-8 justify-content-end js-edit-actions d-none">
                     <div class="col-auto">
                       <a class="btn btn-primary btn-sm js-edit-action" href="#">Save Changes</a>
                     </div>
@@ -279,7 +285,7 @@
                 </div>
               </div>
             </div>
-            <div class="row g-24">
+            <div class="row gx-24 gy-16 gy-sm-24">
               <div class="col-sm-6 col-md-4">
                 <label class="form-label" for="street-address">Street Address</label>
                 <input class="form-control" id="street-address" type="text" value="177 Alameda Avenue" disabled="disabled">
@@ -290,7 +296,8 @@
               </div>
               <div class="col-sm-6 col-md-4">
                 <label class="form-label" for="country">Country</label>
-                <select class="form-select js-select" id="country" disabled="disabled">
+                <select class="form-select js-select" id="country" data-placeholder="" disabled="disabled">
+                  <option label="Select"></option>
                   <option value="AF">Afghanistan</option>
                   <option value="AL">Albania</option>
                   <option value="DZ">Algeria</option>
@@ -551,7 +558,8 @@
               </div>
               <div class="col-sm-6 col-md-4">
                 <label class="form-label" for="state">State</label>
-                <select class="form-select js-select" id="state" disabled="disabled">
+                <select class="form-select js-select" id="state" data-placeholder="" disabled="disabled">
+                  <option label="Select"></option>
                   <option value="AL">Alabama</option>
                   <option value="AK">Alaska</option>
                   <option value="AZ">Arizona</option>
@@ -622,7 +630,7 @@
                   <a class="btn btn-primary btn-action js-edit-btn" href="#">
                     <span class="icomoon-edit"></span>
                   </a>
-                  <div class="row gx-16 gy-8 justify-content-end d-none js-edit-actions">
+                  <div class="row gx-16 gy-8 justify-content-end js-edit-actions d-none">
                     <div class="col-auto">
                       <a class="btn btn-primary btn-sm js-edit-action" href="#">Save Changes</a>
                     </div>
@@ -709,6 +717,13 @@
         </div>
         <div class="col-md-6 d-flex">
           <div class="card-default d-flex flex-column">
+            <div class="card-default__header">
+              <div class="row flex-grow-1 align-items-center gy-16">
+                <div class="col">
+                  <h2 class="mb-0">Profile Visibility</h2>
+                </div>
+              </div>
+            </div>
             <div>
               <h2 class="mb-8">Digital ID Card</h2>
               <h5 class="mb-0">Mobile Wallet</h5>

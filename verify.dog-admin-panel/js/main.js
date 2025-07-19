@@ -31,27 +31,27 @@ function initActiveHeaderAfterScroll() {
 
 // FORMS
 function initForms() {
-  var select = $('.js-select');
+  // const select = $('.js-select');
 
-  select.each(function () {
-    var selectItem = $(this),
-      selectLabel = selectItem.siblings('.form-label'),
-      selectContainer = selectItem.closest('.js-select-container');
+  // select.each(function() {
+  //   const selectItem = $(this),
+  //         selectLabel = selectItem.siblings('.form-label'),
+  //         selectContainer = selectItem.closest('.js-select-container');
 
-    selectItem.select2({
-      dropdownParent: selectContainer.length ? selectContainer : false,
-      width: '100%',
-      theme: 'bootstrap',
-      minimumResultsForSearch: 10,
-      searchInputPlaceholder: 'Search'
-    });
+  //   selectItem.select2({
+  //     dropdownParent: selectContainer.length ? selectContainer : false,
+  //     width: '100%',
+  //     theme: 'bootstrap',
+  //     minimumResultsForSearch: 10,
+  //     searchInputPlaceholder: 'Search',
+  //   });
 
-    selectLabel.on('click', function (e) {
-      e.preventDefault();
+  //   selectLabel.on('click', function(e) {
+  //     e.preventDefault();
 
-      selectItem.select2('open');
-    });
-  });
+  //     selectItem.select2('open');
+  //   });
+  // });
 
   var datepicker = $('.js-datepicker');
 
@@ -179,6 +179,7 @@ function initEditSwitch() {
   function enableEditForms(editCard) {
     var inputs = editCard.find('input, textarea');
     var selects = editCard.find('select.js-select');
+    var photoItemUploader = editCard.find('.js-photo-item-uploader');
 
     inputs.each(function () {
       var input = $(this);
@@ -191,11 +192,14 @@ function initEditSwitch() {
 
       select.select2('enable');
     });
+
+    photoItemUploader.addClass('active');
   }
 
   function disableEditForms(editCard) {
     var inputs = editCard.find('input, textarea');
     var selects = editCard.find('select.js-select');
+    var photoItemUploader = editCard.find('.js-photo-item-uploader');
 
     inputs.each(function () {
       var input = $(this);
@@ -208,6 +212,8 @@ function initEditSwitch() {
 
       select.select2('enable', false);
     });
+
+    photoItemUploader.removeClass('active');
   }
 
   editBtn.on('click', function (e) {
@@ -238,6 +244,80 @@ function initEditSwitch() {
   });
 }
 
+// WIDTH OF SCROLLBAR
+function initScrollBarWidth() {
+  if (window.innerWidth > $(window).width()) {
+    var $outer = $('<div class="custom-scrollbar">').css({ visibility: 'hidden', width: 100, overflow: 'scroll' }).appendTo('body'),
+      widthWithScroll = $('<div>').css({ width: '100%' }).appendTo($outer).
+      outerWidth();
+
+    $outer.remove();
+    window.widthOfScrollbar = 100 - widthWithScroll;
+
+    return 100 - widthWithScroll;
+  } else {
+    return window.widthOfScrollbar = 0;
+  }
+}
+
+// MODAL
+function initModal() {
+  document.addEventListener('hide.bs.modal', function (event) {
+    if (document.activeElement) {
+      document.activeElement.blur();
+    }
+  });
+
+  function addScrollbarCompensation(element) {
+    element.css('padding-right', window.widthOfScrollbar);
+  }
+
+  function removeScrollbarCompensation(element) {
+    element.css('padding-right', 0);
+  }
+
+  document.addEventListener('show.bs.modal', function (event) {
+    addScrollbarCompensation($('.js-header'));
+  });
+
+  document.addEventListener('hidden.bs.modal', function (event) {
+    removeScrollbarCompensation($('.js-header'));
+  });
+}
+
+// SELECT BASED FORMS SWITCHER
+function initSelectBasedFormsSwitcher() {
+  var selectBasedForms = $('.js-select-based-forms');
+  var select = $('.js-select-based');
+
+  function switchForms(selectBasedForms) {
+    var formItems = selectBasedForms.find('[data-select-based-type]');
+    var select = selectBasedForms.find('.js-select-based');
+    var selectedValue = select.val();
+
+    formItems.each(function () {
+      var formItem = $(this);
+      var formItemData = formItem.attr('data-select-based-type');
+
+      if (formItemData.includes(selectedValue)) {
+        formItem.removeClass('d-none');
+      } else {
+        formItem.addClass('d-none');
+      }
+    });
+  }
+
+  selectBasedForms.each(function () {
+    switchForms($(this));
+  });
+
+  select.on('change', function () {
+    var selectBasedForms = $(this).closest('.js-select-based-forms');
+
+    switchForms(selectBasedForms);
+  });
+}
+
 (function ($) {
   initActiveHeaderAfterScroll();
   initForms();
@@ -245,4 +325,7 @@ function initEditSwitch() {
   initStopAnimationsDuringWindowResizing();
   initOffcanvas();
   initEditSwitch();
+  initScrollBarWidth();
+  initModal();
+  initSelectBasedFormsSwitcher();
 })(jQuery);

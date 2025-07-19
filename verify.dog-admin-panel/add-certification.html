@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Verify.Dog — Add Certification</title>
+  <meta name="description" content="Verify.dog User Console">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#FFFFFF">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&amp;family=Quicksand:wght@300..700&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- SIDEBAR -->
+  <aside class="sidebar js-sidebar offcanvas-lg offcanvas-start" id="offcanvas-menu" tabindex="-1">
+    <div class="sidebar__header">
+      <a class="sidebar__logo" href="#">
+        <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="120" height="40" style="aspect-ratio: 120/40">
+      </a>
+    </div>
+    <div class="sidebar__body">
+      <nav class="sidebar__nav">
+        <ul class="sidebar__nav-list">
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="#">
+              <span class="btn-menu__icon icomoon-main-console"></span>
+              <span>Main Console</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="dogs.html">
+              <span class="btn-menu__icon icomoon-dogs"></span>
+              <span>Dogs</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="cats.html">
+              <span class="btn-menu__icon icomoon-cats"></span>
+              <span>Cats</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="certification.html">
+              <span class="btn-menu__icon icomoon-certification"></span>
+              <span>Certification</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="#">
+              <span class="btn-menu__icon icomoon-medical-records"></span>
+              <span>Medical Records</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="#">
+              <span class="btn-menu__icon icomoon-travel-forms"></span>
+              <span>Travel Forms</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="sidebar__footer">
+      <a class="btn btn-primary rounded-pill w-100" href="#">
+        <span class="icomoon-support"></span> Support
+      </a>
+    </div>
+  </aside>
+  <!-- SIDEBAR END -->
+
+  <!-- HEADER -->
+  <header class="header js-header">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-auto d-none d-lg-inline-flex">
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="main-console.html">Home</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="certification.html">Certification</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Add Certification</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="col-auto d-inline-flex d-lg-none">
+          <a class="header__logo" href="#">
+            <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="120" height="40" style="aspect-ratio: 120/40">
+          </a>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <div class="row align-items-center">
+            <div class="col-auto d-flex align-items-center">
+              <div class="dropdown dropdown-user-menu">
+                <button class="dropdown-user-menu__toggler" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,8">
+                  <span class="dropdown-user-menu__toggler-avatar">
+                    <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/dropdown-user-menu/avatar.webp">
+                  </span>
+                  <span class="dropdown-user-menu__toggler-text">Martines Tinigiero</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end dropdown-user-menu__menu">
+                  <p class="text-sm fw-normal mb-8">Menu</p>
+                  <a class="btn btn-primary btn-sm w-100" href="user-profile.html">
+                    <span class="icomoon-profile"></span> See Profile
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a class="btn btn-outline-dark btn-sm w-100" href="#">
+                    <span class="icomoon-logout"></span> Logout
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto d-flex d-lg-none align-items-center">
+              <button class="hamburger-menu" aria-label="Toggle menu" aria-controls="offcanvas-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu">
+                <span class="hamburger-menu__wrap">
+                  <span class="hamburger-menu__bars"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <!-- CONTENT -->
+  <main class="main">
+    <div class="container-fluid">
+      <div class="mb-40 d-lg-none">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="main-console.html">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="certification.html">Certification</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Add Certification</li>
+          </ol>
+        </nav>
+      </div>
+      <h1>Add Certification</h1>
+
+      <div class="card-default js-edit-card">
+        <div class="card-default__header">
+          <div class="row flex-grow-1 align-items-center gy-16">
+            <div class="col">
+              <h2 class="mb-0">Basic Information</h2>
+            </div>
+            <div class="col-auto">
+              <a class="btn btn-primary btn-action js-edit-btn d-none" href="#">
+                <span class="icomoon-edit"></span>
+              </a>
+              <div class="row gx-16 gy-8 justify-content-end js-edit-actions">
+                <div class="col-auto">
+                  <a class="btn btn-primary btn-sm js-edit-action" href="#">Save Changes</a>
+                </div>
+                <div class="col-auto">
+                  <a class="btn btn-outline-dark btn-sm js-edit-action" href="#">Cancel</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <form class="js-select-based-forms" action="#">
+          <div class="row">
+            <div class="col-xxl-8">
+              <div class="row gx-24 gy-16 gy-sm-24 mb-24">
+                <div class="col-sm-6" data-select-based-type="[Dog, Cat]">
+                  <label class="form-label" for="animal">Animal</label>
+                  <select class="form-select js-select js-select-based" id="animal" data-placeholder="">
+                    <option label="Select"></option>
+                    <option selected="selected">Dog</option>
+                    <option>Cat</option>
+                  </select>
+                </div>
+                <div class="col-sm-6" data-select-based-type="[Dog, Cat]">
+                  <label class="form-label" for="registration-type">Registration Type</label>
+                  <select class="form-select js-select" id="registration-type" data-placeholder="">
+                    <option label="Select"></option>
+                    <option selected="selected">Service Dog</option>
+                    <option>Emotional Support</option>
+                    <option>Therapy</option>
+                    <option>Pet</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="col-sm-6" data-select-based-type="[Dog, Cat]">
+                  <label class="form-label" for="animal-name">Animal Name</label>
+                  <select class="form-select js-select" id="animal-name" data-placeholder="">
+                    <option label="Select"></option>
+                    <option selected="selected">Ragnar</option>
+                    <option>Daisy</option>
+                    <option>Rocky</option>
+                    <option>Molly</option>
+                    <option>Cooper</option>
+                    <option>Sunkiy</option>
+                    <option>Daisy</option>
+                    <option>Rocky</option>
+                    <option>Molly</option>
+                  </select>
+                </div>
+                <div class="col-sm-6" data-select-based-type="[Dog, Cat]">
+                  <label class="form-label" for="used-by">Used By</label>
+                  <input class="form-control" id="used-by" type="text" value="Joe Doctor">
+                </div>
+                <div class="col-sm-6" data-select-based-type="[Dog, Cat]">
+                  <label class="form-label" for="certification-number">Certification Number</label>
+                  <input class="form-control" id="certification-number" type="text" value="23 44 45 44">
+                </div>
+                <div class="col-sm-6" data-select-based-type="[Dog, Cat]">
+                  <label class="form-label" for="date-issued">Date Issued</label>
+                  <input class="form-control datepicker js-datepicker" id="date-issued" type="text" value="12.12.2024" readonly="readonly">
+                </div>
+                <div class="col-sm-6" data-select-based-type="[Dog]">
+                  <label class="form-label" for="therapist-name">Therapist Name</label>
+                  <input class="form-control" id="therapist-name" type="text" value="Robert">
+                </div>
+                <div class="col-sm-6" data-select-based-type="[Dog]">
+                  <label class="form-label" for="therapist-license-number">Therapist License Number</label>
+                  <input class="form-control" id="therapist-license-number" type="text" value="12 12 12 ">
+                </div>
+              </div>
+
+              <h3 class="mb-24">Documents</h3>
+              <div class="mb-24">
+                <label class="file-input">
+                  <input class="file-input__input" name="file" type="file" hidden="hidden">
+                  <span class="file-input__content">
+                    <span class="file-input__icon icomoon-file"></span>
+                    <span class="d-block h6 mb-4">Click to upload or drag and drop files</span>
+                    <span class="d-block mb-0 text-sm fw-normal text-gray">PNG, JPG, PDF, DOC (max 15 MB)</span>
+                  </span>
+                </label>
+              </div>
+
+              <div class="mb-24">
+                <div class="uploaded-files">
+                  <div class="uploaded-files__item">
+                    <div class="row align-items-center flex-grow-1 gx-32 gy-16">
+                      <div class="col w-auto min-w-0">
+                        <div class="uploaded-files__item-content">
+                          <div class="w-100">
+                            <div class="uploaded-files__item-icon">
+                              <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/uploaded-files-icon.svg">
+                            </div>
+                            <p class="uploaded-files__item-name">Document_file.pdf</p>
+                            <p class="uploaded-files__item-size">2.3 MB</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-auto">
+                        <a class="link-gray-dark text-decoration-underline" href="#">Delete</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="uploaded-files__item">
+                    <div class="row align-items-center flex-grow-1 gx-32 gy-16">
+                      <div class="col w-auto min-w-0">
+                        <div class="uploaded-files__item-content">
+                          <div class="w-100">
+                            <div class="uploaded-files__item-icon">
+                              <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/uploaded-files-icon.svg">
+                            </div>
+                            <p class="uploaded-files__item-name">Document_file.doc</p>
+                            <div class="uploaded-files__item-progress-block">
+                              <div class="uploaded-files__item-progress">
+                                <div class="uploaded-files__item-progress-bar" style="width: 52%"></div>
+                              </div>
+                              <p class="uploaded-files__item-progress-percentage">52%</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-auto">
+                        <a class="link-gray-dark text-decoration-underline" href="#">Delete</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check form-switch">
+                <input class="form-check-input" id="show-on-verification-profile" name="Show On Verification Profile" type="checkbox" role="switch" checked="checked">
+                <label class="form-check-label" for="show-on-verification-profile">Show On Verification Profile</label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+  <!-- CONTENT END -->
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/libs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
