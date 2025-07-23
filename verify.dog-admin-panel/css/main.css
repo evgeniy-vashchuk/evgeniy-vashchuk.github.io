@@ -34329,6 +34329,17 @@ img:not([src], [srcset]) {
 .form-switch {
   margin-bottom: 0;
 }
+.form-switch.lg {
+  padding-left: 3rem;
+}
+.form-switch.lg .form-check-input {
+  width: 3rem;
+  height: 1.3125rem;
+  margin-left: -3rem;
+}
+.form-switch.lg .form-check-label {
+  padding-top: 0.125rem;
+}
 .form-switch .form-check-input {
   height: 1rem;
   background-color: #969696;
@@ -34347,5 +34358,6 @@ img:not([src], [srcset]) {
 }
 .form-switch .form-check-label {
   padding-left: 0.75rem;
+  vertical-align: middle;
   cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

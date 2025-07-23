@@ -167,9 +167,10 @@ function initOffcanvas() {
 function initEditSwitch() {
   var editBtn = $('.js-edit-btn');
   var editAction = $('.js-edit-action');
+  var editSwitchBtn = $('.js-edit-switch-btn');
 
   function enableEditForms(editCard) {
-    var inputs = editCard.find('input, textarea');
+    var inputs = editCard.find('input:not(.js-edit-switch-btn), textarea');
     var selects = editCard.find('select.js-select');
     var photoItemUploader = editCard.find('.js-photo-item-uploader');
 
@@ -189,7 +190,7 @@ function initEditSwitch() {
   }
 
   function disableEditForms(editCard) {
-    var inputs = editCard.find('input, textarea');
+    var inputs = editCard.find('input:not(.js-edit-switch-btn), textarea');
     var selects = editCard.find('select.js-select');
     var photoItemUploader = editCard.find('.js-photo-item-uploader');
 
@@ -233,6 +234,18 @@ function initEditSwitch() {
     editActions.addClass('d-none');
 
     disableEditForms(editCard);
+  });
+
+  editSwitchBtn.on('change', function (e) {
+    var editSwitch = $(this),
+      editSwitchChecked = editSwitch.is(':checked'),
+      editCard = editSwitch.closest('.js-edit-card');
+
+    if (editSwitchChecked) {
+      enableEditForms(editCard);
+    } else {
+      disableEditForms(editCard);
+    }
   });
 }
 
