@@ -34,7 +34,7 @@
   <!-- SIDEBAR -->
   <aside class="sidebar js-sidebar offcanvas-lg offcanvas-start" id="offcanvas-menu" tabindex="-1">
     <div class="sidebar__header">
-      <a class="sidebar__logo" href="#">
+      <a class="sidebar__logo" href="main-console.html">
         <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="120" height="40" style="aspect-ratio: 120/40">
       </a>
     </div>
@@ -42,13 +42,13 @@
       <nav class="sidebar__nav">
         <ul class="sidebar__nav-list">
           <li class="sidebar__nav-item">
-            <a class="btn-menu" href="#">
+            <a class="btn-menu" href="main-console.html">
               <span class="btn-menu__icon icomoon-main-console"></span>
               <span>Main Console</span>
             </a>
           </li>
           <li class="sidebar__nav-item">
-            <a class="btn-menu" href="dogs.html">
+            <a class="btn-menu active" href="dogs.html">
               <span class="btn-menu__icon icomoon-dogs"></span>
               <span>Dogs</span>
             </a>
@@ -66,13 +66,13 @@
             </a>
           </li>
           <li class="sidebar__nav-item">
-            <a class="btn-menu" href="#">
+            <a class="btn-menu" href="medical-records.html">
               <span class="btn-menu__icon icomoon-medical-records"></span>
               <span>Medical Records</span>
             </a>
           </li>
           <li class="sidebar__nav-item">
-            <a class="btn-menu" href="#">
+            <a class="btn-menu" href="travel-forms-lending.html">
               <span class="btn-menu__icon icomoon-travel-forms"></span>
               <span>Travel Forms</span>
             </a>
@@ -81,7 +81,7 @@
       </nav>
     </div>
     <div class="sidebar__footer">
-      <a class="btn btn-primary rounded-pill w-100" href="#">
+      <a class="btn btn-primary rounded-pill w-100" href="support.html">
         <span class="icomoon-support"></span> Support
       </a>
     </div>
@@ -193,7 +193,7 @@
                   <div class="text-center mb-16 mb-sm-24 mb-xl-40">
                     <div class="photo-item">
                       <img class="lazy js-lazy of-cover rounded-pill" src="img/lazy-placeholder.png" alt="Image" data-src="img/photo-item/placeholder-dog.svg">
-                      <div class="photo-item__uploader-container js-photo-item-uploader">
+                      <div class="photo-item__uploader-container js-photo-item-uploader active">
                         <div class="photo-item__uploader">
                           <input id="photo-item-uploader" name="avatar" type="file" accept="image/png, image/jpeg" hidden="hidden">
                           <label class="btn btn-primary btn-sm btn-action" for="photo-item-uploader">
@@ -222,7 +222,7 @@
                   </div>
                   <div class="col-sm-6 col-md-12 col-xl-6">
                     <label class="form-label" for="breed">Breed</label>
-                    <select class="form-select js-select" id="breed" data-placeholder="">
+                    <select class="form-select js-select" id="breed" data-placeholder="" data-dropdown-css-class="">
                       <option label="Select"></option>
                       <option>Labrador Retriever</option>
                       <option>German Shepherd</option>
@@ -238,7 +238,7 @@
                   </div>
                   <div class="col-sm-6 col-md-12 col-xl-6">
                     <label class="form-label" for="gender">Gender</label>
-                    <select class="form-select js-select" id="gender" data-placeholder="">
+                    <select class="form-select js-select" id="gender" data-placeholder="" data-dropdown-css-class="">
                       <option label="Select"></option>
                       <option>Male</option>
                       <option>Female</option>
@@ -246,7 +246,7 @@
                   </div>
                   <div class="col-sm-6 col-md-12 col-xl-6">
                     <label class="form-label" for="animal-role">Animal Role</label>
-                    <select class="form-select js-select" id="animal-role" data-placeholder="">
+                    <select class="form-select js-select" id="animal-role" data-placeholder="" data-dropdown-css-class="">
                       <option label="Select"></option>
                       <option>Service Dog</option>
                       <option>Companion Dog</option>
@@ -286,7 +286,7 @@
                         <div class="col-sm-6">
                           <div class="js-select-container">
                             <label class="form-label" for="registration-type">Registration Type</label>
-                            <select class="form-select js-select js-select-based" id="registration-type" data-placeholder="">
+                            <select class="form-select js-select js-select-based" id="registration-type" data-placeholder="" data-dropdown-css-class="">
                               <option label="Select"></option>
                               <option selected="selected">Emotional Support</option>
                               <option>Service Dog</option>
@@ -331,7 +331,7 @@
                         <div class="col-sm-6" data-select-based-type="[Service Dog]">
                           <div class="js-select-container">
                             <label class="form-label" for="condition-name">Condition Name</label>
-                            <select class="form-select js-select" id="condition-name" data-placeholder="Select Condition">
+                            <select class="form-select js-select" id="condition-name" data-placeholder="Select Condition" data-dropdown-css-class="">
                               <option label="Select Condition"></option>
                               <option>ADHD</option>
                               <option>ANXIETY</option>
@@ -343,7 +343,7 @@
                         </div>
                       </div>
                       <div data-select-based-type="[Service Dog]">
-                        <h3 class="mb-24">Training</h3>
+                        <h3>Training</h3>
                         <div class="row gx-24 gx-lg-32 gy-16 gy-sm-24 mb-24">
                           <div class="col-sm-6">
                             <label class="form-label" for="trainer-name">Trainer Name</label>
@@ -352,7 +352,7 @@
                           <div class="col-sm-6">
                             <div class="js-select-container">
                               <label class="form-label" for="trained-for">Trained For</label>
-                              <select class="form-select js-select" id="trained-for" data-placeholder="" multiple="multiple">
+                              <select class="form-select js-select" id="trained-for" data-placeholder="" data-dropdown-css-class="" multiple="multiple">
                                 <option>Alerting to Anxiety</option>
                                 <option>Alerting to Emotional Shifts</option>
                                 <option>Alerting to Sensory Changes</option>
@@ -406,7 +406,7 @@
                           </div>
                         </div>
                       </div>
-                      <h3 class="mb-24">Documents</h3>
+                      <h3>Documents</h3>
                       <div class="mb-24">
                         <label class="file-input">
                           <input class="file-input__input" name="file" type="file" hidden="hidden">
@@ -522,7 +522,7 @@
                         <div class="col-sm-6">
                           <div class="js-select-container">
                             <label class="form-label" for="record-type">Record Type</label>
-                            <select class="form-select js-select js-select-based" id="record-type" data-placeholder="">
+                            <select class="form-select js-select js-select-based" id="record-type" data-placeholder="" data-dropdown-css-class="">
                               <option label="Select"></option>
                               <option selected="selected">Vaccination</option>
                               <option>Vet Office Visit</option>
@@ -571,7 +571,7 @@
                           <textarea class="form-control" id="description" placeholder="Tell this more information"></textarea>
                         </div>
                       </div>
-                      <h3 class="mb-24">Documents</h3>
+                      <h3>Documents</h3>
                       <div class="mb-24">
                         <label class="file-input">
                           <input class="file-input__input" name="file" type="file" hidden="hidden">

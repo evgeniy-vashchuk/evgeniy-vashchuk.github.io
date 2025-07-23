@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Verify.Dog — Travel Forms</title>
+  <meta name="description" content="Verify.dog User Console">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#FFFFFF">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&amp;family=Quicksand:wght@300..700&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- SIDEBAR -->
+  <aside class="sidebar js-sidebar offcanvas-lg offcanvas-start" id="offcanvas-menu" tabindex="-1">
+    <div class="sidebar__header">
+      <a class="sidebar__logo" href="main-console.html">
+        <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="120" height="40" style="aspect-ratio: 120/40">
+      </a>
+    </div>
+    <div class="sidebar__body">
+      <nav class="sidebar__nav">
+        <ul class="sidebar__nav-list">
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="main-console.html">
+              <span class="btn-menu__icon icomoon-main-console"></span>
+              <span>Main Console</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="dogs.html">
+              <span class="btn-menu__icon icomoon-dogs"></span>
+              <span>Dogs</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="cats.html">
+              <span class="btn-menu__icon icomoon-cats"></span>
+              <span>Cats</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="certification.html">
+              <span class="btn-menu__icon icomoon-certification"></span>
+              <span>Certification</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="medical-records.html">
+              <span class="btn-menu__icon icomoon-medical-records"></span>
+              <span>Medical Records</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu active" href="travel-forms-lending.html">
+              <span class="btn-menu__icon icomoon-travel-forms"></span>
+              <span>Travel Forms</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="sidebar__footer">
+      <a class="btn btn-primary rounded-pill w-100" href="support.html">
+        <span class="icomoon-support"></span> Support
+      </a>
+    </div>
+  </aside>
+  <!-- SIDEBAR END -->
+
+  <!-- HEADER -->
+  <header class="header js-header">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-auto d-none d-lg-inline-flex">
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="main-console.html">Home</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="travel-forms-landing.html">Travel Forms</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">D. O. T. Service Dog Form</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="col-auto d-inline-flex d-lg-none">
+          <a class="header__logo" href="#">
+            <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="120" height="40" style="aspect-ratio: 120/40">
+          </a>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <div class="row align-items-center">
+            <div class="col-auto d-flex align-items-center">
+              <div class="dropdown dropdown-user-menu">
+                <button class="dropdown-user-menu__toggler" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,8">
+                  <span class="dropdown-user-menu__toggler-avatar">
+                    <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/dropdown-user-menu/avatar.webp">
+                  </span>
+                  <span class="dropdown-user-menu__toggler-text">Martines Tinigiero</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end dropdown-user-menu__menu">
+                  <p class="text-sm fw-normal mb-8">Menu</p>
+                  <a class="btn btn-primary btn-sm w-100" href="user-profile.html">
+                    <span class="icomoon-profile"></span> See Profile
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a class="btn btn-outline-dark btn-sm w-100" href="#">
+                    <span class="icomoon-logout"></span> Logout
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto d-flex d-lg-none align-items-center">
+              <button class="hamburger-menu" aria-label="Toggle menu" aria-controls="offcanvas-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu">
+                <span class="hamburger-menu__wrap">
+                  <span class="hamburger-menu__bars"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <!-- CONTENT -->
+  <main class="main">
+    <div class="container-fluid">
+      <div class="mb-40 d-lg-none">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="main-console.html">Home</a>
+            </li>
+            <li class="breadcrumb-item">
+              <a href="travel-forms-landing.html">Travel Forms</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">D. O. T. Service Dog Form</li>
+          </ol>
+        </nav>
+      </div>
+      <div class="mb-24">
+        <h1 class="mb-8">D. O. T. Service Dog Form</h1>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="text-block text-sm fw-normal">
+              <p>Please complete the information on this form. Upon completion you will be sent a completed U.S. Department of Transportation Service Animal Air Transportation Form that will enable you to fly with your assistance dog free of charge on any commercial airline.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="remove-last-child-margin">
+        <div class="mb-24">
+          <div class="card-default">
+            <h2>Handler</h2>
+            <div class="row">
+              <div class="col-xxl-9">
+                <div class="row gx-24 gy-16 gy-sm-24">
+                  <div class="col-sm-6 col-md-4">
+                    <label class="form-label" for="handler-name:">Handler Name:</label>
+                    <input class="form-control" id="handler-name:" type="text" value="Maksim">
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <label class="form-label" for="phone:">Phone:</label>
+                    <input class="form-control js-input-mask" id="phone:" type="text" data-mask="+{1} (000) 000-0000" value="+1 (502) 555-0198">
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <label class="form-label" for="email:">Email:</label>
+                    <input class="form-control" id="email:" type="email" value="text@mail.net">
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <label class="form-label" for="animal-name:">Animal name:</label>
+                    <select class="form-select js-select" id="animal-name:" data-placeholder="" data-dropdown-css-class="">
+                      <option label="Select"></option>
+                      <option>Ragnar</option>
+                      <option>Daisy</option>
+                      <option>Rocky</option>
+                      <option>Molly</option>
+                      <option selected="selected">Cooper</option>
+                      <option>Sunkiy</option>
+                      <option>Daisy</option>
+                      <option>Rocky</option>
+                      <option>Molly</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <label class="form-label" for="rabies-vaccination-date:">Rabies Vaccination Date:</label>
+                    <input class="form-control datepicker js-datepicker" id="rabies-vaccination-date:" type="text" value="12.05.2025" readonly="readonly">
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <label class="form-label" for="rabies-expiration-date:">Rabies Expiration Date:</label>
+                    <input class="form-control datepicker js-datepicker" id="rabies-expiration-date:" type="text" value="12.05.2026" readonly="readonly">
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <label class="form-label" for="veterinarian-name:">Veterinarian Name:</label>
+                    <input class="form-control" id="veterinarian-name:" type="text" value="Robert">
+                  </div>
+                  <div class="col-sm-6 col-md-4">
+                    <label class="form-label" for="veterinarian-phone:">Veterinarian Phone:</label>
+                    <input class="form-control js-input-mask" id="veterinarian-phone:" type="text" data-mask="+{1} (000) 000-00-00" value="+1 (502) 222-22-34">
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label" for="description">Description</label>
+                    <textarea class="form-control" id="description">Tell this more information (color, breeds etc...)</textarea>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-24">
+          <div class="card-default">
+            <h2>Animal Health</h2>
+            <div class="row">
+              <div class="col-xxl-8">
+                <div class="remove-last-child-margin">
+                  <div class="mb-24">
+                    <label class="form-check">
+                      <input class="form-check-input" type="checkbox">
+                      <span class="form-check-label">&lt;Select Animal&gt; is vaccinated for rabies. Date of last vaccination: &lt;Vaccination Date&gt; Date vaccination expires in the dog &lt;Expiration Date&gt;.</span>
+                    </label>
+                  </div>
+                  <div class="mb-24">
+                    <label class="form-check">
+                      <input class="form-check-input" type="checkbox">
+                      <span class="form-check-label">&lt;Select Animal&gt; does not have fleas or ticks or a disease that would endanger people or other animals.</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-24">
+          <div class="card-default">
+            <h2>Animal Training And Behavior</h2>
+            <div class="row gy-24">
+              <div class="col-xxl-8">
+                <div class="remove-last-child-margin">
+                  <div class="mb-24">
+                    <label class="form-check">
+                      <input class="form-check-input" type="checkbox">
+                      <span class="form-check-label">&lt;Select Animal&gt; has been trained to do work or perform tasks to assist me with my disability.</span>
+                    </label>
+                  </div>
+                  <div class="mb-24">
+                    <label class="form-check">
+                      <input class="form-check-input" type="checkbox">
+                      <span class="form-check-label">&lt;Select Animal&gt; has been trained to behave in a public setting.</span>
+                    </label>
+                  </div>
+                  <div class="mb-24">
+                    <label class="form-check">
+                      <input class="form-check-input" type="checkbox">
+                      <span class="form-check-label">I understand that a properly trained dog remains under the control of its handler. I understand that a properly trained dog does not act aggressively by biting, barking, jumping, lunging, or injuring people or other animals. It also does not urinate or defecate on the aircraft or in the gate area.</span>
+                    </label>
+                  </div>
+                  <div class="mb-24">
+                    <label class="form-check">
+                      <input class="form-check-input" type="checkbox">
+                      <span class="form-check-label">I understand that if &lt;Select Animal&gt; shows that it has not been properly trained to behave in public, then the airline may treat &lt;Select Animal&gt; as a pet by charging a pet fee and requiring &lt;Select Animal&gt; to be transported in a pet carrier.</span>
+                    </label>
+                  </div>
+                  <div class="mb-24">
+                    <label class="form-check">
+                      <input class="form-check-input" type="checkbox">
+                      <span class="form-check-label">To the best of my knowledge, &lt;Select Animal&gt; has not behaved aggressively or caused serious injury to another person/dog.</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xxl-9">
+                <label class="form-label" for="if-you-cannot-check-the-box-above,-please-explain">If you cannot check the box above, please explain</label>
+                <textarea class="form-control" id="if-you-cannot-check-the-box-above,-please-explain">Body text</textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-24">
+          <div class="card-default">
+            <h2>Other Assurance</h2>
+            <div class="row gy-24">
+              <div class="col-xxl-8">
+                <div class="remove-last-child-margin">
+                  <div class="mb-24">
+                    <label class="form-check">
+                      <input class="form-check-input" type="checkbox">
+                      <span class="form-check-label">I understand that &lt;Select Animal&gt; must be harnessed, leashed, or tethered at all times in the airport and on the aircraft.</span>
+                    </label>
+                  </div>
+                  <div class="mb-24">
+                    <label class="form-check">
+                      <input class="form-check-input" type="checkbox">
+                      <span class="form-check-label">I understand that &lt;Select Animal&gt; causes damage, then the airline may charge me for the cost to repair it, as long as the airline would also charge passengers without disabilities to repair the similar kinds of damage.</span>
+                    </label>
+                  </div>
+                  <div class="mb-24">
+                    <label class="form-check">
+                      <input class="form-check-input" type="checkbox">
+                      <span class="form-check-label">I am signing an official document of the U.S. Department of Transportation. My answers are true to the best of my knowledge. I understand that if I knowingly make false statements on this document, I can be subject to fines and other penalties.</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mb-24">
+          <div class="row justify-content-end gx-16 gy-8">
+            <div class="col-auto">
+              <a class="btn btn-primary btn-sm" href="travel-forms-success.html">Submit Form</a>
+            </div>
+            <div class="col-auto">
+              <a class="btn btn-outline-dark btn-sm" href="travel-forms-lending.html">Cancel</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- CONTENT END -->
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/libs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

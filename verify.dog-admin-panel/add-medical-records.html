@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Verify.Dog — Add Certification</title>
+  <title>Verify.Dog — Add Medical Records</title>
   <meta name="description" content="Verify.dog User Console">
   <meta charset="UTF-8">
   <meta name="format-detection" content="telephone=no">
@@ -60,13 +60,13 @@
             </a>
           </li>
           <li class="sidebar__nav-item">
-            <a class="btn-menu active" href="certification.html">
+            <a class="btn-menu" href="certification.html">
               <span class="btn-menu__icon icomoon-certification"></span>
               <span>Certification</span>
             </a>
           </li>
           <li class="sidebar__nav-item">
-            <a class="btn-menu" href="medical-records.html">
+            <a class="btn-menu active" href="medical-records.html">
               <span class="btn-menu__icon icomoon-medical-records"></span>
               <span>Medical Records</span>
             </a>
@@ -99,9 +99,9 @@
                 <a href="main-console.html">Home</a>
               </li>
               <li class="breadcrumb-item">
-                <a href="certification.html">Certification</a>
+                <a href="medical-records.html">Medical Records</a>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">Add Certification</li>
+              <li class="breadcrumb-item active" aria-current="page">Add Medical Records</li>
             </ol>
           </nav>
         </div>
@@ -156,13 +156,13 @@
               <a href="main-console.html">Home</a>
             </li>
             <li class="breadcrumb-item">
-              <a href="certification.html">Certification</a>
+              <a href="medical-records.html">Medical Records</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Add Certification</li>
+            <li class="breadcrumb-item active" aria-current="page">Add Medical Records</li>
           </ol>
         </nav>
       </div>
-      <h1>Add Certification</h1>
+      <h1>Add Medical Records</h1>
 
       <div class="card-default js-edit-card">
         <div class="card-default__header">
@@ -189,59 +189,60 @@
           <div class="row">
             <div class="col-xxl-8">
               <div class="row gx-24 gy-16 gy-sm-24 mb-24">
-                <div class="col-sm-6">
+                <div class="col-sm-6" data-select-based-type="[Vaccination, Vet Office Visit]">
                   <label class="form-label" for="animal">Animal</label>
-                  <select class="form-select js-select js-select-based" id="animal" data-placeholder="" data-dropdown-css-class="">
+                  <select class="form-select js-select" id="animal" data-placeholder="" data-dropdown-css-class="">
                     <option label="Select"></option>
                     <option selected="selected">Dog</option>
                     <option>Cat</option>
                   </select>
                 </div>
-                <div class="col-sm-6" data-select-based-type="[Dog, Cat]">
-                  <label class="form-label" for="registration-type">Registration Type</label>
-                  <select class="form-select js-select" id="registration-type" data-placeholder="" data-dropdown-css-class="">
+                <div class="col-sm-6">
+                  <label class="form-label" for="record-type">Record Type</label>
+                  <select class="form-select js-select js-select-based" id="record-type" data-placeholder="" data-dropdown-css-class="">
                     <option label="Select"></option>
-                    <option selected="selected">Service Dog</option>
-                    <option>Emotional Support</option>
-                    <option>Therapy</option>
-                    <option>Pet</option>
-                    <option>Other</option>
+                    <option selected="selected">Vaccination</option>
+                    <option>Vet Office Visit</option>
                   </select>
                 </div>
-                <div class="col-sm-6" data-select-based-type="[Dog, Cat]">
+                <div class="col-sm-6" data-select-based-type="[Vaccination, Vet Office Visit]">
                   <label class="form-label" for="animal-name">Animal Name</label>
                   <select class="form-select js-select" id="animal-name" data-placeholder="" data-dropdown-css-class="">
                     <option label="Select"></option>
-                    <option selected="selected">Ragnar</option>
+                    <option>Ragnar</option>
                     <option>Daisy</option>
                     <option>Rocky</option>
                     <option>Molly</option>
-                    <option>Cooper</option>
+                    <option selected="selected">Cooper</option>
                     <option>Sunkiy</option>
                     <option>Daisy</option>
                     <option>Rocky</option>
                     <option>Molly</option>
                   </select>
                 </div>
-                <div class="col-sm-6" data-select-based-type="[Dog, Cat]">
-                  <label class="form-label" for="used-by">Used By</label>
-                  <input class="form-control" id="used-by" type="text" value="Joe Doctor">
+                <div class="col-sm-6" data-select-based-type="[Vaccination]">
+                  <label class="form-label" for="vaccination-type">Vaccination Type</label>
+                  <input class="form-control" id="vaccination-type" type="text" value="Rabies">
                 </div>
-                <div class="col-sm-6" data-select-based-type="[Dog, Cat]">
-                  <label class="form-label" for="certification-number">Certification Number</label>
-                  <input class="form-control" id="certification-number" type="text" value="23 44 45 44">
+                <div class="col-sm-6">
+                  <label class="form-label" for="record-date">Record Date</label>
+                  <input class="form-control datepicker js-datepicker" id="record-date" type="text" value="12.12.2024" readonly="readonly">
                 </div>
-                <div class="col-sm-6" data-select-based-type="[Dog, Cat]">
-                  <label class="form-label" for="date-issued">Date Issued</label>
-                  <input class="form-control datepicker js-datepicker" id="date-issued" type="text" value="12.12.2024" readonly="readonly">
+                <div class="col-sm-6" data-select-based-type="[Vaccination]">
+                  <label class="form-label" for="expiration-date">Expiration Date</label>
+                  <input class="form-control datepicker js-datepicker" id="expiration-date" type="text" value="12.12.2025" readonly="readonly">
                 </div>
-                <div class="col-sm-6" data-select-based-type="[Dog]">
-                  <label class="form-label" for="therapist-name">Therapist Name</label>
-                  <input class="form-control" id="therapist-name" type="text" value="Robert">
+                <div class="col-sm-6">
+                  <label class="form-label" for="vet-name">Vet Name</label>
+                  <input class="form-control" id="vet-name" type="text" value="Robert">
                 </div>
-                <div class="col-sm-6" data-select-based-type="[Dog]">
-                  <label class="form-label" for="therapist-license-number">Therapist License Number</label>
-                  <input class="form-control" id="therapist-license-number" type="text" value="12 12 12 ">
+                <div class="col-sm-6">
+                  <label class="form-label" for="vet-office">Vet Office</label>
+                  <input class="form-control" id="vet-office" type="text" value="Veterinary">
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="description">Description</label>
+                  <textarea class="form-control" id="description" placeholder="Tell us more information"></textarea>
                 </div>
               </div>
 
@@ -269,29 +270,6 @@
                             </div>
                             <p class="uploaded-files__item-name">Document_file.pdf</p>
                             <p class="uploaded-files__item-size">2.3 MB</p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-sm-auto">
-                        <a class="link-gray-dark text-decoration-underline" href="#">Delete</a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="uploaded-files__item">
-                    <div class="row align-items-center flex-grow-1 gx-32 gy-16">
-                      <div class="col w-auto min-w-0">
-                        <div class="uploaded-files__item-content">
-                          <div class="w-100">
-                            <div class="uploaded-files__item-icon">
-                              <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/uploaded-files-icon.svg">
-                            </div>
-                            <p class="uploaded-files__item-name">Document_file.doc</p>
-                            <div class="uploaded-files__item-progress-block">
-                              <div class="uploaded-files__item-progress">
-                                <div class="uploaded-files__item-progress-bar" style="width: 52%"></div>
-                              </div>
-                              <p class="uploaded-files__item-progress-percentage">52%</p>
-                            </div>
                           </div>
                         </div>
                       </div>

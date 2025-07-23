@@ -34,7 +34,7 @@
   <!-- SIDEBAR -->
   <aside class="sidebar js-sidebar offcanvas-lg offcanvas-start" id="offcanvas-menu" tabindex="-1">
     <div class="sidebar__header">
-      <a class="sidebar__logo" href="#">
+      <a class="sidebar__logo" href="main-console.html">
         <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="120" height="40" style="aspect-ratio: 120/40">
       </a>
     </div>
@@ -42,7 +42,7 @@
       <nav class="sidebar__nav">
         <ul class="sidebar__nav-list">
           <li class="sidebar__nav-item">
-            <a class="btn-menu" href="#">
+            <a class="btn-menu" href="main-console.html">
               <span class="btn-menu__icon icomoon-main-console"></span>
               <span>Main Console</span>
             </a>
@@ -54,7 +54,7 @@
             </a>
           </li>
           <li class="sidebar__nav-item">
-            <a class="btn-menu" href="cats.html">
+            <a class="btn-menu active" href="cats.html">
               <span class="btn-menu__icon icomoon-cats"></span>
               <span>Cats</span>
             </a>
@@ -66,13 +66,13 @@
             </a>
           </li>
           <li class="sidebar__nav-item">
-            <a class="btn-menu" href="#">
+            <a class="btn-menu" href="medical-records.html">
               <span class="btn-menu__icon icomoon-medical-records"></span>
               <span>Medical Records</span>
             </a>
           </li>
           <li class="sidebar__nav-item">
-            <a class="btn-menu" href="#">
+            <a class="btn-menu" href="travel-forms-lending.html">
               <span class="btn-menu__icon icomoon-travel-forms"></span>
               <span>Travel Forms</span>
             </a>
@@ -81,7 +81,7 @@
       </nav>
     </div>
     <div class="sidebar__footer">
-      <a class="btn btn-primary rounded-pill w-100" href="#">
+      <a class="btn btn-primary rounded-pill w-100" href="support.html">
         <span class="icomoon-support"></span> Support
       </a>
     </div>
@@ -258,7 +258,7 @@
                   </div>
                   <div class="col-sm-6 col-md-12 col-xl-6">
                     <label class="form-label" for="breed">Breed</label>
-                    <select class="form-select js-select" id="breed" data-placeholder="" disabled="disabled">
+                    <select class="form-select js-select" id="breed" data-placeholder="" data-dropdown-css-class="" disabled="disabled">
                       <option label="Select"></option>
                       <option selected="selected">Scottish Fold</option>
                       <option>Mixed</option>
@@ -271,7 +271,7 @@
                   </div>
                   <div class="col-sm-6 col-md-12 col-xl-6">
                     <label class="form-label" for="gender">Gender</label>
-                    <select class="form-select js-select" id="gender" data-placeholder="" disabled="disabled">
+                    <select class="form-select js-select" id="gender" data-placeholder="" data-dropdown-css-class="" disabled="disabled">
                       <option label="Select"></option>
                       <option>Male</option>
                       <option>Female</option>
@@ -281,7 +281,7 @@
                   </div>
                   <div class="col-sm-6 col-md-12 col-xl-6">
                     <label class="form-label" for="animal-role">Animal Role</label>
-                    <select class="form-select js-select" id="animal-role" data-placeholder="" disabled="disabled">
+                    <select class="form-select js-select" id="animal-role" data-placeholder="" data-dropdown-css-class="" disabled="disabled">
                       <option label="Select"></option>
                       <option selected="selected">Pet</option>
                       <option>Pest Control / Mouser</option>
@@ -320,7 +320,7 @@
                         <div class="col-sm-6">
                           <div class="js-select-container">
                             <label class="form-label" for="registration-type">Registration Type</label>
-                            <select class="form-select js-select js-select-based" id="registration-type" data-placeholder="">
+                            <select class="form-select js-select js-select-based" id="registration-type" data-placeholder="" data-dropdown-css-class="">
                               <option label="Select"></option>
                               <option selected="selected">Emotional Support</option>
                               <option>Service Cat</option>
@@ -365,7 +365,7 @@
                         <div class="col-sm-6" data-select-based-type="[Service Cat]">
                           <div class="js-select-container">
                             <label class="form-label" for="condition-name">Condition Name</label>
-                            <select class="form-select js-select" id="condition-name" data-placeholder="Select Condition">
+                            <select class="form-select js-select" id="condition-name" data-placeholder="Select Condition" data-dropdown-css-class="">
                               <option label="Select Condition"></option>
                               <option>ADHD</option>
                               <option>ANXIETY</option>
@@ -377,7 +377,7 @@
                         </div>
                       </div>
                       <div data-select-based-type="[Service Cat]">
-                        <h3 class="mb-24">Training</h3>
+                        <h3>Training</h3>
                         <div class="row gx-24 gx-lg-32 gy-16 gy-sm-24 mb-24">
                           <div class="col-sm-6">
                             <label class="form-label" for="trainer-name">Trainer Name</label>
@@ -386,7 +386,7 @@
                           <div class="col-sm-6">
                             <div class="js-select-container">
                               <label class="form-label" for="trained-for">Trained For</label>
-                              <select class="form-select js-select" id="trained-for" data-placeholder="" multiple="multiple">
+                              <select class="form-select js-select" id="trained-for" data-placeholder="" data-dropdown-css-class="" multiple="multiple">
                                 <option>Alerting to Anxiety</option>
                                 <option>Alerting to Emotional Shifts</option>
                                 <option>Alerting to Sensory Changes</option>
@@ -440,7 +440,7 @@
                           </div>
                         </div>
                       </div>
-                      <h3 class="mb-24">Documents</h3>
+                      <h3>Documents</h3>
                       <div class="mb-24">
                         <label class="file-input">
                           <input class="file-input__input" name="file" type="file" hidden="hidden">
@@ -542,7 +542,7 @@
                     <div class="card-document__document-img">
                       <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-document/1.webp">
                     </div>
-                    <h3 class="text-center">Emotional Support Animal</h3>
+                    <h3 class="text-center mb-16">Emotional Support Animal</h3>
                   </div>
                   <div class="card-document__content-bottom">
                     <div class="row bordered-cols gy-16 mb-24">
@@ -583,7 +583,7 @@
                     <div class="card-document__document-img">
                       <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-document/1.webp">
                     </div>
-                    <h3 class="text-center">Service Cat</h3>
+                    <h3 class="text-center mb-16">Service Cat</h3>
                   </div>
                   <div class="card-document__content-bottom">
                     <div class="row bordered-cols gy-16 mb-24">
@@ -624,7 +624,7 @@
                     <div class="card-document__document-img">
                       <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-document/1.webp">
                     </div>
-                    <h3 class="text-center">Therapy</h3>
+                    <h3 class="text-center mb-16">Therapy</h3>
                   </div>
                   <div class="card-document__content-bottom">
                     <div class="row bordered-cols gy-16 mb-24">
@@ -674,7 +674,7 @@
                         <div class="col-sm-6">
                           <div class="js-select-container">
                             <label class="form-label" for="record-type">Record Type</label>
-                            <select class="form-select js-select js-select-based" id="record-type" data-placeholder="">
+                            <select class="form-select js-select js-select-based" id="record-type" data-placeholder="" data-dropdown-css-class="">
                               <option label="Select"></option>
                               <option selected="selected">Vaccination</option>
                               <option>Vet Office Visit</option>
@@ -723,7 +723,7 @@
                           <textarea class="form-control" id="description" placeholder="Tell this more information"></textarea>
                         </div>
                       </div>
-                      <h3 class="mb-24">Documents</h3>
+                      <h3>Documents</h3>
                       <div class="mb-24">
                         <label class="file-input">
                           <input class="file-input__input" name="file" type="file" hidden="hidden">
@@ -781,8 +781,6 @@
               </div>
             </div>
 
-
-
             <div class="row row-cols-1 row-cols-sm-2 row-cols-xl-3 row-cols-xxxl-4 gy-16 gy-sm-24 gx-24">
               <div class="col d-flex">
                 <div class="card-document">
@@ -804,13 +802,21 @@
                     <div class="card-document__document-img">
                       <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-document/2.webp">
                     </div>
-                    <h3 class="text-center">Vaccination</h3>
+                    <h3 class="text-center mb-16">Vaccination</h3>
                   </div>
                   <div class="card-document__content-bottom">
                     <div class="row bordered-cols gy-16 mb-24">
                       <div class="col-12 text-center">
                         <h6 class="mb-4">Cooper</h6>
                         <p class="text-sm mb-0">Animal Name</p>
+                      </div>
+                      <div class="col-xs-6 text-center">
+                        <h6 class="mb-4">Rabies</h6>
+                        <p class="text-sm mb-0">Type</p>
+                      </div>
+                      <div class="col-xs-6 text-center">
+                        <h6 class="mb-4">Veterinary</h6>
+                        <p class="text-sm mb-0">Provider</p>
                       </div>
                     </div>
                     <a class="btn btn-primary rounded-pill w-100" href="#">Download</a>
@@ -837,13 +843,21 @@
                     <div class="card-document__document-img">
                       <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-document/2.webp">
                     </div>
-                    <h3 class="text-center">Vaccination</h3>
+                    <h3 class="text-center mb-16">Vaccination</h3>
                   </div>
                   <div class="card-document__content-bottom">
                     <div class="row bordered-cols gy-16 mb-24">
                       <div class="col-12 text-center">
                         <h6 class="mb-4">Cooper</h6>
                         <p class="text-sm mb-0">Animal Name</p>
+                      </div>
+                      <div class="col-xs-6 text-center">
+                        <h6 class="mb-4">01.02.2025</h6>
+                        <p class="text-sm mb-0">Record Date</p>
+                      </div>
+                      <div class="col-xs-6 text-center">
+                        <h6 class="mb-4">Veterinary</h6>
+                        <p class="text-sm mb-0">Provider</p>
                       </div>
                     </div>
                     <a class="btn btn-primary rounded-pill w-100" href="#">Download</a>
@@ -870,13 +884,21 @@
                     <div class="card-document__document-img">
                       <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-document/2.webp">
                     </div>
-                    <h3 class="text-center">Vaccination</h3>
+                    <h3 class="text-center mb-16">Vaccination</h3>
                   </div>
                   <div class="card-document__content-bottom">
                     <div class="row bordered-cols gy-16 mb-24">
                       <div class="col-12 text-center">
                         <h6 class="mb-4">Cooper</h6>
                         <p class="text-sm mb-0">Animal Name</p>
+                      </div>
+                      <div class="col-xs-6 text-center">
+                        <h6 class="mb-4">01.02.2025</h6>
+                        <p class="text-sm mb-0">Record Date</p>
+                      </div>
+                      <div class="col-xs-6 text-center">
+                        <h6 class="mb-4">Veterinary</h6>
+                        <p class="text-sm mb-0">Provider</p>
                       </div>
                     </div>
                     <a class="btn btn-primary rounded-pill w-100" href="#">Download</a>

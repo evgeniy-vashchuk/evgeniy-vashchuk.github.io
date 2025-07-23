@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Verify.Dog — Main Console</title>
+  <meta name="description" content="Verify.dog User Console">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#FFFFFF">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&amp;family=Quicksand:wght@300..700&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- SIDEBAR -->
+  <aside class="sidebar js-sidebar offcanvas-lg offcanvas-start" id="offcanvas-menu" tabindex="-1">
+    <div class="sidebar__header">
+      <a class="sidebar__logo" href="main-console.html">
+        <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="120" height="40" style="aspect-ratio: 120/40">
+      </a>
+    </div>
+    <div class="sidebar__body">
+      <nav class="sidebar__nav">
+        <ul class="sidebar__nav-list">
+          <li class="sidebar__nav-item">
+            <a class="btn-menu active" href="main-console.html">
+              <span class="btn-menu__icon icomoon-main-console"></span>
+              <span>Main Console</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="dogs.html">
+              <span class="btn-menu__icon icomoon-dogs"></span>
+              <span>Dogs</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="cats.html">
+              <span class="btn-menu__icon icomoon-cats"></span>
+              <span>Cats</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="certification.html">
+              <span class="btn-menu__icon icomoon-certification"></span>
+              <span>Certification</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="medical-records.html">
+              <span class="btn-menu__icon icomoon-medical-records"></span>
+              <span>Medical Records</span>
+            </a>
+          </li>
+          <li class="sidebar__nav-item">
+            <a class="btn-menu" href="travel-forms-lending.html">
+              <span class="btn-menu__icon icomoon-travel-forms"></span>
+              <span>Travel Forms</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="sidebar__footer">
+      <a class="btn btn-primary rounded-pill w-100" href="support.html">
+        <span class="icomoon-support"></span> Support
+      </a>
+    </div>
+  </aside>
+  <!-- SIDEBAR END -->
+
+  <!-- HEADER -->
+  <header class="header js-header">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-auto d-none d-lg-inline-flex">
+          <nav aria-label="Breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="main-console.html">Home</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">Main Console</li>
+            </ol>
+          </nav>
+        </div>
+        <div class="col-auto d-inline-flex d-lg-none">
+          <a class="header__logo" href="#">
+            <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="120" height="40" style="aspect-ratio: 120/40">
+          </a>
+        </div>
+        <div class="col d-flex justify-content-end">
+          <div class="row align-items-center">
+            <div class="col-auto d-flex align-items-center">
+              <div class="dropdown dropdown-user-menu">
+                <button class="dropdown-user-menu__toggler" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,8">
+                  <span class="dropdown-user-menu__toggler-avatar">
+                    <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/dropdown-user-menu/avatar.webp">
+                  </span>
+                  <span class="dropdown-user-menu__toggler-text">Martines Tinigiero</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-end dropdown-user-menu__menu">
+                  <p class="text-sm fw-normal mb-8">Menu</p>
+                  <a class="btn btn-primary btn-sm w-100" href="user-profile.html">
+                    <span class="icomoon-profile"></span> See Profile
+                  </a>
+                  <hr class="dropdown-divider">
+                  <a class="btn btn-outline-dark btn-sm w-100" href="#">
+                    <span class="icomoon-logout"></span> Logout
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col-auto d-flex d-lg-none align-items-center">
+              <button class="hamburger-menu" aria-label="Toggle menu" aria-controls="offcanvas-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu">
+                <span class="hamburger-menu__wrap">
+                  <span class="hamburger-menu__bars"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <!-- CONTENT -->
+  <main class="main">
+    <div class="container-fluid">
+      <div class="mb-40 d-lg-none">
+        <nav aria-label="Breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+              <a href="main-console.html">Home</a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Main Console</li>
+          </ol>
+        </nav>
+      </div>
+      <h1 class="mb-8">Hi, Let’s Get Started!</h1>
+      <h5>Here you’ll find key information about your profile and your pets.</h5>
+
+      <div class="row gx-24 gy-16 gy-sm-24">
+        <div class="col-xxl-4 d-flex">
+          <div class="card-default bg-yellow-light">
+            <div class="position-relative">
+              <div class="position-absolute top-0 end-0">
+                <a class="btn btn-link-gray-dark btn-sm btn-action" href="user-profile.html">
+                  <span class="icomoon-arrow-chevron-right"></span>
+                </a>
+              </div>
+              <div class="text-center mb-24">
+                <div class="photo-item">
+                  <img class="lazy js-lazy of-cover rounded-pill" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/photo-item/1.webp">
+                </div>
+              </div>
+              <h2 class="h1 text-center">Mr. Martines Tiniero</h2>
+              <div class="row bordered-cols gy-16 mb-24">
+                <div class="col-4 text-center">
+                  <p class="fw-medium mb-8">-</p>
+                  <p class="text-sm mb-0">Pets</p>
+                </div>
+                <div class="col-4 text-center">
+                  <p class="fw-medium mb-8">-</p>
+                  <p class="text-sm mb-0">Service Dogs</p>
+                </div>
+                <div class="col-4 text-center">
+                  <p class="fw-medium mb-8">-</p>
+                  <p class="text-sm mb-0">ESA</p>
+                </div>
+              </div>
+              <h4 class="text-center">Activity Status</h4>
+              <div class="row bordered-cols gy-16">
+                <div class="col-6 text-center">
+                  <p class="fw-medium mb-8">-</p>
+                  <p class="text-sm mb-0">Activity Log</p>
+                </div>
+                <div class="col-6 text-center">
+                  <p class="fw-medium mb-8">June, 24</p>
+                  <p class="text-sm mb-0">Data Refreshed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-xxl-4 d-flex">
+          <div class="card-default">
+            <div class="card-default__header">
+              <div class="row flex-grow-1 align-items-center gy-16">
+                <div class="col">
+                  <h2 class="mb-0">My Dogs</h2>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="mb-16">
+                <div class="photo-item sm">
+                  <img class="lazy js-lazy of-cover rounded-pill" src="img/lazy-placeholder.png" alt="Image" data-src="img/photo-item/placeholder-dog.svg">
+                </div>
+              </div>
+              <h5 class="text-gray-dark mb-16">-</h5>
+              <h5 class="text-gray-dark">You haven’t added any pets yet</h5>
+              <div class="text-block mb-24">
+                <p>Start by adding your first pet to keep track of their info, medical records, and more.</p>
+              </div>
+            </div>
+            <a class="btn btn-primary rounded-pill w-100" href="add-dog.html">
+              <span class="icomoon-dogs"></span> Add Dog
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 col-xxl-4 d-flex">
+          <div class="card-default">
+            <div class="card-default__header">
+              <div class="row flex-grow-1 align-items-center gy-16">
+                <div class="col">
+                  <h2 class="mb-0">My Cats</h2>
+                </div>
+              </div>
+            </div>
+            <div class="text-center">
+              <div class="mb-16">
+                <div class="photo-item sm">
+                  <img class="lazy js-lazy of-cover rounded-pill" src="img/lazy-placeholder.png" alt="Image" data-src="img/photo-item/placeholder-cat.svg">
+                </div>
+              </div>
+              <h5 class="text-gray-dark mb-16">-</h5>
+              <h5 class="text-gray-dark">You haven’t added any pets yet</h5>
+              <div class="text-block mb-24">
+                <p>Start by adding your first pet to keep track of their info, medical records, and more.</p>
+              </div>
+            </div>
+            <a class="btn btn-primary rounded-pill w-100" href="add-cat.html">
+              <span class="icomoon-cats"></span> Add Cat
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex">
+          <div class="card-default">
+            <div class="card-default__header">
+              <div class="row flex-grow-1 align-items-center gy-16">
+                <div class="col">
+                  <h2 class="mb-0">Update Medical Info</h2>
+                </div>
+                <div class="col-auto">
+                  <a class="btn btn-primary btn-sm" href="medical-records.html">Update Records</a>
+                </div>
+              </div>
+            </div>
+            <h6>Accurate medical records help keep your pet safe, healthy, and compliant with service animal requirements. Regular updates ensure smooth verification and quick support when needed.</h6>
+            <div class="text-center">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/main-console-img-1.svg" width="300" height="199" style="aspect-ratio: 300/199">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 d-flex">
+          <div class="card-default">
+            <div class="card-default__header">
+              <div class="row flex-grow-1 align-items-center gy-16">
+                <div class="col">
+                  <h2 class="mb-0">Did You Know?</h2>
+                </div>
+                <div class="col-auto">
+                  <a class="btn btn-primary btn-sm" href="travel-forms-lending.html">Learn More</a>
+                </div>
+              </div>
+            </div>
+            <h6>Support animals are allowed to fly at no extra cost under federal law, ensuring your companion can travel with you safely and comfortably.</h6>
+            <div class="text-center">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/main-console-img-2.svg" width="300" height="199" style="aspect-ratio: 300/199">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <!-- CONTENT END -->
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/libs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

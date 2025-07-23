@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Verify.Dog — Dogs</title>
+  <title>Verify.Dog — Support</title>
   <meta name="description" content="Verify.dog User Console">
   <meta charset="UTF-8">
   <meta name="format-detection" content="telephone=no">
@@ -48,7 +48,7 @@
             </a>
           </li>
           <li class="sidebar__nav-item">
-            <a class="btn-menu active" href="dogs.html">
+            <a class="btn-menu" href="dogs.html">
               <span class="btn-menu__icon icomoon-dogs"></span>
               <span>Dogs</span>
             </a>
@@ -98,7 +98,7 @@
               <li class="breadcrumb-item">
                 <a href="main-console.html">Home</a>
               </li>
-              <li class="breadcrumb-item active" aria-current="page">Dogs</li>
+              <li class="breadcrumb-item active" aria-current="page">Support</li>
             </ol>
           </nav>
         </div>
@@ -152,26 +152,116 @@
             <li class="breadcrumb-item">
               <a href="main-console.html">Home</a>
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Dogs</li>
+            <li class="breadcrumb-item active" aria-current="page">Support</li>
           </ol>
         </nav>
       </div>
-      <h1>My Dogs</h1>
+      <h1>Support</h1>
 
-      <div class="card-default py-40">
-        <div class="text-center">
-          <div class="mb-40">
-            <h2 class="title-with-icon d-inline-block">
-              <span class="title-with-icon__icon icomoon-dogs"></span>
-              <span class="title-with-icon__text">Let's get to know your pet!</span>
-            </h2>
-            <p class="mb-24">It's empty here for now — tell us about your furry friend.</p>
-            <button class="btn btn-primary rounded-pill" type="button">
-              <span class="icomoon-dogs"></span> Add My Dog
-            </button>
+      <div class="card-default">
+        <h2>Basic Information</h2>
+
+        <form action="#">
+          <div class="row mb-24">
+            <div class="col-xxl-8">
+              <div class="row gx-24 gy-16 gy-sm-24 mb-24">
+                <div class="col-sm-6">
+                  <label class="form-label" for="your-name">Your Name</label>
+                  <input class="form-control" id="your-name" type="text" value="Martines">
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="email">Email</label>
+                  <input class="form-control" id="email" type="email" value="martines@neo.net">
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="animal">Animal</label>
+                  <select class="form-select js-select" id="animal" data-placeholder="" data-dropdown-css-class="">
+                    <option label="Select"></option>
+                    <option selected="selected">Dog</option>
+                    <option>Cat</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="animal-name">Animal Name</label>
+                  <select class="form-select js-select" id="animal-name" data-placeholder="" data-dropdown-css-class="">
+                    <option label="Select"></option>
+                    <option selected="selected">Ragnar</option>
+                    <option>Daisy</option>
+                    <option>Rocky</option>
+                    <option>Molly</option>
+                    <option>Cooper</option>
+                    <option>Sunkiy</option>
+                    <option>Daisy</option>
+                    <option>Rocky</option>
+                    <option>Molly</option>
+                  </select>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="support-topic">Support Topic</label>
+                  <select class="form-select js-select" id="support-topic" data-placeholder="" data-dropdown-css-class="">
+                    <option label="Select"></option>
+                    <option selected="selected">Order Status</option>
+                    <option>Help Adding Dog</option>
+                    <option>How to get My Digital ID Card</option>
+                    <option>Return</option>
+                    <option>Exchange</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="subject">Subject</label>
+                  <input class="form-control" id="subject" type="text" value="I can't add a new pet">
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="message">Message</label>
+                  <textarea class="form-control" id="message" placeholder="Type your text here"></textarea>
+                </div>
+                <div class="col-12">
+                  <h3>Documents</h3>
+                  <div class="mb-24">
+                    <label class="file-input">
+                      <input class="file-input__input" name="file" type="file" hidden="hidden">
+                      <span class="file-input__content">
+                        <span class="file-input__icon icomoon-file"></span>
+                        <span class="d-block h6 mb-4">Click to upload or drag and drop files</span>
+                        <span class="d-block mb-0 text-sm fw-normal text-gray">PNG, JPG, PDF, DOC (max 15 MB)</span>
+                      </span>
+                    </label>
+                  </div>
+
+                  <div class="uploaded-files">
+                    <div class="uploaded-files__item">
+                      <div class="row align-items-center flex-grow-1 gx-32 gy-16">
+                        <div class="col w-auto min-w-0">
+                          <div class="uploaded-files__item-content">
+                            <div class="w-100">
+                              <div class="uploaded-files__item-icon">
+                                <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/uploaded-files-icon.svg">
+                              </div>
+                              <p class="uploaded-files__item-name">Document_file.pdf</p>
+                              <p class="uploaded-files__item-size">2.3 MB</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-sm-auto">
+                          <a class="link-gray-dark text-decoration-underline" href="#">Delete</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/dogs-empty-img.svg" width="296" height="228" style="aspect-ratio: 296/228">
-        </div>
+          <div class="row justify-content-end gx-16 gy-8">
+            <div class="col-auto">
+              <a class="btn btn-primary btn-sm" href="support-success.html">Submit</a>
+            </div>
+            <div class="col-auto">
+              <a class="btn btn-outline-dark btn-sm" href="main-console.html">Cancel</a>
+            </div>
+          </div>
+        </form>
       </div>
     </div>
   </main>
