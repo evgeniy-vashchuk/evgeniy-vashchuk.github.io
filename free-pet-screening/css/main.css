@@ -25518,6 +25518,7 @@ h6,
   background-color: #FFFFFF;
   border-radius: 1.25rem;
   aspect-ratio: 1/1;
+  box-shadow: 7px 12px 12px 4px rgba(28, 73, 194, 0.05);
 }
 @media (min-width: 768px) {
   .card-integration {
