@@ -25333,7 +25333,7 @@ h6,
 .card-info-list .card-info:not(:last-child) {
   margin-bottom: 40px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .card-info-list .card-info:not(:last-child) {
     margin-bottom: 80px;
   }
@@ -25349,7 +25349,7 @@ h6,
     background-size: 310px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .card-info-list:not(.reversed) .card-info:nth-child(2n) .card-info__row {
     flex-direction: row-reverse;
   }
@@ -25380,7 +25380,7 @@ h6,
     background-size: 310px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .card-info-list.reversed .card-info:nth-child(2n+1) .card-info__row {
     flex-direction: row-reverse;
   }
@@ -25403,7 +25403,7 @@ h6,
     background-size: 230px;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .card-info.reversed .card-info__row {
     flex-direction: row-reverse;
   }
@@ -25428,7 +25428,7 @@ h6,
   width: 100%;
   padding-top: 62.2950819672%;
 }
-@media (max-width: 767.98px) {
+@media (max-width: 991.98px) {
   .card-info__row {
     flex-direction: column-reverse;
   }
@@ -25454,7 +25454,7 @@ h6,
 .card-info__btn {
   padding-top: 24px;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .card-info__btn {
     padding-top: 40px;
   }
