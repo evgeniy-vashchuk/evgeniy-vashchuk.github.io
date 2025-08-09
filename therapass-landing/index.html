@@ -1,0 +1,2123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>TheraPass — Main</title>
+  <meta name="description" content="Therapass ESA service for emotional support animal letters">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#F2F5FA">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#F2F5FA">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#F2F5FA">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#F2F5FA">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Lexend:wght@100..900&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="header fixed-top compensate-for-scrollbar js-header">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <a class="header__logo" href="#">
+              <img class="lazy js-lazy header__logo-img" src="img/lazy-placeholder.png" alt="TheraPass" data-src="img/logo.svg" width="192" height="37" style="aspect-ratio: 192/37">
+            </a>
+          </div>
+          <div class="col">
+            <div class="offcanvas-lg offcanvas-end" id="offcanvas-menu" aria-labelledby="offcanvas-menu-label" tabindex="-1">
+              <div class="offcanvas-header">
+                <div class="row align-items-center justify-content-between flex-grow-1">
+                  <div class="col-auto d-flex align-items-center">
+                    <h5 class="offcanvas-title" id="offcanvas-menu-label">Menu</h5>
+                  </div>
+                  <div class="col-auto d-flex align-items-center">
+                    <button class="hamburger-menu active" aria-label="Toggle menu" aria-controls="offcanvas-menu" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-menu">
+                      <span class="hamburger-menu__wrap">
+                        <span class="hamburger-menu__bars"></span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="offcanvas-body d-flex flex-column d-lg-block">
+                <div class="row flex-column flex-lg-row align-items-lg-center flex-grow-1 gx-lg-40 gx-xl-56 gx-xxl-116">
+                  <div class="col">
+                    <div class="row gx-24 gx-xl-32 gx-xxl-72 gy-16 gy-lg-8 justify-content-lg-end">
+                      <div class="col-lg-auto">
+                        <a class="text-dark fw-medium link-primary-hover-underline" href="#section-welcome" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-menu">About</a>
+                      </div>
+                      <div class="col-lg-auto">
+                        <a class="text-dark fw-medium link-primary-hover-underline" href="#section-how-it-works" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-menu">How It Works</a>
+                      </div>
+                      <div class="col-lg-auto">
+                        <a class="text-dark fw-medium link-primary-hover-underline" href="#section-why-us" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-menu">Why Us</a>
+                      </div>
+                      <div class="col-lg-auto">
+                        <a class="text-dark fw-medium link-primary-hover-underline" href="#section-therapists" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-menu">Therapists</a>
+                      </div>
+                      <div class="col-lg-auto">
+                        <a class="text-dark fw-medium link-primary-hover-underline" href="#section-faq" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-menu">FAQ</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-12 col-lg-auto pt-32 pt-lg-0">
+                    <a class="btn btn-primary btn-sm w-100 w-lg-auto" href="#">Get in Touch</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto d-flex d-lg-none">
+            <button class="hamburger-menu" aria-label="Toggle menu" aria-controls="offcanvas-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu">
+              <span class="hamburger-menu__wrap">
+                <span class="hamburger-menu__bars"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- HEADER END -->
+
+    <!-- CONTENT -->
+    <main class="main">
+      <!-- SECTION WELCOME -->
+      <section class="section-welcome" id="section-welcome">
+        <div class="section-welcome__bg lazy js-lazy" data-bg="img/webp/section-welcome/background.webp"></div>
+        <div class="container">
+          <div class="section-welcome__content">
+            <div class="section-welcome__content-bg lazy js-lazy" data-bg="img/section-welcome/content-background.svg"></div>
+            <div class="section-welcome__content-inner">
+              <div class="row gy-20 mb-24 mb-lg-40">
+                <div class="col-lg-5">
+                  <div class="badge-glass">
+                    <ul class="stars-rating badge-glass__stars" style="--rating: 5">
+                      <li class="stars-rating__item">
+                        <span class="icomoon-star"></span>
+                      </li>
+                      <li class="stars-rating__item">
+                        <span class="icomoon-star"></span>
+                      </li>
+                      <li class="stars-rating__item">
+                        <span class="icomoon-star"></span>
+                      </li>
+                      <li class="stars-rating__item">
+                        <span class="icomoon-star"></span>
+                      </li>
+                      <li class="stars-rating__item">
+                        <span class="icomoon-star"></span>
+                      </li>
+                    </ul>
+                    <span>Trusted by 250,000 Pet Parents</span>
+                  </div>
+                </div>
+                <div class="col-lg-7">
+                  <div class="row justify-content-lg-end gx-8 gx-md-16 gx-xl-32 gy-8 gy-lg-16">
+                    <div class="col-auto">
+                      <span class="badge-glass">
+                        <span class="icomoon-check text-success"></span>
+                        <span>No Subscription</span>
+                      </span>
+                    </div>
+                    <div class="col-auto">
+                      <span class="badge-glass">
+                        <span class="icomoon-check text-success"></span>
+                        <span>Money Back Guarantee</span>
+                      </span>
+                    </div>
+                    <div class="col-auto">
+                      <span class="badge-glass">
+                        <span class="icomoon-check text-success"></span>
+                        <span>Rejection Protection</span>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-lg-6 pb-40 pb-lg-24">
+                  <div class="remove-last-child-margin mb-40 mb-lg-60">
+                    <h1 aria-label="Your ESA Letter, Signed and Delivered Today" data-aos="fade-right" data-aos-duration="2000">Your <span class="text-aqua text-with-decoration-line">ESA Letter,</span> Signed and Delivered Today</h1>
+                    <div class="row mb-28 mb-sm-40 mb-lg-60">
+                      <div class="col-sm-10">
+                        <h6 class="fw-normal mb-0">Therapass connects you with certified mental health professionals who can evaluate your needs & issue a legitimate ESA letter delivered to your inbox the same day.</h6>
+                      </div>
+                    </div>
+                    <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+                  </div>
+
+                  <div class="pt-28 pt-sm-40 pt-lg-52">
+                    <div class="row row-cols-3 row-cols-xs-5 align-items-center gx-20 gx-sm-40 gy-32">
+                      <div class="col">
+                        <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/section-welcome/logos/1.svg" width="120" height="60" style="aspect-ratio: 120/60">
+                      </div>
+                      <div class="col">
+                        <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/section-welcome/logos/2.svg" width="120" height="60" style="aspect-ratio: 120/60">
+                      </div>
+                      <div class="col">
+                        <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/section-welcome/logos/3.svg" width="120" height="60" style="aspect-ratio: 120/60">
+                      </div>
+                      <div class="col">
+                        <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/section-welcome/logos/4.svg" width="120" height="60" style="aspect-ratio: 120/60">
+                      </div>
+                      <div class="col">
+                        <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/section-welcome/logos/5.svg" width="120" height="60" style="aspect-ratio: 120/60">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6 d-flex flex-column justify-content-end">
+                  <div class="ps-lg-16">
+                    <div class="section-welcome__img" data-aos="fade-up" data-aos-duration="2000">
+                      <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/section-welcome/main-img.webp">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION WELCOME END -->
+
+      <!-- SECTION -->
+      <section class="bg-aqua-faded py-32">
+        <div class="container">
+          <div class="px-sm-20">
+            <div class="row align-items-center gx-48 gy-24">
+              <div class="col-sm-6 col-lg-3 col-xxl-auto">
+                <p class="text-with-icon mb-0">
+                  <span class="text-with-icon__icon icomoon-envolope-letter"></span>
+                  <span class="d-inline-block text-xxs fw-medium">Same-DAY PDF Letter from a licensed therapist</span>
+                </p>
+              </div>
+              <div class="col-sm-6 col-lg-3 col-xxl-auto">
+                <p class="text-with-icon mb-0">
+                  <span class="text-with-icon__icon icomoon-scales"></span>
+                  <span class="d-inline-block text-xxs fw-medium">Legally Compliant with Fair Housing Act</span>
+                </p>
+              </div>
+              <div class="col-sm-6 col-lg-3 col-xxl-auto">
+                <p class="text-with-icon mb-0">
+                  <span class="text-with-icon__icon icomoon-laptop-mac"></span>
+                  <span class="d-inline-block text-xxs fw-medium">No phone appointment needed — we’re ready now</span>
+                </p>
+              </div>
+              <div class="col-sm-6 col-lg-3 col-xxl-auto">
+                <p class="text-with-icon mb-0">
+                  <span class="text-with-icon__icon icomoon-file-protection"></span>
+                  <span class="d-inline-block text-xxs fw-medium">Landlord Rejection Protection available</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section">
+        <div class="container">
+          <div class="row align-items-center gy-32">
+            <div class="col-lg-6">
+              <div class="text-center mb-40 mb-lg-60">
+                <div class="row justify-content-center">
+                  <div class="col-11">
+                    <h2 class="text-blue">The Real Problem: Without an ESA Letter, You are Unprotected</h2>
+                  </div>
+                </div>
+                <h6 class="fw-normal">You rely on your pet for emotional support, but without the right documentation, the law does not.</h6>
+              </div>
+              <div class="ratio ratio-image rounded overflow-hidden" data-aos="fade-right" data-aos-duration="2000">
+                <img class="lazy js-lazy object-fit-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/img-1.webp">
+              </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+              <ul class="list-with-border">
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="icomoon-attention-circle-fill text-blue"></span>
+                      </span>
+                    </span>
+                    <span>Landlords Can Deny Your Pet</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>Even if your animal helps with anxiety or stress, most landlords won’t allow them without a valid ESA letter.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="icomoon-attention-circle-fill text-blue"></span>
+                      </span>
+                    </span>
+                    <span>&quot;No Pet&quot; Policies Still Apply</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>Without proper documentation, your pet is treated like any other and you could be forced to remove them.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="icomoon-attention-circle-fill text-blue"></span>
+                      </span>
+                    </span>
+                    <span>You Could Face Extra Fees</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>On average, Landlords charge pet owners a $400 up-front pet fee (per pet) plus $30/month. That is $1120 per pet over a two year lease.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="icomoon-attention-circle-fill text-blue"></span>
+                      </span>
+                    </span>
+                    <span>Risk of Eviction</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>If your lease forbids pets & you can’t provide a valid ESA letter, you may be asked to leave.</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section bg-aqua-faded overflow-hidden">
+        <div class="container">
+          <h2 class="text-blue text-center mb-40 mb-lg-60">An ESA Letter Can Help & You Could Qualify Today</h2>
+          <div class="row align-items-center gy-40 mb-80">
+            <div class="col-lg-5 col-xxl-6">
+              <h3 class="text-blue">What is an ESA letter</h3>
+              <div class="text-block mb-40">
+                <p>An ESA letter is a formal document written and signed by a state-licensed mental health professional. It states that your pet is part of your emotional care plan & provides therapeutic value for conditions like anxiety, depression, PTSD, or stress.</p>
+                <p>If your pet offers emotional comfort, helps reduce symptoms, or improves your daily life you could be eligible. The fastest way to find out? Take our quick prequalification It’s free to start.</p>
+              </div>
+              <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+            </div>
+            <div class="col-lg-6 col-xxl-5 offset-lg-1">
+              <div class="doc-with-list-block">
+                <div class="row gx-28 gy-24 gy-sm-0 justify-content-center">
+                  <div class="col-xs-10 col-sm-5 d-flex align-items-center">
+                    <div class="doc-with-list-block__content">
+                      <div class="row gy-16 gy-sm-40">
+                        <div class="col-6 col-sm-12">
+                          <p class="mb-0 text-attention">Therapist’ name, license, number, & signature</p>
+                        </div>
+                        <div class="col-6 col-sm-12">
+                          <p class="mb-0 text-attention">Confirmation of your need for an ESA</p>
+                        </div>
+                        <div class="col-6 col-sm-12">
+                          <p class="mb-0 text-attention">Date of issue and letterhead</p>
+                        </div>
+                        <div class="col-6 col-sm-12">
+                          <p class="mb-0 text-attention">Compliance with federal and state regulations</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-10 col-sm-7 d-flex flex-column justify-content-end">
+                    <div class="doc-with-list-block__img-wrap">
+                      <img class="lazy js-lazy doc-with-list-block__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/doc-with-list-block/img-1.webp" width="246" height="324" style="aspect-ratio: 246/324">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row gy-32 justify-content-center">
+            <div class="col-xs-10 col-md-8 col-lg-5 order-2 order-lg-1 d-flex align-items-end">
+              <div class="pe-lg-28 w-100 to-bottom-section-shift">
+                <div class="image-with-bg-rounds">
+                  <div class="image-with-bg-rounds__img" data-aos="fade-up" data-aos-duration="2000">
+                    <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/image-with-bg-rounds.webp">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 offset-lg-1">
+              <h2 class="text-blue">Who Qualifies</h2>
+              <div class="text-block mb-24">
+                <p>You may qualify for an ESA letter if, you live with any form of emotional, mental, or psychological difficulty that your animal helps ease.</p>
+              </div>
+              <h5 class="text-blue">Some common conditions include:</h5>
+              <ul class="list-with-check text-sm fw-medium mb-40 text-2-cols">
+                <li>Generalized anxiety</li>
+                <li>Depression or mood disorders</li>
+                <li>Sleep disorders</li>
+                <li>Panic attacks or chronic stress</li>
+                <li>PTSD or past trauma</li>
+                <li>Social anxiety or phobia</li>
+                <li>ADHD</li>
+                <li>Repetitive thoughts disorder</li>
+              </ul>
+              <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="py-32 bg-white">
+        <div class="container">
+          <div class="row align-items-center justify-content-center justify-content-lg-between g-32 g-xs-48">
+            <div class="col-4 col-xs-3 col-lg-auto d-flex justify-content-center">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logos/tiktoc.svg" width="38" height="38" style="aspect-ratio: 38/38">
+            </div>
+            <div class="col-4 col-xs-3 col-lg-auto d-flex justify-content-center">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logos/facebook.svg" width="38" height="38" style="aspect-ratio: 38/38">
+            </div>
+            <div class="col-4 col-xs-3 col-lg-auto d-flex justify-content-center">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logos/instagram.svg" width="38" height="38" style="aspect-ratio: 38/38">
+            </div>
+            <div class="col-4 col-xs-3 col-lg-auto d-flex justify-content-center">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logos/cozi.svg" width="90" height="32" style="aspect-ratio: 90/32">
+            </div>
+            <div class="col-4 col-xs-3 col-lg-auto d-flex justify-content-center">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logos/investigation-discovery.svg" width="40" height="44" style="aspect-ratio: 40/44">
+            </div>
+            <div class="col-4 col-xs-3 col-lg-auto d-flex justify-content-center">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logos/fetv.svg" width="90" height="34" style="aspect-ratio: 90/34">
+            </div>
+            <div class="col-4 col-xs-3 col-lg-auto d-flex justify-content-center">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logos/netional-geographic.svg" width="120" height="34" style="aspect-ratio: 120/34">
+            </div>
+            <div class="col-4 col-xs-3 col-lg-auto d-flex justify-content-center">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logos/animal-planet.svg" width="73" height="44" style="aspect-ratio: 73/44">
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section">
+        <div class="container">
+          <div class="row align-items-center gy-40">
+            <div class="col-lg-5">
+              <h2 class="text-blue">At Therapass, We Make Getting Your ESA Letter Simple</h2>
+              <div class="text-block mb-24 mb-lg-40">
+                <p>An ESA letter is a completely legal and legitimate option that opens doors for renters by exempting them from pet rent, saving you thousands of dollars a year while gaining approval for housing that typically restricts pets.</p>
+              </div>
+              <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+            </div>
+            <div class="col-lg-6 offset-lg-1">
+              <a class="video-block" href="files/video.mp4" data-fancybox="gallery" data-aos="fade-left" data-aos-duration="2000">
+                <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/video-block/1.webp">
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="py-40 bg-aqua-faded">
+        <div class="container">
+          <div class="row justify-content-center gy-40">
+            <div class="col-sm-6 col-lg-4">
+              <div class="text-center">
+                <span class="circle-with-icon lg bg-blue mb-16">
+                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/1.svg">
+                </span>
+                <h2 class="text-blue mb-16">+2 Million</h2>
+                <h6 class="mb-0 fw-normal">ESA & Disability Assessments</h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <div class="text-center">
+                <span class="circle-with-icon lg bg-blue mb-16">
+                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/2.svg">
+                </span>
+                <h2 class="text-blue mb-16">State Licensed</h2>
+                <h6 class="mb-0 fw-normal">Therapists & Mental
+                  <br> Health Professionals
+                </h6>
+              </div>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+              <div class="text-center">
+                <span class="circle-with-icon lg bg-blue mb-16">
+                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/3.svg">
+                </span>
+                <h2 class="text-blue mb-16">+8 Years</h2>
+                <h6 class="mb-0 fw-normal">In Business Backed by
+                  <br> Experience and Trust
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section" id="section-how-it-works">
+        <div class="container">
+          <div class="text-center mb-32 mb-md-52">
+            <h2 class="text-blue">The Easiest Way To Get an ESA Letter Start to Finish</h2>
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-8 col-xl-6">
+                <h6 class="fw-normal mb-0">Lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nib ih elit amet nib vulputo cursus a sit amet mauris.</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="row gy-24 gy-sm-40">
+            <div class="col-lg-4 d-flex">
+              <div class="card-step">
+                <div class="card-step__content">
+                  <div class="card-step__number-icon">
+                    <span class="circle-with-icon lg bg-blue">
+                      <span class="h2 mb-0 text-white position-absolute top-50 start-50 translate-middle">1</span>
+                    </span>
+                  </div>
+                  <div class="card-step__top-content">
+                    <h3 class="text-blue mb-16">Take The Online Prequalification</h3>
+                    <div class="text-block">
+                      <p>Answer a few questions about your mental health & how your pet helps. It only takes a couple of minutes.</p>
+                    </div>
+                  </div>
+                  <div class="card-step__image-content">
+                    <div class="card-step__img">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-step/1.svg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 d-flex">
+              <div class="card-step">
+                <div class="card-step__content">
+                  <div class="card-step__number-icon">
+                    <span class="circle-with-icon lg bg-blue">
+                      <span class="h2 mb-0 text-white position-absolute top-50 start-50 translate-middle">2</span>
+                    </span>
+                  </div>
+                  <div class="card-step__top-content">
+                    <h3 class="text-blue mb-16">State-Licensed Therapist Evaluation</h3>
+                    <div class="text-block">
+                      <p>We will immediately connect you to a licensed therapist in your state and, if you qualify, approves and signs your ESA letter today.</p>
+                    </div>
+                  </div>
+                  <div class="card-step__image-content">
+                    <div class="card-step__img">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-step/2.svg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 d-flex">
+              <div class="card-step">
+                <div class="card-step__content">
+                  <div class="card-step__number-icon">
+                    <span class="circle-with-icon lg bg-blue">
+                      <span class="h2 mb-0 text-white position-absolute top-50 start-50 translate-middle">3</span>
+                    </span>
+                  </div>
+                  <div class="card-step__top-content">
+                    <h3 class="text-blue mb-16">Get Your Signed ESA Letter Today</h3>
+                    <div class="text-block">
+                      <p>Your letter is sent directly to you in PDF format and is available in your digital wallet for landlords everywhere.</p>
+                    </div>
+                  </div>
+                  <div class="card-step__image-content">
+                    <div class="card-step__img">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-step/3.svg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center pt-40">
+            <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section bg-aqua-faded">
+        <div class="container">
+          <div class="row align-items-center gy-32">
+            <div class="col-lg-6">
+              <div class="text-center mb-40 mb-lg-60">
+                <div class="row justify-content-center">
+                  <div class="col-11">
+                    <h2 class="text-blue">What a Legitamite ESA Letter Unlocks for You</h2>
+                  </div>
+                </div>
+                <h6 class="fw-normal">A legitimate ESA letter gives you real protection and peace of mind—no hidden fees, no legal confusion, and full confidence wherever life takes you with your pet.</h6>
+              </div>
+
+              <div class="swiper-holder slider-reviews">
+                <div class="swiper js-slider-reviews">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="ratio ratio-image rounded overflow-hidden bg-aqua-light shadow-aqua">
+                        <img class="lazy js-lazy object-fit-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/slider-reviews/1.webp">
+                      </div>
+
+                      <div class="row justify-content-end">
+                        <div class="col-xs-10 col-sm-8">
+                          <figure class="text-end mb-0 pt-20">
+                            <blockquote class="blockquote fst-italic text-block">
+                              <p>I was surprised how simple the process was. I got approved the same day, and now I can live with my dog without stress — even in pet-restricted housing.</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer m-0">
+                              <cite class="fst-normal" title="Kaila C.">Kaila C.</cite>
+                            </figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="ratio ratio-image rounded overflow-hidden bg-aqua-light shadow-aqua">
+                        <img class="lazy js-lazy object-fit-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/slider-reviews/2.webp">
+                      </div>
+
+                      <div class="row justify-content-end">
+                        <div class="col-xs-10 col-sm-8">
+                          <figure class="text-end mb-0 pt-20">
+                            <blockquote class="blockquote fst-italic text-block">
+                              <p>With an official ESA letter, I finally stopped worrying about housing issues. It's real, it's legal, and it made life with my dog so much easier.</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer m-0">
+                              <cite class="fst-normal" title="Alex R.">Alex R.</cite>
+                            </figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="ratio ratio-image rounded overflow-hidden bg-aqua-light shadow-aqua">
+                        <img class="lazy js-lazy object-fit-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/slider-reviews/3.webp">
+                      </div>
+
+                      <div class="row justify-content-end">
+                        <div class="col-xs-10 col-sm-8">
+                          <figure class="text-end mb-0 pt-20">
+                            <blockquote class="blockquote fst-italic text-block">
+                              <p>Thanks to the ESA letter, I was able to keep my emotional support animal with me in my new apartment. The process was simple and fast.</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer m-0">
+                              <cite class="fst-normal" title="Jasmine T.">Jasmine T.</cite>
+                            </figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="ratio ratio-image rounded overflow-hidden bg-aqua-light shadow-aqua">
+                        <img class="lazy js-lazy object-fit-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/slider-reviews/4.webp">
+                      </div>
+
+                      <div class="row justify-content-end">
+                        <div class="col-xs-10 col-sm-8">
+                          <figure class="text-end mb-0 pt-20">
+                            <blockquote class="blockquote fst-italic text-block">
+                              <p>I used to dread apartment hunting with a dog. The ESA documentation took away all the stress—now everything’s legit and easy</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer m-0">
+                              <cite class="fst-normal" title="Marcus T.">Marcus T.</cite>
+                            </figcaption>
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-navigation-wrapper">
+                    <button class="swiper-button-prev" type="button"></button>
+                    <button class="swiper-button-next" type="button"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5 offset-lg-1">
+              <ul class="list-with-border">
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="circle-with-icon  bg-blue">
+                          <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/4.svg">
+                        </span>
+                      </span>
+                    </span>
+                    <span>Live With Your Pet Anywhere</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>An ESA letter protects your right to keep your emotional support animal, even in "no pet" housing.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="circle-with-icon  bg-blue">
+                          <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/5.svg">
+                        </span>
+                      </span>
+                    </span>
+                    <span>Avoid Pet Fees or Deposits</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>Landlords must waive pet-related costs once your ESA letter is submitted.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="circle-with-icon  bg-blue">
+                          <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/6.svg">
+                        </span>
+                      </span>
+                    </span>
+                    <span>Protect Yourself Under Federal Law</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>Your rights are backed by the Fair Housing Act but only with proper documentation.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="circle-with-icon  bg-blue">
+                          <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/7.svg">
+                        </span>
+                      </span>
+                    </span>
+                    <span>No Special Training Needed</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>Your current pet may qualify. ESAs don’t need certifications or skills just a clear emotional benefit.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="circle-with-icon  bg-blue">
+                          <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/8.svg">
+                        </span>
+                      </span>
+                    </span>
+                    <span>Fast, Risk-Free Process</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>It takes just minutes to check if you qualify and if you’re not approved, you don’t pay.</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+
+              <div class="text-center pt-24 pt-sm-40">
+                <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section" id="section-why-us">
+        <div class="container">
+          <div class="row align-items-center gy-32">
+            <div class="col-lg-5 order-2 order-lg-1">
+              <ul class="list-with-border">
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="icomoon-logo text-aqua"></span>
+                      </span>
+                    </span>
+                    <span>Same-Day Digital Delivery</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>Get your ESA letter (PDF and phone wallet version) delivered to your inbox in hours, not days. Perfect for urgent situations.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="icomoon-logo text-aqua"></span>
+                      </span>
+                    </span>
+                    <span>State-Licensed Therapists Only</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>Your letter is written and signed by a qualified, experienced, state-licensed mental health professional.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="icomoon-logo text-aqua"></span>
+                      </span>
+                    </span>
+                    <span>Fully Fair Housing Compliant</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>Our letters are formatted to meet federal and state legal standards so landlords can not reject them.</p>
+                    </div>
+                  </div>
+                </li>
+                <li class="list-with-border__item">
+                  <h5 class="title-with-icon mb-16">
+                    <span class="title-with-icon__icon-holder">
+                      <span class="title-with-icon__icon">
+                        <span class="icomoon-logo text-aqua"></span>
+                      </span>
+                    </span>
+                    <span>No Junk Registries or Fake Docs</span>
+                  </h5>
+                  <div class="list-with-border__content">
+                    <div class="text-block">
+                      <p>We do not sell bogus service animal certificates, just real evaluations and real, legal letters.</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 offset-lg-1">
+              <div class="text-center mb-40 mb-lg-60">
+                <div class="row justify-content-center">
+                  <div class="col-11">
+                    <h2 class="text-blue">Why People Trust TheraPass Over Generic ESA Sites</h2>
+                  </div>
+                </div>
+                <h6 class="fw-normal">Certified evaluations, transparent pricing, and real mental health professionals — no shortcuts, just support you can count on.</h6>
+              </div>
+              <div class="ratio ratio-image rounded overflow-hidden" data-aos="fade-left" data-aos-duration="2000">
+                <img class="lazy js-lazy object-fit-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/img-2.svg">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="bg-white py-32">
+        <div class="container">
+          <div class="row align-items-center gy-32">
+            <div class="col-md">
+              <div class="row align-items-center gy-20">
+                <div class="col-auto">
+                  <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/icon-1.svg" width="60" height="60" style="aspect-ratio: 60/60">
+                </div>
+                <div class="col">
+                  <h3 class="text-blue mb-4">Risk-Free</h3>
+                  <h6 class="fw-normal mb-0">Not approved? No charge, no hassle, no fine print</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-auto text-center text-md-end">
+              <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section bg-aqua-faded position-relative overflow-hidden" id="section-therapists">
+        <div class="radial-gradient-bg">
+          <div class="container">
+            <div class="radial-gradient-bg__content">
+              <div class="radial-gradient-bg__img blue">
+                <img src="img/radial-gradient-bg-blue.svg" alt="Image">
+              </div>
+              <div class="radial-gradient-bg__img green">
+                <img src="img/radial-gradient-bg-green.svg" alt="Image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container position-relative z-3">
+          <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8 col-xxl-6">
+              <div class="text-center mb-24 mb-sm-40 mb-lg-60">
+                <h2 class="text-blue">Meet Our Licensed Therapists</h2>
+                <h6 class="fw-normal mb-0">Get to know the licensed therapists who guide our ESA evaluations with real professionalism, compassionate support, and clinical expertise.</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-holder equal-height-slider slider-therapists">
+            <div class="swiper swiper-navigation-size-lg js-slider-therapists">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="card-therapist">
+                    <div class="card-therapist__img">
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-therapist/1.webp">
+                    </div>
+
+                    <div class="card-therapist__main-content">
+                      <h3 class="text-blue mb-8">Kandi Morris</h3>
+                      <h6 class="text-xs fw-normal mb-8">Licensed Clinical Social Worker</h6>
+                      <div class="row d-inline-flex align-items-center gx-8">
+                        <div class="col-auto">
+                          <ul class="stars-rating" style="--rating: 4.8">
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-auto">
+                          <p class="text-xxs mb-0">4.8</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-therapist__text-content">
+                      <div class="text-block">
+                        <p>Candy is a licensed professional and alcohol/drug counselor who helps clients overcome feeling stuck with confidence. As a trained EMDR therapist, she expertly supports individuals through trauma, grief, and life transitions. With deep experience in substance use and process addictions, Candy combines empathy with practical strategies to provide effective, everyday tools for her clients.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card-therapist">
+                    <div class="card-therapist__img">
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-therapist/2.webp">
+                    </div>
+
+                    <div class="card-therapist__main-content">
+                      <h3 class="text-blue mb-8">Christian Starpoli</h3>
+                      <h6 class="text-xs fw-normal mb-8">Licensed Clinical Social Worker</h6>
+                      <div class="row d-inline-flex align-items-center gx-8">
+                        <div class="col-auto">
+                          <ul class="stars-rating" style="--rating: 4.9">
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-auto">
+                          <p class="text-xxs mb-0">4.9</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-therapist__text-content">
+                      <div class="text-block">
+                        <p>Chris specializes in trauma/PTSD, EMDR, relationship issues, addictions, couples therapy, depression, anxiety, and personality disorders, working mainly with adults and adolescents. As a trained trauma specialist, he focuses heavily on treating trauma victims and all types of addictions. He also offers confidential telemental health sessions from the comfort of your home.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card-therapist">
+                    <div class="card-therapist__img">
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-therapist/3.webp">
+                    </div>
+
+                    <div class="card-therapist__main-content">
+                      <h3 class="text-blue mb-8">Claire Franke</h3>
+                      <h6 class="text-xs fw-normal mb-8">Licensed Clinical Social Worker</h6>
+                      <div class="row d-inline-flex align-items-center gx-8">
+                        <div class="col-auto">
+                          <ul class="stars-rating" style="--rating: 4.8">
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-auto">
+                          <p class="text-xxs mb-0">4.8</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-therapist__text-content">
+                      <div class="text-block">
+                        <p>Claire helps adults and seniors with anxiety, depression, grief, couples counseling, chronic illness, and substance use support. She uses CBT, DBT/Mindfulness, and Motivational Interviewing with a Humanistic and Psychodynamic approach, creating a collaborative, accepting space while exploring how early life impacts current challenges.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card-therapist">
+                    <div class="card-therapist__img">
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-therapist/1.webp">
+                    </div>
+
+                    <div class="card-therapist__main-content">
+                      <h3 class="text-blue mb-8">Kandi Morris</h3>
+                      <h6 class="text-xs fw-normal mb-8">Licensed Clinical Social Worker</h6>
+                      <div class="row d-inline-flex align-items-center gx-8">
+                        <div class="col-auto">
+                          <ul class="stars-rating" style="--rating: 4.8">
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-auto">
+                          <p class="text-xxs mb-0">4.8</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-therapist__text-content">
+                      <div class="text-block">
+                        <p>Candy is a licensed professional and alcohol/drug counselor who helps clients overcome feeling stuck with confidence. As a trained EMDR therapist, she expertly supports individuals through trauma, grief, and life transitions. With deep experience in substance use and process addictions, Candy combines empathy with practical strategies to provide effective, everyday tools for her clients.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card-therapist">
+                    <div class="card-therapist__img">
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-therapist/2.webp">
+                    </div>
+
+                    <div class="card-therapist__main-content">
+                      <h3 class="text-blue mb-8">Christian Starpoli</h3>
+                      <h6 class="text-xs fw-normal mb-8">Licensed Clinical Social Worker</h6>
+                      <div class="row d-inline-flex align-items-center gx-8">
+                        <div class="col-auto">
+                          <ul class="stars-rating" style="--rating: 4.9">
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-auto">
+                          <p class="text-xxs mb-0">4.9</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-therapist__text-content">
+                      <div class="text-block">
+                        <p>Chris specializes in trauma/PTSD, EMDR, relationship issues, addictions, couples therapy, depression, anxiety, and personality disorders, working mainly with adults and adolescents. As a trained trauma specialist, he focuses heavily on treating trauma victims and all types of addictions. He also offers confidential telemental health sessions from the comfort of your home.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="card-therapist">
+                    <div class="card-therapist__img">
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-therapist/3.webp">
+                    </div>
+
+                    <div class="card-therapist__main-content">
+                      <h3 class="text-blue mb-8">Claire Franke</h3>
+                      <h6 class="text-xs fw-normal mb-8">Licensed Clinical Social Worker</h6>
+                      <div class="row d-inline-flex align-items-center gx-8">
+                        <div class="col-auto">
+                          <ul class="stars-rating" style="--rating: 4.8">
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                            <li class="stars-rating__item">
+                              <span class="icomoon-star"></span>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="col-auto">
+                          <p class="text-xxs mb-0">4.8</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-therapist__text-content">
+                      <div class="text-block">
+                        <p>Claire helps adults and seniors with anxiety, depression, grief, couples counseling, chronic illness, and substance use support. She uses CBT, DBT/Mindfulness, and Motivational Interviewing with a Humanistic and Psychodynamic approach, creating a collaborative, accepting space while exploring how early life impacts current challenges.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+              <div class="swiper-navigation-wrapper">
+                <button class="swiper-button-prev" type="button"></button>
+                <button class="swiper-button-next" type="button"></button>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center pt-24 pt-sm-40">
+            <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section">
+        <div class="container">
+          <h2 class="text-blue text-center mb-32 mb-md-48">TheraPass Vs Other ESA Sites</h2>
+
+          <div class="px-xxl-40">
+            <div class="table-responsive pt-28">
+              <table class="table table-compare">
+                <thead>
+                  <tr>
+                    <th scope="col">
+                      <p class="h4 mb-0 text-blue">Key Differences You Should Know</p>
+                    </th>
+                    <th class="text-center" scope="col">
+                      <span class="circle-with-icon lg-small bg-success">
+                        <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/13.svg">
+                      </span>
+                      <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="TheraPass" data-src="img/logo.svg" width="174" height="33" style="aspect-ratio: 174/33">
+                    </th>
+                    <th class="text-center" scope="col">
+                      <span class="circle-with-icon  bg-danger">
+                        <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/14.svg">
+                      </span>
+                      <p class="h5 mb-0">Other ESA Sites</p>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <h5 class="title-with-icon mb-0">
+                        <span class="title-with-icon__icon-holder">
+                          <span class="title-with-icon__icon">
+                            <span class="circle-with-icon  bg-blue">
+                              <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/9.svg">
+                            </span>
+                          </span>
+                        </span>
+                        <span>Same-Day Delivery</span>
+                      </h5>
+                    </td>
+                    <td class="text-center">
+                      <h5 class="text-success mb-4">Delivered</h5>
+                      <h6 class="fw-normal mb-0">within hours</h6>
+                    </td>
+                    <td class="text-center">
+                      <h5 class="text-danger mb-4">1-3 business days</h5>
+                      <h6 class="fw-normal mb-0">extra fees for fast delivery</h6>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5 class="title-with-icon mb-0">
+                        <span class="title-with-icon__icon-holder">
+                          <span class="title-with-icon__icon">
+                            <span class="circle-with-icon  bg-blue">
+                              <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/10.svg">
+                            </span>
+                          </span>
+                        </span>
+                        <span>Pricing Transparency</span>
+                      </h5>
+                    </td>
+                    <td class="text-center">
+                      <h5 class="text-success mb-4">No hidden fees</h5>
+                      <h6 class="fw-normal mb-0">or upsells</h6>
+                    </td>
+                    <td class="text-center">
+                      <h5 class="text-danger mb-4">Common hidden charges</h5>
+                      <h6 class="fw-normal mb-0">hidden charges, tricky subscriptions</h6>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5 class="title-with-icon mb-0">
+                        <span class="title-with-icon__icon-holder">
+                          <span class="title-with-icon__icon">
+                            <span class="circle-with-icon  bg-blue">
+                              <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/11.svg">
+                            </span>
+                          </span>
+                        </span>
+                        <span>Track Record</span>
+                      </h5>
+                    </td>
+                    <td class="text-center">
+                      <h5 class="text-success mb-4">8 years</h5>
+                      <h6 class="fw-normal mb-0">250K+ ESA letters</h6>
+                    </td>
+                    <td class="text-center">
+                      <h5 class="text-danger mb-4">Often unverified</h5>
+                      <h6 class="fw-normal mb-0">or new</h6>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <h5 class="title-with-icon mb-0">
+                        <span class="title-with-icon__icon-holder">
+                          <span class="title-with-icon__icon">
+                            <span class="circle-with-icon  bg-blue">
+                              <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/circle-with-icon/12.svg">
+                            </span>
+                          </span>
+                        </span>
+                        <span>Landlord Acceptance Rate</span>
+                      </h5>
+                    </td>
+                    <td class="text-center">
+                      <h5 class="text-success mb-4">96%+</h5>
+                      <h6 class="fw-normal mb-0">Approved</h6>
+                    </td>
+                    <td class="text-center">
+                      <h5 class="text-danger mb-4">Not disclosed</h5>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="text-center pt-24 pt-sm-40">
+            <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section bg-aqua-faded position-relative overflow-hidden">
+        <div class="radial-gradient-bg reverse">
+          <div class="container">
+            <div class="radial-gradient-bg__content">
+              <div class="radial-gradient-bg__img blue">
+                <img src="img/radial-gradient-bg-blue.svg" alt="Image">
+              </div>
+              <div class="radial-gradient-bg__img green">
+                <img src="img/radial-gradient-bg-green.svg" alt="Image">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container position-relative z-3">
+          <div class="text-center mb-40 mb-lg-60">
+            <h2 class="text-blue">Get 2 Free Bonuses With Your ESA Letter Today</h2>
+            <div class="row justify-content-center">
+              <div class="col-sm-9 col-md-7 col-xl-5">
+                <h6 class="fw-normal mb-0">Everything You Need to Build Trust with Landlords — Instantly and for Free</h6>
+              </div>
+            </div>
+          </div>
+
+          <div class="row justify-content-center gx-40 gx-xl-60 gy-32">
+            <div class="col-lg-6 col-xxl-auto d-flex">
+              <div class="card-bonus blue">
+                <div class="card-bonus__header">
+                  <div class="row align-items-center justify-content-center gx-16 gx-sm-24 gx-xl-40 gy-16">
+                    <div class="col-auto">
+                      <span class="badge-glass lg">
+                        <span class="icomoon-check text-success"></span>
+                        <span>Bonus #1</span>
+                      </span>
+                    </div>
+                    <div class="col-auto d-inline-flex">
+                      <span class="card-bonus__header-arrow-icon icomoon-arrow-long-right"></span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="card-bonus__logo">
+                        <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-bonus/logo-free-pet-screening.svg" width="170" height="44" style="aspect-ratio: 170/44">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-bonus__title-block">
+                  <h3 class="card-bonus__title mb-8">Free Pet Screening Profile</h3>
+                  <h5 class="mb-0">
+                    <span class="icomoon-check text-sm text-success align-middle"></span>
+                    <span class="align-middle">Present your pet like a pro.</span>
+                  </h5>
+                </div>
+                <div class="card-bonus__body">
+                  <h6 class="fw-normal">Your landlord or property manager can immediately verify your ESA Letter with the therapist using our Free Pet Screening.</h6>
+                  <div class="card-bonus__img">
+                    <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-bonus/img-1.webp">
+                  </div>
+                  <h4 class="mb-16 card-bonus__list-title">What's included:</h4>
+                  <ul class="list-with-check h6 fw-normal">
+                    <li>Public verification link QR code tied to your ESA</li>
+                    <li>Makes it easier for landlords to confirm your letter is legit</li>
+                    <li>We have verified pets for 28k+ property managers</li>
+                    <li>Reduces back-and-forth and removes doubt during lease reviews</li>
+                    <li>Shows you are working with a real licensed therapist</li>
+                    <li>No Pet Screening fees to renters</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-xxl-auto d-flex">
+              <div class="card-bonus yellow">
+                <div class="card-bonus__header">
+                  <div class="row align-items-center justify-content-center gx-16 gx-sm-24 gx-xl-40 gy-16">
+                    <div class="col-auto">
+                      <span class="badge-glass lg">
+                        <span class="icomoon-check text-success"></span>
+                        <span>Bonus #2</span>
+                      </span>
+                    </div>
+                    <div class="col-auto d-inline-flex">
+                      <span class="card-bonus__header-arrow-icon icomoon-arrow-long-right"></span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="card-bonus__logo">
+                        <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-bonus/logo-verify-dog.svg" width="170" height="56" style="aspect-ratio: 170/56">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-bonus__title-block">
+                  <h3 class="card-bonus__title mb-8">Verified Pet Screening Profile</h3>
+                  <h5 class="mb-0">
+                    <span class="icomoon-check text-sm text-success align-middle"></span>
+                    <span class="align-middle">Instant credibility. Easier verification. </span>
+                  </h5>
+                </div>
+                <div class="card-bonus__body">
+                  <h6 class="fw-normal">We'll list your emotional support animal on VerifyDog, a trusted ESA registry landlords and property managers can reference and verify your credential's instantly.</h6>
+                  <div class="card-bonus__img">
+                    <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-bonus/img-2.webp">
+                  </div>
+                  <h4 class="mb-16 card-bonus__list-title">Why it helps:</h4>
+                  <ul class="list-with-check h6 fw-normal">
+                    <li>Digital profile to share with landlords, store employees, airlines, restaurants, or anywhere</li>
+                    <li>Includes verified pet details, ESA letters, vaccination and vet records</li>
+                    <li>Enhances trust and transparency with housing providers</li>
+                    <li>Completely free with your ESA letter. No subscription or fees</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center pt-24 pt-sm-40">
+            <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section">
+        <div class="container">
+          <div class="row align-items-center gy-32">
+            <div class="col-xl-6">
+              <div class="text-center mb-40 mb-lg-60">
+                <div class="row justify-content-center">
+                  <div class="col-11">
+                    <h2 class="text-blue">Testimonials
+                      <br> Our Story Is Your Pet’s Story
+                    </h2>
+                  </div>
+                </div>
+                <h6 class="fw-normal">Read how TheraPass helped pet owners overcome housing challenges and stay with the animals who support them most.</h6>
+              </div>
+
+              <div class="ratio ratio-image rounded overflow-hidden bg-aqua-light shadow-aqua">
+                <img class="lazy js-lazy object-fit-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/img-3.webp">
+              </div>
+              <div class="row justify-content-end">
+                <div class="col-xs-10 col-sm-8">
+                  <figure class="text-end mb-0 pt-20">
+                    <blockquote class="blockquote fst-italic text-block">
+                      <p>I was surprised how quick and stress-free it all was. I filled out the form, got matched with a licensed therapist the same day, and had my ESA letter ready shortly after — all without leaving my couch!</p>
+                    </blockquote>
+                    <figcaption class="blockquote-footer m-0">
+                      <cite class="fst-normal" title="Eveline Smit">Eveline Smit</cite>
+                    </figcaption>
+                  </figure>
+                </div>
+              </div>
+
+              <div class="text-center pt-24 pt-sm-40 pt-xl-60">
+                <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+              </div>
+            </div>
+
+            <div class="col-xl-5 offset-xl-1">
+              <div class="swiper-holder slider-testimonials">
+                <div class="swiper js-slider-testimonials">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="remove-last-child-margin">
+                        <div class="mb-16 mb-lg-24">
+                          <div class="card-testimonial">
+                            <div class="row gy-16 mb-20">
+                              <div class="col-xs">
+                                <div class="row gx-12 gy-8">
+                                  <div class="col-auto">
+                                    <img class="lazy js-lazy card-testimonial__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-testimonial/1.webp">
+                                  </div>
+                                  <div class="col">
+                                    <h5 class="text-blue mb-8">Nicolas Stenton</h5>
+                                    <h6 class="text-xs fw-normal mb-0">Verified Costumer</h6>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-auto">
+                                <div class="row d-inline-flex align-items-center gx-8">
+                                  <div class="col-auto">
+                                    <ul class="stars-rating" style="--rating: 5">
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="col-auto">
+                                    <p class="text-xxs mb-0">5.0</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="text-block">
+                              <p>TheraPass made the whole process super easy. I filled out the form, got matched with a licensed therapist, and had my ESA letter the same day. Loved that I could talk by text — so convenient!</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-16 mb-lg-24">
+                          <div class="card-testimonial">
+                            <div class="row gy-16 mb-20">
+                              <div class="col-xs">
+                                <div class="row gx-12 gy-8">
+                                  <div class="col-auto">
+                                    <img class="lazy js-lazy card-testimonial__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-testimonial/2.webp">
+                                  </div>
+                                  <div class="col">
+                                    <h5 class="text-blue mb-8">Mariam Silini</h5>
+                                    <h6 class="text-xs fw-normal mb-0">Verified Costumer</h6>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-auto">
+                                <div class="row d-inline-flex align-items-center gx-8">
+                                  <div class="col-auto">
+                                    <ul class="stars-rating" style="--rating: 4.9">
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="col-auto">
+                                    <p class="text-xxs mb-0">4.9</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="text-block">
+                              <p>With TheraPass I always have my choice of how to connect with a therapist - by phone, video, or text message. Getting my ESA Letter took just a couple og minutes no waiting!</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-16 mb-lg-24">
+                          <div class="card-testimonial">
+                            <div class="row gy-16 mb-20">
+                              <div class="col-xs">
+                                <div class="row gx-12 gy-8">
+                                  <div class="col-auto">
+                                    <img class="lazy js-lazy card-testimonial__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-testimonial/3.webp">
+                                  </div>
+                                  <div class="col">
+                                    <h5 class="text-blue mb-8">Stefan West</h5>
+                                    <h6 class="text-xs fw-normal mb-0">Verified Costumer</h6>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-auto">
+                                <div class="row d-inline-flex align-items-center gx-8">
+                                  <div class="col-auto">
+                                    <ul class="stars-rating" style="--rating: 4.8">
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="col-auto">
+                                    <p class="text-xxs mb-0">4.8</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="text-block">
+                              <p>TheraPass made everything super easy — I chose how to connect with my therapist, and within no time, my ESA letter was ready to go. No delays, no stress — just fast, reliable, and professional help.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="remove-last-child-margin">
+                        <div class="mb-16 mb-lg-24">
+                          <div class="card-testimonial">
+                            <div class="row gy-16 mb-20">
+                              <div class="col-xs">
+                                <div class="row gx-12 gy-8">
+                                  <div class="col-auto">
+                                    <img class="lazy js-lazy card-testimonial__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-testimonial/1.webp">
+                                  </div>
+                                  <div class="col">
+                                    <h5 class="text-blue mb-8">Nicolas Stenton</h5>
+                                    <h6 class="text-xs fw-normal mb-0">Verified Costumer</h6>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-auto">
+                                <div class="row d-inline-flex align-items-center gx-8">
+                                  <div class="col-auto">
+                                    <ul class="stars-rating" style="--rating: 5">
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="col-auto">
+                                    <p class="text-xxs mb-0">5.0</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="text-block">
+                              <p>TheraPass made the whole process super easy. I filled out the form, got matched with a licensed therapist, and had my ESA letter the same day. Loved that I could talk by text — so convenient!</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-16 mb-lg-24">
+                          <div class="card-testimonial">
+                            <div class="row gy-16 mb-20">
+                              <div class="col-xs">
+                                <div class="row gx-12 gy-8">
+                                  <div class="col-auto">
+                                    <img class="lazy js-lazy card-testimonial__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-testimonial/2.webp">
+                                  </div>
+                                  <div class="col">
+                                    <h5 class="text-blue mb-8">Mariam Silini</h5>
+                                    <h6 class="text-xs fw-normal mb-0">Verified Costumer</h6>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-auto">
+                                <div class="row d-inline-flex align-items-center gx-8">
+                                  <div class="col-auto">
+                                    <ul class="stars-rating" style="--rating: 4.9">
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="col-auto">
+                                    <p class="text-xxs mb-0">4.9</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="text-block">
+                              <p>With TheraPass I always have my choice of how to connect with a therapist - by phone, video, or text message. Getting my ESA Letter took just a couple og minutes no waiting!</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-16 mb-lg-24">
+                          <div class="card-testimonial">
+                            <div class="row gy-16 mb-20">
+                              <div class="col-xs">
+                                <div class="row gx-12 gy-8">
+                                  <div class="col-auto">
+                                    <img class="lazy js-lazy card-testimonial__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-testimonial/3.webp">
+                                  </div>
+                                  <div class="col">
+                                    <h5 class="text-blue mb-8">Stefan West</h5>
+                                    <h6 class="text-xs fw-normal mb-0">Verified Costumer</h6>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-auto">
+                                <div class="row d-inline-flex align-items-center gx-8">
+                                  <div class="col-auto">
+                                    <ul class="stars-rating" style="--rating: 4.8">
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="col-auto">
+                                    <p class="text-xxs mb-0">4.8</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="text-block">
+                              <p>TheraPass made everything super easy — I chose how to connect with my therapist, and within no time, my ESA letter was ready to go. No delays, no stress — just fast, reliable, and professional help.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="remove-last-child-margin">
+                        <div class="mb-16 mb-lg-24">
+                          <div class="card-testimonial">
+                            <div class="row gy-16 mb-20">
+                              <div class="col-xs">
+                                <div class="row gx-12 gy-8">
+                                  <div class="col-auto">
+                                    <img class="lazy js-lazy card-testimonial__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-testimonial/1.webp">
+                                  </div>
+                                  <div class="col">
+                                    <h5 class="text-blue mb-8">Nicolas Stenton</h5>
+                                    <h6 class="text-xs fw-normal mb-0">Verified Costumer</h6>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-auto">
+                                <div class="row d-inline-flex align-items-center gx-8">
+                                  <div class="col-auto">
+                                    <ul class="stars-rating" style="--rating: 5">
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="col-auto">
+                                    <p class="text-xxs mb-0">5.0</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="text-block">
+                              <p>TheraPass made the whole process super easy. I filled out the form, got matched with a licensed therapist, and had my ESA letter the same day. Loved that I could talk by text — so convenient!</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-16 mb-lg-24">
+                          <div class="card-testimonial">
+                            <div class="row gy-16 mb-20">
+                              <div class="col-xs">
+                                <div class="row gx-12 gy-8">
+                                  <div class="col-auto">
+                                    <img class="lazy js-lazy card-testimonial__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-testimonial/2.webp">
+                                  </div>
+                                  <div class="col">
+                                    <h5 class="text-blue mb-8">Mariam Silini</h5>
+                                    <h6 class="text-xs fw-normal mb-0">Verified Costumer</h6>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-auto">
+                                <div class="row d-inline-flex align-items-center gx-8">
+                                  <div class="col-auto">
+                                    <ul class="stars-rating" style="--rating: 4.9">
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="col-auto">
+                                    <p class="text-xxs mb-0">4.9</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="text-block">
+                              <p>With TheraPass I always have my choice of how to connect with a therapist - by phone, video, or text message. Getting my ESA Letter took just a couple og minutes no waiting!</p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="mb-16 mb-lg-24">
+                          <div class="card-testimonial">
+                            <div class="row gy-16 mb-20">
+                              <div class="col-xs">
+                                <div class="row gx-12 gy-8">
+                                  <div class="col-auto">
+                                    <img class="lazy js-lazy card-testimonial__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-testimonial/3.webp">
+                                  </div>
+                                  <div class="col">
+                                    <h5 class="text-blue mb-8">Stefan West</h5>
+                                    <h6 class="text-xs fw-normal mb-0">Verified Costumer</h6>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="col-xs-auto">
+                                <div class="row d-inline-flex align-items-center gx-8">
+                                  <div class="col-auto">
+                                    <ul class="stars-rating" style="--rating: 4.8">
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                      <li class="stars-rating__item">
+                                        <span class="icomoon-star"></span>
+                                      </li>
+                                    </ul>
+                                  </div>
+                                  <div class="col-auto">
+                                    <p class="text-xxs mb-0">4.8</p>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="text-block">
+                              <p>TheraPass made everything super easy — I chose how to connect with my therapist, and within no time, my ESA letter was ready to go. No delays, no stress — just fast, reliable, and professional help.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                  <div class="swiper-navigation-wrapper">
+                    <button class="swiper-button-prev" type="button"></button>
+                    <button class="swiper-button-next" type="button"></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section bg-aqua-faded" id="section-faq">
+        <div class="container">
+          <h2 class="text-blue text-center mb-24 mb-sm-40 mb-lg-60">Frequently Asked Questions</h2>
+
+          <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-8">
+              <div class="accordion js-accordion" id="accordion-faq">
+                <div class="accordion-item">
+                  <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-1" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-1">
+                      <span class="position-relative z-1">Is this completely legal?</span>
+                      <span class="accordion-button-icon"></span>
+                    </button>
+                  </h5>
+                  <div class="accordion-collapse collapse" id="accordion-faq-collapse-1" data-bs-parent="#accordion-faq">
+                    <div class="accordion-body">
+                      <div class="text-block text-lg">
+                        <p>Yes, ESA Letters are completely legal and your landlord is required by law to accomodate your pet if you are approved.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-2" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-2">
+                      <span class="position-relative z-1">What kind of therapist will provide my certification?</span>
+                      <span class="accordion-button-icon"></span>
+                    </button>
+                  </h5>
+                  <div class="accordion-collapse collapse" id="accordion-faq-collapse-2" data-bs-parent="#accordion-faq">
+                    <div class="accordion-body">
+                      <div class="text-block text-lg">
+                        <p>All TheraPass therapists are state licensed and certified to ensure you have the best experience and all ESA letters are completely legitimate.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-3" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-3">
+                      <span class="position-relative z-1">When will I get my ESA Letter?</span>
+                      <span class="accordion-button-icon"></span>
+                    </button>
+                  </h5>
+                  <div class="accordion-collapse collapse" id="accordion-faq-collapse-3" data-bs-parent="#accordion-faq">
+                    <div class="accordion-body">
+                      <div class="text-block text-lg">
+                        <p>Once you get pre-approved you will be connected with your ESA therapist usually within minutes, they will assign you your letter. Most people have their ESA letter within a few hours of starting the process.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-4" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-4">
+                      <span class="position-relative z-1">Do you offer a money back guarantee?</span>
+                      <span class="accordion-button-icon"></span>
+                    </button>
+                  </h5>
+                  <div class="accordion-collapse collapse" id="accordion-faq-collapse-4" data-bs-parent="#accordion-faq">
+                    <div class="accordion-body">
+                      <div class="text-block text-lg">
+                        <p>Yes, we have a 100% money back guarantee that your landlord will accept our ESA letter for your pet.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-5" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-5">
+                      <span class="position-relative z-1">What is an ESA letter?</span>
+                      <span class="accordion-button-icon"></span>
+                    </button>
+                  </h5>
+                  <div class="accordion-collapse collapse" id="accordion-faq-collapse-5" data-bs-parent="#accordion-faq">
+                    <div class="accordion-body">
+                      <div class="text-block text-lg">
+                        <p>An ESA Letter stands for Emotional Support Animal Letter. These letters are issued by licensed therapists and give renters the right to have an ESA in their residence without restriction or needing to pay pet rent.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-6" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-6">
+                      <span class="position-relative z-1">How do I qualify for an ESA letter?</span>
+                      <span class="accordion-button-icon"></span>
+                    </button>
+                  </h5>
+                  <div class="accordion-collapse collapse" id="accordion-faq-collapse-6" data-bs-parent="#accordion-faq">
+                    <div class="accordion-body">
+                      <div class="text-block text-lg">
+                        <p>We offer a Free Pre-Approval process that takes less than 5 minutes to find out if you qualify. Many common occurring things like depression and or anxiety will qualify you.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-7" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-7">
+                      <span class="position-relative z-1">Does my ESA letter transfer from state to state?</span>
+                      <span class="accordion-button-icon"></span>
+                    </button>
+                  </h5>
+                  <div class="accordion-collapse collapse" id="accordion-faq-collapse-7" data-bs-parent="#accordion-faq">
+                    <div class="accordion-body">
+                      <div class="text-block text-lg">
+                        <p>Yes, your letter can be transferred to another state.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h5 class="accordion-header">
+                    <button class="accordion-button collapsed" aria-expanded="false" aria-controls="accordion-faq-collapse-8" type="button" data-bs-toggle="collapse" data-bs-target="#accordion-faq-collapse-8">
+                      <span class="position-relative z-1">How long does an ESA Letter approval last?</span>
+                      <span class="accordion-button-icon"></span>
+                    </button>
+                  </h5>
+                  <div class="accordion-collapse collapse" id="accordion-faq-collapse-8" data-bs-parent="#accordion-faq">
+                    <div class="accordion-body">
+                      <div class="text-block text-lg">
+                        <p>ESA letter approvals last for one year - we offer an easy subscription service that will automatically renew yours for you if you’d like that way you are never not covered.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center pt-24 pt-sm-40 pt-lg-60">
+            <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section">
+        <div class="container">
+          <div class="row align-items-center gy-40">
+            <div class="col-lg-6">
+              <h2 class="text-blue pe-xxl-32">Proudly Serving the Hearing Impaired Community</h2>
+              <h6 class="mb-40">With our new ESA platform we not only serve the hearing-impaired, we also have state-licensed hearing impaired therapists that better understand your needs, the needs of the disabled.</h6>
+              <a class="btn btn-primary" href="#">Get Your ESA Letter Now</a>
+            </div>
+            <div class="col-lg-6 col-xl-5 offset-xl-1">
+              <div class="bg-white p-24 p-sm-32 rounded shadow-gray text-center" data-aos="fade-left" data-aos-duration="2000">
+                <div class="mb-24 mb-sm-40">
+                  <span class="badge bg-aqua-transparent">
+                    <span class="icomoon-check text-success"></span>
+                    <span class="h6 mb-0">Hearing Impaired Services Available</span>
+                  </span>
+                </div>
+                <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/img-4.svg" width="300" height="170" style="aspect-ratio: 300/170">
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+    </main>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top-content">
+          <a class="footer__logo" href="#">
+            <img class="lazy js-lazy object-fit-contain" src="img/lazy-placeholder.png" alt="TheraPass" data-src="img/logo.svg" width="214" height="40" style="aspect-ratio: 214/40">
+          </a>
+
+          <div class="row gx-24 gx-md-40 gx-lg-60 gy-16 justify-content-center">
+            <div class="col-auto">
+              <a class="text-dark fw-medium link-primary-hover-underline" href="#section-welcome">About</a>
+            </div>
+            <div class="col-auto">
+              <a class="text-dark fw-medium link-primary-hover-underline" href="#section-how-it-works">How It Works</a>
+            </div>
+            <div class="col-auto">
+              <a class="text-dark fw-medium link-primary-hover-underline" href="#section-why-us">Why Us</a>
+            </div>
+            <div class="col-auto">
+              <a class="text-dark fw-medium link-primary-hover-underline" href="#section-therapists">Therapists</a>
+            </div>
+            <div class="col-auto">
+              <a class="text-dark fw-medium link-primary-hover-underline" href="#section-faq">FAQ</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer__bottom-content">
+          <div class="row gx-28 gy-8 justify-content-center mb-16 bordered-list text-center">
+            <div class="col-xs-auto">
+              <a class="link-dark" href="#">Term & Conditions</a>
+            </div>
+            <div class="col-xs-auto">
+              <a class="link-dark" href="#">Privacy Policy</a>
+            </div>
+          </div>
+          <div class="text-block text-sm text-center">
+            <p>©2025 TheraPass, Inc. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+  </div>
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/libs.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
