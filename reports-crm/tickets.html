@@ -1,0 +1,1665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Reports CRM — Tickets</title>
+  <meta name="description" content="Description of the site">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#FFFFFF">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#FFFFFF">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Kulim+Park:wght@400;600&amp;display=swap">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.min.css">
+</head>
+
+<body>
+  <!-- SIDEBAR -->
+  <aside class="sidebar js-sidebar offcanvas-lg offcanvas-start" id="offcanvas-menu" tabindex="-1">
+    <div class="sidebar__body">
+      <div class="sidebar__body-inner remove-last-child-margin">
+        <div class="mb-20">
+          <a class="btn btn-link btn-lg btn-menu active" href="/tickets.html" data-count="5">
+            <span class="icomoon-tickets-bold"></span>
+            <span class="btn-menu__text">
+              <span class="d-inline-block overflow-hidden">Tickets</span>
+            </span>
+          </a>
+        </div>
+        <div class="mb-20">
+          <a class="btn btn-link btn-lg btn-menu" href="/inquiries.html" data-count="12">
+            <span class="icomoon-inquiries"></span>
+            <span class="btn-menu__text">
+              <span class="d-inline-block overflow-hidden">Inquiries</span>
+            </span>
+          </a>
+        </div>
+        <div class="mb-20">
+          <a class="btn btn-link btn-lg btn-menu" href="/leads.html">
+            <span class="icomoon-leads"></span>
+            <span class="btn-menu__text">
+              <span class="d-inline-block overflow-hidden">Leads</span>
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar__footer">
+      <a class="btn btn-outline-primary btn-lg sidebar__btn" href="#">
+        <span class="icomoon-sign-out"></span>
+        <span class="sidebar__btn-text">
+          <span class="d-inline-block overflow-hidden">Sign Out</span>
+        </span>
+      </a>
+    </div>
+  </aside>
+  <!-- SIDEBAR END -->
+
+  <!-- CHAT -->
+  <div class="chat-box js-chat-box">
+    <div class="chat-box__btn-holder">
+      <button class="btn btn-primary btn-chat with-new-message js-chat-btn" type="button">
+        <span class="btn-chat__content">
+          <span class="icomoon-chat"></span>
+        </span>
+      </button>
+    </div>
+    <div class="chat-box__chat chat js-chat">
+      <div class="chat__holder">
+        <div class="chat__header">
+          <h3 class="mb-0">My Chats</h3>
+        </div>
+        <div class="chat__body">
+          <div class="chat__search">
+            <input class="form-control form-control-lg gray-view js-chat-search" name="input" type="search" placeholder="Search">
+          </div>
+          <div class="chat__room-items-list">
+            <div class="chat-room-items-list">
+              <div class="chat-room-items-list__item">
+                <div class="chat-room-item js-chat-room-item" data-chat-id="0">
+                  <div class="chat-room-item__content">
+                    <div class="row align-items-center flex-nowrap gx-12">
+                      <div class="col-auto">
+                        <div class="chat-avatar online">
+                          <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/webp/chat-avatar/1.webp">
+                        </div>
+                      </div>
+                      <div class="col min-w-0">
+                        <div class="row align-items-center flex-nowrap mb-8">
+                          <div class="col min-w-0">
+                            <p class="text-primary text-truncate mb-0 js-chat-search-name">Robert Monteri</p>
+                          </div>
+                          <div class="col-auto">
+                            <p class="text-xs text-gray-dark mb-0">Thursday</p>
+                          </div>
+                        </div>
+                        <div class="row align-items-center flex-nowrap gx-16">
+                          <div class="col min-w-0">
+                            <p class="text-sm text-gray-dark text-truncate mb-0">Please let me know if you have any questions</p>
+                          </div>
+                          <div class="col-auto d-flex">
+                            <span class="chat-room-item__new-messages">1</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-room-items-list__item">
+                <div class="chat-room-item js-chat-room-item" data-chat-id="1">
+                  <div class="chat-room-item__content">
+                    <div class="row align-items-center flex-nowrap gx-12">
+                      <div class="col-auto">
+                        <div class="chat-avatar offline">
+                          <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/webp/chat-avatar/2.webp">
+                        </div>
+                      </div>
+                      <div class="col min-w-0">
+                        <div class="row align-items-center flex-nowrap mb-8">
+                          <div class="col min-w-0">
+                            <p class="text-primary text-truncate mb-0 js-chat-search-name">Monika Lenis</p>
+                          </div>
+                          <div class="col-auto">
+                            <p class="text-xs text-gray-dark mb-0">Thursday</p>
+                          </div>
+                        </div>
+                        <div class="row align-items-center flex-nowrap gx-16">
+                          <div class="col min-w-0">
+                            <p class="text-sm text-gray-dark text-truncate mb-0">Hey, can you please review the latest file when you can?</p>
+                          </div>
+                          <div class="col-auto d-flex">
+                            <span class="chat-room-item__new-messages">2</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-room-items-list__item">
+                <div class="chat-room-item js-chat-room-item" data-chat-id="2">
+                  <div class="chat-room-item__content">
+                    <div class="row align-items-center flex-nowrap gx-12">
+                      <div class="col-auto">
+                        <div class="chat-avatar online">
+                          <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/webp/chat-avatar/3.webp">
+                        </div>
+                      </div>
+                      <div class="col min-w-0">
+                        <div class="row align-items-center flex-nowrap mb-8">
+                          <div class="col min-w-0">
+                            <p class="text-primary text-truncate mb-0 js-chat-search-name">Alan Ramizer</p>
+                          </div>
+                          <div class="col-auto">
+                            <p class="text-xs text-gray-dark mb-0">Wednesday</p>
+                          </div>
+                        </div>
+                        <div class="row align-items-center flex-nowrap gx-16">
+                          <div class="col min-w-0">
+                            <p class="text-sm text-gray-dark text-truncate mb-0">Please let me know if you have any questions</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="chat-room-items-list__item">
+                <div class="chat-room-item js-chat-room-item" data-chat-id="3">
+                  <div class="chat-room-item__content">
+                    <div class="row align-items-center flex-nowrap gx-12">
+                      <div class="col-auto">
+                        <div class="chat-avatar online">
+                          <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-placeholder.svg">
+                        </div>
+                      </div>
+                      <div class="col min-w-0">
+                        <div class="row align-items-center flex-nowrap mb-8">
+                          <div class="col min-w-0">
+                            <p class="text-primary text-truncate mb-0 js-chat-search-name">Sara Montero</p>
+                          </div>
+                          <div class="col-auto">
+                            <p class="text-xs text-gray-dark mb-0">Monday</p>
+                          </div>
+                        </div>
+                        <div class="row align-items-center flex-nowrap gx-16">
+                          <div class="col min-w-0">
+                            <p class="text-sm text-gray-dark text-truncate mb-0">Did not receive my letter download link yet</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="preloader js-chat-search-preloader">
+              <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+              </div>
+            </div>
+            <div class="empty-block d-none js-chat-search-no-results">
+              <div class="empty-block__img">
+                <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Empty" data-src="img/empty-block-img.svg">
+              </div>
+              <h4 class="fw-semibold mb-0">Oops... Nothing found</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chat__holder messages-screen" id="chat-room-0">
+        <div class="chat__header">
+          <div class="row align-items-center flex-nowrap flex-grow-1">
+            <div class="col-auto d-flex">
+              <button class="chat__btn-back js-chat-back-btn">
+                <span class="icomoon-arrow-chevron-left"></span>
+              </button>
+            </div>
+            <div class="col min-w-0 text-end">
+              <h3 class="mb-0 text-truncate">Robert Monteri</h3>
+            </div>
+          </div>
+        </div>
+        <div class="chat__body align-end js-chat-messages">
+          <div class="chat-message-list">
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Robert Monteri</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:15am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Hi! I wanted to discuss the project timeline with you.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message self">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">You</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:30am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Sure, what's on your mind?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Robert Monteri</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:32am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">I think we might need to adjust some deadlines based on the new requirements.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other has-attach">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Robert Monteri</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:33am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <div class="attach-item">
+                      <p class="text-sm text-primary text-truncate mb-4">Updated_Timeline.pdf</p>
+                      <p class="text-xs text-gray-dark mb-0">890 KB</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message self">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">You</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 10:15am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">I'll take a look and get back to you with my thoughts.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message-divider">
+                <p class="chat-message-divider__text">Thursday</p>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Robert Monteri</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Thursday 11:39am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">So, I looked through your latest report, here are my comments left in the file.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other has-attach">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Robert Monteri</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Thursday 11:40am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <div class="attach-item">
+                      <p class="text-sm text-primary text-truncate mb-4">Match 1/2/2024.pdf</p>
+                      <p class="text-xs text-gray-dark mb-0">1.2 MB</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message self">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">You</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Friday 2:20pm</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Awesome! Thanks.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Robert Monteri</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Thursday 11:44am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Please let me know if you have any questions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message-divider">
+                <p class="chat-message-divider__text">Today</p>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Robert Monteri</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Friday 2:20pm</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Hey, can you please review the latest file when you can?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message-preloader">
+                <div class="chat-message-preloader__dot"></div>
+                <div class="chat-message-preloader__dot"></div>
+                <div class="chat-message-preloader__dot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat__footer">
+          <form class="chat-form" action="#">
+            <div class="row gx-12">
+              <div class="col">
+                <div class="form-item-with-attach">
+                  <textarea class="form-control gray-view chat-form__textarea" name="textarea" placeholder="Message" rows="1"></textarea>
+                  <label class="form-item-with-attach__btn-attach btn-attach">
+                    <input class="visually-hidden" type="file">
+                    <span class="icomoon-attachment"></span>
+                  </label>
+                  <div class="attach-item mt-12">
+                    <p class="text-sm text-primary text-truncate mb-4">Match 1/2/2024.pdf</p>
+                    <p class="text-xs text-gray-dark mb-0">1.2 MB</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <button class="btn btn-primary chat-form__btn" type="submit">
+                  <span class="icomoon-send"></span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="chat__holder messages-screen" id="chat-room-1">
+        <div class="chat__header">
+          <div class="row align-items-center flex-nowrap flex-grow-1">
+            <div class="col-auto d-flex">
+              <button class="chat__btn-back js-chat-back-btn">
+                <span class="icomoon-arrow-chevron-left"></span>
+              </button>
+            </div>
+            <div class="col min-w-0 text-end">
+              <h3 class="mb-0 text-truncate">Monika Lenis</h3>
+            </div>
+          </div>
+        </div>
+        <div class="chat__body align-end js-chat-messages">
+          <div class="chat-message-list">
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Monika Lenis</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:15am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Hi! I wanted to discuss the project timeline with you.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message self">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">You</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:30am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Sure, what's on your mind?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Monika Lenis</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:32am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">I think we might need to adjust some deadlines based on the new requirements.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other has-attach">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Monika Lenis</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:33am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <div class="attach-item">
+                      <p class="text-sm text-primary text-truncate mb-4">Updated_Timeline.pdf</p>
+                      <p class="text-xs text-gray-dark mb-0">890 KB</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message self">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">You</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 10:15am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">I'll take a look and get back to you with my thoughts.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message-divider">
+                <p class="chat-message-divider__text">Thursday</p>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Monika Lenis</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Thursday 11:39am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">So, I looked through your latest report, here are my comments left in the file.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other has-attach">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Monika Lenis</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Thursday 11:40am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <div class="attach-item">
+                      <p class="text-sm text-primary text-truncate mb-4">Match 1/2/2024.pdf</p>
+                      <p class="text-xs text-gray-dark mb-0">1.2 MB</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message self">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">You</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Friday 2:20pm</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Awesome! Thanks.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Monika Lenis</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Thursday 11:44am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Please let me know if you have any questions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message-divider">
+                <p class="chat-message-divider__text">Today</p>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Monika Lenis</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Friday 2:20pm</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Hey, can you please review the latest file when you can?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message-preloader">
+                <div class="chat-message-preloader__dot"></div>
+                <div class="chat-message-preloader__dot"></div>
+                <div class="chat-message-preloader__dot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat__footer">
+          <form class="chat-form" action="#">
+            <div class="row gx-12">
+              <div class="col">
+                <div class="form-item-with-attach">
+                  <textarea class="form-control gray-view chat-form__textarea" name="textarea" placeholder="Message" rows="1"></textarea>
+                  <label class="form-item-with-attach__btn-attach btn-attach">
+                    <input class="visually-hidden" type="file">
+                    <span class="icomoon-attachment"></span>
+                  </label>
+                  <div class="attach-item mt-12">
+                    <p class="text-sm text-primary text-truncate mb-4">Match 1/2/2024.pdf</p>
+                    <p class="text-xs text-gray-dark mb-0">1.2 MB</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <button class="btn btn-primary chat-form__btn" type="submit">
+                  <span class="icomoon-send"></span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="chat__holder messages-screen" id="chat-room-2">
+        <div class="chat__header">
+          <div class="row align-items-center flex-nowrap flex-grow-1">
+            <div class="col-auto d-flex">
+              <button class="chat__btn-back js-chat-back-btn">
+                <span class="icomoon-arrow-chevron-left"></span>
+              </button>
+            </div>
+            <div class="col min-w-0 text-end">
+              <h3 class="mb-0 text-truncate">Alan Ramizer</h3>
+            </div>
+          </div>
+        </div>
+        <div class="chat__body align-end js-chat-messages">
+          <div class="chat-message-list">
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Alan Ramizer</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:15am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Hi! I wanted to discuss the project timeline with you.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message self">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">You</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:30am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Sure, what's on your mind?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Alan Ramizer</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:32am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">I think we might need to adjust some deadlines based on the new requirements.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other has-attach">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Alan Ramizer</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:33am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <div class="attach-item">
+                      <p class="text-sm text-primary text-truncate mb-4">Updated_Timeline.pdf</p>
+                      <p class="text-xs text-gray-dark mb-0">890 KB</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message self">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">You</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 10:15am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">I'll take a look and get back to you with my thoughts.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message-divider">
+                <p class="chat-message-divider__text">Thursday</p>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Alan Ramizer</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Thursday 11:39am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">So, I looked through your latest report, here are my comments left in the file.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other has-attach">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Alan Ramizer</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Thursday 11:40am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <div class="attach-item">
+                      <p class="text-sm text-primary text-truncate mb-4">Match 1/2/2024.pdf</p>
+                      <p class="text-xs text-gray-dark mb-0">1.2 MB</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message self">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">You</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Friday 2:20pm</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Awesome! Thanks.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Alan Ramizer</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Thursday 11:44am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Please let me know if you have any questions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message-divider">
+                <p class="chat-message-divider__text">Today</p>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Alan Ramizer</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Friday 2:20pm</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Hey, can you please review the latest file when you can?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message-preloader">
+                <div class="chat-message-preloader__dot"></div>
+                <div class="chat-message-preloader__dot"></div>
+                <div class="chat-message-preloader__dot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat__footer">
+          <form class="chat-form" action="#">
+            <div class="row gx-12">
+              <div class="col">
+                <div class="form-item-with-attach">
+                  <textarea class="form-control gray-view chat-form__textarea" name="textarea" placeholder="Message" rows="1"></textarea>
+                  <label class="form-item-with-attach__btn-attach btn-attach">
+                    <input class="visually-hidden" type="file">
+                    <span class="icomoon-attachment"></span>
+                  </label>
+                  <div class="attach-item mt-12">
+                    <p class="text-sm text-primary text-truncate mb-4">Match 1/2/2024.pdf</p>
+                    <p class="text-xs text-gray-dark mb-0">1.2 MB</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <button class="btn btn-primary chat-form__btn" type="submit">
+                  <span class="icomoon-send"></span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="chat__holder messages-screen" id="chat-room-3">
+        <div class="chat__header">
+          <div class="row align-items-center flex-nowrap flex-grow-1">
+            <div class="col-auto d-flex">
+              <button class="chat__btn-back js-chat-back-btn">
+                <span class="icomoon-arrow-chevron-left"></span>
+              </button>
+            </div>
+            <div class="col min-w-0 text-end">
+              <h3 class="mb-0 text-truncate">Sara Montero</h3>
+            </div>
+          </div>
+        </div>
+        <div class="chat__body align-end js-chat-messages">
+          <div class="chat-message-list">
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Sara Montero</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:15am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Hi! I wanted to discuss the project timeline with you.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message self">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">You</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:30am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Sure, what's on your mind?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Sara Montero</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:32am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">I think we might need to adjust some deadlines based on the new requirements.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other has-attach">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Sara Montero</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 9:33am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <div class="attach-item">
+                      <p class="text-sm text-primary text-truncate mb-4">Updated_Timeline.pdf</p>
+                      <p class="text-xs text-gray-dark mb-0">890 KB</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message self">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">You</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Monday 10:15am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">I'll take a look and get back to you with my thoughts.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message-divider">
+                <p class="chat-message-divider__text">Thursday</p>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Sara Montero</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Thursday 11:39am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">So, I looked through your latest report, here are my comments left in the file.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other has-attach">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Sara Montero</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Thursday 11:40am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <div class="attach-item">
+                      <p class="text-sm text-primary text-truncate mb-4">Match 1/2/2024.pdf</p>
+                      <p class="text-xs text-gray-dark mb-0">1.2 MB</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message self">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">You</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Friday 2:20pm</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Awesome! Thanks.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Sara Montero</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Thursday 11:44am</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Please let me know if you have any questions</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message-divider">
+                <p class="chat-message-divider__text">Today</p>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message other">
+                <div class="chat-message__content">
+                  <div class="row align-items-center flex-nowrap d-inline-flex mb-6">
+                    <div class="col min-w-0">
+                      <p class="chat-message__name">Sara Montero</p>
+                    </div>
+                    <div class="col-auto">
+                      <p class="text-xs text-gray-dark mb-0">Friday 2:20pm</p>
+                    </div>
+                  </div>
+                  <div class="chat-message__body">
+                    <p class="mb-0">Hey, can you please review the latest file when you can?</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="chat-message-list__item">
+              <div class="chat-message-preloader">
+                <div class="chat-message-preloader__dot"></div>
+                <div class="chat-message-preloader__dot"></div>
+                <div class="chat-message-preloader__dot"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="chat__footer">
+          <form class="chat-form" action="#">
+            <div class="row gx-12">
+              <div class="col">
+                <div class="form-item-with-attach">
+                  <textarea class="form-control gray-view chat-form__textarea" name="textarea" placeholder="Message" rows="1"></textarea>
+                  <label class="form-item-with-attach__btn-attach btn-attach">
+                    <input class="visually-hidden" type="file">
+                    <span class="icomoon-attachment"></span>
+                  </label>
+                  <div class="attach-item mt-12">
+                    <p class="text-sm text-primary text-truncate mb-4">Match 1/2/2024.pdf</p>
+                    <p class="text-xs text-gray-dark mb-0">1.2 MB</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-auto">
+                <button class="btn btn-primary chat-form__btn" type="submit">
+                  <span class="icomoon-send"></span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- CHAT END -->
+
+  <!-- HEADER -->
+  <header class="header js-header">
+    <div class="container-fluid position-relative">
+      <div class="row align-items-center gx-sm-32">
+        <div class="col">
+          <div class="row align-items-center gx-12">
+            <div class="col-auto d-none d-lg-block">
+              <button class="btn btn-gray-light btn-lg btn-action header__sidebar-toggle-btn js-sidebar-toggle" type="button">
+                <span class="icomoon-arrow-double-left"></span>
+              </button>
+            </div>
+            <div class="col-auto d-md-none">
+              <button class="btn btn-gray-light btn-lg btn-action" type="button" aria-label="Toggle search" aria-controls="offcanvas-search" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-search">
+                <span class="icomoon-search"></span>
+              </button>
+            </div>
+            <div class="col">
+              <div class="offcanvas-md offcanvas-top offcanvas-search w-100" id="offcanvas-search" tabindex="-1">
+                <div class="header__search">
+                  <input class="form-control form-control-lg white-view with-hotkey js-table-search js-search-hotkey-focus" name="input" type="search" placeholder="Search" autocomplete="off">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-auto">
+          <div class="row align-items-center gx-sm-32">
+            <div class="col-auto">
+              <div class="dropdown">
+                <button class="btn-profile dropdown-toggle" aria-expanded="false" type="button" data-bs-toggle="dropdown" data-bs-offset="0,12">
+                  <span class="btn-profile__avatar">
+                    <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Avatar" data-src="img/avatar-placeholder.svg">
+                  </span>
+                  <span class="btn-profile__email">nickname.mail.@mail.com</span>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a class="dropdown-item" href="#">
+                      <span class="icomoon-sign-out"></span> Sign Out
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-auto d-inline-flex d-lg-none">
+              <button class="hamburger-menu js-hamburger-menu" aria-label="Toggle menu" aria-controls="offcanvas-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu">
+                <span class="hamburger-menu__wrap">
+                  <span class="hamburger-menu__bars"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <!-- CONTENT -->
+  <main class="main dashboard">
+    <div class="container-fluid">
+      <section>
+        <div class="row align-items-center mb-24 mb-lg-40 gy-16">
+          <div class="col">
+            <h1 class="mb-0">Tickets</h1>
+          </div>
+          <div class="col-md-auto">
+            <div class="row align-items-center justify-content-md-end gx-12 gx-md-24 gy-12">
+              <div class="col-sm-auto">
+                <input class="form-control datepicker js-datepicker filter-view js-filter-date" name="input" type="text" data-range="true" placeholder="Select date" readonly="readonly">
+              </div>
+              <div class="col-xs-6 col-sm-auto">
+                <select class="form-select with-dropdown-offset with-dropdown-animation-transform js-choice filter-view fixed-dropdown-width dropdown-menu-end js-filter-sites" name="select">
+                  <option label="Sites"></option>
+                  <option>All Sites</option>
+                  <option>Express Pet Certify</option>
+                  <option>Waggy</option>
+                </select>
+              </div>
+              <div class="col-xs-6 col-sm-auto">
+                <select class="form-select with-dropdown-offset with-dropdown-animation-transform js-choice filter-view js-filter-status" name="select">
+                  <option label="Select Status"></option>
+                  <option>All</option>
+                  <option>Open</option>
+                  <option>Closed</option>
+                  <option>Flag</option>
+                  <option>Pending</option>
+                  <option>Rejected</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <table class="js-data-table table table-striped" id="data-table-tickets-info">
+          <thead>
+            <tr>
+              <th class="js-filter-date-column" scope="col">Date</th>
+              <th class="js-filter-sites-column" scope="col">Name</th>
+              <th scope="col">Subject</th>
+              <th class="js-filter-status-column" scope="col">Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>09/13/2025 6:56 PM</td>
+              <td data-site="Express Pet Certify">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/1.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Yesenia Ramirez</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">No Subject</a>
+              </td>
+              <td data-status="Open">
+                <span class="badge-status green">Open</span>
+              </td>
+            </tr>
+            <tr>
+              <td>09/15/2025 3:12 PM</td>
+              <td data-site="Express Pet Certify">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/1.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Barbara Killian</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Order Status</a>
+              </td>
+              <td data-status="Open">
+                <span class="badge-status green">Open</span>
+              </td>
+            </tr>
+            <tr>
+              <td>09/19/2025 1:23 AM</td>
+              <td data-site="Waggy">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/2.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Alan Montero</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Guaranteed Acceptance</a>
+              </td>
+              <td data-status="Open">
+                <span class="badge-status green">Open</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/27/2025 3:09 AM</td>
+              <td data-site="Waggy">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/2.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Shane Gordon</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Refund</a>
+              </td>
+              <td data-status="Open">
+                <span class="badge-status green">Open</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/26/2025 7:05 PM</td>
+              <td data-site="Express Pet Certify">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/1.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Tryston Obevoen</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Other</a>
+              </td>
+              <td data-status="Closed">
+                <span class="badge-status gray">Closed</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/26/2025 1:23 AM</td>
+              <td data-site="Waggy">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/2.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Tamara Martins</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Refund</a>
+              </td>
+              <td data-status="Closed">
+                <span class="badge-status gray">Closed</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/26/2025 5:45 AM</td>
+              <td data-site="Waggy">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/2.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Alan Montero</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Guaranteed Acceptance</a>
+              </td>
+              <td data-status="Closed">
+                <span class="badge-status gray">Closed</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/26/2025 1:23 AM</td>
+              <td data-site="Waggy">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/2.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Shane Gordon</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Landlord Rejection</a>
+              </td>
+              <td data-status="Flag">
+                <span class="badge-status blue">Flag</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/25/2025 7:05 PM</td>
+              <td data-site="Express Pet Certify">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/1.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Tryston Obevoen</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Other</a>
+              </td>
+              <td data-status="Rejected">
+                <span class="badge-status red">Rejected</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/25/2025 1:23 AM</td>
+              <td data-site="Waggy">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/2.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Shane Gordon</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Refund</a>
+              </td>
+              <td data-status="Open">
+                <span class="badge-status green">Open</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/24/2025 7:05 PM</td>
+              <td data-site="Express Pet Certify">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/1.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Tryston Obevoen</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">RA</a>
+              </td>
+              <td data-status="Pending">
+                <span class="badge-status yellow">Pending</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/24/2025 1:23 AM</td>
+              <td data-site="Waggy">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/2.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Tamara Martins</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Refund</a>
+              </td>
+              <td data-status="Closed">
+                <span class="badge-status gray">Closed</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/23/2025 7:05 PM</td>
+              <td data-site="Express Pet Certify">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/1.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Tryston Obevoen</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Other</a>
+              </td>
+              <td data-status="Closed">
+                <span class="badge-status gray">Closed</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/22/2025 4:15 PM</td>
+              <td data-site="Waggy">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/2.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">John Smith</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Payment Issue</a>
+              </td>
+              <td data-status="Pending">
+                <span class="badge-status yellow">Pending</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/22/2025 1:30 PM</td>
+              <td data-site="Express Pet Certify">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/1.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Maria Garcia</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Document Verification</a>
+              </td>
+              <td data-status="Flag">
+                <span class="badge-status blue">Flag</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/21/2025 9:20 AM</td>
+              <td data-site="Waggy">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/2.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">David Wilson</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Technical Support</a>
+              </td>
+              <td data-status="Open">
+                <span class="badge-status green">Open</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/21/2025 8:45 AM</td>
+              <td data-site="Express Pet Certify">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/1.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Sarah Johnson</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Account Access</a>
+              </td>
+              <td data-status="Rejected">
+                <span class="badge-status red">Rejected</span>
+              </td>
+            </tr>
+            <tr>
+              <td>07/20/2025 3:30 PM</td>
+              <td data-site="Waggy">
+                <div class="row align-items-center gx-12">
+                  <div class="col-auto">
+                    <div class="project-logo sm">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Logo" data-src="img/webp/project-small-logo/2.webp">
+                    </div>
+                  </div>
+                  <div class="col-auto">
+                    <a class="transition-color" href="customer-info.html">Michael Brown</a>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <a class="transition-color" href="#">Billing Question</a>
+              </td>
+              <td data-status="Closed">
+                <span class="badge-status gray">Closed</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+  <!-- CONTENT END -->
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/main.min.js"></script>
+</body>
+
+</html>
