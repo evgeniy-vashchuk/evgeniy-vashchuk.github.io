@@ -24961,7 +24961,7 @@ img:not([src], [srcset]) {
   display: block;
   content: "";
   width: 100%;
-  padding-top: 49.0909090909%;
+  padding-top: 56.25%;
 }
 .video-block {
   position: relative;
