@@ -20567,10 +20567,10 @@ __webpack_require__.r(__webpack_exports__);
 const initParallax=()=>{
 gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["default"],gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
-gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_1__["default"].create({
-smooth:0.8,
-effects:true
-});
+// ScrollSmoother.create({
+//   smooth: 0.8,
+//   effects: true
+// });
 
 const sectionWelcome=document.querySelector('.js-section-welcome');
 
@@ -20676,11 +20676,11 @@ slidesPerView:3
 [_utils_constants__WEBPACK_IMPORTED_MODULE_2__.breakpoints.md]:{
 slidesPerView:4
 },
-[_utils_constants__WEBPACK_IMPORTED_MODULE_2__.breakpoints.xxl]:{
+[_utils_constants__WEBPACK_IMPORTED_MODULE_2__.breakpoints.xl]:{
 slidesPerView:5
 },
-[_utils_constants__WEBPACK_IMPORTED_MODULE_2__.breakpoints.xxxl]:{
-slidesPerView:7
+[_utils_constants__WEBPACK_IMPORTED_MODULE_2__.breakpoints.xxl]:{
+slidesPerView:6
 }
 },
 
@@ -20733,17 +20733,15 @@ el:sliderFeedsPaginationElement||null
 
 breakpoints:{
 0:{
-slidesPerView:1,
-navigation:{enabled:false}
+slidesPerView:1
 },
 [_utils_constants__WEBPACK_IMPORTED_MODULE_2__.breakpoints.sm]:{
-slidesPerView:2,
-navigation:{enabled:true}
+slidesPerView:2
 },
 [_utils_constants__WEBPACK_IMPORTED_MODULE_2__.breakpoints.lg]:{
 slidesPerView:3
 },
-[_utils_constants__WEBPACK_IMPORTED_MODULE_2__.breakpoints.xxl]:{
+[_utils_constants__WEBPACK_IMPORTED_MODULE_2__.breakpoints.xl]:{
 slidesPerView:4
 }
 }
