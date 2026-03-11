@@ -20567,10 +20567,10 @@ __webpack_require__.r(__webpack_exports__);
 const initParallax=()=>{
 gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["default"],gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
-// ScrollSmoother.create({
-//   smooth: 0.8,
-//   effects: true
-// });
+gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_1__["default"].create({
+smooth:0.8,
+effects:true
+});
 
 const sectionWelcome=document.querySelector('.js-section-welcome');
 
