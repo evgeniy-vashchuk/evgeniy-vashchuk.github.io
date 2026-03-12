@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Mid South Feeds — Blog</title>
+  <meta name="description" content="Mid South Feeds delivers premium animal feed, livestock, and pet nutrition backed by quality ingredients and a southern legacy. Interested in carrying our feed? Become a dealer or distributor today.">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#000000">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#000000">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#000000">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&amp;family=Bree+Serif&amp;family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header fixed-top js-header dark">
+    <div class="header__top-content">
+      <div class="container">
+        <div class="row gy-2 gy-sm-4 justify-content-center">
+          <div class="col-auto">
+            <a class="link-with-icon link-white fw-semibold" href="#">
+              <span class="icomoon-location-pin"></span>Find a Dealer
+            </a>
+          </div>
+          <div class="col-auto">
+            <a class="link-with-icon link-white fw-semibold" href="#">
+              <span class="icomoon-phone"></span>(912) 632-5261
+            </a>
+          </div>
+          <div class="col-auto">
+            <a class="link-with-icon link-white fw-semibold" href="#">
+              <span class="icomoon-home"></span>Become a Dealer
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header__bottom-content">
+      <div class="container">
+        <div class="header__bottom-content-wrap">
+          <div class="row flex-grow-1 align-items-center d-xl-none">
+            <div class="col-auto">
+              <a class="header__logo" href="#">
+                <img class="lazy js-lazy of-contain header__logo-img-light" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/logo-light.webp">
+                <img class="lazy js-lazy of-contain header__logo-img-dark" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/logo-dark.webp">
+              </a>
+            </div>
+            <div class="col d-flex align-items-center justify-content-end">
+              <button class="hamburger-menu" aria-label="Toggle menu" aria-controls="offcanvas-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu">
+                <span class="hamburger-menu__wrap">
+                  <span class="hamburger-menu__bars"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="offcanvas-xl offcanvas-end flex-grow-1" id="offcanvas-menu" aria-labelledby="offcanvas-menu-label" role="dialog" tabindex="-1">
+            <div class="offcanvas-header">
+              <div class="row flex-grow-1 align-items-center">
+                <div class="col">
+                  <h5 class="offcanvas-title" id="offcanvas-menu-label">Menu</h5>
+                </div>
+                <div class="col-auto d-flex align-items-center">
+                  <button class="hamburger-menu active" aria-label="Close menu" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-menu">
+                    <span class="hamburger-menu__wrap">
+                      <span class="hamburger-menu__bars"></span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="offcanvas-body">
+              <div class="row flex-grow-1 align-items-center gy-16 gy-xl-0">
+                <div class="col-xl">
+                  <div class="row gx-xxxl-40 gy-16 align-items-center">
+                    <div class="col-xl-auto">
+                      <a class="link-white fw-semibold" href="#">Home</a>
+                    </div>
+                    <div class="col-xl-auto">
+                      <div class="dropdown-on-hover">
+                        <a class="link-white fw-semibold dropdown-toggle" href="#" role="button">Dealer</a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a class="dropdown-item" href="#">Dealer Application</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Dealer Locator</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-xl-auto">
+                      <div class="dropdown-on-hover">
+                        <a class="link-white fw-semibold dropdown-toggle" href="#" role="button">Products</a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a class="dropdown-item" href="#">Feed & Nutrition</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Pet Food</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Wildlife & Outdoors</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Ingredients & Bulk</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Misc & Supplies</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto d-none d-xl-block">
+                  <a class="header__logo" href="#">
+                    <img class="lazy js-lazy of-contain header__logo-img-light" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/logo-light.webp">
+                    <img class="lazy js-lazy of-contain header__logo-img-dark" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/logo-dark.webp">
+                  </a>
+                </div>
+                <div class="col-xl">
+                  <div class="row gx-xxxl-40 gy-16 align-items-center justify-content-end">
+                    <div class="col-xl-auto">
+                      <a class="link-white fw-semibold" href="#">About us</a>
+                    </div>
+                    <div class="col-xl-auto">
+                      <a class="link-white fw-semibold" href="#">Locations</a>
+                    </div>
+                    <div class="col-xl-auto">
+                      <a class="link-white fw-semibold" href="#">Contact us</a>
+                    </div>
+                    <div class="col-xl-auto">
+                      <div class="pt-40 pt-xl-0">
+                        <a class="btn btn-primary btn-sm w-100" href="#">Shop Here <span class="icomoon-shopping-cart"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER END -->
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div class="page-wrapper">
+
+
+        <!-- CONTENT -->
+        <main class="main">
+          <!-- SECTION -->
+          <section class="section">
+            <div class="container">
+              <div class="text-center mb-40 mb-lg-64 mb-xxl-100">
+                <h2 data-aos="fade-right" data-aos-duration="2000">Animal Nutrition Insights from <mark>Midshouth Feeds</mark>
+                </h2>
+                <div class="row justify-content-center">
+                  <div class="col-xl-8 remove-last-child-margin">
+                    <h5 class="fw-medium text-secondary" data-aos="fade-right" data-aos-duration="2000" data-aos-delay="200">From pets to performance animals, our blog delivers expert insights, tips, and evidence-based nutrition strategies backed by Midsouth Feeds expertise.</h5>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row gy-24 g-lg-52">
+                <div class="col-md-6 d-flex">
+                  <div class="card-blog">
+                    <div class="card-blog__img">
+                      <div class="card-blog__badge badge text-bg-white">
+                        <span class="text-with-icon">
+                          <span class="icomoon-pin"></span>Animal
+                        </span>
+                      </div>
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-blog/4.webp">
+                    </div>
+                    <div class="card-blog__body">
+                      <span class="text-with-icon d-block mb-8 text-sm text-gray-700">
+                        <span class="icomoon-calendar"></span>January 17, 2026
+                      </span>
+                      <h6>5 Reasons Dealers Choose Mid-South Feeds as Their Go-To Supplier</h6>
+                      <div class="card-blog__text text-block">
+                        <p>Discover why dealers trust Mid-South Feeds for consistent quality, reliable supply, and proven performance across livestock, pets, poultry, and more.</p>
+                      </div>
+                    </div>
+                    <div class="card-blog__footer">
+                      <a class="btn btn-primary btn-sm" href="#">Learn more <span class="icomoon-arrow-right"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                  <div class="card-blog">
+                    <div class="card-blog__img">
+                      <div class="card-blog__badge badge text-bg-white">
+                        <span class="text-with-icon">
+                          <span class="icomoon-pin"></span>Animal
+                        </span>
+                      </div>
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-blog/5.webp">
+                    </div>
+                    <div class="card-blog__body">
+                      <span class="text-with-icon d-block mb-8 text-sm text-gray-700">
+                        <span class="icomoon-calendar"></span>January 29, 2026
+                      </span>
+                      <h6>Is Dry Dog Food Better Than Wet Dog Food? A Complete Guide</h6>
+                      <div class="card-blog__text text-block">
+                        <p>It may be difficult to decide on the appropriate food that you should feed your furry friend. Visit any aisle of a pet store and you will see shelves that are filled with various choices.</p>
+                      </div>
+                    </div>
+                    <div class="card-blog__footer">
+                      <a class="btn btn-primary btn-sm" href="#">Learn more <span class="icomoon-arrow-right"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                  <div class="card-blog">
+                    <div class="card-blog__img">
+                      <div class="card-blog__badge badge text-bg-white">
+                        <span class="text-with-icon">
+                          <span class="icomoon-pin"></span>Animal
+                        </span>
+                      </div>
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-blog/6.webp">
+                    </div>
+                    <div class="card-blog__body">
+                      <span class="text-with-icon d-block mb-8 text-sm text-gray-700">
+                        <span class="icomoon-calendar"></span>February 12, 2026
+                      </span>
+                      <h6>Do Dogs Get Tired of the Same Food?</h6>
+                      <div class="card-blog__text text-block">
+                        <p>You are having the same breakfast in the morning and after a couple of weeks you are tired of it. But what about your dog? Months, maybe years have passed and they ate the same</p>
+                      </div>
+                    </div>
+                    <div class="card-blog__footer">
+                      <a class="btn btn-primary btn-sm" href="#">Learn more <span class="icomoon-arrow-right"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                  <div class="card-blog">
+                    <div class="card-blog__img">
+                      <div class="card-blog__badge badge text-bg-white">
+                        <span class="text-with-icon">
+                          <span class="icomoon-pin"></span>Animal
+                        </span>
+                      </div>
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-blog/7.webp">
+                    </div>
+                    <div class="card-blog__body">
+                      <span class="text-with-icon d-block mb-8 text-sm text-gray-700">
+                        <span class="icomoon-calendar"></span>February 12, 2026
+                      </span>
+                      <h6>How Much Raw Food to Feed Your Dog Simple Portion Guide</h6>
+                      <div class="card-blog__text text-block">
+                        <p>Switching your furry friend to a raw diet can feel confusing at first. You might wonder exactly how much raw food to feed dog companions to keep them healthy and happy. Don’t worry! This guide</p>
+                      </div>
+                    </div>
+                    <div class="card-blog__footer">
+                      <a class="btn btn-primary btn-sm" href="#">Learn more <span class="icomoon-arrow-right"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                  <div class="card-blog">
+                    <div class="card-blog__img">
+                      <div class="card-blog__badge badge text-bg-white">
+                        <span class="text-with-icon">
+                          <span class="icomoon-pin"></span>Animal
+                        </span>
+                      </div>
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-blog/8.webp">
+                    </div>
+                    <div class="card-blog__body">
+                      <span class="text-with-icon d-block mb-8 text-sm text-gray-700">
+                        <span class="icomoon-calendar"></span>February 12, 2026
+                      </span>
+                      <h6>Complete Guide to Animal Feed – Types, Nutrition, Ingredients, and Feeding Practices</h6>
+                      <div class="card-blog__text text-block">
+                        <p>If you’re raising livestock, you’ve probably felt the frustration: calves that grow slower than expected, hens that stop laying eggs, or cows that don’t produce the milk you know they could. Sometimes animals get sick</p>
+                      </div>
+                    </div>
+                    <div class="card-blog__footer">
+                      <a class="btn btn-primary btn-sm" href="#">Learn more <span class="icomoon-arrow-right"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 d-flex">
+                  <div class="card-blog">
+                    <div class="card-blog__img">
+                      <div class="card-blog__badge badge text-bg-white">
+                        <span class="text-with-icon">
+                          <span class="icomoon-pin"></span>Animal
+                        </span>
+                      </div>
+                      <img class="lazy js-lazy of-cover" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-blog/9.webp">
+                    </div>
+                    <div class="card-blog__body">
+                      <span class="text-with-icon d-block mb-8 text-sm text-gray-700">
+                        <span class="icomoon-calendar"></span>February 12, 2026
+                      </span>
+                      <h6>Why Is My Dog Throwing Up Undigested Food?</h6>
+                      <div class="card-blog__text text-block">
+                        <p>Seeing your furry friend bring up their food can be scary and confusing. If you’ve noticed your dog throwing up undigested food, you’re not alone. Many pet parents deal with this issue, and understanding why</p>
+                      </div>
+                    </div>
+                    <div class="card-blog__footer">
+                      <a class="btn btn-primary btn-sm" href="#">Learn more <span class="icomoon-arrow-right"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pt-40 pt-lg-64">
+                <nav aria-label="Pagination">
+                  <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                      <a class="page-link" aria-label="Previous" href="#">
+                        <span class="icomoon-arrow-left" aria-hidden="true"></span>
+                      </a>
+                    </li>
+                    <li class="page-item active">
+                      <a class="page-link" href="#">1</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">2</a>
+                    </li>
+                    <li class="page-item disabled">
+                      <a class="page-link" href="#">...</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">9</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" href="#">10</a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" aria-label="Next" href="#">
+                        <span class="icomoon-arrow-right" aria-hidden="true"></span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </section>
+          <!-- SECTION END -->
+        </main>
+        <!-- CONTENT END -->
+
+        <!-- FOOTER -->
+        <footer class="footer">
+          <div class="container">
+            <div class="footer__top-content">
+              <div class="row gy-40">
+                <div class="col-md-3">
+                  <a class="footer__logo" href="#">
+                    <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/logo-light.webp">
+                  </a>
+                </div>
+                <div class="col-xs-6 col-md-4 col-xxl-3 offset-md-1 offset-xxl-3">
+                  <h5 class="text-white">Quick View</h5>
+                  <div class="remove-last-child-margin">
+                    <div class="mb-16">
+                      <a class="link-white" href="#">Home</a>
+                    </div>
+                    <div class="mb-16">
+                      <a class="link-white" href="#">Dealer Locator</a>
+                    </div>
+                    <div class="mb-16">
+                      <a class="link-white" href="#">Products</a>
+                    </div>
+                    <div class="mb-16">
+                      <a class="link-white" href="#">About Us</a>
+                    </div>
+                    <div class="mb-16">
+                      <a class="link-white" href="#">Contact Us</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-md-4 col-xxl-3">
+                  <h5 class="text-white">Contact Us</h5>
+                  <div class="remove-last-child-margin">
+                    <div class="mb-16">
+                      <a class="link-with-icon link-white" href="#">
+                        <span class="icomoon-phone"></span>Plant: (912) 632-7603
+                      </a>
+                    </div>
+                    <div class="mb-16">
+                      <a class="link-with-icon link-white" href="#">
+                        <span class="icomoon-phone"></span>Retail Store: (912) 632-5261
+                      </a>
+                    </div>
+                    <div class="mb-16">
+                      <a class="link-with-icon link-white" href="#">
+                        <span class="icomoon-location-pin"></span>421 Market St. Alma, GA 31510
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer__bottom-content">
+              <div class="row gy-24 align-items-center">
+                <div class="col-lg-6 order-2 order-lg-1">
+                  <p class="mb-0">© 2026 Mid-south Feeds, Inc. All rights reserved.</p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+                  <div class="row gx-32 gy-16 align-items-center justify-content-lg-end">
+                    <div class="col-auto">
+                      <p class="mb-0">Follow us on:</p>
+                    </div>
+                    <div class="col-auto">
+                      <div class="row align-items-center gy-16">
+                        <div class="col-auto d-flex align-items-center">
+                          <a class="link-white text-xl" href="#">
+                            <span class="icomoon-facebook"></span>
+                          </a>
+                        </div>
+                        <div class="col-auto d-flex align-items-center">
+                          <a class="link-white text-xl" href="#">
+                            <span class="icomoon-x"></span>
+                          </a>
+                        </div>
+                        <div class="col-auto d-flex align-items-center">
+                          <a class="link-white text-xl" href="#">
+                            <span class="icomoon-linkedin"></span>
+                          </a>
+                        </div>
+                        <div class="col-auto d-flex align-items-center">
+                          <a class="link-white text-xl" href="#">
+                            <span class="icomoon-youtube"></span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- FOOTER END -->
+      </div>
+    </div>
+  </div>
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
