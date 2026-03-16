@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Mid South Feeds — Dealer Application</title>
+  <meta name="description" content="Mid South Feeds delivers premium animal feed, livestock, and pet nutrition backed by quality ingredients and a southern legacy. Interested in carrying our feed? Become a dealer or distributor today.">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#000000">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#000000">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#000000">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Arvo:wght@700&amp;family=Bree+Serif&amp;family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header class="header fixed-top js-header dark">
+    <div class="header__top-content">
+      <div class="container">
+        <div class="row gy-2 gy-sm-4 justify-content-center">
+          <div class="col-auto">
+            <a class="link-with-icon link-white fw-semibold" href="#">
+              <span class="icomoon-location-pin"></span>Find a Dealer
+            </a>
+          </div>
+          <div class="col-auto">
+            <a class="link-with-icon link-white fw-semibold" href="#">
+              <span class="icomoon-phone"></span>(912) 632-5261
+            </a>
+          </div>
+          <div class="col-auto">
+            <a class="link-with-icon link-white fw-semibold" href="#">
+              <span class="icomoon-home"></span>Become a Dealer
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header__bottom-content">
+      <div class="container">
+        <div class="header__bottom-content-wrap">
+          <div class="row flex-grow-1 align-items-center d-xl-none">
+            <div class="col-auto">
+              <a class="header__logo" href="#">
+                <img class="lazy js-lazy of-contain header__logo-img-light" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/logo-light.webp">
+                <img class="lazy js-lazy of-contain header__logo-img-dark" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/logo-dark.webp">
+              </a>
+            </div>
+            <div class="col d-flex align-items-center justify-content-end">
+              <button class="hamburger-menu" aria-label="Toggle menu" aria-controls="offcanvas-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu">
+                <span class="hamburger-menu__wrap">
+                  <span class="hamburger-menu__bars"></span>
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="offcanvas-xl offcanvas-end flex-grow-1" id="offcanvas-menu" aria-labelledby="offcanvas-menu-label" role="dialog" tabindex="-1">
+            <div class="offcanvas-header">
+              <div class="row flex-grow-1 align-items-center">
+                <div class="col">
+                  <h5 class="offcanvas-title" id="offcanvas-menu-label">Menu</h5>
+                </div>
+                <div class="col-auto d-flex align-items-center">
+                  <button class="hamburger-menu active" aria-label="Close menu" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-menu">
+                    <span class="hamburger-menu__wrap">
+                      <span class="hamburger-menu__bars"></span>
+                    </span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="offcanvas-body">
+              <div class="row flex-grow-1 align-items-center gy-16 gy-xl-0">
+                <div class="col-xl">
+                  <div class="row gx-xxxl-40 gy-16 align-items-center">
+                    <div class="col-xl-auto">
+                      <a class="link-white fw-semibold" href="#">Home</a>
+                    </div>
+                    <div class="col-xl-auto">
+                      <div class="dropdown-on-hover">
+                        <a class="link-white fw-semibold dropdown-toggle" href="#" role="button">Dealer</a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a class="dropdown-item" href="#">Dealer Application</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Dealer Locator</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div class="col-xl-auto">
+                      <div class="dropdown-on-hover">
+                        <a class="link-white fw-semibold dropdown-toggle" href="#" role="button">Products</a>
+                        <ul class="dropdown-menu">
+                          <li>
+                            <a class="dropdown-item" href="#">Feed & Nutrition</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Pet Food</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Wildlife & Outdoors</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Ingredients & Bulk</a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">Misc & Supplies</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-auto d-none d-xl-block">
+                  <a class="header__logo" href="#">
+                    <img class="lazy js-lazy of-contain header__logo-img-light" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/logo-light.webp">
+                    <img class="lazy js-lazy of-contain header__logo-img-dark" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/logo-dark.webp">
+                  </a>
+                </div>
+                <div class="col-xl">
+                  <div class="row gx-xxxl-40 gy-16 align-items-center justify-content-end">
+                    <div class="col-xl-auto">
+                      <a class="link-white fw-semibold" href="#">About us</a>
+                    </div>
+                    <div class="col-xl-auto">
+                      <a class="link-white fw-semibold" href="#">Locations</a>
+                    </div>
+                    <div class="col-xl-auto">
+                      <a class="link-white fw-semibold" href="#">Contact us</a>
+                    </div>
+                    <div class="col-xl-auto">
+                      <div class="pt-40 pt-xl-0">
+                        <a class="btn btn-primary btn-sm w-100" href="#">Shop Here <span class="icomoon-shopping-cart"></span>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- HEADER END -->
+
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div class="page-wrapper">
+        <!-- CONTENT -->
+        <main class="main">
+          <!-- SECTION -->
+          <section class="section pt-sm-40">
+            <div class="container">
+              <h1 class="primary-filled-title mb-xxl-64">Dealer Application</h1>
+
+              <div class="border rounded px-16 py-24 p-sm-24 p-lg-40">
+                <div class="content-with-round-icon">
+                  <div class="content-with-round-icon__icon">
+                    <span class="icomoon-check-round"></span>
+                  </div>
+                  <h5 class="mb-20">Dealer Application</h5>
+                  <div class="text-block">
+                    <p>We are excited to expand our network of authorized dealers. At Mid South Feeds, we value long-term B2B relationships that bring excellence to the agricultural community.</p>
+                    <p>Please provide your business information in the form below. Required fields are marked with an asterisk (*). Once submitted, our regional representative will evaluate your application and reach out to you to discuss potential partnership opportunities.</p>
+                  </div>
+                </div>
+                <hr class="text-gray-200 mt-md-48 mt-lg-68">
+
+                <div class="row justify-content-center gx-48 gy-32">
+                  <div class="col-sm-6 col-md-4 col-xxl-3">
+                    <div class="content-with-text-and-icon">
+                      <h6 class="text-with-icon primary-icon mb-8">
+                        <span class="icomoon-lightning"></span>Dedicated Dealer Support
+                      </h6>
+                      <p class="text-sm mb-0">24/7 dedicated support for our partners.</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-xxl-3">
+                    <div class="content-with-text-and-icon">
+                      <h6 class="text-with-icon primary-icon mb-8">
+                        <span class="icomoon-partnership"></span>Dealer Application
+                      </h6>
+                      <p class="text-sm mb-0">Join our distribution network and grow your business with us.</p>
+                    </div>
+                  </div>
+                  <div class="col-sm-6 col-md-4 col-xxl-3">
+                    <div class="content-with-text-and-icon">
+                      <h6 class="text-with-icon primary-icon mb-8">
+                        <span class="icomoon-doc"></span>Fast-Track Partnership
+                      </h6>
+                      <p class="text-sm mb-0">Prompt review and easy setup for our new dealers.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- SECTION END -->
+
+          <!-- SECTION -->
+          <section class="section pt-0">
+            <div class="container">
+              <div class="border rounded px-16 py-24 p-sm-24 p-lg-40">
+                <form class="js-validate" action="#">
+                  <h6 class="fw-medium title-with-cubic-icon">
+                    <span class="icomoon-user"></span>Personal Information
+                  </h6>
+                  <div class="row gy-24">
+                    <div class="col-md-6">
+                      <label class="d-inline w-100">
+                        <span class="form-label">First Name&nbsp;<span class='text-danger'>*</span>
+                        </span>
+                        <input class="form-control" name="input" type="text" required="required" placeholder="Enter your first name">
+                      </label>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="d-inline w-100">
+                        <span class="form-label">Last Name&nbsp;<span class='text-danger'>*</span>
+                        </span>
+                        <input class="form-control" name="input" type="text" required="required" placeholder="Enter your last name">
+                      </label>
+                    </div>
+                  </div>
+                  <hr class="text-gray-200 my-xxl-40">
+                  <h6 class="fw-medium title-with-cubic-icon">
+                    <span class="icomoon-phone"></span>Contact Information
+                  </h6>
+                  <div class="row gy-24 mb-40">
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-xxl-7">
+                          <label class="d-inline w-100">
+                            <span class="form-label">Email Address&nbsp;<span class='text-danger'>*</span>
+                            </span>
+                            <input class="form-control with-email-icon" name="input" type="email" required="required" placeholder="your.email@example.com">
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-xxl-7">
+                          <label class="d-inline w-100">
+                            <span class="form-label">Phone Number&nbsp;<span class='text-danger'>*</span>
+                            </span>
+                            <input class="form-control with-phone-icon" name="input" type="text" required="required" placeholder="(555) 123-4567" data-mask="(000) 000-0000">
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-10 col-xl-8">
+                      <div class="row gy-24">
+                        <div class="col-12">
+                          <label class="d-inline w-100">
+                            <span class="form-label">Street Address&nbsp;<span class='text-danger'>*</span>
+                            </span>
+                            <input class="form-control with-location-icon" name="input" type="text" required="required" placeholder="Enter your street address">
+                          </label>
+                        </div>
+                        <div class="col-md-4">
+                          <label class="d-inline w-100">
+                            <span class="form-label">City&nbsp;<span class='text-danger'>*</span>
+                            </span>
+                            <input class="form-control" name="input" type="text" required="required" placeholder="City">
+                          </label>
+                        </div>
+                        <div class="col-md-4">
+                          <label class="d-inline w-100">
+                            <span class="form-label">State&nbsp;<span class='text-danger'>*</span>
+                            </span>
+                            <input class="form-control" name="input" type="text" required="required" placeholder="State">
+                          </label>
+                        </div>
+                        <div class="col-md-4">
+                          <label class="d-inline w-100">
+                            <span class="form-label">ZIP Code&nbsp;<span class='text-danger'>*</span>
+                            </span>
+                            <input class="form-control" name="input" type="text" required="required" placeholder="ZIP" data-mask="00000">
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row gy-24">
+                    <div class="col-md-6">
+                      <span class="form-label">Do you have a physical storefront location?&nbsp;<span class="text-danger">*</span>
+                      </span>
+                      <div class="remove-last-child-margin radio-group js-radio-group">
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="storefront" type="radio" required="required">
+                            <span class="form-check-label">Yes</span>
+                          </label>
+                        </div>
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="storefront" type="radio" required="required">
+                            <span class="form-check-label">No</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <span class="form-label">Do you currently sell animal or livestock feed at your business?&nbsp;<span class="text-danger">*</span>
+                      </span>
+                      <div class="remove-last-child-margin radio-group js-radio-group">
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="sell-feed" type="radio" required="required">
+                            <span class="form-check-label">Yes</span>
+                          </label>
+                        </div>
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="sell-feed" type="radio" required="required">
+                            <span class="form-check-label">No</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <span class="form-label">What type of business do you operate?&nbsp;<span class="text-danger">*</span>
+                      </span>
+                      <div class="remove-last-child-margin radio-group js-radio-group">
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="business-type" type="radio" required="required">
+                            <span class="form-check-label">Feed Store</span>
+                          </label>
+                        </div>
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="business-type" type="radio" required="required">
+                            <span class="form-check-label">Farm & Ranch Supply</span>
+                          </label>
+                        </div>
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="business-type" type="radio" required="required">
+                            <span class="form-check-label">Hardware Store</span>
+                          </label>
+                        </div>
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="business-type" type="radio" required="required">
+                            <span class="form-check-label">Bait & Tackle Shop</span>
+                          </label>
+                        </div>
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="business-type" type="radio" required="required">
+                            <span class="form-check-label">General Store or Co-Op</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <span class="form-label">Can your business accept semi/tractor-trailer deliveries and unload pallets?&nbsp;<span class="text-danger">*</span>
+                      </span>
+                      <div class="remove-last-child-margin radio-group js-radio-group">
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="semi-trailer" type="radio" required="required">
+                            <span class="form-check-label">Yes</span>
+                          </label>
+                        </div>
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="semi-trailer" type="radio" required="required">
+                            <span class="form-check-label">No</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <span class="form-label">How many customers do you serve monthly?&nbsp;<span class="text-danger">*</span>
+                      </span>
+                      <div class="remove-last-child-margin radio-group js-radio-group">
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="customers-monthly" type="radio" required="required">
+                            <span class="form-check-label">1-50</span>
+                          </label>
+                        </div>
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="customers-monthly" type="radio" required="required">
+                            <span class="form-check-label">50-500</span>
+                          </label>
+                        </div>
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="customers-monthly" type="radio" required="required">
+                            <span class="form-check-label">100-500</span>
+                          </label>
+                        </div>
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="customers-monthly" type="radio" required="required">
+                            <span class="form-check-label">500-1000</span>
+                          </label>
+                        </div>
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="customers-monthly" type="radio" required="required">
+                            <span class="form-check-label">500-1000+</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <span class="form-label">Have you contacted us about becoming a dealer before?&nbsp;<span class="text-danger">*</span>
+                      </span>
+                      <div class="remove-last-child-margin radio-group js-radio-group">
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="contacted-us" type="radio" required="required">
+                            <span class="form-check-label">Yes</span>
+                          </label>
+                        </div>
+                        <div class="mb-8">
+                          <label class="form-check">
+                            <input class="form-check-input" name="contacted-us" type="radio" required="required">
+                            <span class="form-check-label">No</span>
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <hr class="text-gray-200 my-xxl-40">
+                  <div class="row gy-24">
+                    <div class="col-12">
+                      <label class="d-inline w-100">
+                        <span class="form-label">Comments or Questions? </span>
+                        <textarea class="form-control" name="textarea" minlength="10" placeholder="Comments or Questions for Mid South Feeds"></textarea>
+                      </label>
+                    </div>
+                  </div>
+                  <hr class="text-gray-200 my-xxl-40">
+                  <button class="btn btn-primary w-100" type="submit">Submit Application
+                  </button>
+                  <p class="mb-0 pt-16 text-center">By submitting this application, you agree to our terms and conditions</p>
+                </form>
+              </div>
+            </div>
+          </section>
+          <!-- SECTION END -->
+        </main>
+        <!-- CONTENT END -->
+
+        <!-- FOOTER -->
+        <footer class="footer">
+          <div class="container">
+            <div class="footer__top-content">
+              <div class="row gy-40">
+                <div class="col-md-3">
+                  <a class="footer__logo" href="#">
+                    <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/logo-light.webp">
+                  </a>
+                </div>
+                <div class="col-xs-6 col-md-4 col-xxl-3 offset-md-1 offset-xxl-3">
+                  <h5 class="text-white">Quick View</h5>
+                  <div class="remove-last-child-margin">
+                    <div class="mb-16">
+                      <a class="link-white" href="#">Home</a>
+                    </div>
+                    <div class="mb-16">
+                      <a class="link-white" href="#">Dealer Locator</a>
+                    </div>
+                    <div class="mb-16">
+                      <a class="link-white" href="#">Products</a>
+                    </div>
+                    <div class="mb-16">
+                      <a class="link-white" href="#">About Us</a>
+                    </div>
+                    <div class="mb-16">
+                      <a class="link-white" href="#">Contact Us</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xs-6 col-md-4 col-xxl-3">
+                  <h5 class="text-white">Contact Us</h5>
+                  <div class="remove-last-child-margin">
+                    <div class="mb-16">
+                      <a class="link-with-icon link-white" href="#">
+                        <span class="icomoon-phone"></span>Plant: (912) 632-7603
+                      </a>
+                    </div>
+                    <div class="mb-16">
+                      <a class="link-with-icon link-white" href="#">
+                        <span class="icomoon-phone"></span>Retail Store: (912) 632-5261
+                      </a>
+                    </div>
+                    <div class="mb-16">
+                      <a class="link-with-icon link-white" href="#">
+                        <span class="icomoon-location-pin"></span>421 Market St. Alma, GA 31510
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="footer__bottom-content">
+              <div class="row gy-24 align-items-center">
+                <div class="col-lg-6 order-2 order-lg-1">
+                  <p class="mb-0">© 2026 Mid-south Feeds, Inc. All rights reserved.</p>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+                  <div class="row gx-32 gy-16 align-items-center justify-content-lg-end">
+                    <div class="col-auto">
+                      <p class="mb-0">Follow us on:</p>
+                    </div>
+                    <div class="col-auto">
+                      <div class="row align-items-center gy-16">
+                        <div class="col-auto d-flex align-items-center">
+                          <a class="link-white text-xl" href="#">
+                            <span class="icomoon-facebook"></span>
+                          </a>
+                        </div>
+                        <div class="col-auto d-flex align-items-center">
+                          <a class="link-white text-xl" href="#">
+                            <span class="icomoon-x"></span>
+                          </a>
+                        </div>
+                        <div class="col-auto d-flex align-items-center">
+                          <a class="link-white text-xl" href="#">
+                            <span class="icomoon-linkedin"></span>
+                          </a>
+                        </div>
+                        <div class="col-auto d-flex align-items-center">
+                          <a class="link-white text-xl" href="#">
+                            <span class="icomoon-youtube"></span>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- FOOTER END -->
+      </div>
+    </div>
+  </div>
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
