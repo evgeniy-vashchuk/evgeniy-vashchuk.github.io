@@ -19242,6 +19242,95 @@ module.exports = {
 
 /***/ },
 
+/***/ "./node_modules/core-js/internals/array-method-is-strict.js"
+/*!******************************************************************!*\
+  !*** ./node_modules/core-js/internals/array-method-is-strict.js ***!
+  \******************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+
+module.exports = function (METHOD_NAME, argument) {
+  var method = [][METHOD_NAME];
+  return !!method && fails(function () {
+    // eslint-disable-next-line no-useless-call -- required for testing
+    method.call(null, argument || function () { return 1; }, 1);
+  });
+};
+
+
+/***/ },
+
+/***/ "./node_modules/core-js/internals/array-slice.js"
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/internals/array-slice.js ***!
+  \*******************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ "./node_modules/core-js/internals/function-uncurry-this.js");
+
+module.exports = uncurryThis([].slice);
+
+
+/***/ },
+
+/***/ "./node_modules/core-js/internals/array-sort.js"
+/*!******************************************************!*\
+  !*** ./node_modules/core-js/internals/array-sort.js ***!
+  \******************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var arraySlice = __webpack_require__(/*! ../internals/array-slice */ "./node_modules/core-js/internals/array-slice.js");
+
+var floor = Math.floor;
+
+var sort = function (array, comparefn) {
+  var length = array.length;
+
+  if (length < 8) {
+    // insertion sort
+    var i = 1;
+    var element, j;
+
+    while (i < length) {
+      j = i;
+      element = array[i];
+      while (j && comparefn(array[j - 1], element) > 0) {
+        array[j] = array[--j];
+      }
+      if (j !== i++) array[j] = element;
+    }
+  } else {
+    // merge sort
+    var middle = floor(length / 2);
+    var left = sort(arraySlice(array, 0, middle), comparefn);
+    var right = sort(arraySlice(array, middle), comparefn);
+    var llength = left.length;
+    var rlength = right.length;
+    var lindex = 0;
+    var rindex = 0;
+
+    while (lindex < llength || rindex < rlength) {
+      array[lindex + rindex] = (lindex < llength && rindex < rlength)
+        ? comparefn(left[lindex], right[rindex]) <= 0 ? left[lindex++] : right[rindex++]
+        : lindex < llength ? left[lindex++] : right[rindex++];
+    }
+  }
+
+  return array;
+};
+
+module.exports = sort;
+
+
+/***/ },
+
 /***/ "./node_modules/core-js/internals/classof-raw.js"
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/internals/classof-raw.js ***!
@@ -19493,6 +19582,25 @@ module.exports = function (key, value) {
 
 /***/ },
 
+/***/ "./node_modules/core-js/internals/delete-property-or-throw.js"
+/*!********************************************************************!*\
+  !*** ./node_modules/core-js/internals/delete-property-or-throw.js ***!
+  \********************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var tryToString = __webpack_require__(/*! ../internals/try-to-string */ "./node_modules/core-js/internals/try-to-string.js");
+
+var $TypeError = TypeError;
+
+module.exports = function (O, P) {
+  if (!delete O[P]) throw new $TypeError('Cannot delete property ' + tryToString(P) + ' of ' + tryToString(O));
+};
+
+
+/***/ },
+
 /***/ "./node_modules/core-js/internals/descriptors.js"
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/internals/descriptors.js ***!
@@ -19622,6 +19730,38 @@ module.exports = [
 
 /***/ },
 
+/***/ "./node_modules/core-js/internals/environment-ff-version.js"
+/*!******************************************************************!*\
+  !*** ./node_modules/core-js/internals/environment-ff-version.js ***!
+  \******************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var userAgent = __webpack_require__(/*! ../internals/environment-user-agent */ "./node_modules/core-js/internals/environment-user-agent.js");
+
+var firefox = userAgent.match(/firefox\/(\d+)/i);
+
+module.exports = !!firefox && +firefox[1];
+
+
+/***/ },
+
+/***/ "./node_modules/core-js/internals/environment-is-ie-or-edge.js"
+/*!*********************************************************************!*\
+  !*** ./node_modules/core-js/internals/environment-is-ie-or-edge.js ***!
+  \*********************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var UA = __webpack_require__(/*! ../internals/environment-user-agent */ "./node_modules/core-js/internals/environment-user-agent.js");
+
+module.exports = /MSIE|Trident/.test(UA);
+
+
+/***/ },
+
 /***/ "./node_modules/core-js/internals/environment-user-agent.js"
 /*!******************************************************************!*\
   !*** ./node_modules/core-js/internals/environment-user-agent.js ***!
@@ -19675,6 +19815,23 @@ if (!version && userAgent) {
 }
 
 module.exports = version;
+
+
+/***/ },
+
+/***/ "./node_modules/core-js/internals/environment-webkit-version.js"
+/*!**********************************************************************!*\
+  !*** ./node_modules/core-js/internals/environment-webkit-version.js ***!
+  \**********************************************************************/
+(module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var userAgent = __webpack_require__(/*! ../internals/environment-user-agent */ "./node_modules/core-js/internals/environment-user-agent.js");
+
+var webkit = userAgent.match(/AppleWebKit\/(\d+)\./);
+
+module.exports = !!webkit && +webkit[1];
 
 
 /***/ },
@@ -22409,6 +22566,123 @@ if (!IS_PURE && DESCRIPTORS && values.name !== 'values') try {
 
 /***/ },
 
+/***/ "./node_modules/core-js/modules/es.array.sort.js"
+/*!*******************************************************!*\
+  !*** ./node_modules/core-js/modules/es.array.sort.js ***!
+  \*******************************************************/
+(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+
+"use strict";
+
+var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
+var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ "./node_modules/core-js/internals/function-uncurry-this.js");
+var aCallable = __webpack_require__(/*! ../internals/a-callable */ "./node_modules/core-js/internals/a-callable.js");
+var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
+var lengthOfArrayLike = __webpack_require__(/*! ../internals/length-of-array-like */ "./node_modules/core-js/internals/length-of-array-like.js");
+var deletePropertyOrThrow = __webpack_require__(/*! ../internals/delete-property-or-throw */ "./node_modules/core-js/internals/delete-property-or-throw.js");
+var toString = __webpack_require__(/*! ../internals/to-string */ "./node_modules/core-js/internals/to-string.js");
+var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
+var internalSort = __webpack_require__(/*! ../internals/array-sort */ "./node_modules/core-js/internals/array-sort.js");
+var arrayMethodIsStrict = __webpack_require__(/*! ../internals/array-method-is-strict */ "./node_modules/core-js/internals/array-method-is-strict.js");
+var FF = __webpack_require__(/*! ../internals/environment-ff-version */ "./node_modules/core-js/internals/environment-ff-version.js");
+var IE_OR_EDGE = __webpack_require__(/*! ../internals/environment-is-ie-or-edge */ "./node_modules/core-js/internals/environment-is-ie-or-edge.js");
+var V8 = __webpack_require__(/*! ../internals/environment-v8-version */ "./node_modules/core-js/internals/environment-v8-version.js");
+var WEBKIT = __webpack_require__(/*! ../internals/environment-webkit-version */ "./node_modules/core-js/internals/environment-webkit-version.js");
+
+var test = [];
+var nativeSort = uncurryThis(test.sort);
+var push = uncurryThis(test.push);
+
+// IE8-
+var FAILS_ON_UNDEFINED = fails(function () {
+  test.sort(undefined);
+});
+// V8 bug
+var FAILS_ON_NULL = fails(function () {
+  test.sort(null);
+});
+// Old WebKit
+var STRICT_METHOD = arrayMethodIsStrict('sort');
+
+var STABLE_SORT = !fails(function () {
+  // feature detection can be too slow, so check engines versions
+  if (V8) return V8 < 70;
+  if (FF && FF > 3) return;
+  if (IE_OR_EDGE) return true;
+  if (WEBKIT) return WEBKIT < 603;
+
+  var result = '';
+  var code, chr, value, index;
+
+  // generate an array with more 512 elements (Chakra and old V8 fails only in this case)
+  for (code = 65; code < 76; code++) {
+    chr = String.fromCharCode(code);
+
+    switch (code) {
+      case 66: case 69: case 70: case 72: value = 3; break;
+      case 68: case 71: value = 4; break;
+      default: value = 2;
+    }
+
+    for (index = 0; index < 47; index++) {
+      test.push({ k: chr + index, v: value });
+    }
+  }
+
+  test.sort(function (a, b) { return b.v - a.v; });
+
+  for (index = 0; index < test.length; index++) {
+    chr = test[index].k.charAt(0);
+    if (result.charAt(result.length - 1) !== chr) result += chr;
+  }
+
+  return result !== 'DGBEFHACIJK';
+});
+
+var FORCED = FAILS_ON_UNDEFINED || !FAILS_ON_NULL || !STRICT_METHOD || !STABLE_SORT;
+
+var getSortCompare = function (comparefn) {
+  return function (x, y) {
+    if (y === undefined) return -1;
+    if (x === undefined) return 1;
+    if (comparefn !== undefined) return +comparefn(x, y) || 0;
+    return toString(x) > toString(y) ? 1 : -1;
+  };
+};
+
+// `Array.prototype.sort` method
+// https://tc39.es/ecma262/#sec-array.prototype.sort
+$({ target: 'Array', proto: true, forced: FORCED }, {
+  sort: function sort(comparefn) {
+    if (comparefn !== undefined) aCallable(comparefn);
+
+    var array = toObject(this);
+
+    if (STABLE_SORT) return comparefn === undefined ? nativeSort(array) : nativeSort(array, comparefn);
+
+    var items = [];
+    var arrayLength = lengthOfArrayLike(array);
+    var itemsLength, index;
+
+    for (index = 0; index < arrayLength; index++) {
+      if (index in array) push(items, array[index]);
+    }
+
+    internalSort(items, getSortCompare(comparefn));
+
+    itemsLength = lengthOfArrayLike(items);
+    index = 0;
+
+    while (index < itemsLength) array[index] = items[index++];
+    while (index < arrayLength) deletePropertyOrThrow(array, index++);
+
+    return array;
+  }
+});
+
+
+/***/ },
+
 /***/ "./node_modules/core-js/modules/es.regexp.constructor.js"
 /*!***************************************************************!*\
   !*** ./node_modules/core-js/modules/es.regexp.constructor.js ***!
@@ -23065,6 +23339,333 @@ new countup_js__WEBPACK_IMPORTED_MODULE_2__.CountUp(el,countNumber,options).star
 
 /***/ },
 
+/***/ "./src/js/components/dealer-location-map.js"
+/*!**************************************************!*\
+  !*** ./src/js/components/dealer-location-map.js ***!
+  \**************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.sort.js */ "./node_modules/core-js/modules/es.array.sort.js");
+/* harmony import */ var core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.string.trim.js */ "./node_modules/core-js/modules/es.string.trim.js");
+/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
+/* global google */
+
+const initDealerLocationMap=()=>{
+const markersArray=[];
+let activeInfoWindow=null;
+const allDealers=typeof dealers!=='undefined'?dealers:false;// eslint-disable-line
+const stateSelect=document.querySelector('.js-dealer-location-state-select');
+const citySelect=document.querySelector('.js-dealer-location-city-select');
+const searchButton=document.querySelector('.js-dealer-location-search');
+
+const createDealerItem=(dealer)=>{
+if(!dealer)return;
+
+const{
+title,address,phone,text,lat,lng
+}=dealer;
+
+const dealerItem="\n      <div class=\"dealer-location-item\">\n        ".concat(
+
+title?"<h6 class=\"mb-8\">".concat(title,"</h6>"):'',"\n        <div class=\"remove-last-child-margin mb-8\">\n          ").concat(
+
+address&&lat&&lng?"<div class=\"mb-4\">\n            <a class=\"link-with-icon text-sm link-dark\" href=\"https://www.google.com/maps?q=".concat(
+
+lat,",").concat(lng,"\" target=\"_blank\">\n              <span class=\"icomoon-location-pin\"></span>").concat(
+address,"\n            </a>\n          </div>"):
+
+
+'',"\n          ").concat(
+phone?"<div class=\"mb-4\">\n            <a class=\"link-with-icon text-sm link-dark\" href=\"tel:".concat(
+
+phone,"\">\n              <span class=\"icomoon-phone\"></span>").concat(
+phone,"\n            </a>\n          </div>"):
+
+
+'',"\n        </div>\n        ").concat(
+
+text?"<p class=\"text-sm mb-20\">".concat(text,"</p>"):'',"\n        ").concat(
+typeof dealer.lat!=='undefined'&&typeof dealer.lng!=='undefined'?"<button class=\"btn btn-primary btn-sm js-dealer-location-show-on-map\" type=\"button\" data-lat=\"".concat(
+dealer.lat,"\" data-lng=\"").concat(dealer.lng,"\">\n              Show on the map\n              <span class=\"icomoon-arrow-right\"></span>\n            </button>"):
+
+
+
+'',"\n      </div>\n    ");
+
+
+
+const wrapper=document.createElement('div');
+
+wrapper.innerHTML=dealerItem.trim();
+
+return wrapper.firstChild;
+};
+
+const updateDealersList=(dealers)=>{
+const dealerList=document.querySelector('.js-dealer-location-list');
+
+if(!dealerList)return;
+
+dealerList.innerHTML='';
+
+dealers.forEach((dealer)=>{
+const dealerItem=createDealerItem(dealer);
+
+dealerList.appendChild(dealerItem);
+});
+
+const dealerListCount=document.querySelector('.js-dealer-location-list-count');
+
+dealerListCount.textContent="".concat(dealers.length," Result").concat(dealers.length>1?'s':'');
+};
+
+const setStateSelect=(dealers)=>{
+if(!stateSelect)return;
+
+stateSelect.choices.clearStore();
+
+const uniqueStates=[...new Set(dealers.map((dealer)=>dealer.state))];
+const options=uniqueStates.
+sort((a,b)=>a.localeCompare(b)).
+map((state)=>({value:state,label:state}));
+
+stateSelect.choices.setChoices(options,'value','label',true);
+stateSelect.choices.removeActiveItems();
+stateSelect.value='';
+};
+
+const showPreloader=()=>{
+const preloader=document.querySelector('.js-dealer-location-map-preloader');
+
+if(!preloader)return;
+
+preloader.classList.add('active');
+
+setTimeout(()=>{
+preloader.classList.remove('active');
+},500);
+};
+
+const createMap=()=>{
+const mapHolder=document.querySelector('.js-dealer-location-map');
+
+if(!mapHolder)return;
+
+const map=new google.maps.Map(mapHolder,{
+disableDefaultUI:true,
+zoomControl:true,
+fullscreenControl:true,
+mapId:'mid-south-feeds-dealer-location-map-id'
+});
+
+addMarkers(map,allDealers);
+
+return map;
+};
+
+const createMarker=()=>{
+const markerImg=document.createElement('img');
+
+markerImg.src='img/map-marker.svg';
+markerImg.width=50;
+markerImg.height=50;
+
+return markerImg;
+};
+
+const addMarkers=(map,locations)=>{
+const bounds=new google.maps.LatLngBounds();
+
+markersArray.forEach((marker)=>{
+if(marker)marker.map=null;
+});
+markersArray.length=0;
+
+locations.forEach((location)=>{
+const position={lat:location.lat,lng:location.lng};
+const markerImg=createMarker();
+const marker=new google.maps.marker.AdvancedMarkerElement({
+map,
+position:position,
+content:markerImg!==null?markerImg.cloneNode(true):markerImg
+});
+
+if(location.title||location.address||location.phone||location.text){
+const infoWindow=new google.maps.InfoWindow();
+
+const infoContent="<div>\n                              ".concat(
+location.title?"<h6 class=\"mb-8\">".concat(location.title,"</h6>"):'',"\n                              <div class=\"remove-last-child-margin mb-8\">\n                                ").concat(
+
+location.address&&location.lat&&location.lng?"<div class=\"mb-4\">\n                                  <a class=\"link-with-icon text-sm link-dark\" href=\"https://www.google.com/maps?q=".concat(
+
+location.lat,",").concat(location.lng,"\" target=\"_blank\">\n                                    <span class=\"icomoon-location-pin\"></span>").concat(
+location.address,"\n                                  </a>\n                                </div>"):
+
+
+'',"\n                                ").concat(
+location.phone?"<div class=\"mb-4\">\n                                  <a class=\"link-with-icon text-sm link-dark\" href=\"tel:".concat(
+
+location.phone,"\">\n                                    <span class=\"icomoon-phone\"></span>").concat(
+location.phone,"\n                                  </a>\n                                </div>"):
+
+
+'',"\n                              </div>\n                              ").concat(
+
+location.text?"<p class=\"text-sm mb-0\">".concat(location.text,"</p>"):'',"\n                            </div>");
+
+
+marker.addListener('gmp-click',()=>{
+if(activeInfoWindow){
+activeInfoWindow.close();
+}
+
+infoWindow.setContent(infoContent);
+infoWindow.setPosition(position);
+infoWindow.set('pixelOffset',new google.maps.Size(0,-50));
+infoWindow.set('minWidth',150);
+infoWindow.set('maxWidth',300);
+infoWindow.set('headerDisabled',true);
+infoWindow.open(map);
+activeInfoWindow=infoWindow;
+});
+
+google.maps.event.addListener(map,'click',function(){
+if(activeInfoWindow){
+activeInfoWindow.close();
+activeInfoWindow=null;
+}
+});
+}
+
+markersArray.push(marker);
+bounds.extend(location);
+});
+
+if(locations.length===1){
+map.setCenter(locations[0]);
+map.setZoom(14);
+}else{
+map.fitBounds(bounds);
+}
+};
+
+const focusDealerOnMap=(mapInstance,lat,lng)=>{
+const targetMarker=markersArray.find((marker)=>{
+if(!marker||!marker.position)return false;
+
+const pos=marker.position;
+const markerLat=typeof pos.lat==='function'?pos.lat():pos.lat;
+const markerLng=typeof pos.lng==='function'?pos.lng():pos.lng;
+
+return markerLat===lat&&markerLng===lng;
+});
+
+if(!targetMarker)return;
+
+showPreloader();
+mapInstance.setCenter(targetMarker.position);
+mapInstance.setZoom(14);
+
+if(google&&google.maps&&google.maps.event){
+google.maps.event.trigger(targetMarker,'gmp-click');
+}
+};
+
+const getCities=(state)=>{
+return[...new Set(allDealers.
+filter((dealer)=>dealer.state===state).
+map((dealer)=>dealer.city))].sort();
+};
+
+const getFilteredDealers=()=>{
+if(!allDealers)return[];
+
+const state=stateSelect&&stateSelect.choices?
+stateSelect.choices.getValue(true)||'':
+'';
+
+const selectedCitiesRaw=citySelect&&citySelect.choices?
+citySelect.choices.getValue(true):
+[];
+
+const selectedCities=Array.isArray(selectedCitiesRaw)?
+selectedCitiesRaw:
+selectedCitiesRaw?
+[selectedCitiesRaw]:
+[];
+
+return allDealers.filter((dealer)=>{
+if(state&&dealer.state!==state)return false;
+
+if(selectedCities.length&&!selectedCities.includes(dealer.city))return false;
+
+return true;
+});
+};
+
+updateDealersList(allDealers);
+setStateSelect(allDealers);
+
+const map=createMap(allDealers);
+
+if(stateSelect&&citySelect){
+stateSelect.addEventListener(
+'choice',
+function(event){
+const currentState=event.detail.value;
+const uniqueCities=getCities(currentState);
+const citiesOptions=uniqueCities.map((city)=>({value:city,label:city}));
+
+citySelect.choices.clearStore();
+citySelect.choices.setChoices(citiesOptions,'value','label',true);
+},
+false
+);
+
+stateSelect.addEventListener(
+'removeItem',
+function(event){
+citySelect.choices.clearStore();
+},
+false
+);
+}
+
+if(searchButton){
+searchButton.addEventListener('click',function(event){
+event.preventDefault();
+
+const filteredDealers=getFilteredDealers();
+
+showPreloader();
+updateDealersList(filteredDealers);
+addMarkers(map,filteredDealers);
+});
+}
+
+document.addEventListener('click',function(event){
+const btn=event.target.closest('.js-dealer-location-show-on-map');
+
+if(!btn)return;
+
+const lat=Number(btn.getAttribute('data-lat'));
+const lng=Number(btn.getAttribute('data-lng'));
+
+focusDealerOnMap(map,lat,lng);
+});
+};
+
+window.initDealerLocationMap=initDealerLocationMap;
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initDealerLocationMap);
+
+/***/ },
+
 /***/ "./src/js/components/dropdown.js"
 /*!***************************************!*\
   !*** ./src/js/components/dropdown.js ***!
@@ -23161,9 +23762,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var core_js_modules_es_regexp_exec_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.regexp.exec.js */ "./node_modules/core-js/modules/es.regexp.exec.js");
 /* harmony import */ var core_js_modules_es_string_replace_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.string.replace.js */ "./node_modules/core-js/modules/es.string.replace.js");
 /* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
-/* harmony import */ var _popperjs_core__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @popperjs/core */ "./node_modules/@popperjs/core/lib/popper.js");
-/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.mjs");
-
+/* harmony import */ var choices_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! choices.js */ "./node_modules/choices.js/public/assets/scripts/choices.mjs");
 
 
 const initSelect=()=>{
@@ -23193,16 +23792,17 @@ map((className)=>({
 })[className]||className);
 
 const getBool=(attr,def)=>{
-const attrValue=select.getAttribute(attr);
+const attrValue=select.dataset[attr];
 
 return attrValue!==null?attrValue==='true':def;
 };
 
-const searchEnabled=getBool('search-enabled',true);
-const removeItemButton=getBool('remove-item-button',false);
-const fixedPosition=select.classList.contains('js-fixed-position');
+const isMultiple=select.multiple;
+const searchEnabled=getBool('searchEnabled',true);
+const removeItemButton=getBool('removeItemButton',false);
 
-const choices=new choices_js__WEBPACK_IMPORTED_MODULE_4__["default"](select,{
+const choices=new choices_js__WEBPACK_IMPORTED_MODULE_3__["default"](select,{
+renderSelectedChoices:'always',
 itemSelectText:'',
 searchEnabled:searchEnabled&&optionsCount>10,
 searchPlaceholderValue:locales[currentLocale].search,
@@ -23212,8 +23812,9 @@ loadingText:locales[currentLocale].loading,
 addItemText:(value,rawValue)=>{
 return locales[currentLocale].addItemText.replace('value',value);
 },
+resetScrollPosition:false,
 shouldSort:false,
-removeItemButton,
+removeItemButton:isMultiple?true:removeItemButton,
 classNames:{
 containerOuter:[
 'choices',
@@ -23224,66 +23825,6 @@ containerOuter:[
 });
 
 select.choices=choices;
-
-if(fixedPosition){
-let popperInstance=null;
-
-function openHandler(choices){
-const dropdown=choices.dropdown.element;
-const reference=choices.containerInner.element;
-const isDropdownFlipped=choices.containerOuter.element.classList.value.includes('is-flipped');
-const offsetProp=isDropdownFlipped?'marginBottom':'marginTop';
-const offset=parseFloat(getComputedStyle(dropdown)[offsetProp]||0);
-
-popperInstance=(0,_popperjs_core__WEBPACK_IMPORTED_MODULE_3__.createPopper)(reference,dropdown,{
-placement:isDropdownFlipped?'top-start':'bottom-start',
-strategy:'fixed',
-modifiers:[
-{name:'computeStyles',options:{gpuAcceleration:false}},
-{name:'offset',options:{offset:[0,offset]}}]
-
-});
-
-dropdown.style.width="".concat(reference.offsetWidth,"px");
-}
-
-function closeHandler(choices){
-if(popperInstance){
-popperInstance.destroy();
-popperInstance=null;
-}
-}
-
-let isOpen=false;
-
-select.addEventListener('showDropdown',function(event){
-if(isOpen)return;
-
-isOpen=true;
-
-openHandler(choices);
-});
-
-select.addEventListener('hideDropdown',function(event){
-isOpen=false;
-
-closeHandler(choices);
-});
-}
-
-let isDropdownFlipped=false;
-
-select.addEventListener('showDropdown',function(event){
-isDropdownFlipped=event.target.closest('.choices').classList.value.includes('is-flipped');
-
-if(isDropdownFlipped){
-event.target.closest('.choices').classList.remove('is-open');
-
-setTimeout(()=>{
-event.target.closest('.choices').classList.add('is-open');
-},0);
-}
-});
 });
 }
 };
@@ -23671,10 +24212,10 @@ const initParallax=()=>{
 gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_2__["default"],gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_1__["default"]);
 
 // smooth scroll
-gsap_ScrollSmoother__WEBPACK_IMPORTED_MODULE_1__["default"].create({
-smooth:0.8,
-effects:true
-});
+// ScrollSmoother.create({
+//   smooth: 0.8,
+//   effects: true
+// });
 
 // welcome section
 const sectionWelcome=document.querySelector('.js-section-welcome');
@@ -23937,6 +24478,103 @@ disableOnInteraction:false
 
 /***/ },
 
+/***/ "./src/js/components/sub-menu.js"
+/*!***************************************!*\
+  !*** ./src/js/components/sub-menu.js ***!
+  \***************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const subMenu=()=>{
+const headerBottom=document.querySelector('.js-sub-menu-link-holder');
+
+if(!headerBottom)return;
+
+const toggles=headerBottom.querySelectorAll('.js-sub-menu-toggle');
+
+if(!toggles.length)return;
+
+const subMenus=document.querySelectorAll('.header__sub-menu-block');
+let activeSubMenu=null;
+let activeToggle=null;
+
+const deactivateAll=()=>{
+subMenus.forEach((menu)=>menu.classList.remove('active'));
+
+if(activeToggle){
+activeToggle.classList.remove('active');
+}
+
+activeSubMenu=null;
+activeToggle=null;
+};
+
+toggles.forEach((toggle)=>{
+const targetSelector=toggle.getAttribute('data-target');
+
+if(!targetSelector)return;
+
+const subMenuElement=document.querySelector(targetSelector);
+
+if(!subMenuElement)return;
+
+toggle.addEventListener('mouseenter',()=>{
+if(activeSubMenu&&activeSubMenu!==subMenuElement){
+activeSubMenu.classList.remove('active');
+}
+
+if(activeToggle&&activeToggle!==toggle){
+activeToggle.classList.remove('active');
+}
+
+subMenuElement.classList.add('active');
+toggle.classList.add('active');
+activeSubMenu=subMenuElement;
+activeToggle=toggle;
+});
+});
+
+headerBottom.addEventListener('mouseleave',(event)=>{
+const related=event.relatedTarget;
+
+if(!related||!headerBottom.contains(related)&&!(activeSubMenu&&activeSubMenu.contains(related))){
+deactivateAll();
+}
+});
+
+subMenus.forEach((menu)=>{
+menu.addEventListener('mouseleave',(event)=>{
+const related=event.relatedTarget;
+
+if(!related||!headerBottom.contains(related)&&!menu.contains(related)){
+deactivateAll();
+}
+});
+});
+
+// Hide current submenu when hovering any other header link
+headerBottom.addEventListener('mouseover',(event)=>{
+const target=event.target;
+
+if(!(target instanceof HTMLElement))return;
+
+const isToggle=target.closest('.js-sub-menu-toggle');
+const isLink=target.closest('a');
+
+if(isLink&&!isToggle&&activeSubMenu){
+deactivateAll();
+}
+});
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (subMenu);
+
+/***/ },
+
 /***/ "./src/js/components/video-block.js"
 /*!******************************************!*\
   !*** ./src/js/components/video-block.js ***!
@@ -24053,16 +24691,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_active_header_after_scroll__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @components/active-header-after-scroll */ "./src/js/components/active-header-after-scroll.js");
 /* harmony import */ var _components_aos_animations__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @components/aos-animations */ "./src/js/components/aos-animations.js");
 /* harmony import */ var _components_count_up__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @components/count-up */ "./src/js/components/count-up.js");
-/* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @components/dropdown */ "./src/js/components/dropdown.js");
-/* harmony import */ var _components_forms_input_mask__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @components/forms/input-mask */ "./src/js/components/forms/input-mask.js");
-/* harmony import */ var _components_forms_select__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @components/forms/select */ "./src/js/components/forms/select.js");
-/* harmony import */ var _components_forms_validation__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @components/forms/validation */ "./src/js/components/forms/validation.js");
-/* harmony import */ var _components_google_map__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @components/google-map */ "./src/js/components/google-map.js");
-/* harmony import */ var _components_lazyload__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @components/lazyload */ "./src/js/components/lazyload.js");
-/* harmony import */ var _components_parallax__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @components/parallax */ "./src/js/components/parallax.js");
-/* harmony import */ var _components_resize_animation_stopper__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @components/resize-animation-stopper */ "./src/js/components/resize-animation-stopper.js");
-/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @components/sliders */ "./src/js/components/sliders.js");
-/* harmony import */ var _components_video_block__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @components/video-block */ "./src/js/components/video-block.js");
+/* harmony import */ var _components_dealer_location_map__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @components/dealer-location-map */ "./src/js/components/dealer-location-map.js");
+/* harmony import */ var _components_dropdown__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @components/dropdown */ "./src/js/components/dropdown.js");
+/* harmony import */ var _components_forms_input_mask__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @components/forms/input-mask */ "./src/js/components/forms/input-mask.js");
+/* harmony import */ var _components_forms_select__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @components/forms/select */ "./src/js/components/forms/select.js");
+/* harmony import */ var _components_forms_validation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @components/forms/validation */ "./src/js/components/forms/validation.js");
+/* harmony import */ var _components_google_map__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @components/google-map */ "./src/js/components/google-map.js");
+/* harmony import */ var _components_lazyload__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! @components/lazyload */ "./src/js/components/lazyload.js");
+/* harmony import */ var _components_parallax__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! @components/parallax */ "./src/js/components/parallax.js");
+/* harmony import */ var _components_resize_animation_stopper__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! @components/resize-animation-stopper */ "./src/js/components/resize-animation-stopper.js");
+/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! @components/sliders */ "./src/js/components/sliders.js");
+/* harmony import */ var _components_sub_menu__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! @components/sub-menu */ "./src/js/components/sub-menu.js");
+/* harmony import */ var _components_video_block__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! @components/video-block */ "./src/js/components/video-block.js");
 
 
 
@@ -24089,20 +24729,23 @@ Offcanvas: bootstrap_js_dist_offcanvas_js__WEBPACK_IMPORTED_MODULE_3__
 
 
 
+
+
 document.addEventListener('DOMContentLoaded',()=>{
-(0,_components_parallax__WEBPACK_IMPORTED_MODULE_13__["default"])();
-(0,_components_forms_select__WEBPACK_IMPORTED_MODULE_9__["default"])();
-(0,_components_resize_animation_stopper__WEBPACK_IMPORTED_MODULE_14__["default"])();
-(0,_components_sliders__WEBPACK_IMPORTED_MODULE_15__["default"])();
-(0,_components_dropdown__WEBPACK_IMPORTED_MODULE_7__.initDropdownDefaults)();
+(0,_components_parallax__WEBPACK_IMPORTED_MODULE_14__["default"])();
+(0,_components_forms_select__WEBPACK_IMPORTED_MODULE_10__["default"])();
+(0,_components_resize_animation_stopper__WEBPACK_IMPORTED_MODULE_15__["default"])();
+(0,_components_sliders__WEBPACK_IMPORTED_MODULE_16__["default"])();
+(0,_components_dropdown__WEBPACK_IMPORTED_MODULE_8__.initDropdownDefaults)();
 (0,_components_active_header_after_scroll__WEBPACK_IMPORTED_MODULE_4__["default"])();
-(0,_components_video_block__WEBPACK_IMPORTED_MODULE_16__["default"])();
+(0,_components_video_block__WEBPACK_IMPORTED_MODULE_18__["default"])();
 (0,_components_count_up__WEBPACK_IMPORTED_MODULE_6__["default"])();
-(0,_components_forms_input_mask__WEBPACK_IMPORTED_MODULE_8__["default"])();
-(0,_components_forms_validation__WEBPACK_IMPORTED_MODULE_10__["default"])();
+(0,_components_forms_input_mask__WEBPACK_IMPORTED_MODULE_9__["default"])();
+(0,_components_forms_validation__WEBPACK_IMPORTED_MODULE_11__["default"])();
+(0,_components_sub_menu__WEBPACK_IMPORTED_MODULE_17__["default"])();
 
 setTimeout(()=>{
-(0,_components_lazyload__WEBPACK_IMPORTED_MODULE_12__["default"])();
+(0,_components_lazyload__WEBPACK_IMPORTED_MODULE_13__["default"])();
 (0,_components_aos_animations__WEBPACK_IMPORTED_MODULE_5__["default"])();
 },150);
 });
