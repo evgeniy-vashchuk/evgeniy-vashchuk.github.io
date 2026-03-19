@@ -319,7 +319,7 @@
             <script>
                 const dealers = [
                   { lat: 31.546021, lng: -82.473637, state: "Georgia", city: "Alma", title: "Alma Feed Supply", address: "245 Main St, Alma, GA 31510", phone: "(912) 555-0101", text: "Your one-stop shop for farm and ranch feed in Alma." },
-                  { lat: 31.539918, lng: -82.467304, state: "Georgia", city: "Alma", title: "Deep South Livestock", address: "1199 S Pierce St, Alma, GA 31510", phone: "(912) 555-0192", text: "Reliable source for cattle and pet feed. Locally owned in Alma." },
+                  { lat: 31.5211236, lng: -82.46228579999999, state: "Georgia", city: "Alma", title: "Deep South Livestock", address: "1199 S Pierce St, Alma, GA 31510", phone: "(912) 555-0192", text: "Reliable source for cattle and pet feed. Locally owned in Alma." },
                   { lat: 31.544371, lng: -82.465991, state: "Georgia", city: "Alma", title: "Alma Rural Coop", address: "624 W 12th St, Alma, GA 31510", phone: "(912) 555-0134", text: "Serving Alma area ranchers since 1995." },
                   { lat: 30.665537, lng: -83.220352, state: "Georgia", city: "Valdosta", title: "Valdosta Feed Mill", address: "2110 Bemiss Rd, Valdosta, GA 31602", phone: "(229) 555-0077", text: "Largest selection of Mid South Feeds in Valdosta." },
                   { lat: 33.952602, lng: -83.987005, state: "Georgia", city: "Lawrenceville", title: "Lawrenceville Farm Center", address: "500 Grayson Hwy, Lawrenceville, GA 30046", phone: "(770) 555-0456", text: "Servicing horse and pet owners of Lawrenceville." },
@@ -343,25 +343,9 @@
             <div class="dealer-location-block">
               <div class="bg-gray-400 py-32">
                 <div class="container">
-                  <div class="row align-items-end gy-16">
-                    <div class="col-md">
-                      <label class="d-inline w-100">
-                        <span class="form-label">State</span>
-                        <select class="form-select js-choice js-dealer-location-state-select" name="select" data-remove-item-button="true" data-placeholder="Select">
-                        </select>
-                      </label>
-                    </div>
-                    <div class="col-md">
-                      <label class="d-inline w-100">
-                        <span class="form-label">City</span>
-                        <select class="form-select js-choice checkbox-style js-dealer-location-city-select" name="select" multiple="multiple" size="1">
-                          <option value>Select</option>
-                        </select>
-                      </label>
-                    </div>
-                    <div class="col-lg-auto">
-                      <a class="btn btn-primary js-dealer-location-search w-100" href="#">Search <span class="icomoon-search"></span>
-                      </a>
+                  <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                      <div id="autocomplete-container" data-placeholder="Enter city or address"></div>
                     </div>
                   </div>
                 </div>
@@ -579,7 +563,7 @@
 
   <!-- connection JAVASCRIPT -->
   <script src="js/main.js"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-Xg_JV2DZseSRu1dBF_CFolJqqrn7v9M&amp;loading=async&amp;callback=initDealerLocationMap&amp;v=weekly&amp;libraries=marker" defer></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGjIkpO0sUPsPTyXFH8OtzYJI4zwq9GiU&amp;libraries=places,marker&amp;loading=async&amp;language=en&amp;callback=initDealerLocationMap" defer></script>
 </body>
 
 </html>

@@ -3230,6 +3230,7 @@ progress {
   display: block;
   width: 100%;
   padding: 0.9375rem 1.25rem;
+  font-family: var(--bs-font-sans-serif);
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -3370,6 +3371,7 @@ textarea.form-control-lg {
   display: block;
   width: 100%;
   padding: 0.9375rem 3.5rem 0.9375rem 1.25rem;
+  font-family: var(--bs-font-sans-serif);
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -3930,7 +3932,7 @@ textarea.form-control-lg {
 .btn {
   --bs-btn-padding-x: 2em;
   --bs-btn-padding-y: 0.25em;
-  --bs-btn-font-family: ;
+  --bs-btn-font-family: var(--bs-font-sans-serif);
   --bs-btn-font-size: 16px;
   --bs-btn-font-weight: 700;
   --bs-btn-line-height: 1.4;
@@ -25909,6 +25911,7 @@ img:not([src], [srcset]) {
 .choices {
   overflow: visible;
   font-weight: 500;
+  font-family: var(--bs-font-sans-serif);
   line-height: 1.5;
 }
 @media (max-width: 1399.98px) {
@@ -26263,4 +26266,33 @@ img:not([src], [srcset]) {
 .choices[data-type=select-multiple] .choices__button {
   margin-left: 0;
   border-left: none;
+}
+
+gmp-place-autocomplete {
+  padding-right: 4px;
+  color: var(--bs-body-color);
+  font-weight: 500;
+  font-size: 0.875rem;
+  font-family: var(--bs-font-sans-serif);
+  line-height: 1.5;
+  background-color: var(--bs-body-bg);
+  border: var(--bs-border-width) solid #EAECF0;
+  border-radius: var(--bs-border-radius);
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+@media (min-width: 1400px) {
+  gmp-place-autocomplete {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    font-size: 1rem;
+  }
+}
+gmp-place-autocomplete:focus {
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
+  border-color: #000000;
+}
+gmp-place-autocomplete::part(input) {
+  height: auto;
+  padding: 0;
 }/*# sourceMappingURL=main.css.map */

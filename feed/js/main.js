@@ -19242,95 +19242,6 @@ module.exports = {
 
 /***/ },
 
-/***/ "./node_modules/core-js/internals/array-method-is-strict.js"
-/*!******************************************************************!*\
-  !*** ./node_modules/core-js/internals/array-method-is-strict.js ***!
-  \******************************************************************/
-(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-
-module.exports = function (METHOD_NAME, argument) {
-  var method = [][METHOD_NAME];
-  return !!method && fails(function () {
-    // eslint-disable-next-line no-useless-call -- required for testing
-    method.call(null, argument || function () { return 1; }, 1);
-  });
-};
-
-
-/***/ },
-
-/***/ "./node_modules/core-js/internals/array-slice.js"
-/*!*******************************************************!*\
-  !*** ./node_modules/core-js/internals/array-slice.js ***!
-  \*******************************************************/
-(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-
-var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ "./node_modules/core-js/internals/function-uncurry-this.js");
-
-module.exports = uncurryThis([].slice);
-
-
-/***/ },
-
-/***/ "./node_modules/core-js/internals/array-sort.js"
-/*!******************************************************!*\
-  !*** ./node_modules/core-js/internals/array-sort.js ***!
-  \******************************************************/
-(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-
-var arraySlice = __webpack_require__(/*! ../internals/array-slice */ "./node_modules/core-js/internals/array-slice.js");
-
-var floor = Math.floor;
-
-var sort = function (array, comparefn) {
-  var length = array.length;
-
-  if (length < 8) {
-    // insertion sort
-    var i = 1;
-    var element, j;
-
-    while (i < length) {
-      j = i;
-      element = array[i];
-      while (j && comparefn(array[j - 1], element) > 0) {
-        array[j] = array[--j];
-      }
-      if (j !== i++) array[j] = element;
-    }
-  } else {
-    // merge sort
-    var middle = floor(length / 2);
-    var left = sort(arraySlice(array, 0, middle), comparefn);
-    var right = sort(arraySlice(array, middle), comparefn);
-    var llength = left.length;
-    var rlength = right.length;
-    var lindex = 0;
-    var rindex = 0;
-
-    while (lindex < llength || rindex < rlength) {
-      array[lindex + rindex] = (lindex < llength && rindex < rlength)
-        ? comparefn(left[lindex], right[rindex]) <= 0 ? left[lindex++] : right[rindex++]
-        : lindex < llength ? left[lindex++] : right[rindex++];
-    }
-  }
-
-  return array;
-};
-
-module.exports = sort;
-
-
-/***/ },
-
 /***/ "./node_modules/core-js/internals/classof-raw.js"
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/internals/classof-raw.js ***!
@@ -19582,25 +19493,6 @@ module.exports = function (key, value) {
 
 /***/ },
 
-/***/ "./node_modules/core-js/internals/delete-property-or-throw.js"
-/*!********************************************************************!*\
-  !*** ./node_modules/core-js/internals/delete-property-or-throw.js ***!
-  \********************************************************************/
-(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-
-var tryToString = __webpack_require__(/*! ../internals/try-to-string */ "./node_modules/core-js/internals/try-to-string.js");
-
-var $TypeError = TypeError;
-
-module.exports = function (O, P) {
-  if (!delete O[P]) throw new $TypeError('Cannot delete property ' + tryToString(P) + ' of ' + tryToString(O));
-};
-
-
-/***/ },
-
 /***/ "./node_modules/core-js/internals/descriptors.js"
 /*!*******************************************************!*\
   !*** ./node_modules/core-js/internals/descriptors.js ***!
@@ -19730,38 +19622,6 @@ module.exports = [
 
 /***/ },
 
-/***/ "./node_modules/core-js/internals/environment-ff-version.js"
-/*!******************************************************************!*\
-  !*** ./node_modules/core-js/internals/environment-ff-version.js ***!
-  \******************************************************************/
-(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-
-var userAgent = __webpack_require__(/*! ../internals/environment-user-agent */ "./node_modules/core-js/internals/environment-user-agent.js");
-
-var firefox = userAgent.match(/firefox\/(\d+)/i);
-
-module.exports = !!firefox && +firefox[1];
-
-
-/***/ },
-
-/***/ "./node_modules/core-js/internals/environment-is-ie-or-edge.js"
-/*!*********************************************************************!*\
-  !*** ./node_modules/core-js/internals/environment-is-ie-or-edge.js ***!
-  \*********************************************************************/
-(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-
-var UA = __webpack_require__(/*! ../internals/environment-user-agent */ "./node_modules/core-js/internals/environment-user-agent.js");
-
-module.exports = /MSIE|Trident/.test(UA);
-
-
-/***/ },
-
 /***/ "./node_modules/core-js/internals/environment-user-agent.js"
 /*!******************************************************************!*\
   !*** ./node_modules/core-js/internals/environment-user-agent.js ***!
@@ -19815,23 +19675,6 @@ if (!version && userAgent) {
 }
 
 module.exports = version;
-
-
-/***/ },
-
-/***/ "./node_modules/core-js/internals/environment-webkit-version.js"
-/*!**********************************************************************!*\
-  !*** ./node_modules/core-js/internals/environment-webkit-version.js ***!
-  \**********************************************************************/
-(module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-
-var userAgent = __webpack_require__(/*! ../internals/environment-user-agent */ "./node_modules/core-js/internals/environment-user-agent.js");
-
-var webkit = userAgent.match(/AppleWebKit\/(\d+)\./);
-
-module.exports = !!webkit && +webkit[1];
 
 
 /***/ },
@@ -22566,123 +22409,6 @@ if (!IS_PURE && DESCRIPTORS && values.name !== 'values') try {
 
 /***/ },
 
-/***/ "./node_modules/core-js/modules/es.array.sort.js"
-/*!*******************************************************!*\
-  !*** ./node_modules/core-js/modules/es.array.sort.js ***!
-  \*******************************************************/
-(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
-
-"use strict";
-
-var $ = __webpack_require__(/*! ../internals/export */ "./node_modules/core-js/internals/export.js");
-var uncurryThis = __webpack_require__(/*! ../internals/function-uncurry-this */ "./node_modules/core-js/internals/function-uncurry-this.js");
-var aCallable = __webpack_require__(/*! ../internals/a-callable */ "./node_modules/core-js/internals/a-callable.js");
-var toObject = __webpack_require__(/*! ../internals/to-object */ "./node_modules/core-js/internals/to-object.js");
-var lengthOfArrayLike = __webpack_require__(/*! ../internals/length-of-array-like */ "./node_modules/core-js/internals/length-of-array-like.js");
-var deletePropertyOrThrow = __webpack_require__(/*! ../internals/delete-property-or-throw */ "./node_modules/core-js/internals/delete-property-or-throw.js");
-var toString = __webpack_require__(/*! ../internals/to-string */ "./node_modules/core-js/internals/to-string.js");
-var fails = __webpack_require__(/*! ../internals/fails */ "./node_modules/core-js/internals/fails.js");
-var internalSort = __webpack_require__(/*! ../internals/array-sort */ "./node_modules/core-js/internals/array-sort.js");
-var arrayMethodIsStrict = __webpack_require__(/*! ../internals/array-method-is-strict */ "./node_modules/core-js/internals/array-method-is-strict.js");
-var FF = __webpack_require__(/*! ../internals/environment-ff-version */ "./node_modules/core-js/internals/environment-ff-version.js");
-var IE_OR_EDGE = __webpack_require__(/*! ../internals/environment-is-ie-or-edge */ "./node_modules/core-js/internals/environment-is-ie-or-edge.js");
-var V8 = __webpack_require__(/*! ../internals/environment-v8-version */ "./node_modules/core-js/internals/environment-v8-version.js");
-var WEBKIT = __webpack_require__(/*! ../internals/environment-webkit-version */ "./node_modules/core-js/internals/environment-webkit-version.js");
-
-var test = [];
-var nativeSort = uncurryThis(test.sort);
-var push = uncurryThis(test.push);
-
-// IE8-
-var FAILS_ON_UNDEFINED = fails(function () {
-  test.sort(undefined);
-});
-// V8 bug
-var FAILS_ON_NULL = fails(function () {
-  test.sort(null);
-});
-// Old WebKit
-var STRICT_METHOD = arrayMethodIsStrict('sort');
-
-var STABLE_SORT = !fails(function () {
-  // feature detection can be too slow, so check engines versions
-  if (V8) return V8 < 70;
-  if (FF && FF > 3) return;
-  if (IE_OR_EDGE) return true;
-  if (WEBKIT) return WEBKIT < 603;
-
-  var result = '';
-  var code, chr, value, index;
-
-  // generate an array with more 512 elements (Chakra and old V8 fails only in this case)
-  for (code = 65; code < 76; code++) {
-    chr = String.fromCharCode(code);
-
-    switch (code) {
-      case 66: case 69: case 70: case 72: value = 3; break;
-      case 68: case 71: value = 4; break;
-      default: value = 2;
-    }
-
-    for (index = 0; index < 47; index++) {
-      test.push({ k: chr + index, v: value });
-    }
-  }
-
-  test.sort(function (a, b) { return b.v - a.v; });
-
-  for (index = 0; index < test.length; index++) {
-    chr = test[index].k.charAt(0);
-    if (result.charAt(result.length - 1) !== chr) result += chr;
-  }
-
-  return result !== 'DGBEFHACIJK';
-});
-
-var FORCED = FAILS_ON_UNDEFINED || !FAILS_ON_NULL || !STRICT_METHOD || !STABLE_SORT;
-
-var getSortCompare = function (comparefn) {
-  return function (x, y) {
-    if (y === undefined) return -1;
-    if (x === undefined) return 1;
-    if (comparefn !== undefined) return +comparefn(x, y) || 0;
-    return toString(x) > toString(y) ? 1 : -1;
-  };
-};
-
-// `Array.prototype.sort` method
-// https://tc39.es/ecma262/#sec-array.prototype.sort
-$({ target: 'Array', proto: true, forced: FORCED }, {
-  sort: function sort(comparefn) {
-    if (comparefn !== undefined) aCallable(comparefn);
-
-    var array = toObject(this);
-
-    if (STABLE_SORT) return comparefn === undefined ? nativeSort(array) : nativeSort(array, comparefn);
-
-    var items = [];
-    var arrayLength = lengthOfArrayLike(array);
-    var itemsLength, index;
-
-    for (index = 0; index < arrayLength; index++) {
-      if (index in array) push(items, array[index]);
-    }
-
-    internalSort(items, getSortCompare(comparefn));
-
-    itemsLength = lengthOfArrayLike(items);
-    index = 0;
-
-    while (index < itemsLength) array[index] = items[index++];
-    while (index < arrayLength) deletePropertyOrThrow(array, index++);
-
-    return array;
-  }
-});
-
-
-/***/ },
-
 /***/ "./node_modules/core-js/modules/es.regexp.constructor.js"
 /*!***************************************************************!*\
   !*** ./node_modules/core-js/modules/es.regexp.constructor.js ***!
@@ -23350,20 +23076,72 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var core_js_modules_es_array_sort_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.array.sort.js */ "./node_modules/core-js/modules/es.array.sort.js");
-/* harmony import */ var core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es.string.trim.js */ "./node_modules/core-js/modules/es.string.trim.js");
-/* harmony import */ var core_js_modules_web_dom_collections_iterator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! core-js/modules/web.dom-collections.iterator.js */ "./node_modules/core-js/modules/web.dom-collections.iterator.js");
-/* global google */
+/* harmony import */ var core_js_modules_es_string_trim_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/es.string.trim.js */ "./node_modules/core-js/modules/es.string.trim.js");
+function ownKeys(e,r){var t=Object.keys(e);if(Object.getOwnPropertySymbols){var o=Object.getOwnPropertySymbols(e);r&&(o=o.filter(function(r){return Object.getOwnPropertyDescriptor(e,r).enumerable;})),t.push.apply(t,o);}return t;}function _objectSpread(e){for(var r=1;r<arguments.length;r++){var t=null!=arguments[r]?arguments[r]:{};r%2?ownKeys(Object(t),!0).forEach(function(r){_defineProperty(e,r,t[r]);}):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(t)):ownKeys(Object(t)).forEach(function(r){Object.defineProperty(e,r,Object.getOwnPropertyDescriptor(t,r));});}return e;}function _defineProperty(e,r,t){return(r=_toPropertyKey(r))in e?Object.defineProperty(e,r,{value:t,enumerable:!0,configurable:!0,writable:!0}):e[r]=t,e;}function _toPropertyKey(t){var i=_toPrimitive(t,"string");return"symbol"==typeof i?i:i+"";}function _toPrimitive(t,r){if("object"!=typeof t||!t)return t;var e=t[Symbol.toPrimitive];if(void 0!==e){var i=e.call(t,r||"default");if("object"!=typeof i)return i;throw new TypeError("@@toPrimitive must return a primitive value.");}return("string"===r?String:Number)(t);}/* global google */
 
 const initDealerLocationMap=()=>{
-const markersArray=[];
 let activeInfoWindow=null;
+let dealerInfoWindow=null;
+let displayedDealers=[];
 const allDealers=typeof dealers!=='undefined'?dealers:false;// eslint-disable-line
-const stateSelect=document.querySelector('.js-dealer-location-state-select');
-const citySelect=document.querySelector('.js-dealer-location-city-select');
-const searchButton=document.querySelector('.js-dealer-location-search');
 
-const createDealerItem=(dealer)=>{
+function buildDealerInfoContent(location){
+if(!location)return'';
+
+return"<div>\n        ".concat(
+location.title?"<h6 class=\"mb-8\">".concat(location.title,"</h6>"):'',"\n        <div class=\"remove-last-child-margin mb-8\">\n          ").concat(
+
+location.address&&location.lat&&location.lng?"<div class=\"mb-4\">\n            <a class=\"link-with-icon text-sm link-dark\" href=\"https://www.google.com/maps?q=".concat(
+
+location.lat,",").concat(location.lng,"\" target=\"_blank\">\n              <span class=\"icomoon-location-pin\"></span>").concat(
+location.address,"\n            </a>\n          </div>"):
+
+
+'',"\n          ").concat(
+location.phone?"<div class=\"mb-4\">\n            <a class=\"link-with-icon text-sm link-dark\" href=\"tel:".concat(
+
+location.phone,"\">\n              <span class=\"icomoon-phone\"></span>").concat(
+location.phone,"\n            </a>\n          </div>"):
+
+
+'',"\n        </div>\n        ").concat(
+
+location.text?"<p class=\"text-sm mb-8\">".concat(location.text,"</p>"):'',"\n        ").concat(
+location.lat&&location.lng?"<a class=\"btn btn-primary btn-sm w-100\" href=\"https://www.google.com/maps?q=".concat(location.lat,",").concat(location.lng,"\" target=\"_blank\">Direction</a>"):'',"\n      </div>");
+
+}
+
+function openDealerInfoWindow(mapInstance,location){
+if(!mapInstance||!location)return;
+
+if(!(location.title||location.address||location.phone||location.text))return;
+
+const position={
+lat:Number(location.lat),
+lng:Number(location.lng)
+};
+
+if(!Number.isFinite(position.lat)||!Number.isFinite(position.lng))return;
+
+if(activeInfoWindow){
+activeInfoWindow.close();
+}
+
+if(!dealerInfoWindow){
+dealerInfoWindow=new google.maps.InfoWindow();
+}
+
+dealerInfoWindow.setContent(buildDealerInfoContent(location));
+dealerInfoWindow.setPosition(position);
+dealerInfoWindow.set('pixelOffset',new google.maps.Size(0,-50));
+dealerInfoWindow.set('minWidth',150);
+dealerInfoWindow.set('maxWidth',300);
+dealerInfoWindow.set('headerDisabled',true);
+dealerInfoWindow.open(mapInstance);
+activeInfoWindow=dealerInfoWindow;
+}
+
+const createDealerItem=(dealer,index)=>{
 if(!dealer)return;
 
 const{
@@ -23390,8 +23168,8 @@ phone,"\n            </a>\n          </div>"):
 '',"\n        </div>\n        ").concat(
 
 text?"<p class=\"text-sm mb-20\">".concat(text,"</p>"):'',"\n        ").concat(
-typeof dealer.lat!=='undefined'&&typeof dealer.lng!=='undefined'?"<button class=\"btn btn-primary btn-sm js-dealer-location-show-on-map\" type=\"button\" data-lat=\"".concat(
-dealer.lat,"\" data-lng=\"").concat(dealer.lng,"\">\n              Show on the map\n              <span class=\"icomoon-arrow-right\"></span>\n            </button>"):
+typeof dealer.lat!=='undefined'&&typeof dealer.lng!=='undefined'?"<button class=\"btn btn-primary btn-sm js-dealer-location-show-on-map\" type=\"button\" data-dealer-index=\"".concat(
+index,"\">\n              Show on the map\n              <span class=\"icomoon-arrow-right\"></span>\n            </button>"):
 
 
 
@@ -23411,32 +23189,19 @@ const dealerList=document.querySelector('.js-dealer-location-list');
 
 if(!dealerList)return;
 
+displayedDealers=Array.isArray(dealers)?dealers.slice():[];
+
 dealerList.innerHTML='';
 
-dealers.forEach((dealer)=>{
-const dealerItem=createDealerItem(dealer);
+displayedDealers.forEach((dealer,index)=>{
+const dealerItem=createDealerItem(dealer,index);
 
 dealerList.appendChild(dealerItem);
 });
 
 const dealerListCount=document.querySelector('.js-dealer-location-list-count');
 
-dealerListCount.textContent="".concat(dealers.length," Result").concat(dealers.length>1?'s':'');
-};
-
-const setStateSelect=(dealers)=>{
-if(!stateSelect)return;
-
-stateSelect.choices.clearStore();
-
-const uniqueStates=[...new Set(dealers.map((dealer)=>dealer.state))];
-const options=uniqueStates.
-sort((a,b)=>a.localeCompare(b)).
-map((state)=>({value:state,label:state}));
-
-stateSelect.choices.setChoices(options,'value','label',true);
-stateSelect.choices.removeActiveItems();
-stateSelect.value='';
+dealerListCount.textContent="".concat(displayedDealers.length," Result").concat(displayedDealers.length>1?'s':'');
 };
 
 const showPreloader=()=>{
@@ -23481,11 +23246,6 @@ return markerImg;
 const addMarkers=(map,locations)=>{
 const bounds=new google.maps.LatLngBounds();
 
-markersArray.forEach((marker)=>{
-if(marker)marker.map=null;
-});
-markersArray.length=0;
-
 locations.forEach((location)=>{
 const position={lat:location.lat,lng:location.lng};
 const markerImg=createMarker();
@@ -23496,54 +23256,20 @@ content:markerImg!==null?markerImg.cloneNode(true):markerImg
 });
 
 if(location.title||location.address||location.phone||location.text){
-const infoWindow=new google.maps.InfoWindow();
-
-const infoContent="<div>\n                              ".concat(
-location.title?"<h6 class=\"mb-8\">".concat(location.title,"</h6>"):'',"\n                              <div class=\"remove-last-child-margin mb-8\">\n                                ").concat(
-
-location.address&&location.lat&&location.lng?"<div class=\"mb-4\">\n                                  <a class=\"link-with-icon text-sm link-dark\" href=\"https://www.google.com/maps?q=".concat(
-
-location.lat,",").concat(location.lng,"\" target=\"_blank\">\n                                    <span class=\"icomoon-location-pin\"></span>").concat(
-location.address,"\n                                  </a>\n                                </div>"):
-
-
-'',"\n                                ").concat(
-location.phone?"<div class=\"mb-4\">\n                                  <a class=\"link-with-icon text-sm link-dark\" href=\"tel:".concat(
-
-location.phone,"\">\n                                    <span class=\"icomoon-phone\"></span>").concat(
-location.phone,"\n                                  </a>\n                                </div>"):
-
-
-'',"\n                              </div>\n                              ").concat(
-
-location.text?"<p class=\"text-sm mb-0\">".concat(location.text,"</p>"):'',"\n                            </div>");
-
-
 marker.addListener('gmp-click',()=>{
-if(activeInfoWindow){
-activeInfoWindow.close();
+openDealerInfoWindow(map,location);
+});
 }
 
-infoWindow.setContent(infoContent);
-infoWindow.setPosition(position);
-infoWindow.set('pixelOffset',new google.maps.Size(0,-50));
-infoWindow.set('minWidth',150);
-infoWindow.set('maxWidth',300);
-infoWindow.set('headerDisabled',true);
-infoWindow.open(map);
-activeInfoWindow=infoWindow;
+bounds.extend(location);
 });
 
+google.maps.event.clearListeners(map,'click');
 google.maps.event.addListener(map,'click',function(){
 if(activeInfoWindow){
 activeInfoWindow.close();
 activeInfoWindow=null;
 }
-});
-}
-
-markersArray.push(marker);
-bounds.extend(location);
 });
 
 if(locations.length===1){
@@ -23554,110 +23280,217 @@ map.fitBounds(bounds);
 }
 };
 
-const focusDealerOnMap=(mapInstance,lat,lng)=>{
-const targetMarker=markersArray.find((marker)=>{
-if(!marker||!marker.position)return false;
+const findNearestDealers=(selectedPlace)=>{
+if(!allDealers||!Array.isArray(allDealers))return[];
 
-const pos=marker.position;
-const markerLat=typeof pos.lat==='function'?pos.lat():pos.lat;
-const markerLng=typeof pos.lng==='function'?pos.lng():pos.lng;
+if(!selectedPlace)return allDealers;
 
-return markerLat===lat&&markerLng===lng;
+const selectedLat=Number(selectedPlace.lat);
+const selectedLng=Number(selectedPlace.lng);
+
+const COORD_TOLERANCE=0.000001;// ~0.11m in latitude degrees
+
+if(Number.isFinite(selectedLat)&&Number.isFinite(selectedLng)){
+const matchedDealer=allDealers.find((dealer)=>{
+const dealerLat=Number(dealer.lat);
+const dealerLng=Number(dealer.lng);
+
+if(!Number.isFinite(dealerLat)||!Number.isFinite(dealerLng))return false;
+
+return(
+Math.abs(dealerLat-selectedLat)<=COORD_TOLERANCE&&Math.abs(dealerLng-selectedLng)<=COORD_TOLERANCE);
+
 });
 
-if(!targetMarker)return;
-
-showPreloader();
-mapInstance.setCenter(targetMarker.position);
-mapInstance.setZoom(14);
-
-if(google&&google.maps&&google.maps.event){
-google.maps.event.trigger(targetMarker,'gmp-click');
+if(matchedDealer)return[matchedDealer];
 }
-};
 
-const getCities=(state)=>{
-return[...new Set(allDealers.
-filter((dealer)=>dealer.state===state).
-map((dealer)=>dealer.city))].sort();
-};
+const normalize=(value)=>(value||'').toString().trim().toLowerCase();
 
-const getFilteredDealers=()=>{
-if(!allDealers)return[];
+const selectedCity=normalize(selectedPlace.city);
+const selectedState=normalize(selectedPlace.state);
 
-const state=stateSelect&&stateSelect.choices?
-stateSelect.choices.getValue(true)||'':
-'';
+if(!selectedCity&&!selectedState)return allDealers;
 
-const selectedCitiesRaw=citySelect&&citySelect.choices?
-citySelect.choices.getValue(true):
-[];
+if(selectedCity){
+const cityDealers=allDealers.filter((dealer)=>normalize(dealer.city)===selectedCity);
 
-const selectedCities=Array.isArray(selectedCitiesRaw)?
-selectedCitiesRaw:
-selectedCitiesRaw?
-[selectedCitiesRaw]:
-[];
+if(cityDealers.length)return cityDealers;
+}
 
-return allDealers.filter((dealer)=>{
-if(state&&dealer.state!==state)return false;
+if(selectedState){
+const stateDealers=allDealers.filter((dealer)=>normalize(dealer.state)===selectedState);
 
-if(selectedCities.length&&!selectedCities.includes(dealer.city))return false;
+if(stateDealers.length)return stateDealers;
+}
 
-return true;
-});
+return allDealers;
 };
 
 updateDealersList(allDealers);
-setStateSelect(allDealers);
 
 const map=createMap(allDealers);
-
-if(stateSelect&&citySelect){
-stateSelect.addEventListener(
-'choice',
-function(event){
-const currentState=event.detail.value;
-const uniqueCities=getCities(currentState);
-const citiesOptions=uniqueCities.map((city)=>({value:city,label:city}));
-
-citySelect.choices.clearStore();
-citySelect.choices.setChoices(citiesOptions,'value','label',true);
-},
-false
-);
-
-stateSelect.addEventListener(
-'removeItem',
-function(event){
-citySelect.choices.clearStore();
-},
-false
-);
-}
-
-if(searchButton){
-searchButton.addEventListener('click',function(event){
-event.preventDefault();
-
-const filteredDealers=getFilteredDealers();
-
-showPreloader();
-updateDealersList(filteredDealers);
-addMarkers(map,filteredDealers);
-});
-}
 
 document.addEventListener('click',function(event){
 const btn=event.target.closest('.js-dealer-location-show-on-map');
 
 if(!btn)return;
 
-const lat=Number(btn.getAttribute('data-lat'));
-const lng=Number(btn.getAttribute('data-lng'));
+const index=Number.parseInt(btn.getAttribute('data-dealer-index'),10);
 
-focusDealerOnMap(map,lat,lng);
+if(!Number.isInteger(index)||index<0||index>=displayedDealers.length)return;
+
+const dealer=displayedDealers[index];
+
+if(!dealer)return;
+
+flyToDealer(dealer);
 });
+
+const extractAddressDetails=(addressComponents)=>{
+if(!Array.isArray(addressComponents)){
+return{
+state:'',
+city:''
+};
+}
+
+const getComponentByType=(type)=>{
+const component=addressComponents.find((item)=>item.types&&item.types.includes(type));
+
+return component?component.longText||component.long_name||'':'';
+};
+
+const city=getComponentByType('locality')||
+getComponentByType('postal_town')||
+getComponentByType('administrative_area_level_2');
+
+return{
+state:getComponentByType('administrative_area_level_1'),
+city
+};
+};
+
+const setupGmpPlaceAutocompleteShadowPatch=()=>{
+if(window.__gmpPlaceAutocompleteFocusRingPatched)return;
+
+const originalAttachShadow=Element.prototype.attachShadow;
+
+Element.prototype.attachShadow=function(init){
+if(this.localName==='gmp-place-autocomplete'){
+const shadowRoot=originalAttachShadow.call(this,_objectSpread(_objectSpread({},
+init),{},{
+mode:'open'})
+);
+const style=document.createElement('style');
+
+style.textContent="\n          .focus-ring {\n            display: none !important;\n          }\n\n          input::placeholder { color: var(--bs-secondary); }\n          input::-webkit-input-placeholder { color: var(--bs-secondary); }\n        ";
+
+
+
+
+
+
+
+shadowRoot.appendChild(style);
+
+return shadowRoot;
+}
+
+return originalAttachShadow.call(this,init);
+};
+
+window.__gmpPlaceAutocompleteFocusRingPatched=true;
+};
+
+function flyToDealer(dealer){
+if(!dealer||!map)return;
+
+const lat=Number(dealer.lat);
+const lng=Number(dealer.lng);
+
+if(!Number.isFinite(lat)||!Number.isFinite(lng))return;
+
+map.panTo(new google.maps.LatLng(lat,lng));
+map.setZoom(16);
+openDealerInfoWindow(map,dealer);
+}
+
+function flyToDealers(dealers){
+if(!dealers.length)return;
+
+if(dealers.length===1){
+flyToDealer(dealers[0]);
+
+return;
+}
+
+const bounds=new google.maps.LatLngBounds();
+
+dealers.forEach((store)=>{
+bounds.extend({lat:parseFloat(store.lat),lng:parseFloat(store.lng)});
+});
+
+map.fitBounds(bounds,{
+top:40,right:40,bottom:40,left:40
+});
+}
+
+const initPlaceAutocomplete=()=>{var _google;
+const autocompleteContainer=document.getElementById('autocomplete-container');
+
+if(!autocompleteContainer||!((_google=google)!==null&&_google!==void 0&&(_google=_google.maps)!==null&&_google!==void 0&&(_google=_google.places)!==null&&_google!==void 0&&_google.PlaceAutocompleteElement))return;
+
+setupGmpPlaceAutocompleteShadowPatch();
+
+const placeAutocomplete=new google.maps.places.PlaceAutocompleteElement({
+includedRegionCodes:['us']
+});
+
+placeAutocomplete.placeholder=autocompleteContainer.getAttribute('data-placeholder')||'Search';
+
+autocompleteContainer.appendChild(placeAutocomplete);
+
+const handlePlaceSelect=async(event)=>{var _event$detail;
+const placePrediction=(event===null||event===void 0||(_event$detail=event.detail)===null||_event$detail===void 0?void 0:_event$detail.placePrediction)||(event===null||event===void 0?void 0:event.placePrediction)||null;
+
+if(!placePrediction||typeof placePrediction.toPlace!=='function')return;
+
+const place=placePrediction.toPlace();
+
+await place.fetchFields({
+fields:['formattedAddress','location','addressComponents']
+});
+
+const{state,city}=extractAddressDetails(place.addressComponents);
+const lat=place.location&&typeof place.location.lat==='function'?
+place.location.lat():
+null;
+const lng=place.location&&typeof place.location.lng==='function'?
+place.location.lng():
+null;
+
+const selectedPlace={
+state,
+city,
+address:place.formattedAddress||'',
+lat,
+lng
+};
+
+const nearestDealers=findNearestDealers(selectedPlace);
+
+if(nearestDealers&&nearestDealers.length){
+showPreloader();
+updateDealersList(nearestDealers);
+flyToDealers(nearestDealers);
+}
+};
+
+placeAutocomplete.addEventListener('gmp-select',handlePlaceSelect);
+};
+
+initPlaceAutocomplete();
 };
 
 window.initDealerLocationMap=initDealerLocationMap;
