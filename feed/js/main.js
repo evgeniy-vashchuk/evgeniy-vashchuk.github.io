@@ -23082,6 +23082,7 @@ function ownKeys(e,r){var t=Object.keys(e);if(Object.getOwnPropertySymbols){var 
 const initDealerLocationMap=()=>{
 let activeInfoWindow=null;
 let dealerInfoWindow=null;
+let myLocationMarker=null;
 let displayedDealers=[];
 const allDealers=typeof dealers!=='undefined'?dealers:false;// eslint-disable-line
 
@@ -23233,10 +23234,10 @@ addMarkers(map,allDealers);
 return map;
 };
 
-const createMarker=()=>{
+const createMarker=(imgSrc)=>{
 const markerImg=document.createElement('img');
 
-markerImg.src='img/map-marker.svg';
+markerImg.src=imgSrc;
 markerImg.width=50;
 markerImg.height=50;
 
@@ -23248,7 +23249,7 @@ const bounds=new google.maps.LatLngBounds();
 
 locations.forEach((location)=>{
 const position={lat:location.lat,lng:location.lng};
-const markerImg=createMarker();
+const markerImg=createMarker('img/map-marker.svg');
 const marker=new google.maps.marker.AdvancedMarkerElement({
 map,
 position:position,
@@ -23281,16 +23282,53 @@ map.fitBounds(bounds);
 };
 
 const findNearestDealers=(selectedPlace)=>{
-if(!allDealers||!Array.isArray(allDealers))return[];
+if(!allDealers||!Array.isArray(allDealers)){
+return{
+dealers:[],
+mapPoints:[]
+};
+}
 
-if(!selectedPlace)return allDealers;
+if(!selectedPlace){
+return{
+dealers:allDealers,
+mapPoints:allDealers
+};
+}
 
 const selectedLat=Number(selectedPlace.lat);
 const selectedLng=Number(selectedPlace.lng);
+const hasSelectedCoords=Number.isFinite(selectedLat)&&Number.isFinite(selectedLng);
 
 const COORD_TOLERANCE=0.000001;// ~0.11m in latitude degrees
+const mapAnchorPoint=hasSelectedCoords?{lat:selectedLat,lng:selectedLng}:null;
 
-if(Number.isFinite(selectedLat)&&Number.isFinite(selectedLng)){
+const findClosestDealerByDistance=()=>{
+if(!hasSelectedCoords)return null;
+
+let nearestDealer=null;
+let minDistanceSquared=Infinity;
+
+allDealers.forEach((dealer)=>{
+const dealerLat=Number(dealer.lat);
+const dealerLng=Number(dealer.lng);
+
+if(!Number.isFinite(dealerLat)||!Number.isFinite(dealerLng))return;
+
+const latDelta=dealerLat-selectedLat;
+const lngDelta=dealerLng-selectedLng;
+const distanceSquared=latDelta*latDelta+lngDelta*lngDelta;
+
+if(distanceSquared<minDistanceSquared){
+minDistanceSquared=distanceSquared;
+nearestDealer=dealer;
+}
+});
+
+return nearestDealer;
+};
+
+if(hasSelectedCoords){
 const matchedDealer=allDealers.find((dealer)=>{
 const dealerLat=Number(dealer.lat);
 const dealerLng=Number(dealer.lng);
@@ -23302,7 +23340,12 @@ Math.abs(dealerLat-selectedLat)<=COORD_TOLERANCE&&Math.abs(dealerLng-selectedLng
 
 });
 
-if(matchedDealer)return[matchedDealer];
+if(matchedDealer){
+return{
+dealers:[matchedDealer],
+mapPoints:[matchedDealer]
+};
+}
 }
 
 const normalize=(value)=>(value||'').toString().trim().toLowerCase();
@@ -23310,21 +23353,57 @@ const normalize=(value)=>(value||'').toString().trim().toLowerCase();
 const selectedCity=normalize(selectedPlace.city);
 const selectedState=normalize(selectedPlace.state);
 
-if(!selectedCity&&!selectedState)return allDealers;
+if(!selectedCity&&!selectedState){
+return{
+dealers:allDealers,
+mapPoints:allDealers
+};
+}
 
 if(selectedCity){
 const cityDealers=allDealers.filter((dealer)=>normalize(dealer.city)===selectedCity);
 
-if(cityDealers.length)return cityDealers;
+if(cityDealers.length){
+return{
+dealers:cityDealers,
+mapPoints:cityDealers
+};
 }
 
-if(selectedState){
+const nearestDealer=findClosestDealerByDistance();
+
+if(nearestDealer&&mapAnchorPoint){
+return{
+dealers:[nearestDealer],
+mapPoints:[mapAnchorPoint,nearestDealer]
+};
+}
+}
+
+if(!selectedCity&&selectedState){
 const stateDealers=allDealers.filter((dealer)=>normalize(dealer.state)===selectedState);
 
-if(stateDealers.length)return stateDealers;
+if(stateDealers.length){
+return{
+dealers:stateDealers,
+mapPoints:stateDealers
+};
 }
 
-return allDealers;
+const nearestDealer=findClosestDealerByDistance();
+
+if(nearestDealer&&mapAnchorPoint){
+return{
+dealers:[nearestDealer],
+mapPoints:[mapAnchorPoint,nearestDealer]
+};
+}
+}
+
+return{
+dealers:allDealers,
+mapPoints:allDealers
+};
 };
 
 updateDealersList(allDealers);
@@ -23436,6 +23515,28 @@ top:40,right:40,bottom:40,left:40
 });
 }
 
+const setMyLocationMarker=(location)=>{
+if(myLocationMarker){
+myLocationMarker.map=null;
+myLocationMarker=null;
+}
+
+if(!map||!location)return;
+
+const lat=Number(location.lat);
+const lng=Number(location.lng);
+
+if(!Number.isFinite(lat)||!Number.isFinite(lng))return;
+
+const markerImg=createMarker('img/person-marker.svg');
+
+myLocationMarker=new google.maps.marker.AdvancedMarkerElement({
+map,
+position:{lat,lng},
+content:markerImg!==null?markerImg.cloneNode(true):markerImg
+});
+};
+
 const initPlaceAutocomplete=()=>{var _google;
 const autocompleteContainer=document.getElementById('autocomplete-container');
 
@@ -23478,12 +23579,16 @@ lat,
 lng
 };
 
-const nearestDealers=findNearestDealers(selectedPlace);
+const{dealers:nearestDealers,mapPoints}=findNearestDealers(selectedPlace);
 
 if(nearestDealers&&nearestDealers.length){
+if(activeInfoWindow){
+activeInfoWindow.close();
+}
+
 showPreloader();
 updateDealersList(nearestDealers);
-flyToDealers(nearestDealers);
+flyToDealers(mapPoints&&mapPoints.length?mapPoints:nearestDealers);
 }
 };
 
@@ -23491,6 +23596,45 @@ placeAutocomplete.addEventListener('gmp-select',handlePlaceSelect);
 };
 
 initPlaceAutocomplete();
+
+async function getCityByIP(){
+const res=await fetch('https://ipapi.co/json/');
+const data=await res.json();
+
+return data;
+}
+
+const useMyLocationBtn=document.querySelector('.js-use-my-location');
+
+if(useMyLocationBtn){
+useMyLocationBtn.addEventListener('click',async()=>{
+const data=await getCityByIP();
+
+const{
+city,latitude,longitude
+}=data;
+
+const selectedPlace={
+city,
+lat:latitude,
+lng:longitude
+};
+
+setMyLocationMarker(selectedPlace);
+
+const{dealers:nearestDealers,mapPoints}=findNearestDealers(selectedPlace);
+
+if(nearestDealers&&nearestDealers.length){
+if(activeInfoWindow){
+activeInfoWindow.close();
+}
+
+showPreloader();
+updateDealersList(nearestDealers);
+flyToDealers(mapPoints&&mapPoints.length?mapPoints:nearestDealers);
+}
+});
+}
 };
 
 window.initDealerLocationMap=initDealerLocationMap;
