@@ -14417,6 +14417,46 @@ header.classList.add('active');
 
 /***/ },
 
+/***/ "./src/js/components/animations-on-scroll.js"
+/*!***************************************************!*\
+  !*** ./src/js/components/animations-on-scroll.js ***!
+  \***************************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+
+
+
+const initAnimationsOnScroll=()=>{
+const animatedItems=document.querySelectorAll('.js-animation-on-scroll');
+
+if(!animatedItems.length)return;
+
+gsap__WEBPACK_IMPORTED_MODULE_0__["default"].registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger);
+
+gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_1__.ScrollTrigger.batch(animatedItems,{
+start:'top 90%',
+once:true,
+interval:0.1,
+onEnter:(items)=>{
+items.forEach((item,index)=>{
+item.style.transitionDelay=`${index*0.2}s`;
+item.classList.add('active');
+});
+}
+});
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initAnimationsOnScroll);
+
+/***/ },
+
 /***/ "./src/js/components/count-up.js"
 /*!***************************************!*\
   !*** ./src/js/components/count-up.js ***!
@@ -14453,7 +14493,7 @@ countNumber=countNumber.replace(',','.');
 const options={
 startVal:0,
 decimalPlaces:numbersAfterComma,
-duration:4,
+duration:2,
 useEasing:true,
 decimal:'.',
 separator:',',
@@ -14783,7 +14823,7 @@ gsap__WEBPACK_IMPORTED_MODULE_0__["default"].set(innerWords,{y:'120%'});
 gsap__WEBPACK_IMPORTED_MODULE_0__["default"].to(innerWords,{
 y:0,
 stagger:0.15,
-duration:1.5,
+duration:0.8,
 ease:'power2.out',
 scrollTrigger:{
 trigger:text,
@@ -14812,12 +14852,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var bootstrap_js_dist_offcanvas_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/js/dist/offcanvas.js */ "./node_modules/bootstrap/js/dist/offcanvas.js");
 /* harmony import */ var _components_active_header_after_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @components/active-header-after-scroll */ "./src/js/components/active-header-after-scroll.js");
-/* harmony import */ var _components_count_up__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/count-up */ "./src/js/components/count-up.js");
-/* harmony import */ var _components_lazyload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/lazyload */ "./src/js/components/lazyload.js");
-/* harmony import */ var _components_resize_animation_stopper__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @components/resize-animation-stopper */ "./src/js/components/resize-animation-stopper.js");
-/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @components/sliders */ "./src/js/components/sliders.js");
-/* harmony import */ var _components_smooth_anchor_links__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @components/smooth-anchor-links */ "./src/js/components/smooth-anchor-links.js");
-/* harmony import */ var _components_text_animation__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @components/text-animation */ "./src/js/components/text-animation.js");
+/* harmony import */ var _components_animations_on_scroll__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @components/animations-on-scroll */ "./src/js/components/animations-on-scroll.js");
+/* harmony import */ var _components_count_up__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @components/count-up */ "./src/js/components/count-up.js");
+/* harmony import */ var _components_lazyload__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @components/lazyload */ "./src/js/components/lazyload.js");
+/* harmony import */ var _components_resize_animation_stopper__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @components/resize-animation-stopper */ "./src/js/components/resize-animation-stopper.js");
+/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @components/sliders */ "./src/js/components/sliders.js");
+/* harmony import */ var _components_smooth_anchor_links__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @components/smooth-anchor-links */ "./src/js/components/smooth-anchor-links.js");
+/* harmony import */ var _components_text_animation__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @components/text-animation */ "./src/js/components/text-animation.js");
 
 
 const Bootstrap={
@@ -14832,14 +14873,16 @@ Offcanvas: bootstrap_js_dist_offcanvas_js__WEBPACK_IMPORTED_MODULE_0__
 
 
 
+
 document.addEventListener('DOMContentLoaded',()=>{
-(0,_components_lazyload__WEBPACK_IMPORTED_MODULE_3__["default"])();
-(0,_components_resize_animation_stopper__WEBPACK_IMPORTED_MODULE_4__["default"])();
-(0,_components_sliders__WEBPACK_IMPORTED_MODULE_5__["default"])();
+(0,_components_lazyload__WEBPACK_IMPORTED_MODULE_4__["default"])();
+(0,_components_resize_animation_stopper__WEBPACK_IMPORTED_MODULE_5__["default"])();
+(0,_components_sliders__WEBPACK_IMPORTED_MODULE_6__["default"])();
 (0,_components_active_header_after_scroll__WEBPACK_IMPORTED_MODULE_1__["default"])();
-(0,_components_text_animation__WEBPACK_IMPORTED_MODULE_7__["default"])();
-(0,_components_count_up__WEBPACK_IMPORTED_MODULE_2__["default"])();
-(0,_components_smooth_anchor_links__WEBPACK_IMPORTED_MODULE_6__["default"])();
+(0,_components_animations_on_scroll__WEBPACK_IMPORTED_MODULE_2__["default"])();
+(0,_components_text_animation__WEBPACK_IMPORTED_MODULE_8__["default"])();
+(0,_components_count_up__WEBPACK_IMPORTED_MODULE_3__["default"])();
+(0,_components_smooth_anchor_links__WEBPACK_IMPORTED_MODULE_7__["default"])();
 });
 
 /***/ },

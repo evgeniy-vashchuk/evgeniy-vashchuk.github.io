@@ -53,7 +53,7 @@
               <div class="offcanvas-header">
                 <div class="row flex-grow-1 align-items-center">
                   <div class="col">
-                    <h5 class="offcanvas-title" id="offcanvas-menu-label">Menu</h5>
+                    <h4 class="offcanvas-title" id="offcanvas-menu-label">Menu</h4>
                   </div>
                   <div class="col-auto d-flex align-items-center">
                     <button class="hamburger-menu active" aria-label="Close menu" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-menu">
@@ -67,7 +67,8 @@
               <div class="offcanvas-body d-flex flex-column flex-lg-row">
                 <div class="row align-items-lg-center flex-grow-1 gy-40 gy-lg-16 flex-column flex-lg-row">
                   <div class="col-lg">
-                    <div class="row justify-content-lg-center gx-lg-36 gy-8">
+                    <!-- DESKTOP MENU -->
+                    <div class="row justify-content-lg-center gx-lg-36 gy-8 d-none d-lg-flex">
                       <div class="col-lg-auto">
                         <a class="link-white link-with-underline-hover text-sm fw-semibold" href="index.html#section-our-offering">Our Offering</a>
                       </div>
@@ -79,6 +80,39 @@
                       </div>
                       <div class="col-lg-auto">
                         <a class="link-white link-with-underline-hover text-sm fw-semibold" href="index.html#section-contact">Contact</a>
+                      </div>
+                    </div>
+                    <!-- MOBILE MENU -->
+                    <div class="row gy-8 d-lg-none">
+                      <div class="col-12">
+                        <a class="link-white link-with-underline-hover link-with-right-icon text-sm fw-semibold" href="newsletters.html">
+                          <span class="icomoon-arrow-square-top-right"></span>
+                          <span>Newsletters</span>
+                        </a>
+                      </div>
+                      <div class="col-12">
+                        <a class="link-white link-with-underline-hover link-with-right-icon text-sm fw-semibold" href="strategic-advisory.html">
+                          <span class="icomoon-arrow-square-top-right"></span>
+                          <span>Strategic Advisory</span>
+                        </a>
+                      </div>
+                      <div class="col-12">
+                        <a class="link-white link-with-underline-hover link-with-right-icon text-sm fw-semibold" href="influencers.html">
+                          <span class="icomoon-arrow-square-top-right"></span>
+                          <span>Influencers</span>
+                        </a>
+                      </div>
+                      <div class="col-12">
+                        <a class="link-white link-with-underline-hover link-with-right-icon text-sm fw-semibold" href="earned-paid-media.html">
+                          <span class="icomoon-arrow-square-top-right"></span>
+                          <span>Earned & Paid Media</span>
+                        </a>
+                      </div>
+                      <div class="col-12">
+                        <a class="link-white link-with-underline-hover link-with-right-icon text-sm fw-semibold" href="sms-push-notifications.html">
+                          <span class="icomoon-arrow-square-top-right"></span>
+                          <span>SMS & Push</span>
+                        </a>
                       </div>
                     </div>
                   </div>
@@ -131,9 +165,7 @@
             </div>
           </div>
           <div class="section-welcome__bg">
-            <div class="section-welcome__bg-holder">
-              <img class="lazy js-lazy w-100" src="img/lazy-placeholder.png" alt="Image" data-src="img/section-welcome-bg.png">
-            </div>
+            <div class="section-welcome__bg-holder"></div>
           </div>
         </section>
         <!-- SECTION WELCOME END -->
@@ -160,7 +192,7 @@
                   <div class="card-offer">
                     <div class="card-offer__main">
                       <div class="card-offer__icon">
-                        <div class="icon-block">
+                        <div class="icon-block js-animation-on-scroll animation-on-scroll" data-animation="slide-left">
                           <div class="icon-block__icon-holder">
                             <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/icon-block/1.webp">
                           </div>
@@ -185,7 +217,7 @@
                   <div class="card-offer">
                     <div class="card-offer__main">
                       <div class="card-offer__icon">
-                        <div class="icon-block">
+                        <div class="icon-block js-animation-on-scroll animation-on-scroll" data-animation="slide-left">
                           <div class="icon-block__icon-holder">
                             <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/icon-block/2.webp">
                           </div>
@@ -210,7 +242,7 @@
                   <div class="card-offer">
                     <div class="card-offer__main">
                       <div class="card-offer__icon">
-                        <div class="icon-block">
+                        <div class="icon-block js-animation-on-scroll animation-on-scroll" data-animation="slide-left">
                           <div class="icon-block__icon-holder">
                             <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/icon-block/3.webp">
                           </div>
@@ -235,7 +267,7 @@
                   <div class="card-offer">
                     <div class="card-offer__main">
                       <div class="card-offer__icon">
-                        <div class="icon-block">
+                        <div class="icon-block js-animation-on-scroll animation-on-scroll" data-animation="slide-left">
                           <div class="icon-block__icon-holder">
                             <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/icon-block/4.webp">
                           </div>
@@ -260,7 +292,7 @@
                   <div class="card-offer">
                     <div class="card-offer__main">
                       <div class="card-offer__icon">
-                        <div class="icon-block">
+                        <div class="icon-block js-animation-on-scroll animation-on-scroll" data-animation="slide-left">
                           <div class="icon-block__icon-holder">
                             <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/icon-block/5.webp">
                           </div>
@@ -600,7 +632,7 @@
               </div>
             </div>
             <div class="col-md-4 col-lg-3">
-              <h3 class="mb-32 slide-up-text js-slide-up-text">Our Offering</h3>
+              <h3 class="mb-32 slide-up-text js-slide-up-text">Quick Links</h3>
               <div class="remove-last-child-margin">
                 <div class="mb-16">
                   <a class="link-white link-with-underline-hover link-with-right-icon text-sm fw-semibold" href="index.html">
