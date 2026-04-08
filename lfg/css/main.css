@@ -18987,6 +18987,10 @@ ul {
   animation: rotate-left 8s linear infinite;
 }
 
+.pulsing-glow-animation {
+  animation: pulsing-glow 3s ease-in-out infinite;
+}
+
 @keyframes rotate-right {
   0% {
     transform: rotate(0deg);
@@ -19059,6 +19063,14 @@ ul {
   }
   100% {
     transform: scale(1);
+  }
+}
+@keyframes pulsing-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3)) drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)) drop-shadow(0 0 16px rgba(255, 255, 255, 0.4)) drop-shadow(0 0 24px rgba(255, 255, 255, 0.2));
   }
 }
 .footer {
@@ -19283,6 +19295,9 @@ ul {
   background-color: #001f77;
   border-radius: 0.75rem;
 }
+.card-why-we-are-different:hover .card-why-we-are-different__img {
+  transform: scale(1.2) rotate(7deg);
+}
 .card-why-we-are-different__img:before {
   position: relative;
   display: block;
@@ -19293,6 +19308,7 @@ ul {
 .card-why-we-are-different__img {
   position: relative;
   overflow: hidden;
+  transition: transform 1.5s;
 }
 .card-why-we-are-different__img:after {
   position: absolute;
