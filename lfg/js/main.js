@@ -15992,6 +15992,41 @@ pointerEvents:true
 
 /***/ },
 
+/***/ "./src/js/components/preloader.js"
+/*!****************************************!*\
+  !*** ./src/js/components/preloader.js ***!
+  \****************************************/
+(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+const initPreloader=()=>{
+const preloader=document.querySelector('.js-preloader');
+const preloaderHasCompleted=sessionStorage.getItem('preloaderHasCompleted');
+const hideTimeout=2400;
+
+if(preloader&&!preloaderHasCompleted){
+preloader.classList.remove('d-none');
+
+window.addEventListener('load',function(){
+setTimeout(function(){
+preloader.classList.add('hidden');
+sessionStorage.setItem('preloaderHasCompleted','true');
+document.dispatchEvent(new CustomEvent('preloader:hidden'));
+},hideTimeout);
+});
+}else{
+document.dispatchEvent(new CustomEvent('preloader:hidden'));
+}
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initPreloader);
+
+/***/ },
+
 /***/ "./src/js/components/resize-animation-stopper.js"
 /*!*******************************************************!*\
   !*** ./src/js/components/resize-animation-stopper.js ***!
@@ -16302,10 +16337,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_lazyload__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @components/lazyload */ "./src/js/components/lazyload.js");
 /* harmony import */ var _components_modal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @components/modal */ "./src/js/components/modal.js");
 /* harmony import */ var _components_parallax__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @components/parallax */ "./src/js/components/parallax.js");
-/* harmony import */ var _components_resize_animation_stopper__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @components/resize-animation-stopper */ "./src/js/components/resize-animation-stopper.js");
-/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @components/sliders */ "./src/js/components/sliders.js");
-/* harmony import */ var _components_smooth_anchor_links__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @components/smooth-anchor-links */ "./src/js/components/smooth-anchor-links.js");
-/* harmony import */ var _components_text_animation__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @components/text-animation */ "./src/js/components/text-animation.js");
+/* harmony import */ var _components_preloader__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @components/preloader */ "./src/js/components/preloader.js");
+/* harmony import */ var _components_resize_animation_stopper__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @components/resize-animation-stopper */ "./src/js/components/resize-animation-stopper.js");
+/* harmony import */ var _components_sliders__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @components/sliders */ "./src/js/components/sliders.js");
+/* harmony import */ var _components_smooth_anchor_links__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @components/smooth-anchor-links */ "./src/js/components/smooth-anchor-links.js");
+/* harmony import */ var _components_text_animation__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! @components/text-animation */ "./src/js/components/text-animation.js");
 
 
 
@@ -16325,17 +16361,23 @@ Offcanvas: bootstrap_js_dist_offcanvas_js__WEBPACK_IMPORTED_MODULE_1__
 
 
 
-document.addEventListener('DOMContentLoaded',()=>{
+
+const startApp=()=>{
 (0,_components_lazyload__WEBPACK_IMPORTED_MODULE_5__["default"])();
-(0,_components_resize_animation_stopper__WEBPACK_IMPORTED_MODULE_8__["default"])();
-(0,_components_sliders__WEBPACK_IMPORTED_MODULE_9__["default"])();
+(0,_components_resize_animation_stopper__WEBPACK_IMPORTED_MODULE_9__["default"])();
+(0,_components_sliders__WEBPACK_IMPORTED_MODULE_10__["default"])();
 (0,_components_active_header_after_scroll__WEBPACK_IMPORTED_MODULE_2__["default"])();
 (0,_components_animations_on_scroll__WEBPACK_IMPORTED_MODULE_3__["default"])();
-(0,_components_text_animation__WEBPACK_IMPORTED_MODULE_11__["default"])();
+(0,_components_text_animation__WEBPACK_IMPORTED_MODULE_12__["default"])();
 (0,_components_count_up__WEBPACK_IMPORTED_MODULE_4__["default"])();
-(0,_components_smooth_anchor_links__WEBPACK_IMPORTED_MODULE_10__["default"])();
+(0,_components_smooth_anchor_links__WEBPACK_IMPORTED_MODULE_11__["default"])();
 (0,_components_modal__WEBPACK_IMPORTED_MODULE_6__["default"])();
 (0,_components_parallax__WEBPACK_IMPORTED_MODULE_7__["default"])();
+};
+
+document.addEventListener('DOMContentLoaded',()=>{
+document.addEventListener('preloader:hidden',startApp,{once:true});
+(0,_components_preloader__WEBPACK_IMPORTED_MODULE_8__["default"])();
 });
 
 /***/ },

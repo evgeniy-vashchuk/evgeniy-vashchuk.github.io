@@ -19692,6 +19692,35 @@ img:not([src], [srcset]) {
   }
 }
 
+.preloader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  width: 100%;
+  height: 100%;
+  background-color: #060819;
+  transition: opacity 1s, visibility 1s;
+}
+.preloader__video {
+  width: 200px;
+}
+@media (min-width: 576px) {
+  .preloader__video {
+    width: 300px;
+  }
+}
+.preloader.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.preloader:not(.d-none, .hidden) ~ * {
+  opacity: 0;
+}
+
 .section {
   position: relative;
 }
