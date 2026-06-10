@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" id="Layer_1" data-name="Layer 1" viewBox="0 0 85.889999 85.890001" sodipodi:docname="icon.svg" width="85.889999" height="85.889999" inkscape:version="1.2 (dc2aeda, 2022-05-15)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg"><metadata><rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"><rdf:Description><dc:creator>RealFaviconGenerator</dc:creator><dc:source>https://realfavicongenerator.net</dc:source></rdf:Description></rdf:RDF></metadata><sodipodi:namedview id="namedview460" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1" showgrid="false" inkscape:zoom="3.3050398" inkscape:cx="113.00923" inkscape:cy="31.920947" inkscape:window-width="1390" inkscape:window-height="1177" inkscape:window-x="0" inkscape:window-y="30" inkscape:window-maximized="0" inkscape:current-layer="Layer_1"></sodipodi:namedview><defs id="defs451">
+    <clipPath id="clippath">
+      <rect width="377" height="107" style="fill:none" id="rect419" x="0" y="0"></rect>
+    </clipPath>
+    <radialGradient id="radial-gradient" cx="-157.00999" cy="305.88" fx="-157.00999" fy="305.88" r="0.80000001" gradientTransform="matrix(38.4,0,0,-38.62,6147.14,11879.56)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f7f5f0" stop-opacity="0" id="stop422"></stop>
+      <stop offset=".16" stop-color="#f7f5f0" stop-opacity="0" id="stop424"></stop>
+      <stop offset=".19" stop-color="#f7f5f0" stop-opacity="0" id="stop426"></stop>
+      <stop offset=".37" stop-color="#f7f5f0" stop-opacity="0" id="stop428"></stop>
+      <stop offset=".44" stop-color="#f7f5f0" stop-opacity=".04" id="stop430"></stop>
+      <stop offset=".48" stop-color="#f7f5f0" stop-opacity=".08" id="stop432"></stop>
+      <stop offset=".52" stop-color="#f7f5f0" stop-opacity=".15" id="stop434"></stop>
+      <stop offset=".55" stop-color="#f7f5f0" stop-opacity=".24" id="stop436"></stop>
+      <stop offset=".58" stop-color="#f7f5f0" stop-opacity=".35" id="stop438"></stop>
+      <stop offset=".61" stop-color="#f7f5f0" stop-opacity=".48" id="stop440"></stop>
+      <stop offset=".63" stop-color="#f7f5f0" stop-opacity=".63" id="stop442"></stop>
+      <stop offset=".66" stop-color="#f7f5f0" stop-opacity=".8" id="stop444"></stop>
+      <stop offset=".68" stop-color="#f7f5f0" id="stop446"></stop>
+      <stop offset="1" stop-color="#f7f5f0" id="stop448"></stop>
+    </radialGradient>
+  </defs><rect x="0" y="0" width="85.889999" height="85.889999" style="fill:#250025" id="rect453"></rect><g clip-path="url(#clippath)" id="g457" transform="translate(-75.529999,-22.780001)">
+    <path d="m 118.47,96.75 c 17.03,0 30.84,-13.89 30.84,-31.02 0,-17.13 -13.81,-31.02 -30.84,-31.02 -17.03,0 -30.84,13.89 -30.84,31.02 0,17.13 13.81,31.02 30.84,31.02 z" style="fill:url(#radial-gradient)" id="path455"></path>
+  </g></svg>

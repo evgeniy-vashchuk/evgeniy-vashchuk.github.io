@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Ronda — Main</title>
+  <meta name="description" content="The veterinary locum platform that puts you back in control.">
+  <meta charset="UTF-8">
+  <meta name="format-detection" content="telephone=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- connection FAVICONS -->
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="img/favicon/site.webmanifest">
+  <link rel="mask-icon" href="img/favicon/safari-pinned-tab.svg" color="#250025">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#250025">
+  <meta name="msapplication-config" content="img/favicon/browserconfig.xml">
+  <meta name="theme-color" content="#250025">
+
+  <!-- THE BACKGROUND OF THE STATUS-BAR (ON MOBILE) -->
+  <meta name="theme-color" content="#250025">
+
+  <!-- connection GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <!-- connection CSS -->
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- HEADER -->
+    <header class="header fixed-top js-header">
+      <div class="container position-relative">
+        <div class="row align-items-center">
+          <div class="col-auto">
+            <a class="header__logo" href="index.html">
+              <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="132" height="38" style="aspect-ratio: 132/38">
+            </a>
+          </div>
+          <div class="col">
+            <div class="offcanvas-md offcanvas-end flex-grow-1" id="offcanvas-menu" aria-labelledby="offcanvas-menu-label" role="dialog" tabindex="-1">
+              <div class="offcanvas-header">
+                <div class="row flex-grow-1 align-items-center">
+                  <div class="col">
+                    <h5 class="offcanvas-title" id="offcanvas-menu-label">Menu</h5>
+                  </div>
+                  <div class="col-auto d-flex align-items-center">
+                    <button class="hamburger-menu active" aria-label="Close menu" type="button" data-bs-dismiss="offcanvas" data-bs-target="#offcanvas-menu">
+                      <span class="hamburger-menu__wrap">
+                        <span class="hamburger-menu__bars"></span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="offcanvas-body d-flex flex-column flex-lg-row">
+                <div class="d-md-none pb-40 flex-grow-1">
+                  <div class="remove-last-child-margin">
+                    <div class="mb-8">
+                      <a class="link-light" href="#">Cookie Policy</a>
+                    </div>
+                    <div class="mb-8">
+                      <a class="link-light" href="#">Cookie Preferences</a>
+                    </div>
+                    <div class="mb-8">
+                      <a class="link-light" href="#">Privacy Policy</a>
+                    </div>
+                    <div class="mb-8">
+                      <a class="link-light" href="#">Terms of Service</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="row align-items-center justify-content-end flex-md-grow-1 gx-16 gy-8">
+                  <div class="col-md-auto">
+                    <button class="btn btn-purple btn-sm w-100" type="button">Access your Ronda account
+                    </button>
+                  </div>
+                  <div class="col-md-auto">
+                    <button class="btn btn-outline-light btn-sm w-100" type="button">Book a demo
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-auto d-flex align-items-center d-md-none">
+            <button class="hamburger-menu" aria-label="Toggle menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-menu">
+              <span class="hamburger-menu__wrap">
+                <span class="hamburger-menu__bars"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- HEADER END -->
+
+    <!-- CONTENT -->
+    <main class="main">
+      <!-- SECTION WELCOME -->
+      <section class="section section-welcome js-parallax-scene parallax-scene">
+        <div class="section__bg-holder">
+          <div class="container d-flex">
+            <div class="section__bg-holder-inner">
+              <div class="section__top-left-bg">
+                <div class="section__top-left-bg-holder primary-gradient"></div>
+              </div>
+              <div class="section__bottom-right-bg">
+                <div class="section__bottom-right-bg-holder purple-gradient"></div>
+              </div>
+              <div class="section-welcome__bottom-right-ring-bg">
+                <div class="section-welcome__bottom-right-ring-bg-holder js-parallax-item" data-depth="0.4">
+                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/ring-with-gradient-primary.svg">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section__content-holder">
+          <div class="section-welcome__content-block">
+            <div class="container">
+              <div class="row align-items-center gy-40">
+                <div class="col-lg-8 col-xxl-7 remove-last-child-margin">
+                  <h1 class="display-1">Stop managing your locums with spreadsheets</h1>
+                  <div class="text-block mb-32 pe-xl-100">
+                    <p>Your trusted locums are in your phone, your WhatsApp, your inbox — spread across a dozen places. Every booking costs you time you don't have. Ronda puts them all in one place, with zero commission and zero admin.</p>
+                  </div>
+                  <div class="row g-16 mb-28">
+                    <div class="col-sm-auto">
+                      <a class="btn btn-purple w-100" href="#">Access your Ronda account</a>
+                    </div>
+                    <div class="col-sm-auto">
+                      <a class="btn btn-outline-light w-100" href="#">Book a demo</a>
+                    </div>
+                  </div>
+                  <p class="text-xs fw-light opacity-58">New to Ronda? Sign up free. Activate your 2-month BYOL trial whenever you're ready — no card required.</p>
+                </div>
+                <div class="col-lg-4 col-xxl-5">
+                  <div class="ps-lg-40 ps-xxl-0">
+                    <div class="animation-on-scroll fade-left js-animation-on-scroll">
+                      <img class="lazy js-lazy section-welcome__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/section-welcome-img.webp" width="842" height="593" style="aspect-ratio: 842/593">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="section-welcome__cards-block">
+            <div class="container position-relative z-1 d-flex">
+              <div class="row gy-16 gy-sm-24 flex-grow-1">
+                <div class="col-lg-4 d-flex">
+                  <div class="card-achievement">
+                    <div class="row align-items-center justify-content-center flex-column flex-xs-row g-20">
+                      <div class="col-auto">
+                        <h2 class="card-achievement__number title-with-check js-count-up" data-count-number="130" data-suffix="+" style="min-width: 4ch;">0+</h2>
+                      </div>
+                      <div class="col-auto">
+                        <p class="mb-0 fw-medium lh-sm">UK practices
+                          <br> on Ronda
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 d-flex">
+                  <div class="card-achievement">
+                    <div class="row align-items-center justify-content-center flex-column flex-xs-row g-20">
+                      <div class="col-auto">
+                        <h2 class="card-achievement__number title-with-check js-count-up" data-count-number="2000" data-suffix="+" style="min-width: 5ch;">0+</h2>
+                      </div>
+                      <div class="col-auto">
+                        <p class="mb-0 fw-medium lh-sm">verified locums
+                          <br> on platform
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-4 d-flex">
+                  <div class="card-achievement">
+                    <div class="row align-items-center justify-content-center flex-column flex-xs-row g-20">
+                      <div class="col-auto">
+                        <h2 class="card-achievement__number title-with-check js-count-up" data-count-number="0" data-prefix="£" style="min-width: 2ch;">£0</h2>
+                      </div>
+                      <div class="col-auto">
+                        <p class="mb-0 fw-medium lh-sm">commission on
+                          <br> your locums
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION WELCOME END -->
+
+      <!-- SECTION -->
+      <section class="section enlarged-indents">
+        <div class="container">
+          <div class="row gy-16 gy-sm-40">
+            <div class="col-lg-6 col-xl-5 col-xxl-4 d-flex">
+              <div class="card-photo-and-bg-ring js-parallax-scene parallax-scene">
+                <div class="card-photo-and-bg-ring__photo animation-on-scroll fade-up js-animation-on-scroll">
+                  <div class="card-photo-and-bg-ring__photo-holder">
+                    <img class="lazy js-lazy card-photo-and-bg-ring__photo-img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-photo-and-bg-ring-img.webp">
+                  </div>
+                </div>
+                <div class="card-photo-and-bg-ring__bg-ring">
+                  <div class="card-photo-and-bg-ring__bg-ring-holder js-parallax-item" data-depth="2">
+                    <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/ring-with-gradient-primary.svg">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6 col-xl-7 col-xxl-8 d-flex">
+              <div class="bg-orange-faded-2 px-16 py-32 p-sm-44 rounded w-100">
+                <div class="mb-24 mb-sm-40 d-flex">
+                  <span class="badge text-bg-primary">Sound Familiar?</span>
+                </div>
+                <h3 class="h4 fw-medium">“You know exactly which locums you trust.</h3>
+                <div class="text-block mb-20">
+                  <p>You know roughly how many shifts you'll need over the next few months. But every single booking still means scrolling through contacts, sending WhatsApp messages, waiting for replies, checking your email, updating your spreadsheet, confirming the rate, and sending the rota manually. Every time. For every shift.”</p>
+                </div>
+                <p class="mb-0 text-primary fw-semibold">Every practice with regular locums manages them this way.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section bg-dark text-light">
+        <div class="section__bg-holder">
+          <div class="container d-flex">
+            <div class="section__bg-holder-inner">
+              <div class="section__top-left-bg opacity-75">
+                <div class="section__top-left-bg-holder purple-gradient"></div>
+              </div>
+              <div class="section__bottom-right-bg opacity-75">
+                <div class="section__bottom-right-bg-holder primary-gradient"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section__content-holder">
+          <div class="container">
+            <div class="row justify-content-center gy-32 gy-sm-52">
+              <div class="col-xxl-8 text-center">
+                <h2>Every booking without Ronda costs you more than you think.</h2>
+                <div class="text-block">
+                  <p>Time, clarity, and control. Scattered across messages and spreadsheets that no one designed for this.</p>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="row justify-content-center gy-16 gy-sm-24">
+                  <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="card-pain animation-on-scroll fade-left js-animation-on-scroll">
+                      <div class="row align-items-center flex-grow-1 gx-16">
+                        <div class="col-auto">
+                          <div class="card-pain__icon">
+                            <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-pain-icon.svg">
+                          </div>
+                        </div>
+                        <div class="col">
+                          <p class="mb-0">Scrolling contacts instead of posting in seconds</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="card-pain animation-on-scroll fade-left js-animation-on-scroll">
+                      <div class="row align-items-center flex-grow-1 gx-16">
+                        <div class="col-auto">
+                          <div class="card-pain__icon">
+                            <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-pain-icon.svg">
+                          </div>
+                        </div>
+                        <div class="col">
+                          <p class="mb-0">Updating a spreadsheet after every booking</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="card-pain animation-on-scroll fade-left js-animation-on-scroll">
+                      <div class="row align-items-center flex-grow-1 gx-16">
+                        <div class="col-auto">
+                          <div class="card-pain__icon">
+                            <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-pain-icon.svg">
+                          </div>
+                        </div>
+                        <div class="col">
+                          <p class="mb-0">No record of who was reliable. No proof of who cancelled.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="card-pain animation-on-scroll fade-left js-animation-on-scroll">
+                      <div class="row align-items-center flex-grow-1 gx-16">
+                        <div class="col-auto">
+                          <div class="card-pain__icon">
+                            <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-pain-icon.svg">
+                          </div>
+                        </div>
+                        <div class="col">
+                          <p class="mb-0">Chasing WhatsApp replies from locums you already trust</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6 col-xl-4 d-flex">
+                    <div class="card-pain animation-on-scroll fade-left js-animation-on-scroll">
+                      <div class="row align-items-center flex-grow-1 gx-16">
+                        <div class="col-auto">
+                          <div class="card-pain__icon">
+                            <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-pain-icon.svg">
+                          </div>
+                        </div>
+                        <div class="col">
+                          <p class="mb-0">Sending invoices, chasing payments, across emails</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION STEPS -->
+      <section class="section section-steps bg-light js-parallax-scene parallax-scene">
+        <div class="section__bg-holder">
+          <div class="container d-flex">
+            <div class="section__bg-holder-inner">
+              <div class="section-steps__bottom-right-ring-bg">
+                <div class="section-steps__bottom-right-ring-bg-holder js-parallax-item" data-depth="0.4">
+                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/ring-with-gradient-multi-colored-1.webp">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section__content-holder">
+          <div class="container">
+            <div class="remove-last-child-margin">
+              <h2 class="text-center">Up and running in three steps</h2>
+              <div class="text-block text-center mb-32 mb-sm-52">
+                <p>Set up your Favourites pool in 15 minutes. Your locums join for free. From there, every shift takes two minutes to post.</p>
+              </div>
+              <div class="row justify-content-center gy-16 gy-sm-24 gy-md-40">
+                <div class="col-md-6 col-xxl-4 d-flex">
+                  <div class="card-step">
+                    <div class="mb-40 mb-sm-52 mb-xxl-72">
+                      <span class="badge text-bg-primary">01</span>
+                    </div>
+                    <h2 class="h5 fw-medium pe-16 mb-16" data-mh="title">Invite the locums you already work with</h2>
+                    <div class="text-block">
+                      <p>Send them a link. Free for them to join — no sign-up fee, no commission on their earnings. They're on Ronda within minutes.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xxl-4 d-flex">
+                  <div class="card-step">
+                    <div class="mb-40 mb-sm-52 mb-xxl-72">
+                      <span class="badge text-bg-primary">02</span>
+                    </div>
+                    <h2 class="h5 fw-medium pe-16 mb-16" data-mh="title">They join and land in your private pool</h2>
+                    <div class="text-block">
+                      <p>Once they complete their profile, they're automatically added to your Favourites and labelled 'Your locum'. You'll never pay commission on them, from that moment on.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-xxl-4 d-flex">
+                  <div class="card-step">
+                    <div class="mb-40 mb-sm-52 mb-xxl-72">
+                      <span class="badge text-bg-primary">03</span>
+                    </div>
+                    <h2 class="h5 fw-medium pe-16 mb-16" data-mh="title">Post a shift — they see it first</h2>
+                    <div class="text-block">
+                      <p>Your Favourites get exclusive first access to every shift you post — for up to 48 hours. The wider marketplace only opens if none of them are available.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION STEPS END -->
+
+      <!-- SECTION -->
+      <section class="section enlarged-indents">
+        <div class="container">
+          <div class="remove-last-child-margin">
+            <div class="row justify-content-center mb-24 mb-sm-40 mb-md-52">
+              <div class="col-xl-10 col-xxl-7">
+                <h2 class="text-center px-32">Your locums see it first. You decide for how long.</h2>
+              </div>
+              <div class="col-xxl-9">
+                <div class="text-block text-center">
+                  <p>When you post a shift, you choose how long it stays private to your Favourites pool before it opens to the wider marketplace. Your trusted locums always get first refusal.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="row gy-16 gy-sm-40 mb-40">
+              <div class="col-lg-8 d-flex">
+                <div class="card-app-v-1">
+                  <div class="card-app-v-1__img-holder animation-on-scroll fade-up-left js-animation-on-scroll">
+                    <img class="lazy js-lazy of-cover card-app-v-1__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-app-img-1.webp">
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-4 d-flex">
+                <div class="card-app-v-2 js-parallax-scene">
+                  <div class="card-app-v-2__img-holder animation-on-scroll fade-left js-animation-on-scroll">
+                    <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/card-app-img-2.webp">
+                  </div>
+                  <div class="card-app-v-2__bg-ring">
+                    <div class="card-app-v-2__bg-ring-holder js-parallax-item" data-depth="1">
+                      <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/ring-with-gradient-purple.svg">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row g-16 g-sm-24 g-xl-40 mb-32 mb-sm-44">
+              <div class="col-xl-6 d-flex">
+                <div class="card-benefit">
+                  <div class="row align-items-center flex-grow-1 gy-16 gx-20">
+                    <div class="col-xs-auto">
+                      <div class="card-benefit__icon-holder">
+                        <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-benefit/1.svg">
+                      </div>
+                    </div>
+                    <div class="col-xs">
+                      <div class="remove-last-child-margin">
+                        <h2 class="h5 mb-4">Your pool, always first.</h2>
+                        <p>No locum from the open marketplace sees your shift until your chosen window closes.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 d-flex">
+                <div class="card-benefit">
+                  <div class="row align-items-center flex-grow-1 gy-16 gx-20">
+                    <div class="col-xs-auto">
+                      <div class="card-benefit__icon-holder">
+                        <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-benefit/2.svg">
+                      </div>
+                    </div>
+                    <div class="col-xs">
+                      <div class="remove-last-child-margin">
+                        <h2 class="h5 mb-4">Zero commission on your locums.</h2>
+                        <p>Every booking with a locum you introduced costs you nothing extra — not on their first shift, not on their fiftieth.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 d-flex">
+                <div class="card-benefit">
+                  <div class="row align-items-center flex-grow-1 gy-16 gx-20">
+                    <div class="col-xs-auto">
+                      <div class="card-benefit__icon-holder">
+                        <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-benefit/3.svg">
+                      </div>
+                    </div>
+                    <div class="col-xs">
+                      <div class="remove-last-child-margin">
+                        <h2 class="h5 mb-4">Automatic invoicing.</h2>
+                        <p>Shifts confirmed, invoices generated, payment tracked — all in one thread. No chasing.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-6 d-flex">
+                <div class="card-benefit">
+                  <div class="row align-items-center flex-grow-1 gy-16 gx-20">
+                    <div class="col-xs-auto">
+                      <div class="card-benefit__icon-holder">
+                        <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/card-benefit/4.svg">
+                      </div>
+                    </div>
+                    <div class="col-xs">
+                      <div class="remove-last-child-margin">
+                        <h2 class="h5 mb-4">Direct in-app messaging.</h2>
+                        <p>Agree rates, confirm details, keep records — in the platform, not scattered across texts.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <a class="btn btn-primary" href="#">Create Your Free Practice Account</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION CTA -->
+      <section class="section section-cta js-parallax-scene parallax-scene">
+        <div class="section__bg-holder">
+          <div class="container d-flex">
+            <div class="section__bg-holder-inner">
+              <div class="section__top-left-bg">
+                <div class="section__top-left-bg-holder primary-gradient"></div>
+              </div>
+              <div class="section__bottom-right-bg opacity-25">
+                <div class="section__bottom-right-bg-holder purple-gradient"></div>
+              </div>
+              <div class="section-cta__bottom-right-ring-bg v-1">
+                <div class="section-cta__bottom-right-ring-bg-holder js-parallax-item" data-depth="0.4">
+                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/ring-with-gradient-filled-purple.svg">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section__content-holder">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 d-flex align-items-center">
+                <div class="section-cta__content remove-last-child-margin">
+                  <h2>Don't have 15 minutes? We do it for you</h2>
+                  <div class="text-block mb-32">
+                    <p>Forward us the shift details you already send to your recruiter. We set up your practice profile, post your first shifts, and you check your email when applications come in. Most practices receive their first application within 2 to 3 hours of posting — sometimes within minutes.</p>
+                  </div>
+                  <a class="link-with-arrow text-light" href="mailto:contact@ronda.vet">Email contact@ronda.vet</a>
+                </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-end">
+                <div class="section-cta__img-content">
+                  <div class="section-cta__img-holder animation-on-scroll fade-up js-animation-on-scroll">
+                    <img class="lazy js-lazy of-contain section-cta__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/section-cta-img-1.webp">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION CTA END -->
+
+      <!-- SECTION -->
+      <section class="section enlarged-indents">
+        <div class="container">
+          <div class="remove-last-child-margin">
+            <div class="mb-40 mb-lg-52">
+              <h2 class="text-center">Two months free. <mark>Then £59/month</mark>
+              </h2>
+              <div class="row justify-content-center">
+                <div class="col-xl-11">
+                  <div class="text-block text-center px-xl-52">
+                    <p>Forward us the shift details you already send to your recruiter. We set up your practice profile, post your first shifts, and you check your email when applications come in. Most practices receive their first application within 2 to 3 hours of posting — sometimes within minutes.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row gy-40 mb-44">
+              <div class="col-lg-6 remove-last-child-margin">
+                <div class="bg-dark text-light rounded-size-xl px-16 px-sm-24 px-lg-44 py-24 py-sm-40 py-lg-56 remove-last-child-margin mb-16 mb-sm-24 mb-lg-36">
+                  <div class="mb-24 mb-sm-44 d-flex">
+                    <span class="badge text-bg-primary">2 months free | no card required</span>
+                  </div>
+                  <h3 class="display-2 mb-8 js-count-up" data-count-number="59" data-prefix="£" style="min-width: 2ch">£0</h3>
+                  <p class="mb-24 opacity-44">per branch / per month</p>
+                  <h4 class="h5 fw-medium">No commitment. No card. Cancel anytime.</h4>
+                </div>
+                <div class="bg-purple border border-purple rounded-size-xl px-16 px-sm-24 px-lg-52 py-24 py-sm-40 py-lg-48 text-center" style="--bs-bg-opacity: 0.08">
+                  <div class="text-block text-lg fw-light">
+                    <p>
+                      <strong>When your own locums aren't available:</strong> 2000+ verified locums are searchable on the Ronda marketplace at a 5.99% booking fee — a fraction of what agencies charge.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6">
+                <ul class="list-with-check">
+                  <li>
+                    <h5 class="mb-8">Zero commission on your locums</h5>
+                    <p class="mb-0">Invite the locums you already work with. Every booking with them costs you nothing extra. Always.</p>
+                  </li>
+                  <li>
+                    <h5 class="mb-8">Private Favourites pool</h5>
+                    <p class="mb-0">Your locums, in one place. They always see your shifts before anyone else — for up to 48 hours.</p>
+                  </li>
+                  <li>
+                    <h5 class="mb-8">Automatic invoicing</h5>
+                    <p class="mb-0">From shift confirmed to invoice received, in one place. No chasing. No paperwork.</p>
+                  </li>
+                  <li>
+                    <h5 class="mb-8">Reliability rates</h5>
+                    <p class="mb-0">Every locum carries a score built from their real booking history. You see it before you confirm.</p>
+                  </li>
+                  <li>
+                    <h5 class="mb-8">Full shift calendar</h5>
+                    <p class="mb-0">Every shift, every status, in one view. Mobile alerts so nothing slips.</p>
+                  </li>
+                  <li>
+                    <h5 class="mb-8">Free setup on us</h5>
+                    <p class="mb-0">Don't have 15 minutes? Email your shift details and we set up your profile and post your first shifts</p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <a class="btn btn-purple" href="#">Access your Ronda account</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION -->
+      <section class="section enlarged-indents">
+        <div class="container">
+          <div class="swiper-holder slider-testimonials equal-height-slider">
+            <div class="swiper-holder-inner">
+              <div class="swiper js-slider-testimonials">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <div class="card-testimonial">
+                      <div class="w-100">
+                        <div class="row align-items-center gx-24 gx-sm-40 gx-lg-56 gy-8 mb-28 mb-sm-40">
+                          <div class="col-auto">
+                            <span class="card-testimonial__quote-icon icomoon-quotes"></span>
+                          </div>
+                          <div class="col-auto">
+                            <div class="card-testimonial__logo">
+                              <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/slider-testimonials/logo-1.webp">
+                            </div>
+                          </div>
+                        </div>
+                        <h4 class="fw-medium text-primary">I would 100% recommend Ronda</h4>
+                        <div class="text-block mb-32">
+                          <p>It's efficient, it's cost effective, and it puts the control back where it should be — between the locum and the practice.</p>
+                        </div>
+                        <p class="mb-0 fw-semibold">Dzuni Ngobeni</p>
+                        <p class="mb-0">Practice Owner, Vets for Pets Beckenham</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card-testimonial">
+                      <div class="w-100">
+                        <div class="row align-items-center gx-24 gx-sm-40 gx-lg-56 gy-8 mb-28 mb-sm-40">
+                          <div class="col-auto">
+                            <span class="card-testimonial__quote-icon icomoon-quotes"></span>
+                          </div>
+                        </div>
+                        <h4 class="fw-medium text-primary">We used to spend hours every week</h4>
+                        <div class="text-block mb-32">
+                          <p>Сoordinating our regular locums by WhatsApp and email. With Ronda, our whole rota is in one place — our locums see shifts the moment we post them, invoicing is automatic, and I genuinely cannot imagine going back.</p>
+                        </div>
+                        <p class="mb-0 fw-semibold">Sarah Mitchell</p>
+                        <p class="mb-0">Locum Veterinary Surgeon</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card-testimonial">
+                      <div class="w-100">
+                        <div class="row align-items-center gx-24 gx-sm-40 gx-lg-56 gy-8 mb-28 mb-sm-40">
+                          <div class="col-auto">
+                            <span class="card-testimonial__quote-icon icomoon-quotes"></span>
+                          </div>
+                        </div>
+                        <h4 class="fw-medium text-primary">We used to spend hours every week</h4>
+                        <div class="text-block mb-32">
+                          <p>Сoordinating our regular locums by WhatsApp and email. With Ronda, our whole rota is in one place — our locums see shifts the moment we post them, invoicing is automatic, and I genuinely cannot imagine going back.</p>
+                        </div>
+                        <p class="mb-0 fw-semibold">Sarah Mitchell</p>
+                        <p class="mb-0">Locum Veterinary Surgeon</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card-testimonial">
+                      <div class="w-100">
+                        <div class="row align-items-center gx-24 gx-sm-40 gx-lg-56 gy-8 mb-28 mb-sm-40">
+                          <div class="col-auto">
+                            <span class="card-testimonial__quote-icon icomoon-quotes"></span>
+                          </div>
+                          <div class="col-auto">
+                            <div class="card-testimonial__logo">
+                              <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/slider-testimonials/logo-1.webp">
+                            </div>
+                          </div>
+                        </div>
+                        <h4 class="fw-medium text-primary">I would 100% recommend Ronda</h4>
+                        <div class="text-block mb-32">
+                          <p>It's efficient, it's cost effective, and it puts the control back where it should be — between the locum and the practice.</p>
+                        </div>
+                        <p class="mb-0 fw-semibold">Dzuni Ngobeni</p>
+                        <p class="mb-0">Practice Owner, Vets for Pets Beckenham</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card-testimonial">
+                      <div class="w-100">
+                        <div class="row align-items-center gx-24 gx-sm-40 gx-lg-56 gy-8 mb-28 mb-sm-40">
+                          <div class="col-auto">
+                            <span class="card-testimonial__quote-icon icomoon-quotes"></span>
+                          </div>
+                        </div>
+                        <h4 class="fw-medium text-primary">We used to spend hours every week</h4>
+                        <div class="text-block mb-32">
+                          <p>Сoordinating our regular locums by WhatsApp and email. With Ronda, our whole rota is in one place — our locums see shifts the moment we post them, invoicing is automatic, and I genuinely cannot imagine going back.</p>
+                        </div>
+                        <p class="mb-0 fw-semibold">Sarah Mitchell</p>
+                        <p class="mb-0">Locum Veterinary Surgeon</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="swiper-slide">
+                    <div class="card-testimonial">
+                      <div class="w-100">
+                        <div class="row align-items-center gx-24 gx-sm-40 gx-lg-56 gy-8 mb-28 mb-sm-40">
+                          <div class="col-auto">
+                            <span class="card-testimonial__quote-icon icomoon-quotes"></span>
+                          </div>
+                        </div>
+                        <h4 class="fw-medium text-primary">We used to spend hours every week</h4>
+                        <div class="text-block mb-32">
+                          <p>Сoordinating our regular locums by WhatsApp and email. With Ronda, our whole rota is in one place — our locums see shifts the moment we post them, invoicing is automatic, and I genuinely cannot imagine going back.</p>
+                        </div>
+                        <p class="mb-0 fw-semibold">Sarah Mitchell</p>
+                        <p class="mb-0">Locum Veterinary Surgeon</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pt-40 pt-sm-60 text-center">
+            <a class="btn btn-primary" href="#">Create your free practice account</a>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+
+      <!-- SECTION CTA -->
+      <section class="section section-cta js-parallax-scene parallax-scene">
+        <div class="section__bg-holder">
+          <div class="container d-flex">
+            <div class="section__bg-holder-inner">
+              <div class="section__top-left-bg">
+                <div class="section__top-left-bg-holder purple-gradient"></div>
+              </div>
+              <div class="section__bottom-right-bg opacity-25">
+                <div class="section__bottom-right-bg-holder primary-gradient"></div>
+              </div>
+              <div class="section-cta__bottom-right-ring-bg v-2">
+                <div class="section-cta__bottom-right-ring-bg-holder js-parallax-item" data-depth="0.4">
+                  <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/ring-with-gradient-multi-colored-2.webp">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section__content-holder">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 d-flex align-items-center">
+                <div class="section-cta__content remove-last-child-margin">
+                  <h2>And when your locums aren't available?</h2>
+                  <div class="text-block mb-32">
+                    <p>Your Favourites always get first refusal. But if none of them are free, 2000+ verified locums across the UK are already on Ronda — each carrying a reliability rate built from their real booking history, and verified reviews from practices like yours. The marketplace is there when you need it. You never have to scramble.</p>
+                  </div>
+                  <div class="row">
+                    <div class="col-11">
+                      <div class="row gy-16">
+                        <div class="col-md-6 col-lg-12 col-xxl-6">
+                          <div class="row align-items-center g-20">
+                            <div class="col-auto">
+                              <h3 class="display-6 text-purple mb-0 title-with-check">2000</h3>
+                            </div>
+                            <div class="col">
+                              <p class="mb-0 text-xs fw-medium">verified locums
+                                <br> UK-wide
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-lg-12 col-xxl-6">
+                          <div class="row align-items-center g-20">
+                            <div class="col-auto">
+                              <h3 class="display-6 text-purple mb-0 title-with-check">5.99%</h3>
+                            </div>
+                            <div class="col">
+                              <p class="mb-0 text-xs fw-medium">booking fee — vs
+                                <br> agency 20%+
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-lg-12 col-xxl-6">
+                          <div class="row align-items-center g-20">
+                            <div class="col-auto">
+                              <h3 class="display-6 text-purple mb-0 title-with-check">Reviews</h3>
+                            </div>
+                            <div class="col">
+                              <p class="mb-0 text-xs fw-medium">verified from
+                                <br> real placements
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-lg-12 col-xxl-6">
+                          <div class="row align-items-center g-20">
+                            <div class="col-auto">
+                              <h3 class="display-6 text-purple mb-0 title-with-check">Rates</h3>
+                            </div>
+                            <div class="col">
+                              <p class="mb-0 text-xs fw-medium">reliability built from
+                                <br> booking history
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 d-flex align-items-end">
+                <div class="section-cta__img-content">
+                  <div class="section-cta__img-holder animation-on-scroll fade-up js-animation-on-scroll">
+                    <img class="lazy js-lazy of-contain section-cta__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/section-cta-img-2.webp">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION CTA END -->
+
+      <!-- SECTION -->
+      <section class="section enlarged-indents">
+        <div class="container">
+          <div class="banner js-parallax-scene parallax-scene">
+            <div class="banner__bg-holder">
+              <div class="banner__bg js-parallax-item" data-depth="0.6">
+                <img class="lazy js-lazy of-contain" src="img/lazy-placeholder.png" alt="Image" data-src="img/ring-with-gradient-primary.svg">
+              </div>
+            </div>
+            <div class="banner__content-holder">
+              <div class="row">
+                <div class="col-lg-7 d-flex align-items-center">
+                  <div class="banner__content remove-last-child-margin">
+                    <h3 class="display-3 fw-semibold mb-16">Your locums. One place. Zero commission.</h3>
+                    <div class="text-block mb-32 pe-xxl-60">
+                      <p>Two months free. No credit card required. And if you don't have 15 minutes to set it up — we do it for you.</p>
+                    </div>
+                    <div class="row g-16 mb-28">
+                      <div class="col-sm-auto">
+                        <a class="btn btn-primary w-100" href="#">Access your Ronda account</a>
+                      </div>
+                      <div class="col-sm-auto">
+                        <a class="btn btn-outline-dark w-100 border-2" href="#">
+                          <span class="icomoon-calendar"></span> Book a 15-min demo
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-5 d-flex align-items-end">
+                  <div class="banner__img-content">
+                    <div class="banner__img-holder animation-on-scroll fade-up js-animation-on-scroll">
+                      <img class="lazy js-lazy of-contain banner__img" src="img/lazy-placeholder.png" alt="Image" data-src="img/webp/banner-img.webp">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="pt-32 text-block text-center">
+            <p>No commitment. No card. Cancel anytime. Or just email contact@ronda.vet and we'll set everything up for you.</p>
+          </div>
+        </div>
+      </section>
+      <!-- SECTION END -->
+    </main>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top-content">
+          <div class="row align-items-xl-center gy-32">
+            <div class="col-lg-auto text-center text-lg-start">
+              <a class="footer__logo" href="index.html">
+                <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo.svg" width="377" height="107" style="aspect-ratio: 377/107">
+              </a>
+            </div>
+            <div class="col-lg">
+              <div class="row align-items-center justify-content-end gx-xl-80 gy-32">
+                <div class="col-lg-auto text-center text-lg-end text-xl-start">
+                  <p class="mb-0">
+                    <a class="link-light text-sm" href="mailto:contact@ronda.vet">contact@ronda.vet</a>
+                  </p>
+                  <p class="mb-0">
+                    <a class="link-light text-sm" href="tel:07411510878">07411 510878</a>
+                  </p>
+                  <p class="mb-0">
+                    <a class="link-light text-sm" href="tel:02045394560">020 4539 4560</a>
+                  </p>
+                </div>
+                <div class="col-lg-auto">
+                  <div class="row justify-content-center justify-content-lg-end gx-24 gy-16">
+                    <div class="col-auto d-flex">
+                      <a class="btn btn-light btn-sm without-particles border border-gray-500 rounded-size-8 px-12" href="#">
+                        <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo-app-store.svg" width="145" height="36" style="aspect-ratio: 145/36">
+                      </a>
+                    </div>
+                    <div class="col-auto d-flex">
+                      <a class="btn btn-light btn-sm without-particles border border-gray-500 rounded-size-8 px-12" href="#">
+                        <img class="lazy js-lazy" src="img/lazy-placeholder.png" alt="Image" data-src="img/logo-google-play.svg" width="168" height="39" style="aspect-ratio: 168/39">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom-content">
+          <div class="row align-items-center gy-32">
+            <div class="col-lg-7 col-xl-5 text-center text-lg-start">
+              <p class="mb-4 text-xxs">© 2026 Ronda Vet Locums Ltd.</p>
+              <p class="mb-0 text-xxs opacity-70">Registered in England and Wales (No: 16317397). 1 Kings Avenue, London, N21 3NA.</p>
+            </div>
+            <div class="col-lg-5 col-xl-7">
+              <div class="row justify-content-center justify-content-lg-end gy-12">
+                <div class="col-auto d-flex">
+                  <a class="link-light text-xxs" href="#">Cookie Policy</a>
+                </div>
+                <div class="col-auto d-flex">
+                  <a class="link-light text-xxs" href="#">Cookie Preferences</a>
+                </div>
+                <div class="col-auto d-flex">
+                  <a class="link-light text-xxs" href="#">Privacy Policy</a>
+                </div>
+                <div class="col-auto d-flex">
+                  <a class="link-light text-xxs" href="#">Terms of Service</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- FOOTER END -->
+  </div>
+
+  <!-- connection JAVASCRIPT -->
+  <script src="js/main.js"></script>
+</body>
+
+</html>
